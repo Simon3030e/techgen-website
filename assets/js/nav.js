@@ -1,5 +1,5 @@
 /**
- * TechGen — nav.js
+ * noktostudio — nav.js
  * Sticky nav scroll state + hamburger mobile menu toggle
  */
 

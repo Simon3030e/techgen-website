@@ -1,10 +1,10 @@
 /**
- * TechGen — forms.js
+ * noktostudio — forms.js
  * Client-side form validation with smooth feedback
  */
 
 (function () {
-  const forms = document.querySelectorAll('.techgen-form');
+  const forms = document.querySelectorAll('.noktostudio-form');
 
   forms.forEach(form => {
     const inputs   = form.querySelectorAll('[data-required]');
