@@ -114,16 +114,6 @@
 .nav-links a:hover::after,
 .nav-links a.active::after { transform: scaleX(1); }
 
-/* ===== SCROLL-TRIGGERED GLOW ON CARDS ===== */
-@keyframes glowIn {
-  from { box-shadow: 0 0 0 rgba(108,99,255,0); }
-  to   { box-shadow: 0 4px 32px rgba(108,99,255,0.08); }
-}
-[data-aos="fade-up"].aos-animate,
-[data-aos="fade-right"].aos-animate,
-[data-aos="fade-left"].aos-animate {
-  animation: glowIn 0.6s ease forwards;
-}
 
 /* ===== FORM ERROR STATE ===== */
 .form-input.error,
