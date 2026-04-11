@@ -36,7 +36,94 @@
 
 /* ===== HOVER LIFT ===== */
 .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
-.card-hover:hover { transform: translateY(-3px); }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
+
+/* ===== TRUST NUMBERS GLOW ===== */
+.trust-num {
+  background: linear-gradient(135deg, #fff 30%, var(--accent-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== SECTION LABEL SHIMMER ===== */
+.section-label {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== BUTTON GLOW PULSE (primary CTA only) ===== */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.btn-primary:hover::after { transform: translateX(100%); }
+
+/* ===== BENEFIT ICON FLOAT ===== */
+.benefit-card:hover .benefit-icon {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(108,99,255,0.2);
+}
+.benefit-icon { transition: transform 0.3s ease, background 0.3s ease; }
+
+/* ===== STEP NUMBER GLOW ON HOVER ===== */
+.step:hover .step-num {
+  box-shadow: 0 0 0 6px rgba(108,99,255,0.15), 0 0 24px rgba(108,99,255,0.3);
+  transform: scale(1.05);
+}
+.step-num { transition: box-shadow 0.3s ease, transform 0.3s ease; }
+
+/* ===== PROJECT CARD TAG REVEAL ===== */
+.project-card .project-tags { transition: opacity 0.3s ease, transform 0.3s ease; }
+
+/* ===== LOGO BADGE GLOW ===== */
+.logo-badge.is-link:hover {
+  box-shadow: 0 0 16px rgba(108,99,255,0.25);
+}
+
+/* ===== PAGE HERO ENTRANCE ===== */
+.page-hero .section-label { animation: fadeIn 0.5s ease 0.05s both; }
+.page-hero h1             { animation: fadeInUp 0.7s ease 0.1s both; }
+.page-hero .divider        { animation: fadeIn 0.5s ease 0.25s both; }
+.page-hero .section-subheading { animation: fadeInUp 0.7s ease 0.3s both; }
+
+/* ===== UNDERLINE ANIMATION FOR NAV LINKS ===== */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  transform-origin: center;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { transform: scaleX(1); }
+
+/* ===== SCROLL-TRIGGERED GLOW ON CARDS ===== */
+@keyframes glowIn {
+  from { box-shadow: 0 0 0 rgba(108,99,255,0); }
+  to   { box-shadow: 0 4px 32px rgba(108,99,255,0.08); }
+}
+[data-aos="fade-up"].aos-animate,
+[data-aos="fade-right"].aos-animate,
+[data-aos="fade-left"].aos-animate {
+  animation: glowIn 0.6s ease forwards;
+}
 
 /* ===== FORM ERROR STATE ===== */
 .form-input.error,
