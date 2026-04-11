@@ -1,411 +1,406 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>noktostudio — Digitálny marketing zameraný na váš rast</title>
-  <meta name="description" content="noktostudio tvorí webstránky, spúšťa kampane a automatizuje procesy, ktoré prinášajú skutočné výsledky — riešenia šité na mieru vášmu podnikaniu." />
-  <link rel="stylesheet" href="../assets/css/main.css" />
-  <link rel="stylesheet" href="../assets/css/animations.css" />
-  <link rel="stylesheet" href="../assets/css/components.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nokto Studio — Digitálna marketingová agentúra</title>
+  <meta name="description" content="Hybridná agentúra vybraných špecialistov — weby, SEO, Google Ads, e-mailové systémy a AI automatizácie prinášajúce merateľný rast.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
 </head>
 <body>
 
-<!-- ===================== NAV ===================== -->
-<header class="nav-wrapper" id="nav">
+<header class="site-header" id="site-header">
   <div class="container">
-    <nav class="nav-inner">
-
-      <!-- Logo -->
-      <a href="/sk/" class="logo" aria-label="noktostudio Domov">
-        <svg width="36" height="36" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="14" cy="19" r="9" fill="#6C63FF"/>
-          <circle cx="31" cy="10" r="5" fill="none" stroke="#6C63FF" stroke-width="2"/>
-          <circle cx="31" cy="28" r="5" fill="none" stroke="#6C63FF" stroke-width="2"/>
-          <line x1="22" y1="15" x2="27" y2="12" stroke="#6C63FF" stroke-width="1.5" stroke-opacity="0.7"/>
-          <line x1="22" y1="23" x2="27" y2="26" stroke="#6C63FF" stroke-width="1.5" stroke-opacity="0.7"/>
-        </svg>
-        <span class="logo-text"><span class="bold">nokto</span><span class="light">studio</span></span>
-      </a>
-
-      <!-- Desktop links -->
-      <div class="nav-links">
-        <a href="/sk/projekty.html">Projekty</a>
-        <a href="/sk/riesenia.html">Riešenia</a>
-      </div>
-
-      <!-- Right side -->
+    <nav class="nav">
+      <a href="/sk/" class="nav-logo"><span class="logo-n">N</span>okto Studio</a>
+      <ul class="nav-links">
+        <li><a href="/sk/o-nas.html">O nás</a></li>
+        <li><a href="/sk/sluzby.html">Služby</a></li>
+        <li><a href="/sk/blog.html">Blog</a></li>
+        <li><a href="/sk/faq.html">FAQ</a></li>
+        <li><a href="/sk/kontakt.html">Kontakt</a></li>
+      </ul>
       <div class="nav-right">
-        <div class="lang-toggle" aria-label="Výber jazyka">
-          <a href="/en/">EN</a>
-          <a href="/sk/" class="active" aria-current="page">SK</a>
+        <div class="lang-toggle">
+          <a href="/en/" class="lang-btn">EN</a>
+          <span>|</span>
+          <a href="/sk/" class="lang-btn active">SK</a>
         </div>
-        <a href="#kontakt" class="btn-nav btn">Bezplatná konzultácia</a>
-        <button class="hamburger-btn" id="hamburger-btn" aria-label="Otvoriť menu" aria-expanded="false">
-          <span class="hamburger" id="hamburger-icon">
-            <span></span><span></span><span></span>
-          </span>
-        </button>
+        <a href="/sk/kontakt.html" class="btn btn-primary btn-sm">Bezplatná konzultácia</a>
+        <button class="hamburger" id="hamburger" aria-label="Otvoriť menu"><span></span><span></span><span></span></button>
       </div>
-
     </nav>
   </div>
-
-  <!-- Mobile nav -->
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobilná navigácia">
-    <a href="/sk/projekty.html">Projekty</a>
-    <a href="/sk/riesenia.html">Riešenia</a>
-    <a href="/en/">EN</a>
-    <a href="/sk/">SK</a>
-    <a href="#kontakt" class="btn btn-primary btn-sm" style="margin-top:8px;text-align:center;">Bezplatná konzultácia</a>
-  </nav>
 </header>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="/sk/o-nas.html">O nás</a>
+  <a href="/sk/sluzby.html">Služby</a>
+  <a href="/sk/blog.html">Blog</a>
+  <a href="/sk/faq.html">FAQ</a>
+  <a href="/sk/kontakt.html">Kontakt</a>
+  <div class="lang-toggle" style="padding:12px 0; border-top:1px solid var(--border-light); margin-top:8px;">
+    <a href="/en/" class="lang-btn">EN</a><span>|</span><a href="/sk/" class="lang-btn active">SK</a>
+  </div>
+  <a href="/sk/kontakt.html" class="btn btn-primary">Bezplatná konzultácia</a>
+</nav>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="hero">
+<!-- HERO -->
+<section class="hero">
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
-
-  <div class="hero-content">
-    <h1 class="hero-headline">
-      Váš rast. Naša práca.
-    </h1>
-    <p class="hero-sub">
-      Tvoríme webstránky, spúšťame kampane a automatizujeme procesy, ktoré prinášajú skutočné výsledky — riešenia šité na mieru vášmu podnikaniu.
-    </p>
-    <div class="hero-ctas">
-      <a href="/sk/projekty.html" class="btn btn-primary">Pozrieť naše projekty</a>
-      <a href="#kontakt" class="btn btn-outline">Bezplatná konzultácia</a>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-label">Nokto Studio — Digitálna marketingová agentúra</div>
+      <h1>Pracujeme v tieni.<br>Vaše výsledky hovoria<br>na svetle.</h1>
+      <p class="hero-sub">Hybridná agentúra vybraných špecialistov — weby, SEO, Google Ads, e-mailové systémy a AI automatizácie, ktoré prinášajú merateľný rast tržieb.</p>
+      <div class="hero-ctas">
+        <a href="/sk/kontakt.html" class="btn btn-primary btn-lg">Získajte bezplatnú stratégiu a cenovú ponuku</a>
+        <a href="#projekty" class="btn btn-outline btn-lg">Pozrieť naše projekty</a>
+      </div>
+      <p class="hero-scarcity">Každý mesiac prijímame obmedzený počet nových klientov, aby sme udržali kvalitu, ktorú naši partneri očakávajú.</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== BENEFITS ===================== -->
-<section class="section" id="vyhody">
+<!-- TRUST STRIP -->
+<div class="trust-strip">
   <div class="container">
+    <div class="trust-grid">
+      <div class="trust-stat">
+        <span class="trust-num">8+</span>
+        <span class="trust-label">Rokov skúseností<br>tímu</span>
+      </div>
+      <div class="trust-stat">
+        <span class="trust-num">€2k+</span>
+        <span class="trust-label">Tržby z jednej<br>e-mailovej kampane</span>
+      </div>
+      <div class="trust-stat">
+        <span class="trust-num">12h</span>
+        <span class="trust-label">Čas odpovede<br>v pracovné dni</span>
+      </div>
+      <div class="trust-stat">
+        <span class="trust-num">3</span>
+        <span class="trust-label">Krajiny —<br>SK, UK, AU, US</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div class="section-header-center" style="text-align:center; margin-bottom:48px;">
-      <span class="section-label">Prečo noktostudio</span>
-      <h2 class="section-heading">Zameraní na výsledky, nie na retainere</h2>
+<!-- LOGO MARQUEE -->
+<section class="logo-strip-section">
+  <p class="logo-strip-heading">Značky, ktoré nám dôverujú</p>
+  <div class="marquee-viewport">
+    <div class="marquee-track">
+      <a href="https://flamia.studio" target="_blank" rel="noopener" class="logo-badge is-link">Flamia Studio</a>
+      <span class="logo-badge">Villa Paris</span>
+      <a href="https://dolinajjr.sk" target="_blank" rel="noopener" class="logo-badge is-link">Dolina JJR</a>
+      <span class="logo-badge">Kreisel</span>
+      <a href="https://peterkocur.sk" target="_blank" rel="noopener" class="logo-badge is-link">Peter Kocur</a>
+      <span class="logo-badge">Sirupo</span>
+      <span class="logo-badge">Mikramt.sk</span>
+      <span class="logo-badge">TV Lux</span>
+      <span class="logo-badge">Zlatníctvo Vigaš</span>
+      <!-- Duplicate for seamless infinite loop -->
+      <a href="https://flamia.studio" target="_blank" rel="noopener" class="logo-badge is-link">Flamia Studio</a>
+      <span class="logo-badge">Villa Paris</span>
+      <a href="https://dolinajjr.sk" target="_blank" rel="noopener" class="logo-badge is-link">Dolina JJR</a>
+      <span class="logo-badge">Kreisel</span>
+      <a href="https://peterkocur.sk" target="_blank" rel="noopener" class="logo-badge is-link">Peter Kocur</a>
+      <span class="logo-badge">Sirupo</span>
+      <span class="logo-badge">Mikramt.sk</span>
+      <span class="logo-badge">TV Lux</span>
+      <span class="logo-badge">Zlatníctvo Vigaš</span>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section" id="preco">
+  <div class="container">
+    <div class="section-header-center">
+      <span class="section-label">Prečo Nokto Studio</span>
+      <h2 class="section-heading">Ako pracujeme inak</h2>
       <div class="divider divider-center"></div>
     </div>
-
-    <div class="grid-4" role="list">
-
-      <!-- Card 1 -->
-      <article class="benefit-card card-hover" role="listitem" data-aos="fade-up" data-aos-delay="0">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="6" y="28" width="7" height="10" rx="2" fill="currentColor" opacity="0.4"/>
-            <rect x="18" y="20" width="7" height="18" rx="2" fill="currentColor" opacity="0.7"/>
-            <rect x="30" y="10" width="7" height="28" rx="2" fill="currentColor"/>
-            <path d="M8 22 L20 14 L32 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
-            <circle cx="32" cy="8" r="2.5" fill="currentColor"/>
-          </svg>
-        </div>
-        <h3>Zameranie na ROI</h3>
-        <p>Každé rozhodnutie meriame jednou otázkou: pomôže to vášmu obratu?</p>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="benefit-card card-hover" role="listitem" data-aos="fade-up" data-aos-delay="80">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="8" width="28" height="28" rx="4" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/>
-            <path d="M14 22 L20 28 L30 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="22" cy="22" r="12" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.2"/>
-          </svg>
-        </div>
-        <h3>Na mieru, nie zo šablóny</h3>
-        <p>Vaše podnikanie je jedinečné. Vaša stratégia by mala byť tiež.</p>
-      </article>
-
-      <!-- Card 3 -->
-      <article class="benefit-card card-hover" role="listitem" data-aos="fade-up" data-aos-delay="160">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="22" cy="22" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-            <path d="M22 12 L22 8M22 36 L22 32M12 22 L8 22M36 22 L32 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-            <path d="M18 22 L21 25 L26 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="22" cy="22" r="3" fill="currentColor" opacity="0.3"/>
-          </svg>
-        </div>
-        <h3>Najnovšie technológie</h3>
-        <p>Od AI obsahových pipeline až po automatizované email sekvencie — používame to, čo v roku 2025 skutočne funguje.</p>
-      </article>
-
-      <!-- Card 4 -->
-      <article class="benefit-card card-hover" role="listitem" data-aos="fade-up" data-aos-delay="240">
-        <div class="benefit-icon" aria-hidden="true">
-          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="8" y="14" width="28" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none" opacity="0.4"/>
-            <path d="M14 24 L18 20 L22 24 L28 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="28" cy="18" r="2.5" fill="currentColor"/>
-            <rect x="14" y="10" width="16" height="4" rx="2" fill="currentColor" opacity="0.2"/>
-          </svg>
-        </div>
-        <h3>Merateľné výsledky</h3>
-        <p>Žiadne prázdne čísla. Jasné reporty o návštevnosti, leadoch a konverziách.</p>
-      </article>
-
+    <div class="grid-4">
+      <div class="benefit-card card-hover" data-aos="fade-up" data-aos-delay="0">
+        <div class="benefit-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>ROI na prvom mieste</h3>
+        <p>Každé rozhodnutie sa odvíja od jednej otázky: rastú vaše tržby? Ak nie, nerobíme to.</p>
+      </div>
+      <div class="benefit-card card-hover" data-aos="fade-up" data-aos-delay="80">
+        <div class="benefit-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Špecialisti, nie generalisti</h3>
+        <p>Spolupracujeme len s najlepšími v každej oblasti — dizajn, vývoj, PPC, foto, video. Dostanete celý tím bez agentúrnej prirážky.</p>
+      </div>
+      <div class="benefit-card card-hover" data-aos="fade-up" data-aos-delay="160">
+        <div class="benefit-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Nástroje roka 2025</h3>
+        <p>AI obsahové systémy, n8n automatizácie, pokročilé sledovanie — používame to, čo funguje teraz, nie pred piatimi rokmi.</p>
+      </div>
+      <div class="benefit-card card-hover" data-aos="fade-up" data-aos-delay="240">
+        <div class="benefit-icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Vždy dostupní</h3>
+        <p>Sídlime na Slovensku, myslíme globálne. Odpoveď do 12 hodín v pracovné dni a väčšinu víkendov. Nikdy nebudete v neistote.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== PROJECTS PREVIEW ===================== -->
-<section class="section bg-secondary" id="projekty">
+<!-- SERVICES OVERVIEW -->
+<section class="section bg-2" id="sluzby">
   <div class="container">
+    <div class="section-header-center">
+      <span class="section-label">Čo robíme</span>
+      <h2 class="section-heading">Služby postavené okolo vašich cieľov</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-subheading">Dostupné samostatne alebo v balíkoch. Každý projekt nacenený individuálne — žiadne fixné šablóny, žiadne skryté poplatky.</p>
+    </div>
+    <div class="grid-3">
+      <div class="service-overview-card card-hover" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-overview-icon"><svg width="26" height="26" fill="none" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Lokálna viditeľnosť</h3>
+        <p>Lokálne SEO, optimalizácia Google Maps, Google Ads pre lokálne a servisné podniky. Nájdite vás ľudia, ktorí vás hľadajú práve teraz.</p>
+        <a href="/sk/kontakt.html" class="service-overview-cta">Požiadať o cenovú ponuku <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="service-overview-card card-hover" data-aos="fade-up" data-aos-delay="80">
+        <div class="service-overview-icon"><svg width="26" height="26" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Web a organická návštevnosť</h3>
+        <p>Tvorba webstránok, SEO, AI viditeľnosť, obsahové systémy a technické základy, ktoré generujú návštevnosť a konvertujú zákazníkov.</p>
+        <a href="/sk/kontakt.html" class="service-overview-cta">Požiadať o cenovú ponuku <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="service-overview-card card-hover" data-aos="fade-up" data-aos-delay="160">
+        <div class="service-overview-icon"><svg width="26" height="26" fill="none" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Platená reklama a automatizácie</h3>
+        <p>Google Ads kampane, e-mail marketing, AI automatizácie a n8n systémy, ktoré pracujú aj vtedy, keď vy nepracujete.</p>
+        <a href="/sk/kontakt.html" class="service-overview-cta">Požiadať o cenovú ponuku <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="/sk/sluzby.html" class="btn btn-outline">Zobraziť všetky služby</a>
+    </div>
+  </div>
+</section>
 
-    <div class="section-header-center" style="margin-bottom:48px;">
+<!-- HOW IT WORKS -->
+<section class="section" id="ako">
+  <div class="container">
+    <div class="steps-intro">
+      <span class="section-label">Postup</span>
+      <h2>Vaša bezplatná strategická konzultácia — bez záväzku, bez predajného tlaku, úplne zadarmo.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step" data-aos="fade-up" data-aos-delay="0">
+        <div class="step-num">1</div>
+        <h3>Discovery hovor <span style="display:block;font-size:0.8rem;font-weight:500;color:var(--text-muted);margin-top:2px;">30–60 min</span></h3>
+        <p>Počúvame. Poviete nám o svojich cieľoch, rozpočte a aktuálnej situácii. Žiadny pitch. Žiadny tlak.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-num">2</div>
+        <h3>Robíme svoju prácu <span style="display:block;font-size:0.8rem;font-weight:500;color:var(--text-muted);margin-top:2px;">1–2 dni</span></h3>
+        <p>Náš tím preskúma váš trh, konkurentov a digitálnu prítomnosť. Vytvoríme skutočnú stratégiu šitú na váš podnik.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-num">3</div>
+        <h3>Prezentácia stratégie <span style="display:block;font-size:0.8rem;font-weight:500;color:var(--text-muted);margin-top:2px;">30–60 min</span></h3>
+        <p>Vrátime sa s jasným plánom, konkrétnymi odporúčaniami a transparentnou cenovou ponukou. Vy rozhodujete.</p>
+      </div>
+    </div>
+    <p class="steps-note">„Túto ponuku robíme len pre podniky, ktorým veríme, že môžeme skutočne pomôcť. Ak vám nevieme ukázať jasnú hodnotu, nemali by ste nás najímať."</p>
+    <div style="text-align:center;">
+      <a href="/sk/kontakt.html" class="btn btn-primary btn-lg">Rezervovať bezplatnú konzultáciu</a>
+    </div>
+  </div>
+</section>
+
+<!-- OUR WORK -->
+<section class="section bg-2" id="projekty">
+  <div class="container">
+    <div class="section-header-center">
       <span class="section-label">Naše projekty</span>
       <h2 class="section-heading">Práca, ktorá hovorí za seba</h2>
       <div class="divider divider-center"></div>
-      <p class="section-subheading">Tri ukážkové projekty — každý s balíkom služieb, ktorý ho poháňa.</p>
+      <p class="section-subheading">Výber nedávnych projektov naprieč našimi hlavnými službami.</p>
     </div>
-
     <div class="grid-3">
-
-      <!-- Card 1: E-shop -->
-      <article class="project-card card-hover" data-aos="fade-up" data-aos-delay="0">
-        <div class="project-preview project-preview-eshop">
-          <div class="project-preview-graphic" aria-hidden="true">
-            <svg width="200" height="140" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="10" width="160" height="120" rx="8" fill="#2d1a2e" stroke="#6C63FF" stroke-width="1" stroke-opacity="0.4"/>
-              <rect x="20" y="10" width="160" height="24" rx="8" fill="#3a1f3d"/>
-              <circle cx="33" cy="22" r="4" fill="#ff6b6b" opacity="0.7"/>
-              <circle cx="47" cy="22" r="4" fill="#ffd93d" opacity="0.7"/>
-              <circle cx="61" cy="22" r="4" fill="#6bcb77" opacity="0.7"/>
-              <rect x="30" y="44" width="140" height="18" rx="3" fill="#6C63FF" opacity="0.15"/>
-              <rect x="50" y="48" width="100" height="10" rx="2" fill="#8B85FF" opacity="0.5"/>
-              <rect x="30" y="72" width="40" height="48" rx="4" fill="#4a2060" opacity="0.7"/>
-              <rect x="80" y="72" width="40" height="48" rx="4" fill="#3a1550" opacity="0.7"/>
-              <rect x="130" y="72" width="40" height="48" rx="4" fill="#4a2060" opacity="0.7"/>
-              <rect x="32" y="108" width="36" height="6" rx="2" fill="#C4C0F0" opacity="0.4"/>
-              <rect x="82" y="108" width="36" height="6" rx="2" fill="#C4C0F0" opacity="0.4"/>
-              <rect x="132" y="108" width="36" height="6" rx="2" fill="#C4C0F0" opacity="0.4"/>
-              <text x="154" y="88" font-size="16" fill="#FFD700" opacity="0.8">✦</text>
-            </svg>
-          </div>
+      <div class="project-card card-hover" data-aos="fade-up" data-aos-delay="0">
+        <span class="project-type-tag">E-commerce · E-mail marketing</span>
+        <p class="project-client">Mikramt.sk</p>
+        <h3>E-shop + E-mailová kampaň</h3>
+        <p>Postavili sme nový e-shop od základov a spustili e-mail marketing existujúcim zákazníkom. Výsledok: viac ako €2 000 v priamych e-mailových predajoch.</p>
+        <div class="project-tags">
+          <span class="project-tag">E-commerce</span>
+          <span class="project-tag">E-mail marketing</span>
+          <span class="project-tag">Web dizajn</span>
         </div>
-        <div class="project-card-body">
-          <span class="project-type-label">E-commerce</span>
-          <h3>Velour Studio</h3>
-          <p>Kompletný e-shop s emailovou automatizáciou, abandoned cart flows a UX optimalizovaným pre konverzie.</p>
-          <div class="bundle-tag">Email marketing balík</div>
-          <div class="project-actions">
-            <a href="../samples/eshop/" class="btn btn-primary btn-sm">Pozrieť ukážku</a>
-            <a href="/sk/riesenia.html#baliky" class="btn-ghost">
-              Pozrieť balík
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
+      </div>
+      <div class="project-card card-hover" data-aos="fade-up" data-aos-delay="80">
+        <span class="project-type-tag">Branding · Dizajn</span>
+        <p class="project-client">Villa Paris — cez Flamia Studio</p>
+        <h3>Kompletný rebrand identity</h3>
+        <p>Kompletný rebrand značky — typografia, farebná paleta, vizuálny jazyk a digitálna prítomnosť pre prémiový lifestylový brand.</p>
+        <div class="project-tags">
+          <span class="project-tag">Branding</span>
+          <span class="project-tag">Dizajn</span>
+          <span class="project-tag">Flamia Studio</span>
         </div>
-      </article>
-
-      <!-- Card 2: Plumber -->
-      <article class="project-card card-hover" data-aos="fade-up" data-aos-delay="100">
-        <div class="project-preview project-preview-plumber">
-          <div class="project-preview-graphic" aria-hidden="true">
-            <svg width="200" height="140" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="10" width="160" height="120" rx="8" fill="#0a1628" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.4"/>
-              <rect x="20" y="10" width="160" height="24" rx="8" fill="#0d2240"/>
-              <circle cx="33" cy="22" r="4" fill="#ff6b6b" opacity="0.7"/>
-              <circle cx="47" cy="22" r="4" fill="#ffd93d" opacity="0.7"/>
-              <circle cx="61" cy="22" r="4" fill="#6bcb77" opacity="0.7"/>
-              <rect x="30" y="44" width="140" height="30" rx="3" fill="#FF6B35" opacity="0.2"/>
-              <rect x="38" y="50" width="80" height="8" rx="2" fill="#FF6B35" opacity="0.6"/>
-              <rect x="38" y="62" width="55" height="6" rx="2" fill="#ffffff" opacity="0.2"/>
-              <circle cx="150" cy="62" r="10" fill="#1e3a5f" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.5"/>
-              <circle cx="150" cy="60" r="4" fill="#3B82F6" opacity="0.8"/>
-              <path d="M150 64 L150 70" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-              <text x="30" y="90" font-size="10" fill="#FFD700" opacity="0.9">★★★★★</text>
-              <rect x="90" y="82" width="80" height="6" rx="2" fill="#1e3a5f" opacity="0.8"/>
-              <rect x="90" y="92" width="60" height="6" rx="2" fill="#1e3a5f" opacity="0.8"/>
-              <rect x="30" y="104" width="38" height="18" rx="3" fill="#0f2d4a" stroke="#3B82F6" stroke-width="0.5" stroke-opacity="0.4"/>
-              <rect x="76" y="104" width="38" height="18" rx="3" fill="#0f2d4a" stroke="#3B82F6" stroke-width="0.5" stroke-opacity="0.4"/>
-              <rect x="122" y="104" width="38" height="18" rx="3" fill="#0f2d4a" stroke="#3B82F6" stroke-width="0.5" stroke-opacity="0.4"/>
-            </svg>
-          </div>
+      </div>
+      <div class="project-card card-hover" data-aos="fade-up" data-aos-delay="160">
+        <span class="project-type-tag">Google Ads · PPC</span>
+        <p class="project-client">Kreisel + viacero značiek — cez Peter Kocur</p>
+        <h3>Multi-brand PPC správa</h3>
+        <p>Senior správa Google Ads naprieč viacerými značkami vrátane Kreisel, Sirupo, Zlatníctvo Vigaš a TV Lux — výkonnostné kampane s konzistentným ROI.</p>
+        <div class="project-tags">
+          <span class="project-tag">Google Ads</span>
+          <span class="project-tag">PPC</span>
+          <span class="project-tag">Peter Kocur</span>
         </div>
-        <div class="project-card-body">
-          <span class="project-type-label">Lokálny podnik</span>
-          <h3>Swift Flow Plumbing, Bristol</h3>
-          <p>Lokálne SEO, prítomnosť na Google Maps a Google Ads nastavené pre zachytenie okamžitého dopytu.</p>
-          <div class="bundle-tag">Lokálna viditeľnosť balík</div>
-          <div class="project-actions">
-            <a href="../samples/plumber/" class="btn btn-primary btn-sm">Pozrieť ukážku</a>
-            <a href="/sk/riesenia.html#baliky" class="btn-ghost">
-              Pozrieť balík
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Card 3: Rebrand -->
-      <article class="project-card card-hover" data-aos="fade-up" data-aos-delay="200">
-        <div class="project-preview project-preview-rebrand">
-          <div class="project-preview-graphic" aria-hidden="true">
-            <svg width="200" height="140" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="20" y="10" width="160" height="120" rx="8" fill="#1a0f08" stroke="#D4956A" stroke-width="1" stroke-opacity="0.4"/>
-              <rect x="20" y="10" width="160" height="24" rx="8" fill="#2d1a0e"/>
-              <circle cx="33" cy="22" r="4" fill="#ff6b6b" opacity="0.7"/>
-              <circle cx="47" cy="22" r="4" fill="#ffd93d" opacity="0.7"/>
-              <circle cx="61" cy="22" r="4" fill="#6bcb77" opacity="0.7"/>
-              <rect x="30" y="44" width="22" height="22" rx="4" fill="#C4784A"/>
-              <rect x="58" y="44" width="22" height="22" rx="4" fill="#F5F0E8"/>
-              <rect x="86" y="44" width="22" height="22" rx="4" fill="#2C1A0E"/>
-              <rect x="114" y="44" width="22" height="22" rx="4" fill="#8B6B4A"/>
-              <ellipse cx="158" cy="55" rx="12" ry="16" fill="#C4784A" opacity="0.3" transform="rotate(-20 158 55)"/>
-              <ellipse cx="164" cy="52" rx="8" ry="12" fill="#C4784A" opacity="0.5" transform="rotate(20 164 52)"/>
-              <path d="M155 65 L165 45" stroke="#C4784A" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-              <line x1="100" y1="76" x2="100" y2="128" stroke="#D4956A" stroke-width="1" stroke-opacity="0.3"/>
-              <rect x="30" y="78" width="60" height="44" rx="3" fill="#1a0f08" opacity="0.5"/>
-              <rect x="35" y="84" width="50" height="6" rx="2" fill="#5a4a3a" opacity="0.6"/>
-              <rect x="35" y="95" width="40" height="4" rx="2" fill="#5a4a3a" opacity="0.4"/>
-              <rect x="35" y="103" width="45" height="4" rx="2" fill="#5a4a3a" opacity="0.4"/>
-              <text x="40" y="120" font-size="8" fill="#8B6B4A" opacity="0.7">PRED</text>
-              <rect x="108" y="78" width="62" height="44" rx="3" fill="#2d1a0e" opacity="0.8"/>
-              <rect x="113" y="84" width="50" height="6" rx="2" fill="#C4784A" opacity="0.7"/>
-              <rect x="113" y="95" width="40" height="4" rx="2" fill="#F5F0E8" opacity="0.3"/>
-              <rect x="113" y="103" width="45" height="4" rx="2" fill="#F5F0E8" opacity="0.3"/>
-              <text x="118" y="120" font-size="8" fill="#C4784A" opacity="0.9">PO</text>
-            </svg>
-          </div>
-        </div>
-        <div class="project-card-body">
-          <span class="project-type-label">Rebranding &amp; Identita</span>
-          <h3>Bloom Interiors</h3>
-          <p>Kompletný rebrand — logo, farby, typografia a webstránka, ktorá zodpovedá novej identite.</p>
-          <div class="bundle-tag">Web + Rebrand + SEO balík</div>
-          <div class="project-actions">
-            <a href="../samples/rebrand/" class="btn btn-primary btn-sm">Pozrieť ukážku</a>
-            <a href="/sk/riesenia.html#baliky" class="btn-ghost">
-              Pozrieť balík
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </article>
-
+      </div>
     </div>
-
-    <div style="text-align:center; margin-top:40px;">
-      <a href="/sk/projekty.html" class="btn btn-outline">Zobraziť všetky projekty</a>
-    </div>
-
+    <p class="work-note">Ďalšie prípadové štúdie čoskoro. Zatiaľ — <a href="/sk/kontakt.html">dohodnite si hovor</a> a prevedieme vás relevantnými výsledkami pre vaše odvetvie.</p>
   </div>
 </section>
 
-<!-- ===================== CONTACT FORM ===================== -->
-<section class="section form-section" id="kontakt">
+<!-- TEAM -->
+<section class="section" id="tim">
   <div class="container">
-
-    <div class="section-header-center" style="margin-bottom:48px;">
-      <span class="section-label">Bezplatná konzultácia</span>
-      <h2 class="section-heading">Získajte bezplatnú 60-minútovú konzultáciu</h2>
-      <div class="divider divider-center"></div>
-      <p class="section-subheading">Povedzte nám, kde ste a čo chcete dosiahnuť — prídem pripravený s nápadmi priamo pre vaše podnikanie.</p>
+    <div class="section-header">
+      <span class="section-label">Tím</span>
+      <h2 class="section-heading">Štíhly tím. Maximálna odbornosť.</h2>
+      <div class="divider"></div>
+      <p class="section-subheading">Keď pracujete s Nokto Studio, pracujete priamo s ľuďmi, ktorí robia prácu.</p>
     </div>
-
-    <div class="form-card" data-aos="fade-up">
-      <form class="noktostudio-form" id="konzultacia-form" novalidate>
-
-        <div class="grid-2" style="gap:16px;">
-          <div class="form-group">
-            <label for="meno">Celé meno <span aria-hidden="true" style="color:#ff8a8a">*</span></label>
-            <input type="text" id="meno" name="meno" class="form-control" placeholder="Jana Nováková" data-required autocomplete="name" />
-            <span class="form-error">Prosím zadajte vaše meno.</span>
-          </div>
-          <div class="form-group">
-            <label for="email">Emailová adresa <span aria-hidden="true" style="color:#ff8a8a">*</span></label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="jana@firma.sk" data-required autocomplete="email" />
-            <span class="form-error">Prosím zadajte platný email.</span>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="firma">Názov firmy <span aria-hidden="true" style="color:#ff8a8a">*</span></label>
-          <input type="text" id="firma" name="firma" class="form-control" placeholder="Vaša Firma s.r.o." data-required autocomplete="organization" />
-          <span class="form-error">Prosím zadajte názov firmy.</span>
-        </div>
-
-        <div class="form-group">
-          <label for="sluzba">Služba, o ktorú máte záujem <span aria-hidden="true" style="color:#ff8a8a">*</span></label>
-          <select id="sluzba" name="sluzba" class="form-control" data-required>
-            <option value="" disabled selected>Vyberte službu…</option>
-            <option>Tvorba webstránky</option>
-            <option>SEO</option>
-            <option>Google Ads</option>
-            <option>Email marketing</option>
-            <option>Branding a rebranding</option>
-            <option>AI automatizácie</option>
-            <option>Audit</option>
-            <option>Balík / Custom</option>
-          </select>
-          <span class="form-error">Prosím vyberte službu.</span>
-        </div>
-
-        <div class="form-group">
-          <label for="sprava">Povedzte nám o vašom podnikaní <span style="color:var(--text-muted); font-weight:400;">(voliteľné)</span></label>
-          <textarea id="sprava" name="sprava" class="form-control" rows="4" placeholder="Krátko opíšte vaše podnikanie a čo by ste chceli zlepšiť…"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-full" data-label="Rezervovať bezplatnú konzultáciu">
-          Rezervovať bezplatnú konzultáciu
-        </button>
-
-        <p class="form-note">Bez záväzkov. Bez predajného tlaku. Len 60 minút sústredené na vašu stratégiu.</p>
-
-      </form>
+    <div class="team-card" data-aos="fade-up">
+      <div class="team-avatar">ŠŠ</div>
+      <div class="team-info">
+        <div class="team-name">Šimon Štermenský</div>
+        <span class="team-title">Zakladateľ a digitálny stratég</span>
+        <p class="team-bio">Buduje dátami riadené marketingové systémy pre podniky, ktoré chcú skutočný rast. Priamy, úprimný a vždy ten, s kým budete hovoriť.</p>
+      </div>
     </div>
-
+    <a href="/sk/o-nas.html" class="team-link" style="margin-top:28px; display:inline-flex;">
+      Kompletný tím a predstavenie partnerov
+      <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
+<!-- CONTACT FORM -->
+<section class="section bg-2" id="kontakt">
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <a href="/sk/" class="logo" aria-label="noktostudio">
-          <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="14" cy="19" r="9" fill="#6C63FF"/>
-            <circle cx="31" cy="10" r="5" fill="none" stroke="#6C63FF" stroke-width="2"/>
-            <circle cx="31" cy="28" r="5" fill="none" stroke="#6C63FF" stroke-width="2"/>
-            <line x1="22" y1="15" x2="27" y2="12" stroke="#6C63FF" stroke-width="1.5" stroke-opacity="0.7"/>
-            <line x1="22" y1="23" x2="27" y2="26" stroke="#6C63FF" stroke-width="1.5" stroke-opacity="0.7"/>
-          </svg>
-          <span class="logo-text"><span class="bold">nokto</span><span class="light">studio</span></span>
-        </a>
-        <nav class="footer-links" aria-label="Navigácia v päte">
-          <a href="/sk/projekty.html">Projekty</a>
-          <a href="/sk/riesenia.html">Riešenia</a>
-          <a href="/en/">EN</a>
-          <a href="/sk/">SK</a>
-        </nav>
+    <div class="contact-layout">
+      <div class="contact-info-col">
+        <span class="section-label">Bezplatná konzultácia</span>
+        <h2 class="section-heading">Začnite bezplatnou strategickou konzultáciou</h2>
+        <div class="divider"></div>
+        <p>Povedzte nám o svojom podniku a čo chcete dosiahnuť. Prídeme pripravení — žiadne šablóny, žiadne dohady.</p>
+        <div class="contact-detail" style="margin-top:32px;">
+          <div class="contact-detail-icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><span class="contact-detail-label">Čas odpovede</span><p>Do 12 hodín v pracovné dni a väčšinu víkendov</p></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div><span class="contact-detail-label">Sídlo</span><p>Slovensko — pracujeme medzinárodne</p></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div><span class="contact-detail-label">E-mail</span><p>hello@noktostudio.com</p></div>
+        </div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2025 noktostudio. Všetky práva vyhradené.</p>
-        <p>Vytvorené s láskou pre podnikanie, ktoré to myslí vážne.</p>
+      <div class="contact-form-wrap">
+        <form class="contact-form-el" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="meno">Celé meno <span class="req">*</span></label>
+              <input class="form-input" type="text" id="meno" name="meno" placeholder="Vaše celé meno" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mailová adresa <span class="req">*</span></label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="vas@email.sk" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="firma">Názov spoločnosti <span class="req">*</span></label>
+            <input class="form-input" type="text" id="firma" name="firma" placeholder="Vaša spoločnosť alebo projekt" required>
+          </div>
+          <div class="form-group">
+            <label for="sluzba">Záujem o službu <span class="req">*</span></label>
+            <select class="form-select" id="sluzba" name="sluzba" required>
+              <option value="" disabled selected>Vyberte službu…</option>
+              <option>Tvorba webstránky</option>
+              <option>SEO</option>
+              <option>Google Ads</option>
+              <option>E-mail marketing</option>
+              <option>Branding a rebranding</option>
+              <option>AI automatizácie</option>
+              <option>Audit</option>
+              <option>Nie som si istý/á</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sprava">Povedzte nám o svojom podniku</label>
+            <textarea class="form-textarea" id="sprava" name="sprava" placeholder="Čo chcete dosiahnuť? Čo v súčasnosti nefunguje?"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary btn-lg">Získajte bezplatnú stratégiu a cenovú ponuku</button>
+            <p class="form-note">12-hodinová odpoveď v pracovné dni a väčšinu víkendov. Bez záväzku. Bez predajného tlaku.</p>
+          </div>
+        </form>
+        <div class="form-success">
+          <h3>Ďakujeme — ozveme sa.</h3>
+          <p>Očakávajte odpoveď do 12 hodín. Prídeme pripravení s reálnymi poznatkami pre váš podnik.</p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/sk/" class="footer-logo"><span class="logo-n">N</span>okto Studio</a>
+        <p class="footer-tagline">„Pracujeme v tieni.<br>Vaše výsledky hovoria na svetle."</p>
+        <p class="footer-sub">Slovensko. Medzinárodné myslenie.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigácia</h4>
+          <ul>
+            <li><a href="/sk/o-nas.html">O nás</a></li>
+            <li><a href="/sk/sluzby.html">Služby</a></li>
+            <li><a href="/sk/blog.html">Blog</a></li>
+            <li><a href="/sk/faq.html">FAQ</a></li>
+            <li><a href="/sk/kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Partneri</h4>
+          <ul>
+            <li><a href="https://flamia.studio" target="_blank" rel="noopener">flamia.studio</a></li>
+            <li><a href="https://dolinajjr.sk" target="_blank" rel="noopener">dolinajjr.sk</a></li>
+            <li><a href="https://peterkocur.sk" target="_blank" rel="noopener">peterkocur.sk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nokto Studio. Všetky práva vyhradené.</p>
+      <p class="footer-badges">12h odpoveď · Bez záväzku · Reálne výsledky</p>
     </div>
   </div>
 </footer>
-
-<!-- Scroll to top -->
-<button class="scroll-top" id="scroll-top" aria-label="Späť na začiatok">
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 16V4M4 10l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<button class="scroll-top" id="scroll-top" aria-label="Späť nahor">
+  <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({ duration: 600, once: true, offset: 60, easing: 'ease-out-cubic' });
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
 <script src="../assets/js/canvas-hero.js"></script>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/forms.js"></script>
-
 </body>
 </html>

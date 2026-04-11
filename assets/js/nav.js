@@ -1,57 +1,54 @@
 /**
- * noktostudio — nav.js
- * Sticky nav scroll state + hamburger mobile menu toggle
+ * Nokto Studio — nav.js
+ * Sticky header · Mobile menu · Scroll-to-top · FAQ accordion · AOS
  */
-
 (function () {
-  const nav       = document.querySelector('.nav-wrapper');
-  const hamburger = document.getElementById('hamburger-btn');
-  const mobileNav = document.getElementById('mobile-nav');
+  const header    = document.getElementById('site-header');
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  const scrollBtn = document.getElementById('scroll-top');
 
-  // Scroll: add/remove .scrolled class
-  if (nav) {
-    const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // run on load
-  }
+  /* ── Sticky header + scroll-to-top visibility ── */
+  window.addEventListener('scroll', () => {
+    if (header)    header.classList.toggle('scrolled', window.scrollY > 20);
+    if (scrollBtn) scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
 
-  // Hamburger toggle
-  if (hamburger && mobileNav) {
+  /* ── Mobile menu toggle ── */
+  if (hamburger && navMobile) {
     hamburger.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      hamburger.classList.toggle('open', isOpen);
+      const open = navMobile.classList.toggle('open');
+      hamburger.classList.toggle('active', open);
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-
-    // Close menu on link click
-    mobileNav.querySelectorAll('a').forEach(link => {
+    navMobile.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        navMobile.classList.remove('open');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
-
-    // Close on outside click
-    document.addEventListener('click', e => {
-      if (!nav.contains(e.target)) {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
   }
 
-  // Scroll-to-top button
-  const scrollTopBtn = document.getElementById('scroll-top');
-  if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-    scrollTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  /* ── Scroll to top ── */
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ── AOS init ── */
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
+    }
+  });
 })();
