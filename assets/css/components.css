@@ -685,6 +685,16 @@
   transition: gap var(--t), color var(--t);
 }
 .blog-read-more:hover { gap: 10px; color: var(--accent-light); }
+.blog-coming-soon {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 99px;
+}
 .subscribe-wrap {
   display: flex;
   gap: 12px;
