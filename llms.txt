@@ -1,0 +1,20 @@
+# Nokto Studio
+
+> AI-driven growth marketing & automation agency for ambitious brands.
+
+Nokto Studio is a boutique digital agency that combines AI automation, performance marketing (Meta & Google Ads), content production, and data-driven strategy to help businesses grow faster and smarter.
+
+## Pages
+
+- [Home (EN)](https://noktostudio.com/en/): Overview of services, results, and how to start
+- [Home (SK)](https://noktostudio.com/sk/): Slovenská verzia hlavnej stránky
+- [About (EN)](https://noktostudio.com/en/about/): Team, mission, and partner ecosystem
+- [O nás (SK)](https://noktostudio.com/sk/o-nas/): Tím, misia a partnerský ekosystém
+- [Services (EN)](https://noktostudio.com/en/services/): Full service catalogue with scope and pricing tiers
+- [Služby (SK)](https://noktostudio.com/sk/sluzby/): Kompletný prehľad služieb
+- [Blog (EN)](https://noktostudio.com/en/blog/): Articles on AI marketing, automation, and growth
+- [Blog (SK)](https://noktostudio.com/sk/blog/): Články o AI marketingu a automatizácii
+- [FAQ (EN)](https://noktostudio.com/en/faq/): Answers to common questions
+- [FAQ (SK)](https://noktostudio.com/sk/faq/): Odpovede na časté otázky
+- [Contact (EN)](https://noktostudio.com/en/contact/): Book a free strategy call
+- [Kontakt (SK)](https://noktostudio.com/sk/kontakt/): Objednajte si bezplatnú konzultáciu

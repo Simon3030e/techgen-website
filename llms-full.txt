@@ -1,0 +1,90 @@
+# Nokto Studio — Full LLM Context
+
+> AI-driven growth marketing & automation agency. We help brands scale with paid ads, content systems, and AI workflows.
+
+---
+
+## About Nokto Studio
+
+Nokto Studio is a boutique digital agency founded by Simon Petrek and Peter Kocur. We specialise in:
+
+- **Performance Marketing** — Meta Ads, Google Ads, retargeting, full-funnel campaign management
+- **AI Automation** — marketing workflows, lead nurturing sequences, AI-generated content pipelines
+- **Content Production** — video scripts, social media content, UGC strategy, short-form video
+- **Marketing Strategy** — brand positioning, growth roadmaps, competitor analysis
+- **Analytics & Reporting** — data dashboards, attribution modelling, monthly performance reports
+
+We operate primarily in the Slovak and Central European market, with English-language capability for international clients.
+
+---
+
+## Team
+
+**Simon Petrek** — Co-founder & Growth Strategist. Responsible for paid media strategy, client growth plans, and AI system architecture.
+
+**Peter Kocur** — Co-founder & Creative Director. Responsible for content strategy, brand identity, video production direction, and copywriting.
+
+---
+
+## Partner Ecosystem
+
+Nokto Studio collaborates with specialist partners to deliver end-to-end solutions:
+
+- **Dolina JJR** — Videoproduction partner for commercial and social-media video content.
+- Additional partners available upon request for web development, PR, and influencer campaigns.
+
+---
+
+## Services Detail
+
+### 1. AI Growth System
+Full-funnel AI-powered marketing system. Includes ad creative generation, automated lead follow-up, performance dashboards, and monthly optimisation sprints. Best for scaling businesses that want predictability.
+
+### 2. Performance Advertising
+Meta Ads + Google Ads management. Campaign architecture, audience targeting, creative testing, and budget optimisation. Monthly retainer with transparent reporting.
+
+### 3. Content & Video Production
+Monthly content packages: short-form video scripts + captions, UGC briefs, carousel design, and blog articles. Delivered via a structured editorial calendar.
+
+### 4. Marketing Automation
+CRM integration, email sequences, chatbot flows, and lead-scoring systems. Built on tools including Make (Integromat), n8n, and Zapier.
+
+### 5. Strategy & Consulting
+One-time or ongoing strategic advisory. Ideal for founders who need a clear growth roadmap before committing to a full retainer.
+
+---
+
+## Frequently Asked Questions
+
+**Q: How quickly can we start?**
+A: Onboarding takes 5–7 business days after the strategy call and agreement signing. Most clients see first ad results within 2 weeks.
+
+**Q: Do you work with small businesses?**
+A: Yes. We work with businesses at various growth stages. Our entry-level packages are designed for SMEs with monthly ad budgets from €500.
+
+**Q: Do you guarantee results?**
+A: We don't make specific revenue guarantees — no ethical agency does. We commit to transparent reporting, evidence-based optimisation, and clear KPIs agreed upfront.
+
+**Q: Can you work in English and Slovak?**
+A: Yes. We are fully bilingual (SK/EN) and have experience targeting both local Slovak audiences and international markets.
+
+**Q: What makes Nokto different from a freelancer or large agency?**
+A: We combine the personalisation and speed of a boutique studio with AI-powered systems that would otherwise require a 10-person team. You get senior attention, not junior hand-offs.
+
+---
+
+## Contact & Booking
+
+- **Website:** https://noktostudio.com
+- **Strategy call booking (EN):** https://noktostudio.com/en/contact/
+- **Konzultácia (SK):** https://noktostudio.com/sk/kontakt/
+- **Location:** Slovakia (remote-first, serving EU clients)
+
+---
+
+## SEO & Technical Notes (for crawlers)
+
+- Sitemap: https://noktostudio.com/sitemap.xml
+- Canonical language variants: `hreflang` alternate links present on all pages
+- Schema.org markup: Organization, WebSite, LocalBusiness, FAQPage, AboutPage present on relevant pages
+- All URLs use clean directory structure (no .html extensions)

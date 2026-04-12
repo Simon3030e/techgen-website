@@ -9,9 +9,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://noktostudio.com/en/">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/animations.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://noktostudio.com/#organization",
+      "name": "Nokto Studio",
+      "url": "https://noktostudio.com",
+      "logo": "https://noktostudio.com/assets/img/favicon.svg",
+      "description": "AI-driven growth marketing & automation agency.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SK"
+      },
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://noktostudio.com/#website",
+      "url": "https://noktostudio.com",
+      "name": "Nokto Studio",
+      "publisher": {
+        "@id": "https://noktostudio.com/#organization"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -21,11 +53,11 @@
     <nav class="nav">
       <a href="/en/" class="nav-logo"><span class="logo-n">N</span>okto Studio</a>
       <ul class="nav-links">
-        <li><a href="/en/about.html">About</a></li>
-        <li><a href="/en/services.html">Services</a></li>
-        <li><a href="/en/blog.html">Blog</a></li>
-        <li><a href="/en/faq.html">FAQ</a></li>
-        <li><a href="/en/contact.html">Contact</a></li>
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/services/">Services</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/faq/">FAQ</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
       </ul>
       <div class="nav-right">
         <div class="lang-toggle">
@@ -33,7 +65,7 @@
           <span>|</span>
           <a href="/sk/" class="lang-btn">SK</a>
         </div>
-        <a href="/en/contact.html" class="btn btn-primary btn-sm">Book Free Session</a>
+        <a href="/en/contact/" class="btn btn-primary btn-sm">Book Free Session</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -44,17 +76,17 @@
 
 <!-- Mobile nav -->
 <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
-  <a href="/en/about.html">About</a>
-  <a href="/en/services.html">Services</a>
-  <a href="/en/blog.html">Blog</a>
-  <a href="/en/faq.html">FAQ</a>
-  <a href="/en/contact.html">Contact</a>
+  <a href="/en/about/">About</a>
+  <a href="/en/services/">Services</a>
+  <a href="/en/blog/">Blog</a>
+  <a href="/en/faq/">FAQ</a>
+  <a href="/en/contact/">Contact</a>
   <div class="lang-toggle" style="padding:12px 0; border-top:1px solid var(--border-light); margin-top:8px;">
     <a href="/en/" class="lang-btn active">EN</a>
     <span>|</span>
     <a href="/sk/" class="lang-btn">SK</a>
   </div>
-  <a href="/en/contact.html" class="btn btn-primary">Book Free Session</a>
+  <a href="/en/contact/" class="btn btn-primary">Book Free Session</a>
 </nav>
 
 <!-- ===================== HERO ===================== -->
@@ -66,7 +98,7 @@
       <h1>We work in the dark.<br>Your results speak<br>in the light.</h1>
       <p class="hero-sub">A hybrid agency of hand-picked specialists — delivering websites, SEO, Google Ads, email systems and AI automations that drive measurable revenue growth.</p>
       <div class="hero-ctas">
-        <a href="/en/contact.html" class="btn btn-primary btn-lg">Get Free Strategy &amp; Pricing</a>
+        <a href="/en/contact/" class="btn btn-primary btn-lg">Get Free Strategy &amp; Pricing</a>
         <a href="#work" class="btn btn-outline btn-lg">See Our Work</a>
       </div>
       <p class="hero-scarcity">We take on a limited number of new clients each month to maintain the quality our partners expect.</p>
@@ -78,19 +110,19 @@
 <div class="trust-strip">
   <div class="container">
     <div class="trust-grid">
-      <div class="trust-stat">
+      <div class="trust-stat reveal" data-delay="100">
         <span class="trust-num">8+</span>
         <span class="trust-label">Years of combined<br>team experience</span>
       </div>
-      <div class="trust-stat">
+      <div class="trust-stat reveal" data-delay="200">
         <span class="trust-num">4×</span>
         <span class="trust-label">Average ROI delivered<br>across campaigns</span>
       </div>
-      <div class="trust-stat">
+      <div class="trust-stat reveal" data-delay="300">
         <span class="trust-num">12h</span>
         <span class="trust-label">Response time on all<br>workdays &amp; most weekends</span>
       </div>
-      <div class="trust-stat">
+      <div class="trust-stat reveal" data-delay="400">
         <span class="trust-num">4</span>
         <span class="trust-label">Countries served —<br>SK, UK, AU, US</span>
       </div>
@@ -142,7 +174,7 @@
   <div class="container">
     <div class="section-header-center">
       <span class="section-label">Why Nokto Studio</span>
-      <h2 class="section-heading">How we work differently</h2>
+      <h2 class="section-heading reveal">How we work differently</h2>
       <div class="divider divider-center"></div>
     </div>
     <div class="grid-4">
@@ -183,9 +215,9 @@
   <div class="container">
     <div class="section-header-center">
       <span class="section-label">What We Do</span>
-      <h2 class="section-heading">Services built around your goals</h2>
+      <h2 class="section-heading reveal">Services built around your goals</h2>
       <div class="divider divider-center"></div>
-      <p class="section-subheading">Available standalone or as bundled packages. Every project scoped individually — no fixed templates, no hidden fees.</p>
+      <p class="section-subheading reveal">Available standalone or as bundled packages. Every project scoped individually — no fixed templates, no hidden fees.</p>
     </div>
     <div class="grid-3">
       <div class="service-overview-card card-hover">
@@ -194,7 +226,7 @@
         </div>
         <h3>Local Visibility</h3>
         <p>Local SEO, Google Maps optimisation, Google Ads for local and service businesses. Get found by the people who are looking for you right now.</p>
-        <a href="/en/contact.html" class="service-overview-cta">Request a Quote <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/en/contact/" class="service-overview-cta">Request a Quote <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="service-overview-card card-hover">
         <div class="service-overview-icon">
@@ -202,7 +234,7 @@
         </div>
         <h3>Website &amp; Organic Traffic</h3>
         <p>Custom web design, SEO, AI search visibility, content systems and technical foundations that generate traffic and convert visitors into customers.</p>
-        <a href="/en/contact.html" class="service-overview-cta">Request a Quote <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/en/contact/" class="service-overview-cta">Request a Quote <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
       <div class="service-overview-card card-hover">
         <div class="service-overview-icon">
@@ -210,11 +242,11 @@
         </div>
         <h3>Paid Traffic &amp; Automation</h3>
         <p>Google Ads campaigns, email marketing, AI automations and n8n workflow systems that keep working even when you're not.</p>
-        <a href="/en/contact.html" class="service-overview-cta">Request a Quote <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/en/contact/" class="service-overview-cta">Request a Quote <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
     <div style="text-align:center; margin-top:40px;">
-      <a href="/en/services.html" class="btn btn-outline">View All Services</a>
+      <a href="/en/services/" class="btn btn-outline">View All Services</a>
     </div>
   </div>
 </section>
@@ -224,20 +256,20 @@
   <div class="container">
     <div class="steps-intro">
       <span class="section-label">The Process</span>
-      <h2>Your free strategy session — no obligation, no sales pressure, completely free.</h2>
+      <h2 class="reveal">Your free strategy session — no obligation, no sales pressure, completely free.</h2>
     </div>
     <div class="steps-grid">
-      <div class="step">
+      <div class="step reveal" data-delay="100">
         <div class="step-num">1</div>
         <h3>Discovery Call <span style="display:block; font-size:0.8rem; font-weight:500; color:var(--text-muted); margin-top:2px;">30–60 min</span></h3>
         <p>We listen. You tell us your goals, budget and current situation. No pitch. No pressure. Just the right questions to understand your business properly.</p>
       </div>
-      <div class="step">
+      <div class="step reveal" data-delay="200">
         <div class="step-num">2</div>
         <h3>We Do the Work <span style="display:block; font-size:0.8rem; font-weight:500; color:var(--text-muted); margin-top:2px;">1–2 days</span></h3>
         <p>Our team researches your market, competitors and current digital presence. We build a real strategy tailored specifically to your business — not a template.</p>
       </div>
-      <div class="step">
+      <div class="step reveal" data-delay="300">
         <div class="step-num">3</div>
         <h3>Strategy Presentation <span style="display:block; font-size:0.8rem; font-weight:500; color:var(--text-muted); margin-top:2px;">30–60 min</span></h3>
         <p>We come back with a clear plan, specific recommendations and a transparent price estimate. You decide whether to move forward — zero obligation, zero pressure.</p>
@@ -245,7 +277,7 @@
     </div>
     <p class="steps-note">"We only offer this to businesses we believe we can genuinely help. If we can't show you clear value in these sessions, you shouldn't hire us."</p>
     <div style="text-align:center;">
-      <a href="/en/contact.html" class="btn btn-primary btn-lg">Book My Free Strategy Session</a>
+      <a href="/en/contact/" class="btn btn-primary btn-lg">Book My Free Strategy Session</a>
     </div>
   </div>
 </section>
@@ -255,9 +287,9 @@
   <div class="container">
     <div class="section-header-center">
       <span class="section-label">Our Work</span>
-      <h2 class="section-heading">Work that speaks for itself</h2>
+      <h2 class="section-heading reveal">Work that speaks for itself</h2>
       <div class="divider divider-center"></div>
-      <p class="section-subheading">A selection of recent projects across our core services.</p>
+      <p class="section-subheading reveal">A selection of recent projects across our core services.</p>
     </div>
     <div class="grid-3">
       <div class="project-card card-hover">
@@ -294,7 +326,7 @@
         </div>
       </div>
     </div>
-    <p class="work-note">More case studies coming soon. In the meantime — <a href="/en/contact.html">book a call</a> and we'll walk you through relevant results for your industry.</p>
+    <p class="work-note">More case studies coming soon. In the meantime — <a href="/en/contact/">book a call</a> and we'll walk you through relevant results for your industry.</p>
   </div>
 </section>
 
@@ -303,19 +335,19 @@
   <div class="container">
     <div class="section-header">
       <span class="section-label">The Team</span>
-      <h2 class="section-heading">A lean team. Maximum expertise.</h2>
+      <h2 class="section-heading reveal">A lean team. Maximum expertise.</h2>
       <div class="divider"></div>
-      <p class="section-subheading">When you work with Nokto Studio, you work directly with the people doing the work.</p>
+      <p class="section-subheading reveal">When you work with Nokto Studio, you work directly with the people doing the work.</p>
     </div>
     <div class="team-card">
       <div class="team-avatar"><img src="/assets/img/simon.png" alt="Šimon Štermenský"></div>
       <div class="team-info">
         <div class="team-name">Šimon Štermenský</div>
         <span class="team-title">Founder &amp; Digital Strategist</span>
-        <p class="team-bio">The person you'll always deal with directly. 8+ years building marketing systems for businesses across multiple industries and markets. Obsessed with results, allergic to fluff.</p>
+        <p class="team-bio">The person you'll always deal with directly. Obsessed with results, allergic to fluff.</p>
       </div>
     </div>
-    <a href="/en/about.html" class="team-link" style="margin-top:28px; display:inline-flex;">
+    <a href="/en/about/" class="team-link" style="margin-top:28px; display:inline-flex;">
       Full team and partner introductions
       <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
@@ -326,9 +358,9 @@
 <section class="section cta-section bg-2" id="contact">
   <div class="container">
     <span class="section-label">Free Consultation</span>
-    <h2>Ready to find out what we'd do<br>for your business?</h2>
+    <h2 class="reveal">Ready to find out what we'd do<br>for your business?</h2>
     <div class="divider divider-center" style="margin:20px auto 24px;"></div>
-    <p class="section-subheading" style="margin:0 auto 36px;">Two meetings, real research, a transparent price estimate.<br>No obligation — we only move forward if it makes sense for both sides.</p>
+    <p class="section-subheading reveal" style="margin:0 auto 36px;">Two meetings, real research, a transparent price estimate.<br>No obligation — we only move forward if it makes sense for both sides.</p>
     <a href="https://calendly.com/hello-noktostudio/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Book Free 30-Min Strategy Session</a>
     <p class="form-note" style="margin-top:20px; text-align:center;">No commitment. No sales pressure. Opens in Calendly — pick any available slot.</p>
   </div>
@@ -347,11 +379,11 @@
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="/en/about.html">About</a></li>
-            <li><a href="/en/services.html">Services</a></li>
-            <li><a href="/en/blog.html">Blog</a></li>
-            <li><a href="/en/faq.html">FAQ</a></li>
-            <li><a href="/en/contact.html">Contact</a></li>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/blog/">Blog</a></li>
+            <li><a href="/en/faq/">FAQ</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -378,5 +410,6 @@
 <script src="../assets/js/canvas-hero.js"></script>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/forms.js"></script>
+<script src="../assets/js/animations.js"></script>
 </body>
 </html>
