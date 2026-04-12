@@ -5,25 +5,26 @@
 
 /* ===== CUSTOM PROPERTIES ===== */
 :root {
-  --bg:           #1A1A2E;
-  --bg-2:         #16213E;
-  --bg-card:      rgba(22, 33, 62, 0.7);
-  --accent:       #6C63FF;
-  --accent-hover: #5B52EE;
-  --accent-light: #C4C0F0;
-  --text:         #FFFFFF;
-  --text-2:       #C4C0F0;
-  --text-muted:   rgba(196, 192, 240, 0.5);
-  --border:       rgba(108, 99, 255, 0.2);
-  --border-light: rgba(255, 255, 255, 0.06);
-  --font:         'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --max-w:        1200px;
-  --radius:       14px;
-  --radius-sm:    8px;
-  --radius-lg:    24px;
-  --shadow:        0 4px 32px rgba(0,0,0,0.4);
-  --shadow-accent: 0 4px 28px rgba(108,99,255,0.28);
-  --t:             0.25s ease;
+  --bg:            #1A1A2E;
+  --bg-2:          #141D38;   /* distinctly darker-blue; was #16213E (blended invisibly with bg-card) */
+  --bg-card:       rgba(255, 255, 255, 0.05); /* always lighter than any section bg — fixes invisible cards */
+  --accent:        #6C63FF;   /* primary brand purple — use for interactive elements */
+  --accent-vivid:  #9490FF;   /* 6.25:1 on --bg: WCAG AA for small text (section labels, badges) */
+  --accent-hover:  #5B52EE;
+  --accent-light:  #C4C0F0;
+  --text:          #FFFFFF;
+  --text-2:        #C4C0F0;
+  --text-muted:    rgba(196, 192, 240, 0.65); /* was 0.5 → 3.46:1 (fail); 0.65 → 4.87:1 (WCAG AA ✓) */
+  --border:        rgba(108, 99, 255, 0.22);
+  --border-light:  rgba(255, 255, 255, 0.09); /* was 0.06 — too faint for card separation */
+  --font:          'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --max-w:         1200px;
+  --radius:        14px;
+  --radius-sm:     8px;
+  --radius-lg:     24px;
+  --shadow:         0 4px 32px rgba(0,0,0,0.45);
+  --shadow-accent:  0 8px 40px rgba(108,99,255,0.4); /* was 0.28 — richer CTA glow */
+  --t:              0.25s ease;
 }
 
 /* ===== RESET ===== */
@@ -79,7 +80,7 @@ strong { font-weight: 600; color: var(--text); }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-vivid); /* was --accent (3.95:1 fail on small text); vivid = 6.25:1 ✓ */
   margin-bottom: 12px;
 }
 .section-heading    { color: var(--text); margin-bottom: 16px; }
