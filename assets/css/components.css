@@ -526,6 +526,17 @@
   opacity: 0.7;
   margin-bottom: 16px;
 }
+/* Partner card person photo (no invert filter) */
+.partner-card-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 16px;
+  border: 2px solid var(--border);
+  display: block;
+}
 .team-info { flex: 1; }
 .team-name  { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
 .team-title {
@@ -1038,4 +1049,7 @@
   .logo-badge { padding: 0 20px; font-size: 0.82rem; }
   .bundle-badge { position: static; display: inline-block; margin-bottom: 12px; }
   .btn-lg { white-space: normal; text-align: center; }
+  .subscribe-wrap { flex-direction: column; }
+  .subscribe-wrap .btn { width: 100%; justify-content: center; }
+  .blog-subscribe-box { padding: 28px 20px !important; }
 }

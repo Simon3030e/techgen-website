@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Nokto Studio</title>
   <meta name="description" content="Practical marketing knowledge — no fluff, no recycled advice. Insights from the studio.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -91,12 +92,12 @@
     </div>
 
     <!-- Subscribe -->
-    <div class="bg-2" style="border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:48px; text-align:center;">
+    <div class="bg-2 blog-subscribe-box" style="border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:48px; text-align:center;">
       <span class="section-label">Stay Updated</span>
       <h2 style="font-size:1.6rem; margin:12px 0 8px;">More articles coming soon.</h2>
       <p style="margin-bottom:28px; max-width:400px; margin-left:auto; margin-right:auto;">Subscribe to get notified when we publish new practical guides.</p>
       <div class="subscribe-wrap">
-        <input type="email" class="subscribe-input" placeholder="your@email.com">
+        <input type="email" name="email" autocomplete="email" required class="subscribe-input" placeholder="your@email.com">
         <button class="btn btn-primary">Subscribe</button>
       </div>
     </div>
@@ -125,9 +126,9 @@
         <div class="footer-col">
           <h4>Partners</h4>
           <ul>
-            <li><a href="https://flamia.studio" target="_blank" rel="noopener">flamia.studio</a></li>
-            <li><a href="https://dolinajjr.sk" target="_blank" rel="noopener">dolinajjr.sk</a></li>
-            <li><a href="https://peterkocur.sk" target="_blank" rel="noopener">peterkocur.sk</a></li>
+            <li><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">flamia.studio</a></li>
+            <li><a href="https://dolinajjr.sk" target="_blank" rel="noopener noreferrer">dolinajjr.sk</a></li>
+            <li><a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">peterkocur.sk</a></li>
           </ul>
         </div>
       </div>
