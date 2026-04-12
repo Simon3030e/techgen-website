@@ -1037,4 +1037,5 @@
   .footer-cols { grid-template-columns: 1fr; }
   .logo-badge { padding: 0 20px; font-size: 0.82rem; }
   .bundle-badge { position: static; display: inline-block; margin-bottom: 12px; }
+  .btn-lg { white-space: normal; text-align: center; }
 }
