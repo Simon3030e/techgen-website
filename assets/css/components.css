@@ -100,6 +100,8 @@
   z-index: 999;
   flex-direction: column;
   gap: 4px;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
 }
 .nav-mobile.open { display: flex; }
 .nav-mobile a {
@@ -1051,7 +1053,7 @@
   .hero { padding: 90px 0 48px; }
   .page-hero { padding: 90px 0 40px; }
   .nav { height: 64px; }
-  .nav-mobile { top: 64px; }
+  .nav-mobile { top: 64px; max-height: calc(100vh - 64px); }
   .benefit-card { padding: 24px 20px; }
   .service-overview-card { padding: 28px 20px; }
   .footer-cols { grid-template-columns: 1fr; }
