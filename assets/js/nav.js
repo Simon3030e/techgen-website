@@ -14,19 +14,60 @@
     if (scrollBtn) scrollBtn.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
 
+  /* ── iOS-compatible scroll lock ── */
+  let savedScrollY = 0;
+
+  function lockScroll() {
+    savedScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top      = '-' + savedScrollY + 'px';
+    document.body.style.width    = '100%';
+  }
+
+  function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top      = '';
+    document.body.style.width    = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
+  function closeMenu() {
+    if (!navMobile.classList.contains('open')) return;
+    navMobile.classList.remove('open');
+    hamburger.classList.remove('active');
+    unlockScroll();
+  }
+
   /* ── Mobile menu toggle ── */
   if (hamburger && navMobile) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       const open = navMobile.classList.toggle('open');
       hamburger.classList.toggle('active', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        lockScroll();
+      } else {
+        unlockScroll();
+      }
     });
+
+    /* Close on nav link tap */
     navMobile.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMobile.classList.remove('open');
-        hamburger.classList.remove('active');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    /* Close on outside tap */
+    document.addEventListener('click', (e) => {
+      if (navMobile.classList.contains('open') &&
+          !navMobile.contains(e.target) &&
+          !hamburger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    /* Close on Escape key */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
