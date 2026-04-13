@@ -35,6 +35,7 @@
     if (!navMobile.classList.contains('open')) return;
     navMobile.classList.remove('open');
     hamburger.classList.remove('active');
+    if (header) header.classList.remove('menu-open');
     unlockScroll();
   }
 
@@ -44,6 +45,7 @@
       e.stopPropagation();
       const open = navMobile.classList.toggle('open');
       hamburger.classList.toggle('active', open);
+      if (header) header.classList.toggle('menu-open', open);
       if (open) {
         lockScroll();
       } else {
