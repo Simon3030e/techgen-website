@@ -947,6 +947,18 @@
 .cta-section h2 { margin-bottom: 14px; }
 .cta-section > .container > p { margin-bottom: 32px; margin-left: auto; margin-right: auto; }
 
+/* ===== LEGAL PAGES ===== */
+.legal-content { max-width: 780px; }
+.legal-content h2 { font-size: 1.2rem; margin: 44px 0 14px; padding-top: 8px; border-top: 1px solid var(--border-light); }
+.legal-content h2:first-of-type { margin-top: 32px; border-top: none; }
+.legal-content h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 24px 0 10px; }
+.legal-content p  { font-size: 0.93rem; margin-bottom: 14px; }
+.legal-content ul { margin: 8px 0 18px 0; display: flex; flex-direction: column; gap: 8px; }
+.legal-content ul li { font-size: 0.93rem; color: var(--text-2); padding-left: 16px; position: relative; line-height: 1.7; }
+.legal-content ul li::before { content: '—'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.legal-content a { color: var(--accent-vivid); text-decoration: underline; }
+.legal-content a:hover { color: var(--text); }
+
 /* ===== FOOTER ===== */
 .site-footer {
   background: var(--bg-2);
@@ -973,7 +985,7 @@
 .footer-logo:hover { color: var(--text); }
 .footer-tagline { font-size: 0.88rem; color: var(--text-2); font-style: italic; line-height: 1.65; margin-bottom: 10px; }
 .footer-sub     { font-size: 0.78rem; color: var(--text-muted); margin: 0; }
-.footer-cols    { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.footer-cols    { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .footer-col h4  { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
 .footer-col ul  { display: flex; flex-direction: column; gap: 10px; }
 .footer-col a   { font-size: 0.85rem; color: var(--text-2); }
@@ -1050,6 +1062,7 @@
   .cta-section h2 { font-size: clamp(1.5rem, 5vw, 2rem); }
   /* Footer */
   .footer-cols { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .footer-cols .footer-col:last-child { grid-column: 1 / -1; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 6px; }
   /* Logo marquee */
   .marquee-track { animation-duration: 28s; }
