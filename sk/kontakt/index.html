@@ -129,7 +129,7 @@
           </div>
           <div class="contact-detail">
             <div class="contact-detail-icon"><svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/></svg></div>
-            <div><span class="contact-detail-label">E-mail</span><p>hello@noktostudio.com</p></div>
+            <div><span class="contact-detail-label">E-mail</span><p><a href="mailto:hello@noktostudio.com" style="color:inherit;">hello@noktostudio.com</a></p></div>
           </div>
         </div>
       </div>
@@ -163,6 +163,24 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- EMAIL FALLBACK -->
+<section class="section bg-2" id="email-kontakt">
+  <div class="container" style="max-width:600px;">
+    <div class="section-header-center">
+      <span class="section-label">Wolíte e-mail?</span>
+      <h2 class="section-heading reveal" style="font-size:1.6rem;">Napíšte nám priamo</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-subheading reveal">Ak nechcete cez Calendly, pošlite nám správu. Odpovedáme do 12 hodín.</p>
+    </div>
+    <form action="https://formspree.io/f/hello@noktostudio.com" method="POST" style="display:flex; flex-direction:column; gap:16px; margin-top:32px;">
+      <input type="text" name="name" placeholder="Vaše meno" required style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:8px; padding:14px 16px; color:var(--text); font-size:0.95rem; font-family:inherit; outline:none;">
+      <input type="email" name="email" placeholder="Váš e-mail" required style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:8px; padding:14px 16px; color:var(--text); font-size:0.95rem; font-family:inherit; outline:none;">
+      <textarea name="message" placeholder="Čo riešite? Čo by ste chceli dosiahnuť?" rows="4" required style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:8px; padding:14px 16px; color:var(--text); font-size:0.95rem; font-family:inherit; resize:vertical; outline:none;"></textarea>
+      <button type="submit" class="btn btn-outline btn-lg" style="justify-content:center;">Odoslať správu</button>
+    </form>
   </div>
 </section>
 

@@ -145,7 +145,7 @@
             </div>
             <div>
               <span class="contact-detail-label">Email</span>
-              <p>hello@noktostudio.com</p>
+              <p><a href="mailto:hello@noktostudio.com" style="color:inherit;">hello@noktostudio.com</a></p>
             </div>
           </div>
         </div>
@@ -181,6 +181,24 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- EMAIL FALLBACK -->
+<section class="section bg-2" id="email-contact">
+  <div class="container" style="max-width:600px;">
+    <div class="section-header-center">
+      <span class="section-label">Prefer email?</span>
+      <h2 class="section-heading reveal" style="font-size:1.6rem;">Send us a message directly</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-subheading reveal">Not ready for a call? Drop us a message instead. We reply within 12 hours.</p>
+    </div>
+    <form action="https://formspree.io/f/hello@noktostudio.com" method="POST" style="display:flex; flex-direction:column; gap:16px; margin-top:32px;">
+      <input type="text" name="name" placeholder="Your name" required style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:8px; padding:14px 16px; color:var(--text); font-size:0.95rem; font-family:inherit; outline:none;">
+      <input type="email" name="email" placeholder="Your email" required style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:8px; padding:14px 16px; color:var(--text); font-size:0.95rem; font-family:inherit; outline:none;">
+      <textarea name="message" placeholder="What are you working on? What would you like to achieve?" rows="4" required style="background:var(--bg-card); border:1px solid var(--border-light); border-radius:8px; padding:14px 16px; color:var(--text); font-size:0.95rem; font-family:inherit; resize:vertical; outline:none;"></textarea>
+      <button type="submit" class="btn btn-outline btn-lg" style="justify-content:center;">Send Message</button>
+    </form>
   </div>
 </section>
 

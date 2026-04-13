@@ -32,6 +32,13 @@
     <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/sluzby/"/>
   </url>
   <url>
+    <loc>https://noktostudio.com/en/villa-paris/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/villa-paris/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/villa-paris/"/>
+  </url>
+  <url>
     <loc>https://noktostudio.com/en/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -51,6 +58,20 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/kontakt/"/>
+  </url>
+  <url>
+    <loc>https://noktostudio.com/en/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/privacy/"/>
+  </url>
+  <url>
+    <loc>https://noktostudio.com/en/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/terms/"/>
   </url>
 
   <!-- ── Slovak ── -->
@@ -76,6 +97,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/services/"/>
   </url>
   <url>
+    <loc>https://noktostudio.com/sk/villa-paris/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/villa-paris/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/villa-paris/"/>
+  </url>
+  <url>
     <loc>https://noktostudio.com/sk/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -95,6 +123,20 @@
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/kontakt/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/contact/"/>
+  </url>
+  <url>
+    <loc>https://noktostudio.com/sk/privacy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://noktostudio.com/sk/terms/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/sk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/terms/"/>
   </url>
 
 </urlset>
