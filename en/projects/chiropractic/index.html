@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiropractic & Wellness Marketing — What We Build for US Practices | Nokto Studio</title>
+  <meta name="description" content="See exactly what Nokto Studio builds for US chiropractic and wellness practices — website design, branding, Google Ads, local SEO, and patient email, all in one package.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/main.css">
+  <link rel="stylesheet" href="../../../assets/css/components.css">
+  <link rel="stylesheet" href="../../../assets/css/animations.css">
+  <style>
+    /* ============================================================
+       CHIROPRACTIC SHOWCASE — page-specific styles
+       ============================================================ */
+
+    body { padding-top: 72px; }
+
+    .preview-outer { background: var(--bg); padding: 48px 0 0; }
+    .preview-frame { position: relative; border: 2px dashed rgba(34,139,34,0.35); border-radius: 14px; overflow: hidden; max-width: 1200px; margin: 0 auto; }
+    .preview-label { text-align: center; font-size: 0.72rem; color: rgba(34,139,34,0.55); letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 0 14px; margin: 0; background: var(--bg); }
+
+    /* Chiro preview isolation */
+    .ch-preview { pointer-events: none; user-select: none; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #ffffff; color: #1E2D3D; }
+    .ch-preview * { box-sizing: border-box; }
+    .ch-preview h1, .ch-preview h2, .ch-preview h3, .ch-preview h4 { color: #1E2D3D !important; }
+    .ch-preview p { color: #4A5568 !important; }
+    .ch-preview .reveal { opacity: 1 !important; transform: none !important; }
+
+    /* Header */
+    .ch-header { background: #fff; border-bottom: 3px solid #228B22; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .ch-logo { font-size: 1.1rem; font-weight: 800; color: #1E2D3D !important; display: flex; align-items: center; gap: 8px; }
+    .ch-logo span { color: #228B22 !important; }
+    .ch-nav { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .ch-nav li a { font-size: 0.82rem; font-weight: 500; color: #1E2D3D !important; }
+    .ch-btn { background: #228B22; color: #fff !important; font-size: 0.8rem; font-weight: 700; padding: 9px 20px; border-radius: 99px; cursor: default; }
+
+    /* Hero */
+    .ch-hero { background: #F4FBF4; padding: 56px 48px 60px; display: flex; align-items: center; gap: 52px; }
+    .ch-hero-text { flex: 1; }
+    .ch-eyebrow { display: inline-flex; align-items: center; gap: 7px; background: rgba(34,139,34,0.08); color: #1a6b1a !important; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; border-radius: 99px; margin-bottom: 20px; border: 1px solid rgba(34,139,34,0.2); }
+    .ch-hero h1 { font-size: 2.7rem; font-weight: 800; line-height: 1.1; margin: 0 0 16px; color: #1E2D3D !important; letter-spacing: -0.03em; }
+    .ch-hero h1 span { color: #228B22 !important; }
+    .ch-hero p { font-size: 0.97rem; color: #4A5568 !important; line-height: 1.72; max-width: 430px; margin: 0 0 24px; }
+    .ch-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .ch-btn-primary { background: #228B22; color: #fff !important; font-size: 0.88rem; font-weight: 700; padding: 14px 28px; border-radius: 8px; box-shadow: 0 4px 14px rgba(34,139,34,0.35); }
+    .ch-btn-outline { background: transparent; color: #1E2D3D !important; font-size: 0.88rem; font-weight: 600; padding: 13px 26px; border-radius: 8px; border: 1.5px solid #CBD5E0; }
+    .ch-hero-phone { font-size: 0.8rem; font-weight: 600; color: #4A5568 !important; margin-top: 18px; }
+    .ch-hero-phone span { color: #228B22 !important; font-size: 0.95rem; font-weight: 800; }
+
+    /* Hero right */
+    .ch-hero-visual { flex: 0 0 340px; display: flex; flex-direction: column; gap: 12px; }
+    .ch-photo-card { border-radius: 18px; overflow: hidden; box-shadow: 0 20px 56px rgba(30,45,61,0.18); }
+    .ch-photo-img { height: 240px; background: linear-gradient(145deg, #D4EDDA 0%, #A3D9A5 40%, #5BAD6F 72%, #228B22 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .ch-stats-row { display: flex; gap: 8px; }
+    .ch-mini-stat { flex: 1; background: #fff; border: 1px solid #E2EAF4; border-radius: 10px; padding: 12px 10px; text-align: center; font-size: 0.68rem; font-weight: 600; color: #1E2D3D !important; line-height: 1.4; box-shadow: 0 2px 8px rgba(30,45,61,0.07); }
+    .ch-mini-stat span { display: block; font-size: 1rem; font-weight: 800; color: #228B22 !important; margin-bottom: 2px; }
+
+    /* Trust bar */
+    .ch-trust-bar { background: #fff; border-top: 1px solid #E8F4E8; border-bottom: 1px solid #E8F4E8; padding: 22px 48px; }
+    .ch-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; }
+    .ch-trust-stat { display: flex; flex-direction: column; align-items: center; padding: 8px 0; }
+    .ch-trust-stat + .ch-trust-stat { border-left: 1px solid #E8F4E8; }
+    .ch-trust-num { display: block; font-size: 1.5rem; font-weight: 800; color: #1E2D3D !important; line-height: 1.1; }
+    .ch-trust-label { display: block; font-size: 0.72rem; color: #6B8099 !important; margin-top: 4px; font-weight: 500; }
+
+    /* Services */
+    .ch-services { background: #F4FBF4; padding: 52px 48px; }
+    .ch-services-heading { text-align: center; font-size: 1.6rem; font-weight: 800; color: #1E2D3D !important; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .ch-services-sub { text-align: center; font-size: 0.88rem; color: #6B8099 !important; margin: 0 0 32px; }
+    .ch-services-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .ch-service-card { background: #fff; border: 1px solid #D4EDD4; border-radius: 14px; padding: 24px 20px; box-shadow: 0 2px 8px rgba(34,139,34,0.06); }
+    .ch-service-icon { font-size: 1.6rem; margin-bottom: 14px; display: flex; width: 44px; height: 44px; background: rgba(34,139,34,0.1); border-radius: 10px; align-items: center; justify-content: center; }
+    .ch-service-card h3 { font-size: 0.9rem; font-weight: 700; color: #1E2D3D !important; margin: 0 0 7px; }
+    .ch-service-card p { font-size: 0.77rem; color: #6B8099 !important; line-height: 1.6; margin: 0; }
+
+    /* About teaser */
+    .ch-about { background: #fff; padding: 52px 48px; display: flex; gap: 56px; align-items: center; }
+    .ch-about-text { flex: 1; }
+    .ch-about-tag { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #228B22 !important; margin-bottom: 14px; }
+    .ch-about-text h2 { font-size: 1.55rem; font-weight: 800; color: #1E2D3D !important; margin: 0 0 14px; letter-spacing: -0.02em; }
+    .ch-about-text p { font-size: 0.86rem; color: #5A7080 !important; line-height: 1.75; max-width: 420px; margin: 0 0 20px; }
+    .ch-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ch-chip { font-size: 0.7rem; font-weight: 600; background: #EDF7ED; color: #1a6b1a !important; border: 1px solid #B4D8B4; padding: 4px 10px; border-radius: 99px; }
+    .ch-about-right { flex: 0 0 230px; display: flex; flex-direction: column; gap: 10px; }
+    .ch-trust-badge { background: #F4FBF4; border: 1px solid #D4EDD4; border-radius: 10px; padding: 11px 16px; font-size: 0.77rem; font-weight: 600; color: #1E2D3D !important; display: flex; align-items: center; gap: 10px; }
+
+    /* Pitch bridge */
+    .pitch-bridge { text-align: center; }
+    .pitch-bridge .container { max-width: 720px; }
+    .pitch-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+    .pitch-pill { padding: 8px 20px; border: 1px solid rgba(34,139,34,0.3); border-radius: 99px; font-size: 0.82rem; font-weight: 600; color: #4ade80; background: rgba(34,139,34,0.08); }
+
+    /* Branding shared */
+    .branding-sub { font-size: 1rem; font-weight: 700; color: var(--text); margin: 48px 0 20px; letter-spacing: -0.01em; }
+    .branding-sub:first-of-type { margin-top: 40px; }
+    .color-palette-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .color-swatch-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .color-swatch { width: 88px; height: 72px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .color-swatch-hex { font-size: 0.68rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.04em; }
+    .color-swatch-name { font-size: 0.62rem; color: var(--text-muted); }
+    .type-showcase { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 32px 36px; max-width: 680px; }
+    .type-display { font-size: 3rem; font-weight: 800; color: var(--text); line-height: 1; margin-bottom: 4px; }
+    .type-descriptor { font-size: 0.8rem; color: var(--accent-light); margin-bottom: 24px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .type-weights { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .type-weight-item { font-size: 0.8rem; color: var(--text-2); }
+    .type-weight-item strong { color: var(--text); }
+    .type-sample-h { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 8px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; }
+    .type-sample-b { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; }
+    .logo-concept-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+    .logo-variant { border-radius: 12px; padding: 24px 28px; display: flex; flex-direction: column; gap: 18px; flex: 1; min-width: 160px; }
+    .logo-variant-light { background: #fff; }
+    .logo-variant-dark { background: #1E2D3D; }
+    .logo-variant-green { background: #228B22; }
+    .lv-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.3); font-family: 'Inter', sans-serif; }
+    .logo-variant-dark .lv-label, .logo-variant-green .lv-label { color: rgba(255,255,255,0.45); }
+    .logo-lockup { display: flex; align-items: center; gap: 10px; }
+    .logo-lockup-icon { font-size: 1.5rem; line-height: 1; }
+    .logo-lockup-text { display: flex; flex-direction: column; }
+    .logo-lockup-name { font-size: 1.05rem; font-weight: 800; color: #1E2D3D; line-height: 1.1; letter-spacing: -0.02em; font-family: 'Inter', sans-serif; }
+    .logo-lockup-name-w { color: #fff; }
+    .logo-lockup-sub { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.2em; color: #228B22; font-family: 'Inter', sans-serif; margin-top: 1px; }
+    .logo-lockup-sub-w { color: rgba(255,255,255,0.6); }
+    .logo-icon-wrap { display: flex; align-items: center; justify-content: center; flex: 1; font-size: 2.2rem; }
+    .ui-demo-box { background: #F8F9FA; border-radius: 12px; padding: 32px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; margin-top: 16px; }
+    .ui-demo-group h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8E8E93; margin: 0 0 12px; }
+    .ui-demo-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .uidemo-btn-primary { background: #228B22; color: #fff; font-size: 0.82rem; font-weight: 700; padding: 10px 22px; border-radius: 8px; border: none; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-outline { background: transparent; color: #1E2D3D; font-size: 0.82rem; font-weight: 600; padding: 9px 22px; border-radius: 8px; border: 2px solid #1E2D3D; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-ghost { background: transparent; color: #228B22; font-size: 0.82rem; font-weight: 600; padding: 9px 22px; border-radius: 8px; border: 2px solid #228B22; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-input { width: 220px; padding: 10px 14px; border: 1.5px solid #D1DCE8; border-radius: 8px; font-size: 0.82rem; font-family: 'Inter', sans-serif; color: #1E2D3D; background: #fff; outline: none; cursor: default; }
+    .uidemo-card { background: #fff; border: 1px solid #D4EDD4; border-top: 3px solid #228B22; border-radius: 10px; padding: 16px 18px; width: 200px; }
+    .uidemo-card-icon { font-size: 1.3rem; margin-bottom: 8px; }
+    .uidemo-card h5 { font-size: 0.82rem; font-weight: 700; color: #1E2D3D; margin: 0 0 4px; }
+    .uidemo-card p { font-size: 0.72rem; color: #4A5568; margin: 0; line-height: 1.5; }
+
+    /* Email */
+    .email-section .section-subheading { max-width: 640px; }
+    .email-mockup-wrap { max-width: 600px; margin: 48px auto 0; border-radius: 12px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.07); }
+    .email-chrome { background: #2A2A2A; padding: 10px 16px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .email-chrome-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .email-chrome-meta { margin-left: 10px; display: flex; flex-direction: column; gap: 2px; }
+    .email-chrome-from, .email-chrome-subject { font-size: 0.68rem; color: #aaa; font-family: 'Inter', sans-serif; }
+    .email-body { background: #ffffff; font-family: 'Inter', -apple-system, sans-serif; color: #333; }
+    .email-logo-band { background: #1E2D3D; padding: 22px 32px; text-align: center; }
+    .email-logo-text { color: #fff; font-size: 1.15rem; font-weight: 800; font-family: 'Inter', sans-serif; }
+    .email-logo-text span { color: #228B22; }
+    .email-content { padding: 32px 36px; }
+    .email-h2 { color: #1E2D3D; font-size: 1.35rem; font-weight: 800; margin: 0 0 12px; font-family: 'Inter', sans-serif; }
+    .email-p { color: #555; font-size: 0.88rem; line-height: 1.7; margin: 0 0 18px; font-family: 'Inter', sans-serif; }
+    .email-steps-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1E2D3D; margin-bottom: 14px; font-family: 'Inter', sans-serif; }
+    .email-step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; padding: 14px 16px; background: #EDF7ED; border-radius: 8px; }
+    .email-step-num { background: #228B22; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.78rem; flex-shrink: 0; font-family: 'Inter', sans-serif; }
+    .email-step-text strong { display: block; color: #1E2D3D; font-size: 0.82rem; font-weight: 700; margin-bottom: 2px; font-family: 'Inter', sans-serif; }
+    .email-step-text p { color: #555; font-size: 0.78rem; line-height: 1.5; margin: 0; font-family: 'Inter', sans-serif; }
+    .email-cta-wrap { text-align: center; margin: 26px 0; }
+    .email-cta-btn { display: inline-block; background: #228B22; color: #fff; font-size: 0.88rem; font-weight: 700; padding: 14px 32px; border-radius: 99px; text-decoration: none; font-family: 'Inter', sans-serif; }
+    .email-reminder { background: #EDF7ED; border-left: 3px solid #228B22; border-radius: 4px; padding: 14px 18px; font-size: 0.82rem; color: #333; line-height: 1.7; margin: 18px 0; font-family: 'Inter', sans-serif; }
+    .email-footer-bar { background: #F8F9FA; padding: 18px 32px; text-align: center; border-top: 1px solid #E8EDF3; font-size: 0.72rem; color: #888; line-height: 1.7; font-family: 'Inter', sans-serif; }
+    .email-footer-bar a { color: #228B22; }
+    .email-credit { text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 16px; letter-spacing: 0.06em; }
+
+    /* PPC */
+    .serp-frame { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 56px rgba(0,0,0,0.4); max-width: 780px; }
+    .serp-chrome { background: #f8f9fa; border-bottom: 1px solid #e8eaed; padding: 10px 16px; }
+    .serp-search-bar { background: #fff; border: 1px solid #dfe1e5; border-radius: 24px; padding: 7px 16px; display: flex; align-items: center; gap: 10px; max-width: 500px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .serp-search-icon { font-size: 0.8rem; color: #4285f4; }
+    .serp-search-text { font-size: 0.88rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .serp-body { padding: 14px 20px 6px; }
+    .serp-ads-label { font-size: 0.68rem; color: #70757a; font-family: 'Inter', sans-serif; margin-bottom: 4px; }
+    .google-ad-card { padding: 12px 0 14px; border-bottom: 1px solid #e8eaed; }
+    .google-ad-card:last-child { border-bottom: none; }
+    .google-ad-top-line { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+    .google-ad-badge { display: inline-flex; align-items: center; border: 1px solid #70757a; border-radius: 3px; padding: 1px 5px; font-size: 0.62rem; font-weight: 600; color: #70757a; font-family: 'Inter', sans-serif; flex-shrink: 0; }
+    .google-ad-url { font-size: 0.78rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .google-ad-headline { font-size: 1.05rem; font-weight: 400; color: #1a0dab; line-height: 1.4; text-decoration: underline; margin-bottom: 2px; cursor: default; font-family: 'Inter', sans-serif; }
+    .google-ad-desc { font-size: 0.82rem; color: #4d5156; line-height: 1.58; margin: 5px 0 7px; font-family: 'Inter', sans-serif; }
+    .google-ad-ext { display: flex; flex-wrap: wrap; gap: 0; margin-top: 4px; }
+    .google-ad-ext span { font-size: 0.78rem; color: #1a0dab; padding-right: 14px; cursor: default; text-decoration: underline; font-family: 'Inter', sans-serif; }
+    .google-ad-ext span::after { content: ' ·'; text-decoration: none; color: #70757a; margin-left: 6px; }
+    .google-ad-ext span:last-child::after { content: ''; }
+    .targeting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 680px; margin-top: 16px; }
+    .targeting-row { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .targeting-key { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; flex-shrink: 0; }
+    .targeting-val { font-size: 0.82rem; color: var(--text-2); text-align: right; line-height: 1.4; }
+    .perf-benchmarks { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 40px; padding: 28px 32px; background: rgba(34,139,34,0.06); border: 1px solid rgba(34,139,34,0.18); border-radius: 12px; max-width: 680px; }
+    .perf-stat { text-align: center; flex: 1; min-width: 120px; }
+    .perf-num { display: block; font-size: 1.75rem; font-weight: 800; color: #4ade80; line-height: 1.1; margin-bottom: 4px; }
+    .perf-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.04em; }
+
+    /* SEO */
+    .keyword-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .keyword-card { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 9px 14px; font-size: 0.82rem; color: var(--text-2); }
+    .keyword-vol { font-size: 0.65rem; font-weight: 700; background: rgba(34,139,34,0.15); color: #4ade80; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+    .gbp-wrap { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-top: 16px; }
+    .gbp-card { background: #fff; border-radius: 14px; overflow: hidden; width: 340px; box-shadow: 0 12px 40px rgba(0,0,0,0.35); flex-shrink: 0; }
+    .gbp-map { height: 110px; background: linear-gradient(135deg, #C8E6C9 0%, #A5D6A7 50%, #66BB6A 100%); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: #2e7d32; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; }
+    .gbp-info { padding: 16px 18px; }
+    .gbp-name { font-size: 1rem; font-weight: 800; color: #1A1A2E; font-family: 'Inter', sans-serif; margin-bottom: 3px; }
+    .gbp-cat { font-size: 0.75rem; color: #555; font-family: 'Inter', sans-serif; margin-bottom: 6px; }
+    .gbp-stars { font-size: 0.82rem; color: #F9A825; font-family: 'Inter', sans-serif; margin-bottom: 10px; }
+    .gbp-stars span { color: #555; font-size: 0.72rem; }
+    .gbp-detail { font-size: 0.72rem; color: #555; line-height: 1.8; font-family: 'Inter', sans-serif; border-top: 1px solid #eee; padding-top: 10px; margin-top: 6px; }
+    .gbp-actions { display: flex; border-top: 1px solid #eee; margin-top: 10px; }
+    .gbp-action { flex: 1; text-align: center; padding: 10px 4px; font-size: 0.72rem; font-weight: 600; color: #228B22; font-family: 'Inter', sans-serif; border-right: 1px solid #eee; cursor: default; }
+    .gbp-action:last-child { border-right: none; }
+    .gbp-note { flex: 1; min-width: 260px; max-width: 380px; }
+    .gbp-note h4 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin: 0 0 14px; }
+    .gbp-note ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .gbp-note ul li { font-size: 0.82rem; color: var(--text-2); padding-left: 20px; position: relative; line-height: 1.5; }
+    .gbp-note ul li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 700; }
+    .seo-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; margin-top: 16px; }
+    .seo-steps::before { content: ''; position: absolute; top: 44px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, rgba(34,139,34,0.4), rgba(74,222,128,0.4)); z-index: 0; }
+    .seo-step { background: #1f2540; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px 22px; position: relative; z-index: 1; }
+    .seo-step-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #228B22, #4ade80); color: #fff; font-size: 0.9rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; position: relative; z-index: 2; box-shadow: 0 0 0 4px #1f2540; }
+    .seo-step h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin: 0 0 8px; }
+    .seo-step p { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+    .rank-table-wrap { overflow-x: auto; margin-top: 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .rank-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    .rank-table th { background: rgba(34,139,34,0.1); color: #4ade80; text-align: left; padding: 12px 16px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .rank-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.83rem; color: var(--text-2); }
+    .rank-table tbody tr:last-child td { border-bottom: none; }
+    .rank-up { color: #4ade80; font-weight: 700; }
+    .rank-new { color: #228B22; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .ch-hero { padding: 48px 32px; }
+      .ch-hero h1 { font-size: 2rem; }
+      .ch-hero-visual { display: none; }
+      .ch-services-row { grid-template-columns: 1fr 1fr; }
+      .ch-trust-grid { grid-template-columns: 1fr 1fr; }
+      .ch-about { flex-direction: column; gap: 28px; }
+      .ch-header { padding: 0 20px; }
+      .ch-nav { display: none; }
+      .seo-steps { grid-template-columns: 1fr; }
+      .seo-steps::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .ch-services { padding: 40px 24px; }
+      .targeting-grid { grid-template-columns: 1fr; }
+      .email-chrome-meta { display: none; }
+      .email-content { padding: 24px 20px; }
+    }
+    @media (max-width: 540px) {
+      .ch-services-row { grid-template-columns: 1fr; }
+      .ch-hero { padding: 36px 20px; }
+      .ch-header { height: auto; padding: 14px 20px; }
+      .perf-benchmarks { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/en/" class="nav-logo"><span class="logo-n">N</span>okto Studio</a>
+      <ul class="nav-links">
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/services/">Services</a></li>
+        <li><a href="/en/portfolio/">Portfolio</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/faq/">FAQ</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <a href="/en/projects/chiropractic/" class="lang-btn active">EN</a>
+          <span>|</span>
+          <a href="/sk/" class="lang-btn">SK</a>
+        </div>
+        <a href="/en/contact/" class="btn btn-primary btn-sm">Free Strategy Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+  <a href="/en/about/">About</a>
+  <a href="/en/services/">Services</a>
+  <a href="/en/portfolio/">Portfolio</a>
+  <a href="/en/blog/">Blog</a>
+  <a href="/en/faq/">FAQ</a>
+  <a href="/en/contact/">Contact</a>
+  <div class="lang-toggle">
+    <a href="/en/projects/chiropractic/" class="lang-btn active">EN</a>
+    <span>|</span>
+    <a href="/sk/" class="lang-btn">SK</a>
+  </div>
+  <a href="/en/contact/" class="btn btn-primary">Free Strategy Call</a>
+</nav>
+
+<!-- ===================== INTRO LABEL ===================== -->
+<div class="preview-outer">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px 20px; display:flex; align-items:center; gap:14px;">
+    <span class="section-label" style="margin:0;">US Chiropractic & Wellness, Sample Website</span>
+    <span style="font-size:0.75rem; color:var(--text-muted);">Scroll down to see the full branding package, ads &amp; SEO strategy</span>
+  </div>
+
+  <div style="padding:0 24px 0;">
+    <div class="preview-frame">
+      <section class="ch-preview">
+
+        <div class="ch-header">
+          <div class="ch-logo">
+            <span>🌿</span>
+            <span>Align<span>Well</span> Chiropractic</span>
+          </div>
+          <ul class="ch-nav">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">New Patients</a></li>
+            <li><a href="#">About Dr. Hayes</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="ch-btn">Book Appointment</div>
+        </div>
+
+        <div class="ch-hero">
+          <div class="ch-hero-text">
+            <div class="ch-eyebrow">🌿 [City]'s Trusted Chiropractic Care · Same-Day Visits</div>
+            <h1>Move Better.<br>Live <span>Better.</span></h1>
+            <p>Natural, hands-on relief for back pain, neck pain, headaches, and auto injuries. We accept most insurance and offer same-week new patient appointments.</p>
+            <div class="ch-hero-btns">
+              <div class="ch-btn-primary">Book Your First Visit</div>
+              <div class="ch-btn-outline">Call (555) 887-3200</div>
+            </div>
+            <div class="ch-hero-phone">🟢 &nbsp;Open Now · Same-Day Urgent Appointments Available<br><span>Most Insurance Accepted · Flexible Payment Plans</span></div>
+          </div>
+          <div class="ch-hero-visual">
+            <div class="ch-photo-card">
+              <div class="ch-photo-img">🌿</div>
+            </div>
+            <div class="ch-stats-row">
+              <div class="ch-mini-stat"><span>2,800+</span>Patients Treated</div>
+              <div class="ch-mini-stat"><span>★ 4.9</span>Google Rating</div>
+              <div class="ch-mini-stat"><span>12+</span>Years Practice</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ch-trust-bar">
+          <div class="ch-trust-grid">
+            <div class="ch-trust-stat">
+              <span class="ch-trust-num" style="color:#F9A825 !important; font-size:1.3rem !important;">★ 4.9</span>
+              <span class="ch-trust-label">320+ Google Reviews</span>
+            </div>
+            <div class="ch-trust-stat">
+              <span class="ch-trust-num">12+</span>
+              <span class="ch-trust-label">Years Serving [City]</span>
+            </div>
+            <div class="ch-trust-stat">
+              <span class="ch-trust-num" style="color:#228B22 !important;">Same-Day</span>
+              <span class="ch-trust-label">Urgent Appointments</span>
+            </div>
+            <div class="ch-trust-stat">
+              <span class="ch-trust-num">Most</span>
+              <span class="ch-trust-label">Insurance Plans Accepted</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ch-services">
+          <h2 class="ch-services-heading">Whole-Body Wellness, Under One Roof</h2>
+          <p class="ch-services-sub">From acute pain relief to long-term wellness plans — we treat the whole person, not just the symptom.</p>
+          <div class="ch-services-row">
+            <div class="ch-service-card">
+              <span class="ch-service-icon">🦴</span>
+              <h3>Chiropractic Adjustments</h3>
+              <p>Precise spinal adjustments to restore alignment, reduce pain, and improve nervous system function.</p>
+            </div>
+            <div class="ch-service-card">
+              <span class="ch-service-icon">🚗</span>
+              <h3>Auto Injury Rehab</h3>
+              <p>Whiplash, neck pain, and accident trauma treated with a documented care plan accepted by insurance carriers.</p>
+            </div>
+            <div class="ch-service-card">
+              <span class="ch-service-icon">💆</span>
+              <h3>Therapeutic Massage</h3>
+              <p>Soft tissue therapy paired with adjustments for faster recovery and deeper pain relief.</p>
+            </div>
+            <div class="ch-service-card">
+              <span class="ch-service-icon">🏃</span>
+              <h3>Sports Injury Care</h3>
+              <p>Performance-focused treatment for athletes and active adults — get back in the game faster and stronger.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ch-about">
+          <div class="ch-about-text">
+            <div class="ch-about-tag">About AlignWell</div>
+            <h2>Board-Certified Care.<br>Lasting Results.</h2>
+            <p>Dr. Marcus Hayes, DC has helped over 2,800 patients in [City] recover naturally from pain and injury since 2012. Our approach combines evidence-based chiropractic care, therapeutic massage, and personalised rehabilitation — no unnecessary visits, just real results.</p>
+            <div class="ch-chips">
+              <span class="ch-chip">Blue Cross Blue Shield</span>
+              <span class="ch-chip">Aetna</span>
+              <span class="ch-chip">Cigna</span>
+              <span class="ch-chip">United Healthcare</span>
+              <span class="ch-chip">Medicare</span>
+              <span class="ch-chip">Auto Insurance</span>
+            </div>
+          </div>
+          <div class="ch-about-right">
+            <div class="ch-trust-badge">🏆 Palmer College Graduate, Board Certified DC</div>
+            <div class="ch-trust-badge">⭐ 4.9 / 5.0 — 320+ Google Reviews</div>
+            <div class="ch-trust-badge">🔒 HIPAA Compliant Practice</div>
+            <div class="ch-trust-badge">💳 Most Insurance Accepted</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+  <p class="preview-label">Mockup — not a live site. Designed by Nokto Studio as a sample presentation.</p>
+</div>
+
+
+<!-- ===================== PITCH BRIDGE ===================== -->
+<section class="section pitch-bridge">
+  <div class="container">
+    <span class="section-label">What You Just Saw</span>
+    <h2 class="section-heading reveal">This is what we design<br>for your chiropractic practice.</h2>
+    <div class="divider divider-center"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 32px;">
+      Every element above — the warm layout, trust signals, service structure, and appointment-focused copy — is crafted specifically for US chiropractic and wellness practices. Paired with our branding, ads, and SEO work, it becomes a patient-generating machine that runs 24/7.
+    </p>
+    <div class="pitch-pills">
+      <span class="pitch-pill">Built for appointment conversion</span>
+      <span class="pitch-pill">Local SEO-ready from day one</span>
+      <span class="pitch-pill">Insurance billing language included</span>
+      <span class="pitch-pill">Mobile-first design</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== BRANDING PACK ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 01</span>
+    <h2 class="section-heading reveal">Complete Chiropractic Branding Package</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:600px;">A brand identity built around natural wellness, trust, and approachability. Every asset your practice needs — delivered as a cohesive system that works across every touchpoint.</p>
+
+    <h3 class="branding-sub">Brand Color Palette</h3>
+    <div class="color-palette-row">
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#F4FBF4; border-color:rgba(255,255,255,0.2);"></div>
+        <span class="color-swatch-hex">#F4FBF4</span>
+        <span class="color-swatch-name">Wellness White</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#228B22;"></div>
+        <span class="color-swatch-hex">#228B22</span>
+        <span class="color-swatch-name">Nature Green</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#1E2D3D;"></div>
+        <span class="color-swatch-hex">#1E2D3D</span>
+        <span class="color-swatch-name">Deep Slate</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#6B8099;"></div>
+        <span class="color-swatch-hex">#6B8099</span>
+        <span class="color-swatch-name">Warm Gray</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#F5A623;"></div>
+        <span class="color-swatch-hex">#F5A623</span>
+        <span class="color-swatch-name">Energy Orange</span>
+      </div>
+    </div>
+
+    <h3 class="branding-sub">Typography System</h3>
+    <div class="type-showcase">
+      <div class="type-display">Inter</div>
+      <div class="type-descriptor">Natural · Welcoming · Professional</div>
+      <div class="type-weights">
+        <span class="type-weight-item"><strong style="font-weight:800;">800</strong> — Headlines</span>
+        <span class="type-weight-item"><strong style="font-weight:700;">700</strong> — Subheadings</span>
+        <span class="type-weight-item"><strong style="font-weight:600;">600</strong> — Labels</span>
+        <span class="type-weight-item"><strong style="font-weight:400;">400</strong> — Body</span>
+      </div>
+      <div class="type-sample-h">Your Best Self Starts Here</div>
+      <div class="type-sample-b">Our chiropractic team takes a whole-body approach to pain relief and wellness, treating the root cause — not just the symptom. Whether you're recovering from an injury or seeking long-term health, we're here to help you move and feel your best every day.</div>
+    </div>
+
+    <h3 class="branding-sub">Logo Concept</h3>
+    <div class="logo-concept-grid">
+      <div class="logo-variant logo-variant-light">
+        <span class="lv-label">On White</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🌿</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name">AlignWell</span>
+            <span class="logo-lockup-sub">CHIROPRACTIC & WELLNESS</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-dark">
+        <span class="lv-label">On Dark</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🌿</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name logo-lockup-name-w">AlignWell</span>
+            <span class="logo-lockup-sub">CHIROPRACTIC & WELLNESS</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-green">
+        <span class="lv-label">Icon Mark</span>
+        <div class="logo-icon-wrap">🌿</div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem; color:var(--text-muted); margin-top:20px;">Full package includes: wordmark, stacked variant, icon mark, colour guide, and usage rules.</p>
+
+    <h3 class="branding-sub" style="margin-top:56px;">UI Component Library</h3>
+    <p style="font-size:0.85rem; color:var(--text-2); margin-bottom:0;">Every button, input, and card — built for patient trust and appointment conversion.</p>
+    <div class="ui-demo-box">
+      <div class="ui-demo-group">
+        <h4>Buttons</h4>
+        <div class="ui-demo-btns">
+          <button class="uidemo-btn-primary">Book Appointment</button>
+          <button class="uidemo-btn-outline">Learn More</button>
+          <button class="uidemo-btn-ghost">Contact Us</button>
+        </div>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Form Input</h4>
+        <input class="uidemo-input" type="text" placeholder="Your full name" readonly>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Service Card</h4>
+        <div class="uidemo-card">
+          <div class="uidemo-card-icon">🦴</div>
+          <h5>Spinal Adjustments</h5>
+          <p>Precise relief. Same-day available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== EMAIL SAMPLE ===================== -->
+<section class="section email-section">
+  <div class="container">
+    <span class="section-label">Deliverable 02</span>
+    <h2 class="section-heading reveal">New Patient Welcome Email — Sample</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal">An automated HTML email that fires the moment a new patient books their first appointment. It reduces no-shows, preps the patient, and starts the relationship on a warm, professional note.</p>
+
+    <div class="email-mockup-wrap">
+      <div class="email-chrome">
+        <span class="email-chrome-dot" style="background:#FF5F57;"></span>
+        <span class="email-chrome-dot" style="background:#FFBD2E;"></span>
+        <span class="email-chrome-dot" style="background:#28C840;"></span>
+        <div class="email-chrome-meta">
+          <span class="email-chrome-from">From: AlignWell Chiropractic &lt;hello@alignwell.com&gt;</span>
+          <span class="email-chrome-subject">Subject: You're Booked! Here's What to Expect at AlignWell</span>
+        </div>
+      </div>
+      <div class="email-body">
+        <div class="email-logo-band">
+          <span class="email-logo-text">🌿 Align<span>Well</span> Chiropractic</span>
+        </div>
+        <div class="email-content">
+          <h2 class="email-h2">Welcome to AlignWell, [First Name]! 🌿</h2>
+          <p class="email-p">We're so glad you chose AlignWell for your chiropractic care. Your appointment is confirmed, and we can't wait to help you start feeling better. Here's everything you need to know before you arrive.</p>
+
+          <div class="email-steps-label">Before your first visit:</div>
+
+          <div class="email-step">
+            <div class="email-step-num">1</div>
+            <div class="email-step-text">
+              <strong>Your appointment is confirmed</strong>
+              <p>We've reserved your slot. You'll receive a reminder text 24 hours before — no action needed from you right now.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">2</div>
+            <div class="email-step-text">
+              <strong>Complete your health intake form online</strong>
+              <p>Save 15 minutes in the office — fill out your new patient form securely online using the link below. Takes about 5 minutes.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">3</div>
+            <div class="email-step-text">
+              <strong>What to wear &amp; bring</strong>
+              <p>Wear comfortable, loose-fitting clothing. Bring your insurance card if you have one — we'll handle the verification before your appointment.</p>
+            </div>
+          </div>
+
+          <div class="email-cta-wrap">
+            <a class="email-cta-btn" href="#">Complete Your Intake Form →</a>
+          </div>
+
+          <div class="email-reminder">
+            📅 &nbsp;<strong>Your Appointment:</strong> [Day], [Date] at [Time]<br>
+            📍 &nbsp;412 Wellness Drive, Suite 108, [City], [State] [ZIP]<br>
+            📞 &nbsp;(555) 887-3200<br>
+            🅿️ &nbsp;Free parking directly in front of our office.
+          </div>
+
+          <p class="email-p">Questions before your visit? Reply to this email or call us — we're happy to help and usually respond within a couple of hours.</p>
+          <p class="email-p" style="margin-bottom:0;">Looking forward to meeting you,<br><strong style="color:#1E2D3D;">Dr. Marcus Hayes, DC &amp; the AlignWell Team</strong></p>
+        </div>
+        <div class="email-footer-bar">
+          AlignWell Chiropractic &amp; Wellness · 412 Wellness Drive, Suite 108, [City], [State]<br>
+          (555) 887-3200 · hello@alignwell.com<br>
+          <small>© 2026 AlignWell Chiropractic. · <a href="#">Unsubscribe</a> · <a href="#">Privacy Policy</a></small>
+        </div>
+      </div>
+    </div>
+    <p class="email-credit">Nokto Studio email design — custom-coded HTML for deliverability, mobile rendering, and on-brand warmth.</p>
+  </div>
+</section>
+
+
+<!-- ===================== PPC SHOWCASE ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 03</span>
+    <h2 class="section-heading reveal">Google Ads — Sample Campaigns We Run for Chiropractors</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Three high-intent campaign types targeting your best patient segments — general pain, auto injury, and sports performance. We write the copy, build the landing pages, and manage every dollar.</p>
+
+    <div class="serp-frame">
+      <div class="serp-chrome">
+        <div class="serp-search-bar">
+          <span class="serp-search-icon">🔍</span>
+          <span class="serp-search-text">chiropractor near me</span>
+        </div>
+      </div>
+      <div class="serp-body">
+        <div class="serp-ads-label">Sponsored</div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">alignwell.com › new-patients</span>
+          </div>
+          <div class="google-ad-headline">AlignWell Chiropractic | Back Pain? We Help Today</div>
+          <div class="google-ad-headline">Same-Day Appointments · Most Insurance Accepted</div>
+          <div class="google-ad-desc">Neck pain, back pain, headaches, or injury? Dr. Hayes has helped 2,800+ patients in [City] recover naturally. New patient special — call or book online for same-week care.</div>
+          <div class="google-ad-ext">
+            <span>Book Online</span>
+            <span>New Patient Offer</span>
+            <span>Services We Offer</span>
+            <span>Get Directions</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">alignwell.com › auto-injury</span>
+          </div>
+          <div class="google-ad-headline">Auto Accident Chiropractor [City] | Whiplash Relief</div>
+          <div class="google-ad-headline">We Accept Auto Insurance — No Out-of-Pocket Cost</div>
+          <div class="google-ad-desc">Injured in a car accident in [City]? Don't wait — untreated whiplash can cause long-term damage. AlignWell works directly with auto insurance carriers. Same-day injury appointments available.</div>
+          <div class="google-ad-ext">
+            <span>Free Injury Consult</span>
+            <span>Insurance Info</span>
+            <span>Whiplash Treatment</span>
+            <span>Call Now</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">alignwell.com › sports-injury</span>
+          </div>
+          <div class="google-ad-headline">Sports Chiropractor [City] | Get Back in the Game</div>
+          <div class="google-ad-headline">Performance-Focused Care for Athletes — All Levels</div>
+          <div class="google-ad-desc">Running, CrossFit, golf, or team sports — AlignWell treats sports injuries with a performance-first approach. Faster recovery, better movement, stronger performance. Book your sports eval today.</div>
+          <div class="google-ad-ext">
+            <span>Sports Evaluation</span>
+            <span>Our Approach</span>
+            <span>Patient Results</span>
+            <span>Book Appointment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Campaign Targeting Overview</h3>
+    <div class="targeting-grid">
+      <div class="targeting-row">
+        <span class="targeting-key">Audience</span>
+        <span class="targeting-val">Adults 25–60, homeowners, active lifestyle signals</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Location Radius</span>
+        <span class="targeting-val">5–15 miles from your practice</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Ad Schedule</span>
+        <span class="targeting-val">Mon–Sat, 7am–8pm + Sunday morning for injury searches</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Monthly Budget Range</span>
+        <span class="targeting-val">$600–$2,000/mo depending on market competition</span>
+      </div>
+    </div>
+
+    <div class="perf-benchmarks">
+      <div class="perf-stat">
+        <span class="perf-num">9.1%</span>
+        <span class="perf-label">Average CTR</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">$28–$55</span>
+        <span class="perf-label">Cost Per Lead</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">20–50</span>
+        <span class="perf-label">Monthly Patient Inquiries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SEO SHOWCASE ===================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Deliverable 04</span>
+    <h2 class="section-heading reveal">Local SEO — What We Do for Your Practice</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Rank for the searches your ideal patients are running right now. We handle everything — your Google Business Profile, on-page SEO, local citations, and a monthly content strategy that compounds over time.</p>
+
+    <h3 class="branding-sub">Target Keyword Clusters</h3>
+    <div class="keyword-grid">
+      <div class="keyword-card">chiropractor near me <span class="keyword-vol">74K/mo</span></div>
+      <div class="keyword-card">chiropractor [city] <span class="keyword-vol">9.4K/mo</span></div>
+      <div class="keyword-card">back pain relief [city] <span class="keyword-vol">5.8K/mo</span></div>
+      <div class="keyword-card">auto accident chiropractor [city] <span class="keyword-vol">3.2K/mo</span></div>
+      <div class="keyword-card">whiplash treatment near me <span class="keyword-vol">11K/mo</span></div>
+      <div class="keyword-card">neck pain chiropractor [city] <span class="keyword-vol">4.7K/mo</span></div>
+      <div class="keyword-card">sports injury chiropractor [city] <span class="keyword-vol">2.9K/mo</span></div>
+      <div class="keyword-card">chiropractic adjustment near me <span class="keyword-vol">28K/mo</span></div>
+      <div class="keyword-card">best chiropractor [city] <span class="keyword-vol">6.1K/mo</span></div>
+      <div class="keyword-card">headache relief chiropractor <span class="keyword-vol">8.3K/mo</span></div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Google Business Profile — Fully Optimized</h3>
+    <div class="gbp-wrap">
+      <div class="gbp-card">
+        <div class="gbp-map">📍 &nbsp;Map View</div>
+        <div class="gbp-info">
+          <div class="gbp-name">AlignWell Chiropractic</div>
+          <div class="gbp-cat">🌿 Chiropractor · <span style="color:#228B22; font-weight:700;">Open Now</span></div>
+          <div class="gbp-stars">★★★★★ <span>4.9 (320 reviews)</span></div>
+          <div class="gbp-detail">
+            📍 412 Wellness Drive, Suite 108, [City], [State]<br>
+            📞 (555) 887-3200<br>
+            🕐 Mon–Fri: 8am–6pm · Sat: 9am–1pm<br>
+            🌐 alignwell.com
+          </div>
+          <div class="gbp-actions">
+            <div class="gbp-action">Directions</div>
+            <div class="gbp-action">Website</div>
+            <div class="gbp-action">Call</div>
+          </div>
+        </div>
+      </div>
+      <div class="gbp-note">
+        <h4>What we optimise:</h4>
+        <ul>
+          <li>Chiropractic service categories set for map pack dominance</li>
+          <li>Weekly posts — patient wins, wellness tips, and educational content</li>
+          <li>Photo uploads — exterior, treatment rooms, Dr. Hayes in action</li>
+          <li>Review generation sequence triggered after each patient visit</li>
+          <li>Citations across 40+ health directories (Healthgrades, ZocDoc, Yelp Health)</li>
+          <li>Structured data markup (MedicalBusiness schema) for rich results</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Our 3-Step SEO Process</h3>
+    <div class="seo-steps">
+      <div class="seo-step">
+        <div class="seo-step-num">1</div>
+        <h3>Audit</h3>
+        <p>We analyse your current rankings, GBP health, citation consistency, competitor positioning, and site speed. You get a prioritised action report before we touch anything.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">2</div>
+        <h3>Optimise</h3>
+        <p>Service page SEO, GBP category optimisation, MedicalBusiness schema, local citation building, and Core Web Vitals fixes to make every visit count.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">3</div>
+        <h3>Grow</h3>
+        <p>Monthly wellness content, link acquisition, patient review generation, and live rank tracking — so you see exactly where you stand every single month.</p>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Sample Rank Tracking — Before vs. After 90 Days</h3>
+    <div class="rank-table-wrap">
+      <table class="rank-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Before</th>
+            <th>After 90 Days</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>chiropractor [city]</td>
+            <td>#24</td>
+            <td>#3</td>
+            <td class="rank-up">↑ 21 positions</td>
+          </tr>
+          <tr>
+            <td>back pain chiropractor [city]</td>
+            <td>#38</td>
+            <td>#6</td>
+            <td class="rank-up">↑ 32 positions</td>
+          </tr>
+          <tr>
+            <td>auto accident chiropractor [city]</td>
+            <td>Not ranked</td>
+            <td>#9</td>
+            <td class="rank-new">New entry</td>
+          </tr>
+          <tr>
+            <td>whiplash treatment [city]</td>
+            <td>#17</td>
+            <td>#4</td>
+            <td class="rank-up">↑ 13 positions</td>
+          </tr>
+          <tr>
+            <td>best chiropractor [city]</td>
+            <td>#29</td>
+            <td>#5</td>
+            <td class="rank-up">↑ 24 positions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CTA ===================== -->
+<section class="section cta-section bg-2">
+  <div class="container">
+    <span class="section-label">Let's Get Started</span>
+    <h2 class="reveal">Ready to fill your<br>appointment book?</h2>
+    <div class="divider divider-center" style="margin:20px auto 24px;"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 36px;">
+      Book a free 30-minute strategy call. We'll research your market, identify your biggest growth opportunities, and come back with a real plan — no templates, no commitment.
+    </p>
+    <a href="/en/contact/" class="btn btn-primary btn-lg">Book Your Free Strategy Call</a>
+    <p class="form-note" style="margin-top:20px; text-align:center;">12h response · Wellness practice specialists · Real results</p>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo"><span class="logo-n">N</span>okto Studio</a>
+        <p class="footer-tagline">"Quality work.<br>Always on time."</p>
+        <p class="footer-sub">Slovakia-based. Internationally minded.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/portfolio/">Portfolio</a></li>
+            <li><a href="/en/blog/">Blog</a></li>
+            <li><a href="/en/faq/">FAQ</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/en/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">flamia.studio</a></li>
+            <li><a href="https://dolinajjr.sk" target="_blank" rel="noopener noreferrer">dolinajjr.sk</a></li>
+            <li><a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">peterkocur.sk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nokto Studio. All rights reserved.</p>
+      <p class="footer-badges">Quality work · Always on time · Real results</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Back to top">
+  <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="../../../assets/js/cookie-banner.js"></script>
+<script src="../../../assets/js/nav.js"></script>
+<script src="../../../assets/js/animations.js"></script>
+</body>
+</html>

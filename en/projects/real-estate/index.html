@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Agent Marketing — What We Build for US Realtors | Nokto Studio</title>
+  <meta name="description" content="See exactly what Nokto Studio builds for US real estate agents — website design, branding, Google Ads, local SEO, and lead nurture email, all in one package.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/main.css">
+  <link rel="stylesheet" href="../../../assets/css/components.css">
+  <link rel="stylesheet" href="../../../assets/css/animations.css">
+  <style>
+    body { padding-top: 72px; }
+
+    .preview-outer { background: var(--bg); padding: 48px 0 0; }
+    .preview-frame { position: relative; border: 2px dashed rgba(37,99,235,0.35); border-radius: 14px; overflow: hidden; max-width: 1200px; margin: 0 auto; }
+    .preview-label { text-align: center; font-size: 0.72rem; color: rgba(37,99,235,0.55); letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 0 14px; margin: 0; background: var(--bg); }
+
+    .re-preview { pointer-events: none; user-select: none; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #ffffff; color: #0F172A; }
+    .re-preview * { box-sizing: border-box; }
+    .re-preview h1, .re-preview h2, .re-preview h3, .re-preview h4 { color: #0F172A !important; }
+    .re-preview p { color: #475569 !important; }
+    .re-preview .reveal { opacity: 1 !important; transform: none !important; }
+
+    /* Header */
+    .re-header { background: #fff; border-bottom: 1px solid #E2E8F0; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .re-logo { font-size: 1.1rem; font-weight: 800; color: #0F172A !important; display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
+    .re-logo span { color: #2563EB !important; }
+    .re-nav { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .re-nav li a { font-size: 0.82rem; font-weight: 500; color: #0F172A !important; }
+    .re-btn { background: #2563EB; color: #fff !important; font-size: 0.78rem; font-weight: 700; padding: 9px 20px; border-radius: 6px; cursor: default; }
+
+    /* Hero */
+    .re-hero { background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 60%, #EFF6FF 100%); padding: 60px 48px 64px; display: flex; align-items: center; gap: 52px; }
+    .re-hero-text { flex: 1; }
+    .re-eyebrow { display: inline-flex; align-items: center; gap: 7px; background: rgba(37,99,235,0.08); color: #1d4ed8 !important; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; margin-bottom: 20px; border: 1px solid rgba(37,99,235,0.2); }
+    .re-hero h1 { font-size: 2.65rem; font-weight: 800; line-height: 1.1; margin: 0 0 16px; color: #0F172A !important; letter-spacing: -0.03em; }
+    .re-hero h1 span { color: #2563EB !important; }
+    .re-hero p { font-size: 0.97rem; color: #475569 !important; line-height: 1.72; max-width: 430px; margin: 0 0 26px; }
+    .re-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .re-btn-primary { background: #2563EB; color: #fff !important; font-size: 0.88rem; font-weight: 700; padding: 14px 28px; border-radius: 6px; box-shadow: 0 4px 14px rgba(37,99,235,0.35); }
+    .re-btn-outline { background: #fff; color: #0F172A !important; font-size: 0.88rem; font-weight: 600; padding: 13px 26px; border-radius: 6px; border: 1.5px solid #CBD5E0; }
+    .re-hero-proof { font-size: 0.75rem; color: #64748B !important; margin-top: 18px; display: flex; align-items: center; gap: 6px; }
+
+    /* Hero right — listing card stack */
+    .re-hero-right { flex: 0 0 340px; display: flex; flex-direction: column; gap: 12px; }
+    .re-listing-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 48px rgba(15,23,42,0.15); }
+    .re-listing-img { height: 160px; background: linear-gradient(145deg, #DBEAFE 0%, #BFDBFE 40%, #93C5FD 70%, #60A5FA 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .re-listing-body { padding: 16px 18px; }
+    .re-listing-price { font-size: 1.3rem; font-weight: 800; color: #0F172A !important; margin-bottom: 2px; }
+    .re-listing-address { font-size: 0.78rem; color: #64748B !important; margin-bottom: 8px; }
+    .re-listing-specs { display: flex; gap: 14px; font-size: 0.72rem; color: #475569 !important; font-weight: 600; }
+    .re-listing-badge { display: inline-block; font-size: 0.62rem; font-weight: 700; background: #DCFCE7; color: #15803D !important; border: 1px solid #BBF7D0; padding: 3px 8px; border-radius: 4px; margin-top: 8px; }
+    .re-mini-stats { display: flex; gap: 8px; }
+    .re-mini-stat { flex: 1; background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 10px 12px; text-align: center; font-size: 0.68rem; font-weight: 600; color: #0F172A !important; box-shadow: 0 2px 8px rgba(15,23,42,0.06); }
+    .re-mini-stat span { display: block; font-size: 0.95rem; font-weight: 800; color: #2563EB !important; margin-bottom: 2px; }
+
+    /* Trust bar */
+    .re-trust-bar { background: #F8FAFC; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #E2E8F0; padding: 18px 48px; }
+    .re-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; text-align: center; }
+    .re-trust-stat { padding: 8px 16px; }
+    .re-trust-stat + .re-trust-stat { border-left: 1px solid #E2E8F0; }
+    .re-trust-num { display: block; font-size: 1.3rem; font-weight: 800; color: #0F172A !important; line-height: 1.1; }
+    .re-trust-label { display: block; font-size: 0.7rem; color: #64748B !important; margin-top: 4px; font-weight: 500; }
+
+    /* Featured listings */
+    .re-listings { background: #fff; padding: 52px 48px; }
+    .re-listings-heading { font-size: 1.6rem; font-weight: 800; color: #0F172A !important; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .re-listings-sub { font-size: 0.88rem; color: #64748B !important; margin: 0 0 32px; }
+    .re-listings-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .re-prop-card { border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; background: #fff; transition: box-shadow 0.2s; }
+    .re-prop-img { height: 160px; background: linear-gradient(145deg, #DBEAFE 0%, #93C5FD 100%); display: flex; align-items: center; justify-content: center; font-size: 2.2rem; position: relative; }
+    .re-prop-img-b { background: linear-gradient(145deg, #D1FAE5 0%, #6EE7B7 100%); }
+    .re-prop-img-c { background: linear-gradient(145deg, #FEF3C7 0%, #FCD34D 100%); }
+    .re-prop-status { position: absolute; top: 10px; left: 10px; font-size: 0.62rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .status-active { background: #DCFCE7; color: #15803D !important; }
+    .status-pending { background: #FEF3C7; color: #92400E !important; }
+    .status-sold { background: #DBEAFE; color: #1E40AF !important; }
+    .re-prop-body { padding: 14px 16px; }
+    .re-prop-price { font-size: 1.1rem; font-weight: 800; color: #0F172A !important; }
+    .re-prop-addr { font-size: 0.75rem; color: #64748B !important; margin: 2px 0 10px; }
+    .re-prop-specs { display: flex; gap: 12px; font-size: 0.72rem; color: #475569 !important; font-weight: 600; }
+
+    /* About teaser */
+    .re-about { background: #0F172A; padding: 52px 48px; display: flex; gap: 56px; align-items: center; }
+    .re-about-text { flex: 1; }
+    .re-about-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #60A5FA !important; margin-bottom: 14px; display: block; }
+    .re-about-text h2 { font-size: 1.55rem; font-weight: 800; color: #fff !important; margin: 0 0 14px; letter-spacing: -0.02em; }
+    .re-about-text p { font-size: 0.86rem; color: rgba(255,255,255,0.65) !important; line-height: 1.75; max-width: 420px; margin: 0 0 20px; }
+    .re-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .re-chip { font-size: 0.7rem; font-weight: 600; background: rgba(96,165,250,0.12); border: 1px solid rgba(96,165,250,0.25); color: #93C5FD !important; padding: 4px 12px; border-radius: 4px; }
+    .re-about-right { flex: 0 0 240px; display: flex; flex-direction: column; gap: 10px; }
+    .re-trust-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 11px 16px; font-size: 0.77rem; font-weight: 600; color: rgba(255,255,255,0.8) !important; display: flex; align-items: center; gap: 10px; }
+
+    /* Pitch bridge */
+    .pitch-bridge { text-align: center; }
+    .pitch-bridge .container { max-width: 720px; }
+    .pitch-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+    .pitch-pill { padding: 8px 20px; border: 1px solid rgba(37,99,235,0.3); border-radius: 99px; font-size: 0.82rem; font-weight: 600; color: #60A5FA; background: rgba(37,99,235,0.07); }
+
+    /* Shared branding */
+    .branding-sub { font-size: 1rem; font-weight: 700; color: var(--text); margin: 48px 0 20px; letter-spacing: -0.01em; }
+    .branding-sub:first-of-type { margin-top: 40px; }
+    .color-palette-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .color-swatch-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .color-swatch { width: 88px; height: 72px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .color-swatch-hex { font-size: 0.68rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.04em; }
+    .color-swatch-name { font-size: 0.62rem; color: var(--text-muted); }
+    .type-showcase { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 32px 36px; max-width: 680px; }
+    .type-display { font-size: 3rem; font-weight: 800; color: var(--text); line-height: 1; margin-bottom: 4px; }
+    .type-descriptor { font-size: 0.8rem; color: var(--accent-light); margin-bottom: 24px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .type-weights { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .type-weight-item { font-size: 0.8rem; color: var(--text-2); }
+    .type-weight-item strong { color: var(--text); }
+    .type-sample-h { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 8px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; }
+    .type-sample-b { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; }
+    .logo-concept-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+    .logo-variant { border-radius: 12px; padding: 24px 28px; display: flex; flex-direction: column; gap: 18px; flex: 1; min-width: 160px; }
+    .logo-variant-light { background: #fff; }
+    .logo-variant-dark { background: #0F172A; }
+    .logo-variant-blue { background: #2563EB; }
+    .lv-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.3); font-family: 'Inter', sans-serif; }
+    .logo-variant-dark .lv-label, .logo-variant-blue .lv-label { color: rgba(255,255,255,0.45); }
+    .logo-lockup { display: flex; align-items: center; gap: 10px; }
+    .logo-lockup-icon { font-size: 1.5rem; line-height: 1; }
+    .logo-lockup-text { display: flex; flex-direction: column; }
+    .logo-lockup-name { font-size: 1.05rem; font-weight: 800; color: #0F172A; line-height: 1.1; letter-spacing: -0.02em; font-family: 'Inter', sans-serif; }
+    .logo-lockup-name-w { color: #fff; }
+    .logo-lockup-sub { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.2em; color: #2563EB; font-family: 'Inter', sans-serif; margin-top: 1px; }
+    .logo-lockup-sub-w { color: rgba(255,255,255,0.6); }
+    .logo-icon-wrap { display: flex; align-items: center; justify-content: center; flex: 1; font-size: 2.2rem; }
+    .ui-demo-box { background: #F8F9FA; border-radius: 12px; padding: 32px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; margin-top: 16px; }
+    .ui-demo-group h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8E8E93; margin: 0 0 12px; }
+    .ui-demo-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .uidemo-btn-primary { background: #2563EB; color: #fff; font-size: 0.82rem; font-weight: 700; padding: 10px 22px; border-radius: 6px; border: none; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-outline { background: transparent; color: #0F172A; font-size: 0.82rem; font-weight: 600; padding: 9px 22px; border-radius: 6px; border: 2px solid #CBD5E0; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-dark { background: #0F172A; color: #fff; font-size: 0.82rem; font-weight: 700; padding: 10px 22px; border-radius: 6px; border: none; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-input { width: 220px; padding: 10px 14px; border: 1.5px solid #D1DCE8; border-radius: 6px; font-size: 0.82rem; font-family: 'Inter', sans-serif; color: #0F172A; background: #fff; outline: none; cursor: default; }
+    .uidemo-card { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; width: 200px; }
+    .uidemo-card-img { height: 80px; background: linear-gradient(145deg, #DBEAFE, #93C5FD); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; }
+    .uidemo-card-body { padding: 10px 12px; }
+    .uidemo-card h5 { font-size: 0.82rem; font-weight: 700; color: #0F172A; margin: 0 0 2px; }
+    .uidemo-card p { font-size: 0.7rem; color: #64748B; margin: 0; }
+    .email-section .section-subheading { max-width: 640px; }
+    .email-mockup-wrap { max-width: 600px; margin: 48px auto 0; border-radius: 12px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.07); }
+    .email-chrome { background: #2A2A2A; padding: 10px 16px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .email-chrome-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .email-chrome-meta { margin-left: 10px; display: flex; flex-direction: column; gap: 2px; }
+    .email-chrome-from, .email-chrome-subject { font-size: 0.68rem; color: #aaa; font-family: 'Inter', sans-serif; }
+    .email-body { background: #ffffff; font-family: 'Inter', -apple-system, sans-serif; color: #333; }
+    .email-logo-band { background: #0F172A; padding: 22px 32px; text-align: center; }
+    .email-logo-text { color: #fff; font-size: 1.15rem; font-weight: 800; font-family: 'Inter', sans-serif; }
+    .email-logo-text span { color: #60A5FA; }
+    .email-content { padding: 32px 36px; }
+    .email-h2 { color: #0F172A; font-size: 1.35rem; font-weight: 800; margin: 0 0 12px; font-family: 'Inter', sans-serif; }
+    .email-p { color: #555; font-size: 0.88rem; line-height: 1.7; margin: 0 0 18px; font-family: 'Inter', sans-serif; }
+    .email-steps-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0F172A; margin-bottom: 14px; font-family: 'Inter', sans-serif; }
+    .email-step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; padding: 14px 16px; background: #EFF6FF; border-radius: 6px; border-left: 3px solid #2563EB; }
+    .email-step-num { background: #2563EB; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.78rem; flex-shrink: 0; font-family: 'Inter', sans-serif; }
+    .email-step-text strong { display: block; color: #0F172A; font-size: 0.82rem; font-weight: 700; margin-bottom: 2px; font-family: 'Inter', sans-serif; }
+    .email-step-text p { color: #555; font-size: 0.78rem; line-height: 1.5; margin: 0; font-family: 'Inter', sans-serif; }
+    .email-cta-wrap { text-align: center; margin: 26px 0; }
+    .email-cta-btn { display: inline-block; background: #2563EB; color: #fff; font-size: 0.88rem; font-weight: 700; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-family: 'Inter', sans-serif; }
+    .email-reminder { background: #EFF6FF; border-left: 3px solid #2563EB; border-radius: 4px; padding: 14px 18px; font-size: 0.82rem; color: #333; line-height: 1.7; margin: 18px 0; font-family: 'Inter', sans-serif; }
+    .email-footer-bar { background: #F8F9FA; padding: 18px 32px; text-align: center; border-top: 1px solid #E8EDF3; font-size: 0.72rem; color: #888; line-height: 1.7; font-family: 'Inter', sans-serif; }
+    .email-footer-bar a { color: #2563EB; }
+    .email-credit { text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 16px; letter-spacing: 0.06em; }
+    .serp-frame { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 56px rgba(0,0,0,0.4); max-width: 780px; }
+    .serp-chrome { background: #f8f9fa; border-bottom: 1px solid #e8eaed; padding: 10px 16px; }
+    .serp-search-bar { background: #fff; border: 1px solid #dfe1e5; border-radius: 24px; padding: 7px 16px; display: flex; align-items: center; gap: 10px; max-width: 500px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .serp-search-icon { font-size: 0.8rem; color: #4285f4; }
+    .serp-search-text { font-size: 0.88rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .serp-body { padding: 14px 20px 6px; }
+    .serp-ads-label { font-size: 0.68rem; color: #70757a; font-family: 'Inter', sans-serif; margin-bottom: 4px; }
+    .google-ad-card { padding: 12px 0 14px; border-bottom: 1px solid #e8eaed; }
+    .google-ad-card:last-child { border-bottom: none; }
+    .google-ad-top-line { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+    .google-ad-badge { display: inline-flex; align-items: center; border: 1px solid #70757a; border-radius: 3px; padding: 1px 5px; font-size: 0.62rem; font-weight: 600; color: #70757a; font-family: 'Inter', sans-serif; flex-shrink: 0; }
+    .google-ad-url { font-size: 0.78rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .google-ad-headline { font-size: 1.05rem; font-weight: 400; color: #1a0dab; line-height: 1.4; text-decoration: underline; margin-bottom: 2px; cursor: default; font-family: 'Inter', sans-serif; }
+    .google-ad-desc { font-size: 0.82rem; color: #4d5156; line-height: 1.58; margin: 5px 0 7px; font-family: 'Inter', sans-serif; }
+    .google-ad-ext { display: flex; flex-wrap: wrap; gap: 0; margin-top: 4px; }
+    .google-ad-ext span { font-size: 0.78rem; color: #1a0dab; padding-right: 14px; cursor: default; text-decoration: underline; font-family: 'Inter', sans-serif; }
+    .google-ad-ext span::after { content: ' ·'; text-decoration: none; color: #70757a; margin-left: 6px; }
+    .google-ad-ext span:last-child::after { content: ''; }
+    .targeting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 680px; margin-top: 16px; }
+    .targeting-row { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .targeting-key { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; flex-shrink: 0; }
+    .targeting-val { font-size: 0.82rem; color: var(--text-2); text-align: right; line-height: 1.4; }
+    .perf-benchmarks { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 40px; padding: 28px 32px; background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.18); border-radius: 12px; max-width: 680px; }
+    .perf-stat { text-align: center; flex: 1; min-width: 120px; }
+    .perf-num { display: block; font-size: 1.75rem; font-weight: 800; color: #60A5FA; line-height: 1.1; margin-bottom: 4px; }
+    .perf-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.04em; }
+    .keyword-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .keyword-card { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 9px 14px; font-size: 0.82rem; color: var(--text-2); }
+    .keyword-vol { font-size: 0.65rem; font-weight: 700; background: rgba(37,99,235,0.15); color: #60A5FA; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+    .gbp-wrap { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-top: 16px; }
+    .gbp-card { background: #fff; border-radius: 14px; overflow: hidden; width: 340px; box-shadow: 0 12px 40px rgba(0,0,0,0.35); flex-shrink: 0; }
+    .gbp-map { height: 110px; background: linear-gradient(135deg, #DBEAFE 0%, #93C5FD 50%, #3B82F6 100%); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: #1e3a8a; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; }
+    .gbp-info { padding: 16px 18px; }
+    .gbp-name { font-size: 1rem; font-weight: 800; color: #1A1A2E; font-family: 'Inter', sans-serif; margin-bottom: 3px; }
+    .gbp-cat { font-size: 0.75rem; color: #555; font-family: 'Inter', sans-serif; margin-bottom: 6px; }
+    .gbp-stars { font-size: 0.82rem; color: #F9A825; font-family: 'Inter', sans-serif; margin-bottom: 10px; }
+    .gbp-stars span { color: #555; font-size: 0.72rem; }
+    .gbp-detail { font-size: 0.72rem; color: #555; line-height: 1.8; font-family: 'Inter', sans-serif; border-top: 1px solid #eee; padding-top: 10px; margin-top: 6px; }
+    .gbp-actions { display: flex; border-top: 1px solid #eee; margin-top: 10px; }
+    .gbp-action { flex: 1; text-align: center; padding: 10px 4px; font-size: 0.72rem; font-weight: 600; color: #2563EB; font-family: 'Inter', sans-serif; border-right: 1px solid #eee; cursor: default; }
+    .gbp-action:last-child { border-right: none; }
+    .gbp-note { flex: 1; min-width: 260px; max-width: 380px; }
+    .gbp-note h4 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin: 0 0 14px; }
+    .gbp-note ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .gbp-note ul li { font-size: 0.82rem; color: var(--text-2); padding-left: 20px; position: relative; line-height: 1.5; }
+    .gbp-note ul li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 700; }
+    .seo-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; margin-top: 16px; }
+    .seo-steps::before { content: ''; position: absolute; top: 44px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, rgba(15,23,42,0.4), rgba(37,99,235,0.4)); z-index: 0; }
+    .seo-step { background: #1f2540; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px 22px; position: relative; z-index: 1; }
+    .seo-step-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #0F172A, #2563EB); color: #fff; font-size: 0.9rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; position: relative; z-index: 2; box-shadow: 0 0 0 4px #1f2540; }
+    .seo-step h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin: 0 0 8px; }
+    .seo-step p { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+    .rank-table-wrap { overflow-x: auto; margin-top: 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .rank-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    .rank-table th { background: rgba(37,99,235,0.1); color: #60A5FA; text-align: left; padding: 12px 16px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .rank-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.83rem; color: var(--text-2); }
+    .rank-table tbody tr:last-child td { border-bottom: none; }
+    .rank-up { color: #4ade80; font-weight: 700; }
+    .rank-new { color: #60A5FA; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .re-hero { padding: 48px 32px; flex-direction: column; gap: 32px; }
+      .re-hero h1 { font-size: 2rem; }
+      .re-hero-right { flex: none; width: 100%; max-width: 400px; }
+      .re-listings-row { grid-template-columns: 1fr 1fr; }
+      .re-trust-grid { grid-template-columns: 1fr 1fr; }
+      .re-about { flex-direction: column; gap: 28px; }
+      .re-header { padding: 0 20px; }
+      .re-nav { display: none; }
+      .seo-steps { grid-template-columns: 1fr; }
+      .seo-steps::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .re-listings { padding: 40px 24px; }
+      .targeting-grid { grid-template-columns: 1fr; }
+      .email-chrome-meta { display: none; }
+      .email-content { padding: 24px 20px; }
+    }
+    @media (max-width: 540px) {
+      .re-listings-row { grid-template-columns: 1fr; }
+      .re-hero { padding: 36px 20px; }
+      .re-header { height: auto; padding: 14px 20px; }
+      .perf-benchmarks { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/en/" class="nav-logo"><span class="logo-n">N</span>okto Studio</a>
+      <ul class="nav-links">
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/services/">Services</a></li>
+        <li><a href="/en/portfolio/">Portfolio</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/faq/">FAQ</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <a href="/en/projects/real-estate/" class="lang-btn active">EN</a>
+          <span>|</span>
+          <a href="/sk/" class="lang-btn">SK</a>
+        </div>
+        <a href="/en/contact/" class="btn btn-primary btn-sm">Free Strategy Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+  <a href="/en/about/">About</a>
+  <a href="/en/services/">Services</a>
+  <a href="/en/portfolio/">Portfolio</a>
+  <a href="/en/blog/">Blog</a>
+  <a href="/en/faq/">FAQ</a>
+  <a href="/en/contact/">Contact</a>
+  <div class="lang-toggle">
+    <a href="/en/projects/real-estate/" class="lang-btn active">EN</a>
+    <span>|</span>
+    <a href="/sk/" class="lang-btn">SK</a>
+  </div>
+  <a href="/en/contact/" class="btn btn-primary">Free Strategy Call</a>
+</nav>
+
+<!-- ===================== INTRO LABEL ===================== -->
+<div class="preview-outer">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px 20px; display:flex; align-items:center; gap:14px;">
+    <span class="section-label" style="margin:0;">US Real Estate Agent, Sample Website</span>
+    <span style="font-size:0.75rem; color:var(--text-muted);">Scroll down to see the full branding package, ads &amp; SEO strategy</span>
+  </div>
+
+  <div style="padding:0 24px 0;">
+    <div class="preview-frame">
+      <section class="re-preview">
+
+        <div class="re-header">
+          <div class="re-logo">
+            🏡 &nbsp;<span>Carter</span> Properties
+          </div>
+          <ul class="re-nav">
+            <li><a href="#">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Listings</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="re-btn">Get a Free Home Valuation</div>
+        </div>
+
+        <div class="re-hero">
+          <div class="re-hero-text">
+            <div class="re-eyebrow">🏡 Top-Producing Realtor · [City] &amp; Surrounding Areas</div>
+            <h1>Find Your Perfect Home.<br>Sell for <span>Top Dollar.</span></h1>
+            <p>Local expertise, proven negotiation, and a genuine commitment to getting you the best deal. Whether you're buying your first home or selling your tenth, we've done this hundreds of times — and we're ready to do it for you.</p>
+            <div class="re-hero-btns">
+              <div class="re-btn-primary">Search Homes</div>
+              <div class="re-btn-outline">Free Home Valuation</div>
+            </div>
+            <div class="re-hero-proof">✅ &nbsp;150+ Homes Sold · Average 97% List-to-Sale Ratio · 5-Star Rated Agent</div>
+          </div>
+          <div class="re-hero-right">
+            <div class="re-listing-card">
+              <div class="re-listing-img">🏡</div>
+              <div class="re-listing-body">
+                <div class="re-listing-price">$485,000</div>
+                <div class="re-listing-address">142 Maple Creek Drive, [City], [State]</div>
+                <div class="re-listing-specs">
+                  <span>🛏 4 beds</span>
+                  <span>🚿 2.5 baths</span>
+                  <span>📐 2,140 sqft</span>
+                </div>
+                <div class="re-listing-badge">🟢 Just Listed</div>
+              </div>
+            </div>
+            <div class="re-mini-stats">
+              <div class="re-mini-stat"><span>150+</span>Homes Sold</div>
+              <div class="re-mini-stat"><span>97%</span>List-to-Sale</div>
+              <div class="re-mini-stat"><span>★ 5.0</span>Google Rating</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="re-trust-bar">
+          <div class="re-trust-grid">
+            <div class="re-trust-stat">
+              <span class="re-trust-num" style="color:#F9A825 !important;">★ 5.0</span>
+              <span class="re-trust-label">180+ Google Reviews</span>
+            </div>
+            <div class="re-trust-stat">
+              <span class="re-trust-num">150+</span>
+              <span class="re-trust-label">Homes Sold in [City]</span>
+            </div>
+            <div class="re-trust-stat">
+              <span class="re-trust-num" style="color:#2563EB !important;">97%</span>
+              <span class="re-trust-label">List-to-Sale Ratio</span>
+            </div>
+            <div class="re-trust-stat">
+              <span class="re-trust-num">14 Days</span>
+              <span class="re-trust-label">Avg. Days on Market</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="re-listings">
+          <div class="re-listings-heading">Featured Listings</div>
+          <div class="re-listings-sub">Current properties available in [City] and surrounding areas.</div>
+          <div class="re-listings-row">
+            <div class="re-prop-card">
+              <div class="re-prop-img">🏡<span class="re-prop-status status-active">Active</span></div>
+              <div class="re-prop-body">
+                <div class="re-prop-price">$485,000</div>
+                <div class="re-prop-addr">142 Maple Creek Drive, [City]</div>
+                <div class="re-prop-specs"><span>🛏 4bd</span><span>🚿 2.5ba</span><span>📐 2,140sqft</span></div>
+              </div>
+            </div>
+            <div class="re-prop-card">
+              <div class="re-prop-img re-prop-img-b">🏘<span class="re-prop-status status-pending">Pending</span></div>
+              <div class="re-prop-body">
+                <div class="re-prop-price">$312,500</div>
+                <div class="re-prop-addr">88 Willow Lane, [City]</div>
+                <div class="re-prop-specs"><span>🛏 3bd</span><span>🚿 2ba</span><span>📐 1,620sqft</span></div>
+              </div>
+            </div>
+            <div class="re-prop-card">
+              <div class="re-prop-img re-prop-img-c">🏠<span class="re-prop-status status-sold">Sold</span></div>
+              <div class="re-prop-body">
+                <div class="re-prop-price">$671,000</div>
+                <div class="re-prop-addr">550 Oakwood Boulevard, [City]</div>
+                <div class="re-prop-specs"><span>🛏 5bd</span><span>🚿 3ba</span><span>📐 3,200sqft</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="re-about">
+          <div class="re-about-text">
+            <span class="re-about-tag">About Carter Properties</span>
+            <h2>Local Expert. Proven Results.<br>Your Advocate in Every Deal.</h2>
+            <p>Sarah Carter has sold over 150 homes in the [City] metro area over the past 10 years — with a track record of a 97% list-to-sale ratio and an average of 14 days on market. She's not just a Realtor; she's a neighbor who knows this market better than anyone.</p>
+            <div class="re-chips">
+              <span class="re-chip">NAR Member</span>
+              <span class="re-chip">Certified Buyer's Rep</span>
+              <span class="re-chip">Luxury Home Specialist</span>
+              <span class="re-chip">First-Time Buyer Expert</span>
+              <span class="re-chip">Zillow Premier Agent</span>
+            </div>
+          </div>
+          <div class="re-about-right">
+            <div class="re-trust-badge">🏆 Top Producer — [City] Association of Realtors</div>
+            <div class="re-trust-badge">⭐ 5.0 / 5.0 — 180+ Google Reviews</div>
+            <div class="re-trust-badge">📋 Free Home Valuations — All Areas</div>
+            <div class="re-trust-badge">🔑 Buyer &amp; Seller Representation</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+  <p class="preview-label">Mockup — not a live site. Designed by Nokto Studio as a sample presentation.</p>
+</div>
+
+
+<!-- ===================== PITCH BRIDGE ===================== -->
+<section class="section pitch-bridge">
+  <div class="container">
+    <span class="section-label">What You Just Saw</span>
+    <h2 class="section-heading reveal">This is what we design<br>for your real estate business.</h2>
+    <div class="divider divider-center"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 32px;">
+      Every element above — the neighbourhood-first layout, listing presentation, trust signals, and lead-capture copy — is crafted specifically for US real estate agents. Paired with our branding, PPC, and SEO work, it becomes a lead generation system that works around the clock.
+    </p>
+    <div class="pitch-pills">
+      <span class="pitch-pill">Built for buyer &amp; seller lead capture</span>
+      <span class="pitch-pill">IDX-integration ready</span>
+      <span class="pitch-pill">Local SEO-ready from day one</span>
+      <span class="pitch-pill">Mobile-first for on-the-go searches</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== BRANDING PACK ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 01</span>
+    <h2 class="section-heading reveal">Complete Real Estate Branding Package</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:600px;">A brand identity built around trust, neighbourhood expertise, and professional credibility. Every asset you need — yard signs, business cards, email templates, and digital — delivered as a cohesive system.</p>
+
+    <h3 class="branding-sub">Brand Color Palette</h3>
+    <div class="color-palette-row">
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#0F172A;"></div>
+        <span class="color-swatch-hex">#0F172A</span>
+        <span class="color-swatch-name">Midnight Navy</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#2563EB;"></div>
+        <span class="color-swatch-hex">#2563EB</span>
+        <span class="color-swatch-name">Trust Blue</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#16A34A;"></div>
+        <span class="color-swatch-hex">#16A34A</span>
+        <span class="color-swatch-name">Growth Green</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#F8FAFC; border-color:rgba(255,255,255,0.2);"></div>
+        <span class="color-swatch-hex">#F8FAFC</span>
+        <span class="color-swatch-name">Clean White</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#64748B;"></div>
+        <span class="color-swatch-hex">#64748B</span>
+        <span class="color-swatch-name">Slate</span>
+      </div>
+    </div>
+
+    <h3 class="branding-sub">Typography System</h3>
+    <div class="type-showcase">
+      <div class="type-display">Inter</div>
+      <div class="type-descriptor">Trustworthy · Modern · Approachable</div>
+      <div class="type-weights">
+        <span class="type-weight-item"><strong style="font-weight:800;">800</strong> — Headlines</span>
+        <span class="type-weight-item"><strong style="font-weight:700;">700</strong> — Property Names</span>
+        <span class="type-weight-item"><strong style="font-weight:600;">600</strong> — Labels</span>
+        <span class="type-weight-item"><strong style="font-weight:400;">400</strong> — Body</span>
+      </div>
+      <div class="type-sample-h">Your [City] Home, Found.</div>
+      <div class="type-sample-b">Whether you're searching for your first home, upgrading to something bigger, or ready to sell for top dollar — Carter Properties brings a decade of local market knowledge and a 97% list-to-sale ratio to every transaction.</div>
+    </div>
+
+    <h3 class="branding-sub">Logo Concept</h3>
+    <div class="logo-concept-grid">
+      <div class="logo-variant logo-variant-light">
+        <span class="lv-label">On White</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🏡</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name">Carter</span>
+            <span class="logo-lockup-sub">PROPERTIES</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-dark">
+        <span class="lv-label">On Dark</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🏡</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name logo-lockup-name-w">Carter</span>
+            <span class="logo-lockup-sub">PROPERTIES</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-blue">
+        <span class="lv-label">Icon Mark</span>
+        <div class="logo-icon-wrap">🏡</div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem; color:var(--text-muted); margin-top:20px;">Full package includes: wordmark, yard sign layout, business card template, social media kit, and usage rules.</p>
+
+    <h3 class="branding-sub" style="margin-top:56px;">UI Component Library</h3>
+    <p style="font-size:0.85rem; color:var(--text-2); margin-bottom:0;">Every button, form, and listing card — designed for maximum lead capture and professional presentation.</p>
+    <div class="ui-demo-box">
+      <div class="ui-demo-group">
+        <h4>Buttons</h4>
+        <div class="ui-demo-btns">
+          <button class="uidemo-btn-primary">Search Listings</button>
+          <button class="uidemo-btn-dark">Get Valuation</button>
+          <button class="uidemo-btn-outline">Contact Agent</button>
+        </div>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Search Form</h4>
+        <input class="uidemo-input" type="text" placeholder="City, zip, or address..." readonly>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Listing Card</h4>
+        <div class="uidemo-card">
+          <div class="uidemo-card-img">🏡</div>
+          <div class="uidemo-card-body">
+            <h5>$485,000 · 4bd/2.5ba</h5>
+            <p>142 Maple Creek Drive</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== EMAIL SAMPLE ===================== -->
+<section class="section email-section">
+  <div class="container">
+    <span class="section-label">Deliverable 02</span>
+    <h2 class="section-heading reveal">New Lead Welcome Email — Sample</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal">An automated HTML email that fires when a buyer or seller submits an inquiry. It positions you as the local expert immediately, sets expectations, and keeps the conversation moving toward a consultation.</p>
+
+    <div class="email-mockup-wrap">
+      <div class="email-chrome">
+        <span class="email-chrome-dot" style="background:#FF5F57;"></span>
+        <span class="email-chrome-dot" style="background:#FFBD2E;"></span>
+        <span class="email-chrome-dot" style="background:#28C840;"></span>
+        <div class="email-chrome-meta">
+          <span class="email-chrome-from">From: Carter Properties &lt;sarah@carterproperties.com&gt;</span>
+          <span class="email-chrome-subject">Subject: Your [City] Home Search Starts Here — Let's Talk</span>
+        </div>
+      </div>
+      <div class="email-body">
+        <div class="email-logo-band">
+          <span class="email-logo-text">🏡 Carter <span>Properties</span></span>
+        </div>
+        <div class="email-content">
+          <h2 class="email-h2">Hi [First Name] — I got your message! 👋</h2>
+          <p class="email-p">Thank you for reaching out to Carter Properties. Whether you're buying, selling, or just exploring your options in [City], you've come to the right place. I'll be in touch personally within 2 hours — but here's a quick overview of how I work.</p>
+
+          <div class="email-steps-label">What happens next:</div>
+
+          <div class="email-step">
+            <div class="email-step-num">1</div>
+            <div class="email-step-text">
+              <strong>Personal call within 2 hours</strong>
+              <p>I'll call or text you personally — no automated bots, no junior assistants. You'll be speaking directly with me, Sarah Carter.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">2</div>
+            <div class="email-step-text">
+              <strong>Custom search or valuation prepared for you</strong>
+              <p>For buyers: I'll prepare a personalised list of homes matching your criteria before our call. For sellers: I'll have a full CMA analysis of your home's current market value ready to review.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">3</div>
+            <div class="email-step-text">
+              <strong>No obligation — just a conversation</strong>
+              <p>There's zero pressure and zero commitment. Our first call is simply about understanding what you need and whether I'm the right fit to help you get there.</p>
+            </div>
+          </div>
+
+          <div class="email-cta-wrap">
+            <a class="email-cta-btn" href="#">Schedule a Call at a Time That Works →</a>
+          </div>
+
+          <div class="email-reminder">
+            📞 &nbsp;<strong>Prefer to call me directly?</strong> (555) 620-4100 — I answer personally.<br>
+            🏡 &nbsp;<strong>Browse current listings:</strong> carterproperties.com/listings<br>
+            📊 &nbsp;<strong>Free instant valuation:</strong> carterproperties.com/home-value
+          </div>
+
+          <p class="email-p">I've helped over 150 families buy and sell homes in [City] — and I'd love to make you the next success story.</p>
+          <p class="email-p" style="margin-bottom:0;">Talk soon,<br><strong style="color:#0F172A;">Sarah Carter, Realtor® — Carter Properties</strong></p>
+        </div>
+        <div class="email-footer-bar">
+          Carter Properties · 510 Main Street, Suite 301, [City], [State]<br>
+          (555) 620-4100 · sarah@carterproperties.com<br>
+          <small>© 2026 Carter Properties. · <a href="#">Unsubscribe</a> · <a href="#">Privacy Policy</a></small>
+        </div>
+      </div>
+    </div>
+    <p class="email-credit">Nokto Studio email design — custom-coded HTML for deliverability, professional presentation, and lead-to-consultation conversion.</p>
+  </div>
+</section>
+
+
+<!-- ===================== PPC SHOWCASE ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 03</span>
+    <h2 class="section-heading reveal">Google Ads — Sample Campaigns We Run for Realtors</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Three campaign types targeting buyer intent, seller intent, and neighborhood-specific searches. We write the copy, build the landing pages, and manage every dollar — so you can focus on closing deals.</p>
+
+    <div class="serp-frame">
+      <div class="serp-chrome">
+        <div class="serp-search-bar">
+          <span class="serp-search-icon">🔍</span>
+          <span class="serp-search-text">homes for sale [city]</span>
+        </div>
+      </div>
+      <div class="serp-body">
+        <div class="serp-ads-label">Sponsored</div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">carterproperties.com › homes-for-sale</span>
+          </div>
+          <div class="google-ad-headline">Carter Properties | [City] Homes for Sale — See All Listings</div>
+          <div class="google-ad-headline">Updated Daily · Filter by Price, Beds &amp; Neighborhood</div>
+          <div class="google-ad-desc">Searching for your perfect home in [City]? Browse every active listing with full photos, virtual tours, and price history. Top-producing local Realtor with 150+ homes sold. Call Sarah Carter today — free consultation.</div>
+          <div class="google-ad-ext">
+            <span>Search Listings</span>
+            <span>Open Houses</span>
+            <span>First-Time Buyers</span>
+            <span>Mortgage Calculator</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">carterproperties.com › home-value</span>
+          </div>
+          <div class="google-ad-headline">What's My [City] Home Worth? Free CMA in 24 Hours</div>
+          <div class="google-ad-headline">Sell Faster &amp; for More — [City]'s Top-Rated Listing Agent</div>
+          <div class="google-ad-desc">Find out exactly what your home is worth in today's [City] market. Carter Properties offers a free, no-obligation comparative market analysis — no automated guess, a real report from a local expert. Request yours now.</div>
+          <div class="google-ad-ext">
+            <span>Get Free Valuation</span>
+            <span>Recent Sales</span>
+            <span>Selling Process</span>
+            <span>Contact Sarah</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">carterproperties.com › [neighborhood]</span>
+          </div>
+          <div class="google-ad-headline">Homes for Sale in [Neighborhood], [City] | Live Here</div>
+          <div class="google-ad-headline">Local Realtor Who Knows Every Street — [Neighborhood] Specialist</div>
+          <div class="google-ad-desc">Looking in [Neighborhood]? Sarah Carter has sold more homes in [Neighborhood] than any other agent — she knows the streets, the schools, and the sellers. View current listings or book a private showing today.</div>
+          <div class="google-ad-ext">
+            <span>View Listings</span>
+            <span>School Info</span>
+            <span>Book a Showing</span>
+            <span>Neighborhood Guide</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Campaign Targeting Overview</h3>
+    <div class="targeting-grid">
+      <div class="targeting-row">
+        <span class="targeting-key">Audience</span>
+        <span class="targeting-val">Adults 28–65, household income $65K+, real estate intent</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Location</span>
+        <span class="targeting-val">Your target neighbourhoods + 20-mile radius</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Ad Schedule</span>
+        <span class="targeting-val">Mon–Sun, 7am–10pm (peak real estate search windows)</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Monthly Budget Range</span>
+        <span class="targeting-val">$800–$3,000/mo depending on market &amp; coverage area</span>
+      </div>
+    </div>
+
+    <div class="perf-benchmarks">
+      <div class="perf-stat">
+        <span class="perf-num">8.9%</span>
+        <span class="perf-label">Average CTR</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">$35–$90</span>
+        <span class="perf-label">Cost Per Lead</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">15–45</span>
+        <span class="perf-label">Monthly Qualified Leads</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SEO SHOWCASE ===================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Deliverable 04</span>
+    <h2 class="section-heading reveal">Local SEO — What We Do for Your Real Estate Business</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Rank for the searches buyers and sellers run before they ever call an agent. We handle your Google Business Profile, neighbourhood page SEO, citation building, and a review strategy that compounds your authority month after month.</p>
+
+    <h3 class="branding-sub">Target Keyword Clusters</h3>
+    <div class="keyword-grid">
+      <div class="keyword-card">homes for sale [city] <span class="keyword-vol">29K/mo</span></div>
+      <div class="keyword-card">realtor near me <span class="keyword-vol">74K/mo</span></div>
+      <div class="keyword-card">real estate agent [city] <span class="keyword-vol">8.6K/mo</span></div>
+      <div class="keyword-card">houses for sale [neighborhood] <span class="keyword-vol">5.2K/mo</span></div>
+      <div class="keyword-card">what's my home worth [city] <span class="keyword-vol">4.8K/mo</span></div>
+      <div class="keyword-card">first time home buyer [city] <span class="keyword-vol">7.1K/mo</span></div>
+      <div class="keyword-card">sell my home [city] <span class="keyword-vol">3.9K/mo</span></div>
+      <div class="keyword-card">new homes for sale [city] <span class="keyword-vol">11K/mo</span></div>
+      <div class="keyword-card">listing agent [city] <span class="keyword-vol">2.4K/mo</span></div>
+      <div class="keyword-card">luxury homes [city] <span class="keyword-vol">6.3K/mo</span></div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Google Business Profile — Fully Optimized</h3>
+    <div class="gbp-wrap">
+      <div class="gbp-card">
+        <div class="gbp-map">📍 &nbsp;Map View</div>
+        <div class="gbp-info">
+          <div class="gbp-name">Carter Properties — Sarah Carter, Realtor</div>
+          <div class="gbp-cat">🏡 Real Estate Agent · <span style="color:#2563EB; font-weight:700;">Open Now</span></div>
+          <div class="gbp-stars">★★★★★ <span>5.0 (180 reviews)</span></div>
+          <div class="gbp-detail">
+            📍 510 Main Street, Suite 301, [City], [State]<br>
+            📞 (555) 620-4100<br>
+            🕐 Mon–Sat: 8am–7pm · Sun: By appointment<br>
+            🌐 carterproperties.com
+          </div>
+          <div class="gbp-actions">
+            <div class="gbp-action">Directions</div>
+            <div class="gbp-action">Website</div>
+            <div class="gbp-action">Call</div>
+          </div>
+        </div>
+      </div>
+      <div class="gbp-note">
+        <h4>What we optimise:</h4>
+        <ul>
+          <li>Real estate agent categories set for buyer and seller intent searches</li>
+          <li>Weekly posts — new listings, market updates, and client success stories</li>
+          <li>Neighbourhood expertise photos, sold signs, and community photos</li>
+          <li>Review generation sequence sent automatically after each closing</li>
+          <li>Citations across 30+ real estate platforms (Zillow, Realtor.com, Trulia, Homes.com)</li>
+          <li>LocalBusiness + RealEstateAgent schema for rich result eligibility</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Our 3-Step SEO Process</h3>
+    <div class="seo-steps">
+      <div class="seo-step">
+        <div class="seo-step-num">1</div>
+        <h3>Audit</h3>
+        <p>We analyse your current Google Maps ranking, Zillow/Realtor.com profile completeness, neighbourhood page coverage, site speed, and competitor positioning — then deliver a prioritised action plan.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">2</div>
+        <h3>Optimise</h3>
+        <p>Neighbourhood landing pages for each area you serve, GBP refinement, RealEstateAgent schema markup, citation building across real estate directories, and Core Web Vitals fixes.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">3</div>
+        <h3>Dominate</h3>
+        <p>Monthly market update content, post-closing review requests, local link acquisition, and live rank tracking across every neighbourhood and search term you're targeting.</p>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Sample Rank Tracking — Before vs. After 90 Days</h3>
+    <div class="rank-table-wrap">
+      <table class="rank-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Before</th>
+            <th>After 90 Days</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>real estate agent [city]</td>
+            <td>#26</td>
+            <td>#4</td>
+            <td class="rank-up">↑ 22 positions</td>
+          </tr>
+          <tr>
+            <td>homes for sale [city]</td>
+            <td>#39</td>
+            <td>#7</td>
+            <td class="rank-up">↑ 32 positions</td>
+          </tr>
+          <tr>
+            <td>sell my home [city]</td>
+            <td>Not ranked</td>
+            <td>#10</td>
+            <td class="rank-new">New entry</td>
+          </tr>
+          <tr>
+            <td>houses for sale [neighborhood]</td>
+            <td>#14</td>
+            <td>#2</td>
+            <td class="rank-up">↑ 12 positions</td>
+          </tr>
+          <tr>
+            <td>luxury homes [city]</td>
+            <td>#33</td>
+            <td>#5</td>
+            <td class="rank-up">↑ 28 positions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CTA ===================== -->
+<section class="section cta-section bg-2">
+  <div class="container">
+    <span class="section-label">Let's Get Started</span>
+    <h2 class="reveal">Ready to generate more<br>buyer &amp; seller leads?</h2>
+    <div class="divider divider-center" style="margin:20px auto 24px;"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 36px;">
+      Book a free 30-minute strategy call. We'll research your local market, audit your current presence on Google, Zillow, and Realtor.com, and come back with a real action plan — no commitment, no templates.
+    </p>
+    <a href="/en/contact/" class="btn btn-primary btn-lg">Book Your Free Strategy Call</a>
+    <p class="form-note" style="margin-top:20px; text-align:center;">12h response · Real estate specialists · Real results</p>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo"><span class="logo-n">N</span>okto Studio</a>
+        <p class="footer-tagline">"Quality work.<br>Always on time."</p>
+        <p class="footer-sub">Slovakia-based. Internationally minded.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/portfolio/">Portfolio</a></li>
+            <li><a href="/en/blog/">Blog</a></li>
+            <li><a href="/en/faq/">FAQ</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/en/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">flamia.studio</a></li>
+            <li><a href="https://dolinajjr.sk" target="_blank" rel="noopener noreferrer">dolinajjr.sk</a></li>
+            <li><a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">peterkocur.sk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nokto Studio. All rights reserved.</p>
+      <p class="footer-badges">Quality work · Always on time · Real results</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Back to top">
+  <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="../../../assets/js/cookie-banner.js"></script>
+<script src="../../../assets/js/nav.js"></script>
+<script src="../../../assets/js/animations.js"></script>
+</body>
+</html>

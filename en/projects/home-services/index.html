@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Services Marketing — What We Build for HVAC, Plumbing & Roofing | Nokto Studio</title>
+  <meta name="description" content="See exactly what Nokto Studio builds for US home service companies — website design, branding, Google Ads, local SEO, and customer email, all in one package.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/main.css">
+  <link rel="stylesheet" href="../../../assets/css/components.css">
+  <link rel="stylesheet" href="../../../assets/css/animations.css">
+  <style>
+    body { padding-top: 72px; }
+
+    .preview-outer { background: var(--bg); padding: 48px 0 0; }
+    .preview-frame { position: relative; border: 2px dashed rgba(234,88,12,0.35); border-radius: 14px; overflow: hidden; max-width: 1200px; margin: 0 auto; }
+    .preview-label { text-align: center; font-size: 0.72rem; color: rgba(234,88,12,0.55); letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 0 14px; margin: 0; background: var(--bg); }
+
+    .hs-preview { pointer-events: none; user-select: none; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #ffffff; color: #1C2B3A; }
+    .hs-preview * { box-sizing: border-box; }
+    .hs-preview h1, .hs-preview h2, .hs-preview h3, .hs-preview h4 { color: #1C2B3A !important; }
+    .hs-preview p { color: #4A5568 !important; }
+    .hs-preview .reveal { opacity: 1 !important; transform: none !important; }
+
+    /* Header */
+    .hs-header { background: #1C2B3A; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 66px; }
+    .hs-logo { font-size: 1.1rem; font-weight: 800; color: #fff !important; display: flex; align-items: center; gap: 8px; }
+    .hs-logo span { color: #EA580C !important; }
+    .hs-nav { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+    .hs-nav li a { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.75) !important; }
+    .hs-btn { background: #EA580C; color: #fff !important; font-size: 0.8rem; font-weight: 700; padding: 9px 20px; border-radius: 6px; cursor: default; }
+
+    /* Emergency banner */
+    .hs-emergency-bar { background: #EA580C; padding: 10px 32px; display: flex; align-items: center; justify-content: center; gap: 16px; }
+    .hs-emergency-bar span { font-size: 0.82rem; font-weight: 700; color: #fff !important; }
+    .hs-emergency-btn { background: #fff; color: #EA580C !important; font-size: 0.75rem; font-weight: 700; padding: 5px 14px; border-radius: 4px; cursor: default; flex-shrink: 0; }
+
+    /* Hero */
+    .hs-hero { background: linear-gradient(135deg, #1C2B3A 0%, #243547 55%, #1C2B3A 100%); padding: 56px 48px 60px; display: flex; align-items: center; gap: 52px; position: relative; overflow: hidden; }
+    .hs-hero-text { flex: 1; position: relative; z-index: 1; }
+    .hs-eyebrow { display: inline-flex; align-items: center; gap: 7px; background: rgba(234,88,12,0.15); color: #FB923C !important; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 6px; margin-bottom: 20px; border: 1px solid rgba(234,88,12,0.3); }
+    .hs-hero h1 { font-size: 2.65rem; font-weight: 800; line-height: 1.1; margin: 0 0 16px; color: #fff !important; letter-spacing: -0.03em; }
+    .hs-hero h1 span { color: #EA580C !important; }
+    .hs-hero p { font-size: 0.97rem; color: rgba(255,255,255,0.72) !important; line-height: 1.72; max-width: 440px; margin: 0 0 24px; }
+    .hs-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .hs-btn-primary { background: #EA580C; color: #fff !important; font-size: 0.88rem; font-weight: 800; padding: 14px 28px; border-radius: 6px; box-shadow: 0 4px 16px rgba(234,88,12,0.4); }
+    .hs-btn-outline { background: transparent; color: rgba(255,255,255,0.85) !important; font-size: 0.88rem; font-weight: 600; padding: 13px 26px; border-radius: 6px; border: 1.5px solid rgba(255,255,255,0.3); }
+    .hs-hero-guarantee { font-size: 0.75rem; color: rgba(255,255,255,0.5) !important; margin-top: 14px; }
+
+    /* Hero right — stat card stack */
+    .hs-hero-right { flex: 0 0 290px; position: relative; z-index: 1; display: flex; flex-direction: column; gap: 10px; }
+    .hs-stat-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; gap: 14px; }
+    .hs-stat-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .hs-stat-info { display: flex; flex-direction: column; }
+    .hs-stat-num { font-size: 1.2rem; font-weight: 800; color: #EA580C !important; line-height: 1; }
+    .hs-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.65) !important; margin-top: 2px; font-weight: 500; }
+    .hs-review-card { background: #fff; border-radius: 10px; padding: 14px 18px; }
+    .hs-review-stars { color: #F9A825 !important; font-size: 0.88rem; margin-bottom: 4px; }
+    .hs-review-text { font-size: 0.75rem; color: #4A5568 !important; line-height: 1.5; margin-bottom: 6px; }
+    .hs-review-author { font-size: 0.7rem; font-weight: 700; color: #1C2B3A !important; }
+
+    /* Trust bar */
+    .hs-trust-bar { background: #F8F9FA; border-bottom: 1px solid #E2E8F0; padding: 18px 48px; }
+    .hs-trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; text-align: center; }
+    .hs-trust-stat { display: flex; flex-direction: column; align-items: center; padding: 6px 0; }
+    .hs-trust-stat + .hs-trust-stat { border-left: 1px solid #E2E8F0; }
+    .hs-trust-num { display: block; font-size: 1.4rem; font-weight: 800; color: #1C2B3A !important; line-height: 1.1; }
+    .hs-trust-label { display: block; font-size: 0.7rem; color: #718096 !important; margin-top: 4px; font-weight: 500; }
+
+    /* Services */
+    .hs-services { background: #fff; padding: 52px 48px; }
+    .hs-services-heading { text-align: center; font-size: 1.6rem; font-weight: 800; color: #1C2B3A !important; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .hs-services-sub { text-align: center; font-size: 0.88rem; color: #718096 !important; margin: 0 0 32px; }
+    .hs-services-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .hs-service-card { border: 1px solid #E2E8F0; border-top: 4px solid #1C2B3A; border-radius: 10px; padding: 24px 20px; background: #fff; }
+    .hs-service-card.is-urgent { border-top-color: #EA580C; }
+    .hs-service-icon { font-size: 1.6rem; margin-bottom: 12px; display: block; }
+    .hs-service-card h3 { font-size: 0.9rem; font-weight: 700; color: #1C2B3A !important; margin: 0 0 7px; }
+    .hs-service-card p { font-size: 0.77rem; color: #718096 !important; line-height: 1.6; margin: 0 0 10px; }
+    .hs-service-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; background: rgba(234,88,12,0.1); color: #EA580C !important; border: 1px solid rgba(234,88,12,0.2); padding: 3px 8px; border-radius: 4px; }
+
+    /* About */
+    .hs-about { background: #F8F9FA; padding: 52px 48px; display: flex; gap: 56px; align-items: center; }
+    .hs-about-text { flex: 1; }
+    .hs-about-tag { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #EA580C !important; margin-bottom: 14px; display: block; }
+    .hs-about-text h2 { font-size: 1.5rem; font-weight: 800; color: #1C2B3A !important; margin: 0 0 14px; letter-spacing: -0.02em; }
+    .hs-about-text p { font-size: 0.86rem; color: #5A6A7A !important; line-height: 1.75; max-width: 420px; margin: 0 0 20px; }
+    .hs-certs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hs-cert { font-size: 0.7rem; font-weight: 600; background: #fff; border: 1px solid #E2E8F0; padding: 4px 12px; border-radius: 4px; color: #1C2B3A !important; }
+    .hs-about-right { flex: 0 0 240px; display: flex; flex-direction: column; gap: 10px; }
+    .hs-trust-badge { background: #fff; border: 1px solid #E2E8F0; border-radius: 10px; padding: 11px 16px; font-size: 0.77rem; font-weight: 600; color: #1C2B3A !important; display: flex; align-items: center; gap: 10px; }
+
+    /* Pitch bridge */
+    .pitch-bridge { text-align: center; }
+    .pitch-bridge .container { max-width: 720px; }
+    .pitch-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+    .pitch-pill { padding: 8px 20px; border: 1px solid rgba(234,88,12,0.3); border-radius: 99px; font-size: 0.82rem; font-weight: 600; color: #FB923C; background: rgba(234,88,12,0.07); }
+
+    /* Shared branding/email/ppc/seo styles */
+    .branding-sub { font-size: 1rem; font-weight: 700; color: var(--text); margin: 48px 0 20px; letter-spacing: -0.01em; }
+    .branding-sub:first-of-type { margin-top: 40px; }
+    .color-palette-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .color-swatch-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .color-swatch { width: 88px; height: 72px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .color-swatch-hex { font-size: 0.68rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.04em; }
+    .color-swatch-name { font-size: 0.62rem; color: var(--text-muted); }
+    .type-showcase { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 32px 36px; max-width: 680px; }
+    .type-display { font-size: 3rem; font-weight: 800; color: var(--text); line-height: 1; margin-bottom: 4px; }
+    .type-descriptor { font-size: 0.8rem; color: var(--accent-light); margin-bottom: 24px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .type-weights { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .type-weight-item { font-size: 0.8rem; color: var(--text-2); }
+    .type-weight-item strong { color: var(--text); }
+    .type-sample-h { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 8px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; }
+    .type-sample-b { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; }
+    .logo-concept-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+    .logo-variant { border-radius: 12px; padding: 24px 28px; display: flex; flex-direction: column; gap: 18px; flex: 1; min-width: 160px; }
+    .logo-variant-light { background: #fff; }
+    .logo-variant-dark { background: #1C2B3A; }
+    .logo-variant-orange { background: #EA580C; }
+    .lv-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.3); font-family: 'Inter', sans-serif; }
+    .logo-variant-dark .lv-label, .logo-variant-orange .lv-label { color: rgba(255,255,255,0.45); }
+    .logo-lockup { display: flex; align-items: center; gap: 10px; }
+    .logo-lockup-icon { font-size: 1.5rem; line-height: 1; }
+    .logo-lockup-text { display: flex; flex-direction: column; }
+    .logo-lockup-name { font-size: 1.05rem; font-weight: 800; color: #1C2B3A; line-height: 1.1; letter-spacing: -0.02em; font-family: 'Inter', sans-serif; }
+    .logo-lockup-name-w { color: #fff; }
+    .logo-lockup-sub { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.2em; color: #EA580C; font-family: 'Inter', sans-serif; margin-top: 1px; }
+    .logo-lockup-sub-w { color: rgba(255,255,255,0.6); }
+    .logo-icon-wrap { display: flex; align-items: center; justify-content: center; flex: 1; font-size: 2.2rem; }
+    .ui-demo-box { background: #F8F9FA; border-radius: 12px; padding: 32px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; margin-top: 16px; }
+    .ui-demo-group h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8E8E93; margin: 0 0 12px; }
+    .ui-demo-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .uidemo-btn-primary { background: #EA580C; color: #fff; font-size: 0.82rem; font-weight: 700; padding: 10px 22px; border-radius: 6px; border: none; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-outline { background: transparent; color: #1C2B3A; font-size: 0.82rem; font-weight: 600; padding: 9px 22px; border-radius: 6px; border: 2px solid #1C2B3A; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-dark { background: #1C2B3A; color: #fff; font-size: 0.82rem; font-weight: 700; padding: 10px 22px; border-radius: 6px; border: none; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-input { width: 220px; padding: 10px 14px; border: 1.5px solid #D1DCE8; border-radius: 6px; font-size: 0.82rem; font-family: 'Inter', sans-serif; color: #1C2B3A; background: #fff; outline: none; cursor: default; }
+    .uidemo-card { background: #fff; border: 1px solid #E2E8F0; border-top: 4px solid #EA580C; border-radius: 10px; padding: 16px 18px; width: 200px; }
+    .uidemo-card-icon { font-size: 1.3rem; margin-bottom: 8px; }
+    .uidemo-card h5 { font-size: 0.82rem; font-weight: 700; color: #1C2B3A; margin: 0 0 4px; }
+    .uidemo-card p { font-size: 0.72rem; color: #4A5568; margin: 0; line-height: 1.5; }
+    .email-section .section-subheading { max-width: 640px; }
+    .email-mockup-wrap { max-width: 600px; margin: 48px auto 0; border-radius: 12px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.07); }
+    .email-chrome { background: #2A2A2A; padding: 10px 16px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .email-chrome-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .email-chrome-meta { margin-left: 10px; display: flex; flex-direction: column; gap: 2px; }
+    .email-chrome-from, .email-chrome-subject { font-size: 0.68rem; color: #aaa; font-family: 'Inter', sans-serif; }
+    .email-body { background: #ffffff; font-family: 'Inter', -apple-system, sans-serif; color: #333; }
+    .email-logo-band { background: #1C2B3A; padding: 22px 32px; text-align: center; }
+    .email-logo-text { color: #fff; font-size: 1.15rem; font-weight: 800; font-family: 'Inter', sans-serif; }
+    .email-logo-text span { color: #EA580C; }
+    .email-content { padding: 32px 36px; }
+    .email-h2 { color: #1C2B3A; font-size: 1.35rem; font-weight: 800; margin: 0 0 12px; font-family: 'Inter', sans-serif; }
+    .email-p { color: #555; font-size: 0.88rem; line-height: 1.7; margin: 0 0 18px; font-family: 'Inter', sans-serif; }
+    .email-steps-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1C2B3A; margin-bottom: 14px; font-family: 'Inter', sans-serif; }
+    .email-step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; padding: 14px 16px; background: #FFF5F0; border-radius: 6px; border-left: 3px solid #EA580C; }
+    .email-step-num { background: #EA580C; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.78rem; flex-shrink: 0; font-family: 'Inter', sans-serif; }
+    .email-step-text strong { display: block; color: #1C2B3A; font-size: 0.82rem; font-weight: 700; margin-bottom: 2px; font-family: 'Inter', sans-serif; }
+    .email-step-text p { color: #555; font-size: 0.78rem; line-height: 1.5; margin: 0; font-family: 'Inter', sans-serif; }
+    .email-cta-wrap { text-align: center; margin: 26px 0; }
+    .email-cta-btn { display: inline-block; background: #EA580C; color: #fff; font-size: 0.88rem; font-weight: 700; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-family: 'Inter', sans-serif; }
+    .email-reminder { background: #FFF5F0; border-left: 3px solid #EA580C; border-radius: 4px; padding: 14px 18px; font-size: 0.82rem; color: #333; line-height: 1.7; margin: 18px 0; font-family: 'Inter', sans-serif; }
+    .email-footer-bar { background: #F8F9FA; padding: 18px 32px; text-align: center; border-top: 1px solid #E8EDF3; font-size: 0.72rem; color: #888; line-height: 1.7; font-family: 'Inter', sans-serif; }
+    .email-footer-bar a { color: #EA580C; }
+    .email-credit { text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 16px; letter-spacing: 0.06em; }
+    .serp-frame { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 56px rgba(0,0,0,0.4); max-width: 780px; }
+    .serp-chrome { background: #f8f9fa; border-bottom: 1px solid #e8eaed; padding: 10px 16px; }
+    .serp-search-bar { background: #fff; border: 1px solid #dfe1e5; border-radius: 24px; padding: 7px 16px; display: flex; align-items: center; gap: 10px; max-width: 500px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .serp-search-icon { font-size: 0.8rem; color: #4285f4; }
+    .serp-search-text { font-size: 0.88rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .serp-body { padding: 14px 20px 6px; }
+    .serp-ads-label { font-size: 0.68rem; color: #70757a; font-family: 'Inter', sans-serif; margin-bottom: 4px; }
+    .google-ad-card { padding: 12px 0 14px; border-bottom: 1px solid #e8eaed; }
+    .google-ad-card:last-child { border-bottom: none; }
+    .google-ad-top-line { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+    .google-ad-badge { display: inline-flex; align-items: center; border: 1px solid #70757a; border-radius: 3px; padding: 1px 5px; font-size: 0.62rem; font-weight: 600; color: #70757a; font-family: 'Inter', sans-serif; flex-shrink: 0; }
+    .google-ad-url { font-size: 0.78rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .google-ad-headline { font-size: 1.05rem; font-weight: 400; color: #1a0dab; line-height: 1.4; text-decoration: underline; margin-bottom: 2px; cursor: default; font-family: 'Inter', sans-serif; }
+    .google-ad-desc { font-size: 0.82rem; color: #4d5156; line-height: 1.58; margin: 5px 0 7px; font-family: 'Inter', sans-serif; }
+    .google-ad-ext { display: flex; flex-wrap: wrap; gap: 0; margin-top: 4px; }
+    .google-ad-ext span { font-size: 0.78rem; color: #1a0dab; padding-right: 14px; cursor: default; text-decoration: underline; font-family: 'Inter', sans-serif; }
+    .google-ad-ext span::after { content: ' ·'; text-decoration: none; color: #70757a; margin-left: 6px; }
+    .google-ad-ext span:last-child::after { content: ''; }
+    .targeting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 680px; margin-top: 16px; }
+    .targeting-row { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .targeting-key { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; flex-shrink: 0; }
+    .targeting-val { font-size: 0.82rem; color: var(--text-2); text-align: right; line-height: 1.4; }
+    .perf-benchmarks { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 40px; padding: 28px 32px; background: rgba(234,88,12,0.06); border: 1px solid rgba(234,88,12,0.18); border-radius: 12px; max-width: 680px; }
+    .perf-stat { text-align: center; flex: 1; min-width: 120px; }
+    .perf-num { display: block; font-size: 1.75rem; font-weight: 800; color: #FB923C; line-height: 1.1; margin-bottom: 4px; }
+    .perf-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.04em; }
+    .keyword-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .keyword-card { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 9px 14px; font-size: 0.82rem; color: var(--text-2); }
+    .keyword-vol { font-size: 0.65rem; font-weight: 700; background: rgba(234,88,12,0.15); color: #FB923C; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+    .gbp-wrap { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-top: 16px; }
+    .gbp-card { background: #fff; border-radius: 14px; overflow: hidden; width: 340px; box-shadow: 0 12px 40px rgba(0,0,0,0.35); flex-shrink: 0; }
+    .gbp-map { height: 110px; background: linear-gradient(135deg, #FFE0CC 0%, #FFBB99 50%, #FF8855 100%); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: #8B3010; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; }
+    .gbp-info { padding: 16px 18px; }
+    .gbp-name { font-size: 1rem; font-weight: 800; color: #1A1A2E; font-family: 'Inter', sans-serif; margin-bottom: 3px; }
+    .gbp-cat { font-size: 0.75rem; color: #555; font-family: 'Inter', sans-serif; margin-bottom: 6px; }
+    .gbp-stars { font-size: 0.82rem; color: #F9A825; font-family: 'Inter', sans-serif; margin-bottom: 10px; }
+    .gbp-stars span { color: #555; font-size: 0.72rem; }
+    .gbp-detail { font-size: 0.72rem; color: #555; line-height: 1.8; font-family: 'Inter', sans-serif; border-top: 1px solid #eee; padding-top: 10px; margin-top: 6px; }
+    .gbp-actions { display: flex; border-top: 1px solid #eee; margin-top: 10px; }
+    .gbp-action { flex: 1; text-align: center; padding: 10px 4px; font-size: 0.72rem; font-weight: 600; color: #EA580C; font-family: 'Inter', sans-serif; border-right: 1px solid #eee; cursor: default; }
+    .gbp-action:last-child { border-right: none; }
+    .gbp-note { flex: 1; min-width: 260px; max-width: 380px; }
+    .gbp-note h4 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin: 0 0 14px; }
+    .gbp-note ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .gbp-note ul li { font-size: 0.82rem; color: var(--text-2); padding-left: 20px; position: relative; line-height: 1.5; }
+    .gbp-note ul li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 700; }
+    .seo-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; margin-top: 16px; }
+    .seo-steps::before { content: ''; position: absolute; top: 44px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, rgba(28,43,58,0.5), rgba(234,88,12,0.5)); z-index: 0; }
+    .seo-step { background: #1f2540; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px 22px; position: relative; z-index: 1; }
+    .seo-step-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1C2B3A, #EA580C); color: #fff; font-size: 0.9rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; position: relative; z-index: 2; box-shadow: 0 0 0 4px #1f2540; }
+    .seo-step h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin: 0 0 8px; }
+    .seo-step p { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+    .rank-table-wrap { overflow-x: auto; margin-top: 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .rank-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    .rank-table th { background: rgba(234,88,12,0.1); color: #FB923C; text-align: left; padding: 12px 16px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .rank-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.83rem; color: var(--text-2); }
+    .rank-table tbody tr:last-child td { border-bottom: none; }
+    .rank-up { color: #4ade80; font-weight: 700; }
+    .rank-new { color: #FB923C; font-weight: 700; }
+
+    @media (max-width: 900px) {
+      .hs-hero { padding: 48px 32px; flex-direction: column; gap: 32px; }
+      .hs-hero h1 { font-size: 2rem; }
+      .hs-hero-right { flex: none; width: 100%; max-width: 400px; }
+      .hs-services-row { grid-template-columns: 1fr 1fr; }
+      .hs-trust-grid { grid-template-columns: 1fr 1fr; }
+      .hs-about { flex-direction: column; gap: 28px; }
+      .hs-header { padding: 0 20px; }
+      .hs-nav { display: none; }
+      .seo-steps { grid-template-columns: 1fr; }
+      .seo-steps::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .hs-services { padding: 40px 24px; }
+      .targeting-grid { grid-template-columns: 1fr; }
+      .email-chrome-meta { display: none; }
+      .email-content { padding: 24px 20px; }
+    }
+    @media (max-width: 540px) {
+      .hs-services-row { grid-template-columns: 1fr; }
+      .hs-hero { padding: 36px 20px; }
+      .hs-header { height: auto; padding: 14px 20px; }
+      .hs-emergency-bar { padding: 10px 20px; flex-wrap: wrap; }
+      .perf-benchmarks { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/en/" class="nav-logo"><span class="logo-n">N</span>okto Studio</a>
+      <ul class="nav-links">
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/services/">Services</a></li>
+        <li><a href="/en/portfolio/">Portfolio</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/faq/">FAQ</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <a href="/en/projects/home-services/" class="lang-btn active">EN</a>
+          <span>|</span>
+          <a href="/sk/" class="lang-btn">SK</a>
+        </div>
+        <a href="/en/contact/" class="btn btn-primary btn-sm">Free Strategy Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+  <a href="/en/about/">About</a>
+  <a href="/en/services/">Services</a>
+  <a href="/en/portfolio/">Portfolio</a>
+  <a href="/en/blog/">Blog</a>
+  <a href="/en/faq/">FAQ</a>
+  <a href="/en/contact/">Contact</a>
+  <div class="lang-toggle">
+    <a href="/en/projects/home-services/" class="lang-btn active">EN</a>
+    <span>|</span>
+    <a href="/sk/" class="lang-btn">SK</a>
+  </div>
+  <a href="/en/contact/" class="btn btn-primary">Free Strategy Call</a>
+</nav>
+
+<!-- ===================== INTRO LABEL ===================== -->
+<div class="preview-outer">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px 20px; display:flex; align-items:center; gap:14px;">
+    <span class="section-label" style="margin:0;">US Home Services, Sample Website</span>
+    <span style="font-size:0.75rem; color:var(--text-muted);">Scroll down to see the full branding package, ads &amp; SEO strategy</span>
+  </div>
+
+  <div style="padding:0 24px 0;">
+    <div class="preview-frame">
+      <section class="hs-preview">
+
+        <div class="hs-header">
+          <div class="hs-logo">
+            <span>🔧</span>
+            <span>Apex <span>Home Services</span></span>
+          </div>
+          <ul class="hs-nav">
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Service Area</a></li>
+          </ul>
+          <div class="hs-btn">Get a Free Quote</div>
+        </div>
+
+        <div class="hs-emergency-bar">
+          <span>🚨 &nbsp;24/7 Emergency Services Available — HVAC, Plumbing &amp; Electrical</span>
+          <div class="hs-emergency-btn">Call Now: (555) 444-7890</div>
+        </div>
+
+        <div class="hs-hero">
+          <div class="hs-hero-text">
+            <div class="hs-eyebrow">🔧 Licensed &amp; Insured · [City] &amp; Surrounding Areas</div>
+            <h1>Fast. Reliable.<br><span>Guaranteed.</span></h1>
+            <p>HVAC, plumbing, electrical, and roofing services from licensed professionals. Same-day service in most cases — 100% satisfaction guaranteed or we make it right.</p>
+            <div class="hs-hero-btns">
+              <div class="hs-btn-primary">Get a Free Estimate</div>
+              <div class="hs-btn-outline">Call (555) 444-7890</div>
+            </div>
+            <div class="hs-hero-guarantee">🛡️ &nbsp;Licensed · Bonded · Insured · Background-Checked Technicians</div>
+          </div>
+          <div class="hs-hero-right">
+            <div class="hs-stat-card">
+              <span class="hs-stat-icon">⭐</span>
+              <div class="hs-stat-info">
+                <span class="hs-stat-num">4.8</span>
+                <span class="hs-stat-label">Average Google Rating (640+ reviews)</span>
+              </div>
+            </div>
+            <div class="hs-stat-card">
+              <span class="hs-stat-icon">🏠</span>
+              <div class="hs-stat-info">
+                <span class="hs-stat-num">4,200+</span>
+                <span class="hs-stat-label">Homes Served Since 2009</span>
+              </div>
+            </div>
+            <div class="hs-stat-card">
+              <span class="hs-stat-icon">⚡</span>
+              <div class="hs-stat-info">
+                <span class="hs-stat-num">2-Hour</span>
+                <span class="hs-stat-label">Emergency Response Guarantee</span>
+              </div>
+            </div>
+            <div class="hs-review-card">
+              <div class="hs-review-stars">★★★★★</div>
+              <div class="hs-review-text">"AC broke on the hottest day of the year. Apex had a tech at my door in under 2 hours and fixed it same day. Incredible service."</div>
+              <div class="hs-review-author">— Jennifer M., [City]</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hs-trust-bar">
+          <div class="hs-trust-grid">
+            <div class="hs-trust-stat">
+              <span class="hs-trust-num" style="color:#F9A825 !important;">★ 4.8</span>
+              <span class="hs-trust-label">640+ Google Reviews</span>
+            </div>
+            <div class="hs-trust-stat">
+              <span class="hs-trust-num">15+</span>
+              <span class="hs-trust-label">Years in Business</span>
+            </div>
+            <div class="hs-trust-stat">
+              <span class="hs-trust-num" style="color:#EA580C !important;">Same-Day</span>
+              <span class="hs-trust-label">Service Available</span>
+            </div>
+            <div class="hs-trust-stat">
+              <span class="hs-trust-num">100%</span>
+              <span class="hs-trust-label">Satisfaction Guarantee</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hs-services">
+          <h2 class="hs-services-heading">Everything Your Home Needs — One Call Away</h2>
+          <p class="hs-services-sub">From routine maintenance to emergency repairs — licensed professionals on every job, no exceptions.</p>
+          <div class="hs-services-row">
+            <div class="hs-service-card is-urgent">
+              <span class="hs-service-icon">❄️</span>
+              <h3>HVAC — Heating &amp; Cooling</h3>
+              <p>Installation, repair, and maintenance for all major brands. Emergency AC/heating repair available 24/7.</p>
+              <span class="hs-service-badge">24/7 Emergency</span>
+            </div>
+            <div class="hs-service-card is-urgent">
+              <span class="hs-service-icon">💧</span>
+              <h3>Plumbing</h3>
+              <p>Leaks, clogs, water heaters, and full repiping. Emergency burst pipe and water damage response available.</p>
+              <span class="hs-service-badge">24/7 Emergency</span>
+            </div>
+            <div class="hs-service-card">
+              <span class="hs-service-icon">⚡</span>
+              <h3>Electrical</h3>
+              <p>Panel upgrades, outlet installation, EV charger setup, and whole-home electrical inspections by licensed electricians.</p>
+            </div>
+            <div class="hs-service-card">
+              <span class="hs-service-icon">🏠</span>
+              <h3>Roofing</h3>
+              <p>Repair, replacement, and inspection for all roof types. Storm damage documentation for insurance claims.</p>
+            </div>
+            <div class="hs-service-card">
+              <span class="hs-service-icon">🌿</span>
+              <h3>Landscaping</h3>
+              <p>Weekly lawn maintenance, seasonal cleanups, irrigation installation, and landscape design for curb appeal that lasts.</p>
+            </div>
+            <div class="hs-service-card">
+              <span class="hs-service-icon">🔐</span>
+              <h3>Home Security</h3>
+              <p>Smart lock installation, camera systems, and whole-home security monitoring — wired by licensed pros.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hs-about">
+          <div class="hs-about-text">
+            <span class="hs-about-tag">About Apex Home Services</span>
+            <h2>Licensed Pros. Real Guarantees.<br>No Surprises on the Bill.</h2>
+            <p>Since 2009, Apex has served the [City] metro area with honest pricing, licensed technicians, and a satisfaction guarantee that actually means something. We show up on time, we explain the work before we do it, and we don't leave until you're happy.</p>
+            <div class="hs-certs">
+              <span class="hs-cert">✅ State Licensed</span>
+              <span class="hs-cert">✅ Fully Bonded</span>
+              <span class="hs-cert">✅ $2M Liability Insurance</span>
+              <span class="hs-cert">✅ Background-Checked</span>
+              <span class="hs-cert">✅ BBB Accredited A+</span>
+            </div>
+          </div>
+          <div class="hs-about-right">
+            <div class="hs-trust-badge">🏆 BBB Accredited — A+ Rating</div>
+            <div class="hs-trust-badge">⭐ 4.8 / 5.0 — 640+ Reviews</div>
+            <div class="hs-trust-badge">🛡️ $2M Liability Coverage</div>
+            <div class="hs-trust-badge">🔒 Background-Checked Techs</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+  <p class="preview-label">Mockup — not a live site. Designed by Nokto Studio as a sample presentation.</p>
+</div>
+
+
+<!-- ===================== PITCH BRIDGE ===================== -->
+<section class="section pitch-bridge">
+  <div class="container">
+    <span class="section-label">What You Just Saw</span>
+    <h2 class="section-heading reveal">This is what we design<br>for your home services company.</h2>
+    <div class="divider divider-center"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 32px;">
+      Every element above — the emergency-first layout, trust signals, service structure, and lead-capture copy — is built specifically for US home service businesses. Combined with our branding, ads, and SEO, it becomes a lead generation machine that works around the clock.
+    </p>
+    <div class="pitch-pills">
+      <span class="pitch-pill">Built for urgent-intent lead capture</span>
+      <span class="pitch-pill">Local SEO-ready from day one</span>
+      <span class="pitch-pill">Review-driven trust architecture</span>
+      <span class="pitch-pill">Mobile-first for on-the-go searches</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== BRANDING PACK ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 01</span>
+    <h2 class="section-heading reveal">Complete Home Services Branding Package</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:600px;">A brand identity built around reliability, professionalism, and urgency. Every asset your company needs — truck wraps, uniforms, business cards, and digital — delivered as a cohesive system.</p>
+
+    <h3 class="branding-sub">Brand Color Palette</h3>
+    <div class="color-palette-row">
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#1C2B3A;"></div>
+        <span class="color-swatch-hex">#1C2B3A</span>
+        <span class="color-swatch-name">Pro Navy</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#EA580C;"></div>
+        <span class="color-swatch-hex">#EA580C</span>
+        <span class="color-swatch-name">Action Orange</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#F97316;"></div>
+        <span class="color-swatch-hex">#F97316</span>
+        <span class="color-swatch-name">Warm Amber</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#F8F9FA; border-color:rgba(255,255,255,0.2);"></div>
+        <span class="color-swatch-hex">#F8F9FA</span>
+        <span class="color-swatch-name">Clean White</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#718096;"></div>
+        <span class="color-swatch-hex">#718096</span>
+        <span class="color-swatch-name">Slate Gray</span>
+      </div>
+    </div>
+
+    <h3 class="branding-sub">Typography System</h3>
+    <div class="type-showcase">
+      <div class="type-display">Inter</div>
+      <div class="type-descriptor">Reliable · Bold · Professional</div>
+      <div class="type-weights">
+        <span class="type-weight-item"><strong style="font-weight:800;">800</strong> — Headlines</span>
+        <span class="type-weight-item"><strong style="font-weight:700;">700</strong> — Subheadings</span>
+        <span class="type-weight-item"><strong style="font-weight:600;">600</strong> — Labels</span>
+        <span class="type-weight-item"><strong style="font-weight:400;">400</strong> — Body</span>
+      </div>
+      <div class="type-sample-h">Fast, Honest, Done Right — Guaranteed.</div>
+      <div class="type-sample-b">Our licensed technicians arrive on time, explain the work before they start, and don't consider the job done until you're satisfied. No hidden charges. No pressure upsells. Just quality work, every time.</div>
+    </div>
+
+    <h3 class="branding-sub">Logo Concept</h3>
+    <div class="logo-concept-grid">
+      <div class="logo-variant logo-variant-light">
+        <span class="lv-label">On White</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🔧</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name">Apex</span>
+            <span class="logo-lockup-sub">HOME SERVICES</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-dark">
+        <span class="lv-label">On Dark</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🔧</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name logo-lockup-name-w">Apex</span>
+            <span class="logo-lockup-sub">HOME SERVICES</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-orange">
+        <span class="lv-label">Icon Mark</span>
+        <div class="logo-icon-wrap">🔧</div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem; color:var(--text-muted); margin-top:20px;">Full package includes: wordmark, truck wrap layout, uniform design, business card template, and usage rules.</p>
+
+    <h3 class="branding-sub" style="margin-top:56px;">UI Component Library</h3>
+    <p style="font-size:0.85rem; color:var(--text-2); margin-bottom:0;">Every button, form, and card style — built for urgent-intent conversion on mobile and desktop.</p>
+    <div class="ui-demo-box">
+      <div class="ui-demo-group">
+        <h4>Buttons</h4>
+        <div class="ui-demo-btns">
+          <button class="uidemo-btn-primary">Get Free Estimate</button>
+          <button class="uidemo-btn-dark">Call Now</button>
+          <button class="uidemo-btn-outline">Our Services</button>
+        </div>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Lead Form</h4>
+        <input class="uidemo-input" type="text" placeholder="Describe the problem..." readonly>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Service Card</h4>
+        <div class="uidemo-card">
+          <div class="uidemo-card-icon">❄️</div>
+          <h5>HVAC Repair</h5>
+          <p>24/7 emergency service.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== EMAIL SAMPLE ===================== -->
+<section class="section email-section">
+  <div class="container">
+    <span class="section-label">Deliverable 02</span>
+    <h2 class="section-heading reveal">Service Booking Confirmation Email — Sample</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal">An automated HTML email that fires the moment a customer books a service or requests a quote. It confirms the appointment, sets expectations, and keeps your business top-of-mind before the technician arrives.</p>
+
+    <div class="email-mockup-wrap">
+      <div class="email-chrome">
+        <span class="email-chrome-dot" style="background:#FF5F57;"></span>
+        <span class="email-chrome-dot" style="background:#FFBD2E;"></span>
+        <span class="email-chrome-dot" style="background:#28C840;"></span>
+        <div class="email-chrome-meta">
+          <span class="email-chrome-from">From: Apex Home Services &lt;service@apexhomeservices.com&gt;</span>
+          <span class="email-chrome-subject">Subject: Your Appointment is Confirmed — Apex Home Services</span>
+        </div>
+      </div>
+      <div class="email-body">
+        <div class="email-logo-band">
+          <span class="email-logo-text">🔧 Apex <span>Home Services</span></span>
+        </div>
+        <div class="email-content">
+          <h2 class="email-h2">You're all set, [First Name]! ✅</h2>
+          <p class="email-p">Your service appointment with Apex Home Services is confirmed. One of our licensed technicians will be with you at the scheduled time — here's everything you need to know.</p>
+
+          <div class="email-steps-label">Before your technician arrives:</div>
+
+          <div class="email-step">
+            <div class="email-step-num">1</div>
+            <div class="email-step-text">
+              <strong>You'll get a reminder the morning of your appointment</strong>
+              <p>We'll text you a 30-minute heads-up when our tech is on the way — so you're never left waiting and wondering.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">2</div>
+            <div class="email-step-text">
+              <strong>Your tech will introduce themselves first</strong>
+              <p>All Apex technicians carry photo ID, are background-checked, and will explain the job before they start. Never feel pressured — you approve the work before we proceed.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">3</div>
+            <div class="email-step-text">
+              <strong>We leave the area cleaner than we found it</strong>
+              <p>Every Apex technician cleans up after themselves. Shoe covers, drop cloths, and full debris removal are standard on every job.</p>
+            </div>
+          </div>
+
+          <div class="email-cta-wrap">
+            <a class="email-cta-btn" href="#">View or Change Your Appointment →</a>
+          </div>
+
+          <div class="email-reminder">
+            📅 &nbsp;<strong>Your Appointment:</strong> [Day], [Date] · [Time Window]<br>
+            🔧 &nbsp;<strong>Service:</strong> [Service Type]<br>
+            📍 &nbsp;<strong>Your Address:</strong> [Customer Address]<br>
+            📞 &nbsp;<strong>Questions?</strong> Call us anytime: (555) 444-7890
+          </div>
+
+          <p class="email-p">Need to reschedule or have a question? Call or text us at (555) 444-7890 — we're available 24/7 for anything urgent.</p>
+          <p class="email-p" style="margin-bottom:0;">Thanks for choosing Apex,<br><strong style="color:#1C2B3A;">The Apex Home Services Team</strong></p>
+        </div>
+        <div class="email-footer-bar">
+          Apex Home Services · 88 Contractor Way, [City], [State]<br>
+          (555) 444-7890 · service@apexhomeservices.com<br>
+          <small>© 2026 Apex Home Services. · <a href="#">Unsubscribe</a> · <a href="#">Privacy Policy</a></small>
+        </div>
+      </div>
+    </div>
+    <p class="email-credit">Nokto Studio email design — custom-coded HTML built for trust, clarity, and mobile-first readability.</p>
+  </div>
+</section>
+
+
+<!-- ===================== PPC SHOWCASE ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 03</span>
+    <h2 class="section-heading reveal">Google Ads — Sample Campaigns We Run for Home Services</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Three campaign types targeting your highest-urgency lead types — emergency HVAC, plumbing, and roofing. We write the copy, set the targeting, build the landing pages, and manage every dollar.</p>
+
+    <div class="serp-frame">
+      <div class="serp-chrome">
+        <div class="serp-search-bar">
+          <span class="serp-search-icon">🔍</span>
+          <span class="serp-search-text">AC repair near me emergency</span>
+        </div>
+      </div>
+      <div class="serp-body">
+        <div class="serp-ads-label">Sponsored</div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">apexhomeservices.com › ac-repair</span>
+          </div>
+          <div class="google-ad-headline">Apex HVAC Repair | Emergency AC — 2-Hour Response</div>
+          <div class="google-ad-headline">Same-Day AC Repair in [City] — Licensed, Trusted, Guaranteed</div>
+          <div class="google-ad-desc">AC broken in [City]? Apex technicians respond in 2 hours or less. Licensed HVAC pros, upfront pricing, 100% satisfaction guarantee. All brands serviced. Call now — we answer 24/7.</div>
+          <div class="google-ad-ext">
+            <span>Call 24/7</span>
+            <span>Get Estimate</span>
+            <span>Service Area</span>
+            <span>Financing Available</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">apexhomeservices.com › plumber</span>
+          </div>
+          <div class="google-ad-headline">Emergency Plumber [City] | Burst Pipe? We're On the Way</div>
+          <div class="google-ad-headline">Licensed Plumbers — Same-Day, No Overtime Surprise Charges</div>
+          <div class="google-ad-desc">Leaky pipe, clogged drain, or no hot water? Apex plumbers are available 24/7 in [City]. Licensed, insured, and guaranteed — upfront pricing with no hidden fees. Book online or call now.</div>
+          <div class="google-ad-ext">
+            <span>Emergency Call</span>
+            <span>Free Estimate</span>
+            <span>Our Services</span>
+            <span>Reviews</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">apexhomeservices.com › roofing</span>
+          </div>
+          <div class="google-ad-headline">Roof Repair [City] | Storm Damage? Free Inspection Today</div>
+          <div class="google-ad-headline">Licensed Roofers — Insurance Claims Handled From Start to Finish</div>
+          <div class="google-ad-desc">Hail damage? Missing shingles? Apex roofing contractors provide free inspections, detailed estimates, and handle all insurance documentation. Book your free roof inspection today.</div>
+          <div class="google-ad-ext">
+            <span>Free Inspection</span>
+            <span>Insurance Help</span>
+            <span>Our Work</span>
+            <span>Get Estimate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Campaign Targeting Overview</h3>
+    <div class="targeting-grid">
+      <div class="targeting-row">
+        <span class="targeting-key">Audience</span>
+        <span class="targeting-val">Homeowners 30–65, household income $60K+</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Location Radius</span>
+        <span class="targeting-val">15–30 miles from your service hub</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Ad Schedule</span>
+        <span class="targeting-val">24/7 for emergency campaigns; 6am–9pm for routine</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Monthly Budget Range</span>
+        <span class="targeting-val">$800–$3,500/mo depending on services &amp; service area</span>
+      </div>
+    </div>
+
+    <div class="perf-benchmarks">
+      <div class="perf-stat">
+        <span class="perf-num">12.6%</span>
+        <span class="perf-label">Average CTR</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">$22–$58</span>
+        <span class="perf-label">Cost Per Lead</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">30–80</span>
+        <span class="perf-label">Monthly Job Inquiries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SEO SHOWCASE ===================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Deliverable 04</span>
+    <h2 class="section-heading reveal">Local SEO — What We Do for Your Business</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Rank for the high-intent searches homeowners run when they have an urgent problem. We handle everything — your Google Business Profile, service page SEO, citations, and a review generation system that compounds month after month.</p>
+
+    <h3 class="branding-sub">Target Keyword Clusters</h3>
+    <div class="keyword-grid">
+      <div class="keyword-card">HVAC repair near me <span class="keyword-vol">49K/mo</span></div>
+      <div class="keyword-card">emergency plumber [city] <span class="keyword-vol">8.2K/mo</span></div>
+      <div class="keyword-card">AC repair [city] <span class="keyword-vol">12K/mo</span></div>
+      <div class="keyword-card">roof replacement cost [city] <span class="keyword-vol">5.4K/mo</span></div>
+      <div class="keyword-card">plumber near me <span class="keyword-vol">83K/mo</span></div>
+      <div class="keyword-card">furnace repair [city] <span class="keyword-vol">6.8K/mo</span></div>
+      <div class="keyword-card">water heater replacement [city] <span class="keyword-vol">4.1K/mo</span></div>
+      <div class="keyword-card">electrician near me <span class="keyword-vol">67K/mo</span></div>
+      <div class="keyword-card">roof leak repair [city] <span class="keyword-vol">3.9K/mo</span></div>
+      <div class="keyword-card">drain cleaning [city] <span class="keyword-vol">7.3K/mo</span></div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Google Business Profile — Fully Optimized</h3>
+    <div class="gbp-wrap">
+      <div class="gbp-card">
+        <div class="gbp-map">📍 &nbsp;Map View</div>
+        <div class="gbp-info">
+          <div class="gbp-name">Apex Home Services</div>
+          <div class="gbp-cat">🔧 HVAC Contractor · <span style="color:#EA580C; font-weight:700;">Open 24/7</span></div>
+          <div class="gbp-stars">★★★★★ <span>4.8 (640 reviews)</span></div>
+          <div class="gbp-detail">
+            📍 88 Contractor Way, [City], [State]<br>
+            📞 (555) 444-7890<br>
+            🕐 Open 24 hours, 7 days a week<br>
+            🌐 apexhomeservices.com
+          </div>
+          <div class="gbp-actions">
+            <div class="gbp-action">Directions</div>
+            <div class="gbp-action">Website</div>
+            <div class="gbp-action">Call</div>
+          </div>
+        </div>
+      </div>
+      <div class="gbp-note">
+        <h4>What we optimise:</h4>
+        <ul>
+          <li>Service categories across all trades for maximum map pack exposure</li>
+          <li>Weekly posts — seasonal tips, completed jobs, and special offers</li>
+          <li>Before/after project photos uploaded consistently for ranking signals</li>
+          <li>Automated review request sequence triggered post-job via text</li>
+          <li>Citations across 40+ home service directories (Angi, HomeAdvisor, Yelp, Houzz)</li>
+          <li>LocalBusiness schema markup on every service page for rich results</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Our 3-Step SEO Process</h3>
+    <div class="seo-steps">
+      <div class="seo-step">
+        <div class="seo-step-num">1</div>
+        <h3>Audit</h3>
+        <p>We analyse your current rankings across all service types, GBP health, competitor positioning, site speed, and citation consistency — then deliver a prioritised action plan.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">2</div>
+        <h3>Optimise</h3>
+        <p>Service page SEO for each trade area, GBP category refinement, LocalBusiness schema, citation building across home service directories, and page speed improvements.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">3</div>
+        <h3>Dominate</h3>
+        <p>Monthly seasonal content, post-job review generation sequences, link acquisition, and live rank tracking across every service and service area — so you own the map pack.</p>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Sample Rank Tracking — Before vs. After 90 Days</h3>
+    <div class="rank-table-wrap">
+      <table class="rank-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Before</th>
+            <th>After 90 Days</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HVAC repair [city]</td>
+            <td>#19</td>
+            <td>#3</td>
+            <td class="rank-up">↑ 16 positions</td>
+          </tr>
+          <tr>
+            <td>emergency plumber [city]</td>
+            <td>#34</td>
+            <td>#5</td>
+            <td class="rank-up">↑ 29 positions</td>
+          </tr>
+          <tr>
+            <td>AC repair near me</td>
+            <td>#41</td>
+            <td>#7</td>
+            <td class="rank-up">↑ 34 positions</td>
+          </tr>
+          <tr>
+            <td>roof replacement [city]</td>
+            <td>Not ranked</td>
+            <td>#11</td>
+            <td class="rank-new">New entry</td>
+          </tr>
+          <tr>
+            <td>plumber [city] reviews</td>
+            <td>#27</td>
+            <td>#4</td>
+            <td class="rank-up">↑ 23 positions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CTA ===================== -->
+<section class="section cta-section bg-2">
+  <div class="container">
+    <span class="section-label">Let's Get Started</span>
+    <h2 class="reveal">Ready to get more<br>jobs booked?</h2>
+    <div class="divider divider-center" style="margin:20px auto 24px;"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 36px;">
+      Book a free 30-minute strategy call. We'll research your local market, audit your current online presence, and come back with a real action plan — no commitment, no templates.
+    </p>
+    <a href="/en/contact/" class="btn btn-primary btn-lg">Book Your Free Strategy Call</a>
+    <p class="form-note" style="margin-top:20px; text-align:center;">12h response · Home services specialists · Real results</p>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo"><span class="logo-n">N</span>okto Studio</a>
+        <p class="footer-tagline">"Quality work.<br>Always on time."</p>
+        <p class="footer-sub">Slovakia-based. Internationally minded.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/portfolio/">Portfolio</a></li>
+            <li><a href="/en/blog/">Blog</a></li>
+            <li><a href="/en/faq/">FAQ</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/en/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">flamia.studio</a></li>
+            <li><a href="https://dolinajjr.sk" target="_blank" rel="noopener noreferrer">dolinajjr.sk</a></li>
+            <li><a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">peterkocur.sk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nokto Studio. All rights reserved.</p>
+      <p class="footer-badges">Quality work · Always on time · Real results</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Back to top">
+  <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="../../../assets/js/cookie-banner.js"></script>
+<script src="../../../assets/js/nav.js"></script>
+<script src="../../../assets/js/animations.js"></script>
+</body>
+</html>

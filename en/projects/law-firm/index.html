@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Law Firm Marketing — What We Build for US Attorneys | Nokto Studio</title>
+  <meta name="description" content="See exactly what Nokto Studio builds for US law firms — website design, branding, Google Ads, local SEO, and client intake email, all in one package.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/main.css">
+  <link rel="stylesheet" href="../../../assets/css/components.css">
+  <link rel="stylesheet" href="../../../assets/css/animations.css">
+  <style>
+    /* ============================================================
+       LAW FIRM SHOWCASE — page-specific styles
+       ============================================================ */
+
+    body { padding-top: 72px; }
+
+    /* ----------------------------------------------------------
+       1. PREVIEW FRAME
+    ---------------------------------------------------------- */
+    .preview-outer {
+      background: var(--bg);
+      padding: 48px 0 0;
+    }
+    .preview-frame {
+      position: relative;
+      border: 2px dashed rgba(201,168,76,0.35);
+      border-radius: 14px;
+      overflow: hidden;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .preview-label {
+      text-align: center;
+      font-size: 0.72rem;
+      color: rgba(201,168,76,0.55);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 0 14px;
+      margin: 0;
+      background: var(--bg);
+    }
+
+    /* ----------------------------------------------------------
+       2. LAW FIRM PREVIEW
+    ---------------------------------------------------------- */
+    .lf-preview {
+      pointer-events: none;
+      user-select: none;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      color: #1A2744;
+    }
+    .lf-preview * { box-sizing: border-box; }
+    .lf-preview h1, .lf-preview h2, .lf-preview h3, .lf-preview h4 { color: #1A2744 !important; }
+    .lf-preview p { color: #4A5568 !important; }
+    .lf-preview a { color: #C9A84C !important; text-decoration: none; }
+    .lf-preview .reveal { opacity: 1 !important; transform: none !important; }
+
+    /* Header */
+    .lf-header {
+      background: #1A2744;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .lf-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.02em;
+    }
+    .lf-logo span { color: #C9A84C !important; }
+    .lf-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .lf-nav li a { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.75) !important; }
+    .lf-btn {
+      background: #C9A84C;
+      color: #1A2744 !important;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 6px;
+      cursor: default;
+    }
+
+    /* Hero */
+    .lf-hero {
+      background: linear-gradient(135deg, #1A2744 0%, #243364 60%, #1A2744 100%);
+      padding: 60px 48px 64px;
+      display: flex;
+      align-items: center;
+      gap: 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .lf-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(201,168,76,0.04) 40px,
+        rgba(201,168,76,0.04) 42px
+      );
+    }
+    .lf-hero-text { flex: 1; position: relative; z-index: 1; }
+    .lf-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(201,168,76,0.12);
+      color: #C9A84C !important;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(201,168,76,0.3);
+    }
+    .lf-hero h1 {
+      font-size: 2.65rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      color: #ffffff !important;
+      letter-spacing: -0.03em;
+    }
+    .lf-hero h1 span { color: #C9A84C !important; }
+    .lf-hero p {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.72) !important;
+      line-height: 1.75;
+      max-width: 440px;
+      margin: 0 0 28px;
+    }
+    .lf-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .lf-btn-primary {
+      background: #C9A84C;
+      color: #1A2744 !important;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 14px 28px;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+    }
+    .lf-btn-outline {
+      background: transparent;
+      color: rgba(255,255,255,0.85) !important;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 6px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .lf-hero-disclaimer {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4) !important;
+      margin-top: 14px;
+    }
+    /* Hero right column */
+    .lf-hero-right {
+      flex: 0 0 300px;
+      position: relative;
+      z-index: 1;
+    }
+    .lf-contact-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+    .lf-contact-card-head {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1A2744 !important;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lf-form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .lf-fake-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: #718096 !important;
+      background: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+    }
+    .lf-submit-btn {
+      width: 100%;
+      background: #1A2744;
+      color: #fff !important;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+      cursor: default;
+    }
+    .lf-form-note {
+      font-size: 0.68rem;
+      color: #A0AEC0 !important;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Trust bar */
+    .lf-trust-bar {
+      background: #F7F8FA;
+      border-top: 3px solid #C9A84C;
+      border-bottom: 1px solid #E8EDF4;
+      padding: 20px 48px;
+    }
+    .lf-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+    .lf-trust-stat { display: flex; flex-direction: column; align-items: center; padding: 6px 0; }
+    .lf-trust-stat + .lf-trust-stat { border-left: 1px solid #E2E8F0; }
+    .lf-trust-num { display: block; font-size: 1.4rem; font-weight: 800; color: #1A2744 !important; line-height: 1.1; }
+    .lf-trust-label { display: block; font-size: 0.7rem; color: #718096 !important; margin-top: 4px; font-weight: 500; }
+
+    /* Practice areas */
+    .lf-practice {
+      background: #fff;
+      padding: 52px 48px;
+    }
+    .lf-practice-heading { text-align: center; font-size: 1.55rem; font-weight: 800; color: #1A2744 !important; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .lf-practice-sub { text-align: center; font-size: 0.88rem; color: #718096 !important; margin: 0 0 32px; }
+    .lf-practice-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .lf-practice-card {
+      border: 1px solid #E8EDF4;
+      border-left: 4px solid #1A2744;
+      border-radius: 8px;
+      padding: 22px 20px;
+      background: #fff;
+    }
+    .lf-practice-card.is-gold { border-left-color: #C9A84C; }
+    .lf-practice-icon { font-size: 1.5rem; margin-bottom: 12px; display: block; }
+    .lf-practice-card h3 { font-size: 0.9rem; font-weight: 700; color: #1A2744 !important; margin: 0 0 7px; }
+    .lf-practice-card p { font-size: 0.76rem; color: #718096 !important; line-height: 1.6; margin: 0; }
+
+    /* About teaser */
+    .lf-about {
+      background: #1A2744;
+      padding: 52px 48px;
+      display: flex;
+      gap: 56px;
+      align-items: center;
+    }
+    .lf-about-text { flex: 1; }
+    .lf-about-eyebrow {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C9A84C !important;
+      margin-bottom: 14px;
+    }
+    .lf-about-text h2 { font-size: 1.5rem; font-weight: 800; color: #fff !important; margin: 0 0 14px; letter-spacing: -0.02em; }
+    .lf-about-text p { font-size: 0.86rem; color: rgba(255,255,255,0.68) !important; line-height: 1.75; max-width: 420px; margin: 0 0 20px; }
+    .lf-bar-items { display: flex; flex-wrap: wrap; gap: 8px; }
+    .lf-bar-item {
+      font-size: 0.7rem; font-weight: 600;
+      background: rgba(201,168,76,0.12);
+      color: #C9A84C !important;
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 4px 12px; border-radius: 4px;
+    }
+    .lf-about-right { flex: 0 0 240px; display: flex; flex-direction: column; gap: 10px; }
+    .lf-trust-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 11px 16px;
+      font-size: 0.77rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85) !important;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ----------------------------------------------------------
+       3. PITCH BRIDGE
+    ---------------------------------------------------------- */
+    .pitch-bridge { text-align: center; }
+    .pitch-bridge .container { max-width: 720px; }
+    .pitch-pills {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 28px;
+    }
+    .pitch-pill {
+      padding: 8px 20px;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 99px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #C9A84C;
+      background: rgba(201,168,76,0.07);
+    }
+
+    /* ----------------------------------------------------------
+       4. BRANDING
+    ---------------------------------------------------------- */
+    .branding-sub {
+      font-size: 1rem; font-weight: 700; color: var(--text);
+      margin: 48px 0 20px; letter-spacing: -0.01em;
+    }
+    .branding-sub:first-of-type { margin-top: 40px; }
+    .color-palette-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .color-swatch-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .color-swatch { width: 88px; height: 72px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .color-swatch-hex { font-size: 0.68rem; font-weight: 600; color: var(--text-2); letter-spacing: 0.04em; }
+    .color-swatch-name { font-size: 0.62rem; color: var(--text-muted); }
+    .type-showcase {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px; padding: 32px 36px; max-width: 680px;
+    }
+    .type-display { font-size: 3rem; font-weight: 800; color: var(--text); line-height: 1; margin-bottom: 4px; }
+    .type-descriptor { font-size: 0.8rem; color: var(--accent-light); margin-bottom: 24px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .type-weights { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .type-weight-item { font-size: 0.8rem; color: var(--text-2); }
+    .type-weight-item strong { color: var(--text); }
+    .type-sample-h { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 8px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 20px; }
+    .type-sample-b { font-size: 0.88rem; color: var(--text-2); line-height: 1.7; }
+    .logo-concept-grid { display: flex; gap: 12px; flex-wrap: wrap; }
+    .logo-variant { border-radius: 12px; padding: 24px 28px; display: flex; flex-direction: column; gap: 18px; flex: 1; min-width: 160px; }
+    .logo-variant-light { background: #fff; }
+    .logo-variant-dark  { background: #1A2744; }
+    .logo-variant-gold  { background: #C9A84C; }
+    .lv-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(0,0,0,0.3); font-family: 'Inter', sans-serif; }
+    .logo-variant-dark .lv-label, .logo-variant-gold .lv-label { color: rgba(255,255,255,0.45); }
+    .logo-lockup { display: flex; align-items: center; gap: 10px; }
+    .logo-lockup-icon { font-size: 1.5rem; line-height: 1; }
+    .logo-lockup-text { display: flex; flex-direction: column; }
+    .logo-lockup-name { font-size: 1.05rem; font-weight: 800; color: #1A2744; line-height: 1.1; letter-spacing: -0.02em; font-family: 'Inter', sans-serif; }
+    .logo-lockup-name-w { color: #fff; }
+    .logo-lockup-sub { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.2em; color: #C9A84C; font-family: 'Inter', sans-serif; margin-top: 1px; }
+    .logo-lockup-sub-dk { color: rgba(26,39,68,0.6); }
+    .logo-icon-wrap { display: flex; align-items: center; justify-content: center; flex: 1; font-size: 2.2rem; }
+    .ui-demo-box { background: #F8F9FA; border-radius: 12px; padding: 32px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; margin-top: 16px; }
+    .ui-demo-group h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8E8E93; margin: 0 0 12px; }
+    .ui-demo-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .uidemo-btn-primary { background: #1A2744; color: #fff; font-size: 0.82rem; font-weight: 700; padding: 10px 22px; border-radius: 6px; border: none; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-gold { background: #C9A84C; color: #1A2744; font-size: 0.82rem; font-weight: 700; padding: 10px 22px; border-radius: 6px; border: none; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-btn-outline { background: transparent; color: #1A2744; font-size: 0.82rem; font-weight: 600; padding: 9px 22px; border-radius: 6px; border: 2px solid #1A2744; font-family: 'Inter', sans-serif; cursor: default; }
+    .uidemo-input { width: 220px; padding: 10px 14px; border: 1.5px solid #D1DCE8; border-radius: 6px; font-size: 0.82rem; font-family: 'Inter', sans-serif; color: #1A2744; background: #fff; outline: none; cursor: default; }
+    .uidemo-card { background: #fff; border: 1px solid #E2EAF0; border-left: 4px solid #C9A84C; border-radius: 8px; padding: 16px 18px; width: 200px; }
+    .uidemo-card-icon { font-size: 1.3rem; margin-bottom: 8px; }
+    .uidemo-card h5 { font-size: 0.82rem; font-weight: 700; color: #1A2744; margin: 0 0 4px; }
+    .uidemo-card p { font-size: 0.72rem; color: #4A5568; margin: 0; line-height: 1.5; }
+
+    /* ----------------------------------------------------------
+       5. EMAIL MOCKUP
+    ---------------------------------------------------------- */
+    .email-section .section-subheading { max-width: 640px; }
+    .email-mockup-wrap { max-width: 600px; margin: 48px auto 0; border-radius: 12px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,0.45); border: 1px solid rgba(255,255,255,0.07); }
+    .email-chrome { background: #2A2A2A; padding: 10px 16px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .email-chrome-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .email-chrome-meta { margin-left: 10px; display: flex; flex-direction: column; gap: 2px; }
+    .email-chrome-from, .email-chrome-subject { font-size: 0.68rem; color: #aaa; font-family: 'Inter', sans-serif; }
+    .email-body { background: #ffffff; font-family: 'Inter', -apple-system, sans-serif; color: #333; }
+    .email-logo-band { background: #1A2744; padding: 22px 32px; text-align: center; }
+    .email-logo-text { color: #fff; font-size: 1.15rem; font-weight: 800; font-family: 'Inter', sans-serif; }
+    .email-logo-text span { color: #C9A84C; }
+    .email-content { padding: 32px 36px; }
+    .email-h2 { color: #1A2744; font-size: 1.35rem; font-weight: 800; margin: 0 0 12px; font-family: 'Inter', sans-serif; }
+    .email-p { color: #555; font-size: 0.88rem; line-height: 1.7; margin: 0 0 18px; font-family: 'Inter', sans-serif; }
+    .email-steps-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1A2744; margin-bottom: 14px; font-family: 'Inter', sans-serif; }
+    .email-step { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; padding: 14px 16px; background: #F7F8FB; border-radius: 6px; border-left: 3px solid #C9A84C; }
+    .email-step-num { background: #1A2744; color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.78rem; flex-shrink: 0; font-family: 'Inter', sans-serif; }
+    .email-step-text strong { display: block; color: #1A2744; font-size: 0.82rem; font-weight: 700; margin-bottom: 2px; font-family: 'Inter', sans-serif; }
+    .email-step-text p { color: #555; font-size: 0.78rem; line-height: 1.5; margin: 0; font-family: 'Inter', sans-serif; }
+    .email-cta-wrap { text-align: center; margin: 26px 0; }
+    .email-cta-btn { display: inline-block; background: #1A2744; color: #fff; font-size: 0.88rem; font-weight: 700; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-family: 'Inter', sans-serif; }
+    .email-reminder { background: #FBF8ED; border-left: 3px solid #C9A84C; border-radius: 4px; padding: 14px 18px; font-size: 0.82rem; color: #333; line-height: 1.7; margin: 18px 0; font-family: 'Inter', sans-serif; }
+    .email-footer-bar { background: #F8F9FA; padding: 18px 32px; text-align: center; border-top: 1px solid #E8EDF3; font-size: 0.72rem; color: #888; line-height: 1.7; font-family: 'Inter', sans-serif; }
+    .email-footer-bar a { color: #C9A84C; }
+    .email-credit { text-align: center; font-size: 0.7rem; color: var(--text-muted); margin-top: 16px; letter-spacing: 0.06em; }
+
+    /* ----------------------------------------------------------
+       6. PPC SECTION
+    ---------------------------------------------------------- */
+    .serp-frame { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 56px rgba(0,0,0,0.4); max-width: 780px; }
+    .serp-chrome { background: #f8f9fa; border-bottom: 1px solid #e8eaed; padding: 10px 16px; }
+    .serp-search-bar { background: #fff; border: 1px solid #dfe1e5; border-radius: 24px; padding: 7px 16px; display: flex; align-items: center; gap: 10px; max-width: 500px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .serp-search-icon { font-size: 0.8rem; color: #4285f4; }
+    .serp-search-text { font-size: 0.88rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .serp-body { padding: 14px 20px 6px; }
+    .serp-ads-label { font-size: 0.68rem; color: #70757a; font-family: 'Inter', sans-serif; margin-bottom: 4px; }
+    .google-ad-card { padding: 12px 0 14px; border-bottom: 1px solid #e8eaed; }
+    .google-ad-card:last-child { border-bottom: none; }
+    .google-ad-top-line { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+    .google-ad-badge { display: inline-flex; align-items: center; border: 1px solid #70757a; border-radius: 3px; padding: 1px 5px; font-size: 0.62rem; font-weight: 600; color: #70757a; font-family: 'Inter', sans-serif; flex-shrink: 0; }
+    .google-ad-url { font-size: 0.78rem; color: #202124; font-family: 'Inter', sans-serif; }
+    .google-ad-headline { font-size: 1.05rem; font-weight: 400; color: #1a0dab; line-height: 1.4; text-decoration: underline; margin-bottom: 2px; cursor: default; font-family: 'Inter', sans-serif; }
+    .google-ad-desc { font-size: 0.82rem; color: #4d5156; line-height: 1.58; margin: 5px 0 7px; font-family: 'Inter', sans-serif; }
+    .google-ad-ext { display: flex; flex-wrap: wrap; gap: 0; margin-top: 4px; }
+    .google-ad-ext span { font-size: 0.78rem; color: #1a0dab; padding-right: 14px; cursor: default; text-decoration: underline; font-family: 'Inter', sans-serif; background: none; border: none; border-radius: 0; }
+    .google-ad-ext span::after { content: ' ·'; text-decoration: none; color: #70757a; margin-left: 6px; }
+    .google-ad-ext span:last-child::after { content: ''; }
+    .targeting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 680px; margin-top: 16px; }
+    .targeting-row { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .targeting-key { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; flex-shrink: 0; }
+    .targeting-val { font-size: 0.82rem; color: var(--text-2); text-align: right; line-height: 1.4; }
+    .perf-benchmarks { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 40px; padding: 28px 32px; background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.18); border-radius: 12px; max-width: 680px; }
+    .perf-stat { text-align: center; flex: 1; min-width: 120px; }
+    .perf-num { display: block; font-size: 1.75rem; font-weight: 800; color: #C9A84C; line-height: 1.1; margin-bottom: 4px; }
+    .perf-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.04em; }
+
+    /* ----------------------------------------------------------
+       7. SEO SECTION
+    ---------------------------------------------------------- */
+    .keyword-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .keyword-card { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 9px 14px; font-size: 0.82rem; color: var(--text-2); }
+    .keyword-vol { font-size: 0.65rem; font-weight: 700; background: rgba(201,168,76,0.15); color: #C9A84C; padding: 2px 8px; border-radius: 99px; white-space: nowrap; }
+    .gbp-wrap { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-top: 16px; }
+    .gbp-card { background: #fff; border-radius: 14px; overflow: hidden; width: 340px; box-shadow: 0 12px 40px rgba(0,0,0,0.35); flex-shrink: 0; }
+    .gbp-map { height: 110px; background: linear-gradient(135deg, #C8D8F0 0%, #B2BFDB 50%, #8BA0C8 100%); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; color: #2a4070; letter-spacing: 0.05em; font-family: 'Inter', sans-serif; }
+    .gbp-info { padding: 16px 18px; }
+    .gbp-name { font-size: 1rem; font-weight: 800; color: #1A1A2E; font-family: 'Inter', sans-serif; margin-bottom: 3px; }
+    .gbp-cat { font-size: 0.75rem; color: #555; font-family: 'Inter', sans-serif; margin-bottom: 6px; }
+    .gbp-stars { font-size: 0.82rem; color: #F9A825; font-family: 'Inter', sans-serif; margin-bottom: 10px; }
+    .gbp-stars span { color: #555; font-size: 0.72rem; }
+    .gbp-detail { font-size: 0.72rem; color: #555; line-height: 1.8; font-family: 'Inter', sans-serif; border-top: 1px solid #eee; padding-top: 10px; margin-top: 6px; }
+    .gbp-actions { display: flex; gap: 0; border-top: 1px solid #eee; margin-top: 10px; }
+    .gbp-action { flex: 1; text-align: center; padding: 10px 4px; font-size: 0.72rem; font-weight: 600; color: #1A2744; font-family: 'Inter', sans-serif; border-right: 1px solid #eee; cursor: default; }
+    .gbp-action:last-child { border-right: none; }
+    .gbp-note { flex: 1; min-width: 260px; max-width: 380px; }
+    .gbp-note h4 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin: 0 0 14px; }
+    .gbp-note ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .gbp-note ul li { font-size: 0.82rem; color: var(--text-2); padding-left: 20px; position: relative; line-height: 1.5; }
+    .gbp-note ul li::before { content: '✓'; position: absolute; left: 0; color: #4ade80; font-weight: 700; }
+    .seo-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; position: relative; margin-top: 16px; }
+    .seo-steps::before { content: ''; position: absolute; top: 44px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, rgba(26,39,68,0.4), rgba(201,168,76,0.4)); z-index: 0; }
+    .seo-step { background: #1f2540; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 24px 22px; position: relative; z-index: 1; }
+    .seo-step-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1A2744, #C9A84C); color: #fff; font-size: 0.9rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; position: relative; z-index: 2; box-shadow: 0 0 0 4px #1f2540; }
+    .seo-step h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin: 0 0 8px; }
+    .seo-step p { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; margin: 0; }
+    .rank-table-wrap { overflow-x: auto; margin-top: 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+    .rank-table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    .rank-table th { background: rgba(201,168,76,0.1); color: #C9A84C; text-align: left; padding: 12px 16px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .rank-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.83rem; color: var(--text-2); }
+    .rank-table tbody tr:last-child td { border-bottom: none; }
+    .rank-up { color: #4ade80; font-weight: 700; }
+    .rank-new { color: #C9A84C; font-weight: 700; }
+
+    /* ----------------------------------------------------------
+       8. RESPONSIVE
+    ---------------------------------------------------------- */
+    @media (max-width: 900px) {
+      .lf-hero { padding: 48px 32px; flex-direction: column; gap: 32px; }
+      .lf-hero h1 { font-size: 2rem; }
+      .lf-hero-right { flex: none; width: 100%; max-width: 360px; }
+      .lf-practice-row { grid-template-columns: 1fr 1fr; }
+      .lf-trust-grid { grid-template-columns: 1fr 1fr; }
+      .lf-about { flex-direction: column; gap: 28px; }
+      .lf-about-right { flex-direction: row; flex-wrap: wrap; width: 100%; }
+      .lf-header { padding: 0 20px; }
+      .lf-nav { display: none; }
+      .seo-steps { grid-template-columns: 1fr; }
+      .seo-steps::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      .lf-practice { padding: 40px 24px; }
+      .lf-trust-bar { padding: 24px; }
+      .targeting-grid { grid-template-columns: 1fr; }
+      .email-chrome-meta { display: none; }
+      .email-content { padding: 24px 20px; }
+      .perf-benchmarks { gap: 20px; padding: 20px 24px; }
+    }
+    @media (max-width: 540px) {
+      .lf-practice-row { grid-template-columns: 1fr; }
+      .lf-hero { padding: 36px 20px; }
+      .lf-header { height: auto; padding: 14px 20px; }
+      .ui-demo-box { padding: 20px; gap: 20px; }
+      .perf-benchmarks { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/en/" class="nav-logo"><span class="logo-n">N</span>okto Studio</a>
+      <ul class="nav-links">
+        <li><a href="/en/about/">About</a></li>
+        <li><a href="/en/services/">Services</a></li>
+        <li><a href="/en/portfolio/">Portfolio</a></li>
+        <li><a href="/en/blog/">Blog</a></li>
+        <li><a href="/en/faq/">FAQ</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <a href="/en/projects/law-firm/" class="lang-btn active">EN</a>
+          <span>|</span>
+          <a href="/sk/" class="lang-btn">SK</a>
+        </div>
+        <a href="/en/contact/" class="btn btn-primary btn-sm">Free Strategy Call</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+  <a href="/en/about/">About</a>
+  <a href="/en/services/">Services</a>
+  <a href="/en/portfolio/">Portfolio</a>
+  <a href="/en/blog/">Blog</a>
+  <a href="/en/faq/">FAQ</a>
+  <a href="/en/contact/">Contact</a>
+  <div class="lang-toggle">
+    <a href="/en/projects/law-firm/" class="lang-btn active">EN</a>
+    <span>|</span>
+    <a href="/sk/" class="lang-btn">SK</a>
+  </div>
+  <a href="/en/contact/" class="btn btn-primary">Free Strategy Call</a>
+</nav>
+
+<!-- ===================== INTRO LABEL ===================== -->
+<div class="preview-outer">
+  <div style="max-width:1200px; margin:0 auto; padding:0 24px 20px; display:flex; align-items:center; gap:14px;">
+    <span class="section-label" style="margin:0;">US Law Firm, Sample Website</span>
+    <span style="font-size:0.75rem; color:var(--text-muted);">Scroll down to see the full branding package, ads &amp; SEO strategy</span>
+  </div>
+
+  <div style="padding:0 24px 0;">
+    <div class="preview-frame">
+      <section class="lf-preview">
+
+        <!-- Fake header -->
+        <div class="lf-header">
+          <div class="lf-logo">
+            <span>⚖️</span>
+            <span>Hartwell <span>&amp;</span> Associates</span>
+          </div>
+          <ul class="lf-nav">
+            <li><a href="#">Practice Areas</a></li>
+            <li><a href="#">Our Attorneys</a></li>
+            <li><a href="#">Results</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="lf-btn">Free Consultation</div>
+        </div>
+
+        <!-- Fake hero -->
+        <div class="lf-hero">
+          <div class="lf-hero-text">
+            <div class="lf-hero-eyebrow">⚖️ Board-Certified Attorneys · [City], [State]</div>
+            <h1>Trusted Legal Counsel<br>When It Matters <span>Most.</span></h1>
+            <p>Aggressive representation in personal injury, family law, and criminal defense. We don't charge a fee unless we win your case — and we have a proven track record of winning.</p>
+            <div class="lf-hero-btns">
+              <div class="lf-btn-primary">Get a Free Consultation</div>
+              <div class="lf-btn-outline">Call (555) 200-4040</div>
+            </div>
+            <div class="lf-hero-disclaimer">⚠️ &nbsp;Confidential. No obligation. Available 24/7 for urgent cases.</div>
+          </div>
+          <div class="lf-hero-right">
+            <div class="lf-contact-card">
+              <div class="lf-contact-card-head">📋 Start Your Free Case Review</div>
+              <div class="lf-form-row">
+                <div class="lf-fake-input">Your full name</div>
+                <div class="lf-fake-input">Phone number</div>
+                <div class="lf-fake-input">Brief description of your case...</div>
+              </div>
+              <div class="lf-submit-btn">Send — It's Free &amp; Confidential</div>
+              <div class="lf-form-note">🔒 Attorney-client privilege applies from your first message.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="lf-trust-bar">
+          <div class="lf-trust-grid">
+            <div class="lf-trust-stat">
+              <span class="lf-trust-num" style="color:#C9A84C !important;">$180M+</span>
+              <span class="lf-trust-label">Recovered for Clients</span>
+            </div>
+            <div class="lf-trust-stat">
+              <span class="lf-trust-num">25+</span>
+              <span class="lf-trust-label">Years of Combined Experience</span>
+            </div>
+            <div class="lf-trust-stat">
+              <span class="lf-trust-num" style="color:#C9A84C !important;">★ 4.9</span>
+              <span class="lf-trust-label">380+ Google Reviews</span>
+            </div>
+            <div class="lf-trust-stat">
+              <span class="lf-trust-num">No Fee</span>
+              <span class="lf-trust-label">Unless We Win</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Practice areas -->
+        <div class="lf-practice">
+          <h2 class="lf-practice-heading">Our Practice Areas</h2>
+          <p class="lf-practice-sub">Experienced attorneys ready to fight for you across a full range of legal matters.</p>
+          <div class="lf-practice-row">
+            <div class="lf-practice-card is-gold">
+              <span class="lf-practice-icon">🚗</span>
+              <h3>Personal Injury</h3>
+              <p>Car accidents, slip &amp; fall, workplace injuries. No fee unless we win — we take the financial risk so you don't have to.</p>
+            </div>
+            <div class="lf-practice-card">
+              <span class="lf-practice-icon">👨‍👩‍👧</span>
+              <h3>Family Law</h3>
+              <p>Divorce, child custody, and asset protection handled with precision and compassion for your family's future.</p>
+            </div>
+            <div class="lf-practice-card">
+              <span class="lf-practice-icon">🛡️</span>
+              <h3>Criminal Defense</h3>
+              <p>DUI, drug charges, and felony defense. We protect your rights from the moment of arrest to the final verdict.</p>
+            </div>
+            <div class="lf-practice-card">
+              <span class="lf-practice-icon">🏛️</span>
+              <h3>Estate Planning</h3>
+              <p>Wills, trusts, and probate. Protect what you've built and ensure your wishes are honored.</p>
+            </div>
+            <div class="lf-practice-card">
+              <span class="lf-practice-icon">🏗️</span>
+              <h3>Business Law</h3>
+              <p>Contract disputes, business formation, and employment matters handled by attorneys who understand business.</p>
+            </div>
+            <div class="lf-practice-card is-gold">
+              <span class="lf-practice-icon">🏥</span>
+              <h3>Medical Malpractice</h3>
+              <p>When medical negligence causes harm, we hold providers accountable and fight for maximum compensation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- About teaser -->
+        <div class="lf-about">
+          <div class="lf-about-text">
+            <div class="lf-about-eyebrow">About Our Firm</div>
+            <h2>Board-Certified. Trial-Tested.<br>Results-Driven.</h2>
+            <p>Founded in 2001, Hartwell &amp; Associates has recovered over $180 million for injured and wronged clients across [State]. Our attorneys are licensed, board-certified, and have tried hundreds of cases to verdict — we are not afraid of the courtroom.</p>
+            <div class="lf-bar-items">
+              <span class="lf-bar-item">ABA Member</span>
+              <span class="lf-bar-item">State Bar Certified</span>
+              <span class="lf-bar-item">Super Lawyers Rated</span>
+              <span class="lf-bar-item">Martindale-Hubbell AV</span>
+              <span class="lf-bar-item">AVVO 10.0</span>
+            </div>
+          </div>
+          <div class="lf-about-right">
+            <div class="lf-trust-badge">🏆 Super Lawyers — Top Attorneys [State]</div>
+            <div class="lf-trust-badge">⭐ 4.9 / 5.0 — 380+ Google Reviews</div>
+            <div class="lf-trust-badge">📋 Free Consultations, All Cases</div>
+            <div class="lf-trust-badge">🔒 Attorney-Client Privilege, Always</div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </div>
+  <p class="preview-label">Mockup — not a live site. Designed by Nokto Studio as a sample presentation.</p>
+</div>
+
+
+<!-- ===================== PITCH BRIDGE ===================== -->
+<section class="section pitch-bridge">
+  <div class="container">
+    <span class="section-label">What You Just Saw</span>
+    <h2 class="section-heading reveal">This is what we design<br>for your law firm.</h2>
+    <div class="divider divider-center"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 32px;">
+      Every element above — the authority-first layout, trust signals, practice area structure, and conversion copy — is crafted specifically for US law firms. Combined with our branding, ads, and SEO work, it becomes a client-generating system that works around the clock.
+    </p>
+    <div class="pitch-pills">
+      <span class="pitch-pill">Built for high-intent case inquiries</span>
+      <span class="pitch-pill">Local SEO-ready from day one</span>
+      <span class="pitch-pill">Attorney-client privilege messaging</span>
+      <span class="pitch-pill">Mobile-first &amp; ADA accessible</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== BRANDING PACK ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 01</span>
+    <h2 class="section-heading reveal">Complete Law Firm Branding Package</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:600px;">A brand identity built around authority, trustworthiness, and professional gravitas. Every asset your firm needs, delivered as a cohesive system — not a collection of files.</p>
+
+    <h3 class="branding-sub">Brand Color Palette</h3>
+    <div class="color-palette-row">
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#1A2744;"></div>
+        <span class="color-swatch-hex">#1A2744</span>
+        <span class="color-swatch-name">Authority Navy</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#C9A84C;"></div>
+        <span class="color-swatch-hex">#C9A84C</span>
+        <span class="color-swatch-name">Prestige Gold</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#2D3748;"></div>
+        <span class="color-swatch-hex">#2D3748</span>
+        <span class="color-swatch-name">Charcoal</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#F7F8FA; border-color:rgba(255,255,255,0.2);"></div>
+        <span class="color-swatch-hex">#F7F8FA</span>
+        <span class="color-swatch-name">Clean White</span>
+      </div>
+      <div class="color-swatch-wrap">
+        <div class="color-swatch" style="background:#718096;"></div>
+        <span class="color-swatch-hex">#718096</span>
+        <span class="color-swatch-name">Slate Gray</span>
+      </div>
+    </div>
+
+    <h3 class="branding-sub">Typography System</h3>
+    <div class="type-showcase">
+      <div class="type-display">Inter</div>
+      <div class="type-descriptor">Authoritative · Precise · Professional</div>
+      <div class="type-weights">
+        <span class="type-weight-item"><strong style="font-weight:800;">800</strong> — Headlines</span>
+        <span class="type-weight-item"><strong style="font-weight:700;">700</strong> — Subheadings</span>
+        <span class="type-weight-item"><strong style="font-weight:600;">600</strong> — Labels</span>
+        <span class="type-weight-item"><strong style="font-weight:400;">400</strong> — Body</span>
+      </div>
+      <div class="type-sample-h">Trusted Counsel. Proven Results.</div>
+      <div class="type-sample-b">Our attorneys bring decades of courtroom experience and an unwavering commitment to achieving the best possible outcome for every client we represent. We are not just your lawyers — we are your advocates.</div>
+    </div>
+
+    <h3 class="branding-sub">Logo Concept</h3>
+    <div class="logo-concept-grid">
+      <div class="logo-variant logo-variant-light">
+        <span class="lv-label">On White</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">⚖️</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name">Hartwell</span>
+            <span class="logo-lockup-sub">& ASSOCIATES, ATTORNEYS AT LAW</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-dark">
+        <span class="lv-label">On Dark</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">⚖️</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name logo-lockup-name-w">Hartwell</span>
+            <span class="logo-lockup-sub">& ASSOCIATES, ATTORNEYS AT LAW</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-gold">
+        <span class="lv-label">Icon Mark</span>
+        <div class="logo-icon-wrap" style="color:#1A2744;">⚖️</div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem; color:var(--text-muted); margin-top:20px;">Full package includes: wordmark, stacked variant, icon mark, colour guide, letterhead, and usage rules.</p>
+
+    <h3 class="branding-sub" style="margin-top:56px;">UI Component Library</h3>
+    <p style="font-size:0.85rem; color:var(--text-2); margin-bottom:0;">Every button, form, and card style — designed for conversion and professional credibility.</p>
+    <div class="ui-demo-box">
+      <div class="ui-demo-group">
+        <h4>Buttons</h4>
+        <div class="ui-demo-btns">
+          <button class="uidemo-btn-primary">Free Consultation</button>
+          <button class="uidemo-btn-gold">Call Now</button>
+          <button class="uidemo-btn-outline">Our Results</button>
+        </div>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Case Intake Form</h4>
+        <input class="uidemo-input" type="text" placeholder="Describe your case briefly" readonly>
+      </div>
+      <div class="ui-demo-group">
+        <h4>Practice Area Card</h4>
+        <div class="uidemo-card">
+          <div class="uidemo-card-icon">🚗</div>
+          <h5>Personal Injury</h5>
+          <p>No fee unless we win your case.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== EMAIL SAMPLE ===================== -->
+<section class="section email-section">
+  <div class="container">
+    <span class="section-label">Deliverable 02</span>
+    <h2 class="section-heading reveal">New Client Intake Email — Sample</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal">A professionally designed HTML email that fires the moment a prospective client submits their case inquiry. It sets expectations, reduces drop-off, and positions your firm as responsive and authoritative from contact number one.</p>
+
+    <div class="email-mockup-wrap">
+      <div class="email-chrome">
+        <span class="email-chrome-dot" style="background:#FF5F57;"></span>
+        <span class="email-chrome-dot" style="background:#FFBD2E;"></span>
+        <span class="email-chrome-dot" style="background:#28C840;"></span>
+        <div class="email-chrome-meta">
+          <span class="email-chrome-from">From: Hartwell &amp; Associates &lt;intake@hartwelllaw.com&gt;</span>
+          <span class="email-chrome-subject">Subject: We've Received Your Case — Here's What Happens Next</span>
+        </div>
+      </div>
+      <div class="email-body">
+        <div class="email-logo-band">
+          <span class="email-logo-text">⚖️ Hartwell <span>&amp; Associates</span></span>
+        </div>
+        <div class="email-content">
+          <h2 class="email-h2">We've received your inquiry, [First Name].</h2>
+          <p class="email-p">Thank you for reaching out to Hartwell &amp; Associates. Every case we take begins with a confidential, no-obligation consultation — and yours is no exception. Here's exactly what to expect over the next 24 hours.</p>
+
+          <div class="email-steps-label">Your next steps:</div>
+
+          <div class="email-step">
+            <div class="email-step-num">1</div>
+            <div class="email-step-text">
+              <strong>Case review (within 2 hours)</strong>
+              <p>One of our attorneys will review the details you submitted and determine the strength of your case — at no cost to you.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">2</div>
+            <div class="email-step-text">
+              <strong>We'll call you to schedule your consultation</strong>
+              <p>Expect a call from our intake team within 2–4 business hours. We offer in-person, phone, and video consultations — whichever works best for you.</p>
+            </div>
+          </div>
+          <div class="email-step">
+            <div class="email-step-num">3</div>
+            <div class="email-step-text">
+              <strong>Gather any documents you have</strong>
+              <p>Police reports, medical records, contracts, or correspondence — bring what you have. We'll tell you exactly what's needed after reviewing your case.</p>
+            </div>
+          </div>
+
+          <div class="email-cta-wrap">
+            <a class="email-cta-btn" href="#">Call Us Now: (555) 200-4040 →</a>
+          </div>
+
+          <div class="email-reminder">
+            📋 &nbsp;<strong>Your Inquiry Has Been Logged</strong><br>
+            📞 &nbsp;Direct line: (555) 200-4040 — available 24/7 for urgent matters<br>
+            📍 &nbsp;200 Justice Avenue, Suite 1100, [City], [State]<br>
+            🔒 &nbsp;Everything you share is protected by attorney-client privilege.
+          </div>
+
+          <p class="email-p">Need to reach us immediately? Call (555) 200-4040 — we answer around the clock for urgent situations.</p>
+          <p class="email-p" style="margin-bottom:0;">Sincerely,<br><strong style="color:#1A2744;">James Hartwell, Esq. &amp; the Hartwell Team</strong></p>
+        </div>
+        <div class="email-footer-bar">
+          Hartwell &amp; Associates · 200 Justice Avenue, Suite 1100, [City], [State]<br>
+          (555) 200-4040 · intake@hartwelllaw.com<br>
+          <small>© 2026 Hartwell &amp; Associates. All rights reserved. · <a href="#">Unsubscribe</a> · <a href="#">Privacy Policy</a></small>
+        </div>
+      </div>
+    </div>
+    <p class="email-credit">Nokto Studio email design — custom-coded HTML optimised for deliverability, mobile rendering, and authority positioning.</p>
+  </div>
+</section>
+
+
+<!-- ===================== PPC SHOWCASE ===================== -->
+<section class="section bg-2">
+  <div class="container">
+    <span class="section-label">Deliverable 03</span>
+    <h2 class="section-heading reveal">Google Ads — Sample Campaigns We Run for Law Firms</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Three high-intent campaign types targeting your most valuable case types — personal injury, family law, and criminal defense. We write the copy, build the landing pages, set the bids, and manage every dollar spent.</p>
+
+    <div class="serp-frame">
+      <div class="serp-chrome">
+        <div class="serp-search-bar">
+          <span class="serp-search-icon">🔍</span>
+          <span class="serp-search-text">personal injury lawyer near me</span>
+        </div>
+      </div>
+      <div class="serp-body">
+        <div class="serp-ads-label">Sponsored</div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">hartwelllaw.com › personal-injury</span>
+          </div>
+          <div class="google-ad-headline">Hartwell Law | Injured? We Fight, You Win.</div>
+          <div class="google-ad-headline">No Fee Unless We Win — Free Case Review Today</div>
+          <div class="google-ad-desc">Hurt in an accident in [City]? Our award-winning personal injury attorneys have recovered $180M+ for clients. Free consultation, no upfront cost, 24/7 availability. Call now.</div>
+          <div class="google-ad-ext">
+            <span>Free Case Review</span>
+            <span>Our Results</span>
+            <span>No Win, No Fee</span>
+            <span>24/7 Available</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">hartwelllaw.com › divorce-attorney</span>
+          </div>
+          <div class="google-ad-headline">Divorce Attorney [City] | Protect Your Rights &amp; Assets</div>
+          <div class="google-ad-headline">Compassionate Family Law — Free Consultation</div>
+          <div class="google-ad-desc">Going through a divorce? Our [City] family law attorneys handle custody, property division, and support agreements. Confidential consultation. Call to speak with an attorney today.</div>
+          <div class="google-ad-ext">
+            <span>Free Consultation</span>
+            <span>Child Custody</span>
+            <span>Asset Protection</span>
+            <span>Divorce Process</span>
+          </div>
+        </div>
+
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">hartwelllaw.com › criminal-defense</span>
+          </div>
+          <div class="google-ad-headline">Criminal Defense [City] | DUI, Felony, Drug Charges</div>
+          <div class="google-ad-headline">Charged with a Crime? Call Us Before You Say Anything</div>
+          <div class="google-ad-desc">Arrested in [City]? Don't speak to police without an attorney. Our experienced criminal defense team is available 24/7 — including nights, weekends, and holidays. Call now.</div>
+          <div class="google-ad-ext">
+            <span>Call 24/7</span>
+            <span>DUI Defense</span>
+            <span>Felony Charges</span>
+            <span>Expungements</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Campaign Targeting Overview</h3>
+    <div class="targeting-grid">
+      <div class="targeting-row">
+        <span class="targeting-key">Audience</span>
+        <span class="targeting-val">Adults 22–65, all incomes, within service area</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Location Radius</span>
+        <span class="targeting-val">15–40 miles from your office(s)</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Ad Schedule</span>
+        <span class="targeting-val">24/7 for criminal defense; Mon–Sat 7am–9pm for civil</span>
+      </div>
+      <div class="targeting-row">
+        <span class="targeting-key">Monthly Budget Range</span>
+        <span class="targeting-val">$1,500–$8,000/mo depending on practice area &amp; market</span>
+      </div>
+    </div>
+
+    <div class="perf-benchmarks">
+      <div class="perf-stat">
+        <span class="perf-num">11.4%</span>
+        <span class="perf-label">Average CTR</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">$65–$140</span>
+        <span class="perf-label">Cost Per Lead</span>
+      </div>
+      <div class="perf-stat">
+        <span class="perf-num">8–25</span>
+        <span class="perf-label">Monthly Case Inquiries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== SEO SHOWCASE ===================== -->
+<section class="section">
+  <div class="container">
+    <span class="section-label">Deliverable 04</span>
+    <h2 class="section-heading reveal">Local SEO — What We Do for Your Firm</h2>
+    <div class="divider"></div>
+    <p class="section-subheading reveal" style="max-width:640px;">Rank for the highest-intent legal searches in your market. We handle your Google Business Profile, on-page optimisation, local citations, and a content strategy that builds authority and compounds over time.</p>
+
+    <h3 class="branding-sub">Target Keyword Clusters</h3>
+    <div class="keyword-grid">
+      <div class="keyword-card">personal injury lawyer near me <span class="keyword-vol">33K/mo</span></div>
+      <div class="keyword-card">car accident attorney [city] <span class="keyword-vol">9.2K/mo</span></div>
+      <div class="keyword-card">divorce lawyer [city] <span class="keyword-vol">6.8K/mo</span></div>
+      <div class="keyword-card">criminal defense attorney near me <span class="keyword-vol">14K/mo</span></div>
+      <div class="keyword-card">DUI lawyer [city] <span class="keyword-vol">5.1K/mo</span></div>
+      <div class="keyword-card">slip and fall attorney [city] <span class="keyword-vol">3.4K/mo</span></div>
+      <div class="keyword-card">family lawyer free consultation <span class="keyword-vol">7.5K/mo</span></div>
+      <div class="keyword-card">workers compensation attorney [city] <span class="keyword-vol">4.9K/mo</span></div>
+      <div class="keyword-card">estate planning lawyer near me <span class="keyword-vol">8.3K/mo</span></div>
+      <div class="keyword-card">medical malpractice attorney [city] <span class="keyword-vol">2.8K/mo</span></div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Google Business Profile — Fully Optimized</h3>
+    <div class="gbp-wrap">
+      <div class="gbp-card">
+        <div class="gbp-map">📍 &nbsp;Map View</div>
+        <div class="gbp-info">
+          <div class="gbp-name">Hartwell &amp; Associates</div>
+          <div class="gbp-cat">⚖️ Personal Injury Attorney · <span style="color:#1A2744; font-weight:700;">Open Now</span></div>
+          <div class="gbp-stars">★★★★★ <span>4.9 (380 reviews)</span></div>
+          <div class="gbp-detail">
+            📍 200 Justice Avenue, Suite 1100, [City], [State]<br>
+            📞 (555) 200-4040<br>
+            🕐 Mon–Fri: 8am–7pm · Sat: 9am–3pm<br>
+            🌐 hartwelllaw.com
+          </div>
+          <div class="gbp-actions">
+            <div class="gbp-action">Directions</div>
+            <div class="gbp-action">Website</div>
+            <div class="gbp-action">Call</div>
+          </div>
+        </div>
+      </div>
+      <div class="gbp-note">
+        <h4>What we optimise:</h4>
+        <ul>
+          <li>Practice area categories set for maximum local pack visibility</li>
+          <li>Weekly posts — case results, legal tips, and community presence</li>
+          <li>Attorney bios and credentials uploaded as photos for E-E-A-T signals</li>
+          <li>Review generation strategy with automated follow-up after case close</li>
+          <li>Citation consistency across 40+ legal directories (Avvo, Justia, FindLaw, Martindale)</li>
+          <li>Structured data markup (LegalService schema) for rich results</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Our 3-Step SEO Process</h3>
+    <div class="seo-steps">
+      <div class="seo-step">
+        <div class="seo-step-num">1</div>
+        <h3>Audit</h3>
+        <p>We analyse your current rankings, GBP health, Avvo/Martindale profiles, site speed, and competitor positioning. You receive a prioritised action plan before we do anything.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">2</div>
+        <h3>Optimise</h3>
+        <p>Practice area page SEO, GBP category optimisation, LegalService schema markup, citation building across legal directories, and Core Web Vitals fixes.</p>
+      </div>
+      <div class="seo-step">
+        <div class="seo-step-num">3</div>
+        <h3>Compound</h3>
+        <p>Monthly legal content publishing, link acquisition from local news and legal directories, review generation strategy, and live rank tracking so you see every gain.</p>
+      </div>
+    </div>
+
+    <h3 class="branding-sub" style="margin-top:52px;">Sample Rank Tracking — Before vs. After 90 Days</h3>
+    <div class="rank-table-wrap">
+      <table class="rank-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Before</th>
+            <th>After 90 Days</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>personal injury lawyer [city]</td>
+            <td>#31</td>
+            <td>#5</td>
+            <td class="rank-up">↑ 26 positions</td>
+          </tr>
+          <tr>
+            <td>car accident attorney [city]</td>
+            <td>#44</td>
+            <td>#8</td>
+            <td class="rank-up">↑ 36 positions</td>
+          </tr>
+          <tr>
+            <td>divorce lawyer free consultation</td>
+            <td>Not ranked</td>
+            <td>#12</td>
+            <td class="rank-new">New entry</td>
+          </tr>
+          <tr>
+            <td>DUI attorney [city]</td>
+            <td>#22</td>
+            <td>#4</td>
+            <td class="rank-up">↑ 18 positions</td>
+          </tr>
+          <tr>
+            <td>criminal defense lawyer near me</td>
+            <td>#37</td>
+            <td>#6</td>
+            <td class="rank-up">↑ 31 positions</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CTA ===================== -->
+<section class="section cta-section bg-2" id="lawfirm-cta">
+  <div class="container">
+    <span class="section-label">Let's Get Started</span>
+    <h2 class="reveal">Ready to bring in<br>more clients?</h2>
+    <div class="divider divider-center" style="margin:20px auto 24px;"></div>
+    <p class="section-subheading reveal" style="margin:0 auto 36px;">
+      Book a free 30-minute strategy call. We'll research your market, identify your top opportunities, and come back with a real plan — no templates, no commitment.
+    </p>
+    <a href="/en/contact/" class="btn btn-primary btn-lg">Book Your Free Strategy Call</a>
+    <p class="form-note" style="margin-top:20px; text-align:center;">12h response · US legal market focus · No lock-in contracts</p>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/en/" class="footer-logo"><span class="logo-n">N</span>okto Studio</a>
+        <p class="footer-tagline">"Quality work.<br>Always on time."</p>
+        <p class="footer-sub">Slovakia-based. Internationally minded.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/en/services/">Services</a></li>
+            <li><a href="/en/portfolio/">Portfolio</a></li>
+            <li><a href="/en/blog/">Blog</a></li>
+            <li><a href="/en/faq/">FAQ</a></li>
+            <li><a href="/en/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/en/privacy/">Privacy Policy</a></li>
+            <li><a href="/en/terms/">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Partners</h4>
+          <ul>
+            <li><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">flamia.studio</a></li>
+            <li><a href="https://dolinajjr.sk" target="_blank" rel="noopener noreferrer">dolinajjr.sk</a></li>
+            <li><a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">peterkocur.sk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nokto Studio. All rights reserved.</p>
+      <p class="footer-badges">Quality work · Always on time · Real results</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Back to top">
+  <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="../../../assets/js/cookie-banner.js"></script>
+<script src="../../../assets/js/nav.js"></script>
+<script src="../../../assets/js/animations.js"></script>
+</body>
+</html>
