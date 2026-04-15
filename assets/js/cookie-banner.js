@@ -23,13 +23,13 @@
 
   var copy = {
     en: {
-      text:    'We use cookies to analyse traffic and improve your experience. Essential cookies are always active.',
+      text:    'We use cookies and session-recording tools (including Microsoft Clarity) to analyse traffic and improve your experience. Essential cookies are always active.',
       accept:  'Accept all',
       decline: 'Essential only',
       policy:  'Privacy policy',
     },
     sk: {
-      text:    'Používame cookies na analýzu návštevnosti a zlepšenie vášho zážitku. Nevyhnutné cookies sú vždy aktívne.',
+      text:    'Používame cookies a nástroje na nahrávanie relácií (vrátane Microsoft Clarity) na analýzu návštevnosti a zlepšenie vášho zážitku. Nevyhnutné cookies sú vždy aktívne.',
       accept:  'Prijať všetko',
       decline: 'Len nevyhnutné',
       policy:  'Zásady ochrany súkromia',
