@@ -35,21 +35,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-    .preview-ribbon {
-      position: absolute;
-      top: 22px;
-      right: -36px;
-      background: #2BC0B4;
-      color: #fff;
-      font-size: 0.6rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 6px 52px;
-      transform: rotate(45deg);
-      z-index: 20;
-      pointer-events: none;
-    }
+
     .preview-label {
       text-align: center;
       font-size: 0.72rem;
@@ -128,95 +114,170 @@
 
     /* -- Fake dental hero -- */
     .dp-hero {
-      background: linear-gradient(135deg, #F0FFFE 0%, #E8F4FD 55%, #EEF2FF 100%);
-      padding: 64px 48px;
+      background: #F7FAFF;
+      padding: 56px 48px 60px;
       display: flex;
       align-items: center;
-      gap: 48px;
+      gap: 52px;
     }
     .dp-hero-text { flex: 1; }
     .dp-hero-label {
-      display: inline-block;
-      background: rgba(43,192,180,0.12);
-      color: #2BC0B4 !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(249,168,37,0.1);
+      color: #B06A00 !important;
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 5px 14px;
+      letter-spacing: 0.05em;
+      padding: 6px 14px;
       border-radius: 99px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(249,168,37,0.3);
     }
     .dp-hero h1 {
-      font-size: 2.4rem;
+      font-size: 2.75rem;
       font-weight: 800;
-      line-height: 1.15;
+      line-height: 1.1;
       margin: 0 0 16px;
       color: #1B3A6B !important;
+      letter-spacing: -0.03em;
     }
     .dp-hero p {
-      font-size: 1rem;
-      color: #4A6FA5 !important;
-      line-height: 1.7;
-      max-width: 460px;
-      margin: 0 0 28px;
+      font-size: 0.97rem;
+      color: #4A5E7A !important;
+      line-height: 1.72;
+      max-width: 430px;
+      margin: 0 0 10px;
     }
-    .dp-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .dp-hero-insurance {
+      font-size: 0.75rem;
+      color: #6B8099 !important;
+      margin: 0 0 26px;
+    }
+    .dp-hero-insurance span {
+      font-weight: 600;
+      color: #2BC0B4 !important;
+    }
+    .dp-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
     .dp-btn-primary {
       background: #2BC0B4;
       color: #fff !important;
       font-size: 0.88rem;
       font-weight: 700;
-      padding: 13px 26px;
+      padding: 14px 28px;
       border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(43,192,180,0.35);
     }
     .dp-btn-outline {
       background: transparent;
       color: #1B3A6B !important;
       font-size: 0.88rem;
       font-weight: 600;
-      padding: 12px 26px;
+      padding: 13px 26px;
       border-radius: 8px;
-      border: 2px solid #1B3A6B;
+      border: 1.5px solid #CBD5E0;
     }
+    .dp-hero-phone {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4A5E7A !important;
+      margin-top: 18px;
+    }
+    .dp-hero-phone span { color: #1B3A6B !important; font-size: 0.95rem; font-weight: 800; }
     .dp-hero-visual {
       flex: 0 0 360px;
       position: relative;
-      height: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    .dp-visual-circle {
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(43,192,180,0.15) 0%, rgba(27,58,107,0.12) 100%);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .dp-photo-card {
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 20px 56px rgba(27,58,107,0.15);
+    }
+    .dp-photo-img {
+      height: 260px;
+      background: linear-gradient(145deg, #E8F5F3 0%, #B2DFDB 40%, #4DB6AC 72%, #1B6A7D 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 5rem;
+      position: relative;
     }
-    .dp-badge {
+    .dp-photo-img-inner {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+    }
+    .dp-photo-overlay {
       position: absolute;
-      background: #fff;
-      border-radius: 12px;
-      padding: 10px 14px;
-      font-size: 0.72rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 14px 16px;
+      background: linear-gradient(transparent, rgba(27,58,107,0.78));
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .dp-photo-badge {
+      background: rgba(255,255,255,0.97);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 0.71rem;
       font-weight: 700;
       color: #1B3A6B !important;
-      box-shadow: 0 4px 16px rgba(27,58,107,0.12);
-      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
     }
-    .dp-badge-1 { top: 18px; right: 8px; }
-    .dp-badge-2 { bottom: 28px; left: 8px; }
-    .dp-badge-star { color: #C9A84C !important; }
+    .dp-photo-badge-star { color: #F9A825 !important; }
+    .dp-photo-sub {
+      font-size: 0.71rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.93) !important;
+    }
+    /* Below-photo trust row */
+    .dp-hero-trust-row {
+      display: flex;
+      gap: 8px;
+    }
+    .dp-mini-badge {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #E2EAF4;
+      border-radius: 10px;
+      padding: 10px 10px;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #1B3A6B !important;
+      line-height: 1.4;
+      box-shadow: 0 2px 8px rgba(27,58,107,0.07);
+    }
+    .dp-mini-badge-num {
+      display: block;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #2BC0B4 !important;
+      margin-bottom: 2px;
+    }
 
     /* -- Fake trust bar -- */
     .dp-trust-bar {
-      background: #1B3A6B;
-      padding: 28px 48px;
+      background: #fff;
+      border-top: 1px solid #E8EEF6;
+      border-bottom: 1px solid #E8EEF6;
+      padding: 22px 48px;
     }
     .dp-trust-grid {
       display: grid;
@@ -224,117 +285,149 @@
       gap: 16px;
       text-align: center;
     }
-    .dp-trust-stat {}
+    .dp-trust-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px 0;
+    }
+    .dp-trust-stat + .dp-trust-stat {
+      border-left: 1px solid #E8EEF6;
+    }
     .dp-trust-num {
       display: block;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 800;
-      color: #2BC0B4 !important;
+      color: #1B3A6B !important;
       line-height: 1.1;
     }
     .dp-trust-label {
       display: block;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.8) !important;
+      font-size: 0.72rem;
+      color: #6B8099 !important;
       margin-top: 4px;
+      font-weight: 500;
     }
 
     /* -- Fake services row -- */
     .dp-services {
-      background: #fff;
-      padding: 56px 48px;
+      background: #F7FAFF;
+      padding: 52px 48px;
     }
     .dp-services-heading {
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: #1B3A6B !important;
       margin: 0 0 8px;
+      letter-spacing: -0.02em;
     }
     .dp-services-sub {
       text-align: center;
-      font-size: 0.9rem;
-      color: #4A5568 !important;
-      margin: 0 0 36px;
+      font-size: 0.88rem;
+      color: #6B8099 !important;
+      margin: 0 0 32px;
     }
     .dp-services-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
     .dp-service-card {
       background: #fff;
-      border: 1px solid #E2EAF0;
-      border-top: 3px solid #2BC0B4;
-      border-radius: 12px;
+      border: 1px solid #E8EEF6;
+      border-radius: 14px;
       padding: 24px 20px;
+      transition: box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(27,58,107,0.05);
     }
     .dp-service-icon {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      display: flex;
+      width: 44px;
+      height: 44px;
+      background: rgba(43,192,180,0.1);
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
     }
     .dp-service-card h3 {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #1B3A6B !important;
-      margin: 0 0 8px;
+      margin: 0 0 7px;
     }
     .dp-service-card p {
-      font-size: 0.8rem;
-      color: #4A5568 !important;
+      font-size: 0.77rem;
+      color: #6B8099 !important;
       line-height: 1.6;
       margin: 0;
     }
 
     /* -- Fake about teaser -- */
     .dp-about {
-      background: #F8F9FA;
-      padding: 48px;
+      background: #fff;
+      padding: 52px 48px;
       display: flex;
-      gap: 48px;
+      gap: 56px;
       align-items: center;
     }
     .dp-about-text { flex: 1; }
     .dp-about-tag {
       display: inline-block;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: #2BC0B4 !important;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .dp-about-text h2 {
-      font-size: 1.4rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: #1B3A6B !important;
-      margin: 0 0 12px;
+      margin: 0 0 14px;
+      letter-spacing: -0.02em;
     }
     .dp-about-text p {
-      font-size: 0.88rem;
-      color: #4A5568 !important;
-      line-height: 1.7;
+      font-size: 0.86rem;
+      color: #5A7080 !important;
+      line-height: 1.75;
       max-width: 420px;
-      margin: 0;
+      margin: 0 0 20px;
+    }
+    .dp-ins-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .dp-ins-chip {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: #F0F9F8;
+      color: #1B7A6E !important;
+      border: 1px solid #B2DFDB;
+      padding: 4px 10px;
+      border-radius: 99px;
     }
     .dp-about-right {
-      flex: 0 0 240px;
+      flex: 0 0 230px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
     .dp-trust-badge {
-      background: #fff;
+      background: #F7FAFF;
       border: 1px solid #E2EAF0;
-      border-radius: 8px;
-      padding: 10px 16px;
-      font-size: 0.78rem;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-size: 0.77rem;
       font-weight: 600;
       color: #1B3A6B !important;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     /* ----------------------------------------------------------
@@ -450,41 +543,64 @@
     }
 
     /* Logo concept */
-    .logo-concept-box {
+    .logo-concept-grid {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .logo-variant {
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+      min-width: 160px;
+    }
+    .logo-variant-light { background: #fff; }
+    .logo-variant-dark  { background: #1B3A6B; }
+    .logo-variant-teal  { background: #2BC0B4; }
+    .lv-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.3);
+      font-family: 'Inter', sans-serif;
+    }
+    .logo-variant-dark .lv-label,
+    .logo-variant-teal .lv-label { color: rgba(255,255,255,0.45); }
+    .logo-lockup {
       display: flex;
       align-items: center;
-      gap: 16px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      padding: 28px 32px;
-      max-width: 460px;
-      position: relative;
+      gap: 10px;
     }
-    .logo-concept-icon { font-size: 2rem; }
-    .logo-concept-wordmark {
-      font-size: 1.4rem;
+    .logo-lockup-icon { font-size: 1.5rem; line-height: 1; }
+    .logo-lockup-text { display: flex; flex-direction: column; }
+    .logo-lockup-name {
+      font-size: 1.05rem;
       font-weight: 800;
       color: #1B3A6B;
-      background: #fff;
-      padding: 6px 16px;
-      border-radius: 6px;
+      line-height: 1.1;
       letter-spacing: -0.02em;
+      font-family: 'Inter', sans-serif;
     }
-    .logo-concept-wordmark span { color: #2BC0B4; }
-    .logo-concept-tag {
-      position: absolute;
-      bottom: -11px;
-      left: 32px;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      background: var(--bg-2);
-      padding: 2px 10px;
-      border-radius: 99px;
-      border: 1px solid rgba(255,255,255,0.07);
+    .logo-lockup-name-w { color: #fff; }
+    .logo-lockup-sub {
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #2BC0B4;
+      font-family: 'Inter', sans-serif;
+      margin-top: 1px;
+    }
+    .logo-lockup-sub-w { color: rgba(255,255,255,0.6); }
+    .logo-icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      font-size: 2.2rem;
     }
 
     /* UI component demo */
@@ -739,64 +855,111 @@
     /* ----------------------------------------------------------
        6. PPC SECTION
     ---------------------------------------------------------- */
-    .google-ads-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    .serp-frame {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 56px rgba(0,0,0,0.4);
       max-width: 780px;
     }
+    .serp-chrome {
+      background: #f8f9fa;
+      border-bottom: 1px solid #e8eaed;
+      padding: 10px 16px;
+    }
+    .serp-search-bar {
+      background: #fff;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      padding: 7px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 500px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .serp-search-icon { font-size: 0.8rem; color: #4285f4; }
+    .serp-search-text {
+      font-size: 0.88rem;
+      color: #202124;
+      font-family: 'Inter', sans-serif;
+    }
+    .serp-body { padding: 14px 20px 6px; }
+    .serp-ads-label {
+      font-size: 0.68rem;
+      color: #70757a;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 4px;
+    }
     .google-ad-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 12px;
-      padding: 22px 26px;
+      padding: 12px 0 14px;
+      border-bottom: 1px solid #e8eaed;
+    }
+    .google-ad-card:last-child { border-bottom: none; }
+    .google-ad-top-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3px;
     }
     .google-ad-badge {
-      display: inline-block;
-      border: 1px solid rgba(196,192,240,0.35);
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #70757a;
       border-radius: 3px;
       padding: 1px 5px;
       font-size: 0.62rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-      margin-bottom: 6px;
+      font-weight: 600;
+      color: #70757a;
+      font-family: 'Inter', sans-serif;
+      flex-shrink: 0;
     }
     .google-ad-url {
-      font-size: 0.8rem;
-      color: #4ade80;
-      margin-bottom: 3px;
+      font-size: 0.78rem;
+      color: #202124;
+      font-family: 'Inter', sans-serif;
     }
     .google-ad-headline {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #9490FF;
-      line-height: 1.3;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #1a0dab;
+      line-height: 1.4;
       text-decoration: underline;
       margin-bottom: 2px;
       cursor: default;
+      font-family: 'Inter', sans-serif;
     }
     .google-ad-desc {
       font-size: 0.82rem;
-      color: var(--text-2);
-      line-height: 1.65;
-      margin: 8px 0 10px;
+      color: #4d5156;
+      line-height: 1.58;
+      margin: 5px 0 7px;
+      font-family: 'Inter', sans-serif;
     }
     .google-ad-ext {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 8px;
+      gap: 0;
+      margin-top: 4px;
     }
     .google-ad-ext span {
-      font-size: 0.72rem;
-      color: #9490FF;
-      border: 1px solid rgba(148,144,255,0.28);
-      padding: 3px 10px;
-      border-radius: 4px;
+      font-size: 0.78rem;
+      color: #1a0dab;
+      padding-right: 14px;
       cursor: default;
       text-decoration: underline;
+      font-family: 'Inter', sans-serif;
+      background: none;
+      border: none;
+      border-radius: 0;
     }
+    .google-ad-ext span::after {
+      content: ' ·';
+      text-decoration: none;
+      color: #70757a;
+      margin-left: 6px;
+    }
+    .google-ad-ext span:last-child::after { content: ''; }
 
     /* Targeting grid */
     .targeting-grid {
@@ -1178,8 +1341,6 @@
   <!-- ===================== DENTAL MOCKUP ===================== -->
   <div style="padding:0 24px 0;">
     <div class="preview-frame">
-      <div class="preview-ribbon">Sample Preview</div>
-
       <section class="dental-preview">
 
         <!-- Fake header -->
@@ -1189,32 +1350,53 @@
             <span>Bright<span>Smile</span> Dental</span>
           </div>
           <ul class="dp-nav">
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
             <li><a href="#">New Patients</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Reviews</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
-          <div class="dp-btn">Book Appointment</div>
+          <div class="dp-btn">Book Online →</div>
         </div>
 
         <!-- Fake hero -->
         <div class="dp-hero">
           <div class="dp-hero-text">
-            <div class="dp-hero-label">Now Accepting New Patients</div>
-            <h1>Your Healthiest<br>Smile Starts Here</h1>
-            <p>Compassionate, comprehensive dental care for the whole family. Flexible scheduling — including same-week and same-day appointments.</p>
+            <div class="dp-hero-label">⭐ 4.9 · 500+ Reviews on Google — [City]'s Top-Rated Dentist</div>
+            <h1>Healthy Smiles.<br>Happy Families.</h1>
+            <p>Comprehensive dental care for every age — from your child's first visit to full smile makeovers. In-network with most major PPO plans.</p>
+            <p class="dp-hero-insurance">Insurance accepted: <span>Delta Dental · Cigna · Aetna · United · MetLife</span></p>
             <div class="dp-hero-btns">
-              <div class="dp-btn-primary">Book Your Visit</div>
-              <div class="dp-btn-outline">Meet Our Team</div>
+              <div class="dp-btn-primary">Book Online — It's Free</div>
+              <div class="dp-btn-outline">Call (555) 123-4567</div>
             </div>
+            <div class="dp-hero-phone">🟢 &nbsp;Open Now — Same-Day Emergencies Welcome</div>
           </div>
           <div class="dp-hero-visual">
-            <div class="dp-visual-circle">🦷</div>
-            <div class="dp-badge dp-badge-1">
-              <span class="dp-badge-star">★★★★★</span>&nbsp; 500+ Google Reviews
+            <div class="dp-photo-card">
+              <div class="dp-photo-img">
+                <div class="dp-photo-img-inner">🦷</div>
+              </div>
+              <div class="dp-photo-overlay">
+                <div class="dp-photo-badge">
+                  <span class="dp-photo-badge-star">★ 4.9</span> · 500+ Google Reviews
+                </div>
+                <div class="dp-photo-sub">✓ Same-Day Appointments Available</div>
+              </div>
             </div>
-            <div class="dp-badge dp-badge-2">
-              📋&nbsp; Same-Day Appointments
+            <div class="dp-hero-trust-row">
+              <div class="dp-mini-badge">
+                <span class="dp-mini-badge-num">500+</span>
+                5-Star Reviews
+              </div>
+              <div class="dp-mini-badge">
+                <span class="dp-mini-badge-num">15+</span>
+                Years in Practice
+              </div>
+              <div class="dp-mini-badge">
+                <span class="dp-mini-badge-num">24/7</span>
+                Emergency Line
+              </div>
             </div>
           </div>
         </div>
@@ -1223,20 +1405,20 @@
         <div class="dp-trust-bar">
           <div class="dp-trust-grid">
             <div class="dp-trust-stat">
-              <span class="dp-trust-num">500+</span>
-              <span class="dp-trust-label">Happy Patients</span>
+              <span class="dp-trust-num" style="color:#F9A825 !important; font-size:1.3rem !important;">★ 4.9</span>
+              <span class="dp-trust-label">500+ Google Reviews</span>
             </div>
             <div class="dp-trust-stat">
               <span class="dp-trust-num">15+</span>
-              <span class="dp-trust-label">Years of Experience</span>
+              <span class="dp-trust-label">Years Serving [City]</span>
             </div>
             <div class="dp-trust-stat">
               <span class="dp-trust-num">✓</span>
-              <span class="dp-trust-label">New Patients Welcome</span>
+              <span class="dp-trust-label">Most Insurance Accepted</span>
             </div>
             <div class="dp-trust-stat">
-              <span class="dp-trust-num">24h</span>
-              <span class="dp-trust-label">Same-Day Appointments</span>
+              <span class="dp-trust-num" style="font-size:1rem !important;">Same-Day</span>
+              <span class="dp-trust-label">Emergency Appointments</span>
             </div>
           </div>
         </div>
@@ -1257,7 +1439,7 @@
               <p>Teeth whitening, veneers, and bonding to give you the smile you've always wanted.</p>
             </div>
             <div class="dp-service-card">
-              <span class="dp-service-icon">😁</span>
+              <span class="dp-service-icon">🪥</span>
               <h3>Orthodontics</h3>
               <p>Traditional braces and clear aligners for teens and adults. Flexible payment plans available.</p>
             </div>
@@ -1273,14 +1455,22 @@
         <div class="dp-about">
           <div class="dp-about-text">
             <div class="dp-about-tag">About Our Practice</div>
-            <h2>Family-Owned.<br>Community-Focused.</h2>
-            <p>Dr. Sarah Mitchell and her team have proudly served the [City] community since 2008. We believe dental care should be comfortable, transparent, and tailored to you — not rushed, never impersonal.</p>
+            <h2>Board-Certified Care.<br>Real Patient Results.</h2>
+            <p>Dr. Sarah Mitchell, DDS has served [City] since 2008 with a focus on gentle, patient-centered dentistry. We use the latest technology — digital X-rays, same-day crowns, and clear aligner therapy — so you spend less time in the chair and more time smiling.</p>
+            <div class="dp-ins-row">
+              <span class="dp-ins-chip">Delta Dental</span>
+              <span class="dp-ins-chip">Cigna</span>
+              <span class="dp-ins-chip">Aetna</span>
+              <span class="dp-ins-chip">United</span>
+              <span class="dp-ins-chip">MetLife</span>
+              <span class="dp-ins-chip">+ Most PPO Plans</span>
+            </div>
           </div>
           <div class="dp-about-right">
-            <div class="dp-trust-badge">✅ ADA Member Practice</div>
-            <div class="dp-trust-badge">🔒 HIPAA Compliant</div>
-            <div class="dp-trust-badge">⭐ 4.9 Stars on Google</div>
-            <div class="dp-trust-badge">💳 Insurance Accepted</div>
+            <div class="dp-trust-badge">🏆 ADA Member — Board Certified DDS</div>
+            <div class="dp-trust-badge">⭐ 4.9 / 5.0 — 500+ Google Reviews</div>
+            <div class="dp-trust-badge">🔒 HIPAA Compliant Practice</div>
+            <div class="dp-trust-badge">💳 In-Network with Major PPOs</div>
           </div>
         </div>
 
@@ -1365,11 +1555,33 @@
 
     <!-- Logo concept -->
     <h3 class="branding-sub">Logo Concept</h3>
-    <div class="logo-concept-box">
-      <div class="logo-concept-icon">🦷</div>
-      <div class="logo-concept-wordmark">Bright<span>Smile</span> <span style="color:#1B3A6B; font-size:0.65rem; font-weight:700; letter-spacing:0.1em;">DENTAL</span></div>
-      <span class="logo-concept-tag">Wordmark + tooth icon — full rebrand included</span>
+    <div class="logo-concept-grid">
+      <div class="logo-variant logo-variant-light">
+        <span class="lv-label">On White</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🦷</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name">BrightSmile</span>
+            <span class="logo-lockup-sub">DENTAL</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-dark">
+        <span class="lv-label">On Dark</span>
+        <div class="logo-lockup">
+          <span class="logo-lockup-icon">🦷</span>
+          <div class="logo-lockup-text">
+            <span class="logo-lockup-name logo-lockup-name-w">BrightSmile</span>
+            <span class="logo-lockup-sub logo-lockup-sub-w">DENTAL</span>
+          </div>
+        </div>
+      </div>
+      <div class="logo-variant logo-variant-teal">
+        <span class="lv-label">Icon Mark</span>
+        <div class="logo-icon-wrap">🦷</div>
+      </div>
     </div>
+    <p style="font-size:0.78rem; color:var(--text-muted); margin-top:20px;">Full package includes: wordmark, stacked variant, icon mark, colour guide, and usage rules.</p>
 
     <!-- UI Components -->
     <h3 class="branding-sub" style="margin-top:56px;">UI Component Library</h3>
@@ -1487,50 +1699,65 @@
     <div class="divider"></div>
     <p class="section-subheading reveal" style="max-width:640px;">Three campaign types targeting your highest-value patient segments — new patients, cosmetic, and emergency. We write the copy, build the landing pages, and manage every dollar.</p>
 
-    <div class="google-ads-stack">
-
-      <div class="google-ad-card">
-        <div class="google-ad-badge">Ad</div>
-        <div class="google-ad-url">brightsmile.com › new-patients</div>
-        <div class="google-ad-headline">BrightSmile Dental | New Patients Welcome Today</div>
-        <div class="google-ad-headline">Accepting New Patients — Book Online in 60 Seconds</div>
-        <div class="google-ad-desc">Trusted family dental care in [Your City]. Cleanings, whitening, and emergency visits — same-day availability. ADA member practice. Call or book online now.</div>
-        <div class="google-ad-ext">
-          <span>Book Appointment</span>
-          <span>Our Services</span>
-          <span>New Patient Special</span>
-          <span>Emergency Care</span>
+    <div class="serp-frame">
+      <div class="serp-chrome">
+        <div class="serp-search-bar">
+          <span class="serp-search-icon">🔍</span>
+          <span class="serp-search-text">dentist near me</span>
         </div>
       </div>
+      <div class="serp-body">
+        <div class="serp-ads-label">Sponsored</div>
 
-      <div class="google-ad-card">
-        <div class="google-ad-badge">Ad</div>
-        <div class="google-ad-url">brightsmile.com › cosmetic-dentistry</div>
-        <div class="google-ad-headline">Teeth Whitening & Veneers | [City] Cosmetic Dentist</div>
-        <div class="google-ad-headline">Transform Your Smile — Free Cosmetic Consultation</div>
-        <div class="google-ad-desc">Professional teeth whitening from $199. Custom veneers and Invisalign by Dr. Mitchell. Flexible payment plans. Book your free smile assessment — limited slots this month.</div>
-        <div class="google-ad-ext">
-          <span>Free Consultation</span>
-          <span>Before & After</span>
-          <span>Financing Options</span>
-          <span>Invisalign</span>
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">brightsmile.com › new-patients</span>
+          </div>
+          <div class="google-ad-headline">BrightSmile Dental | New Patients Welcome Today</div>
+          <div class="google-ad-headline">Accepting New Patients — Book Online in 60 Seconds</div>
+          <div class="google-ad-desc">Trusted family dental care in [Your City]. Cleanings, whitening, and emergency visits — same-day availability. ADA member practice. Call or book online now.</div>
+          <div class="google-ad-ext">
+            <span>Book Appointment</span>
+            <span>Our Services</span>
+            <span>New Patient Special</span>
+            <span>Emergency Care</span>
+          </div>
         </div>
-      </div>
 
-      <div class="google-ad-card">
-        <div class="google-ad-badge">Ad</div>
-        <div class="google-ad-url">brightsmile.com › emergency-dentist</div>
-        <div class="google-ad-headline">Emergency Dentist [City] | Same-Day Appointments</div>
-        <div class="google-ad-headline">Toothache? Broken Tooth? We See You Today</div>
-        <div class="google-ad-desc">Don't wait in pain. BrightSmile Dental offers same-day emergency appointments for toothaches, broken teeth, and lost fillings. Call now for fast, compassionate relief.</div>
-        <div class="google-ad-ext">
-          <span>Call Now</span>
-          <span>Get Directions</span>
-          <span>After-Hours Care</span>
-          <span>Insurance Accepted</span>
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">brightsmile.com › cosmetic-dentistry</span>
+          </div>
+          <div class="google-ad-headline">Teeth Whitening &amp; Veneers | [City] Cosmetic Dentist</div>
+          <div class="google-ad-headline">Transform Your Smile — Free Cosmetic Consultation</div>
+          <div class="google-ad-desc">Professional teeth whitening from $199. Custom veneers and Invisalign by Dr. Mitchell. Flexible payment plans. Book your free smile assessment — limited slots this month.</div>
+          <div class="google-ad-ext">
+            <span>Free Consultation</span>
+            <span>Before &amp; After</span>
+            <span>Financing Options</span>
+            <span>Invisalign</span>
+          </div>
         </div>
-      </div>
 
+        <div class="google-ad-card">
+          <div class="google-ad-top-line">
+            <span class="google-ad-badge">Ad</span>
+            <span class="google-ad-url">brightsmile.com › emergency-dentist</span>
+          </div>
+          <div class="google-ad-headline">Emergency Dentist [City] | Same-Day Appointments</div>
+          <div class="google-ad-headline">Toothache? Broken Tooth? We See You Today</div>
+          <div class="google-ad-desc">Don't wait in pain. BrightSmile Dental offers same-day emergency appointments for toothaches, broken teeth, and lost fillings. Call now for fast, compassionate relief.</div>
+          <div class="google-ad-ext">
+            <span>Call Now</span>
+            <span>Get Directions</span>
+            <span>After-Hours Care</span>
+            <span>Insurance Accepted</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <!-- Targeting overview -->
