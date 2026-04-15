@@ -1114,4 +1114,5 @@
   .subscribe-wrap { flex-direction: column; }
   .subscribe-wrap .btn { width: 100%; justify-content: center; }
   .blog-subscribe-box { padding: 28px 20px !important; }
+  .testimonial-stars { display: none; }
 }
