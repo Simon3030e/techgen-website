@@ -1166,21 +1166,25 @@
       position: relative;
       margin-top: 16px;
     }
+    /* Line runs full width at the vertical center of the step circles.
+       z-index:0 keeps it behind the cards (which are z-index:1). */
     .seo-steps::before {
       content: '';
       position: absolute;
-      top: 44px;
-      left: calc((100% - 48px) / 6 + 20px);
-      right: calc((100% - 48px) / 6 + 20px);
+      top: 44px; /* 24px card-padding-top + 20px half of 40px circle */
+      left: 0;
+      right: 0;
       height: 2px;
       background: linear-gradient(90deg, rgba(108,99,255,0.4), rgba(43,192,180,0.4));
+      z-index: 0;
     }
     .seo-step {
-      background: rgba(255,255,255,0.04);
+      background: #1f2540;
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
       padding: 24px 22px;
       position: relative;
+      z-index: 1; /* solid bg hides the line through the card body */
     }
     .seo-step-num {
       width: 40px;
@@ -1194,6 +1198,9 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 0 4px #1f2540; /* ring matches card bg, masks line at circle edge */
     }
     .seo-step h3 {
       font-size: 0.95rem;
