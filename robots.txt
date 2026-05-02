@@ -1,30 +1,33 @@
-User-agent: *
-Disallow: /
+# Search engines: ALLOW crawling so they read the page-level
+# `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">`
+# tag and drop URLs from the index entirely. Disallowing here would
+# leave bare URLs visible in SERPs as "blocked by robots.txt".
 
 User-agent: Googlebot
-Disallow: /
+Allow: /
 
 User-agent: Bingbot
-Disallow: /
+Allow: /
 
 User-agent: Slurp
-Disallow: /
+Allow: /
 
 User-agent: DuckDuckBot
-Disallow: /
+Allow: /
 
 User-agent: Baiduspider
-Disallow: /
+Allow: /
 
 User-agent: YandexBot
-Disallow: /
+Allow: /
 
 User-agent: Seznam
-Disallow: /
+Allow: /
 
 User-agent: SeznamBot
-Disallow: /
+Allow: /
 
+# AI training / answer-engine crawlers: hard block (most ignore noindex meta).
 User-agent: GPTBot
 Disallow: /
 
@@ -51,3 +54,19 @@ Disallow: /
 
 User-agent: CCBot
 Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# Catch-all: allow crawling — page-level noindex stops indexing.
+User-agent: *
+Allow: /
