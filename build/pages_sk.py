@@ -16,19 +16,19 @@ TRUST_STATS = """
   <div class="container">
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
-        <span class="trust-num">12&nbsp;EUR</span>
+        <span class="trust-num tn-blue">12&nbsp;EUR</span>
         <span class="trust-label">transparentná hodinová<br>sadzba, bez paušálov</span>
       </div>
       <div class="trust-stat reveal" data-delay="200">
-        <span class="trust-num">0 EUR</span>
+        <span class="trust-num tn-red">0 EUR</span>
         <span class="trust-label">prvý hovor a audit<br>webu sú bezplatné</span>
       </div>
       <div class="trust-stat reveal" data-delay="300">
-        <span class="trust-num">1. deň</span>
+        <span class="trust-num tn-yellow">1. deň</span>
         <span class="trust-label">bezplatný audit<br>začne hneď po prvom hovore</span>
       </div>
       <div class="trust-stat reveal" data-delay="400">
-        <span class="trust-num">30 min</span>
+        <span class="trust-num tn-green">30 min</span>
         <span class="trust-label">mesačný report<br>ako hovor so mnou</span>
       </div>
     </div>
@@ -41,14 +41,12 @@ LOGOS = """
   <p class="logo-strip-heading">Značky, s ktorými sme pracovali</p>
   <div class="marquee-viewport">
     <div class="marquee-track">
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/epw.png" alt="Epoxy"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+            <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/epw.png" alt="Epoxy"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+            <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
