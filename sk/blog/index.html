@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Nokto Studio</title>
-  <meta name="description" content="Praktické marketingové poznatky, bez plniva, bez recyklovaných rád.">
+  <title>Blog o SEO, Google Mapách a AI vyhľadávačoch | Nokto Studio</title>
+  <meta name="description" content="Praktické články: ako vybrať SEO agentúru, koľko stojí SEO, ako sa dostať do odporúčaní ChatGPT, Google firemný profil od základov.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog o SEO, Google Mapách a AI vyhľadávačoch | Nokto Studio">
+  <meta property="og:description" content="Praktické články: ako vybrať SEO agentúru, koľko stojí SEO, ako sa dostať do odporúčaní ChatGPT, Google firemný profil od základov.">
+  <meta property="og:url" content="https://noktostudio.com/sk/blog/">
+  <meta property="og:image" content="https://noktostudio.com/assets/img/og-cover.png">
+  <link rel="canonical" href="https://noktostudio.com/sk/blog/">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://noktostudio.com/sk/blog/">
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../assets/css/main.css">
   <link rel="stylesheet" href="../../assets/css/components.css">
@@ -18,136 +23,115 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Blog",
-  "@id": "https://noktostudio.com/sk/blog/",
-  "url": "https://noktostudio.com/sk/blog/",
-  "name": "Blog | Nokto Studio",
-  "description": "Články o AI marketingu, automatizácii a rastových stratégiách.",
-  "publisher": {
-    "@id": "https://noktostudio.com/#organization"
-  },
+  "@type": "Organization",
+  "@id": "https://noktostudio.com/#organization",
+  "name": "Nokto Studio",
+  "url": "https://noktostudio.com/",
+  "logo": "https://noktostudio.com/assets/img/favicon.svg",
+  "description": "SEO agentúra pre podnikateľov. SEO optimalizácia, lokálne SEO a Google profil, viditeľnosť v AI vyhľadávačoch, SEO pre e-shopy, PPC a tvorba webov. Hodinová cena 12 EUR.",
+  "email": "hello@noktostudio.com",
+  "areaServed": [{"@type":"Country","name":"Slovakia"},{"@type":"Country","name":"Czech Republic"}],
+  "knowsLanguage": ["sk", "cs", "en"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://noktostudio.com/#website",
+  "url": "https://noktostudio.com/",
+  "name": "Nokto Studio",
+  "publisher": {"@id": "https://noktostudio.com/#organization"},
   "inLanguage": "sk"
 }
-  </script>
+</script>
 </head>
 <body>
 
 <header class="site-header" id="site-header">
   <div class="container">
     <nav class="nav">
-      <a href="/sk/" class="nav-logo"><span class="logo-n">N</span>okto Studio</a>
-      <ul class="nav-links">
-        <li><a href="/sk/o-nas/">O nás</a></li>
-        <li><a href="/sk/sluzby/">Služby</a></li>
-        <li><a href="/en/portfolio/">Portfolio</a></li>
-        <li><a href="/sk/blog/" class="active">Blog</a></li>
-        <li><a href="/sk/faq/">FAQ</a></li>
-        <li><a href="/sk/kontakt/">Kontakt</a></li>
-      </ul>
+      <a href="/" class="nav-logo"><span class="logo-n">N</span><span class="logo-o">o</span><span class="logo-k">k</span><span class="logo-t">t</span>o Studio</a>
+      <ul class="nav-links"><li><a href="/sk/sluzby/">Služby</a></li><li><a href="/sk/cennik/">Cenník</a></li><li><a href="/sk/jak-pracujeme/">Ako pracujeme</a></li><li><a href="/sk/pripady/">Prípady</a></li><li><a href="/sk/blog/">Blog</a></li><li><a href="/sk/kontakt/">Kontakt</a></li></ul>
       <div class="nav-right">
-        <div class="lang-toggle">
-          <a href="/en/blog/" class="lang-btn">EN</a>
-          <span>|</span>
-          <a href="/sk/blog/" class="lang-btn active">SK</a>
-        </div>
-        <a target="_blank" rel="noopener noreferrer" href="https://calendly.com/hello-noktostudio/30-min-meeting" class="btn btn-primary btn-sm">Bezplatný strategický hovor</a>
-        <button class="hamburger" id="hamburger" aria-label="Otvoriť menu"><span></span><span></span><span></span></button>
+        <div class="lang-toggle"><a href="/sk/blog/" class="lang-btn active">SK</a> <span>|</span> <a href="/cz/blog/" class="lang-btn">CZ</a> <span>|</span> <a href="/en/blog/" class="lang-btn">EN</a></div>
+        <a href="https://calendly.com/hello-noktostudio/30-min-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Bezplatný hovor</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
 </header>
 <nav class="nav-mobile" id="nav-mobile">
-  <a href="/sk/o-nas/">O nás</a>
-  <a href="/sk/sluzby/">Služby</a>
-  <a href="/en/portfolio/">Portfolio</a>
-  <a href="/sk/blog/">Blog</a>
-  <a href="/sk/faq/">FAQ</a>
-  <a href="/sk/kontakt/">Kontakt</a>
-  <div class="lang-toggle">
-    <a href="/en/blog/" class="lang-btn">EN</a><span>|</span><a href="/sk/blog/" class="lang-btn active">SK</a>
-  </div>
-  <a target="_blank" rel="noopener noreferrer" href="https://calendly.com/hello-noktostudio/30-min-meeting" class="btn btn-primary">Bezplatný strategický hovor</a>
+  <a href="/sk/sluzby/">Služby</a><a href="/sk/cennik/">Cenník</a><a href="/sk/jak-pracujeme/">Ako pracujeme</a><a href="/sk/pripady/">Prípady</a><a href="/sk/blog/">Blog</a><a href="/sk/kontakt/">Kontakt</a>
+  <a href="https://calendly.com/hello-noktostudio/30-min-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:10px;">Bezplatný hovor</a>
 </nav>
+
+
 
 <section class="page-hero">
   <div class="container">
+    <nav class="breadcrumb" aria-label="Drobková navigácia"><a href="/">Domov</a> <span>›</span> <span>Blog</span></nav>
     <span class="section-label">Blog</span>
-    <h1>Poznatky<br>zo štúdia</h1>
+    <h1>Praktické články o SEO a AI</h1>
     <div class="divider"></div>
-    <p class="section-subheading reveal">Praktické marketingové poznatky, bez plniva, bez recyklovaných rád.</p>
+    <p class="section-subheading">Píšeme, čo vieme overiť v praxi. Prvé články vychádzajú tento mesiac.</p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="grid-3" style="margin-bottom:56px;">
-      <div class="blog-card card-hover">
-        <span class="blog-cat-tag">E-mail marketing</span>
-        <h3>Ako jedna e-mailová kampaň vygenerovala viac ako €2 000 pre slovenský e-shop</h3>
-        <p>E-mail marketing je stále kanál s najvyšším ROI dostupný väčšine podnikov. Tu je presne to, čo sme urobili, čo fungovalo a čo by sme urobili inak.</p>
-        <div class="blog-meta">
-          <span class="blog-readtime">5 min čítania</span>
-          <span class="blog-coming-soon">Čoskoro</span>
-        </div>
-      </div>
-      <div class="blog-card card-hover">
-        <span class="blog-cat-tag">Lokálne SEO</span>
-        <h3>Prečo je väčšina lokálnych podnikov neviditeľná na Google, a ako to opraviť za 30 dní</h3>
-        <p>Umiestnenie na Google Maps nie je o šťastí. Je to o niekoľkých konkrétnych faktoroch, ktoré väčšina podnikov úplne ignoruje. Tu je kontrolný zoznam.</p>
-        <div class="blog-meta">
-          <span class="blog-readtime">7 min čítania</span>
-          <span class="blog-coming-soon">Čoskoro</span>
-        </div>
-      </div>
-      <div class="blog-card card-hover">
-        <span class="blog-cat-tag">Google Ads</span>
-        <h3>5 chýb v Google Ads, ktoré práve teraz márnia 40 % vášho rozpočtu</h3>
-        <p>Po správe kampaní naprieč viacerými odvetviami sa stále objavujú rovnaké chyby. Tu je to, čo hľadať a ako každú opraviť.</p>
-        <div class="blog-meta">
-          <span class="blog-readtime">6 min čítania</span>
-          <span class="blog-coming-soon">Čoskoro</span>
-        </div>
-      </div>
-    </div>
-    <div class="bg-2 blog-subscribe-box" style="border:1px solid var(--border-light); border-radius:var(--radius-lg); padding:48px; text-align:center;">
-      <span class="section-label">Zostante informovaní</span>
-      <h2 class="reveal" style="font-size:1.6rem; margin:12px 0 8px;">Ďalšie články čoskoro.</h2>
-      <p style="margin-bottom:28px; max-width:400px; margin-left:auto; margin-right:auto;">Prihláste sa na odber a dostanete upozornenie, keď zverejníme nové praktické návody.</p>
-      <div class="subscribe-wrap">
-        <input type="email" name="email" autocomplete="email" required class="subscribe-input" placeholder="vas@email.sk">
-        <button class="btn btn-primary">Odoberať</button>
-      </div>
+    <div class="grid-2">
+<div class="benefit-card card-hover">
+  <span class="project-tag tag-blue">Článok v príprave</span>
+  <h3 style="margin-top:12px;">Ako vybrať SEO agentúru (a na čo si dať pozor)</h3>
+  <p>Cenník, záruky, reporty. 8 otázok, ktoré treba položiť pred podpisom.</p>
+</div>
+<div class="benefit-card card-hover">
+  <span class="project-tag tag-yellow">Článok v príprave</span>
+  <h3 style="margin-top:12px;">Koľko stojí SEO optimalizácia webu v 2026?</h3>
+  <p>Prehľad cien na slovenskom trhu a prečo platíme paušálmi za prácu, ktorá sa neodviedza.</p>
+</div>
+<div class="benefit-card card-hover">
+  <span class="project-tag tag-green">Článok v príprave</span>
+  <h3 style="margin-top:12px;">Ako sa dostať do odporúčaní ChatGPT</h3>
+  <p>Prvá príručka pre slovenské firmy: ako AI nástroje vyberajú, koho odporučiť.</p>
+</div>
+<div class="benefit-card card-hover">
+  <span class="project-tag tag-red">Článok v príprave</span>
+  <h3 style="margin-top:12px;">Google firemný profil: kompletný návod pre firmy</h3>
+  <p>Od založenia po hodnotenia. Čo Google ocení a čo ignoruje.</p>
+</div></div>
+    <div style="text-align:center; margin-top:36px;">
+      <p style="color:var(--text-muted);">Chcete o niečom vedieť viac už teraz? Spýtajte sa priamo, radi poradíme aj bez zmluvy.</p>
+      <a href="https://calendly.com/hello-noktostudio/30-min-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:14px;">Bezplatný hovor</a>
     </div>
   </div>
 </section>
 
+
+
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-top">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/sk/" class="footer-logo"><span class="logo-n">N</span>okto Studio</a>
-        <p class="footer-tagline">„Pracujeme v tieni.<br>Vaše výsledky hovoria na svetle."</p>
-        <p class="footer-sub">Slovensko. Medzinárodné myslenie.</p>
+        <a href="/" class="nav-logo"><span class="logo-n">N</span><span class="logo-o">o</span><span class="logo-k">k</span><span class="logo-t">t</span>o Studio</a>
+        <p>SEO agentúra pre podnikateľov. Google, Google Mapy, AI vyhľadávače a e-shopy. Merateľné výsledky za transparentných 12 EUR / hodinu.</p>
       </div>
-      <div class="footer-cols">
-        <div class="footer-col"><h4>Navigácia</h4><ul><li><a href="/sk/o-nas/">O nás</a></li><li><a href="/sk/sluzby/">Služby</a></li>
-            <li><a href="/en/portfolio/">Portfolio</a></li>
-        <li><a href="/en/portfolio/">Portfolio</a></li><li><a href="/sk/blog/">Blog</a></li><li><a href="/sk/faq/">FAQ</a></li><li><a href="/sk/kontakt/">Kontakt</a></li></ul></div>
-        <div class="footer-col"><h4>Právne</h4><ul><li><a href="/sk/privacy/">Zásady súkromia</a></li><li><a href="/sk/terms/">Obchodné podmienky</a></li></ul></div>
-        </div>
+      <div class="footer-col"><h4>Služby</h4><a href="/sk/sluzby/seo-optimalizacia/">SEO optimalizácia</a><a href="/sk/sluzby/lodalne-seo/">Lokálne SEO a Google profil</a><a href="/sk/sluzby/seo-pre-ai-vyhladavace/">SEO pre AI vyhľadávače</a><a href="/sk/sluzby/seo-pre-eshopy/">SEO pre e-shopy</a><a href="/sk/sluzby/seo-audit/">SEO audit a analýza</a><a href="/sk/sluzby/linkbuilding/">Linkbuilding</a><a href="/sk/sluzby/tvorba-webov/">Tvorba webov</a><a href="/sk/sluzby/ppc-reklama/">PPC reklama</a></div><div class="footer-col"><h4>Agentúra</h4><a href="/sk/jak-pracujeme/">Ako pracujeme</a><a href="/sk/cennik/">Cenník</a><a href="/sk/pripady/">Prípadové štúdie</a><a href="/sk/o-nas/">O nás</a><a href="/sk/blog/">Blog</a><a href="/sk/faq/">FAQ</a></div><div class="footer-col"><h4>Kontakt</h4><a href="mailto:hello@noktostudio.com">hello@noktostudio.com</a><a href="https://calendly.com/hello-noktostudio/30-min-meeting">Bezplatný hovor 30 min</a><a href="/sk/kontakt/">Kontaktný formulár</a><a href="/sk/privacy/">Ochrana súkromia</a><a href="/sk/terms/">Obchodné podmienky</a></div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Nokto Studio. Všetky práva vyhradené.</p>
-      <p class="footer-badges">Kvalitná práca · Vždy načas · Reálne výsledky</p>
+      <span>© 2026 Nokto Studio. SEO pre Slovensko a Česko.</span>
+      <span>Vytvorené rýchlo, merateľné a bez pevných zmlúv.</span>
     </div>
   </div>
 </footer>
-<button class="scroll-top" id="scroll-top" aria-label="Späť nahor"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<script src="../../assets/js/cookie-banner.js"></script>
-<script src="../../assets/js/nav.js"></script>
-<script src="../../assets/js/forms.js"></script>
-<script src="../../assets/js/animations.js"></script>
+
+
 <script src="../../assets/js/clarity.js"></script>
 <script src="../../assets/js/ga4.js"></script>
+<script src="../../assets/js/nav.js"></script>
+<script src="../../assets/js/animations.js"></script>
+<script src="../../assets/js/forms.js"></script>
+<script src="../../assets/js/cookie-banner.js"></script>
 </body>
 </html>

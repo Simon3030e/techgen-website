@@ -1,0 +1,128 @@
+/* ================================================
+   Nokto Studio — main.css
+   Variables · Reset · Typography · Layout · Grids
+   ================================================ */
+
+/* ===== CUSTOM PROPERTIES ===== */
+:root {
+  --bg:            #1A1A2E;
+  --bg-2:          #141D38;   /* distinctly darker-blue; was #16213E (blended invisibly with bg-card) */
+  --bg-card:       rgba(255, 255, 255, 0.05); /* always lighter than any section bg — fixes invisible cards */
+  --accent:        #6C63FF;   /* primary brand purple — use for interactive elements */
+  --accent-vivid:  #9490FF;   /* 6.25:1 on --bg: WCAG AA for small text (section labels, badges) */
+  --accent-hover:  #5B52EE;
+  --accent-light:  #C4C0F0;
+  --text:          #FFFFFF;
+  --text-2:        #C4C0F0;
+  --text-muted:    rgba(196, 192, 240, 0.65); /* was 0.5 → 3.46:1 (fail); 0.65 → 4.87:1 (WCAG AA ✓) */
+  --border:        rgba(108, 99, 255, 0.22);
+  --border-light:  rgba(255, 255, 255, 0.09); /* was 0.06 — too faint for card separation */
+  --font:          'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --max-w:         1200px;
+  --radius:        14px;
+  --radius-sm:     8px;
+  --radius-lg:     24px;
+  --shadow:         0 4px 32px rgba(0,0,0,0.45);
+  --shadow-accent:  0 8px 40px rgba(108,99,255,0.4); /* was 0.28 — richer CTA glow */
+  --t:              0.25s ease;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, svg { display: block; max-width: 100%; }
+ul  { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+a   { color: var(--accent); text-decoration: none; transition: color var(--t); }
+a:hover { color: var(--accent-light); }
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+h1 { font-size: clamp(2.2rem, 5vw,   4rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.1rem, 2vw,   1.45rem); }
+h4 { font-size: 0.95rem; font-weight: 600; }
+p  { color: var(--text-2); line-height: 1.8; }
+strong { font-weight: 600; color: var(--text); }
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ===== SECTIONS ===== */
+.section    { padding: 96px 0; }
+.section-sm { padding: 64px 0; }
+.section-lg { padding: 128px 0; }
+.bg-2       { background: var(--bg-2); }
+
+/* ===== SECTION HEADERS ===== */
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-vivid); /* was --accent (3.95:1 fail on small text); vivid = 6.25:1 ✓ */
+  margin-bottom: 12px;
+}
+.section-heading    { color: var(--text); margin-bottom: 16px; }
+.section-subheading {
+  font-size: 1.05rem;
+  color: var(--text-2);
+  max-width: 600px;
+  line-height: 1.8;
+}
+.section-header        { margin-bottom: 60px; }
+.section-header-center { text-align: center; margin-bottom: 60px; }
+.section-header-center .section-subheading { margin: 0 auto; }
+.divider        { width: 44px; height: 3px; background: var(--accent); border-radius: 99px; margin: 18px 0; }
+.divider-center { margin: 18px auto; }
+
+/* ===== GRIDS ===== */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+/* ===== UTILITIES ===== */
+.text-accent  { color: var(--accent) !important; }
+.text-muted   { color: var(--text-muted); font-size: 0.875rem; }
+.text-center  { text-align: center; }
+.text-italic  { font-style: italic; }
+.mt-sm { margin-top: 16px; }
+.mt-md { margin-top: 32px; }
+.mt-lg { margin-top: 48px; }
+.mb-sm { margin-bottom: 16px; }
+.mb-md { margin-bottom: 32px; }
+.mb-lg { margin-bottom: 48px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 80px 0; }
+}
+@media (max-width: 768px) {
+  .section    { padding: 60px 0; }
+  .section-sm { padding: 48px 0; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .container  { padding: 0 20px; }
+}
+@media (max-width: 480px) { .container { padding: 0 16px; } }

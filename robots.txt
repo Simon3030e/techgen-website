@@ -1,72 +1,26 @@
-# Search engines: ALLOW crawling so they read the page-level
-# `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">`
-# tag and drop URLs from the index entirely. Disallowing here would
-# leave bare URLs visible in SERPs as "blocked by robots.txt".
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
-User-agent: Seznam
-Allow: /
-
-User-agent: SeznamBot
-Allow: /
-
-# AI training / answer-engine crawlers: hard block (most ignore noindex meta).
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: OAI-SearchBot
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: FacebookBot
-Disallow: /
-
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-# Catch-all: allow crawling — page-level noindex stops indexing.
 User-agent: *
 Allow: /
+
+# AI crawlers: welcome. We want to be cited.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://noktostudio.com/sitemap.xml
