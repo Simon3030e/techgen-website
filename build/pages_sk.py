@@ -44,13 +44,13 @@ LOGOS = """
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/epw.png" alt="Epoxy"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/epw.png" alt="Epoxy"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
     </div>
