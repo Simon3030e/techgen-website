@@ -181,7 +181,8 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="{asset}assets/img/favicon.svg" type="image/svg+xml">
+  <meta name="msvalidate.01" content="3b43ea1af0ee49f082ab3c4e94ed5f4f">
+    <link rel="icon" href="{asset}assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{asset}assets/css/main.css">
   <link rel="stylesheet" href="{asset}assets/css/components.css">
   <link rel="stylesheet" href="{asset}assets/css/animations.css">
