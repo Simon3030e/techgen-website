@@ -218,3 +218,27 @@
 .svc-fact { background: rgba(255,255,255,0.7); border: 1px solid var(--border-light); border-radius: var(--radius); padding: 20px 22px; }
 .svc-fact strong { display: block; font-size: 1.3rem; color: var(--g-blue-deep); letter-spacing: -0.01em; }
 .svc-fact span { font-size: 0.82rem; color: var(--text-muted); }
+
+/* ===== SVG ICONS (Google colors, no emoji) ===== */
+.gicon { display: inline-flex; align-items: center; justify-content: center; }
+.gicon svg { display: block; }
+
+/* partner + growth chart blocks */
+.partner-band { display: flex; gap: 18px; flex-wrap: wrap; }
+.partner-card {
+  flex: 1 1 260px; background: #fff; border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg); padding: 22px; display: flex; gap: 14px; align-items: flex-start;
+}
+.partner-card h3 { font-size: 1.02rem; margin-bottom: 4px; }
+.partner-card p { font-size: 0.92rem; color: var(--text-muted); margin-bottom: 10px; }
+.partner-badge { flex: 0 0 42px; height: 42px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; }
+.about-simon { display: grid; grid-template-columns: 300px 1fr; gap: 42px; align-items: center; }
+@media (max-width: 800px) { .about-simon { grid-template-columns: 1fr; } }
+.about-simon-photo img { width: 100%; border-radius: var(--radius-lg); display: block; }
+.growth-card {
+  background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-lg);
+  padding: 24px; position: relative; overflow: hidden;
+}
+.growth-card h3 { font-size: 1.6rem; letter-spacing: -0.5px; margin-bottom: 2px; }
+.growth-card p { font-size: 0.88rem; color: var(--text-muted); }
+.growth-bar { height: 5px; border-radius: 3px; margin: 14px 0 10px; }

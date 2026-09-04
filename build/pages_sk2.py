@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Nokto Studio - SK supporting pages."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
-                    steps_block, ORG_SCHEMA, CAL, EMAIL, BASE)
+                    steps_block, ORG_SCHEMA, CAL, EMAIL, BASE, gicon)
 
 # ---------------------------------------------------------------- JAK PRACUJEME
 
@@ -15,13 +15,13 @@ def jak_pracujeme() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Proces</span>
-      <h2>Od prvého hovoru po mesačný report</h2>
+      <h2>Od prvého hovoru po mesačný hovor so mnou</h2>
     </div>
     {steps_block([
         {"title": "1. Bezplatný hovor a audit", "text": "30 minút telefonátu, v ktorom si povieme ciele. Do 3 dní od neho dostanete bezplatný vstupný audit: 10 najväčších problémov a šancí vášho webu na jednej strane."},
         {"title": "2. Plán s číslami", "text": "Z auditu spravíme plán: ktoré kľúčové slová prinášajú zákazníkov, čo opraviť ako prvé, koľko hodín mesačne to zaberie a aké výsledky sú reálne. Bez nereálnych sľubov."},
-        {"title": "3. Práca v týždenných dávkach", "text": "Každý týždeň odpracujeme dohodnutý rozsah: technika, obsah, Google profil, AI viditeľnosť, odkazy. Každú zmenu viete dohľadať. Odpovedáme do 12 hodín."},
-        {"title": "4. Meranie a report", "text": "Mesačný report: čo sa odrobilo (hodiny a obsah), čo to prinieslo (pozície, kliky, kontakty, objednávky, zmienky v AI) a čo je ďalší krok."},
+        {"title": "3. Práca v týždenných dávkach", "text": "Každý týždeň odpracujeme dohodnutý rozsah: technika, obsah, Google profil, AI viditeľnosť, odkazy. Každú zmenu viete dohľadať."},
+        {"title": "4. Meranie a report", "text": "Mesačný report vám dám osobne ako 30-minútový telefónát: čo sa odrobilo, čo to prinieslo (pozície, kliky, objednávky, zmienky v AI) a čo je ďalší krok."},
     ])}
   </div>
 </section>
@@ -78,7 +78,7 @@ def jak_pracujeme() -> tuple[str, str]:
 
 <section class="section" style="padding-top:0;">
   <div class="container">
-    {cta_band("Chcete takýto proces pre svoj web?", "Začnite bezplatným auditom. Odpoveď do 12 hodín.", "sk")}
+    {cta_band("Chcete takýto proces pre svoj web?", "Začnite bezplatným auditom a 30 minútami času.", "sk")}
   </div>
 </section>
 """
@@ -191,7 +191,7 @@ def villa_paris() -> tuple[str, str]:
 
 <section class="section section-alt">
   <div class="container">
-    {cta_band("Chcete postaviť značku a web, ktoré predávajú?", "Bezplatný audit a 30 minút času. Odpovieme do 12 hodín.", "sk")}
+    {cta_band("Chcete postaviť značku a web, ktoré predávajú?", "Bezplatný audit a 30 minút času. Bez záväzkov.", "sk")}
   </div>
 </section>
 """
@@ -226,7 +226,7 @@ FAQ_SECTIONS = [
         ("Ako dlho trvá, kým SEO prinesie výsledky?",
          "Prvé pohyby na menej konkurenčných dotazoch za 2 až 4 mesiace, na hlavné dotazy 6 až 12 mesiacov. Lokálne SEO a Google profil sa zlepšujú častejšie za 4 až 8 týždňov. Presné termíny vami povieme v audite."),
         ("Ako budem vidieť, že práca sa odviedla?",
-         "Mesačný report: odpracované hodiny a ich obsah, pozície, kliky z Search Console, kontakty a objednávky z Analytics, viditeľnosť v mápe a zmienky v AI odpovediach."),
+         "Mesačný report osobne: 30-minútový hovor so mnou. Odpracované hodiny, pozície, kliky z Search Console, objednávky z Analytics, viditeľnosť v Mapách a zmienky v AI."),
         ("Ponúkate záruky prvej pozície?",
          "Nie. Nikto reálne nevie zaručiť prvé miesto v Google, kto to sľubuje, predáva fiktívne záruky. Zaručujeme proces, transparentnosť a merateľný postup, ktorý k pozíciám vedie."),
         ("Pomôžete aj s prestávkou alebo migráciou webu?",
@@ -262,7 +262,7 @@ def faq() -> tuple[str, str]:
 </section>
 <section class="section" style="padding-top:0;">
   <div class="container">
-    {cta_band("Chýba vám otázka?", "Napíšte alebo zavolajte. Odpoveď do 12 hodín, bez záväzkov.", "sk")}
+    {cta_band("Chýba vám otázka?", "Napíšte alebo zavolajte. Bez záväzkov.", "sk")}
   </div>
 </section>
 """
@@ -304,9 +304,9 @@ def o_nas() -> tuple[str, str]:
       <h2>Tri pravidlá, ktoré platia vždy</h2>
     </div>
     <div class="grid-3">
-      <div class="benefit-card"><span class="benefit-icon icon-blue">🛡️</span><h3>Žiadne sľuby, ktoré nedržia</h3><p>Prvú pozíciu v Google nevie zaručiť nikto. Čo zaručíme: transparentný proces, reálne termíny a merateľný postup.</p></div>
-      <div class="benefit-card"><span class="benefit-icon icon-red">⚡</span><h3>Odpoveď do 12 hodín</h3><p>Bez ghostingu, bez preposielania. Klient vie vždy, čo sa deje a prečo.</p></div>
-      <div class="benefit-card"><span class="benefit-icon icon-green">🧾</span><h3>Každá hodina vykazovaná</h3><p>Platíte za odvedenú prácu. Každá hodina je v reporte s jej obsahom a výsledkom.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#1A73E8", 26)}</span><h3>Žiadne sľuby, ktoré nedržia</h3><p>Prvú pozíciu v Google nevie zaručiť nikto. Čo zaručíme: transparentný proces, reálne termíny a merateľný postup.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefónát: čo sme spravili, čo to prinieslo a čo ide dalej. Bez preposielania.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#34A853", 26)}</span><h3>Každá hodina vykazovaná</h3><p>Platíte za odvedenú prácu. Každá hodina je v reporte s jej obsahom a výsledkom.</p></div>
     </div>
   </div>
 </section>
@@ -326,7 +326,7 @@ def o_nas() -> tuple[str, str]:
 
 def kontakt() -> tuple[str, str]:
     body = f"""
-{page_hero("Kontakt", "Napíšte. Odpovieme do 12 hodín.",
+{page_hero("Kontakt", "Napíšte. Ozveme sa osobne.",
            "Najrýchlejšia cesta je bezplatný hovor cez kalendár. Ak uprednostníte formulár, využite ho nižšie.",
            [("Domov", "/"), ("Kontakt", None)])}
 <section class="section">
@@ -366,7 +366,7 @@ def kontakt() -> tuple[str, str]:
           <p class="form-note">Odoslaním súhlasíte so spracovaním údajov pre účel odpovede (pozrite <a href="/sk/privacy/">ochranu súkromia</a>).</p>
         </form>
         <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
-          ✓ Ďakujeme. Odpovieme do 12 hodín.
+          ✓ Ďakujeme. Ozveme sa osobne.
         </div>
         <p style="margin-top:20px;">Alebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
@@ -375,7 +375,7 @@ def kontakt() -> tuple[str, str]:
 </section>
 """
     html = base(market="sk", path="kontakt/", title="Kontakt: bezplatný hovor a audit | Nokto Studio",
-                desc="Spojte sa s Nokto Studio. Bezplatný strategický hovor 30 minút, bezplatný vstupný audit webu. Odpoveď do 12 hodín.",
+                desc="Spojte sa s Nokto Studio. Bezplatný strategický hovor 30 minút a bezplatný vstupný audit webu.",
                 canonical=BASE + "/sk/kontakt/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/kontakt/index.html", html)
 

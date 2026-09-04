@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Nokto Studio - EN core pages (secondary market; projects stay as legacy pages)."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
-                    steps_block, benefit_cards, ORG_SCHEMA, CAL, EMAIL, BASE)
+                    steps_block, benefit_cards, ORG_SCHEMA, CAL, EMAIL, BASE, gicon)
 
 EN_FAQ = [
     ("How much does SEO cost?",
@@ -43,22 +43,22 @@ def en_home() -> tuple[str, str]:
     </div>
     <div class="grid-4">
       <div class="benefit-card card-hover reveal" data-delay="100">
-        <span class="benefit-icon icon-blue">🤖</span>
+        <span class="benefit-icon icon-green">{gicon("ai", "#34A853", 26)}</span>
         <h3>Get recommended by AI</h3>
         <p>When a customer asks ChatGPT for a recommendation, you want to be in the answer. We build sites that AI tools understand and cite.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="200">
-        <span class="benefit-icon icon-red">📍</span>
+        <span class="benefit-icon icon-red">{gicon("pin", "#EA4335", 26)}</span>
         <h3>Customers from Google and Maps</h3>
         <p>Local search and your Google Business Profile are the fastest path to nearby customers. We set them up and review them weekly.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="300">
-        <span class="benefit-icon icon-yellow">🛒</span>
+        <span class="benefit-icon icon-yellow">{gicon("shop", "#FBBC04", 26)}</span>
         <h3>More e-shop sales</h3>
         <p>Categories and products optimized for keywords that buy. Google Shopping and marketplaces tracked as part of the system.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="400">
-        <span class="benefit-icon icon-green">📈</span>
+        <span class="benefit-icon icon-blue">{gicon("grow", "#1A73E8", 26)}</span>
         <h3>More enquiries for services</h3>
         <p>Service pages that answer real customer questions turn interest into enquiries and bookings.</p>
       </div>
@@ -75,7 +75,7 @@ def en_home() -> tuple[str, str]:
         {"title": "Free audit", "text": "It starts with a 30-minute call and a free audit of your site. You see exactly what holds back your positions, sales and AI recommendations."},
         {"title": "A plan with numbers", "text": "The audit becomes a plan: which keywords bring customers, what to fix first, how many hours per month it takes, and what results are realistic."},
         {"title": "Weekly work", "text": "We do the work: technical fixes, content, Google profile, AI visibility, links. You always know what happened last week."},
-        {"title": "Measure and report", "text": "A monthly report: hours worked and what they contained, positions, clicks, enquiries, orders and mentions in AI answers."},
+        {"title": "Measure and report", "text": "Your monthly report is personal: a 30-minute call with me. Positions, clicks, orders and AI mentions. You pay only for hours worked."},
     ])}
   </div>
 </section>
@@ -100,6 +100,42 @@ def en_home() -> tuple[str, str]:
     {faq_block(EN_FAQ)}
   </div>
 </section>
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Results in Google</span>
+      <h2>How client websites and AI citations grow</h2>
+      <p class="section-subheading">Samples from Google Search Console of our project and a client from recent months. I always show you the numbers live before we start.</p>
+    </div>
+    <div class="grid-4">
+      <div class="growth-card reveal" data-delay="100">
+        <h3 style="color:#1A73E8;">+355%</h3>
+        <p>clicks from Google in 3 months since the start of cooperation</p>
+        <div class="growth-bar" style="background:#1A73E8; width:100%;"></div>
+        <p>250 clicks per month, steady growth</p>
+      </div>
+      <div class="growth-card reveal" data-delay="200">
+        <h3 style="color:#EA4335;">+246%</h3>
+        <p>impressions in Google over the same period</p>
+        <div class="growth-bar" style="background:#EA4335; width:85%;"></div>
+        <p>8,950 impressions per month</p>
+      </div>
+      <div class="growth-card reveal" data-delay="300">
+        <h3 style="color:#F9AB00;">+49%</h3>
+        <p>clicks in the last 28 days versus the previous period</p>
+        <div class="growth-bar" style="background:#FBBC04; width:70%;"></div>
+        <p>121 clicks in 28 days</p>
+      </div>
+      <div class="growth-card reveal" data-delay="400">
+        <h3 style="color:#34A853;">13</h3>
+        <p>AI citations of a client website in Google AI Overviews after our content</p>
+        <div class="growth-bar" style="background:#34A853; width:55%;"></div>
+        <p>most cited page 8 times per month</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     {cta_band("Start with a free audit", "A 30-minute call and a free audit of your website. You learn what holds your site back, even if you decide not to work with us.", "en")}
@@ -115,26 +151,29 @@ def en_home() -> tuple[str, str]:
 
 def en_services() -> tuple[str, str]:
     services = [
-        ("/en/services/#seo", "SEO optimization", "Positions in Google that bring customers, not just traffic.", "🔍"),
-        ("/en/services/#local", "Local SEO and Google profile", "Google Maps, Business Profile, reviews. Nearby customers find you first.", "📍"),
-        ("/en/services/#ai", "SEO for AI search", "ChatGPT, Gemini and AI Overviews recommending you as the first choice.", "🤖"),
-        ("/en/services/#eshop", "E-commerce SEO", "More sales from categories and products. Shoptet, marketplaces, Google Shopping.", "🛒"),
-        ("/en/services/#audit", "SEO audit and analysis", "A precise picture of what holds your site back, with a prioritized plan.", "📋"),
-        ("/en/services/#links", "Link building", "Backlinks and authority, without which the top is out of reach.", "🔗"),
-        ("/en/services/#web", "Web design", "Fast, custom sites that rank and sell. WordPress and e-commerce.", "⚡"),
-        ("/en/services/#ppc", "PPC advertising", "Google Ads for results now, while SEO builds up.", "🎯"),
+        ("/en/services/#ai", "AI visibility", "ChatGPT, Gemini and AI Overviews recommending you as the first choice.", "ai", "#34A853"),
+        ("/en/services/#seo", "Google visibility", "Positions in Google that bring customers, not just traffic.", "search", "#1A73E8"),
+        ("/en/services/#local", "Google Maps visibility", "Business Profile, Maps and reviews. Nearby customers find you first.", "pin", "#EA4335"),
+        ("/en/services/#eshop", "E-commerce SEO", "More sales from categories and products. Shoptet, marketplaces, Google Shopping.", "shop", "#FBBC04"),
+        ("/en/services/#audit", "SEO audit and analysis", "A precise picture of what holds your site back, with a prioritized plan.", "audit", "#1A73E8"),
+        ("/en/services/#links", "Link building", "Backlinks and authority, without which the top is out of reach.", "link", "#EA4335"),
     ]
     cards = "".join(f"""
 <div class="benefit-card card-hover reveal" data-delay="150">
-  <span class="benefit-icon icon-blue">{icon}</span>
+  <span class="benefit-icon">{gicon(icon, color, 26)}</span>
   <h3><a href="{href}" style="color:var(--text);">{title}</a></h3>
   <p>{text}</p>
-</div>""" for href, title, text, icon in services)
+</div>""" for href, title, text, icon, color in services)
     body = f"""
 {page_hero("Services", "Services that bring you customers",
            "From technical SEO to AI visibility. Every service costs 12 EUR per hour, scope agreed in the plan.",
            [("Home", "/en/"), ("Services", None)])}
-<section class="section"><div class="container">{cards}</div></section>
+<section class="section"><div class="container">{cards}</div>
+  <div class="container" style="margin-top:34px;">
+    <h3 style="margin-bottom:14px;">Supplementary services from our partners</h3>
+    <p style="max-width:720px; color:var(--text-muted);">Web design and PPC advertising are delivered together with trusted partners, so the whole project stays in one pair of hands: <a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">Flamia Studio</a> (web design) and <a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">Peter Kocur</a> (PPC advertising).</p>
+  </div>
+</section>
 <section class="section section-alt">
   <div class="container">
     <div class="section-head"><span class="section-label">Pricing</span><h2>Simple, transparent pricing</h2></div>
@@ -154,7 +193,7 @@ def en_services() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="services/", title="Services: SEO, Maps, AI visibility, e-shop SEO | Nokto Studio",
-                desc="SEO optimization, local SEO and Google Business Profile, SEO for AI search, e-commerce SEO, audits, link building, web design and PPC. 12 EUR per hour.",
+                desc="AI visibility, Google visibility and Google Maps visibility, e-commerce SEO, audits, link building and email marketing. Web design and PPC with our partners. 12 EUR per hour.",
                 canonical=BASE + "/en/services/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/services/index.html", html)
 
@@ -185,9 +224,9 @@ def en_about() -> tuple[str, str]:
   <div class="container">
     <div class="section-head"><span class="section-label">Values</span><h2>Three rules that always apply</h2></div>
     <div class="grid-3">
-      <div class="benefit-card"><span class="benefit-icon icon-blue">🛡️</span><h3>No promises we cannot keep</h3><p>Nobody can guarantee the first position in Google. What we guarantee: a transparent process, realistic timelines and measurable progress.</p></div>
-      <div class="benefit-card"><span class="benefit-icon icon-red">⚡</span><h3>Reply within 12 hours</h3><p>No ghosting, no forwarding. The client always knows what is happening and why.</p></div>
-      <div class="benefit-card"><span class="benefit-icon icon-green">🧾</span><h3>Every hour reported</h3><p>You pay for work delivered. Every hour is in the report with its content and result.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#1A73E8", 26)}</span><h3>No promises we cannot keep</h3><p>Nobody can guarantee the first position in Google. What we guarantee: a transparent process, realistic timelines and measurable progress.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Monthly report: a 30-minute call with me</h3><p>What we did, what it brought and what comes next. No forwarding, no account managers.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#34A853", 26)}</span><h3>Every hour reported</h3><p>You pay for work delivered. Every hour is in the report with its content and result.</p></div>
     </div>
   </div>
 </section>
@@ -454,7 +493,7 @@ def en_terms() -> tuple[str, str]:
 <section class="section">
   <div class="container prose">
     <h2>1. Scope</h2>
-    <p>These terms govern the collaboration between Nokto Studio ("the provider") and the client for marketing services: SEO optimization, web design, PPC campaigns, email marketing and related consulting.</p>
+    <p>These terms govern the collaboration between Nokto Studio ("the provider") and the client for marketing services: SEO optimization, local SEO, AI visibility, link building, email marketing and related consulting. Web design and PPC are delivered with our partners.</p>
     <h2>2. Price and invoicing</h2>
     <p>Services are billed at an hourly rate of 12 EUR for hours worked. Invoicing runs monthly, in arrears, based on the hours report. Ad spend and link or third-party tool costs are passed through at actual price, without markup.</p>
     <h2>3. Term</h2>

@@ -42,8 +42,6 @@ add(sk.seo_ai())
 add(sk.eshop_seo())
 add(sk.audit_seo())
 add(sk.linkbuilding())
-add(sk.tvorba_webov())
-add(sk.ppc_reklama())
 add(sk.email_marketing())
 add(sk.cennik())
 add(sk2.jak_pracujeme())
@@ -66,8 +64,6 @@ add(cz.cz_seo_ai())
 add(cz.cz_eshop_seo())
 add(cz.cz_audit())
 add(cz.cz_linkbuilding())
-add(cz.cz_tvorba_webu())
-add(cz.cz_ppc())
 add(cz.cz_cenik())
 add(cz.cz_jak_pracujeme())
 add(cz.cz_pripady())
@@ -106,8 +102,6 @@ SITEMAP_ENTRIES = [
     ("sluzby/seo-pre-eshopy/",            "0.8"),
     ("sluzby/seo-audit/",                 "0.8"),
     ("sluzby/linkbuilding/",              "0.7"),
-    ("sluzby/tvorba-webov/",              "0.7"),
-    ("sluzby/ppc-reklama/",               "0.7"),
     ("sluzby/email-marketing/",           "0.7"),
     ("jak-pracujeme/",      "0.8"),
     ("pripady/",            "0.7"),
@@ -150,7 +144,6 @@ def write_sitemap():
         ("sluzby/seo-optimalizace/", "0.8"), ("sluzby/lodalne-seo/", "0.8"),
         ("sluzby/seo-pre-ai-vyhledavace/", "0.8"), ("sluzby/seo-pre-eshopy/", "0.8"),
         ("sluzby/seo-audit/", "0.8"), ("sluzby/linkbuilding/", "0.7"),
-        ("sluzby/tvorba-webu/", "0.7"), ("sluzby/ppc/", "0.7"),
         ("jak-pracujeme/", "0.8"), ("pripady/", "0.7"),
         ("faq/", "0.6"), ("kontakt/", "0.6"), ("blog/", "0.5"),
         ("privacy/", "0.2"), ("terms/", "0.2"),

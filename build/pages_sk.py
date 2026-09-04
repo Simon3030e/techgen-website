@@ -5,7 +5,7 @@ Every function returns (rel_path, html) where rel_path is inside the repo.
 """
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     price_cards, steps_block, benefit_cards, schema_service,
-                    ORG_SCHEMA, CAL, EMAIL, LOGO, BASE)
+                    ORG_SCHEMA, CAL, EMAIL, LOGO, BASE, gicon)
 
 SK_ROOT = "/sk/"
 
@@ -16,20 +16,20 @@ TRUST_STATS = """
   <div class="container">
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
-        <span class="trust-num">8+</span>
-        <span class="trust-label">rokov skúseností<br>v online marketinge</span>
-      </div>
-      <div class="trust-stat reveal" data-delay="200">
         <span class="trust-num">12&nbsp;EUR</span>
         <span class="trust-label">transparentná hodinová<br>sadzba, bez paušálov</span>
       </div>
-      <div class="trust-stat reveal" data-delay="300">
-        <span class="trust-num">12h</span>
-        <span class="trust-label">maximálna doba odpovede,<br>bez ghostingu</span>
+      <div class="trust-stat reveal" data-delay="200">
+        <span class="trust-num">0 EUR</span>
+        <span class="trust-label">prvý hovor a audit<br>webu sú bezplatné</span>
       </div>
-      <div class="trust-stat reveal" data-delay="400">
+      <div class="trust-stat reveal" data-delay="300">
         <span class="trust-num">1. deň</span>
         <span class="trust-label">bezplatný audit<br>začne hneď po prvom hovore</span>
+      </div>
+      <div class="trust-stat reveal" data-delay="400">
+        <span class="trust-num">30 min</span>
+        <span class="trust-label">mesačný report<br>ako hovor so mnou</span>
       </div>
     </div>
   </div>
@@ -41,53 +41,77 @@ LOGOS = """
   <p class="logo-strip-heading">Značky, s ktorými sme pracovali</p>
   <div class="marquee-viewport">
     <div class="marquee-track">
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/kreisel.png" alt="Kreisel"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/sirupo.webp" alt="Sirupo"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/tvlux.png" alt="TV Lux"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/epw.png" alt="EPW"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/postoj.svg" alt="Postoj"></span>
-      <a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" class="logo-badge is-link"><img loading="lazy" src="/assets/img/logos/flamia.png" alt="Flamia Studio"></a>
-      <a href="https://dolinajjr.sk" target="_blank" rel="noopener noreferrer" class="logo-badge is-link"><img loading="lazy" src="/assets/img/logos/dolinajjr.png" alt="Dolina JJR"></a>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/kreisel.png" alt="Kreisel"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/sirupo.webp" alt="Sirupo"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/tvlux.png" alt="TV Lux"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
-      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/epw.png" alt="EPW"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/postoj.svg" alt="Postoj"></span>
-      <a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" class="logo-badge is-link"><img loading="lazy" src="/assets/img/logos/flamia.png" alt="Flamia Studio"></a>
-      <a href="https://dolinajjr.sk" target="_blank" rel="noopener noreferrer" class="logo-badge is-link"><img loading="lazy" src="/assets/img/logos/dolinajjr.png" alt="Dolina JJR"></a>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/epw.png" alt="Epoxy"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/epw.png" alt="Epoxy"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
     </div>
   </div>
 </section>
 """
 
-SERVICES_LIST = [
-    ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia", "Pozície v Google, ktoré prinášajú zákazníkov, nie len návštevnosť.", "🔍", "tag-blue"),
-    ("/sk/sluzby/lodalne-seo/", "Lokálne SEO a Google profil", "Google Mapy, firemný profil, hodnotenia. Zákazníci z okolia vás nájdu prví.", "📍", "tag-red"),
-    ("/sk/sluzby/seo-pre-ai-vyhladavace/", "SEO pre AI vyhľadávače", "ChatGPT, Gemini a AI Overviews vás odporúčajú zákazníkom ako prvú voľbu.", "🤖", "tag-green"),
-    ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy", "Viac predaja z kategórií a produktov. Shoptet, Marketplace, Google Shopping.", "🛒", "tag-yellow"),
-    ("/sk/sluzby/seo-audit/", "SEO audit a analýza", "Presný obraz toho, čo váš web brzdí, s plánom podľa priorít.", "📋", "tag-blue"),
-    ("/sk/sluzby/linkbuilding/", "Linkbuilding", "Spätné odkazy a autorita, bez ktorých sa hore nedostanete.", "🔗", "tag-red"),
-    ("/sk/sluzby/tvorba-webov/", "Tvorba webov", "Rýchly web na mieru, ktorý sa nájde a predáva. WordPress aj e-shop.", "⚡", "tag-green"),
-    ("/sk/sluzby/ppc-reklama/", "PPC reklama", "Google Ads pre výsledky hneď, kým SEO naberá tempo.", "🎯", "tag-yellow"),
-    ("/sk/sluzby/email-marketing/", "Email marketing", "Newsletter a automatizácie, ktoré zákazníkov vracajú späť.", "✉️", "tag-blue"),
+# Tri piliere viditeľnosti + podporné služby + partnerské doplnky.
+PILLARS = [
+    ("/sk/sluzby/seo-pre-ai-vyhladavace/", "AI viditeľnosť",
+     "ChatGPT, Gemini a Google AI Overviews vás odporúčajú zákazníkom ako prvú voľbu.", "ai", "#34A853"),
+    ("/sk/sluzby/seo-optimalizacia/", "Google viditeľnosť",
+     "Pozície v Google, ktoré prinášajú zákazníkov, nie len návštevnosť.", "search", "#1A73E8"),
+    ("/sk/sluzby/lodalne-seo/", "Google Mapy viditeľnosť",
+     "Firemný profil, Mapy a hodnotenia. Zákazníci z okolia vás nájdu prví.", "pin", "#EA4335"),
+]
+SUPPORT_SERVICES = [
+    ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy",
+     "Viac predaja z kategórií a produktov. Shoptet, Marketplace, Google Shopping.", "shop", "#FBBC04"),
+    ("/sk/sluzby/seo-audit/", "SEO audit a analýza",
+     "Presný obraz toho, čo váš web brzdí, s plánom podľa priorít.", "audit", "#1A73E8"),
+    ("/sk/sluzby/linkbuilding/", "Linkbuilding",
+     "Spätné odkazy a autorita, bez ktorých sa hore nedostanete.", "link", "#EA4335"),
+    ("/sk/sluzby/email-marketing/", "Email marketing",
+     "Newsletter a automatizácie, ktoré zákazníkov vracajú späť.", "mail", "#34A853"),
+]
+PARTNERS = [
+    ("https://flamia.studio", "Web dizajn: Flamia Studio",
+     "Web na mieru, ktorý sa nájde a predáva. Dizajn a vývoj rieši náš partner Flamia Studio.",
+     "web", "#1A73E8"),
+    ("https://peterkocur.sk", "PPC reklama: Peter Kocur",
+     "Google Ads pre výsledky hneď, kým SEO naberá tempo. Vedieme ho s partnerom Petrom Kocurom.",
+     "target", "#EA4335"),
 ]
 
 
-def services_grid(cols: int = 3) -> str:
-    items = []
-    for href, title, text, icon, tag in SERVICES_LIST:
-        items.append(f"""
-<div class="benefit-card card-hover reveal" data-delay="150">
-  <span class="benefit-icon icon-blue">{icon}</span>
-  <h3><a href="{href}" style="color:var(--text);">{title}</a></h3>
+def _svc_card(href, title, text, icon, color, tag, delay, external=False):
+    ext = ' target="_blank" rel="noopener noreferrer"' if external else ""
+    return f"""
+<div class="benefit-card card-hover reveal" data-delay="{delay}">
+  <span class="benefit-icon">{gicon(icon, color, 26)}</span>
+  <h3><a href="{href}"{ext} style="color:var(--text);">{title}</a></h3>
   <p>{text}</p>
-  <div class="project-tags"><span class="project-tag {tag}">Služba</span></div>
-</div>""")
-    return f'<div class="grid-{cols}">{"".join(items)}</div>'
+  <div class="project-tags"><span class="project-tag {tag}">{'Partner' if external else 'Služba'}</span></div>
+</div>"""
+
+
+def services_grid(cols: int = 3) -> str:
+    """Piliere + podporné služby + partneri v jednej sekcii."""
+    pillars = "".join(_svc_card(*s, "tag-green" if s[3] == "ai" else "tag-blue" if s[3] == "search" else "tag-red", (i + 1) * 100)
+                      for i, s in enumerate(PILLARS))
+    support = "".join(_svc_card(*s, ["tag-yellow", "tag-blue", "tag-red", "tag-green"][i], (i + 1) * 100)
+                      for i, s in enumerate(SUPPORT_SERVICES))
+    partners = "".join(_svc_card(*s, "tag-blue" if "flamia" in s[0] else "tag-red", (i + 1) * 100, external=True)
+                       for i, s in enumerate(PARTNERS))
+    return (f'<div class="grid-3">{pillars}</div>'
+            f'<h3 class="svc-subhead" style="margin:42px 0 22px;">K tomu aj podporné služby</h3>'
+            f'<div class="grid-4">{support}</div>'
+            f'<h3 class="svc-subhead" style="margin:42px 0 22px;">Doplnkové služby od partnerov</h3>'
+            f'<p style="max-width:720px; margin:0 0 20px; color:var(--text-muted);">Tvorbu webu a PPC reklamu neriešime sami. Ponúkame ju v tandeme s overenými partnermi, s ktorými pracujeme na jednom projekte.</p>'
+            f'<div class="partner-band">{partners}</div>')
 
 
 def svc_page_faq(common_qa: list[tuple[str, str]]) -> list[tuple[str, str]]:
@@ -98,7 +122,7 @@ PROCESS_STEPS = [
     {"title": "Bezplatný audit", "text": "Začneme 30-minútovým hovorom a bezplatným auditom vášho webu. Vidíte presne, čo brzdí pozície, predaj a AI odporúčania."},
     {"title": "Plán podľa priorít", "text": "Z auditu spravíme jasný plán: čo opraviť ako prvé, ktoré kľúčové slová prinášajú zákazníkov a koľko hodín mesačne to zaberie."},
     {"title": "Práca v týždenných dávkach", "text": "Robíme: technika, obsah, Google profil, AI viditeľnosť, odkazy. Vždy viete, čo sa stalo v predchádzajúcom týždni."},
-    {"title": "Meranie a report", "text": "Mesačný report: pozície, kliky z Google, kontakty a objednávky, zmienky v AI. Platíte len za odpracované hodiny."},
+    {"title": "Meranie a report", "text": "Mesačný report vám dám osobne: 30-minútový telefónát so mnou. Pozície, kliky z Google, objednávky, zmienky v AI. Platíte len za odpracované hodiny."},
 ]
 
 
@@ -156,22 +180,22 @@ def home() -> tuple[str, str]:
     </div>
     <div class="grid-4">
       <div class="benefit-card card-hover reveal" data-delay="100">
-        <span class="benefit-icon icon-blue">🤖</span>
+        <span class="benefit-icon icon-green">{gicon("ai", "#34A853", 26)}</span>
         <h3>Nech ma AI odporúča</h3>
         <p>Keď zákazník pýta ChatGPT alebo Gemini odporúčanie, chcete byť v odpovedi. Stavíme web tak, aby mu AI nástroje rozumeli a citovali ho.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="200">
-        <span class="benefit-icon icon-red">📍</span>
+        <span class="benefit-icon icon-red">{gicon("pin", "#EA4335", 26)}</span>
         <h3>Zákazníci z Google a Mápy</h3>
         <p>Lokálne hľadanie a Google firemný profil sú najrýchlejšia cesta k zákazníkom z okolia. Nastavíme ich a vyhodnocujeme každý týždeň.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="300">
-        <span class="benefit-icon icon-yellow">🛒</span>
+        <span class="benefit-icon icon-yellow">{gicon("shop", "#FBBC04", 26)}</span>
         <h3>Viac predaja na e-shope</h3>
         <p>Kategórie a produkty optimalizujeme na kľúčové slová, ktoré kupujú. Google Shopping a Heureka sledujeme ako súčasť systému.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="400">
-        <span class="benefit-icon icon-green">📈</span>
+        <span class="benefit-icon icon-blue">{gicon("grow", "#1A73E8", 26)}</span>
         <h3>Viac ponúk pre služby</h3>
         <p>Služby predávame cez obsahové stránky, ktoré odpovedajú na otázky zákazníkov. Z väčšieho záujmu vyrobíte viac ponúk a zákazok.</p>
       </div>
@@ -184,8 +208,8 @@ def home() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Služby</span>
-      <h2>Jeden systém, deväť služieb</h2>
-      <p class="section-subheading">Vyberiete si, čo potrebujete. Väčšina klientov začína auditom a SEO optimalizáciou.</p>
+      <h2>Tri piliere viditeľnosti, v ktorých som najlepší</h2>
+      <p class="section-subheading">AI viditeľnosť, Google viditeľnosť a viditeľnosť v Google Mapách. K tomu podporné služby a doplnky od overených partnerov.</p>
     </div>
     {services_grid(3)}
     <div style="text-align:center; margin-top:36px;">
@@ -273,6 +297,61 @@ def home() -> tuple[str, str]:
       <h2>Najdôležitejšie odpovede na jedno miesto</h2>
     </div>
     {faq_block(HOME_FAQ)}
+
+<!-- KTO ZA TYM STOJI -->
+<section class="section section-alt" id="o-mne">
+  <div class="container">
+    <div class="about-simon">
+      <div class="about-simon-photo reveal">
+        <img src="/assets/img/simon.png" alt="Simon Stremensky, SEO specialist a majitel Nokto Studio" width="300" height="300" loading="lazy">
+      </div>
+      <div class="reveal" data-delay="150">
+        <span class="section-label">Kto za Nokto stojí</span>
+        <h2 style="margin:10px 0 14px;">S vami komunikujem ja, nie account manager.</h2>
+        <p style="color:var(--text-muted);">Som Simon, SEO špecialista. Rokmi praxe v online marketingu som si najviac obľúbil SEO a viditeľnosť v Google aj AI nástrojoch, lebo vidím, ako reálne mení predaj malých firiem. Pracujem s malým tímom a s partnermi na web dizajne a PPC reklame, takže vám vždy odpovie ten, kto prácu robí.</p>
+        <p style="color:var(--text-muted);">Prvá hodina s vami je bezplatný hovor a audit. Ak vám čísla nebudú dávať zmysel, nič neplatíte.</p>
+        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:18px;">Dohodnúť si hovor so mnou</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VYSLEDKY -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Výsledky v Google</span>
+      <h2>Ako klientom rastie web aj AI citácie</h2>
+      <p class="section-subheading">Ukázky z Google Search Console nášho projektu a klienta z posledných mesiacov. Čísla vám vždy pred spoluprácou ukážem naživo.</p>
+    </div>
+    <div class="grid-4">
+      <div class="growth-card reveal" data-delay="100">
+        <h3 style="color:#1A73E8;">+355%</h3>
+        <p>klikov z Google za 3 mesiace od začiatku spolupráce</p>
+        <div class="growth-bar" style="background:#1A73E8; width:100%;"></div>
+        <p class="growth-spark">250 klikov mesačne, priebežný rast</p>
+      </div>
+      <div class="growth-card reveal" data-delay="200">
+        <h3 style="color:#EA4335;">+246%</h3>
+        <p>zobrazení v Google za rovnaké obdobie</p>
+        <div class="growth-bar" style="background:#EA4335; width:85%;"></div>
+        <p class="growth-spark">8 950 zobrazení mesačne</p>
+      </div>
+      <div class="growth-card reveal" data-delay="300">
+        <h3 style="color:#F9AB00;">+49%</h3>
+        <p>klikov za posledných 28 dní oproti predchádzajúcemu obdobiu</p>
+        <div class="growth-bar" style="background:#FBBC04; width:70%;"></div>
+        <p class="growth-spark">121 klikov za 28 dní</p>
+      </div>
+      <div class="growth-card reveal" data-delay="400">
+        <h3 style="color:#34A853;">13</h3>
+        <p>AI citácií webu klienta v Google AI Overviews po nasadení nášho obsahu</p>
+        <div class="growth-bar" style="background:#34A853; width:55%;"></div>
+        <p class="growth-spark">najviac citovaná stránka 8-krát za mesiac</p>
+      </div>
+    </div>
+  </div>
+</section>
     <div style="text-align:center; margin-top:28px;">
       <a href="/sk/faq/" class="btn btn-outline">Všetky časté otázky</a>
     </div>
@@ -303,7 +382,7 @@ HOME_FAQ = [
     ("Ako dlho trvá, kým SEO prinesie výsledky?",
      "Prvé pohyby vidíte na menej konkurenčných kľúčových slovách zvyčajne za 2 až 4 mesiace. Na hlavné dotazy v konkurenčných odvetviach trvá 6 až 12 mesiacov. Reálne termíny vám povieme už v audite."),
     ("Budem vidieť, za čo platím?",
-     "Áno. Každý mesiac dostanete report s odpracovanými hodinami, ich obsahom a výsledkami: pozície, kliky z Google, kontakty a objednávky. Bez reportovania sa nepohne žiadna práca."),
+     "Áno. Mesačný report vám dám osobne: 30-minútový hovor, v ktorom prejdeme odpracované hodiny a ich výsledky: pozície, kliky z Google, objednávky a zmienky v AI. Bez reportovania sa nepohne žiadna práca."),
     ("Pomôžete mi, aby ma ChatGPT odporúčal?",
      "Áno, to je naša špecializácia. Optimalizujeme web pre AI nástroje (ChatGPT, Gemini, AI Overviews) tak, aby vás odporúčali pri dotazoch vašich zákazníkov."),
     ("Sú zmluvy viažúce na 12 mesiacov?",
@@ -332,7 +411,7 @@ def sluzby() -> tuple[str, str]:
 """
     html = base(
         market="sk", path="sluzby/", title="Služby: SEO, Mapy, AI viditeľnosť, e-shopy | Nokto Studio",
-        desc="SEO optimalizácia webu, lokálne SEO a Google firemný profil, SEO pre AI vyhľadávače, e-shop SEO, audit, linkbuilding, weby, PPC a email marketing. 12 EUR za hodinu.",
+        desc="SEO optimalizácia webu, lokálne SEO a Google firemný profil, SEO pre AI vyhľadávače, e-shop SEO, audit, linkbuilding a email marketing. 12 EUR za hodinu.",
         canonical=BASE + "/sk/sluzby/", body=body, prefix="../..", extra_head=ORG_SCHEMA,
     )
     return ("sk/sluzby/index.html", html)
@@ -420,7 +499,7 @@ def seo_optimalizacia() -> tuple[str, str]:
             "Prepis titulkov a popiskov na dotazy, ktoré majú reálny dopyt.",
             "Nové obsahové stránky na dopyty, kde konkurencia nie je silná.",
             "Interné prelinkovanie, ktoré posunie silné stránky vyššie.",
-            "Mesačný report: pozície, kliky z Search Console, kontakty.",
+            "Mesačný report: 30-minútový hovor so mnou, pozície, kliky z Search Console, objednávky.",
         ],
         faq=[
             ("Koľko hodín mesačne zaberie SEO optimalizácia?",
@@ -616,78 +695,6 @@ def linkbuilding() -> tuple[str, str]:
     )
 
 
-def tvorba_webov() -> tuple[str, str]:
-    return _service_page(
-        path="sluzby/tvorba-webov/", slug="tvorba-webov",
-        title="Tvorba web stránok optimalizovaných pre SEO | Nokto Studio",
-        desc="Tvorba web stránok a e-shopov, ktoré sú rýchle, na mieru a rovno optimalizované pre Google aj AI nástroje. Cena 12 EUR za hodinu práce.",
-        label="Služba · Tvorba webov",
-        h1="Tvorba web stránok, ktoré sa nájdu a predávajú",
-        intro="Krásny web bez zákazníkov je drahý doplnok. Staviame weby, ktoré sú rýchle, zrozumiteľné a rovno postavené na kľúčových slovách, o ktoré sa vás zaujímajú.",
-        for_who=[
-            "Máte web, ktorý je pomalý, starý alebo neprináša kontakty.",
-            "Chcete nový web alebo e-shop, ktorý bude hneď SEO v poriadku.",
-            "Potrebujete, aby AI nástroje webu rozumeli od prvého dňa.",
-            "Chcete web, ktorý sami dokážete upravovať (WordPress, Shoptet).",
-        ],
-        deliverables=[
-            "Struktúra postavená na kľúčových slovách, nie na vnútorných predstah.",
-            "Rýchly web: optimalizované obrázky, čistý HTML, PageSpeed zelený.",
-            "SEO rovné od štartu: kanonizácie, sitemap, schema.org, odpovede pre AI.",
-            "E-shop na Shoptet alebo WooCommerce s nastaveným Merchant Centrom.",
-            "Jednoduchá úprava obsahu pre vás (návody, podpora).",
-            "Po spustení: sledovanie a prvá mesačná SEO kontrola zdarma.",
-        ],
-        faq=[
-            ("Koľko stojí nový web?",
-             "Firemný web 30 až 50 hodín práce (360 až 600 EUR), e-shop od 60 hodín (720 EUR). Vysvetlíme si to po hovore, bezplatne."),
-            ("Kde budete weby hostiť?",
-             "Webhosting si vyberáme podľa výkonnosti a ceny (Websupport, VPS). Svoje práva si držíte, web je váš."),
-            ("Budem môcť upravovať obsah sám?",
-             "Áno, všetko staviame v systémoch, v ktorých si obsah dokážete upraviť sami. K tomu dostanete návod."),
-            ("Robíte aj redesign existujúceho webu?",
-             "Áno, redesign je častá úloha. Zabezpečíme, že staré URL a pozície sa nestrácajú."),
-        ],
-        svc_name="Tvorba webov a e-shopov",
-    )
-
-
-def ppc_reklama() -> tuple[str, str]:
-    return _service_page(
-        path="sluzby/ppc-reklama/", slug="ppc-reklama",
-        title="PPC reklama a Google Ads | Nokto Studio",
-        desc="Správa Google Ads kampaní: výkonnostné aj značkové. Zákazníci hneď, kým SEO naberá tempo. 12 EUR za hodinu, transparentné vykazovanie.",
-        label="Služba · PPC reklama",
-        h1="PPC reklama: zákazníci hneď, kým SEO naberá tempo",
-        intro="SEO trvá mesiace. Reklama funguje od prvého dňa. Preto mnohým klientom spúšťame Google Ads súbežne a postupne ich premeňme na organickú trať.",
-        for_who=[
-            "Chcete zákazníkov a objednávky hneď, nie o šesť mesiacov.",
-            "Platíte za reklamu, ale nevedíte, čo jej prináša.",
-            "Vedenie kampaní vyzerá ako čierna skrinka.",
-            "Chcete reklamu, ktorá spolupracuje s SEO, nie proti nemu.",
-        ],
-        deliverables=[
-            "Nastavenie a štruktúra Google Ads kampaní podľa rozpočtu.",
-            "Výber kľúčových slov a negatív, ktoré nepremrhajú rozpočet.",
-            "Reklamné texty, ktoré predávajú a neznevažujú značku.",
-            "Prevádzka konverzií v Google Analytics a Tag Manageri.",
-            "Týždenná kontrola a mesačný report s reálnymi číslami.",
-            "Poradenstvo, kedy kampaň stiahnuť a ustúpiť organickému rastu.",
-        ],
-        faq=[
-            ("Koľko mám minúť na reklamu?",
-             "Malý firemný web 300 až 600 EUR mesačne na reklamných výdavkov, e-shop 600 až 1500 EUR. Kampaň riadime podľa vašich možností."),
-            ("Aký je rozdiel medzi PPC a SEO?",
-             "PPC je platená reklama, výsledky hneď, platíte za každý klik. SEO je organické, trvá dlhšie, ale nezastaví sa, keď prestanete platiť."),
-            ("Vidím, že mi reklama neprináša objednávky. Pomôžete?",
-             "Áno. Najčastejšie je problém v sledovaní konverzií, v relevancii dopytov alebo v landing page. Zanalyzujeme to a opravíme."),
-            ("Môžem mať len PPC bez SEO?",
-             "Áno, ale dlhodobo je to najdrahší model. Reklamné ceny rastú, organické dopyty sú zdarma. Doporučíme kombináciu."),
-        ],
-        svc_name="PPC reklama (Google Ads)",
-    )
-
-
 def email_marketing() -> tuple[str, str]:
     return _service_page(
         path="sluzby/email-marketing/", slug="email-marketing",
@@ -791,7 +798,7 @@ def cennik() -> tuple[str, str]:
         <ul class="deliv-list">
           <li><span class="check">✓</span><span>Všetka práca: technika, obsah, Google profil, AI viditeľnosť, odkazy, weby, PPC riadenie.</span></li>
           <li><span class="check">✓</span><span>Meranie a reporting: Search Console, Analytics, pozície, konverzie, zmienky v AI.</span></li>
-          <li><span class="check">✓</span><span>Komunikácia: odpoveď do 12 hodín, mesačný hovor, neobmedzené otázky medzi tým.</span></li>
+          <li><span class="check">✓</span><span>Komunikácia: mesačný 30-minútový hovor so mnou, neobmedzené otázky medzi tým.</span></li>
         </ul>
         <h2>Čo nie je v cene</h2>
         <ul class="deliv-list">

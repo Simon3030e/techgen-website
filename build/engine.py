@@ -30,15 +30,13 @@ MARKET_HOME = {"sk": "/", "cz": "/cz/", "en": "/en/"}       # brand home
 SK_PATHS = {
     "", "sluzby/", "sluzby/seo-optimalizacia/", "sluzby/lodalne-seo/",
     "sluzby/seo-pre-ai-vyhladavace/", "sluzby/seo-pre-eshopy/", "sluzby/seo-audit/",
-    "sluzby/linkbuilding/", "sluzby/tvorba-webov/", "sluzby/ppc-reklama/",
-    "sluzby/email-marketing/", "cennik/", "jak-pracujeme/", "pripady/",
+    "sluzby/linkbuilding/", "sluzby/email-marketing/", "cennik/", "jak-pracujeme/", "pripady/",
     "villa-paris/", "faq/", "o-nas/", "kontakt/", "blog/", "privacy/", "terms/",
 }
 CZ_PATHS = {
     "", "sluzby/", "sluzby/seo-optimalizace/", "sluzby/lodalne-seo/",
     "sluzby/seo-pre-ai-vyhledavace/", "sluzby/seo-pre-eshopy/", "sluzby/seo-audit/",
-    "sluzby/linkbuilding/", "sluzby/tvorba-webu/", "sluzby/ppc/",
-    "cenik/", "jak-pracujeme/", "pripady/", "faq/", "kontakt/", "blog/",
+    "sluzby/linkbuilding/", "cenik/", "jak-pracujeme/", "pripady/", "faq/", "kontakt/", "blog/",
     "privacy/", "terms/",
 }
 EN_PATHS = {
@@ -50,6 +48,32 @@ LANG_PATHS = {"sk": SK_PATHS, "cz": CZ_PATHS, "en": EN_PATHS}
 
 def logo(market: str) -> str:
     return f'<a href="{MARKET_HOME[market]}" class="nav-logo">{LOGO}</a>'
+
+
+# ------------------------------------------------- svg icons (no emojis)
+_GICON_PATHS = {
+    "ai":     '<path d="M12 3a5 5 0 0 1 5 5c0 2.4-1.7 4.4-4 4.9V16h-2v-3.1c-2.3-.5-4-2.5-4-4.9a5 5 0 0 1 5-5Z"/><circle cx="12" cy="20.5" r="1.6"/>',
+    "search": '<circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/>',
+    "pin":    '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/>',
+    "shop":   '<path d="M4 7h16l-1.5 13h-13L4 7Z"/><path d="M8.5 10V6.5a3.5 3.5 0 0 1 7 0V10"/>',
+    "audit":  '<path d="M6 3h9l4 4v14H6V3Z"/><path d="M9 12h6M9 16h6M9 8h3"/>',
+    "link":   '<path d="M10 14a4 4 0 0 0 6 .4l3-3a4 4 0 1 0-5.7-5.7l-1.5 1.5"/><path d="M14 10a4 4 0 0 0-6-.4l-3 3a4 4 0 1 0 5.7 5.7l1.5-1.5"/>',
+    "mail":   '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+    "web":    '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>',
+    "target": '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="0.5"/>',
+    "chart":  '<path d="M4 20h16"/><path d="M7 20v-6M12 20V9M17 20v-9"/>',
+    "shield": '<path d="M12 3 5 6v6c0 4.5 3 7.6 7 9 4-1.4 7-4.5 7-9V6l-7-3Z"/>',
+    "bolt":   '<path d="M13 2 5 13h6l-1 9 8-11h-6l1-9Z"/>',
+    "check":  '<path d="m4.5 12.5 5 5L19.5 7"/>',
+    "grow":   '<path d="M4 19 10 13l3.5 3.5L20 10"/><path d="M20 15v-5h-5"/>',
+}
+
+def gicon(kind: str, color: str = "#1A73E8", size: int = 24) -> str:
+    """Material-style line icon, Google colors only, no emoji."""
+    path = _GICON_PATHS[kind]
+    return (f'<span class="gicon" style="color:{color};width:{size}px;height:{size}px;" aria-hidden="true">'
+            f'<svg viewBox="0 0 24 24" width="{size}" height="{size}" fill="none" stroke="currentColor" '
+            f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{path}</svg></span>')
 
 
 # ---------------------------------------------------------------- navs
@@ -191,8 +215,9 @@ def footer(market: str, prefix: str) -> str:
                         ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
                         ("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
                         ("/sk/sluzby/linkbuilding/", "Linkbuilding"),
-                        ("/sk/sluzby/tvorba-webov/", "Tvorba webov"),
-                        ("/sk/sluzby/ppc-reklama/", "PPC reklama")]),
+                        ("/sk/sluzby/email-marketing/", "Email marketing")]),
+            ("Partneri", [("https://flamia.studio", "Flamia Studio: web dizajn"),
+                          ("https://peterkocur.sk", "Peter Kocur: PPC reklama")]),
             ("Agentúra", [("/sk/jak-pracujeme/", "Ako pracujeme"),
                           ("/sk/cennik/", "Cenník"),
                           ("/sk/pripady/", "Prípadové štúdie"),
@@ -212,9 +237,9 @@ def footer(market: str, prefix: str) -> str:
                         ("/cz/sluzby/seo-pre-ai-vyhledavace/", "SEO pro AI vyhledávače"),
                         ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
                         ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
-                        ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
-                        ("/cz/sluzby/tvorba-webu/", "Tvorba webů"),
-                        ("/cz/sluzby/ppc/", "PPC reklama")]),
+                        ("/cz/sluzby/linkbuilding/", "Linkbuilding")]),
+            ("Partneři", [("https://flamia.studio", "Flamia Studio: web dizajn"),
+                          ("https://peterkocur.sk", "Peter Kocur: PPC reklama")]),
             ("Agentura", [("/cz/jak-pracujeme/", "Jak pracujeme"),
                           ("/cz/cenik/", "Ceník"),
                           ("/cz/pripady/", "Případové studie"),
@@ -412,7 +437,7 @@ ORG_SCHEMA = f"""<script type="application/ld+json">
   "name": "Nokto Studio",
   "url": "{BASE}/",
   "logo": "{BASE}/assets/img/favicon.svg",
-  "description": "SEO agentúra pre podnikateľov. SEO optimalizácia, lokálne SEO a Google profil, viditeľnosť v AI vyhľadávačoch, SEO pre e-shopy, PPC a tvorba webov. Hodinová cena 12 EUR.",
+  "description": "SEO agentúra pre podnikateľov. AI viditeľnosť, Google viditeľnosť a viditeľnosť v Google Mapách. SEO pre e-shopy, audity, linkbuilding a email marketing. Hodinová cena 12 EUR.",
   "email": "{EMAIL}",
   "areaServed": [{{"@type":"Country","name":"Slovakia"}},{{"@type":"Country","name":"Czech Republic"}}],
   "knowsLanguage": ["sk", "cs", "en"]
