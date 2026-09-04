@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://noktostudio.com/</loc>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/"/><xhtml:link rel="alternate" hreflang="cs" href="https://noktostudio.com/cz/"/><xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://noktostudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/"/><xhtml:link rel="alternate" hreflang="cs" href="https://noktostudio.com/cz/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://noktostudio.com/"/>
     <priority>1.0</priority>
   </url>
   <url>
@@ -39,10 +39,6 @@
   </url>
   <url>
     <loc>https://noktostudio.com/sk/sluzby/linkbuilding/</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/sk/sluzby/email-marketing/</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -83,7 +79,7 @@
   </url>
   <url>
     <loc>https://noktostudio.com/cz/</loc>
-    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/"/><xhtml:link rel="alternate" hreflang="cs" href="https://noktostudio.com/cz/"/><xhtml:link rel="alternate" hreflang="en" href="https://noktostudio.com/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://noktostudio.com/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://noktostudio.com/"/><xhtml:link rel="alternate" hreflang="cs" href="https://noktostudio.com/cz/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://noktostudio.com/"/>
     <priority>1.0</priority>
   </url>
   <url>
@@ -145,45 +141,5 @@
   <url>
     <loc>https://noktostudio.com/cz/terms/</loc>
     <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/services/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/about/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/contact/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/faq/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/blog/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/portfolio/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/villa-paris/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/privacy/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://noktostudio.com/en/terms/</loc>
-    <priority>0.5</priority>
   </url>
 </urlset>

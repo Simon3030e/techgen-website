@@ -10,7 +10,6 @@ build/. Run from the repo root:
 What it does:
   1. Renders all SK pages (root index is the SK homepage).
   2. Renders all CZ pages.
-  3. Renders core EN pages (projects stay as legacy pages).
   4. Writes sitemap.xml and robots.txt.
   5. Preserves the pre-redesign CSS as legacy files for the EN project demos.
 
@@ -42,7 +41,6 @@ add(sk.seo_ai())
 add(sk.eshop_seo())
 add(sk.audit_seo())
 add(sk.linkbuilding())
-add(sk.email_marketing())
 add(sk.cennik())
 add(sk2.jak_pracujeme())
 add(sk2.pripady())
@@ -73,11 +71,6 @@ add(cz.cz_blog())
 add(cz.cz_privacy())
 add(cz.cz_terms())
 
-# ---------------------------------------------------------------- EN pages
-import pages_en as en          # noqa: E402
-for p in en.ALL:
-    add(p)
-
 # ---------------------------------------------------------------- write HTML
 
 def write_pages():
@@ -102,7 +95,6 @@ SITEMAP_ENTRIES = [
     ("sluzby/seo-pre-eshopy/",            "0.8"),
     ("sluzby/seo-audit/",                 "0.8"),
     ("sluzby/linkbuilding/",              "0.7"),
-    ("sluzby/email-marketing/",           "0.7"),
     ("jak-pracujeme/",      "0.8"),
     ("pripady/",            "0.7"),
     ("villa-paris/",        "0.6"),
@@ -117,10 +109,9 @@ SITEMAP_ENTRIES = [
 
 def sitemap_url(loc: str, priority: str, lang: str, home: bool = False) -> str:
     if home:
-        hrefs = {"sk": BASE + "/", "cz": BASE + "/cz/", "en": BASE + "/en/"}
         alt = "".join(
             f'<xhtml:link rel="alternate" hreflang="{cl}" href="{h}"/>'
-            for cl, h in (("sk", hrefs["sk"]), ("cs", hrefs["cz"]), ("en", hrefs["en"]),
+            for cl, h in (("sk", BASE + "/"), ("cs", BASE + "/cz/"),
                           ("x-default", BASE + "/"))
         )
         return f"""  <url>
@@ -153,14 +144,6 @@ def write_sitemap():
         if path == "":
             continue
         rows.append(sitemap_url(f"{BASE}/cz/{path}", pr, "cz"))
-    # EN (legacy pages keep self-canonical, include the ones we regenerate)
-    en_paths = ["", "services/", "about/", "contact/", "faq/", "blog/", "portfolio/",
-                "villa-paris/", "privacy/", "terms/"]
-    for p in en_paths:
-        rows.append(f"""  <url>
-    <loc>{BASE}/en/{p}</loc>
-    <priority>0.5</priority>
-  </url>""")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

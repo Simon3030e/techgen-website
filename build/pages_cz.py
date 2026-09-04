@@ -2,7 +2,7 @@
 """Nokto Studio - CZ page content (localized for Czech market, targeting CZ keywords)."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     steps_block, price_cards, benefit_cards, schema_service,
-                    ORG_SCHEMA, CAL, EMAIL, BASE, gicon)
+                    ORG_SCHEMA_CZ, CAL, EMAIL, BASE, gicon)
 
 # ---------------------------------------------------------------- shared
 
@@ -139,7 +139,8 @@ def cz_home() -> tuple[str, str]:
         <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Bezplatný strategický hovor</a>
         <a href="/cz/kontakt/?audit=1" class="btn btn-outline btn-lg">Chci bezplatný audit webu</a>
       </div>
-      <p class="hero-scarcity">Kapacita pro nové projekty: otevřeno od října 2026.</p>
+      <p class="hero-scarcity">Nebo rovnou volejte: <a href="tel:+421917316105" style="font-weight:700; color:var(--text); text-decoration:none;">+421 917 316 105</a></p>
+      <p class="hero-scarcity" style="margin-top:6px;">Kapacita pro nové projekty: otevřeno od října 2026.</p>
     </div>
   </div>
 </section>
@@ -289,7 +290,7 @@ def cz_home() -> tuple[str, str]:
     html = base(market="cz", path="", title="Nokto Studio | SEO agentura pro podnikatele: Google i ChatGPT",
                 desc="SEO agentura pro podnikatele. Zákazníci z Google a Google Map, doporučení v ChatGPT a AI nástrojích, více prodeje na e-shopu. 12 EUR za hodinu, bezplatný audit.",
                 canonical=BASE + "/cz/", body=body, prefix="..",
-                extra_head=ORG_SCHEMA + faq_schema(CZ_HOME_FAQ, BASE + "/cz/"))
+                extra_head=ORG_SCHEMA_CZ + faq_schema(CZ_HOME_FAQ, BASE + "/cz/"))
     return ("cz/index.html", html)
 
 
@@ -351,7 +352,7 @@ def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
 """
     extra = schema_service(svc_name, desc, url) + faq_schema(faq, url)
     html = base(market="cz", path=f"sluzby/{slug}/", title=title, desc=desc,
-                canonical=url, body=body, prefix="../../../", extra_head=ORG_SCHEMA + extra)
+                canonical=url, body=body, prefix="../../../", extra_head=ORG_SCHEMA_CZ + extra)
     return (f"cz/sluzby/{slug}/index.html", html)
 
 
@@ -374,7 +375,7 @@ def cz_sluzby_hub() -> tuple[str, str]:
 """
     html = base(market="cz", path="sluzby/", title="Služby: SEO, Mapy, AI viditelnost, e-shopy | Nokto Studio",
                 desc="SEO optimalizace webu, lokální SEO a firemní profil Google, SEO pro AI vyhledávače, e-shop SEO, audit, linkbuilding, weby a PPC. 12 EUR za hodinu.",
-                canonical=BASE + "/cz/sluzby/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
+                canonical=BASE + "/cz/sluzby/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/sluzby/index.html", html)
 
 
@@ -700,7 +701,7 @@ def cz_cenik() -> tuple[str, str]:
     faq_html = faq_schema(CZ_CENIK_FAQ, BASE + "/cz/cenik/")
     html = base(market="cz", path="cenik/", title="Ceník SEO: 12 EUR za hodinu, bez paušálů | Nokto Studio",
                 desc="SEO ceník s transparentní hodinovou sazbou 12 EUR. Balíčky od 120 EUR měsíčně, bez pevných smluv. Bezplatný SEO audit.",
-                canonical=BASE + "/cz/cenik/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
+                canonical=BASE + "/cz/cenik/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ + faq_html)
     return ("cz/cenik/index.html", html)
 
 
@@ -766,7 +767,7 @@ def cz_jak_pracujeme() -> tuple[str, str]:
 """
     html = base(market="cz", path="jak-pracujeme/", title="Jak pracujeme: proces, dodávky a měření výsledků | Nokto Studio",
                 desc="Náš SEO proces: bezplatný audit, plán s čísly, týdenní práce, měsíční měření. Pozice, kliky, objednávky a AI doporučení v jednom reportu.",
-                canonical=BASE + "/cz/jak-pracujeme/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
+                canonical=BASE + "/cz/jak-pracujeme/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/jak-pracujeme/index.html", html)
 
 
@@ -820,7 +821,7 @@ def cz_pripady() -> tuple[str, str]:
 """
     html = base(market="cz", path="pripady/", title="Případové studie SEO a tvorby webů | Nokto Studio",
                 desc="Případové studie Nokto Studio: Villa Paris Piešťany (rebrand, web, lokální SEO), e-shop SEO a další projekty.",
-                canonical=BASE + "/cz/pripady/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
+                canonical=BASE + "/cz/pripady/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/pripady/index.html", html)
 
 
@@ -882,7 +883,7 @@ def cz_faq() -> tuple[str, str]:
     faq_html = faq_schema(all_qa, BASE + "/cz/faq/")
     html = base(market="cz", path="faq/", title="FAQ: časté otázky k SEO, ceně a procesu | Nokto Studio",
                 desc="Časté otázky: kolik stojí SEO, jak dlouho trvá, jak měříme výsledky, co je SEO pro AI vyhledávače. Nokto Studio, SEO agentura.",
-                canonical=BASE + "/cz/faq/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
+                canonical=BASE + "/cz/faq/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ + faq_html)
     return ("cz/faq/index.html", html)
 
 
@@ -930,7 +931,7 @@ def cz_kontakt() -> tuple[str, str]:
         <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
           ✓ Děkujeme. Ozveme se osobně.
         </div>
-        <p style="margin-top:20px;">Nebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
+        <p style="margin-top:20px;">Nebo email: <a href="mailto:{EMAIL}">{EMAIL}</a> · nebo volejte: <a href="tel:+421917316105" style="font-weight:700; color:var(--text); text-decoration:none;">+421 917 316 105</a></p>
       </div>
     </div>
   </div>
@@ -938,7 +939,7 @@ def cz_kontakt() -> tuple[str, str]:
 """
     html = base(market="cz", path="kontakt/", title="Kontakt: bezplatný hovor a audit | Nokto Studio",
                 desc="Spojte se s Nokto Studio. Bezplatný strategický hovor 30 minut a bezplatný vstupní audit webu.",
-                canonical=BASE + "/cz/kontakt/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
+                canonical=BASE + "/cz/kontakt/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/kontakt/index.html", html)
 
 
@@ -970,7 +971,7 @@ def cz_blog() -> tuple[str, str]:
 """
     html = base(market="cz", path="blog/", title="Blog o SEO, Google Mapách a AI vyhledávačích | Nokto Studio",
                 desc="Praktické články: jak vybrat SEO agenturu, kolik stojí SEO, jak se dostat do doporučení ChatGPT, firemní profil Google od základů.",
-                canonical=BASE + "/cz/blog/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
+                canonical=BASE + "/cz/blog/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/blog/index.html", html)
 
 
@@ -1000,7 +1001,7 @@ def cz_privacy() -> tuple[str, str]:
 """
     html = base(market="cz", path="privacy/", title="Zásady ochrany osobních údajů | Nokto Studio",
                 desc="Zásady ochrany osobních údajů webu noktostudio.com: jaké údaje zpracováváme, proč a jaká máte práva.",
-                canonical=BASE + "/cz/privacy/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
+                canonical=BASE + "/cz/privacy/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/privacy/index.html", html)
 
 
@@ -1028,5 +1029,5 @@ def cz_terms() -> tuple[str, str]:
 """
     html = base(market="cz", path="terms/", title="Obchodní podmínky | Nokto Studio",
                 desc="Obchodní podmínky Nokto Studio: hodinová sazba 12 EUR, měsíční fakturace, bez vázanosti, transparentní vykazování.",
-                canonical=BASE + "/cz/terms/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
+                canonical=BASE + "/cz/terms/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/terms/index.html", html)

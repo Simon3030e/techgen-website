@@ -368,7 +368,7 @@ def kontakt() -> tuple[str, str]:
         <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
           ✓ Ďakujeme. Ozveme sa osobne.
         </div>
-        <p style="margin-top:20px;">Alebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
+        <p style="margin-top:20px;">Alebo email: <a href="mailto:{EMAIL}">{EMAIL}</a> · telefonujte: <a href="tel:+421917316105" style="font-weight:700; color:var(--text); text-decoration:none;">+421 917 316 105</a></p>
       </div>
     </div>
   </div>

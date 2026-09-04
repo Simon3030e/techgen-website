@@ -72,8 +72,6 @@ SUPPORT_SERVICES = [
      "Presný obraz toho, čo váš web brzdí, s plánom podľa priorít.", "audit", "#1A73E8"),
     ("/sk/sluzby/linkbuilding/", "Linkbuilding",
      "Spätné odkazy a autorita, bez ktorých sa hore nedostanete.", "link", "#EA4335"),
-    ("/sk/sluzby/email-marketing/", "Email marketing",
-     "Newsletter a automatizácie, ktoré zákazníkov vracajú späť.", "mail", "#34A853"),
 ]
 PARTNERS = [
     ("https://flamia.studio", "Web dizajn: Flamia Studio",
@@ -160,7 +158,8 @@ def home() -> tuple[str, str]:
         <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Bezplatný strategický hovor</a>
         <a href="/sk/kontakt/?audit=1" class="btn btn-outline btn-lg">Chcem bezplatný audit webu</a>
       </div>
-      <p class="hero-scarcity">Kapacita na nové projekty: otvorené od októbra 2026.</p>
+      <p class="hero-scarcity">Alebo volajte rovno: <a href="tel:+421917316105" style="font-weight:700; color:var(--text); text-decoration:none;">+421 917 316 105</a></p>
+      <p class="hero-scarcity" style="margin-top:6px;">Kapacita na nové projekty: otvorené od októbra 2026.</p>
     </div>
   </div>
 </section>
@@ -690,42 +689,6 @@ def linkbuilding() -> tuple[str, str]:
              "Malý firemný web 2 až 5, e-shop v konkurenčnej bráne 5 až 10. Väčšie čísla nie vždy znamenajú lepší výsledok."),
         ],
         svc_name="Linkbuilding",
-    )
-
-
-def email_marketing() -> tuple[str, str]:
-    return _service_page(
-        path="sluzby/email-marketing/", slug="email-marketing",
-        title="Email marketing a automatizácie | Nokto Studio",
-        desc="Email marketing pre e-shopy aj firmy: newslettery, automatizácie, abandoned cart. Klaviyo a Brevo. 12 EUR za hodinu.",
-        label="Služba · Email marketing",
-        h1="Email marketing: zákazníkov vracajte späť",
-        intro="Nový zákazník stojí viac než ten existujúci. Emaily a automatizácie predajov zvyšujú tržbu zo súčasnej základne bez ďalších nákladov na reklamu.",
-        for_who=[
-            "Máte e-shop a zákazníci nevracajú.",
-            "Opúšťajú vás košíky (abandoned cart) bez opravenej hodnoty.",
-            "Zber emailov nie je nastavený alebo neprináša kontakt.",
-            "Chcete newsletter, ktorý sa dá napísať raz a posielať systematicky.",
-        ],
-        deliverables=[
-            "Nastavenie zberu kontaktov a GDPR v poriadku.",
-            "Základné automatizácie: víťazstvo série, opustený košík, post-purchase.",
-            "Šablóny newsletterov v obojživenej forme (Klaviyo, Brevo).",
-            "Segmentácia zákazníkov podľa správania.",
-            "Mesačný plán kampaní a správa odosielania.",
-            "Report: open rate, click rate, tržba z emailov.",
-        ],
-        faq=[
-            ("Ktorý nástroj používate?",
-             "Klaviyo pre e-shopy, Brevo pre firmy. Obe sú podľa nášho názoru najlepšie podľa ceny a výkonu."),
-            ("Koľko emailov mesačne posielať?",
-             "E-shop 4 až 8, firma 1 až 2. Viac nie je vždy lepšie, dôležité je správne časovanie a obsah."),
-            ("Ako riešite GDPR a spam?",
-             "Všetko cez súhlas, s možnosťou odhlásenia, bez nakupovania listín. Zásady sú na webe a v každému emaile."),
-            ("Je toto drahé na správu?",
-             "Nastavenie automatizácií trvá 10 až 20 hodín, potom mesiace 4 až 8 hodín (48 až 96 EUR)."),
-        ],
-        svc_name="Email marketing a automatizácie",
     )
 
 

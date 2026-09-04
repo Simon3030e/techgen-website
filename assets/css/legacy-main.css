@@ -219,15 +219,14 @@ p  { color: var(--text-2); }
 .breadcrumb a:hover { color: var(--g-blue-deep); }
 
 /* ===== TRUST STRIP ===== */
-.trust-strip { background: var(--dark); color: #fff; padding: 36px 0; }
+.trust-strip { background: #fff; color: var(--text); padding: 36px 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
 .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
-.trust-num {
-  display: block; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--g-blue) 0%, var(--g-red) 35%, var(--g-yellow) 65%, var(--g-green) 100%);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.trust-label { font-size: 0.84rem; color: #BDC1C6; margin-top: 6px; display: block; line-height: 1.4; }
+.trust-num { display: block; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; }
+.tn-blue   { color: #1A73E8; }
+.tn-red    { color: #EA4335; }
+.tn-yellow { color: #F9AB00; }
+.tn-green  { color: #34A853; }
+.trust-label { font-size: 0.84rem; color: var(--text-muted); margin-top: 6px; display: block; line-height: 1.4; }
 @media (max-width: 760px) { .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
 
 /* ===== LOGO MARQUEE ===== */
