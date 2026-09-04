@@ -98,11 +98,11 @@ def nav_items(market: str) -> list[tuple[str, str]]:
         ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
     ])
     if market == "sk":
-        rest = [("/sk/cennik/", "Cenník"), ("/sk/jak-pracujeme/", "Ako pracujeme"),
-                ("/sk/pripady/", "Prípady"), ("/sk/blog/", "Blog"), ("/sk/kontakt/", "Kontakt")]
+        rest = [("Cenník", "/sk/cennik/"), ("Ako pracujeme", "/sk/jak-pracujeme/"),
+                ("Prípady", "/sk/pripady/"), ("Blog", "/sk/blog/"), ("Kontakt", "/sk/kontakt/")]
     else:
-        rest = [("/cz/cenik/", "Ceník"), ("/cz/jak-pracujeme/", "Jak pracujeme"),
-                ("/cz/pripady/", "Případy"), ("/cz/blog/", "Blog"), ("/cz/kontakt/", "Kontakt")]
+        rest = [("Ceník", "/cz/cenik/"), ("Jak pracujeme", "/cz/jak-pracujeme/"),
+                ("Případy", "/cz/pripady/"), ("Blog", "/cz/blog/"), ("Kontakt", "/cz/kontakt/")]
     return [svc] + rest
 
 
