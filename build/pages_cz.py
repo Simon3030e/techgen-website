@@ -780,11 +780,16 @@ def cz_pripady() -> tuple[str, str]:
       </div>
       <div class="project-card card-hover">
         <div class="project-card-body">
-          <h3>Mikramt.sk</h3>
-          <p>Práce na SEO pro e-shop. Technická optimalizace, obsah kategorií a produktů, posílení viditelnosti v Google i AI nástrojích.</p>
+          <h3>Mikramt.sk, Martin (SK)</h3>
+          <p>Vlastní e-shop s API integrací na účetní systém Sunsoft Ecosun pro regionálního dodavatele truhlářského zboží. Za 9 měsíců 2 492,75 EUR online tržeb z 15 objednávek (email + organický Google), největší objednávka 722 EUR. Email marketing, lokální SEO a GEO optimalizace. Prodej v kamenné prodejně do sumy nezapočítáváme.</p>
+          <div class="case-result">
+            <div><strong>2 492,75 EUR</strong><span>tržby / 9 měsíců</span></div>
+            <div><strong>15</strong><span>objednávek online</span></div>
+          </div>
           <div class="project-tags">
             <span class="project-tag tag-yellow">E-shop SEO</span>
-            <span class="project-tag tag-green">Obsah</span>
+            <span class="project-tag tag-green">Email marketing</span>
+            <span class="project-tag tag-red">Lokální SEO + GEO</span>
           </div>
           <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:20px;">Zeptat se víc</a>
         </div>

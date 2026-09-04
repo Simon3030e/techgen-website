@@ -1,6 +1,6 @@
 /* ================================================
-   Nokto Studio — animations.css
-   Keyframes · Entrance animations · AOS overrides
+   Nokto Studio - animations.css
+   Keyframes - entrance animations - hover states
    ================================================ */
 
 /* ===== HERO ENTRANCE ===== */
@@ -31,26 +31,11 @@
 /* ===== ACCENT DOT PULSE ===== */
 .hero-label::before { animation: pulse 2.2s ease infinite; }
 
-
 /* ===== HOVER LIFT ===== */
 .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
-.card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 4px 10px rgba(60,64,67,.18); }
 
-/* ===== TRUST NUMBERS GLOW ===== */
-.trust-num {
-  background: linear-gradient(135deg, #fff 20%, var(--accent-vivid) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ===== SECTION LABEL SHIMMER ===== */
-.section-label {
-  position: relative;
-  overflow: hidden;
-}
-
-/* ===== BUTTON GLOW PULSE (primary CTA only) ===== */
+/* ===== BUTTON SHEEN (primary CTA only) ===== */
 .btn-primary {
   position: relative;
   overflow: hidden;
@@ -59,7 +44,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
   transform: translateX(-100%);
   transition: transform 0.5s ease;
 }
@@ -68,13 +53,12 @@
 /* ===== BENEFIT ICON FLOAT ===== */
 .benefit-card:hover .benefit-icon {
   transform: translateY(-4px) scale(1.05);
-  background: rgba(108,99,255,0.2);
 }
-.benefit-icon { transition: transform 0.3s ease, background 0.3s ease; }
+.benefit-icon { transition: transform 0.3s ease; }
 
 /* ===== STEP NUMBER GLOW ON HOVER ===== */
 .step:hover .step-num {
-  box-shadow: 0 0 0 6px rgba(148,144,255,0.18), 0 0 28px rgba(108,99,255,0.35);
+  box-shadow: 0 0 0 6px rgba(66,133,244,0.15);
   transform: scale(1.05);
 }
 .step-num { transition: box-shadow 0.3s ease, transform 0.3s ease; }
@@ -84,13 +68,12 @@
 
 /* ===== LOGO BADGE GLOW ===== */
 .logo-badge.is-link:hover {
-  box-shadow: 0 0 20px rgba(148,144,255,0.3);
+  box-shadow: 0 2px 14px rgba(66,133,244,0.25);
 }
 
 /* ===== PAGE HERO ENTRANCE ===== */
 .page-hero .section-label { animation: fadeIn 0.5s ease 0.05s both; }
 .page-hero h1             { animation: fadeInUp 0.7s ease 0.1s both; }
-.page-hero .divider        { animation: fadeIn 0.5s ease 0.25s both; }
 .page-hero .section-subheading { animation: fadeInUp 0.7s ease 0.3s both; }
 
 /* ===== UNDERLINE ANIMATION FOR NAV LINKS ===== */
@@ -100,11 +83,12 @@
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 2px;
   left: 14px;
   right: 14px;
-  height: 1px;
-  background: var(--accent);
+  height: 2px;
+  border-radius: 2px;
+  background: var(--g-blue-deep);
   transform: scaleX(0);
   transition: transform 0.25s ease;
   transform-origin: center;
@@ -112,13 +96,12 @@
 .nav-links a:hover::after,
 .nav-links a.active::after { transform: scaleX(1); }
 
-
 /* ===== FORM ERROR STATE ===== */
 .form-input.error,
 .form-select.error,
 .form-textarea.error {
-  border-color: #ff6b6b !important;
-  box-shadow: 0 0 0 3px rgba(255,107,107,0.12);
+  border-color: var(--g-red) !important;
+  box-shadow: 0 0 0 3px rgba(234,67,53,0.12);
 }
 
 /* ===== HAMBURGER TRANSFORM ===== */
@@ -136,7 +119,7 @@
   opacity: 1;
   transform: translateY(0);
 }
-/* Stagger helpers — add data-delay or sibling-index classes */
+/* Stagger helpers - add data-delay attribute */
 .reveal[data-delay="100"] { transition-delay: 0.10s; }
 .reveal[data-delay="150"] { transition-delay: 0.15s; }
 .reveal[data-delay="200"] { transition-delay: 0.20s; }
@@ -150,3 +133,10 @@
   transition: opacity 0.6s ease;
 }
 .reveal-fade.visible { opacity: 1; }
+
+/* Reduced motion: show everything immediately */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-fade { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .marquee-track { animation: none !important; }
+  .hero-label, .hero h1, .hero-sub, .hero-ctas, .hero-scarcity { animation: none !important; }
+}

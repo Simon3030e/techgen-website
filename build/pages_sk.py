@@ -222,22 +222,41 @@ def home() -> tuple[str, str]:
       <h2>Villa Paris: značka, web a lokálne SEO od nuly</h2>
       <p class="section-subheading">Prémiové ubytovanie v Piešťanoch s jedným cieľom: viac priamych rezervácií bez provízií portálov.</p>
     </div>
-    <div class="project-card card-hover" style="max-width:760px; margin:0 auto;">
-      <div class="project-card-body">
-        <h3>Villa Paris, Piešťany</h3>
-        <p>Rebrand, nový web, hotelový copywriting a lokálne SEO v jednom systéme. Cieľom bolo, aby hosť pochopil hodnotu ubytovania skôr, ako porovná konkurenciu, a rezervoval priamo.</p>
-        <div class="case-result">
-          <div><strong>Rebrand</strong><span>identita + logo</span></div>
-          <div><strong>Web</strong><span>nová štruktúra</span></div>
-          <div><strong>Lokálne SEO</strong><span>Google profil</span></div>
+    <div class="grid-2">
+      <div class="project-card card-hover">
+        <div class="project-card-body">
+          <h3>Mikramt.sk, Martin</h3>
+          <p>Vlastný e-shop s API integráciou na účtovný systém Sunsoft Ecosun pre regionálneho dodávateľa stolárskych potrieb. Za 9 mesiacov sme vygenerovali online tržby pripísané do kanálov email a organický Google. Súčasťou je email marketing, lokálne SEO a optimalizácia pre AI vyhľadávače, tak aby značku odporúčali ChatGPT aj Google AI Overviews.</p>
+          <div class="case-result">
+            <div><strong>2 492,75 EUR</strong><span>tržby za 9 mesiacov</span></div>
+            <div><strong>15</strong><span>objednávok z emailu a organika</span></div>
+            <div><strong>722 EUR</strong><span>najväčšia objednávka</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag tag-yellow">E-shop SEO</span>
+            <span class="project-tag tag-green">Email marketing</span>
+            <span class="project-tag tag-red">Lokálne SEO + GEO</span>
+          </div>
+          <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:20px;">Povedať si viac</a>
         </div>
-        <div class="project-tags">
-          <span class="project-tag tag-blue">Branding</span>
-          <span class="project-tag tag-green">Web dizajn</span>
-          <span class="project-tag tag-yellow">Copywriting</span>
-          <span class="project-tag tag-red">Lokálne SEO</span>
+      </div>
+      <div class="project-card card-hover">
+        <div class="project-card-body">
+          <h3>Villa Paris, Piešťany</h3>
+          <p>Rebrand, nový web, hotelový copywriting a lokálne SEO v jednom systéme. Cieľom bolo, aby hosť pochopil hodnotu ubytovania skôr, ako porovná konkurenciu, a rezervoval priamo.</p>
+          <div class="case-result">
+            <div><strong>Rebrand</strong><span>identita + logo</span></div>
+            <div><strong>Web</strong><span>nová štruktúra</span></div>
+            <div><strong>Lokálne SEO</strong><span>Google profil</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag tag-blue">Branding</span>
+            <span class="project-tag tag-green">Web dizajn</span>
+            <span class="project-tag tag-yellow">Copywriting</span>
+            <span class="project-tag tag-red">Lokálne SEO</span>
+          </div>
+          <a href="/sk/villa-paris/" class="btn btn-outline" style="margin-top:20px;">Čítať celý príbeh</a>
         </div>
-        <a href="/sk/villa-paris/" class="btn btn-outline" style="margin-top:20px;">Čítať celý príbeh</a>
       </div>
     </div>
     <div style="text-align:center; margin-top:32px;">

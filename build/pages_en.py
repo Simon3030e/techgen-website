@@ -333,11 +333,16 @@ def en_portfolio() -> tuple[str, str]:
       </div>
       <div class="project-card card-hover">
         <div class="project-card-body">
-          <h3>E-commerce SEO</h3>
-          <p>Technical optimization, category and product content, visibility in Google and AI tools for Slovak e-shops.</p>
+          <h3>Mikramt.sk, Martin (SK)</h3>
+          <p>Custom e-shop with an API integration into the Sunsoft Ecosun accounting system for a regional supplier of joinery supplies. In 9 months: 2,492.75 EUR of online revenue from 15 orders (email + organic Google), largest single order 722 EUR. Email marketing, local SEO and GEO optimization so ChatGPT and Google AI Overviews recommend the brand. In-store sales excluded.</p>
+          <div class="case-result">
+            <div><strong>2,492.75 EUR</strong><span>revenue / 9 months</span></div>
+            <div><strong>15</strong><span>online orders</span></div>
+          </div>
           <div class="project-tags">
             <span class="project-tag tag-yellow">E-shop SEO</span>
-            <span class="project-tag tag-green">Content</span>
+            <span class="project-tag tag-green">Email marketing</span>
+            <span class="project-tag tag-red">Local SEO + GEO</span>
           </div>
           <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:20px;">Ask about it</a>
         </div>
