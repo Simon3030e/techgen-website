@@ -1,9 +1,9 @@
 /**
- * Nokto Studio — clarity.js
+ * Nokto Studio  - clarity.js
  * Microsoft Clarity integration with regional compliance.
  *
- * SK pages (/sk/...): Loads ONLY after explicit cookie consent — GDPR opt-in.
- * EN pages + root:    Loads immediately — US / CCPA opt-out model (analytics
+ * SK pages (/sk/...): Loads ONLY after explicit cookie consent  - GDPR opt-in.
+ * EN pages + root:    Loads immediately  - US / CCPA opt-out model (analytics
  *                     do not constitute "sale" of personal data under CCPA).
  *
  * Depends on cookie-banner.js being loaded first (sets window.cookieConsent).
@@ -24,14 +24,14 @@
   var isSk = /^\/(sk)(\/|$)/.test(window.location.pathname);
 
   if (isSk) {
-    /* ── GDPR (SK) — consent required before loading ── */
+    /* ── GDPR (SK)  - consent required before loading ── */
     function hookConsent() {
       if (window.cookieConsent) {
         window.cookieConsent.onAccept(loadClarity);
       }
     }
     /* cookie-banner.js runs synchronously, so cookieConsent is already set
-       by the time this script executes — but guard with DOMContentLoaded
+       by the time this script executes  - but guard with DOMContentLoaded
        just in case script order ever changes. */
     if (window.cookieConsent) {
       hookConsent();
@@ -39,7 +39,7 @@
       document.addEventListener('DOMContentLoaded', hookConsent);
     }
   } else {
-    /* ── US / CCPA (EN + root) — load immediately ── */
+    /* ── US / CCPA (EN + root)  - load immediately ── */
     loadClarity();
   }
 

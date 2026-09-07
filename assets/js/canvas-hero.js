@@ -1,5 +1,5 @@
 /**
- * noktostudio — canvas-hero.js
+ * noktostudio  - canvas-hero.js
  * Animated network graph: floating nodes + connecting lines
  */
 

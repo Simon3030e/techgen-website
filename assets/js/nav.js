@@ -1,5 +1,5 @@
 /**
- * Nokto Studio — nav.js
+ * Nokto Studio  - nav.js
  * Sticky header · Mobile menu · Scroll-to-top · FAQ accordion · AOS
  */
 (function () {

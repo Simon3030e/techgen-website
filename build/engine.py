@@ -15,9 +15,9 @@ import html as _html
 # ---------------------------------------------------------------- constants
 
 BASE = "https://noktostudio.com"
-CAL = "https://calendly.com/hello-noktostudio/30-min-meeting"
 PHONE_DISPLAY = "+421 917 316 105"
 PHONE_TEL = "tel:+421917316105"
+KONTAKT_LINK = {"sk": "/sk/kontakt/", "cz": "/cz/kontakt/"}
 EMAIL = "hello@noktostudio.com"
 
 # Google logo letters: N(blue) o(red) k(yellow) t(green)
@@ -46,6 +46,53 @@ EN_PATHS = {
     "villa-paris/", "privacy/", "terms/",
 }
 LANG_PATHS = {"sk": SK_PATHS, "cz": CZ_PATHS, "en": EN_PATHS}
+
+# SK <-> CZ hreflang pairs. Every SK path here has a 1:1 CZ equivalent.
+# Paths missing from this map (villa-paris/, o-nas/) get self-canonical only.
+HREFLANG_PAIR = {
+    "": "",
+    "cennik/": "cenik/",
+    "cenik/": "cennik/",
+    "sluzby/": "sluzby/",
+    "sluzby/seo-optimalizacia/": "sluzby/seo-optimalizace/",
+    "sluzby/seo-optimalizace/": "sluzby/seo-optimalizacia/",
+    "sluzby/lodalne-seo/": "sluzby/lodalne-seo/",
+    "sluzby/seo-pre-ai-vyhladavace/": "sluzby/seo-pre-ai-vyhledavace/",
+    "sluzby/seo-pre-ai-vyhledavace/": "sluzby/seo-pre-ai-vyhladavace/",
+    "sluzby/seo-pre-eshopy/": "sluzby/seo-pre-eshopy/",
+    "sluzby/seo-audit/": "sluzby/seo-audit/",
+    "sluzby/linkbuilding/": "sluzby/linkbuilding/",
+    "jak-pracujeme/": "jak-pracujeme/",
+    "pripady/": "pripady/",
+    "faq/": "faq/",
+    "o-nas/": None,
+    "kontakt/": "kontakt/",
+    "blog/": "blog/",
+    "privacy/": "privacy/",
+    "terms/": "terms/",
+}
+
+
+def hreflang_links(market: str, path: str) -> str:
+    """SK/CZ hreflang for every page that has a 1:1 equivalent.
+    x-default points to the SK version (primary market)."""
+    if market not in ("sk", "cz"):
+        return ""
+    pair = HREFLANG_PAIR.get(path)
+    if pair is None or pair not in CZ_PATHS and pair not in SK_PATHS and path != "":
+        return ""
+    def url(m: str, p: str) -> str:
+        root = MARKET_HOME[m] if p == "" else MARKET_ROOTS[m] + p
+        return BASE + root
+    if market == "sk":
+        sk_url, cz_url = url("sk", path), url("cz", pair)
+    else:
+        sk_url, cz_url = url("sk", HREFLANG_PAIR.get(path) or ""), url("cz", path)
+    return (
+        f'<link rel="alternate" hreflang="sk" href="{sk_url}">\n'
+        f'  <link rel="alternate" hreflang="cs" href="{cz_url}">\n'
+        f'  <link rel="alternate" hreflang="x-default" href="{sk_url}">'
+    )
 
 
 def logo(market: str) -> str:
@@ -99,15 +146,15 @@ def nav_items(market: str) -> list[tuple[str, str]]:
     ])
     if market == "sk":
         rest = [("Cenník", "/sk/cennik/"), ("Ako pracujeme", "/sk/jak-pracujeme/"),
-                ("Prípady", "/sk/pripady/"), ("Blog", "/sk/blog/"), ("Kontakt", "/sk/kontakt/")]
+                ("Prípady", "/sk/pripady/"), ("Blog", "/sk/blog/")]
     else:
         rest = [("Ceník", "/cz/cenik/"), ("Jak pracujeme", "/cz/jak-pracujeme/"),
-                ("Případy", "/cz/pripady/"), ("Blog", "/cz/blog/"), ("Kontakt", "/cz/kontakt/")]
+                ("Případy", "/cz/pripady/"), ("Blog", "/cz/blog/")]
     return [svc] + rest
 
 
 def cta_label(market: str) -> str:
-    return {"sk": "Bezplatný hovor", "cz": "Bezplatný hovor"}[market]
+    return {"sk": "Kontakt", "cz": "Kontakt"}[market]
 
 
 def lang_toggle(market: str, path: str) -> str:
@@ -150,18 +197,9 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
         mob_nav += '<a href="%s">%s</a>' % (href, lbl)
         if len(item) > 2:
             mob_nav += "".join('<a href="%s" class="mob-sub">%s</a>' % (u, n) for u, n in item[2])
-    phone = '<a href="%s" class="nav-phone">%s</a>' % (PHONE_TEL, PHONE_DISPLAY)
 
     asset = (prefix.rstrip("/") + "/") if prefix else ""
-    # hreflang only on the market homepages (deep pages have no 1:1 equivalents;
-    # per-URL alternates would claim pairs that do not exist)
-    if path == "":
-        alt_links = [f'<link rel="alternate" hreflang="{c}" href="{h}">' for c, h in
-                     (("sk", BASE + "/"), ("cs", BASE + "/cz/"),
-                      ("x-default", BASE + "/"))]
-        hreflang = "\n".join(alt_links)
-    else:
-        hreflang = ""
+    hreflang = hreflang_links(market, path)
 
     return f"""<!DOCTYPE html>
 <html lang="{ {'sk':'sk','cz':'cs','en':'en'}[market] }">
@@ -197,8 +235,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
       <ul class="nav-links">{nav}</ul>
       <div class="nav-right">
         {lang_toggle(market, path)}
-        {phone}
-        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">{cta_label(market)}</a>
+        <a href="{PHONE_TEL}" class="btn btn-primary btn-sm nav-phone-btn">{PHONE_DISPLAY}</a>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -206,7 +243,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 </header>
 <nav class="nav-mobile" id="nav-mobile">
   {mob_nav}
-  <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:10px;">{cta_label(market)}</a>
+  <a href="{KONTAKT_LINK[market]}" class="btn btn-primary" style="margin-top:10px;">{cta_label(market)}</a>
   <a href="{PHONE_TEL}" class="mob-phone">{PHONE_DISPLAY}</a>
 </nav>
 
@@ -217,6 +254,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 <script src="{asset}assets/js/clarity.js"></script>
 <script src="{asset}assets/js/ga4.js"></script>
 <script src="{asset}assets/js/nav.js"></script>
+<script src="{asset}assets/js/slider.js"></script>
 <script src="{asset}assets/js/animations.js"></script>
 <script src="{asset}assets/js/forms.js"></script>
 <script src="{asset}assets/js/cookie-banner.js"></script>
@@ -244,7 +282,6 @@ def footer(market: str, prefix: str) -> str:
                           ("/sk/faq/", "FAQ")]),
             ("Kontakt", [(f"mailto:{EMAIL}", EMAIL),
                          (PHONE_TEL, PHONE_DISPLAY),
-                         (CAL, "Bezplatný hovor 30 min"),
                          ("/sk/kontakt/", "Kontaktný formulár"),
                          ("/sk/privacy/", "Ochrana súkromia"),
                          ("/sk/terms/", "Obchodné podmienky")]),
@@ -266,7 +303,6 @@ def footer(market: str, prefix: str) -> str:
                           ("/cz/faq/", "FAQ")]),
             ("Kontakt", [(f"mailto:{EMAIL}", EMAIL),
                          (PHONE_TEL, PHONE_DISPLAY),
-                         (CAL, "Bezplatný hovor 30 min"),
                          ("/cz/kontakt/", "Kontaktní formulář"),
                          ("/cz/privacy/", "Zásady ochrany osobních údajů"),
                          ("/cz/terms/", "Obchodní podmínky")]),
@@ -283,7 +319,6 @@ def footer(market: str, prefix: str) -> str:
                         ("/en/blog/", "Blog"),
                         ("/en/faq/", "FAQ")]),
             ("Contact", [(f"mailto:{EMAIL}", EMAIL),
-                         (CAL, "Free 30-min call"),
                          ("/en/contact/", "Contact form"),
                          ("/en/privacy/", "Privacy"),
                          ("/en/terms/", "Terms")]),
@@ -345,8 +380,9 @@ def page_hero(label: str, h1_html: str, sub: str, crumbs: list[tuple[str, str]] 
 
 
 def cta_band(title: str, text: str, market: str) -> str:
-    btn1 = {"sk": "Bezplatný strategický hovor", "cz": "Bezplatný strategický hovor", "en": "Book a free call"}[market]
+    btn1 = {"sk": "Napíšte nám", "cz": "Napište nám", "en": "Get in touch"}[market]
     btn2 = {"sk": "Chcem bezplatný audit", "cz": "Chci bezplatný audit", "en": "Get my free audit"}[market]
+    call = {"sk": "Alebo zavolajte rovno:", "cz": "Nebo volejte rovnou:", "en": "Or call directly:"}[market]
     audit_href = {"sk": "/sk/kontakt/?audit=1", "cz": "/cz/kontakt/?audit=1", "en": "/en/contact/?audit=1"}[market]
     return f"""
 <div class="cta-band">
@@ -355,9 +391,10 @@ def cta_band(title: str, text: str, market: str) -> str:
     <p>{text}</p>
   </div>
   <div class="hero-ctas">
-    <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-lg">{btn1}</a>
+    <a href="{KONTAKT_LINK[market]}" class="btn btn-white btn-lg">{btn1}</a>
     <a href="{audit_href}" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.3);color:#fff;">{btn2}</a>
   </div>
+  <p class="cta-phone-line">{call} <a href="{PHONE_TEL}">{PHONE_DISPLAY}</a></p>
 </div>
 """
 
@@ -403,7 +440,7 @@ def price_cards(cards: list[dict], market: str) -> str:
   <div class="price-amount">{c['price']}<small> EUR / {period}</small></div>
   <div class="price-monthly"><strong>{c['hours']} {'hodín' if market == 'sk' else ('hodin' if market == 'cz' else 'hours')}</strong> × 12 EUR / {'h' if market == 'en' else 'hod.'}</div>
   <ul>{lis}</ul>
-  <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">{btn_label}</a>
+  <a href="{KONTAKT_LINK[market]}" class="btn btn-primary">{btn_label}</a>
 </div>""")
     return f'<div class="pricing-grid">{"".join(out)}</div>'
 
@@ -419,6 +456,218 @@ def steps_block(steps: list[dict]) -> str:
   <p>{s['text']}</p>
 </div>""")
     return f'<div class="steps">{"".join(out)}</div>'
+
+
+# ---------------------------------------------------------------- results slider
+# Real numbers taken from client Google Search Console / Google AI Mode
+# screenshots (Sep 2026). Charts are inline SVG, Google palette, no JS chart lib.
+
+_BLUE, _RED, _YELLOW, _GREEN = "#4285F4", "#EA4335", "#F9AB00", "#34A853"
+
+
+def _sparkline(points: list[int], color: str, w: int = 560, h: int = 120, pad: int = 10) -> str:
+    """Simple rising sparkline SVG from integer series."""
+    n = len(points)
+    lo, hi = min(points), max(points)
+    rng = (hi - lo) or 1
+    step = (w - 2 * pad) / max(n - 1, 1)
+    coords = []
+    for i, v in enumerate(points):
+        x = pad + i * step
+        y = h - pad - (v - lo) / rng * (h - 2 * pad)
+        coords.append(f"{x:.1f},{y:.1f}")
+    poly = " ".join(coords)
+    area = f"{pad},{h - pad} " + poly + f" {w - pad},{h - pad}"
+    return (f'<svg viewBox="0 0 {w} {h}" role="img" aria-hidden="true" preserveAspectRatio="none">'
+            f'<polygon points="{area}" fill="{color}" opacity="0.12"/>'
+            f'<polyline points="{poly}" fill="none" stroke="{color}" stroke-width="3" '
+            f'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+
+def _bars(values: list[int], color: str, labels: list[str] | None = None,
+          w: int = 560, h: int = 140, pad: int = 18) -> str:
+    """Vertical bar chart SVG with optional labels under bars."""
+    n = len(values)
+    hi = max(values) or 1
+    slot = (w - 2 * pad) / n
+    bw = min(slot * 0.6, 64)
+    rects, texts = [], []
+    for i, v in enumerate(values):
+        bh = (v / hi) * (h - pad * 2 - 18)
+        x = pad + i * slot + (slot - bw) / 2
+        y = h - pad - 18 - bh
+        rects.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bw:.1f}" height="{bh:.1f}" rx="4" '
+                     f'fill="{color}" opacity="{0.45 if i < n - 1 else 1.0}"/>')
+        if labels:
+            texts.append(f'<text x="{x + bw / 2:.1f}" y="{h - 4}" text-anchor="middle" '
+                         f'font-size="11" fill="#5F6368" font-family="Inter,sans-serif">{labels[i]}</text>')
+    return (f'<svg viewBox="0 0 {w} {h}" role="img" aria-hidden="true">'
+            + "".join(rects) + "".join(texts) + "</svg>")
+
+
+def _donut(parts: list[tuple[int, str, str]], w: int = 160, h: int = 160) -> str:
+    """Donut chart from (value, color) pairs. Used for the local GBP split."""
+    total = sum(v for v, _c, _l in parts) or 1
+    r, cx, cy = 60, 80, 80
+    circ = 2 * 3.14159 * r
+    segs, offset = [], 0.0
+    for v, color, _label in parts:
+        frac = v / total
+        dash = frac * circ
+        segs.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="none" stroke="{color}" '
+                    f'stroke-width="24" stroke-dasharray="{dash:.1f} {circ - dash:.1f}" '
+                    f'stroke-dashoffset="{-offset:.1f}" transform="rotate(-90 {cx} {cy})"/>')
+        offset += dash
+    return (f'<svg viewBox="0 0 {w} {h}" role="img" aria-hidden="true">{"".join(segs)}</svg>')
+
+
+def _slide(client: str, chip: str, period: str, nums: list[dict], chart: str,
+           caption: str, market: str) -> str:
+    """One slider slide. nums: [{big, color, label}]"""
+    num_html = "".join(
+        f'<div class="rs-num"><strong style="color:{n["color"]};">{n["big"]}</strong>'
+        f'<span>{n["label"]}</span></div>' for n in nums)
+    client_lbl = {"sk": client, "cz": client, "en": client}[market]
+    source = {"sk": "Google Search Console", "cz": "Google Search Console", "en": "Google Search Console"}[market]
+    return f"""
+<div class="rs-slide">
+  <div class="rs-card">
+    <div class="rs-head">
+      <div><h3>{client_lbl}</h3><span class="rs-period">{period}</span></div>
+      <span class="rs-chip">{chip}</span>
+    </div>
+    <div class="rs-chart">{chart}</div>
+    <div class="rs-nums">{num_html}</div>
+    <p class="rs-caption">{caption}</p>
+    <p class="rs-source">Zdroj: {source}</p>
+  </div>
+</div>"""
+
+
+def results_slider(market: str) -> str:
+    """Slider of real client results (GSC + AI Mode screenshots, Sep 2026)."""
+    t = {
+        "sk": {
+            "label": "Výsledky", "head": "Čísla z praxe, nie obrázky z šablóny",
+            "sub": "Skutočné ukázky z Google Search Console a Google AI Mode nášho projektu a klientov. Čísla vám pred spoluprácou ukážem naživo.",
+            "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditeľnosť",
+            "chip4": "Obsah na 6 stránkach", "chip5": "Lokálne SEO",
+            "prev": "Predchádzajúci", "next": "Nasledujúci", "all": "Všetky prípadové štúdie",
+            "case_url": "/sk/pripady/",
+        },
+        "cz": {
+            "label": "Výsledky", "head": "Čísla z praxe, ne obrázky ze šablony",
+            "sub": "Skutečné ukázky z Google Search Console a Google AI Mode našeho projektu a klientů. Čísla vám před spoluprací ukážu naživo.",
+            "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditelnost",
+            "chip4": "Obsah na 6 stránkách", "chip5": "Lokální SEO",
+            "prev": "Předchozí", "next": "Další", "all": "Všechny případové studie",
+            "case_url": "/cz/pripady/",
+        },
+        "en": {
+            "label": "Results", "head": "Real numbers, not stock images",
+            "sub": "Actual screenshots from Google Search Console and Google AI Mode of our project and clients.",
+            "chip1": "Content + tech", "chip2": "SEO from zero", "chip3": "AI visibility",
+            "chip4": "Content on 6 pages", "chip5": "Local SEO",
+            "prev": "Previous", "next": "Next", "all": "All case studies",
+            "case_url": "/en/portfolio/",
+        },
+    }[market]
+
+    chart1 = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _BLUE)
+    s1 = _slide(
+        "InTheCity (aplikačný projekt)" if market != "en" else "InTheCity (app project)",
+        t["chip1"],
+        {"sk": "posledných 28 dní", "cz": "posledních 28 dní", "en": "last 28 days"}[market],
+        [{"big": "121", "color": _BLUE, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"[0:] if market == "en" else "clicks from Google (+49%)"}[market]},
+         {"big": "4 390", "color": _RED, "label": {"sk": "zobrazení v Google (+43 %)", "cz": "zobrazení v Google (+43 %)", "en": "impressions (+43%)"}[market]},
+         {"big": "+142 %", "color": _GREEN, "label": {"sk": "rast hlavnej stránky", "cz": "rast hlavnej stránky", "en": "top page growth"}[market]}],
+        chart1,
+        {"sk": "Prvý mesiac spolupráce: technické SEO a obsah. Google začal prinášať zákazníkov hneď.",
+         "cz": "První měsíc spolupráce: technické SEO a obsah. Google začal přinášet zákazníky hned.",
+         "en": "First month of cooperation: technical SEO and content. Google started delivering customers immediately."}[market],
+        market)
+
+    chart2 = _bars([68, 92, 130, 171, 250], _RED, ["mesiac 1", "mesiac 2", "mesiac 3", "mesiac 4", "teraz"] if market != "en" else ["m1", "m2", "m3", "m4", "now"])
+    s2 = _slide(
+        {"sk": "Klient (firemný web)", "cz": "Klient (firemní web)", "en": "Client (company site)"}[market],
+        t["chip2"],
+        {"sk": "posledné 3 mesiace", "cz": "poslední 3 měsíce", "en": "last 3 months"}[market],
+        [{"big": "250", "color": _BLUE, "label": {"sk": "klikov za 3 mesiace (+355 %)", "cz": "kliků za 3 měsíce (+355 %)", "en": "clicks in 3 months (+355%)"}[market]},
+         {"big": "8 950", "color": _YELLOW, "label": {"sk": "zobrazení (+246 %)", "cz": "zobrazení (+246 %)", "en": "impressions (+246%)"}[market]},
+         {"big": "5", "color": _RED, "label": {"sk": "násobný rast klikov", "cz": "násobný rast kliků", "en": "x growth in clicks"}[market]}],
+        chart2,
+        {"sk": "Kliky za 3 mesiace od začiatku spolupráce. Rast každý mesiac, žiadny skok, ktorý sa nedá opakovať.",
+         "cz": "Kliky za 3 měsíce od začátku spolupráce. Rast každý měsíc, žádný skok, který se nedá opakovat.",
+         "en": "Clicks in 3 months since the start of cooperation. Growth every month, no one-off spike."}[market],
+        market)
+
+    chart3 = _bars([8, 3, 1, 1], _GREEN, ["/overaly/", "blog", "materiály", "produkt"])
+    s3 = _slide("Speem.sk", t["chip3"],
+                {"sk": "Google AI Mode, 3 mesiace", "cz": "Google AI Mode, 3 měsíce", "en": "Google AI Mode, 3 months"}[market],
+        [{"big": "13", "color": _GREEN, "label": {"sk": "AI citácií webu", "cz": "AI citací webu", "en": "AI citations"}[market]},
+         {"big": "8", "color": _BLUE, "label": {"sk": "citácií jednej stránky /overaly/", "cz": "citací jedné stránky /overaly/", "en": "citations of one page"}[market]},
+         {"big": "3", "color": _YELLOW, "label": {"sk": "citácií blogového článku", "cz": "citací blogového článku", "en": "blog article citations"}[market]}],
+        chart3,
+        {"sk": "Po nasadení nášho obsahu Google AI Mode cituje e-shop v odpovediach zákazníkom. Konkurencia tu ešte nie je.",
+         "cz": "Po nasazení našeho obsahu Google AI Mode cituje e-shop v odpovědích zákazníkům. Konkurence tu ještě není.",
+         "en": "After deploying our content, Google AI Mode cites the shop in customer answers."}[market],
+        market)
+
+    chart4 = _sparkline([30, 38, 42, 50, 55, 50, 62, 66, 58, 70, 50, 66], _YELLOW)
+    s4 = _slide(
+        {"sk": "Rast po pridaní nášho obsahu", "cz": "Rast po přidání našeho obsahu", "en": "Growth after our content"}[market],
+        t["chip4"],
+        {"sk": "28 dní + posledný týždeň", "cz": "28 dní + poslední týden", "en": "28 days + last week"}[market],
+        [{"big": "11 000", "color": _YELLOW, "label": {"sk": "zobrazení mesačne (+14 %)", "cz": "zobrazení měsíčně (+14 %)", "en": "monthly impressions (+14%)"}[market]},
+         {"big": "+43 %", "color": _BLUE, "label": {"sk": "klikov posledný týždeň", "cz": "kliků poslední týden", "en": "clicks last week"}[market]},
+         {"big": "6", "color": _RED, "label": {"sk": "stránok, na ktorých sa to stalo", "cz": "stránek, na kterých se to stalo", "en": "pages that did it"}[market]}],
+        chart4,
+        {"sk": "Pridané obsahové stránky na reálne dopyty zákazníkov. Len 6 stránok z celého webu posunulo celý web.",
+         "cz": "Přidané obsahové stránky na reálné dotazy zákazníků. Jen 6 stránek z celého webu posunulo celý web.",
+         "en": "Added content pages on real customer queries. Just 6 pages moved the whole site."}[market],
+        market)
+
+    chart5 = _donut([(193, _BLUE, "Maps"), (166, _GREEN, "Search")])
+    s5 = _slide(
+        {"sk": "Klient: Google firemný profil", "cz": "Klient: Google firemní profil", "en": "Client: Google Business Profile"}[market],
+        t["chip5"],
+        {"sk": "zobrazenia profilu", "cz": "zobrazení profilu", "en": "profile views"}[market],
+        [{"big": "359", "color": _BLUE, "label": {"sk": "ľudí videlo profil", "cz": "lidí vidělo profil", "en": "people saw the profile"}[market]},
+         {"big": "54 %", "color": _RED, "label": {"sk": "cez Google Mapy", "cz": "přes Google Mapy", "en": "via Google Maps"}[market]},
+         {"big": "46 %", "color": _GREEN, "label": {"sk": "cez Google Search", "cz": "přes Google Search", "en": "via Google Search"}[market]}],
+        chart5,
+        {"sk": "Zákazníci hľadajú lokálne služby na Mapách aj v Search. Profil musí fungovať na oboch miestach.",
+         "cz": "Zákazníci hledají lokální služby na Mapách i v Search. Profil musí fungovat na obou místech.",
+         "en": "Customers look for local services on Maps and Search. The profile must work in both."}[market],
+        market)
+
+    slides = "".join([s1, s2, s3, s4, s5])
+    dots = '<span class="rs-dot active" data-i="0"></span>' + \
+           "".join(f'<span class="rs-dot" data-i="{i}"></span>' for i in range(1, 5))
+    return f"""
+<section class="section section-alt" id="vysledky">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">{t['label']}</span>
+      <h2>{t['head']}</h2>
+      <p class="section-subheading">{t['sub']}</p>
+    </div>
+    <div class="results-slider">
+      <button class="rs-btn rs-prev" aria-label="{t['prev']}">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="rs-viewport" tabindex="0">{slides}</div>
+      <button class="rs-btn rs-next" aria-label="{t['next']}">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m7.5 4 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="rs-dots">{dots}</div>
+    </div>
+    <div style="text-align:center; margin-top:26px;">
+      <a href="{t['case_url']}" class="btn btn-outline">{t['all']}</a>
+    </div>
+  </div>
+</section>
+"""
 
 
 def benefit_cards(cards: list[dict]) -> str:

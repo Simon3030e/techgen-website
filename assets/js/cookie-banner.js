@@ -1,9 +1,9 @@
 /**
- * Nokto Studio — cookie-banner.js
+ * Nokto Studio  - cookie-banner.js
  * GDPR / UK GDPR compliant cookie consent banner.
  * Language auto-detected from URL path (/sk/ = Slovak, default = English).
  *
- * Usage — fire code only after consent:
+ * Usage  - fire code only after consent:
  *   window.cookieConsent.onAccept(function() {
  *     // load Google Analytics, Meta Pixel, etc. here
  *   });

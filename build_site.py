@@ -25,7 +25,7 @@ sys.path.insert(0, str(REPO / "build"))
 import pages_sk as sk          # noqa: E402
 import pages_sk2 as sk2        # noqa: E402
 import pages_cz as cz          # noqa: E402
-from engine import BASE        # noqa: E402
+from engine import BASE, HREFLANG_PAIR  # noqa: E402
 
 PAGES: list[tuple[str, str]] = []
 
@@ -84,8 +84,8 @@ def write_pages():
 
 # ---------------------------------------------------------------- sitemap
 
-SITEMAP_ENTRIES = [
-    # (path, priority)
+SK_ENTRIES = [
+    # (path, priority)  path "" = SK home = https://noktostudio.com/
     ("",                    "1.0"),
     ("cennik/",             "0.9"),
     ("sluzby/",             "0.9"),
@@ -107,43 +107,31 @@ SITEMAP_ENTRIES = [
 ]
 
 
-def sitemap_url(loc: str, priority: str, lang: str, home: bool = False) -> str:
-    if home:
-        alt = "".join(
-            f'<xhtml:link rel="alternate" hreflang="{cl}" href="{h}"/>'
-            for cl, h in (("sk", BASE + "/"), ("cs", BASE + "/cz/"),
-                          ("x-default", BASE + "/"))
-        )
-        return f"""  <url>
-    <loc>{loc}</loc>
-    {alt}
-    <priority>{priority}</priority>
-  </url>"""
+def _mkurl(loc: str, priority: str, alts: str = "") -> str:
     return f"""  <url>
     <loc>{loc}</loc>
-    <priority>{priority}</priority>
+    {alts}<priority>{priority}</priority>
   </url>"""
+
+
+def _alts(sk_url: str, cz_url: str) -> str:
+    return (f'<xhtml:link rel="alternate" hreflang="sk" href="{sk_url}"/>'
+            f'<xhtml:link rel="alternate" hreflang="cs" href="{cz_url}"/>'
+            f'<xhtml:link rel="alternate" hreflang="x-default" href="{sk_url}"/>')
 
 
 def write_sitemap():
-    rows = [sitemap_url(BASE + "/", "1.0", "sk", home=True)]
-    for path, pr in SITEMAP_ENTRIES:
-        rows.append(sitemap_url(f"{BASE}/sk/{path}", pr, "sk"))
-    # CZ
-    cz_paths = [
-        ("", "1.0"), ("cenik/", "0.9"), ("sluzby/", "0.9"),
-        ("sluzby/seo-optimalizace/", "0.8"), ("sluzby/lodalne-seo/", "0.8"),
-        ("sluzby/seo-pre-ai-vyhledavace/", "0.8"), ("sluzby/seo-pre-eshopy/", "0.8"),
-        ("sluzby/seo-audit/", "0.8"), ("sluzby/linkbuilding/", "0.7"),
-        ("jak-pracujeme/", "0.8"), ("pripady/", "0.7"),
-        ("faq/", "0.6"), ("kontakt/", "0.6"), ("blog/", "0.5"),
-        ("privacy/", "0.2"), ("terms/", "0.2"),
-    ]
-    rows.append(sitemap_url(BASE + "/cz/", "1.0", "cz", home=True))
-    for path, pr in cz_paths:
-        if path == "":
-            continue
-        rows.append(sitemap_url(f"{BASE}/cz/{path}", pr, "cz"))
+    rows = []
+    for path, pr in SK_ENTRIES:
+        cz_path = HREFLANG_PAIR.get(path, "MISSING")
+        sk_url = BASE + ("/" if path == "" else "/sk/" + path)
+        # pair exists only when the CZ path is a real CZ page (not SK-only
+        # pages like villa-paris/ or o-nas/, which have no hreflang pair)
+        if cz_path is not None and cz_path != "MISSING":
+            cz_url = BASE + "/cz/" + cz_path
+            rows.append(_mkurl(sk_url, pr, _alts(sk_url, cz_url)))
+        else:
+            rows.append(_mkurl(sk_url, pr))
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

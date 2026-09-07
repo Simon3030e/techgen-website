@@ -1,5 +1,5 @@
 /* ================================================
-   Nokto Studio — animations.js
+   Nokto Studio  - animations.js
    Scroll-reveal (IntersectionObserver) + counter animations
    ================================================ */
 

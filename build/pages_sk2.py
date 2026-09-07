@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Nokto Studio - SK supporting pages."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
-                    steps_block, ORG_SCHEMA, CAL, EMAIL, BASE, gicon)
+                    steps_block, results_slider, ORG_SCHEMA, EMAIL, BASE, gicon)
 
 # ---------------------------------------------------------------- JAK PRACUJEME
 
@@ -124,7 +124,7 @@ def pripady() -> tuple[str, str]:
             <span class="project-tag tag-green">Email marketing</span>
             <span class="project-tag tag-red">Lokálne SEO + GEO</span>
           </div>
-          <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:20px;">Povedať si viac</a>
+          <a href="/sk/kontakt/" class="btn btn-outline" style="margin-top:20px;">Povedať si viac</a>
         </div>
       </div>
     </div>
@@ -134,6 +134,8 @@ def pripady() -> tuple[str, str]:
   </div>
 </section>
 
+{results_slider("sk")}
+
 <section class="section" style="padding-top:0;">
   <div class="container">
     {cta_band("Vaša firma môže byť ďalší príbeh", "Začnime bezplatným auditom. Vidíte, čo by sme u vás riešili, ešte pred prvou faktúrou.", "sk")}
@@ -141,7 +143,7 @@ def pripady() -> tuple[str, str]:
 </section>
 """
     html = base(market="sk", path="pripady/", title="Prípadové štúdie SEO a tvorby webov | Nokto Studio",
-                desc="Prípadové štúdie Nokto Studio: Villa Paris Piešťany (rebrand, web, lokálne SEO), e-shop SEO a ďalšie projekty.",
+                desc="Prípadové štúdie Nokto Studio: Villa Paris Piešťany (rebrand, web, lokálne SEO), e-shop SEO a ďalšie projekty. Výsledky z Google Search Console a AI Mode.",
                 canonical=BASE + "/sk/pripady/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/pripady/index.html", html)
 
@@ -182,7 +184,7 @@ def villa_paris() -> tuple[str, str]:
           <li><span class="check">✓</span><span>Meranie: rezervácie a ich zdroje.</span></li>
         </ul>
         <div style="margin-top:22px;">
-          <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Chcem podobný projekt</a>
+          <a href="/sk/kontakt/" class="btn btn-primary">Chcem podobný projekt</a>
         </div>
       </div>
     </div>
@@ -326,21 +328,26 @@ def o_nas() -> tuple[str, str]:
 
 def kontakt() -> tuple[str, str]:
     body = f"""
-{page_hero("Kontakt", "Napíšte. Ozveme sa osobne.",
-           "Najrýchlejšia cesta je bezplatný hovor cez kalendár. Ak uprednostníte formulár, využite ho nižšie.",
+{page_hero("Kontakt", "Zavolajte alebo napíšte. Ozveme sa osobne.",
+           "Najrýchlejšia cesta je telefón. Alebo pošlite formulár a do 24 hodín máte odpoveď s prvými nápormi.",
            [("Domov", "/"), ("Kontakt", None)])}
 <section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:start;">
-      <div class="card">
-        <span class="section-label">Bezplatný hovor 30 minút</span>
-        <p style="margin:14px 0 22px;">Vyberte si termín priamo v kalendári. Preberieme ciele vašej firmy a na mieste povieme, čo by sme robili prví. Žiadne tlak, žiadne záväzky.</p>
-        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="width:100%;">Otvoriť kalendár</a>
-        <ul class="deliv-list" style="margin-top:24px;">
+      <div class="card" style="text-align:center;">
+        <span class="section-label">Zavolajte priamo</span>
+        <a href="tel:+421917316105" class="btn btn-primary btn-lg contact-phone-btn" style="width:100%; margin-top:14px; font-size:1.25rem;">+421 917 316 105</a>
+        <p style="margin:14px 0 6px; color:var(--text-muted);">Simon Stremensky, SEO špecialista. Väčšinou dvíham hneď, inak volám do pár hodín späť.</p>
+        <ul class="deliv-list" style="text-align:left; margin-top:20px;">
+          <li><span class="check">✓</span><span>30 minút bezplatnej konzultácie o vašom webe</span></li>
           <li><span class="check">✓</span><span>Bezplatný vstupný audit webu po hovore</span></li>
           <li><span class="check">✓</span><span>Reálne čísla: čo by SEO mohlo u vás znamenať</span></li>
           <li><span class="check">✓</span><span>Nezáväzné. Rozhodnete sa, kedy a či.</span></li>
         </ul>
+        <p style="margin-top:22px; border-top:1px solid var(--border-light); padding-top:18px;">
+          Email: <a href="mailto:{EMAIL}" style="font-weight:700; color:var(--text);">{EMAIL}</a>
+        </p>
+        <a href="mailto:{EMAIL}" class="btn btn-outline" style="width:100%; margin-top:10px;">Napísať email</a>
       </div>
       <div class="card contact-form-wrap">
         <span class="section-label">Alebo formulár</span>
@@ -362,54 +369,69 @@ def kontakt() -> tuple[str, str]:
             </div>
             <div class="form-field full"><label class="form-label" for="msg">Správa</label><textarea class="form-textarea" id="msg" name="msg" placeholder="Pár slov o vašej firme a čo by ste chceli dosiahnuť."></textarea></div>
           </div>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Nový dotaz z webu noktostudio.com">
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslať správu</button>
           <p class="form-note">Odoslaním súhlasíte so spracovaním údajov pre účel odpovede (pozrite <a href="/sk/privacy/">ochranu súkromia</a>).</p>
         </form>
         <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
-          ✓ Ďakujeme. Ozveme sa osobne.
+          ✓ Ďakujeme, správa odletela na {EMAIL}. Ozveme sa osobne do 24 hodín. Alebo zavolajte rovno: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
         </div>
-        <p style="margin-top:20px;">Alebo email: <a href="mailto:{EMAIL}">{EMAIL}</a> · telefonujte: <a href="tel:+421917316105" style="font-weight:700; color:var(--text); text-decoration:none;">+421 917 316 105</a></p>
       </div>
     </div>
   </div>
 </section>
 """
-    html = base(market="sk", path="kontakt/", title="Kontakt: bezplatný hovor a audit | Nokto Studio",
-                desc="Spojte sa s Nokto Studio. Bezplatný strategický hovor 30 minút a bezplatný vstupný audit webu.",
+    html = base(market="sk", path="kontakt/", title="Kontakt: telefón +421 917 316 105, email a formulár | Nokto Studio",
+                desc="Spojte sa s Nokto Studio. Zavolajte +421 917 316 105, napíšte email alebo pošlite kontaktný formulár. Bezplatný vstupný audit webu.",
                 canonical=BASE + "/sk/kontakt/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/kontakt/index.html", html)
 
 
-# ---------------------------------------------------------------- BLOG (stub with planned topics)
+# ---------------------------------------------------------------- BLOG (planned topics, KW-researched)
 
 def blog() -> tuple[str, str]:
     topics = [
-        ("Ako vybrať SEO agentúru (a na čo si dať pozor)", "Cenník, záruky, reporty. 8 otázok, ktoré treba položiť pred podpisom.", "tag-blue"),
-        ("Koľko stojí SEO optimalizácia webu v 2026?", "Prehľad cien na slovenskom trhu a prečo platíme paušálmi za prácu, ktorá sa neodviedza.", "tag-yellow"),
-        ("Ako sa dostať do odporúčaní ChatGPT", "Prvá príručka pre slovenské firmy: ako AI nástroje vyberajú, koho odporučiť.", "tag-green"),
-        ("Google firemný profil: kompletný návod pre firmy", "Od založenia po hodnotenia. Čo Google ocení a čo ignoruje.", "tag-red"),
+        ("SEO optimalizácia: kompletný návod 2026",
+         "Krok za krokom od auditu po meranie. Na dotaz „seo optimalizácia návod“ hľadá 1 200 ľudí mesačne.",
+         "tag-blue", "1 200 hľadaní/mes"),
+        ("Koľko stojí SEO v 2026?",
+         "Reálne ceny na slovenskom trhu a čo za ne dostanete. Dotaz „seo optimalizácia cena“ má 620 hľadaní mesačne.",
+         "tag-yellow", "620 hľadaní/mes"),
+        ("SEO test: 15-bodový kontrolný zoznam pre váš web",
+         "Prejdite si web sami za 30 minút. Cluster „seo optimalizácia test“ má 720 hľadaní mesačne.",
+         "tag-green", "720 hľadaní/mes"),
+        ("Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne",
+         "Ceny odkazov (50 až 300 EUR), bezpečné metódy a čo Google sankcionuje. Cluster 750 hľadaní mesačne.",
+         "tag-red", "750 hľadaní/mes"),
+        ("Google firemný profil: návod od založenia po hodnotenia",
+         "Kompletný sprievodca lokálnou viditeľnosťou. 110 hľadaní mesačne, najviac v januári a februári.",
+         "tag-blue", "110 hľadaní/mes"),
+        ("SEO pre WordPress: 12 nastavení, ktoré treba spraviť",
+         "Rýchlosť, permalinky, schema a pluginy. 130 hľadaní mesačne, rast +94 % medziročne.",
+         "tag-yellow", "130 hľadaní/mes"),
     ]
     cards = "".join(f"""
 <div class="benefit-card card-hover">
-  <span class="project-tag {tag}">Článok v príprave</span>
+  <span class="project-tag {tag}">Článok v príprave · {sv}</span>
   <h3 style="margin-top:12px;">{t}</h3>
   <p>{d}</p>
-</div>""" for t, d, tag in topics)
+</div>""" for t, d, tag, sv in topics)
     body = f"""
 {page_hero("Blog", "Praktické články o SEO a AI",
-           "Píšeme, čo vieme overiť v praxi. Prvé články vychádzajú tento mesiac.", [("Domov", "/"), ("Blog", None)])}
+           "Každý článok píšeme na kľúčové slovo s overeným dopytom (Marketing Miner). Prvé články vychádzajú tento mesiac.", [("Domov", "/"), ("Blog", None)])}
 <section class="section">
   <div class="container">
     <div class="grid-2">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
-      <p style="color:var(--text-muted);">Chcete o niečom vedieť viac už teraz? Spýtajte sa priamo, radi poradíme aj bez zmluvy.</p>
-      <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:14px;">Bezplatný hovor</a>
+      <p style="color:var(--text-muted);">Chcete o niečom vedieť viac už teraz? Zavolajte <a href="tel:+421917316105" style="font-weight:700; color:var(--text);">+421 917 316 105</a> alebo napíšte.</p>
+      <a href="/sk/kontakt/" class="btn btn-primary" style="margin-top:14px;">Kontaktovať</a>
     </div>
   </div>
 </section>
 """
     html = base(market="sk", path="blog/", title="Blog o SEO, Google Mapách a AI vyhľadávačoch | Nokto Studio",
-                desc="Praktické články: ako vybrať SEO agentúru, koľko stojí SEO, ako sa dostať do odporúčaní ChatGPT, Google firemný profil od základov.",
+                desc="Praktické články: SEO návod krok za krokom, koľko stojí SEO v 2026, SEO test webu, linkbuilding, Google firemný profil a SEO pre WordPress.",
                 canonical=BASE + "/sk/blog/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/blog/index.html", html)
 
@@ -448,12 +470,12 @@ def sk_privacy() -> tuple[str, str]:
     <p>Operátorom osobných údajov je Nokto Studio (Simon, prevádzkovateľ webu noktostudio.com). Kontakt: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
     <h2>Aké údaje a načo</h2>
     <ul>
-      <li>Kontaktný formulár: meno, email, adresa webu a správa. Účelom je odpovedať na váš dotaz.</li>
-      <li>Kalendár (Calendly): meno, email a termín hovoru. Účelom je uskutočniť hovor.</li>
+      <li>Kontaktný formulár: meno, email, adresa webu a správa. Účelom je odpovedať na váš dotaz. Formulár odosiela oznámenie na náš email.</li>
+      <li>Telefonát: číslo, z ktorého voláte, ak si ho zapisujeme na spätné doplnenie informácií. Účelom je uskutočniť hovor.</li>
       <li>Analitika: anonymizované dáta o návštevnosti (Google Analytics 4, Microsoft Clarity) na zlepšovanie webu.</li>
     </ul>
     <h2>Ako dlho údaje uchovávame</h2>
-    <p>Kontakty z formulárov a kalendára uchovávame maximálne 24 mesiacov od poslednej komunikácie, pokiaľ nevznikne spolupráca.</p>
+    <p>Kontakty z formulárov a telefonátov uchovávame maximálne 24 mesiacov od poslednej komunikácie, pokiaľ nevznikne spolupráca.</p>
     <h2>Vaše práva</h2>
     <p>Máte právo na prístup k údajom, ich opravu, výmaz a prenos. Požiadavku pošlite na <a href="mailto:{EMAIL}">{EMAIL}</a>. Máte tiež právo podať sťažnosť u Úradu na ochranu osobných údajov SR.</p>
     <h2>Cookies</h2>

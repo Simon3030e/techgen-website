@@ -5,7 +5,7 @@ Every function returns (rel_path, html) where rel_path is inside the repo.
 """
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     price_cards, steps_block, benefit_cards, schema_service,
-                    ORG_SCHEMA, CAL, EMAIL, LOGO, BASE, gicon)
+                    results_slider, ORG_SCHEMA, EMAIL, LOGO, BASE, gicon)
 
 SK_ROOT = "/sk/"
 
@@ -155,10 +155,10 @@ def home() -> tuple[str, str]:
       <h1>{h1}</h1>
       <p class="hero-sub">{sub}</p>
       <div class="hero-ctas">
-        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Bezplatný strategický hovor</a>
-        <a href="/sk/kontakt/?audit=1" class="btn btn-outline btn-lg">Chcem bezplatný audit webu</a>
+        <a href="tel:+421917316105" class="btn btn-primary btn-lg">Zavolajte +421 917 316 105</a>
+        <a href="/sk/kontakt/" class="btn btn-outline btn-lg">Chcem bezplatný audit webu</a>
       </div>
-      <p class="hero-scarcity">Alebo volajte rovno: <a href="tel:+421917316105" style="font-weight:700; color:var(--text); text-decoration:none;">+421 917 316 105</a></p>
+      <p class="hero-scarcity">Alebo napíšte: <a href="/sk/kontakt/" style="font-weight:700; color:var(--text); text-decoration:none;">kontaktný formulár</a> · <a href="mailto:hello@noktostudio.com" style="font-weight:700; color:var(--text); text-decoration:none;">hello@noktostudio.com</a></p>
       <p class="hero-scarcity" style="margin-top:6px;">Kapacita na nové projekty: otvorené od októbra 2026.</p>
     </div>
   </div>
@@ -258,7 +258,7 @@ def home() -> tuple[str, str]:
             <span class="project-tag tag-green">Email marketing</span>
             <span class="project-tag tag-red">Lokálne SEO + GEO</span>
           </div>
-          <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:20px;">Povedať si viac</a>
+          <a href="/sk/kontakt/" class="btn btn-outline" style="margin-top:20px;">Povedať si viac</a>
         </div>
       </div>
       <div class="project-card card-hover">
@@ -294,6 +294,13 @@ def home() -> tuple[str, str]:
       <h2>Najdôležitejšie odpovede na jedno miesto</h2>
     </div>
     {faq_block(HOME_FAQ)}
+    <div style="text-align:center; margin-top:28px;">
+      <a href="/sk/faq/" class="btn btn-outline">Všetky časté otázky</a>
+    </div>
+  </div>
+</section>
+
+{results_slider("sk")}
 
 <!-- KTO ZA TYM STOJI -->
 <section class="section section-alt" id="o-mne">
@@ -307,50 +314,8 @@ def home() -> tuple[str, str]:
         <h2 style="margin:10px 0 14px;">S vami komunikujem ja, nie account manager.</h2>
         <p style="color:var(--text-muted);">Som Simon, SEO špecialista. Rokmi praxe v online marketingu som si najviac obľúbil SEO a viditeľnosť v Google aj AI nástrojoch, lebo vidím, ako reálne mení predaj malých firiem. Pracujem s malým tímom a s partnermi na web dizajne a PPC reklame, takže vám vždy odpovie ten, kto prácu robí.</p>
         <p style="color:var(--text-muted);">Prvá hodina s vami je bezplatný hovor a audit. Ak vám čísla nebudú dávať zmysel, nič neplatíte.</p>
-        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:18px;">Dohodnúť si hovor so mnou</a>
+        <a href="/sk/kontakt/" class="btn btn-primary" style="margin-top:18px;">Dohodnúť si hovor so mnou</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- VYSLEDKY -->
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <span class="section-label">Výsledky v Google</span>
-      <h2>Ako klientom rastie web aj AI citácie</h2>
-      <p class="section-subheading">Ukázky z Google Search Console nášho projektu a klienta z posledných mesiacov. Čísla vám vždy pred spoluprácou ukážem naživo.</p>
-    </div>
-    <div class="grid-4">
-      <div class="growth-card reveal" data-delay="100">
-        <h3 style="color:#1A73E8;">+355%</h3>
-        <p>klikov z Google za 3 mesiace od začiatku spolupráce</p>
-        <div class="growth-bar" style="background:#1A73E8; width:100%;"></div>
-        <p class="growth-spark">250 klikov mesačne, priebežný rast</p>
-      </div>
-      <div class="growth-card reveal" data-delay="200">
-        <h3 style="color:#EA4335;">+246%</h3>
-        <p>zobrazení v Google za rovnaké obdobie</p>
-        <div class="growth-bar" style="background:#EA4335; width:85%;"></div>
-        <p class="growth-spark">8 950 zobrazení mesačne</p>
-      </div>
-      <div class="growth-card reveal" data-delay="300">
-        <h3 style="color:#F9AB00;">+49%</h3>
-        <p>klikov za posledných 28 dní oproti predchádzajúcemu obdobiu</p>
-        <div class="growth-bar" style="background:#FBBC04; width:70%;"></div>
-        <p class="growth-spark">121 klikov za 28 dní</p>
-      </div>
-      <div class="growth-card reveal" data-delay="400">
-        <h3 style="color:#34A853;">13</h3>
-        <p>AI citácií webu klienta v Google AI Overviews po nasadení nášho obsahu</p>
-        <div class="growth-bar" style="background:#34A853; width:55%;"></div>
-        <p class="growth-spark">najviac citovaná stránka 8-krát za mesiac</p>
-      </div>
-    </div>
-  </div>
-</section>
-    <div style="text-align:center; margin-top:28px;">
-      <a href="/sk/faq/" class="btn btn-outline">Všetky časté otázky</a>
     </div>
   </div>
 </section>
@@ -418,10 +383,28 @@ def sluzby() -> tuple[str, str]:
 
 def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
                   intro: str, for_who: list[str], deliverables: list[str],
-                  faq: list[tuple[str, str]], slug: str, svc_name: str) -> tuple[str, str]:
+                  faq: list[tuple[str, str]], slug: str, svc_name: str,
+                  proof: dict | None = None) -> tuple[str, str]:
     url = BASE + f"/sk/sluzby/{slug}/"
     who = "".join(f"<li>{w}</li>" for w in for_who)
     deliv = "".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliverables)
+    proof_html = ""
+    if proof:
+        nums = "".join(
+            f'<div><strong style="color:{n[2]};">{n[0]}</strong><span>{n[1]}</span></div>'
+            for n in proof["numbers"])
+        proof_html = f"""
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Výsledok z praxe</span>
+      <h2>{proof['title']}</h2>
+    </div>
+    <div class="case-result proof-band">{nums}</div>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">{proof['caption']}</p>
+    <p style="margin-top:4px; font-size:0.8rem; color:var(--text-muted);">{proof['source']}</p>
+  </div>
+</section>"""
     body = f"""
 {page_hero(label, h1, intro, [("Domov", "/"), ("Služby", "/sk/sluzby/"), (label.replace("Služba · ", ""), None)])}
 
@@ -440,6 +423,8 @@ def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
   </div>
 </section>
 
+{proof_html}
+
 {process_section("Ako pobeží spolupráca")}
 
 <section class="section section-alt">
@@ -450,7 +435,7 @@ def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
         <p style="margin-top:8px; max-width:520px;">Táto služba zvyčajne potrebuje 8 až 20 hodín mesačne, podľa rozsahu webu a konkurencie.</p>
       </div>
       <div class="hero-ctas">
-        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Bezplatný hovor</a>
+        <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
         <a href="/sk/cennik/" class="btn btn-outline btn-lg">Cenník</a>
       </div>
     </div>
@@ -509,6 +494,14 @@ def seo_optimalizacia() -> tuple[str, str]:
              "Bezplatný audit presne povie, čo predchádzajúca práca nechala nedokončené. Často chýbajú dva či tri kroky, nie celé SEO."),
         ],
         svc_name="SEO optimalizácia webu",
+        proof={
+            "title": "Kliky z Google: +355 % za 3 mesiace spolupráce",
+            "numbers": [("250", "klikov za 3 mesiace", "#1A73E8"),
+                        ("+355 %", "rast oproti predchádzajúcemu obdobiu", "#EA4335"),
+                        ("8 950", "zobrazení mesačne (+246 %)", "#F9AB00")],
+            "caption": "Firemný web, ktorý sme prevzali s minimálnou organickou návštevnosťou. Práca: technická oprava, obsahové stránky na reálne dopyty zákazníkov a mesačné vyhodnotenie. Rast prišiel každý mesiac, bez jednorazového skoku.",
+            "source": "Zdroj: Google Search Console klienta, ukážka z septembra 2026.",
+        },
     )
 
 
@@ -545,6 +538,14 @@ def lodalne_seo() -> tuple[str, str]:
              "Odpovedáme profesionálne a na mieste. Zlé hodnotenia nemožno odstrániť, ale dobrý pomer a kultivované odpovede pôsobia na zákazníkov viac ako počty hviezd."),
         ],
         svc_name="Lokálne SEO a Google firemný profil",
+        proof={
+            "title": "359 ľudí videlo firemný profil klienta za jedno obdobie",
+            "numbers": [("359", "zobrazení firemného profilu", "#1A73E8"),
+                        ("54 %", "zobrazení cez Google Mapy", "#EA4335"),
+                        ("46 %", "zobrazení cez Google Search", "#34A853")],
+            "caption": "Lokálny zákazník hľadá dvomi cestami: cez Mapy (54 % zobrazení) a cez bežné Google hľadanie (46 %). Preto drvíme obe: profil nastavený na doraz, hodnotenia prichádzajú pravidelne a web podporuje mapové pozície.",
+            "source": "Zdroj: štatistiky Google firemného profilu klienta, ukážka z septembra 2026.",
+        },
     )
 
 
@@ -581,6 +582,14 @@ def seo_ai() -> tuple[str, str]:
              "Pre služby, kde zákazník hľadá odporúčanie: zdravotníctvo, právo, servis, stavebníctvo, školenia. Pre e-shopy pomáha v dotazoch typu \u201eko predáva...\" a v recenziách."),
         ],
         svc_name="Optimalizácia pre AI vyhľadávače",
+        proof={
+            "title": "13 AI citácií e-shopu v Google AI Mode za 3 mesiace",
+            "numbers": [("13", "AI citácií webu v Google AI Mode", "#34A853"),
+                        ("8", "citácií jednej stránky /overaly/", "#1A73E8"),
+                        ("3", "citácií blogového článku", "#F9AB00")],
+            "caption": "Po nasadení nášho obsahu cituje Google AI Mode konkrétne stránky e-shopu priamo v odpovediach zákazníkom. Najviac citovaná stránka prišla na 8 citácií, blogový článok na 3. Konkurencia v AI odpovediach na tieto dotazy ešte nie je, takže prvé mená tam ostávajú.",
+            "source": "Zdroj: Google AI Mode (report citácií), ukážka z augusta 2026.",
+        },
     )
 
 
@@ -617,6 +626,14 @@ def eshop_seo() -> tuple[str, str]:
              "V Google Analytics a Search Console sledujeme objednávky a tržbu z organického vyhľadávania. Report máte mesačne."),
         ],
         svc_name="SEO pre e-shopy",
+        proof={
+            "title": "E-shop Mikramt.sk: 2 492,75 EUR tržieb za 9 mesiacov",
+            "numbers": [("2 492,75 EUR", "tržby za 9 mesiacov", "#1A73E8"),
+                        ("15", "objednávok z emailu a organika", "#34A853"),
+                        ("722 EUR", "najväčšia objednávka", "#F9AB00")],
+            "caption": "Regionálny dodávateľ stolárskych potrieb s e-shopom na vlastnej platforme, API integráciou na účtovný systém a email marketingom. Objednávky chodia z kanálov email a organický Google. Súčasťou je aj lokálne SEO a optimalizácia pre AI vyhľadávače.",
+            "source": "Zdroj: objednávky pripísané do kanálov email a organický Google, 9 mesiacov spolupráce.",
+        },
     )
 
 
@@ -653,6 +670,14 @@ def audit_seo() -> tuple[str, str]:
              "Vstupný audit do 3 pracovných dní od prvého hovoru. Detailný audit za 7 až 10 dní."),
         ],
         svc_name="SEO audit a analýza kľúčových slov",
+        proof={
+            "title": "Len 6 nových stránok zdvihlo celý web o 11 000 zobrazení",
+            "numbers": [("11 000", "zobrazení mesačne (+14 %)", "#F9AB00"),
+                        ("+43 %", "klikov v poslednom týždni", "#1A73E8"),
+                        ("6", "stránok, ktoré to spravili", "#34A853")],
+            "caption": "Toto je sila správneho plánu: nezostávať pri 300 stránkach webu, ale pridať 6 presne zacielených obsahových stránok na dopyty, ktoré zákazníci reálne pýtajú. Presne takéto príležitosti audit hľadá ako prvé.",
+            "source": "Zdroj: Google Search Console, ukážka z septembra 2026.",
+        },
     )
 
 
@@ -689,6 +714,14 @@ def linkbuilding() -> tuple[str, str]:
              "Malý firemný web 2 až 5, e-shop v konkurenčnej bráne 5 až 10. Väčšie čísla nie vždy znamenajú lepší výsledok."),
         ],
         svc_name="Linkbuilding",
+        proof={
+            "title": "Rast každý mesiac: 250 klikov za 3 mesiace spolupráce",
+            "numbers": [("250", "klikov za 3 mesiace (+355 %)", "#1A73E8"),
+                        ("8 950", "zobrazení (+246 %)", "#EA4335"),
+                        ("5", "mesiacov meraného rastu", "#34A853")],
+            "caption": "Odkazy fungujú len v kombinácii s obsahom a technikou. Toto je výsledok celého systému: obsahové stránky na reálne dopyty, interné prelinkovanie a odkazy z reálnych slovenských domén. Posun prichádzal každý mesiac.",
+            "source": "Zdroj: Google Search Console klienta, ukážka z septembra 2026.",
+        },
     )
 
 
@@ -735,7 +768,7 @@ def cennik() -> tuple[str, str]:
         <div class="rate-big">12 EUR <small>za hodinu práce</small></div>
         <p style="margin-top:8px; max-width:560px;">SEO optimalizácia, lokálne SEO, AI viditeľnosť, obsah, linkbuilding, weby aj PPC. Jedna sadzba, jednoduché počty.</p>
       </div>
-      <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Nezáväzná ponuka</a>
+      <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Nezáväzná ponuka</a>
     </div>
   </div>
 </section>
