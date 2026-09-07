@@ -145,10 +145,10 @@ def nav_items(market: str) -> list[tuple[str, str]]:
         ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
     ])
     if market == "sk":
-        rest = [("Cenník", "/sk/cennik/"), ("Ako pracujeme", "/sk/jak-pracujeme/"),
+        rest = [("Cenník", "/sk/cennik/"), ("Ako pracujem", "/sk/jak-pracujeme/"),
                 ("Prípady", "/sk/pripady/"), ("Blog", "/sk/blog/")]
     else:
-        rest = [("Ceník", "/cz/cenik/"), ("Jak pracujeme", "/cz/jak-pracujeme/"),
+        rest = [("Ceník", "/cz/cenik/"), ("Jak pracuji", "/cz/jak-pracujeme/"),
                 ("Případy", "/cz/pripady/"), ("Blog", "/cz/blog/")]
     return [svc] + rest
 
@@ -274,7 +274,7 @@ def footer(market: str, prefix: str) -> str:
                         ("/sk/sluzby/linkbuilding/", "Linkbuilding")]),
             ("Partneri", [("https://flamia.studio", "Flamia Studio: web dizajn"),
                           ("https://peterkocur.sk", "Peter Kocur: PPC reklama")]),
-            ("Agentúra", [("/sk/jak-pracujeme/", "Ako pracujeme"),
+            ("Agentúra", [("/sk/jak-pracujeme/", "Ako pracujem"),
                           ("/sk/cennik/", "Cenník"),
                           ("/sk/pripady/", "Prípadové štúdie"),
                           ("/sk/o-nas/", "O nás"),
@@ -296,7 +296,7 @@ def footer(market: str, prefix: str) -> str:
                         ("/cz/sluzby/linkbuilding/", "Linkbuilding")]),
             ("Partneři", [("https://flamia.studio", "Flamia Studio: web dizajn"),
                           ("https://peterkocur.sk", "Peter Kocur: PPC reklama")]),
-            ("Agentura", [("/cz/jak-pracujeme/", "Jak pracujeme"),
+            ("Agentura", [("/cz/jak-pracujeme/", "Jak pracuji"),
                           ("/cz/cenik/", "Ceník"),
                           ("/cz/pripady/", "Případové studie"),
                           ("/cz/blog/", "Blog"),
@@ -324,13 +324,13 @@ def footer(market: str, prefix: str) -> str:
                          ("/en/terms/", "Terms")]),
         ]
     if market == "cz":
-        foot_intro = "SEO agentura pro podnikatele. Google, Google Mapy, AI vyhledávače a e-shopy. Měřitelné výsledky za transparentních 12 EUR / hodinu."
+        foot_intro = "SEO pro podnikatele od Simona Stremenského: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky za transparentních 12 EUR / hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pro Česko i Slovensko."
-        foot_tagline = "Vytvořeno rychle, měřitelně a bez pevných smluv."
+        foot_tagline = "Dělám to sám, rychle, měřitelně a bez pevných smluv."
     else:
-        foot_intro = "SEO agentúra pre podnikateľov. Google, Google Mapy, AI vyhľadávače a e-shopy. Merateľné výsledky za transparentných 12 EUR / hodinu."
+        foot_intro = "SEO pre podnikateľov od Simona Stremenského: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR / hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pre Slovensko a Česko."
-        foot_tagline = "Vytvorené rýchlo, merateľné a bez pevných zmlúv."
+        foot_tagline = "Robím to sám, rýchlo, merateľne a bez pevných zmlúv."
     foot_cols = ""
     for title, links in cols:
         links_html = "".join(f'<a href="{h}">{t}</a>' for h, t in links)
@@ -548,16 +548,16 @@ def results_slider(market: str) -> str:
     """Slider of real client results (GSC + AI Mode screenshots, Sep 2026)."""
     t = {
         "sk": {
-            "label": "Výsledky", "head": "Čísla z praxe, nie obrázky z šablóny",
-            "sub": "Skutočné ukázky z Google Search Console a Google AI Mode nášho projektu a klientov. Čísla vám pred spoluprácou ukážem naživo.",
+            "label": "Moje výsledky", "head": "Čísla z praxe, nie obrázky z šablóny",
+            "sub": "Skutočné ukázky z Google Search Console a Google AI Mode mojich projektov a klientov. Čísla vám pred spoluprácou ukážem naživo.",
             "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditeľnosť",
             "chip4": "Obsah na 6 stránkach", "chip5": "Lokálne SEO",
             "prev": "Predchádzajúci", "next": "Nasledujúci", "all": "Všetky prípadové štúdie",
             "case_url": "/sk/pripady/",
         },
         "cz": {
-            "label": "Výsledky", "head": "Čísla z praxe, ne obrázky ze šablony",
-            "sub": "Skutečné ukázky z Google Search Console a Google AI Mode našeho projektu a klientů. Čísla vám před spoluprací ukážu naživo.",
+            "label": "Moje výsledky", "head": "Čísla z praxe, ne obrázky ze šablony",
+            "sub": "Skutečné ukázky z Google Search Console a Google AI Mode mých projektů a klientů. Čísla vám před spoluprací ukážu naživo.",
             "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditelnost",
             "chip4": "Obsah na 6 stránkách", "chip5": "Lokální SEO",
             "prev": "Předchozí", "next": "Další", "all": "Všechny případové studie",

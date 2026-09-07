@@ -273,3 +273,8 @@ p  { color: var(--text-2); }
 .prose table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 0.94rem; }
 .prose th { text-align: left; background: var(--surface-tint); color: var(--text); padding: 11px 14px; font-weight: 700; border: 1px solid var(--border-light); }
 .prose td { padding: 11px 14px; border: 1px solid var(--border-light); color: var(--text-2); }
+
+/* contact form: success + error states, phone CTA on kontakt page */
+.form-success.visible { display: block !important; }
+.form-error-note { color: #C5221F; }
+.contact-phone-btn { letter-spacing: 0.01em; }

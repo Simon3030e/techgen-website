@@ -7,9 +7,9 @@ from engine import (base, page_hero, cta_band, faq_block, faq_schema,
 
 def jak_pracujeme() -> tuple[str, str]:
     body = f"""
-{page_hero("Proces", "Ako pracujeme: plán, práca, meranie",
-           "Jasný proces bez čiernej skrinky. Viete, čo robíme, prečo a čo to prinieslo. Platíte za hodiny, ktoré sú vykazované.",
-           [("Domov", "/"), ("Ako pracujeme", None)])}
+{page_hero("Proces", "Ako pracujem: plán, práca, meranie",
+           "Jasný proces bez čiernej skrinky. Viete, čo robím, prečo a čo to prinieslo. Platíte za hodiny, ktoré sú vykazované.",
+           [("Domov", "/"), ("Ako pracujem", None)])}
 
 <section class="section">
   <div class="container">
@@ -18,8 +18,8 @@ def jak_pracujeme() -> tuple[str, str]:
       <h2>Od prvého hovoru po mesačný hovor so mnou</h2>
     </div>
     {steps_block([
-        {"title": "1. Bezplatný hovor a audit", "text": "30 minút telefonátu, v ktorom si povieme ciele. Do 3 dní od neho dostanete bezplatný vstupný audit: 10 najväčších problémov a šancí vášho webu na jednej strane."},
-        {"title": "2. Plán s číslami", "text": "Z auditu spravíme plán: ktoré kľúčové slová prinášajú zákazníkov, čo opraviť ako prvé, koľko hodín mesačne to zaberie a aké výsledky sú reálne. Bez nereálnych sľubov."},
+        {"title": "1. Bezplatný hovor a audit", "text": "30 minút telefonátu, v ktorom si poviem vaše ciele. Do 3 dní od neho dostanete bezplatný vstupný audit: 10 najväčších problémov a šancí vášho webu na jednej strane."},
+        {"title": "2. Plán s číslami", "text": "Z auditu spravím plán: ktoré kľúčové slová prinášajú zákazníkov, čo opraviť ako prvé, koľko hodín mesačne to zaberie a aké výsledky sú reálne. Bez nereálnych sľubov."},
         {"title": "3. Práca v týždenných dávkach", "text": "Každý týždeň odpracujeme dohodnutý rozsah: technika, obsah, Google profil, AI viditeľnosť, odkazy. Každú zmenu viete dohľadať."},
         {"title": "4. Meranie a report", "text": "Mesačný report vám dám osobne ako 30-minútový telefónát: čo sa odrobilo, čo to prinieslo (pozície, kliky, objednávky, zmienky v AI) a čo je ďalší krok."},
     ])}
@@ -61,12 +61,12 @@ def jak_pracujeme() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Meranie</span>
-      <h2>Ako meriame výsledky</h2>
+      <h2>Ako meriam výsledky</h2>
       <p class="section-subheading">Nič nemeníme názormi. Každé tvrdenie má v reporte číslo a zdroj dáto.</p>
     </div>
     <table class="metric-table">
-      <tr><th>Čo sledujeme</th><th>Nástroj</th><th>Čo to hovorí</th></tr>
-      <tr><td><strong>Pozície</strong></td><td>Sledovanie kľúčových slov</td><td>Na ktorých dopytoch rastieme a kde sme uviazli.</td></tr>
+      <tr><th>Čo sledujem</th><th>Nástroj</th><th>Čo to hovorí</th></tr>
+      <tr><td><strong>Pozície</strong></td><td>Sledovanie kľúčových slov</td><td>Na ktorých dopytoch web rastie a kde stojí.</td></tr>
       <tr><td><strong>Kliky z Google</strong></td><td>Search Console</td><td>Koľko ľudí nás vidí a koľko z nich klikne.</td></tr>
       <tr><td><strong>Kontakty a objednávky</strong></td><td>Google Analytics 4</td><td>Koľko návštevníkov sa stalo zákazníkmi.</td></tr>
       <tr><td><strong>Viditeľnosť v mápe</strong></td><td>Firemný profil Google</td><td>Koľko ľudí videlo firmu, zatelefonovalo, išlo na trasu.</td></tr>
@@ -82,7 +82,7 @@ def jak_pracujeme() -> tuple[str, str]:
   </div>
 </section>
 """
-    html = base(market="sk", path="jak-pracujeme/", title="Ako pracujeme: proces, dodávky a meranie výsledkov | Nokto Studio",
+    html = base(market="sk", path="jak-pracujeme/", title="Ako pracujem: proces, dodávky a meranie výsledkov | Nokto Studio",
                 desc="Náš SEO proces: bezplatný audit, plán s číslami, týždenná práca, mesačné meranie. Pozície, kliky, objednávky a AI odporúčania v jednom reporte.",
                 canonical=BASE + "/sk/jak-pracujeme/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/jak-pracujeme/index.html", html)
@@ -93,7 +93,7 @@ def jak_pracujeme() -> tuple[str, str]:
 def pripady() -> tuple[str, str]:
     body = f"""
 {page_hero("Prípadové štúdie", "Príklady práce, nie chvály samé",
-           "Klienti, s ktorými sme pracovali, a to, čo sme pre nich stavali. Čísla dopĺňame podľa dohody s klientom.",
+           "Klienti, s ktorými som pracoval, a to, čo som pre nich staval. Čísla dopĺňam podľa dohody s klientom.",
            [("Domov", "/"), ("Prípady", None)])}
 
 <section class="section">
@@ -129,7 +129,7 @@ def pripady() -> tuple[str, str]:
       </div>
     </div>
     <p style="text-align:center; margin-top:28px; color:var(--text-muted); font-size:0.9rem;">
-      Ďalšie prípady a referencie na žiadosť, vrátane kontaktov na klientov. Klientov citujeme len s ich súhlasom.
+      Ďalšie prípady a referencie na žiadosť, vrátane kontaktov na klientov. Klientov citujem len s ich súhlasom.
     </p>
   </div>
 </section>
@@ -138,7 +138,7 @@ def pripady() -> tuple[str, str]:
 
 <section class="section" style="padding-top:0;">
   <div class="container">
-    {cta_band("Vaša firma môže byť ďalší príbeh", "Začnime bezplatným auditom. Vidíte, čo by sme u vás riešili, ešte pred prvou faktúrou.", "sk")}
+    {cta_band("Vaša firma môže byť ďalší príbeh", "Začnime bezplatným auditom. Vidíte, čo by som u vás riešil, ešte pred prvou faktúrou.", "sk")}
   </div>
 </section>
 """
@@ -153,7 +153,7 @@ def pripady() -> tuple[str, str]:
 def villa_paris() -> tuple[str, str]:
     body = f"""
 {page_hero("Prípadová štúdia · Branding &amp; Web", "Villa Paris: značka a web od nuly",
-           "Prémiové ubytovanie v Piešťanoch malo skvelý produkt. Chýbala mu značka. Vyriešili sme to identitou, webom, copywritingom a lokálnym SEO ako jedným systémom.",
+           "Prémiové ubytovanie v Piešťanoch malo skvelý produkt. Chýbala mu značka. Vyriešil som to identitou, webom, copywritingom a lokálnym SEO ako jedným systémom.",
            [("Domov", "/"), ("Prípady", "/sk/pripady/"), ("Villa Paris", None)])}
 
 <section class="section">
@@ -226,7 +226,7 @@ FAQ_SECTIONS = [
     ]),
     ("Proces a výsledky", [
         ("Ako dlho trvá, kým SEO prinesie výsledky?",
-         "Prvé pohyby na menej konkurenčných dotazoch za 2 až 4 mesiace, na hlavné dotazy 6 až 12 mesiacov. Lokálne SEO a Google profil sa zlepšujú častejšie za 4 až 8 týždňov. Presné termíny vami povieme v audite."),
+         "Prvé pohyby na menej konkurenčných dotazoch za 2 až 4 mesiace, na hlavné dotazy 6 až 12 mesiacov. Lokálne SEO a Google profil sa zlepšujú častejšie za 4 až 8 týždňov. Presné termíny poviem v audite."),
         ("Ako budem vidieť, že práca sa odviedla?",
          "Mesačný report osobne: 30-minútový hovor so mnou. Odpracované hodiny, pozície, kliky z Search Console, objednávky z Analytics, viditeľnosť v Mapách a zmienky v AI."),
         ("Ponúkate záruky prvej pozície?",
@@ -238,7 +238,7 @@ FAQ_SECTIONS = [
         ("Je to pravda, že ChatGPT nahradí Google?",
          "Nahradí ho, ale nie zničí. Zákazníci dnes vyhľadávajú oboje. Naša práca pokrýva obe: klasické Google pozície aj viditeľnosť v AI odpovediach."),
         ("Ako zistím, či ma AI odporúča?",
-         "Pravidelne testujeme súbory dotazov, ktoré vaši zákazníci pýtajú, a zaznamenávame, či sa vaše meno objavuje v odpovediach ChatGPT, Gemini a Google AI Overviews. Zaznamenáme to v mesačnom reporte."),
+         "Pravidelne testujem súbory dotazov, ktoré vaši zákazníci pýtajú, a zaznamenávam, či sa vaše meno objavuje v odpovediach ChatGPT, Gemini a Google AI Overviews. Zapisujem to v mesačnom reporte."),
         ("Prečo je táto špecializácia zriedkavá?",
          "Optimalizácia pre AI je nová odborná práca, ktorá si vyžaduje inú metódu obsahu a štruktúry dát. Väčšina agentúr na Slovensku sa na ňu zatiaľ nepripravuje, čo je výhoda klientov, ktorí začnú prví."),
     ]),
@@ -270,7 +270,7 @@ def faq() -> tuple[str, str]:
 """
     faq_html = faq_schema(all_qa, BASE + "/sk/faq/")
     html = base(market="sk", path="faq/", title="FAQ: časté otázky k SEO, cene a procesu | Nokto Studio",
-                desc="Časté otázky: koľko stojí SEO, ako dlho trvá, ako meriame výsledky, čo je SEO pre AI vyhľadávače. Nokto Studio, SEO agentúra.",
+                desc="Časté otázky: koľko stojí SEO, ako dlho trvá, ako meriam výsledky, čo je SEO pre AI vyhľadávače. Nokto Studio, SEO agentúra.",
                 canonical=BASE + "/sk/faq/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
     return ("sk/faq/index.html", html)
 
@@ -289,7 +289,7 @@ def o_nas() -> tuple[str, str]:
         <h2>Kto za Nokto stojí</h2>
         <p>Volám sa Simon a Nokto Studio je moje projekt. Za sebou mám roky práce na SEO a weboch pre slovenské aj zahraničné klienty: e-shopy, lokálne firmy, média aj prémiové značky. Postavil som automatizované systémy, ktoré z SEO práce vyrábajú presne to, čo firma potrebuje: zákazníkov.</p>
         <p>Nie som veľká agentúra a nepredstieram to. Výhodou je, že s vami pracuje ten istý človek, ktorý navrhol stratégiu. Žiadne preposielanie medzi oddeleniami, žiadne strácanie kontextu.</p>
-        <h2>Ako pracujeme</h2>
+        <h2>Ako pracujem</h2>
         <p>Kombinujeme dva svety: odbornú SEO prácu (technika, obsah, autorita, AI viditeľnosť) a automatizáciu, ktorá z rovnakého úsilia vytiahne viac. Preto vieme pracovať za 12 EUR za hodinu a stále sa sústrediť na výsledok, nie na fakturovanie hodín na okraji.</p>
       </div>
       <div>
@@ -307,14 +307,14 @@ def o_nas() -> tuple[str, str]:
     </div>
     <div class="grid-3">
       <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#1A73E8", 26)}</span><h3>Žiadne sľuby, ktoré nedržia</h3><p>Prvú pozíciu v Google nevie zaručiť nikto. Čo zaručíme: transparentný proces, reálne termíny a merateľný postup.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefónát: čo sme spravili, čo to prinieslo a čo ide dalej. Bez preposielania.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefónát: čo som spravil, čo to prinieslo a čo ide dalej. Bez preposielania.</p></div>
       <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#34A853", 26)}</span><h3>Každá hodina vykazovaná</h3><p>Platíte za odvedenú prácu. Každá hodina je v reporte s jej obsahom a výsledkom.</p></div>
     </div>
   </div>
 </section>
 <section class="section" style="padding-top:0;">
   <div class="container">
-    {cta_band("Spoznajme sa 30 minút", "Bezplatný hovor o vašich cieľoch. Ak sa nespárujeme, povieme vám to čelom.", "sk")}
+    {cta_band("Spoznajme sa 30 minút", "Bezplatný hovor o vašich cieľoch. Ak sa nespárujeme, poviem vám to priamo.", "sk")}
   </div>
 </section>
 """
@@ -462,7 +462,7 @@ def sk_redirect() -> tuple[str, str]:
 def sk_privacy() -> tuple[str, str]:
     body = f"""
 {page_hero("Súkromie", "Zásady ochrany súkromia",
-           "Spracovávame len dáta, ktoré potrebujeme na odpoveď a spoluprácu. Žiadny predaj dát tretím stranám.",
+           "Spracovávam len dáta, ktoré potrebujem na odpoveď a spoluprácu. Žiadny predaj dát tretím stranám.",
            [("Domov", "/"), ("Ochrana súkromia", None)])}
 <section class="section">
   <div class="container prose">
@@ -474,8 +474,8 @@ def sk_privacy() -> tuple[str, str]:
       <li>Telefonát: číslo, z ktorého voláte, ak si ho zapisujeme na spätné doplnenie informácií. Účelom je uskutočniť hovor.</li>
       <li>Analitika: anonymizované dáta o návštevnosti (Google Analytics 4, Microsoft Clarity) na zlepšovanie webu.</li>
     </ul>
-    <h2>Ako dlho údaje uchovávame</h2>
-    <p>Kontakty z formulárov a telefonátov uchovávame maximálne 24 mesiacov od poslednej komunikácie, pokiaľ nevznikne spolupráca.</p>
+    <h2>Ako dlho údaje uchovávam</h2>
+    <p>Kontakty z formulárov a telefonátov uchovávam maximálne 24 mesiacov od poslednej komunikácie, pokiaľ nevznikne spolupráca.</p>
     <h2>Vaše práva</h2>
     <p>Máte právo na prístup k údajom, ich opravu, výmaz a prenos. Požiadavku pošlite na <a href="mailto:{EMAIL}">{EMAIL}</a>. Máte tiež právo podať sťažnosť u Úradu na ochranu osobných údajov SR.</p>
     <h2>Cookies</h2>
