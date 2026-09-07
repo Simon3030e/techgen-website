@@ -324,11 +324,11 @@ def footer(market: str, prefix: str) -> str:
                          ("/en/terms/", "Terms")]),
         ]
     if market == "cz":
-        foot_intro = "SEO pro podnikatele od Simona Stremenského: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky za transparentních 12 EUR / hodinu."
+        foot_intro = "SEO pro podnikatele od Simona Stremensky: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky za transparentních 12 EUR / hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pro Česko i Slovensko."
         foot_tagline = "Dělám to sám, rychle, měřitelně a bez pevných smluv."
     else:
-        foot_intro = "SEO pre podnikateľov od Simona Stremenského: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR / hodinu."
+        foot_intro = "SEO pre podnikateľov od Simona Stremensky: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR / hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pre Slovensko a Česko."
         foot_tagline = "Robím to sám, rýchlo, merateľne a bez pevných zmlúv."
     foot_cols = ""
@@ -518,7 +518,8 @@ def _donut(parts: list[tuple[int, str, str]], w: int = 160, h: int = 160) -> str
                     f'stroke-width="24" stroke-dasharray="{dash:.1f} {circ - dash:.1f}" '
                     f'stroke-dashoffset="{-offset:.1f}" transform="rotate(-90 {cx} {cy})"/>')
         offset += dash
-    return (f'<svg viewBox="0 0 {w} {h}" role="img" aria-hidden="true">{"".join(segs)}</svg>')
+    return (f'<svg viewBox="0 0 {w} {h}" width="200" height="200" role="img" aria-hidden="true" '
+            f'style="width:200px;height:200px;display:block;margin:0 auto;">{"".join(segs)}</svg>')
 
 
 def _slide(client: str, chip: str, period: str, nums: list[dict], chart: str,

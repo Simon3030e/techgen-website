@@ -125,7 +125,7 @@ def cz_services_grid(cols: int = 3) -> str:
 def cz_home() -> tuple[str, str]:
     h1 = ('Ať vás zákazníci najdou v <span class="hl-blue">Google</span>, '
           'na <span class="hl-red">Google Mapách</span> i v <span class="hl-green">ChatGPT</span>.')
-    sub = ("Jmenuji se Simon Stremenský a SEO dělám pro podnikatele bez placené reklamy: "
+    sub = ("Jmenuji se Simon Stremensky a SEO dělám pro podnikatele bez placené reklamy: "
            "pracuji na obsahu webu, technické stránce webu a profilu na Google Mapách, "
            "aby vás zákazníci našli, když hledají vaše produkty a služby. Za transparentních "
            "12 EUR za hodinu. Bez paušálů, bez pevných smluv, s reportem, kterému rozumíte.")
@@ -146,8 +146,8 @@ def cz_home() -> tuple[str, str]:
         <p class="hero-scarcity" style="margin-top:6px;">Kapacita pro nové projekty: otevřeno od října 2026.</p>
       </div>
       <div class="hero-photo">
-        <img src="/assets/img/simon.png" alt="Simon Stremenský, SEO specialista a majitel Nokto Studio" width="220" height="220" loading="eager">
-        <span class="hero-photo-cap">Simon Stremenský<br>SEO specialista · Nokto Studio</span>
+        <img src="/assets/img/simon.png" alt="Simon Stremensky, SEO specialista a majitel Nokto Studio" width="220" height="220" loading="eager">
+        <span class="hero-photo-cap">Simon Stremensky<br>SEO specialista · Nokto Studio</span>
       </div>
     </div>
   </div>
@@ -379,7 +379,7 @@ def cz_seo_optimalizace() -> tuple[str, str]:
         desc="SEO optimalizace webu: technika, obsah, klíčová slova. Pozice v Google, které přivedou zákazníky. 12 EUR za hodinu, bezplatný SEO audit.",
         label="Služba · SEO optimalizace",
         h1="SEO optimalizace, která přivede zákazníky",
-        intro="Zákazník, který vás hledá v Google, je nejlevnější zákazník. Postavím web tak, aby mu Google rozuměl, zařadil ho nahoru a návštěvníci odcházeli s poptávkou, ne s otazníkem.",
+        intro="Zákazník, který vás hledá v Google, je nejlevnější zákazník. Postavím web tak, aby mu Google rozuměl, zařadil ho nahoru a návštěvníci odcházeli s odpovědí, ne s otazníkem.",
         for_who=[
             "Máte web, který nepřináší kontakty ani objednávky z vyhledávání.",
             "Konkurence vás předběhává na dotazech, které vás zajímají.",
@@ -656,9 +656,9 @@ CZ_CENIK_FAQ = [
     ("Proč je to levnější než konkurence?",
      "Nemáme kanceláře ani manažerské vrstvy. Práce automatizujeme tam, kde automatizace nic nezkazí, a odbornou energii dáváme tam, kde se počítá. Úspory přenášíme na vás."),
     ("Co je v ceně zahrnuto?",
-     "Vše kromě reklamních výdajů a nákladů na odkazy či nástroje třetích stran. Ty vám vykazujeme ve skutečné ceně, bez přirážky."),
+     "Vše kromě reklamních výdajů a nákladů na odkazy či nástroje třetích stran. Ty vám vykazuji ve skutečné ceně, bez přirážky."),
     ("Musím platit měsíčně předem?",
-     "Fakturujeme měsíčně zpětně za skutečně odpracované hodiny, s fakturou. Paušál není potřeba."),
+     "Fakturuji měsíčně zpětně za skutečně odpracované hodiny, s fakturou. Paušál není potřeba."),
     ("Můžu spolupráci kdykoliv ukončit?",
      "Ano, kdykoliv, bez sankcí a bez vázanosti. Důvěru si zasloužíme výsledky."),
     ("Jak vím, že práce byla odvedena?",
@@ -709,7 +709,7 @@ def cz_cenik() -> tuple[str, str]:
         <ul class="deliv-list">
           <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Reklamní výdaje (Google Ads, Meta Ads). Platíte přímo Google, ne nám.</span></li>
           <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Náklady na odkazy a PR články. Vykazujeme skutečnou cenu od média.</span></li>
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Pronájem nástrojů třetích stran, pokud je potřeba (kurzy, platby, hosting).</span></li>
+          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Pronájem placených nástrojů třetích stran, pokud je potřeba (např. platební brána, hosting).</span></li>
         </ul>
       </div>
       <div class="card">
@@ -874,15 +874,15 @@ CZ_FAQ_SECTIONS = [
         ("Co přesně Nokto Studio dělá?",
          "SEO optimalizaci webu, lokální SEO a firemní profil Google, optimalizaci pro AI vyhledávače (ChatGPT, Gemini, AI Overviews), SEO pro e-shopy, SEO audity, linkbuilding, tvorbu webů a PPC reklamu Google Ads. K tomu email marketing pro e-shopy a firmy."),
         ("Pro jaké firmy pracujete?",
-         "Především pro menší a střední firmy: lokální služby (řemeslníci, zdravotnictví, právo, autoservis), e-shopy a firmy s odbornými službami. Působíme na trzích Česka a Slovenska."),
+         "Především pro menší a střední firmy: lokální služby (řemeslníci, zdravotnictví, právo, autoservis), e-shopy a firmy s odbornými službami. Působím na trzích Česka a Slovenska."),
     ]),
     ("Cena a smlouvy", [
         ("Kolik stojí SEO?",
          "12 EUR za odpracovanou hodinu. Menší firemní web obvykle 10 hodin měsíčně (120 EUR), e-shop 20 až 40 hodin (240 až 480 EUR). Balíčky jsou doporučené rozsahy, ne povinné paušály."),
         ("Jsou smlouvy vážoucí?",
-         "Ne. Spolupráci můžete kdykoliv ukončit, bez sankcí. Fakturujeme měsíčně za skutečně odpracované hodiny."),
+         "Ne. Spolupráci můžete kdykoliv ukončit, bez sankcí. Faktuji měsíčně za skutečně odpracované hodiny."),
         ("Jsou v ceně zahrnuty reklamní výdaje?",
-         "Ne. Reklamu (Google Ads) platíte přímo Google. My kampaně řídíme za 12 EUR za hodinu. Náklady na odkazy a PR vykazujeme ve skutečné ceně."),
+         "Ne. Reklamu (Google Ads) platíte přímo Google. Kampaně řídím za 12 EUR za hodinu. Náklady na odkazy a PR vykazuji ve skutečné ceně."),
     ]),
     ("Proces a výsledky", [
         ("Jak dlouho trvá, než SEO přinese výsledky?",
@@ -890,11 +890,11 @@ CZ_FAQ_SECTIONS = [
         ("Jak uvidím, že práce byla odvedena?",
          "Měsíční report: odpracované hodiny a jejich obsah, pozice, kliky ze Search Console, kontakty a objednávky z Analytics, viditelnost v mapě a zmínky v AI odpovědích."),
         ("Nabízíte záruky první pozice?",
-         "Ne. Nikdo reálně nemůže zaručit první místo v Google, kdo to slibuje, prodává fikci. Zaručujeme proces, transparentnost a měřitelný postup, který k pozicím vede."),
+         "Ne. Nikdo reálně nemůže zaručit první místo v Google, kdo to slibuje, prodává fikci. Zaručuji proces, transparentnost a měřitelný postup, který k pozicím vede."),
     ]),
     ("AI a nové vyhledávání", [
         ("Nahradí ChatGPT Google?",
-         "Doplní ho, ne zničí. Zákazníci dnes hledají obojí. Naše práce pokrývá obojí: klasické Google pozice i viditelnost v AI odpovědích."),
+         "Doplní ho, ne zničí. Zákazníci dnes hledají obojí. Moje práce pokrývá obojí: klasické Google pozice i viditelnost v AI odpovědích."),
         ("Jak zjistím, jestli mě AI doporučuje?",
          "Pravidelně testuji sady dotazů, které vaši zákazníci kladou, a zaznamenávám, zda se vaše jméno objevuje v odpovědích ChatGPT, Gemini a Google AI Overviews. Výsledek máte v reportu."),
     ]),
@@ -912,7 +912,7 @@ def cz_faq() -> tuple[str, str]:
         sections_html += f'<h2 style="margin-top:36px;">{sec_title}</h2>{qas_html}'
         all_qa += qas
     body = f"""
-{page_hero("FAQ", "Časté otázky", "Odpovědi na to, co nás klienti ptají nejvíc. Pokud chybí vaše otázka, ptejte se přímo.", [("Domů", "/cz/"), ("FAQ", None)])}
+{page_hero("FAQ", "Časté otázky", "Odpovědi na to, co mě klienti ptají nejvíc. Pokud chybí vaše otázka, ptejte se přímo.", [("Domů", "/cz/"), ("FAQ", None)])}
 <section class="section">
   <div class="container" style="max-width:800px;">
     {sections_html}
@@ -926,7 +926,7 @@ def cz_faq() -> tuple[str, str]:
 """
     faq_html = faq_schema(all_qa, BASE + "/cz/faq/")
     html = base(market="cz", path="faq/", title="FAQ: časté otázky k SEO, ceně a procesu | Nokto Studio",
-                desc="Časté otázky: kolik stojí SEO, jak dlouho trvá, jak měřím výsledky, co je SEO pro AI vyhledávače. Nokto Studio, SEO agentura.",
+                desc="Časté otázky: kolik stojí SEO, jak dlouho trvá, jak se měří výsledky, co je SEO pro AI vyhledávače. Nokto Studio, SEO agentura.",
                 canonical=BASE + "/cz/faq/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ + faq_html)
     return ("cz/faq/index.html", html)
 

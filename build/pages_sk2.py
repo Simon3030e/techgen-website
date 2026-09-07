@@ -20,7 +20,7 @@ def jak_pracujeme() -> tuple[str, str]:
     {steps_block([
         {"title": "1. Bezplatný hovor a audit", "text": "30 minút telefonátu, v ktorom si poviem vaše ciele. Do 3 dní od neho dostanete bezplatný vstupný audit: 10 najväčších problémov a šancí vášho webu na jednej strane."},
         {"title": "2. Plán s číslami", "text": "Z auditu spravím plán: ktoré kľúčové slová prinášajú zákazníkov, čo opraviť ako prvé, koľko hodín mesačne to zaberie a aké výsledky sú reálne. Bez nereálnych sľubov."},
-        {"title": "3. Práca v týždenných dávkach", "text": "Každý týždeň odpracujeme dohodnutý rozsah: technika, obsah, Google profil, AI viditeľnosť, odkazy. Každú zmenu viete dohľadať."},
+        {"title": "3. Práca v týždenných dávkach", "text": "Každý týždeň odpracujem dohodnutý rozsah: technika, obsah, Google profil, AI viditeľnosť, odkazy. Každú zmenu viete dohľadať."},
         {"title": "4. Meranie a report", "text": "Mesačný report vám dám osobne ako 30-minútový telefónát: čo sa odrobilo, čo to prinieslo (pozície, kliky, objednávky, zmienky v AI) a čo je ďalší krok."},
     ])}
   </div>
@@ -210,7 +210,7 @@ FAQ_SECTIONS = [
         ("Čo presne Nokto Studio robí?",
          "SEO optimalizáciu webu, lokálne SEO a firemný profil Google, optimalizáciu pre AI vyhľadávače (ChatGPT, Gemini, AI Overviews), SEO pre e-shopy, SEO audity, linkbuilding, tvorbu webov a PPC reklamu Google Ads. K tomu email marketing pre e-shopy a firmy."),
         ("Pre aké firmy pracujete?",
-         "Predovšetkým pre menšie a stredné firmy: lokálne služby (remeselníci, zdravotníctvo, právo, auto-servis), e-shopy a firmy, ktoré ponúkajú odborné služby. Pracujeme na trhoch Slovenska a Česka."),
+         "Predovšetkým pre menšie a stredné firmy: lokálne služby (remeselníci, zdravotníctvo, právo, auto-servis), e-shopy a firmy, ktoré ponúkajú odborné služby. Pracujem na trhoch Slovenska a Česka."),
         ("S akými platformami pracujete?",
          "WordPress, Shoptet, WooCommerce a vlastné riešenia. Pri SEO má nástroj druhoradú rolu, dôležitá je stratégia a jej vykonávanie."),
     ]),
@@ -218,28 +218,28 @@ FAQ_SECTIONS = [
         ("Koľko stojí SEO?",
          "12 EUR za odpracovanú hodinu. Malý firemný web zvyčajne 10 hodín mesačne (120 EUR), e-shop 20 až 40 hodín (240 až 480 EUR). Balíčky sú odporúčané rozsahy, nie povinné paušály."),
         ("Sú zmluvy viažúce?",
-         "Nie. Spoluprácu môžete skončiť kedykoľvek, bez sankcií. Fakturujeme mesačne za skutočne odpracované hodiny."),
+         "Nie. Spoluprácu môžete skončiť kedykoľvek, bez sankcií. Fakturujem mesačne za skutočne odpracované hodiny."),
         ("Čo ak potrebujem viac hodín v jednom mesiaci?",
-         "Nič sa nemení, pracujete len viac hodín. Rozsah sa dohodne v pláne a môžete ho kedykoľvek zmeniť."),
+         "Nič sa nemení, ide sa len do väčšieho počtu hodín. Rozsah sa dohodne v pláne a môžete ho kedykoľvek zmeniť."),
         ("Sú v cene zahrnuté reklamné výdavky?",
-         "Nie. Reklamu (Google Ads) platíte priamo Google. My riadime kampane za 12 EUR za hodinu. Náklady na odkazy a PR vykazujeme v skutočnej cene."),
+         "Nie. Reklamu (Google Ads) platíte priamo Google. Riadim kampane za 12 EUR za hodinu. Náklady na odkazy a PR vykazujem v skutočnej cene."),
     ]),
     ("Proces a výsledky", [
         ("Ako dlho trvá, kým SEO prinesie výsledky?",
          "Prvé pohyby na menej konkurenčných dotazoch za 2 až 4 mesiace, na hlavné dotazy 6 až 12 mesiacov. Lokálne SEO a Google profil sa zlepšujú častejšie za 4 až 8 týždňov. Presné termíny poviem v audite."),
-        ("Ako budem vidieť, že práca sa odviedla?",
+        ("Ako budem vidieť, že práca bola odvedená?",
          "Mesačný report osobne: 30-minútový hovor so mnou. Odpracované hodiny, pozície, kliky z Search Console, objednávky z Analytics, viditeľnosť v Mapách a zmienky v AI."),
         ("Ponúkate záruky prvej pozície?",
-         "Nie. Nikto reálne nevie zaručiť prvé miesto v Google, kto to sľubuje, predáva fiktívne záruky. Zaručujeme proces, transparentnosť a merateľný postup, ktorý k pozíciám vedie."),
-        ("Pomôžete aj s prestávkou alebo migráciou webu?",
-         "Áno, migrácia webu je jedna z úloh, kde sa ľahko strácajú pozície. Vieme, čo robiť, aby sa to nestalo."),
+         "Nie. Nikto reálne nevie zaručiť prvé miesto v Google, kto to sľubuje, predáva fiktívne záruky. Zaručím proces, transparentnosť a merateľný postup, ktorý k pozíciám vedie."),
+        ("Pomôžete aj s presunom alebo migráciou webu?",
+         "Áno, migrácia webu je jedna z úloh, kde sa ľahko strácajú pozície. Viem, čo robiť, aby sa to nestalo."),
     ]),
     ("AI a nové vyhľadávanie", [
         ("Je to pravda, že ChatGPT nahradí Google?",
-         "Nahradí ho, ale nie zničí. Zákazníci dnes vyhľadávajú oboje. Naša práca pokrýva obe: klasické Google pozície aj viditeľnosť v AI odpovediach."),
+         "Nahradí ho, ale nie zničí. Zákazníci dnes vyhľadávajú oboje. Moja práca pokrýva oboje: klasické Google pozície aj viditeľnosť v AI odpovediach."),
         ("Ako zistím, či ma AI odporúča?",
          "Pravidelne testujem súbory dotazov, ktoré vaši zákazníci pýtajú, a zaznamenávam, či sa vaše meno objavuje v odpovediach ChatGPT, Gemini a Google AI Overviews. Zapisujem to v mesačnom reporte."),
-        ("Prečo je táto špecializácia zriedkavá?",
+        ("Prečo je táto špecializácia vzácna?",
          "Optimalizácia pre AI je nová odborná práca, ktorá si vyžaduje inú metódu obsahu a štruktúry dát. Väčšina agentúr na Slovensku sa na ňu zatiaľ nepripravuje, čo je výhoda klientov, ktorí začnú prví."),
     ]),
 ]
@@ -256,7 +256,7 @@ def faq() -> tuple[str, str]:
         sections_html += f'<h2 style="margin-top:36px;">{sec_title}</h2>{qas_html}'
         all_qa += qas
     body = f"""
-{page_hero("FAQ", "Časté otázky", "Odpovede na to, čo nás klienti pýtajú najviac. Ak chýba vaša otázka, pýtajte priamo.", [("Domov", "/"), ("FAQ", None)])}
+{page_hero("FAQ", "Časté otázky", "Odpovede na to, čo ma klienti pýtajú najviac. Ak chýba vaša otázka, pýtajte priamo.", [("Domov", "/"), ("FAQ", None)])}
 <section class="section">
   <div class="container" style="max-width:800px;">
     {sections_html}
@@ -270,7 +270,7 @@ def faq() -> tuple[str, str]:
 """
     faq_html = faq_schema(all_qa, BASE + "/sk/faq/")
     html = base(market="sk", path="faq/", title="FAQ: časté otázky k SEO, cene a procesu | Nokto Studio",
-                desc="Časté otázky: koľko stojí SEO, ako dlho trvá, ako meriam výsledky, čo je SEO pre AI vyhľadávače. Nokto Studio, SEO agentúra.",
+                desc="Časté otázky: koľko stojí SEO, ako dlho trvá, ako sa merajú výsledky, čo je SEO pre AI vyhľadávače. Nokto Studio, SEO agentúra.",
                 canonical=BASE + "/sk/faq/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
     return ("sk/faq/index.html", html)
 
