@@ -324,11 +324,11 @@ def footer(market: str, prefix: str) -> str:
                          ("/en/terms/", "Terms")]),
         ]
     if market == "cz":
-        foot_intro = "SEO pro podnikatele od Simona Stremensky: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky za transparentních 12 EUR / hodinu."
+        foot_intro = "SEO pro podnikatele od Šimona Štermenského: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky za transparentních 12 EUR / hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pro Česko i Slovensko."
         foot_tagline = "Dělám to sám, rychle, měřitelně a bez pevných smluv."
     else:
-        foot_intro = "SEO pre podnikateľov od Simona Stremensky: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR / hodinu."
+        foot_intro = "SEO pre podnikateľov od Šimona Štermenského: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR / hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pre Slovensko a Česko."
         foot_tagline = "Robím to sám, rýchlo, merateľne a bez pevných zmlúv."
     foot_cols = ""

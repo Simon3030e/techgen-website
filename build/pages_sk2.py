@@ -287,14 +287,14 @@ def o_nas() -> tuple[str, str]:
     <div class="grid-2" style="align-items:center;">
       <div class="prose">
         <h2>Kto za Nokto stojí</h2>
-        <p>Volám sa Simon a Nokto Studio je moje projekt. Za sebou mám roky práce na SEO a weboch pre slovenské aj zahraničné klienty: e-shopy, lokálne firmy, média aj prémiové značky. Postavil som automatizované systémy, ktoré z SEO práce vyrábajú presne to, čo firma potrebuje: zákazníkov.</p>
+        <p>Volám sa Šimon Štermenský a Nokto Studio je môj projekt. Za sebou mám roky práce na SEO a weboch pre slovenské aj zahraničné klienty: e-shopy, lokálne firmy, média aj prémiové značky. Postavil som automatizované systémy, ktoré z SEO práce vyrábajú presne to, čo firma potrebuje: zákazníkov.</p>
         <p>Nie som veľká agentúra a nepredstieram to. Výhodou je, že s vami pracuje ten istý človek, ktorý navrhol stratégiu. Žiadne preposielanie medzi oddeleniami, žiadne strácanie kontextu.</p>
         <h2>Ako pracujem</h2>
         <p>Kombinujeme dva svety: odbornú SEO prácu (technika, obsah, autorita, AI viditeľnosť) a automatizáciu, ktorá z rovnakého úsilia vytiahne viac. Preto vieme pracovať za 12 EUR za hodinu a stále sa sústrediť na výsledok, nie na fakturovanie hodín na okraji.</p>
       </div>
       <div>
-        <img src="/assets/img/simon.png" alt="Simon, zakladateľ Nokto Studio" loading="lazy" style="border-radius:var(--radius-lg); border:1px solid var(--border-light);">
-        <p style="text-align:center; margin-top:12px; font-size:0.85rem; color:var(--text-muted);">Simon, zakladateľ Nokto Studio</p>
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, zakladateľ Nokto Studio" loading="lazy" style="border-radius:var(--radius-lg); border:1px solid var(--border-light);">
+        <p style="text-align:center; margin-top:12px; font-size:0.85rem; color:var(--text-muted);">Šimon Štermenský, zakladateľ Nokto Studio</p>
       </div>
     </div>
   </div>
@@ -318,7 +318,7 @@ def o_nas() -> tuple[str, str]:
   </div>
 </section>
 """
-    html = base(market="sk", path="o-nas/", title="O nás: SEO agentúra Nokto Studio | Simon a tím",
+    html = base(market="sk", path="o-nas/", title="O nás: SEO agentúra Nokto Studio | Šimon Štermenský",
                 desc="Nokto Studio: SEO agentúra pre podnikateľov. Kto za nami stojí, ako pracujeme a prečo 12 EUR za hodinu stačí na merateľné výsledky.",
                 canonical=BASE + "/sk/o-nas/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/o-nas/index.html", html)
@@ -337,7 +337,7 @@ def kontakt() -> tuple[str, str]:
       <div class="card" style="text-align:center;">
         <span class="section-label">Zavolajte priamo</span>
         <a href="tel:+421917316105" class="btn btn-primary btn-lg contact-phone-btn" style="width:100%; margin-top:14px; font-size:1.25rem;">+421 917 316 105</a>
-        <p style="margin:14px 0 6px; color:var(--text-muted);">Simon Stremensky, SEO špecialista. Väčšinou dvíham hneď, inak volám do pár hodín späť.</p>
+        <p style="margin:14px 0 6px; color:var(--text-muted);">Šimon Štermenský, SEO špecialista. Väčšinou dvíham hneď, inak volám do pár hodín späť.</p>
         <ul class="deliv-list" style="text-align:left; margin-top:20px;">
           <li><span class="check">✓</span><span>30 minút bezplatnej konzultácie o vašom webe</span></li>
           <li><span class="check">✓</span><span>Bezplatný vstupný audit webu po hovore</span></li>
@@ -467,7 +467,7 @@ def sk_privacy() -> tuple[str, str]:
 <section class="section">
   <div class="container prose">
     <h2>Kto spracováva údaje</h2>
-    <p>Operátorom osobných údajov je Nokto Studio (Simon, prevádzkovateľ webu noktostudio.com). Kontakt: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+    <p>Operátorom osobných údajov je Nokto Studio (Šimon Štermenský, prevádzkovateľ webu noktostudio.com). Kontakt: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
     <h2>Aké údaje a načo</h2>
     <ul>
       <li>Kontaktný formulár: meno, email, adresa webu a správa. Účelom je odpovedať na váš dotaz. Formulár odosiela oznámenie na náš email.</li>

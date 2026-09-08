@@ -332,3 +332,11 @@
 .cta-phone-line a:hover { text-decoration: underline; }
 .nav-phone-btn { white-space: nowrap; }
 @media (max-width: 1080px) { .nav-phone-btn { display: none; } }
+/* slider chart height guard: donut/square svgs must not stretch to full width */
+.rs-chart svg[width="200"] { width: 200px !important; height: 200px !important; }
+.rs-chart { display: flex; justify-content: center; }
+.rs-chart svg:not([width]) { flex: 1; min-width: 0; }
+@media (max-width: 860px) {
+  .rs-chart svg:not([width]) { max-height: 150px; }
+  .rs-chart svg[width="200"] { width: 150px !important; height: 150px !important; }
+}

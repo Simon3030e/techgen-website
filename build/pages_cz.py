@@ -125,7 +125,7 @@ def cz_services_grid(cols: int = 3) -> str:
 def cz_home() -> tuple[str, str]:
     h1 = ('Ať vás zákazníci najdou v <span class="hl-blue">Google</span>, '
           'na <span class="hl-red">Google Mapách</span> i v <span class="hl-green">ChatGPT</span>.')
-    sub = ("Jmenuji se Simon Stremensky a SEO dělám pro podnikatele bez placené reklamy: "
+    sub = ("Jmenuji se Šimon Štermenský a SEO dělám pro podnikatele bez placené reklamy: "
            "pracuji na obsahu webu, technické stránce webu a profilu na Google Mapách, "
            "aby vás zákazníci našli, když hledají vaše produkty a služby. Za transparentních "
            "12 EUR za hodinu. Bez paušálů, bez pevných smluv, s reportem, kterému rozumíte.")
@@ -146,8 +146,8 @@ def cz_home() -> tuple[str, str]:
         <p class="hero-scarcity" style="margin-top:6px;">Kapacita pro nové projekty: otevřeno od října 2026.</p>
       </div>
       <div class="hero-photo">
-        <img src="/assets/img/simon.png" alt="Simon Stremensky, SEO specialista a majitel Nokto Studio" width="220" height="220" loading="eager">
-        <span class="hero-photo-cap">Simon Stremensky<br>SEO specialista · Nokto Studio</span>
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialista a majitel Nokto Studio" width="220" height="220" loading="eager">
+        <span class="hero-photo-cap">Šimon Štermenský<br>SEO specialista · Nokto Studio</span>
       </div>
     </div>
   </div>
@@ -230,12 +230,12 @@ def cz_home() -> tuple[str, str]:
   <div class="container">
     <div class="about-simon">
       <div class="about-simon-photo reveal">
-        <img src="/assets/img/simon.png" alt="Simon Stremensky, SEO specialista a majitel Nokto Studio" width="300" height="300" loading="lazy">
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialista a majitel Nokto Studio" width="300" height="300" loading="lazy">
       </div>
       <div class="reveal" data-delay="150">
         <span class="section-label">Kdo za Nokto stojí</span>
         <h2 style="margin:10px 0 14px;">S vámi komunikuju já, ne account manager.</h2>
-        <p style="color:var(--text-muted);">Jsem Simon, SEO specialista. Za roky praxe v online marketingu mě nejvíc baví SEO a viditelnost v Google i AI nástrojích, protože vidím, jak reálně mění prodej malých firem. Pracuji s malým týmem a s partnery na web dizajnu a PPC reklamě, takže vám vždy odpoví ten, kdo práci dělá.</p>
+        <p style="color:var(--text-muted);">Jsem Šimon, SEO specialista. Za roky praxe v online marketingu mě nejvíc baví SEO a viditelnost v Google i AI nástrojích, protože vidím, jak reálně mění prodej malých firem. Pracuji s malým týmem a s partnery na web dizajnu a PPC reklamě, takže vám vždy odpoví ten, kdo práci dělá.</p>
         <p style="color:var(--text-muted);">První hodina s vámi je bezplatný hovor a audit. Pokud vám čísla nedají smysl, nic neplatíte.</p>
         <a href="/cz/kontakt/" class="btn btn-primary" style="margin-top:18px;">Dohodnout si hovor se mnou</a>
       </div>
@@ -942,7 +942,7 @@ def cz_kontakt() -> tuple[str, str]:
       <div class="card" style="text-align:center;">
         <span class="section-label">Zavolejte přímo</span>
         <a href="tel:+421917316105" class="btn btn-primary btn-lg contact-phone-btn" style="width:100%; margin-top:14px; font-size:1.25rem;">+421 917 316 105</a>
-        <p style="margin:14px 0 6px; color:var(--text-muted);">Simon Stremensky, SEO specialista. Většinou zvedám hned, jinak volám do pár hodin zpět.</p>
+        <p style="margin:14px 0 6px; color:var(--text-muted);">Šimon Štermenský, SEO specialista. Většinou zvedám hned, jinak volám do pár hodin zpět.</p>
         <ul class="deliv-list" style="text-align:left; margin-top:20px;">
           <li><span class="check">✓</span><span>30 minut bezplatné konzultace o vašem webu</span></li>
           <li><span class="check">✓</span><span>Bezplatný vstupní audit webu po hovoru</span></li>
@@ -1047,7 +1047,7 @@ def cz_privacy() -> tuple[str, str]:
 <section class="section">
   <div class="container prose">
     <h2>Kdo zpracovává údaje</h2>
-    <p>Operátorem osobních údajů je Nokto Studio (Simon, provozovatel webových stránek noktostudio.com). Kontakt: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+    <p>Operátorem osobních údajů je Nokto Studio (Šimon Štermenský, provozovatel webových stránek noktostudio.com). Kontakt: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
     <h2>Jaké údaje a proč</h2>
     <ul>
       <li>Kontaktní formulář: jméno, email, adresa webu a zpráva. Účelem je odpovědět na váš dotaz. Formulář odesílá oznámení na náš email.</li>

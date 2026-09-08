@@ -142,7 +142,7 @@ def process_section(label: str = "Ako pracujem") -> str:
 def home() -> tuple[str, str]:
     h1 = ('Nech vás zákazníci nájdú v <span class="hl-blue">Google</span>, '
           'na <span class="hl-red">Google Mapách</span> aj v <span class="hl-green">ChatGPT</span>.')
-    sub = ("Volám sa Simon Stremensky a SEO robím pre podnikateľov bez platenej reklamy: "
+    sub = ("Volám sa Šimon Štermenský a SEO robím pre podnikateľov bez platenej reklamy: "
            "pracujem na obsahu webu, technickej stránke webu a profile na Google Mapách, "
            "aby vás zákazníci našli, keď hľadajú vaše produkty a služby. Za transparentných "
            "12 EUR za hodinu. Bez paušálov, bez pevných zmlúv, s reportom, ktorému rozumiete.")
@@ -164,8 +164,8 @@ def home() -> tuple[str, str]:
         <p class="hero-scarcity" style="margin-top:6px;">Kapacita na nové projekty: otvorené od októbra 2026.</p>
       </div>
       <div class="hero-photo">
-        <img src="/assets/img/simon.png" alt="Simon Stremensky, SEO špecialista a majiteľ Nokto Studio" width="220" height="220" loading="eager">
-        <span class="hero-photo-cap">Simon Stremensky<br>SEO špecialista · Nokto Studio</span>
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO špecialista a majiteľ Nokto Studio" width="220" height="220" loading="eager">
+        <span class="hero-photo-cap">Šimon Štermenský<br>SEO špecialista · Nokto Studio</span>
       </div>
     </div>
   </div>
@@ -314,12 +314,12 @@ def home() -> tuple[str, str]:
   <div class="container">
     <div class="about-simon">
       <div class="about-simon-photo reveal">
-        <img src="/assets/img/simon.png" alt="Simon Stremensky, SEO specialist a majitel Nokto Studio" width="300" height="300" loading="lazy">
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO špecialista a majiteľ Nokto Studio" width="300" height="300" loading="lazy">
       </div>
       <div class="reveal" data-delay="150">
         <span class="section-label">Kto za Nokto stojí</span>
         <h2 style="margin:10px 0 14px;">S vami komunikujem ja, nie account manager.</h2>
-        <p style="color:var(--text-muted);">Som Simon, SEO špecialista. Rokmi praxe v online marketingu som si najviac obľúbil SEO a viditeľnosť v Google aj AI nástrojoch, lebo vidím, ako reálne mení predaj malých firiem. Pracujem s malým tímom a s partnermi na web dizajne a PPC reklame, takže vám vždy odpovie ten, kto prácu robí.</p>
+        <p style="color:var(--text-muted);">Som Šimon, SEO špecialista. Rokmi praxe v online marketingu som si najviac obľúbil SEO a viditeľnosť v Google aj AI nástrojoch, lebo vidím, ako reálne mení predaj malých firiem. Pracujem s malým tímom a s partnermi na web dizajne a PPC reklame, takže vám vždy odpovie ten, kto prácu robí.</p>
         <p style="color:var(--text-muted);">Prvá hodina s vami je bezplatný hovor a audit. Ak vám čísla nebudú dávať zmysel, nič neplatíte.</p>
         <a href="/sk/kontakt/" class="btn btn-primary" style="margin-top:18px;">Dohodnúť si hovor so mnou</a>
       </div>
