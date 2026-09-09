@@ -563,7 +563,7 @@ def seo_ai() -> tuple[str, str]:
         desc="Optimalizácia pre AI vyhľadávače a AI Overviews. ChatGPT a Gemini vás odporúčajú zákazníkom. Prvá agentúra na Slovensku s touto špecializáciou.",
         label="Služba · SEO pre AI",
         h1="Aby vás ChatGPT odporúčal zákazníkom",
-        intro="Zákazník dnes nepýta len Google. Pýta ChatGPT: \u201eOdporúč mi dobrú zubačku v Nitre.\u201c AI nástroj odpovie dvomi až piatimi menami. Mojou úlohou je, aby vaše meno tam bolo.",
+        intro="Zákazník dnes nepýta len Google. Pýta ChatGPT: \u201eOdporúč mi dobrého zubára v Nitre.\u201c AI nástroj odpovie dvomi až piatimi menami. Mojou úlohou je, aby vaše meno tam bolo.",
         for_who=[
             "Chcete, aby vás AI nástroje odporúčali ako prvú voľbu vo vašom odvetví.",
             "Vidíte, že zákazníci prichádzajú s vetou \u201enašiel ChatGPT, že...\u201c",

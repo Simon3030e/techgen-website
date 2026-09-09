@@ -34,6 +34,10 @@ def en_home() -> tuple[str, str]:
       </div>
       <p class="hero-scarcity">Capacity for new projects: open from October 2026.</p>
     </div>
+    <div class="hero-photo">
+      <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialist and founder of Nokto Studio" width="220" height="220" loading="eager">
+      <span class="hero-photo-cap">Šimon Štermenský<br>SEO specialist · Nokto Studio</span>
+    </div>
   </div>
 </section>
 <section class="section">
@@ -215,8 +219,8 @@ def en_about() -> tuple[str, str]:
         <p>We combine two worlds: expert SEO work (technical, content, authority, AI visibility) and automation that gets more out of the same effort. That is how we can work at 12 EUR per hour and still focus on results, not on padding hours.</p>
       </div>
       <div>
-        <img src="/assets/img/simon.png" alt="Simon, founder of Nokto Studio" loading="lazy" style="border-radius:var(--radius-lg); border:1px solid var(--border-light);">
-        <p style="text-align:center; margin-top:12px; font-size:0.85rem; color:var(--text-muted);">Simon, founder of Nokto Studio</p>
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialist and founder of Nokto Studio" width="300" height="300" loading="lazy" style="border-radius:var(--radius-lg); border:1px solid var(--border-light);">
+        <p style="text-align:center; margin-top:12px; font-size:0.85rem; color:var(--text-muted);">Šimon Štermenský, SEO specialist · Nokto Studio</p>
       </div>
     </div>
   </div>
