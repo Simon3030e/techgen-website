@@ -17,6 +17,7 @@ Everything the script writes is plain static HTML; the live site needs no
 Python. Re-run any time after editing build/*.py.
 """
 import sys
+import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent
@@ -25,7 +26,9 @@ sys.path.insert(0, str(REPO / "build"))
 import pages_sk as sk          # noqa: E402
 import pages_sk2 as sk2        # noqa: E402
 import pages_cz as cz          # noqa: E402
-from engine import BASE, HREFLANG_PAIR  # noqa: E402
+import pages_en as en          # noqa: E402
+from engine import (BASE, HREFLANG_PAIR, EN_PAIR, EN_PAIR_REV,   # noqa: E402
+                    MARKET_HOME, MARKET_ROOTS)
 
 PAGES: list[tuple[str, str]] = []
 
@@ -71,6 +74,18 @@ add(cz.cz_blog())
 add(cz.cz_privacy())
 add(cz.cz_terms())
 
+# ---------------------------------------------------------------- EN pages
+add(en.en_home())
+add(en.en_services())
+add(en.en_portfolio())
+add(en.en_about())
+add(en.en_contact())
+add(en.en_faq())
+add(en.en_blog())
+add(en.en_villa_paris())
+add(en.en_privacy())
+add(en.en_terms())
+
 # ---------------------------------------------------------------- write HTML
 
 def write_pages():
@@ -110,28 +125,53 @@ SK_ENTRIES = [
 def _mkurl(loc: str, priority: str, alts: str = "") -> str:
     return f"""  <url>
     <loc>{loc}</loc>
-    {alts}<priority>{priority}</priority>
+    {alts}<lastmod>{LASTMOD}</lastmod><priority>{priority}</priority>
   </url>"""
 
 
-def _alts(sk_url: str, cz_url: str) -> str:
-    return (f'<xhtml:link rel="alternate" hreflang="sk" href="{sk_url}"/>'
-            f'<xhtml:link rel="alternate" hreflang="cs" href="{cz_url}"/>'
-            f'<xhtml:link rel="alternate" hreflang="x-default" href="{sk_url}"/>')
+LASTMOD = time.strftime("%Y-%m-%d")
+
+EN_ENTRIES = [
+    # (path after /en/, priority)
+    ("",             "1.0"),
+    ("services/",    "0.9"),
+    ("portfolio/",   "0.7"),
+    ("about/",       "0.6"),
+    ("contact/",     "0.6"),
+    ("faq/",         "0.6"),
+    ("blog/",        "0.5"),
+    ("villa-paris/", "0.6"),
+    ("privacy/",     "0.2"),
+    ("terms/",       "0.2"),
+]
+
+
+def _alts3(sk_sub: str) -> str:
+    """hreflang alternates for one logical page, identified by its SK sub-path.
+    Only languages with a real page get an alternate; x-default = SK."""
+    subs = {"sk": sk_sub,
+            "cz": HREFLANG_PAIR.get(sk_sub),
+            "en": EN_PAIR.get(sk_sub)}
+    lang_code = {"sk": "sk", "cz": "cs", "en": "en"}
+    out = []
+    for m in ("sk", "cz", "en"):
+        s = subs[m]
+        if s is None:
+            continue
+        u = BASE + (MARKET_HOME[m] if s == "" else MARKET_ROOTS[m] + s)
+        out.append(f'<xhtml:link rel="alternate" hreflang="{lang_code[m]}" href="{u}"/>')
+    out.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{BASE + MARKET_HOME["sk"] if sk_sub == "" else BASE + "/sk/" + sk_sub}"/>')
+    return "".join(out)
 
 
 def write_sitemap():
     rows = []
     for path, pr in SK_ENTRIES:
-        cz_path = HREFLANG_PAIR.get(path, "MISSING")
         sk_url = BASE + ("/" if path == "" else "/sk/" + path)
-        # pair exists only when the CZ path is a real CZ page (not SK-only
-        # pages like villa-paris/ or o-nas/, which have no hreflang pair)
-        if cz_path is not None and cz_path != "MISSING":
-            cz_url = BASE + "/cz/" + cz_path
-            rows.append(_mkurl(sk_url, pr, _alts(sk_url, cz_url)))
-        else:
-            rows.append(_mkurl(sk_url, pr))
+        rows.append(_mkurl(sk_url, pr, _alts3(path)))
+    for path, pr in EN_ENTRIES:
+        en_url = BASE + "/en/" + path
+        rows.append(_mkurl(en_url, pr, _alts3(EN_PAIR_REV[path])))
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

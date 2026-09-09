@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """Nokto Studio - EN core pages (secondary market; projects stay as legacy pages)."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
-                    steps_block, benefit_cards, ORG_SCHEMA, CAL, EMAIL, BASE, gicon)
+                    steps_block, benefit_cards, ORG_SCHEMA, EMAIL, BASE, gicon,
+                    PHONE_TEL, PHONE_DISPLAY)
 
 EN_FAQ = [
     ("How much does SEO cost?",
@@ -28,7 +29,7 @@ def en_home() -> tuple[str, str]:
       <h1>{h1}</h1>
       <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We bring you customers from organic search, Google Maps and AI tools, and grow your e-shop sales. At a transparent 12 EUR per hour. No retainers you cannot see through, no lock-in contracts.</p>
       <div class="hero-ctas">
-        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Book a free call</a>
+        <a href="{PHONE_TEL}" class="btn btn-primary btn-lg">Call {PHONE_DISPLAY}</a>
         <a href="/en/contact/?audit=1" class="btn btn-outline btn-lg">Get a free audit</a>
       </div>
       <p class="hero-scarcity">Capacity for new projects: open from October 2026.</p>
@@ -174,7 +175,7 @@ def en_services() -> tuple[str, str]:
     <p style="max-width:720px; color:var(--text-muted);">Web design and PPC advertising are delivered together with trusted partners, so the whole project stays in one pair of hands: <a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">Flamia Studio</a> (web design) and <a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">Peter Kocur</a> (PPC advertising).</p>
   </div>
 </section>
-<section class="section section-alt">
+<section class="section section-alt" id="pricing">
   <div class="container">
     <div class="section-head"><span class="section-label">Pricing</span><h2>Simple, transparent pricing</h2></div>
     <div class="rate-band">
@@ -182,7 +183,7 @@ def en_services() -> tuple[str, str]:
         <div class="rate-big">12 EUR <small>per hour · stop any time</small></div>
         <p style="margin-top:8px; max-width:520px;">Typical scopes: 10 hours/month for a small business site (120 EUR), 20 to 40 hours for an e-shop (240 to 480 EUR).</p>
       </div>
-      <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Get a quote</a>
+      <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Get a quote</a>
     </div>
   </div>
 </section>
@@ -245,15 +246,15 @@ def en_about() -> tuple[str, str]:
 def en_contact() -> tuple[str, str]:
     body = f"""
 {page_hero("Contact", "Write to us. We reply within 12 hours.",
-           "The fastest path is a free call through the calendar. If you prefer a form, use the one below.",
+           "The fastest path is the phone. Or send the form and you will get a reply with first steps within 12 hours.",
            [("Home", "/en/"), ("Contact", None)])}
 <section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:start;">
       <div class="card">
         <span class="section-label">Free call, 30 minutes</span>
-        <p style="margin:14px 0 22px;">Pick a slot in the calendar. We talk about your goals and what we would do first. No pressure, no commitment.</p>
-        <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="width:100%;">Open calendar</a>
+        <p style="margin:14px 0 22px;">Call me directly. We talk about your goals and what we would do first. No pressure, no commitment.</p>
+        <a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Call {PHONE_DISPLAY}</a>
         <ul class="deliv-list" style="margin-top:24px;">
           <li><span class="check">✓</span><span>Free initial audit after the call</span></li>
           <li><span class="check">✓</span><span>Real numbers: what SEO could mean for you</span></li>
@@ -339,7 +340,7 @@ def en_blog() -> tuple[str, str]:
   <div class="container">
     <div class="grid-2">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
-      <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Free call</a>
+      <a href="{PHONE_TEL}" class="btn btn-primary">Free call</a>
     </div>
   </div>
 </section>
@@ -383,7 +384,7 @@ def en_portfolio() -> tuple[str, str]:
             <span class="project-tag tag-green">Email marketing</span>
             <span class="project-tag tag-red">Local SEO + GEO</span>
           </div>
-          <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:20px;">Ask about it</a>
+          <a href="/en/contact/" class="btn btn-outline" style="margin-top:20px;">Ask about it</a>
         </div>
       </div>
     </div>
@@ -437,7 +438,7 @@ def en_villa_paris() -> tuple[str, str]:
           <li><span class="check">✓</span><span>Measurement: bookings and their sources.</span></li>
         </ul>
         <div style="margin-top:22px;">
-          <a href="{CAL}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">I want a project like this</a>
+          <a href="/en/contact/?audit=1" class="btn btn-primary">I want a project like this</a>
         </div>
       </div>
     </div>
@@ -463,15 +464,14 @@ def en_privacy() -> tuple[str, str]:
 <section class="section">
   <div class="container prose">
     <h2>Who processes the data</h2>
-    <p>The data controller is Nokto Studio (Simon, operator of noktostudio.com). Contact: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+    <p>The data controller is Nokto Studio (Šimon Štermenský, operator of noktostudio.com). Contact: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
     <h2>What data and why</h2>
     <ul>
-      <li>Contact form: name, email, website address and message. Purpose: to answer your enquiry.</li>
-      <li>Calendar (Calendly): name, email and meeting slot. Purpose: to hold the call.</li>
+      <li>Contact form: name, email, website address and message. Purpose: to answer your enquiry. The form sends a notification to our email.</li>
       <li>Analytics: anonymized visitor data (Google Analytics 4, Microsoft Clarity) to improve the website.</li>
     </ul>
     <h2>How long we keep data</h2>
-    <p>Contacts from forms and the calendar are kept for up to 24 months from the last communication, unless a collaboration begins.</p>
+    <p>Contacts from forms and phone calls are kept for up to 24 months from the last communication, unless a collaboration begins.</p>
     <h2>Your rights</h2>
     <p>You have the right to access, correct, delete and transfer your data. Send requests to <a href="mailto:{EMAIL}">{EMAIL}</a>. You may also file a complaint with your national data protection authority.</p>
     <h2>Cookies</h2>

@@ -17,8 +17,11 @@ import html as _html
 BASE = "https://noktostudio.com"
 PHONE_DISPLAY = "+421 917 316 105"
 PHONE_TEL = "tel:+421917316105"
-KONTAKT_LINK = {"sk": "/sk/kontakt/", "cz": "/cz/kontakt/"}
+KONTAKT_LINK = {"sk": "/sk/kontakt/", "cz": "/cz/kontakt/", "en": "/en/contact/"}
 EMAIL = "hello@noktostudio.com"
+
+# og:locale per market (used in the head template)
+OG_LOCALE = {"sk": "sk_SK", "cz": "cs_CZ", "en": "en_US"}
 
 # Google logo letters: N(blue) o(red) k(yellow) t(green)
 LOGO = ('<span class="logo-n">N</span><span class="logo-o">o</span>'
@@ -73,26 +76,53 @@ HREFLANG_PAIR = {
 }
 
 
+# SK path -> EN path. Only SK paths with a real EN page get an EN alternate
+# (the EN market is a core-pages mirror; service subpages live on one EN hub).
+EN_PAIR = {
+    "": "",
+    "sluzby/": "services/",
+    "kontakt/": "contact/",
+    "o-nas/": "about/",
+    "faq/": "faq/",
+    "blog/": "blog/",
+    "pripady/": "portfolio/",
+    "villa-paris/": "villa-paris/",
+    "privacy/": "privacy/",
+    "terms/": "terms/",
+}
+EN_PAIR_REV = {v: k for k, v in EN_PAIR.items()}
+
+
+def _market_url(m: str, sub: str) -> str:
+    """Absolute URL of a page inside market m. sub == '' means market home."""
+    return BASE + (MARKET_HOME[m] if sub == "" else MARKET_ROOTS[m] + sub)
+
+
+_HFLANG_CODE = {"sk": "sk", "cz": "cs", "en": "en"}
+
+
 def hreflang_links(market: str, path: str) -> str:
-    """SK/CZ hreflang for every page that has a 1:1 equivalent.
-    x-default points to the SK version (primary market)."""
-    if market not in ("sk", "cz"):
-        return ""
-    pair = HREFLANG_PAIR.get(path)
-    if pair is None or pair not in CZ_PATHS and pair not in SK_PATHS and path != "":
-        return ""
-    def url(m: str, p: str) -> str:
-        root = MARKET_HOME[m] if p == "" else MARKET_ROOTS[m] + p
-        return BASE + root
-    if market == "sk":
-        sk_url, cz_url = url("sk", path), url("cz", pair)
+    """Three-language hreflang (SK, CS, EN) for pages with equivalents in at
+    least one other language. x-default points to the SK version (primary
+    market). Single-language pages stay self-canonical only."""
+    if market == "en":
+        sk_path = EN_PAIR_REV.get(path)
+    elif market == "sk":
+        sk_path = path
     else:
-        sk_url, cz_url = url("sk", HREFLANG_PAIR.get(path) or ""), url("cz", path)
-    return (
-        f'<link rel="alternate" hreflang="sk" href="{sk_url}">\n'
-        f'  <link rel="alternate" hreflang="cs" href="{cz_url}">\n'
-        f'  <link rel="alternate" hreflang="x-default" href="{sk_url}">'
-    )
+        sk_path = HREFLANG_PAIR.get(path)
+    if sk_path is None or (sk_path != "" and sk_path not in SK_PATHS):
+        return ""
+    subs = {"sk": sk_path,
+            "cz": HREFLANG_PAIR.get(sk_path),
+            "en": EN_PAIR.get(sk_path)}
+    subs = {m: s for m, s in subs.items() if s is not None}
+    if len(subs) < 2:
+        return ""
+    links = [f'<link rel="alternate" hreflang="{_HFLANG_CODE[m]}" href="{_market_url(m, subs[m])}">'
+             for m in ("sk", "cz", "en") if m in subs]
+    links.append(f'<link rel="alternate" hreflang="x-default" href="{_market_url("sk", sk_path)}">')
+    return "\n  ".join(links)
 
 
 def logo(market: str) -> str:
@@ -129,41 +159,68 @@ def gicon(kind: str, color: str = "#1A73E8", size: int = 24) -> str:
 
 def nav_items(market: str) -> list[tuple[str, str]]:
     """(label, href) pairs for the desktop nav. Href uses {{p}} placeholders? No: plain."""
-    svc = ("Služby", "/sk/sluzby/", [
-        ("/sk/sluzby/seo-pre-ai-vyhladavace/", "AI viditeľnosť"),
-        ("/sk/sluzby/seo-optimalizacia/", "Google viditeľnosť"),
-        ("/sk/sluzby/lodalne-seo/", "Google Mapy viditeľnosť"),
-        ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
-        ("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
-        ("/sk/sluzby/linkbuilding/", "Linkbuilding"),
-    ]) if market == "sk" else ("Služby", "/cz/sluzby/", [
-        ("/cz/sluzby/seo-pre-ai-vyhledavace/", "AI viditelnost"),
-        ("/cz/sluzby/seo-optimalizace/", "Google viditelnost"),
-        ("/cz/sluzby/lodalne-seo/", "Google Mapy viditelnost"),
-        ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
-        ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
-        ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
-    ])
     if market == "sk":
+        svc = ("Služby", "/sk/sluzby/", [
+            ("/sk/sluzby/seo-pre-ai-vyhladavace/", "AI viditeľnosť"),
+            ("/sk/sluzby/seo-optimalizacia/", "Google viditeľnosť"),
+            ("/sk/sluzby/lodalne-seo/", "Google Mapy viditeľnosť"),
+            ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
+            ("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
+            ("/sk/sluzby/linkbuilding/", "Linkbuilding"),
+        ])
         rest = [("Cenník", "/sk/cennik/"), ("Ako pracujem", "/sk/jak-pracujeme/"),
                 ("Prípady", "/sk/pripady/"), ("Blog", "/sk/blog/")]
-    else:
+    elif market == "cz":
+        svc = ("Služby", "/cz/sluzby/", [
+            ("/cz/sluzby/seo-pre-ai-vyhledavace/", "AI viditelnost"),
+            ("/cz/sluzby/seo-optimalizace/", "Google viditelnost"),
+            ("/cz/sluzby/lodalne-seo/", "Google Mapy viditelnost"),
+            ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
+            ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
+            ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
+        ])
         rest = [("Ceník", "/cz/cenik/"), ("Jak pracuji", "/cz/jak-pracujeme/"),
                 ("Případy", "/cz/pripady/"), ("Blog", "/cz/blog/")]
+    else:
+        svc = ("Services", "/en/services/", [
+            ("/en/services/#ai", "AI search visibility"),
+            ("/en/services/#seo", "Google visibility"),
+            ("/en/services/#local", "Google Maps visibility"),
+            ("/en/services/#eshop", "E-commerce SEO"),
+            ("/en/services/#audit", "SEO audit and analysis"),
+            ("/en/services/#links", "Link building"),
+        ])
+        rest = [("Pricing", "/en/services/#pricing"), ("About", "/en/about/"),
+                ("Portfolio", "/en/portfolio/"), ("Blog", "/en/blog/")]
     return [svc] + rest
 
 
 def cta_label(market: str) -> str:
-    return {"sk": "Kontakt", "cz": "Kontakt"}[market]
+    return {"sk": "Kontakt", "cz": "Kontakt", "en": "Contact"}[market]
 
 
 def lang_toggle(market: str, path: str) -> str:
-    """EN | SK | CZ toggle. path is the current page path WITHOUT market prefix.
-    Falls back to the market root when the equivalent page does not exist there."""
+    """EN | SK | CZ toggle. Path-aware: links to the equivalent page in the
+    target language when it exists, otherwise to that market's home."""
+    if market == "en":
+        sk_path = EN_PAIR_REV.get(path, "")
+    elif market == "sk":
+        sk_path = path
+    else:
+        sk_path = HREFLANG_PAIR.get(path) or ""
+    if sk_path and sk_path not in SK_PATHS:
+        sk_path = ""
     pairs = []
-    for m, label in (("sk", "SK"), ("cz", "CZ")):
-        sub = path if path in LANG_PATHS[m] else ""
-        href = MARKET_HOME[m] if sub == "" else MARKET_ROOTS[m] + sub
+    for m, label in (("sk", "SK"), ("cz", "CZ"), ("en", "EN")):
+        if m == "sk":
+            sub = sk_path
+        elif m == "cz":
+            sub = HREFLANG_PAIR.get(sk_path) if sk_path in HREFLANG_PAIR else ""
+        else:
+            sub = EN_PAIR.get(sk_path, "")
+        if sub not in LANG_PATHS[m]:
+            sub = ""
+        href = _market_url(m, sub)
         active = " active" if m == market else ""
         pairs.append(f'<a href="{href}" class="lang-btn{active}">{label}</a>')
     return '<div class="lang-toggle">' + ' <span>|</span> '.join(pairs) + "</div>"
@@ -210,10 +267,17 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
   <meta name="description" content="{_html.escape(desc)}">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nokto Studio">
+  <meta property="og:locale" content="{OG_LOCALE[market]}">
   <meta property="og:title" content="{_html.escape(title)}">
   <meta property="og:description" content="{_html.escape(desc)}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{BASE}/assets/img/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{_html.escape(title)}">
+  <meta name="twitter:description" content="{_html.escape(desc)}">
+  <meta name="twitter:image" content="{BASE}/assets/img/og-cover.png">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="{canonical}">
 {hreflang}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -323,7 +387,11 @@ def footer(market: str, prefix: str) -> str:
                          ("/en/privacy/", "Privacy"),
                          ("/en/terms/", "Terms")]),
         ]
-    if market == "cz":
+    if market == "en":
+        foot_intro = "SEO for business owners by Šimon Štermenský: website content, technical SEO and your Google Business Profile. Measurable results at a transparent 12 EUR / hour."
+        foot_copy = "© 2026 Nokto Studio. SEO in English for European businesses."
+        foot_tagline = "I do it myself: fast, measurable, without lock-in contracts."
+    elif market == "cz":
         foot_intro = "SEO pro podnikatele od Šimona Štermenského: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky za transparentních 12 EUR / hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pro Česko i Slovensko."
         foot_tagline = "Dělám to sám, rychle, měřitelně a bez pevných smluv."
