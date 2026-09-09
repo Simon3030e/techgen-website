@@ -27,7 +27,7 @@ import pages_sk as sk          # noqa: E402
 import pages_sk2 as sk2        # noqa: E402
 import pages_cz as cz          # noqa: E402
 import pages_en as en          # noqa: E402
-from engine import (BASE, HREFLANG_PAIR, EN_PAIR, EN_PAIR_REV,   # noqa: E402
+from engine import (BASE, HREFLANG_PAIR, EN_PAIR, EN_PAIR_REV, CZ_PATHS,  # noqa: E402
                     MARKET_HOME, MARKET_ROOTS)
 
 PAGES: list[tuple[str, str]] = []
@@ -166,9 +166,19 @@ def _alts3(sk_sub: str) -> str:
 
 def write_sitemap():
     rows = []
+    # SK variant of every logical page (root index is the SK home)
     for path, pr in SK_ENTRIES:
         sk_url = BASE + ("/" if path == "" else "/sk/" + path)
         rows.append(_mkurl(sk_url, pr, _alts3(path)))
+    # CZ variants: every CZ page that is the 1:1 pair of an SK page.
+    # Each variant is its own <url> entry, as Google recommends.
+    for path, pr in SK_ENTRIES:
+        cz_path = HREFLANG_PAIR.get(path)
+        if cz_path is None or cz_path not in CZ_PATHS:
+            continue
+        cz_url = BASE + "/cz/" + cz_path
+        rows.append(_mkurl(cz_url, pr, _alts3(path)))
+    # EN variants (core pages only; service subpages live on the EN hub)
     for path, pr in EN_ENTRIES:
         en_url = BASE + "/en/" + path
         rows.append(_mkurl(en_url, pr, _alts3(EN_PAIR_REV[path])))
