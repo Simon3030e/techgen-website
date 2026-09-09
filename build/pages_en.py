@@ -6,7 +6,7 @@ from engine import (base, page_hero, cta_band, faq_block, faq_schema,
 
 EN_FAQ = [
     ("How much does SEO cost?",
-     "You pay 12 EUR per hour of work. A small business website typically needs 10 hours per month (120 EUR), an e-shop 20 to 40 hours (240 to 480 EUR). Exact scope is confirmed in the plan after a free audit."),
+     "You pay 12 EUR per hour of work. A small business website typically needs 10 hours per month (120 EUR), an e-shop 20 to 40 hours (240 to 480 EUR). The exact scope is confirmed in the plan after a free audit."),
     ("How long until SEO brings results?",
      "First movements on less competitive keywords usually appear within 2 to 4 months. Main competitive queries take 6 to 12 months. Realistic timelines are shared in the audit."),
     ("Do you guarantee first positions in Google?",
@@ -84,7 +84,7 @@ def en_home() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Pricing</span>
-      <h2>12 EUR per hour. You pay for work, not retainer.</h2>
+      <h2>12 EUR per hour. You pay for work, not a retainer.</h2>
     </div>
     <div class="rate-band">
       <div>
@@ -106,7 +106,7 @@ def en_home() -> tuple[str, str]:
     <div class="section-head">
       <span class="section-label">Results in Google</span>
       <h2>How client websites and AI citations grow</h2>
-      <p class="section-subheading">Samples from Google Search Console of our project and a client from recent months. I always show you the numbers live before we start.</p>
+      <p class="section-subheading">Samples from Google Search Console of our project and a client's from recent months. I always show you the numbers live before we start.</p>
     </div>
     <div class="grid-4">
       <div class="growth-card reveal" data-delay="100">
@@ -309,7 +309,7 @@ def en_faq() -> tuple[str, str]:
 </section>
 <section class="section" style="padding-top:0;">
   <div class="container">
-    {cta_band("Still have a question?", "Write or call. Reply within 12 hours, no strings attached.", "en")}
+    {cta_band("Still have a question?", "Write or call. We reply within 12 hours, no strings attached.", "en")}
   </div>
 </section>
 """
@@ -495,7 +495,7 @@ def en_terms() -> tuple[str, str]:
     <h2>1. Scope</h2>
     <p>These terms govern the collaboration between Nokto Studio ("the provider") and the client for marketing services: SEO optimization, local SEO, AI visibility, link building, email marketing and related consulting. Web design and PPC are delivered with our partners.</p>
     <h2>2. Price and invoicing</h2>
-    <p>Services are billed at an hourly rate of 12 EUR for hours worked. Invoicing runs monthly, in arrears, based on the hours report. Ad spend and link or third-party tool costs are passed through at actual price, without markup.</p>
+    <p>Services are billed at an hourly rate of 12 EUR for hours worked. Invoicing runs monthly, in arrears, based on the hours report. Ad spend and link or third-party tool costs are passed through at the actual price, without markup.</p>
     <h2>3. Term</h2>
     <p>Collaboration runs month to month. Either party can end it at the end of a calendar month, in writing, without penalties.</p>
     <h2>4. Responsibility and results</h2>

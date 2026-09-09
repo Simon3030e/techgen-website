@@ -18,7 +18,7 @@ def jak_pracujeme() -> tuple[str, str]:
       <h2>Od prvého hovoru po mesačný hovor so mnou</h2>
     </div>
     {steps_block([
-        {"title": "1. Bezplatný hovor a audit", "text": "30 minút telefonátu, v ktorom si poviem vaše ciele. Do 3 dní od neho dostanete bezplatný vstupný audit: 10 najväčších problémov a šancí vášho webu na jednej strane."},
+        {"title": "1. Bezplatný hovor a audit", "text": "30 minút telefonátu, v ktorom si povieme vaše ciele. Do 3 dní od neho dostanete bezplatný vstupný audit: 10 najväčších problémov a šancí vášho webu na jednej strane."},
         {"title": "2. Plán s číslami", "text": "Z auditu spravím plán: ktoré kľúčové slová prinášajú zákazníkov, čo opraviť ako prvé, koľko hodín mesačne to zaberie a aké výsledky sú reálne. Bez nereálnych sľubov."},
         {"title": "3. Práca v týždenných dávkach", "text": "Každý týždeň odpracujem dohodnutý rozsah: technika, obsah, Google profil, AI viditeľnosť, odkazy. Každú zmenu viete dohľadať."},
         {"title": "4. Meranie a report", "text": "Mesačný report vám dám osobne ako 30-minútový telefónát: čo sa odrobilo, čo to prinieslo (pozície, kliky, objednávky, zmienky v AI) a čo je ďalší krok."},
@@ -46,7 +46,7 @@ def jak_pracujeme() -> tuple[str, str]:
       <div class="card">
         <span class="section-label">Meranie</span>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span>Pozície na sledovaných kľúčových slovách (trend, nie len číslo).</span></li>
+          <li><span class="check">✓</span><span>Pozície na sledovaných kľúčových slovách (trend, nielen číslo).</span></li>
           <li><span class="check">✓</span><span>Kliky a zobrazenia z Google (Search Console).</span></li>
           <li><span class="check">✓</span><span>Kontakty a objednávky (Google Analytics).</span></li>
           <li><span class="check">✓</span><span>Zobrazenia v Google Mapách: volania, trasy, recenzie.</span></li>
@@ -62,7 +62,7 @@ def jak_pracujeme() -> tuple[str, str]:
     <div class="section-head">
       <span class="section-label">Meranie</span>
       <h2>Ako meriam výsledky</h2>
-      <p class="section-subheading">Nič nemeníme názormi. Každé tvrdenie má v reporte číslo a zdroj dáto.</p>
+      <p class="section-subheading">Nič nemeníme názormi. Každé tvrdenie má v reporte číslo a zdroj dát.</p>
     </div>
     <table class="metric-table">
       <tr><th>Čo sledujem</th><th>Nástroj</th><th>Čo to hovorí</th></tr>
@@ -71,7 +71,7 @@ def jak_pracujeme() -> tuple[str, str]:
       <tr><td><strong>Kontakty a objednávky</strong></td><td>Google Analytics 4</td><td>Koľko návštevníkov sa stalo zákazníkmi.</td></tr>
       <tr><td><strong>Viditeľnosť v mápe</strong></td><td>Firemný profil Google</td><td>Koľko ľudí videlo firmu, zatelefonovalo, išlo na trasu.</td></tr>
       <tr><td><strong>AI odporúčania</strong></td><td>Pravidelné AI testy</td><td>Či vás ChatGPT, Gemini a AI Overviews citujú.</td></tr>
-      <tr><td><strong>Tržby z organika</strong></td><td>Analytics + e-shop</td><td>Pre e-shopy: priamy vzťah SEO úsilia k predaju.</td></tr>
+      <tr><td><strong>Tržby z organiky</strong></td><td>Analytics + e-shop</td><td>Pre e-shopy: priamy vzťah SEO úsilia k predaju.</td></tr>
     </table>
   </div>
 </section>
@@ -172,7 +172,7 @@ def villa_paris() -> tuple[str, str]:
         <h3>Hotelový copywriting</h3>
         <p>Texty orientované na hosťa, ktoré odpovedajú na skutočné otázky pred rezerváciou: lokalita, komfort, čo očakávať po príchode.</p>
         <h3>Lokálne SEO</h3>
-        <p>Firemný profil Google v poriadku, lokálne kľúčové slová pre Piešťany a kúpeľné hostiteľstvo, tak aby Villa Paris našli hostia, ktorí hľadajú presne toto ubytovanie.</p>
+        <p>Firemný profil Google v poriadku, lokálne kľúčové slová pre Piešťany a kúpeľné hostiteľstvo tak, aby Villa Paris našli hostia, ktorí hľadajú presne toto ubytovanie.</p>
       </div>
       <div class="card">
         <span class="section-label">Rozsah projektu</span>
@@ -230,7 +230,7 @@ FAQ_SECTIONS = [
         ("Ako budem vidieť, že práca bola odvedená?",
          "Mesačný report osobne: 30-minútový hovor so mnou. Odpracované hodiny, pozície, kliky z Search Console, objednávky z Analytics, viditeľnosť v Mapách a zmienky v AI."),
         ("Ponúkate záruky prvej pozície?",
-         "Nie. Nikto reálne nevie zaručiť prvé miesto v Google, kto to sľubuje, predáva fiktívne záruky. Zaručím proces, transparentnosť a merateľný postup, ktorý k pozíciám vedie."),
+         "Nie. Nikto reálne nevie zaručiť prvé miesto v Google. Kto to sľubuje, predáva fiktívne záruky. Zaručím proces, transparentnosť a merateľný postup, ktorý k pozíciám vedie."),
         ("Pomôžete aj s presunom alebo migráciou webu?",
          "Áno, migrácia webu je jedna z úloh, kde sa ľahko strácajú pozície. Viem, čo robiť, aby sa to nestalo."),
     ]),
@@ -256,7 +256,7 @@ def faq() -> tuple[str, str]:
         sections_html += f'<h2 style="margin-top:36px;">{sec_title}</h2>{qas_html}'
         all_qa += qas
     body = f"""
-{page_hero("FAQ", "Časté otázky", "Odpovede na to, čo ma klienti pýtajú najviac. Ak chýba vaša otázka, pýtajte priamo.", [("Domov", "/"), ("FAQ", None)])}
+{page_hero("FAQ", "Časté otázky", "Odpovede na to, čo sa ma klienti pýtajú najviac. Ak chýba vaša otázka, pýtajte sa priamo.", [("Domov", "/"), ("FAQ", None)])}
 <section class="section">
   <div class="container" style="max-width:800px;">
     {sections_html}
@@ -287,7 +287,7 @@ def o_nas() -> tuple[str, str]:
     <div class="grid-2" style="align-items:center;">
       <div class="prose">
         <h2>Kto za Nokto stojí</h2>
-        <p>Volám sa Šimon Štermenský a Nokto Studio je môj projekt. Za sebou mám roky práce na SEO a weboch pre slovenské aj zahraničné klienty: e-shopy, lokálne firmy, média aj prémiové značky. Postavil som automatizované systémy, ktoré z SEO práce vyrábajú presne to, čo firma potrebuje: zákazníkov.</p>
+        <p>Volám sa Šimon Štermenský a Nokto Studio je môj projekt. Za sebou mám roky práce na SEO a weboch pre slovenských aj zahraničných klientov: e-shopy, lokálne firmy, médiá aj prémiové značky. Postavil som automatizované systémy, ktoré zo SEO práce vyrábajú presne to, čo firma potrebuje: zákazníkov.</p>
         <p>Nie som veľká agentúra a nepredstieram to. Výhodou je, že s vami pracuje ten istý človek, ktorý navrhol stratégiu. Žiadne preposielanie medzi oddeleniami, žiadne strácanie kontextu.</p>
         <h2>Ako pracujem</h2>
         <p>Kombinujeme dva svety: odbornú SEO prácu (technika, obsah, autorita, AI viditeľnosť) a automatizáciu, ktorá z rovnakého úsilia vytiahne viac. Preto vieme pracovať za 12 EUR za hodinu a stále sa sústrediť na výsledok, nie na fakturovanie hodín na okraji.</p>
@@ -307,7 +307,7 @@ def o_nas() -> tuple[str, str]:
     </div>
     <div class="grid-3">
       <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#1A73E8", 26)}</span><h3>Žiadne sľuby, ktoré nedržia</h3><p>Prvú pozíciu v Google nevie zaručiť nikto. Čo zaručíme: transparentný proces, reálne termíny a merateľný postup.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefónát: čo som spravil, čo to prinieslo a čo ide dalej. Bez preposielania.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefonát: čo som spravil, čo to prinieslo a čo ide ďalej. Bez preposielania.</p></div>
       <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#34A853", 26)}</span><h3>Každá hodina vykazovaná</h3><p>Platíte za odvedenú prácu. Každá hodina je v reporte s jej obsahom a výsledkom.</p></div>
     </div>
   </div>
@@ -471,12 +471,12 @@ def sk_privacy() -> tuple[str, str]:
     <ul>
       <li>Kontaktný formulár: meno, email, adresa webu a správa. Účelom je odpovedať na váš dotaz. Formulár odosiela oznámenie na náš email.</li>
       <li>Telefonát: číslo, z ktorého voláte, ak si ho zapisujeme na spätné doplnenie informácií. Účelom je uskutočniť hovor.</li>
-      <li>Analitika: anonymizované dáta o návštevnosti (Google Analytics 4, Microsoft Clarity) na zlepšovanie webu.</li>
+      <li>Analytika: anonymizované dáta o návštevnosti (Google Analytics 4, Microsoft Clarity) na zlepšovanie webu.</li>
     </ul>
     <h2>Ako dlho údaje uchovávam</h2>
     <p>Kontakty z formulárov a telefonátov uchovávam maximálne 24 mesiacov od poslednej komunikácie, pokiaľ nevznikne spolupráca.</p>
     <h2>Vaše práva</h2>
-    <p>Máte právo na prístup k údajom, ich opravu, výmaz a prenos. Požiadavku pošlite na <a href="mailto:{EMAIL}">{EMAIL}</a>. Máte tiež právo podať sťažnosť u Úradu na ochranu osobných údajov SR.</p>
+    <p>Máte právo na prístup k údajom, ich opravu, výmaz a prenos. Požiadavku pošlite na <a href="mailto:{EMAIL}">{EMAIL}</a>. Máte tiež právo podať sťažnosť na Úrad na ochranu osobných údajov SR.</p>
     <h2>Cookies</h2>
     <p>Web používa analytické cookies po vašom súhlase (cookie banner). Technické cookies nevyhnutné pre prevádzku webu sú povolené vždy.</p>
   </div>

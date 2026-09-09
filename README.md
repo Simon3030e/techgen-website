@@ -72,3 +72,14 @@ HTML, so the live site has no Python dependency.
   robots.txt uz povoluje vsetkych (aj GPTBot/ClaudeBot, overene HTTP 200).
 - Pozn.: bullet vyssie o hreflang len na homepage je zastaraly - od tejto
   revizie maju pary vsetky ekvivalentne strany (SK/CS 1:1, EN core pages).
+
+## Grammar sweep via Gemini (2026-09-09, session 6)
+- Pipeline automations/pipelines/grammar_fix (Gemini free keys, flash fallback,
+  key rotation): 1120 textovych fragmentov (501 SK / 441 CZ / 178 EN) v 23
+  batchoch, 92 oprav (pravopis, slovosled, zhoda, CZ pozostatky v SK textoch).
+- Aplikacia vzdy presnou nahradou do build/*.py zdrojov, log:
+  research/grammar_fix_2026-09-09/grammar_corrections.csv
+- Rucna kontrola + reverz 8 false positives (SK/CZ krizenie: aplikačný, Mápy,
+  Tématické, viažúce, rast hlavnej stránky; 2x strata bodky po mailto linke).
+- Rucne doplnene: najol -> nasiel, nanelo -> naslo, organika genitivy,
+  medzifenekcia -> prirazka, staznost na Urad (akuzativ).

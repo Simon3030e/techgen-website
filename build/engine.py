@@ -617,8 +617,8 @@ def results_slider(market: str) -> str:
     """Slider of real client results (GSC + AI Mode screenshots, Sep 2026)."""
     t = {
         "sk": {
-            "label": "Moje výsledky", "head": "Čísla z praxe, nie obrázky z šablóny",
-            "sub": "Skutočné ukázky z Google Search Console a Google AI Mode mojich projektov a klientov. Čísla vám pred spoluprácou ukážem naživo.",
+            "label": "Moje výsledky", "head": "Čísla z praxe, nie obrázky zo šablóny",
+            "sub": "Skutočné ukážky z Google Search Console a Google AI Mode mojich projektov a klientov. Čísla vám pred spoluprácou ukážem naživo.",
             "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditeľnosť",
             "chip4": "Obsah na 6 stránkach", "chip5": "Lokálne SEO",
             "prev": "Predchádzajúci", "next": "Nasledujúci", "all": "Všetky prípadové štúdie",
@@ -649,7 +649,7 @@ def results_slider(market: str) -> str:
         {"sk": "posledných 28 dní", "cz": "posledních 28 dní", "en": "last 28 days"}[market],
         [{"big": "121", "color": _BLUE, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"[0:] if market == "en" else "clicks from Google (+49%)"}[market]},
          {"big": "4 390", "color": _RED, "label": {"sk": "zobrazení v Google (+43 %)", "cz": "zobrazení v Google (+43 %)", "en": "impressions (+43%)"}[market]},
-         {"big": "+142 %", "color": _GREEN, "label": {"sk": "rast hlavnej stránky", "cz": "rast hlavnej stránky", "en": "top page growth"}[market]}],
+         {"big": "+142 %", "color": _GREEN, "label": {"sk": "rast hlavnej stránky", "cz": "růst hlavní stránky", "en": "top page growth"}[market]}],
         chart1,
         {"sk": "Prvý mesiac spolupráce: technické SEO a obsah. Google začal prinášať zákazníkov hneď.",
          "cz": "První měsíc spolupráce: technické SEO a obsah. Google začal přinášet zákazníky hned.",
@@ -666,7 +666,7 @@ def results_slider(market: str) -> str:
          {"big": "5", "color": _RED, "label": {"sk": "násobný rast klikov", "cz": "násobný rast kliků", "en": "x growth in clicks"}[market]}],
         chart2,
         {"sk": "Kliky za 3 mesiace od začiatku spolupráce. Rast každý mesiac, žiadny skok, ktorý sa nedá opakovať.",
-         "cz": "Kliky za 3 měsíce od začátku spolupráce. Rast každý měsíc, žádný skok, který se nedá opakovat.",
+         "cz": "Kliky za 3 měsíce od začátku spolupráce. Růst každý měsíc, žádný skok, který se nedá opakovat.",
          "en": "Clicks in 3 months since the start of cooperation. Growth every month, no one-off spike."}[market],
         market)
 
@@ -684,7 +684,7 @@ def results_slider(market: str) -> str:
 
     chart4 = _sparkline([30, 38, 42, 50, 55, 50, 62, 66, 58, 70, 50, 66], _YELLOW)
     s4 = _slide(
-        {"sk": "Rast po pridaní nášho obsahu", "cz": "Rast po přidání našeho obsahu", "en": "Growth after our content"}[market],
+        {"sk": "Rast po pridaní nášho obsahu", "cz": "Růst po přidání našeho obsahu", "en": "Growth after our content"}[market],
         t["chip4"],
         {"sk": "28 dní + posledný týždeň", "cz": "28 dní + poslední týden", "en": "28 days + last week"}[market],
         [{"big": "11 000", "color": _YELLOW, "label": {"sk": "zobrazení mesačne (+14 %)", "cz": "zobrazení měsíčně (+14 %)", "en": "monthly impressions (+14%)"}[market]},
