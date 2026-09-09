@@ -59,3 +59,16 @@ HTML, so the live site has no Python dependency.
 - Language toggle falls back to the market home when an equivalent page does not exist.
 - Keyword research behind the page tree lives outside the repo in
   `~/Sync/projects/nokto/noktostudio/research/` (AKW workbook: akw_noktostudio.xlsx).
+
+## EN version + technical SEO (2026-09-09, session 5)
+- EN live: 10 stranok /en/ (home, services, portfolio, about, contact, faq,
+  blog, villa-paris, privacy, terms). Calendly CTA v EN nahradene telefonom
+  (dokoncenie Calendly removal), EN privacy uz Calendly nespomina.
+- hreflang 3-jazycny (SK/CS/EN, x-default=SK) v head aj v sitemap;
+  jazykovy prepinac path-aware (o-nas -> /en/about/, pripady -> /en/portfolio/).
+- Sitemap: 28 URLs (18 SK + 10 EN), lastmod, xhtml:link alternates.
+- Head: og:site_name, og:locale, twitter:card, theme-color vsade.
+- Posledny noindex odstraneny (/sk/ redirect stub). Bots: GitHub Pages,
+  robots.txt uz povoluje vsetkych (aj GPTBot/ClaudeBot, overene HTTP 200).
+- Pozn.: bullet vyssie o hreflang len na homepage je zastaraly - od tejto
+  revizie maju pary vsetky ekvivalentne strany (SK/CS 1:1, EN core pages).
