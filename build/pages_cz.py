@@ -37,7 +37,7 @@ CZ_PROCESS_STEPS = [
     {"title": "Bezplatný audit", "text": "Začínáme 30minutovým hovorem a bezplatným auditem webu. Uvidíte přesně, co brzdí pozice, prodej a doporučení v AI."},
     {"title": "Plán podle priorit", "text": "Z auditu vyrobíme jasný plán: co opravit jako první, která klíčová slova přinášejí zákazníky a kolik hodin měsíčně to zabere."},
     {"title": "Práce v týdenních dávkách", "text": "Dělám: technika, obsah, firemní profil, AI viditelnost, odkazy. Vždy víte, co se stalo v uplynulém týdnu."},
-    {"title": "Měření a report", "text": "Měsíční report dostáváte osobně: 30minutový telefonát se mnou. Pozice, kliky z Google, objednávky, zmínky v AI. Platíte jen za odpracované hodiny."},
+    {"title": "Měření a report", "text": "Měsíční report dostáváte osobně: 30minutový telefonát se mnou. Pozice, kliky z Googlu, objednávky, zmínky v AI. Platíte jen za odpracované hodiny."},
 ]
 
 
@@ -48,7 +48,7 @@ def cz_process_section(label: str = "Jak pracuji") -> str:
     <div class="section-head">
       <span class="section-label">{label}</span>
       <h2>Čtyři kroky. Žádné pevné smlouvy.</h2>
-      <p class="section-subheading">Vždy víte, co dělám, proč a co to přineslo. Každá hodina je vykazovaná.</p>
+      <p class="section-subheading">Vždy víte, co dělám, proč a co to přineslo. Každá hodina je vykazována.</p>
     </div>
     {steps_block(CZ_PROCESS_STEPS)}
   </div>
@@ -60,7 +60,7 @@ def cz_process_section(label: str = "Jak pracuji") -> str:
 
 CZ_HOME_FAQ = [
     ("Kolik stojí SEO optimalizace webu?",
-     "Za práci platíte 12 EUR za hodinu. Menší web zvládnu v 10 hodinách měsíčně (120 EUR), větší e-shop v 40 hodinách (480 EUR). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
+     "Za práci platíte 12 EUR za hodinu. Menší web zvládnu za 10 hodin měsíčně (120 EUR), větší e-shop za 40 hodin (480 EUR). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
     ("Jak dlouho trvá, než SEO přinese výsledky?",
      "První pohyby na méně konkurenčních klíčových slovech obvykle do 2 až 4 měsíců. Na hlavní dotazy v konkurenčních oborech 6 až 12 měsíců. Realistické termíny řeknu už v auditu."),
     ("Uvidím, za co platím?",
@@ -68,7 +68,7 @@ CZ_HOME_FAQ = [
     ("Pomůžete mi, aby mě doporučoval ChatGPT?",
      "Ano, to je moje specializace. Optimalizuji web pro AI nástroje (ChatGPT, Gemini, AI Overviews) tak, aby vás doporučovaly při dotazech vašich zákazníků."),
     ("Jsou smlouvy vážoucí na 12 měsíců?",
-     "Ne. Pracuji měsíčně, spolupráci můžete kdykoliv ukončit. Důvěru stavím na výsledcích, ne na vázanosti."),
+     "Ne. Pracuji měsíčně, spolupráci můžete kdykoli ukončit. Důvěru stavím na výsledcích, ne na vázanosti."),
 ]
 
 # Tri pilíře viditelnosti + podpůrné služby + partnerské doplňky.
@@ -78,7 +78,7 @@ CZ_PILLARS = [
     ("/cz/sluzby/seo-optimalizace/", "Google viditelnost",
      "Pozice v Google, které přinášejí zákazníky, nejen návštěvnost.", "search", "#1A73E8"),
     ("/cz/sluzby/lodalne-seo/", "Google Mapy viditelnost",
-     "Firemní profil, Mapy a hodnocení. Zákazníci z okolí vás najdou první.", "pin", "#EA4335"),
+     "Firemní profil, Mapy a hodnocení. Zákazníci z okolí vás najdou jako první.", "pin", "#EA4335"),
 ]
 CZ_SUPPORT = [
     ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy",
@@ -92,7 +92,7 @@ CZ_PARTNERS = [
     ("https://flamia.studio", "flamia.png", "Web dizajn: Flamia Studio",
      "Web na míru, který se najde a prodává. Dizajn a vývoj řeší náš partner Flamia Studio."),
     ("https://peterkocur.sk", "peterkocur.png", "PPC reklama: Peter Kocur",
-     "Google Ads pro výsledky hned, než SEO nabere tempo. Vede ho můj partner Petr Kocur."),
+     "Google Ads pro okamžité výsledky, než SEO nabere tempo. Vede ho můj partner Petr Kocur."),
 ]
 
 
@@ -161,29 +161,29 @@ def cz_home() -> tuple[str, str]:
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <span class="section-label">Pro koho to dělám</span>
-      <h2>Čtyři věci, které podnikatelé od nás chtějí</h2>
+      <span class="section-label">Pro koho to dělám?</span>
+      <h2>Čtyři věci, které od nás podnikatelé chtějí</h2>
     </div>
     <div class="grid-4">
       <div class="benefit-card card-hover reveal" data-delay="100">
         <span class="benefit-icon icon-green">{gicon("ai", "#34A853", 26)}</span>
-        <h3>Ať mě AI doporučí</h3>
-        <p>Když si zákazník u ChatGPT nebo Gemini vyžádá doporučení, chcete být v odpovědi. Stavím web tak, aby mu AI nástroje rozuměly a citovaly ho.</p>
+        <h3>Ať vás AI doporučí</h3>
+        <p>Když si zákazník u ChatGPT nebo Gemini vyžádá doporučení, chcete být v odpovědi. Stavím web tak, aby mu nástroje AI rozuměly a citovaly ho.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="200">
         <span class="benefit-icon icon-red">{gicon("pin", "#EA4335", 26)}</span>
-        <h3>Zákazníci z Google a Map</h3>
-        <p>Lokální vyhledávání a firemní profil Google jsou nejrychlejší cesta k zákazníkům z okolí. Nastavím je a vyhodnocuji každý týden.</p>
+        <h3>Zákazníci z Google a Mapy</h3>
+        <p>Lokální vyhledávání a firemní profil Google jsou nejrychlejší cesta k zákazníkům z okolí. Nastavím je a každý týden vyhodnocuji.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="300">
         <span class="benefit-icon icon-yellow">{gicon("shop", "#FBBC04", 26)}</span>
         <h3>Více prodeje na e-shopu</h3>
-        <p>Kategorie a produkty optimalizuji na klíčová slova, která kupují. Google Shopping a Heureka sleduji jako součást systému.</p>
+        <p>Kategorie a produkty optimalizuji na klíčová slova, která kupují. Google Shopping a Heureku sleduji jako součást systému.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="400">
         <span class="benefit-icon icon-blue">{gicon("grow", "#1A73E8", 26)}</span>
         <h3>Více poptávek pro služby</h3>
-        <p>Služby prodáváme přes obsahové stránky, které odpovídají na otázky zákazníků. Z většího zájmu vyrábíte více poptávek a zakázek.</p>
+        <p>Služby prodáváme přes obsahové stránky, které odpovídají na otázky zákazníků. Z většího zájmu získáte více poptávek a zakázek.</p>
       </div>
     </div>
   </div>
@@ -211,8 +211,8 @@ def cz_home() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Ceník</span>
-      <h2>12 EUR za hodinu. Platíte jen za práci.</h2>
-      <p class="section-subheading">Žádné měsíční paušály, u kterých nevíte, co obsahují. Každá hodina je vykazovaná v reportu.</p>
+      <h2>12 EUR za hodinu. Platíte jen za odvedenou práci.</h2>
+      <p class="section-subheading">Žádné měsíční paušály, u kterých nevíte, co obsahují. Každá hodina je vykazována v reportu.</p>
     </div>
     <div class="rate-band">
       <div>
@@ -234,7 +234,7 @@ def cz_home() -> tuple[str, str]:
       </div>
       <div class="reveal" data-delay="150">
         <span class="section-label">Kdo za Nokto stojí</span>
-        <h2 style="margin:10px 0 14px;">S vámi komunikuju já, ne account manager.</h2>
+        <h2 style="margin:10px 0 14px;">S vámi komunikuji já, ne account manager.</h2>
         <p style="color:var(--text-muted);">Jsem Šimon, SEO specialista. Za roky praxe v online marketingu mě nejvíc baví SEO a viditelnost v Google i AI nástrojích, protože vidím, jak reálně mění prodej malých firem. Pracuji s malým týmem a s partnery na webdesignu a PPC reklamě, takže vám vždy odpoví ten, kdo práci dělá.</p>
         <p style="color:var(--text-muted);">První hodina s vámi je bezplatný hovor a audit. Pokud vám čísla nedají smysl, nic neplatíte.</p>
         <a href="/cz/kontakt/" class="btn btn-primary" style="margin-top:18px;">Dohodnout si hovor se mnou</a>
@@ -256,7 +256,7 @@ def cz_home() -> tuple[str, str]:
 
 <section class="section">
   <div class="container">
-    {cta_band("Začněte bezplatným auditem", "30 minut telefonátu a bezplatný audit vašeho webu. Dozvíte se, co brzdí vaše pozice a prodej, i když se nakonec rozhodnete jinak.", "cz")}
+    {cta_band("Začněte bezplatným auditem", "30 minut telefonátu a bezplatný audit vašeho webu. Dozvíte se, co brzdí vaše pozice a prodej, i když se nakonec rozhodnete pro jinou cestu.", "cz")}
   </div>
 </section>
 """
@@ -300,7 +300,7 @@ def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
   <div class="container">
     <div class="grid-2" style="align-items:start;">
       <div class="prose">
-        <h2>Pro koho je tato služba</h2>
+        <h2>Pro koho je tato služba?</h2>
         <ul>{who}</ul>
       </div>
       <div class="card">
@@ -313,7 +313,7 @@ def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
 
 {proof_html}
 
-{cz_process_section("Jak bude spolupráce probíhat")}
+{cz_process_section("Jak bude probíhat spolupráce?")}
 
 <section class="section section-alt">
   <div class="container">
@@ -339,7 +339,7 @@ def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
 
 <section class="section" style="padding-top:0;">
   <div class="container">
-    {cta_band("Chcete vědět, co by tato služba přinesla vašemu webu?", "Bezplatný audit a 30 minut času. Žádné závazky.", "cz")}
+    {cta_band("Chcete vědět, co by tato služba přinesla vašemu webu.", "Bezplatný audit a 30 minut času. Žádné závazky.", "cz")}
   </div>
 </section>
 """
@@ -379,7 +379,7 @@ def cz_seo_optimalizace() -> tuple[str, str]:
         desc="SEO optimalizace webu: technika, obsah, klíčová slova. Pozice v Google, které přivedou zákazníky. 12 EUR za hodinu, bezplatný SEO audit.",
         label="Služba · SEO optimalizace",
         h1="SEO optimalizace, která přivede zákazníky",
-        intro="Zákazník, který vás hledá v Google, je nejlevnější zákazník. Postavím web tak, aby mu Google rozuměl, zařadil ho nahoru a návštěvníci odcházeli s odpovědí, ne s otazníkem.",
+        intro="Zákazník, který vás hledá v Googlu, je nejlevnější zákazník. Postavím web tak, aby mu Google rozuměl, zařadil ho nahoru a návštěvníci odcházeli s odpovědí, ne s otazníkem.",
         for_who=[
             "Máte web, který nepřináší kontakty ani objednávky z vyhledávání.",
             "Konkurence vás předbíhá na dotazech, které vás zajímají.",
@@ -387,20 +387,20 @@ def cz_seo_optimalizace() -> tuple[str, str]:
             "Platíte reklamu a rádi byste část dotazů zachytili zdarma.",
         ],
         deliverables=[
-            "Analýza klíčových slov: po čem zákazníci opravdu hledají a co stojí za práci.",
+            "Analýza klíčových slov: po čem zákazníci opravdu hledají a co stojí za námahu.",
             "Technická oprava webu: rychlost, indexace, kanonizace, chyby 404, sitemap.",
             "Přepis titulků a popisků na dotazy se skutečnou poptávkou.",
-            "Nové obsahové stránky na dotazy, kde konkurence není silná.",
+            "Nové obsahové stránky pro dotazy, kde konkurence není silná.",
             "Interní prolinkování, které posune silné stránky výše.",
             "Měsíční report osobně: 30minutový hovor se mnou, pozice, kliky ze Search Console, objednávky.",
         ],
         faq=[
             ("Kolik hodin měsíčně zabere SEO optimalizace?",
-             "Firemní web zvládnu v 10 hodinách měsíčně (120 EUR), e-shop ve 20 až 40 hodinách (240 až 480 EUR). Rozsah potvrdím v plánu po auditu."),
+             "Firemní web zvládnu za 10 hodin měsíčně (120 EUR), e-shop za 20 až 40 hodin (240 až 480 EUR). Rozsah potvrdím v plánu po auditu."),
             ("Za jak dlouho se projeví výsledky?",
              "První pohyby na méně konkurenčních dotazech za 2 až 4 měsíce, na hlavní dotazy 6 až 12 měsíců. Záleží na konkurenci a stavu webu."),
             ("Děláte i obsah? Nemám čas psát.",
-             "Ano, psaní obsahu je součást hodin. Sám navrhnu strukturu, napíšu texty a před publikací je schválíte."),
+             "Ano, psaní obsahu je součástí hodin. Sám navrhnu strukturu, napíšu texty a před publikací je schválíte."),
             ("Co když jsem SEO už dělal a nic to nepřineslo?",
              "Bezplatný audit přesně řekne, co předchozí práce nechala nedokončené. Často chybí dva až tři kroky, ne celé SEO."),
         ],
@@ -423,7 +423,7 @@ def cz_lodalne_seo() -> tuple[str, str]:
         desc="Lokální SEO: firemní profil Google, Google Mapy, hodnocení a lokální klíčová slova. Zákazníci z okolí vás najdou první. 12 EUR za hodinu.",
         label="Služba · Lokální SEO",
         h1="Lokální SEO: zákazníci z okolí vás najdou první",
-        intro="Když si někdo vyhledá zubaře, autoservis, kuchyně nebo střechaře ve svém městě, rozhodnou tři věci: Google Mapy, hodnocení a web. Nastavím všechny tři a držím je v pořádku.",
+        intro="Když si někdo vyhledá zubaře, autoservis, kuchyně nebo střechaře ve svém městě, rozhodnou tři věci: Google Mapy, hodnocení a web. Nastavím všechny tři a udržuji je v pořádku.",
         for_who=[
             "Provozujete firmu s působištěm: služby, restaurace, ordinace, dílna.",
             "Na Google Mapách chybíte, máte neúplná data nebo žádná hodnocení.",
@@ -444,17 +444,17 @@ def cz_lodalne_seo() -> tuple[str, str]:
             ("Mám jen jednu pobočku. Vyplatí se mi to?",
              "Právě pro jedno působiště je lokální SEO nejúčinnější. Soustředíte veškerou sílu do svého města a kraje, kde je konkurence nejmenší."),
             ("Jak získám více hodnocení na Google?",
-             "Mám jednoduchý postup přes SMS a QR kód, který zákazníky vyzve hned po provedení služby. Zvyšuje míru recenzí násobně."),
+             "Mám jednoduchý postup přes SMS a QR kód, který zákazníky vyzve hned po provedení služby. Míru recenzí zvyšuje násobně."),
             ("Jak řešíte špatná hodnocení?",
-             "Odpovídám profesionálně a na místě. Špatná hodnocení nelze odstranit, ale dobrý poměr a kultivované odpovědi působí na zákazníky víc než počty hvězdiček."),
+             "Odpovídám profesionálně a na místě. Špatná hodnocení nelze odstranit, ale dobrý poměr a kultivované odpovědi působí na zákazníky víc než počet hvězdiček."),
         ],
         svc_name="Lokální SEO a firemní profil Google",
         proof={
-            "title": "359 lidí vidělo firemní profil klienta za jedno období",
+            "title": "359 lidí vidělo firemní profil klienta za jedno sledované období",
             "numbers": [("359", "zobrazení firemního profilu", "#1A73E8"),
                         ("54 %", "zobrazení přes Google Mapy", "#EA4335"),
                         ("46 %", "zobrazení přes Google Search", "#34A853")],
-            "caption": "Lokální zákazník hledá dvěma cestami: přes Mapy (54 % zobrazení) a přes běžné Google hledání (46 %). Proto řešíme oboje: profil nastavený na doraz, hodnocení přicházejí pravidelně a web podporuje mapové pozice.",
+            "caption": "Lokální zákazník hledá dvěma cestami: přes Mapy (54 % zobrazení) a přes běžné Google hledání (46 %). Proto řešíme obojí: profil nastavený na doraz, hodnocení přicházejí pravidelně a web podporuje mapové pozice.",
             "source": "Zdroj: statistiky firemního profilu Google klienta, ukázka ze září 2026.",
         },
     )
@@ -469,36 +469,36 @@ def cz_seo_ai() -> tuple[str, str]:
         h1="Ať vás ChatGPT doporučuje zákazníkům",
         intro="Zákazník dnes neptá jen Google. Ptá ChatGPT: \u201eDoporuč mi dobrou ordinaci v Brně.\u201c AI nástroj odpoví dvěma až pěti jmény. Mým úkolem je, aby tam bylo vaše jméno.",
         for_who=[
-            "Chcete, aby vás AI nástroje doporučovaly jako první volbu ve vašem oboru.",
+            "Chcete, aby vás AI nástroje doporučovaly jako první volbu ve vašem oboru?",
             "Vidíte, že zákazníci přicházejí s větou \u201enašlo mi ChatGPT, že...\u201c",
             "Konkurence se na AI doporučování zatím nepřipravuje (to je výhoda).",
-            "Máte odbornost a chcete ji viditelnou i pro AI, ne jen pro Google.",
+            "Máte odbornost a chcete ji mít viditelnou i pro AI, nejen pro Google.",
         ],
         deliverables=[
-            "Audit AI viditelnosti: kdo vás dnes ChatGPT, Gemini a AI Overviews citují a kdo ne.",
-            "Přímé odpovědi na stránkách: úvodní odstavce ve formátu, který AI čerpá.",
+            "Audit AI viditelnosti: kdo vás dnes ChatGPT, Gemini a AI Overviews cituje a kdo ne.",
+            "Přímé odpovědi na stránkách: úvodní odstavce ve formátu, který čerpá AI.",
             "Strukturovaná data (schema.org) pro snadné čtení AI nástroji.",
             "Obsahové stránky odpovídající na reálné otázky zákazníků.",
             "Měsíční sledování: ve kterých AI odpovědích se objevujete a co se změnilo.",
             "Nastavení přístupu pro AI roboty (llms.txt, robots.txt, GPTBot, PerplexityBot).",
         ],
         faq=[
-            ("Je toto SEO nebo marketing?",
+            ("Je toto SEO, nebo marketing?",
              "Je to přímé pokračování SEO. Google i ChatGPT čerpají z webu, rozdíl je v tom, co a jak čtou. Nastavím obojí najednou."),
             ("Jak měříte, jestli mě AI doporučuje?",
              "Pravidelně testuji sadu dotazů, které vaši zákazníci kladou, a zaznamenávám, zda se vaše jméno v odpovědích objevuje. Výsledky máte v reportu."),
-            ("Není to brzy na to investovat?",
-             "Je to právě naopak. Konkurence v AI doporučeních jen začíná, takže být první je výhoda. První zmínky vidíme často do 2 až 3 měsíců."),
+            ("Není brzy na to investovat?",
+             "Je to právě naopak. Konkurence v AI doporučeních teprve začíná, takže být první je výhoda. První zmínky vidíme často do 2 až 3 měsíců."),
             ("Pro koho to dává smysl?",
              "Pro služby, kde zákazník hledá doporučení: zdravotnictví, právo, servis, stavebnictví, školení. Pro e-shopy pomáhá u dotazů typu \u201ekdo prodává...\" a v recenzích."),
         ],
         svc_name="Optimalizace pro AI vyhledávače",
         proof={
-            "title": "13 AI citací e-shopu v Google AI Mode za 3 měsíce",
-            "numbers": [("13", "AI citací webu v Google AI Mode", "#34A853"),
+            "title": "13 AI citací e-shopu v Google AI režimu za 3 měsíce",
+            "numbers": [("13", "AI citací webu v Google AI režimu", "#34A853"),
                         ("8", "citací jedné stránky /overaly/", "#1A73E8"),
                         ("3", "citací blogového článku", "#F9AB00")],
-            "caption": "Po nasazení našeho obsahu cituje Google AI Mode konkrétní stránky e-shopu přímo v odpovědích zákazníkům. Nejvíc citovaná stránka má 8 citací, blogový článek 3. Konkurence v AI odpovědích na tyto dotazy ještě není, takže první jména tam zůstávají.",
+            "caption": "Po nasazení našeho obsahu cituje Google AI Mode konkrétní stránky e-shopu přímo v odpovědích zákazníkům. Nejvíce citovaná stránka má 8 citací, blogový článek 3. Konkurence v AI odpovědích na tyto dotazy ještě není, takže první jména tam zůstávají.",
             "source": "Zdroj: Google AI Mode (report citací), ukázka ze srpna 2026.",
         },
     )
@@ -516,7 +516,7 @@ def cz_eshop_seo() -> tuple[str, str]:
             "Máte e-shop (Shoptet, WooCommerce, vlastní řešení) a prodej závisí na reklamě.",
             "Kategorie nemají vlastní texty a neprodávají samy od sebe.",
             "Jste vidět jen na názvech produktů, ne na tom, co zákazník skutečně hledá.",
-            "Chcete snížit náklady na reklamu tím, že část dotazů zachytíte zdarma.",
+            "Chcete snížit náklady na reklamu tím, že část dotazů zachytíte zdarma?",
         ],
         deliverables=[
             "Analýza klíčových slov pro kategorie a klíčové produkty.",
@@ -534,16 +534,16 @@ def cz_eshop_seo() -> tuple[str, str]:
             ("Musím dělat i linkbuilding?",
              "Pro konkurenční kategorie ano, odezva bez autority je pomalá. Doporučíme rozsah, který dává smysl pro váš rozpočet."),
             ("Jak měříte úspěch?",
-             "V Google Analytics a Search Console sleduji objednávky a tržby z organického vyhledávání. Report máte měsíčně."),
+             "V Google Analytics a Search Console sleduji objednávky a tržby z organického vyhledávání. Report dostáváte měsíčně."),
         ],
         svc_name="SEO pro e-shopy",
         proof={
             "title": "E-shop Mikramt.sk: 2 492,75 EUR tržeb za 9 měsíců",
             "numbers": [("2 492,75 EUR", "tržby za 9 měsíců", "#1A73E8"),
-                        ("15", "objednávek z emailu a organiku", "#34A853"),
+                        ("15", "Objednávek z e-mailu a organiky.", "#34A853"),
                         ("722 EUR", "největší objednávka", "#F9AB00")],
-            "caption": "Regionální dodavatel truhlářského zboží s e-shopem na vlastní platformě, API integrací na účetní systém a email marketingem. Objednávky chodí z kanálů email a organický Google. Součástí je i lokální SEO a optimalizace pro AI vyhledávače.",
-            "source": "Zdroj: objednávky připsané do kanálů email a organický Google, 9 měsíců spolupráce.",
+            "caption": "Regionální dodavatel truhlářského zboží s e-shopem na vlastní platformě, API integrací na účetní systém a e-mail marketingem. Objednávky chodí z kanálů e-mail a organický Google. Součástí je i lokální SEO a optimalizace pro AI vyhledávače.",
+            "source": "Zdroj: objednávky připsané do kanálů e-mail a organický Google, 9 měsíců spolupráce.",
         },
     )
 
@@ -555,7 +555,7 @@ def cz_audit() -> tuple[str, str]:
         desc="SEO audit webu s akčním plánem: technika, obsah, klíčová slova, konkurence. Bezplatný vstupní audit, detailní od 12 EUR za hodinu.",
         label="Služba · SEO audit",
         h1="SEO audit: přesný obraz toho, co váš web brzdí",
-        intro="Audit není PDF do police. Je to seznam úloh s prioritami a odhadem hodin. Začíná bezplatným vstupním auditem, který máte do tří dnů.",
+        intro="Audit není PDF do šuplíku. Je to seznam úloh s prioritami a odhadem hodin. Začíná bezplatným vstupním auditem, který máte do tří dnů.",
         for_who=[
             "Nevíte, proč web nepřináší zákazníky.",
             "SEO jste dělali, ale výsledky chybí.",
@@ -576,13 +576,13 @@ def cz_audit() -> tuple[str, str]:
             ("Dostanu soubor, který můžu předat vývojáři?",
              "Ano. Plán je ve srozumitelném formátu s úlohami krok za krokem, přímo pro CMS nebo vývojáře."),
             ("Musím potom brát i další služby?",
-             "Ne. Plán si můžete provést sami nebo s jiným partnerem. Pokud se rozhodnete spolupracovat s námi, plán slouží jako základ."),
-            ("Jak rychle audit dostanu?",
+             "Ne. Plán si můžete provést sami nebo s jiným partnerem. Pokud se rozhodnete s námi spolupracovat, plán slouží jako základ."),
+            ("Jak rychle dostanu audit?",
              "Vstupní audit do 3 pracovních dnů od prvního hovoru. Detailní audit za 7 až 10 dnů."),
         ],
         svc_name="SEO audit a analýza klíčových slov",
         proof={
-            "title": "Jen 6 nových stránek zdvihlo celý web o 11 000 zobrazení",
+            "title": "Jen 6 nových stránek zvedlo celý web o 11 000 zobrazení.",
             "numbers": [("11 000", "zobrazení měsíčně (+14 %)", "#F9AB00"),
                         ("+43 %", "kliků v posledním týdnu", "#1A73E8"),
                         ("6", "stránek, které to udělaly", "#34A853")],
@@ -601,26 +601,26 @@ def cz_linkbuilding() -> tuple[str, str]:
         h1="Linkbuilding: autorita, která drží pozice",
         intro="Technika a obsah vás dovedou do středu výsledků, autorita vás posune nahoru. Stavím odkazy, které Google akceptuje a zákazníci citují.",
         for_who=[
-            "Máte technicky v pořádku web i obsah, ale pozice stojí.",
+            "Máte technicky v pořádku web i obsah, ale pozice stagnují.",
             "Konkurence má silnější link profil a předbíhá vás.",
             "Chcete odkazy z reálných českých a slovenských domén, ne ze spamu.",
-            "Chcete transparentní vykazování, kde odkazy vznikly a co stály.",
+            "Chcete transparentní vykazování, kde odkazy vznikly a co stály?",
         ],
         deliverables=[
             "Rozbor link profilu: co vás brzdí, které odkazy chybí.",
             "Tematické a lokální odkazy: adresáře, obory, média, partneři.",
-            "Připravené obsahy a PR články, které odkazy nesou.",
+            "Připravené obsahy a PR články, které nesou odkazy.",
             "Sledování nových i ztracených odkazů.",
             "Jasná cena za odkaz, bez skrytých přirážek.",
             "Měsíční přehled: nové domény, posun pozic.",
         ],
         faq=[
             ("Kolik stojí odkazy?",
-             "Cena odkazu závisí na doméně. Většina českých odkazů stojí 1 200 až 7 500 Kč, mediální PR články víc. Vykazujeme skutečné ceny, bez přirážky."),
+             "Cena odkazu závisí na doméně. Většina českých odkazů stojí 1 200 až 7 500 Kč, mediální PR články víc. Vykazujeme skutečné ceny bez přirážky."),
             ("Jak dlouho trvá, než odkazy pomohou?",
-             "Nové odkazy se uplatní za 4 až 12 týdnů. Proto kombinujeme linkbuilding s obsahovou prací, která něco přináší už teď."),
+             "Nové odkazy se projeví za 4 až 12 týdnů. Proto kombinujeme linkbuilding s obsahovou prací, která něco přináší už teď."),
             ("Kupujete odkazy?",
-             "Pracujeme jen s reálnými, viditelnými místy. Nikdy nepoužíváme sítě automatizovaného spamu, které Google dřív nebo později sankcionuje."),
+             "Pracujeme jen s reálnými, viditelnými místy. Nikdy nepoužíváme sítě automatizovaného spamu, které Google dříve nebo později sankcionuje."),
             ("Kolik odkazů potřebuji měsíčně?",
              "Menší firemní web 2 až 5, e-shop v konkurenčním oboru 5 až 10. Vyšší čísla ne vždy znamenají lepší výsledek."),
         ],
@@ -640,13 +640,13 @@ def cz_linkbuilding() -> tuple[str, str]:
 
 CZ_PACKAGES = [
     {"name": "Start", "hours": 10, "price": 120,
-     "items": ["Audit webu a analýza klíčových slov", "Technická oprava webu", "2 obsahové stránky nebo přepisy", "Firemní Google profil v pořádku", "Měsíční report: 30minutový hovor se mnou"],
+     "items": ["Audit webu a analýza klíčových slov", "Technická oprava webu", "2 obsahové stránky nebo přepisy", "Firemní profil Google v pořádku", "Měsíční report: 30minutový hovor se mnou"],
      "cta": "/cz/kontakt/"},
     {"name": "Růst", "hours": 20, "price": 240, "featured": True,
      "items": ["Vše ze startu", "4 až 6 obsahových stránek měsíčně", "Optimalizace pro AI vyhledávače", "Interní prolinkování a CRO tipy", "Linkbuilding (2 až 3 odkazy)", "Měsíční report a hovor 30 min"],
      "cta": "/cz/kontakt/"},
     {"name": "E-shop", "hours": 40, "price": 480,
-     "items": ["Vše z růstu", "Texty kategorií a produktů", "Google Merchant Center a Shopping", "Poradenství Heureka / Marketplace", "Automatizace email marketingu", "Report s tržbami z organiku"],
+     "items": ["Vše z růstu", "Texty kategorií a produktů", "Google Merchant Center a Shopping", "Poradenství Heureka / Marketplace", "Automatizace email marketingu", "Report s tržbami z organiky"],
      "cta": "/cz/kontakt/"},
 ]
 
@@ -654,13 +654,13 @@ CZ_CENIK_FAQ = [
     ("Kolik stojí SEO optimalizace webu?",
      "Platíte 12 EUR za každou odpracovanou hodinu. Firemní web obvykle potřebuje 10 hodin měsíčně (120 EUR), e-shop 20 až 40 hodin (240 až 480 EUR). Rozsah si nastavíte sami a můžete ho kdykoliv měnit."),
     ("Proč je to levnější než konkurence?",
-     "Nemáme kanceláře ani manažerské vrstvy. Práce automatizujeme tam, kde automatizace nic nezkazí, a odbornou energii dáváme tam, kde se počítá. Úspory přenášíme na vás."),
+     "Nemáme kanceláře ani manažerské vrstvy. Práci automatizujeme tam, kde automatizace nic nezkazí, a odbornou energii dáváme tam, kde se počítá. Úspory přenášíme na vás."),
     ("Co je v ceně zahrnuto?",
      "Vše kromě reklamních výdajů a nákladů na odkazy či nástroje třetích stran. Ty vám vykazuji ve skutečné ceně, bez přirážky."),
     ("Musím platit měsíčně předem?",
      "Fakturuji měsíčně zpětně za skutečně odpracované hodiny, s fakturou. Paušál není potřeba."),
     ("Můžu spolupráci kdykoliv ukončit?",
-     "Ano, kdykoliv, bez sankcí a bez vázanosti. Důvěru si zasloužíme výsledky."),
+     "Ano, kdykoliv, bez sankcí a bez závazků. Důvěru si zasloužíme výsledky."),
     ("Jak vím, že práce byla odvedena?",
      "Každý měsíc dostanete seznam úloh s hodinami a jejich výsledkem. Vy jste ten, kdo kontroluje."),
 ]
@@ -669,7 +669,7 @@ CZ_CENIK_FAQ = [
 def cz_cenik() -> tuple[str, str]:
     body = f"""
 {page_hero("Ceník", "Ceník: 12 EUR za hodinu, bez paušálů",
-           "Platíte za odpracované hodiny. Každá hodina je vykazovaná v reportu. Spolupráci můžete kdykoliv ukončit.",
+           "Platíte za odpracované hodiny. Každá hodina je vykazována v reportu. Spolupráci můžete kdykoliv ukončit.",
            [("Domů", "/cz/"), ("Ceník", None)])}
 
 <section class="section">
@@ -701,24 +701,24 @@ def cz_cenik() -> tuple[str, str]:
       <div class="prose">
         <h2>Co je v ceně</h2>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span>Všechna práce: technika, obsah, firemní profil, AI viditelnost, odkazy, weby, PPC.</span></li>
+          <li><span class="check">✓</span><span>Veškerá práce: technika, obsah, firemní profil, AI viditelnost, odkazy, weby, PPC.</span></li>
           <li><span class="check">✓</span><span>Měření a reportování: Search Console, Analytics, pozice, konverze, zmínky v AI.</span></li>
           <li><span class="check">✓</span><span>Komunikace: měsíční 30minutový telefonát se mnou, neomezené otázky mezitím.</span></li>
         </ul>
         <h2>Co není v ceně</h2>
         <ul class="deliv-list">
           <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Reklamní výdaje (Google Ads, Meta Ads). Platíte přímo Googlu, ne nám.</span></li>
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Náklady na odkazy a PR články. Vykazujeme skutečnou cenu od média.</span></li>
+          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Náklady na odkazy a PR články. Vykazujeme skutečnou cenu média.</span></li>
           <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Pronájem placených nástrojů třetích stran, pokud je potřeba (např. platební brána, hosting).</span></li>
         </ul>
       </div>
       <div class="card">
         <span class="section-label">Příklad z praxe</span>
-        <p style="margin-bottom:14px;">Firemní web advokátní kanceláře ve městě s 50 000 obyvateli:</p>
+        <p style="margin-bottom:14px;">Firemní web advokátní kanceláře ve městě s 50 000 obyvateli.</p>
         <ul class="deliv-list">
           <li><span class="check">✓</span><span><strong>Měsíc 1:</strong> audit + technická oprava + firemní profil (12 h = 144 EUR)</span></li>
           <li><span class="check">✓</span><span><strong>Měsíce 2 až 4:</strong> obsahové stránky na dotazy zákazníků (10 h = 120 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Měsíce 5+</strong>: udržování, linkbuilding, AI viditelnost (8 h = 96 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Měsíce 5+</strong>Údržba, linkbuilding, AI viditelnost (8 h = 96 EUR)</span></li>
         </ul>
         <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">Reálná čísla pro váš web potvrdím v bezplatném auditu.</p>
       </div>
@@ -788,10 +788,10 @@ def cz_jak_pracujeme() -> tuple[str, str]:
 </section>
 <section class="section">
   <div class="container">
-    <div class="section-head"><span class="section-label">Měření</span><h2>Jak měřím výsledky</h2></div>
+    <div class="section-head"><span class="section-label">Měření</span><h2>Jak měřím výsledky?</h2></div>
     <table class="metric-table">
       <tr><th>Co sleduji</th><th>Nástroj</th><th>Co to říká</th></tr>
-      <tr><td><strong>Pozice</strong></td><td>Sledování klíčových slov</td><td>Na kterých dotazech web roste a kde stojí.</td></tr>
+      <tr><td><strong>Pozice</strong></td><td>Sledování klíčových slov</td><td>Na kterých dotazech web roste a kde stagnuje.</td></tr>
       <tr><td><strong>Kliky z Google</strong></td><td>Search Console</td><td>Kolik lidí nás vidí a kolik z nich klikne.</td></tr>
       <tr><td><strong>Kontakty a objednávky</strong></td><td>Google Analytics 4</td><td>Kolik návštěvníků se stalo zákazníky.</td></tr>
       <tr><td><strong>Viditelnost v mapě</strong></td><td>Firemní profil Google</td><td>Kolik lidí vidělo firmu, zatelefonovalo, šlo na trasu.</td></tr>
@@ -826,7 +826,7 @@ def cz_vysledky() -> tuple[str, str]:
                   {"big": "73 000", "color": _RED, "label": "zobrazení (+5 %)"},
                   {"big": "96", "color": _GREEN, "label": "citací v AI odpovědích"}],
             chart=c_servisprofi,
-            caption="Dva expertní články (nabíjení elektromobilu, přepěťová ochrana) Google cituje v AI odpovědích a doporučuje ServisProfi.sk zákazníkům. Web 69 stránek: 9 700 → 12 000 zobrazení za 28 dní (+24 %). Graf: růst hlavních stránek v procentech.",
+            caption="Dva expertní články (nabíjení elektromobilu, přepěťová ochrana) Google cituje v AI odpovědích a doporučuje ServisProfi.sk zákazníkům. Web (69 stránek): 9 700 → 12 000 zobrazení za 28 dní (+24 %). Graf: růst hlavních stránek v procentech.",
             source="Google Search Console, report výkonnosti 9. 9. 2026",
             partner="", market="cz"),
         result_block(
@@ -835,7 +835,7 @@ def cz_vysledky() -> tuple[str, str]:
                   {"big": "15", "color": _BLUE, "label": "objednávek online"},
                   {"big": "722 EUR", "color": _YELLOW, "label": "největší objednávka"}],
             chart="",
-            caption="První e-shop Mikramt.sk s API integrací na účetní systém Sunsoft Ecosun. Zákazník byl spokojený, proto teď děláme rework: více produktů, větší kategorizace a lepší SEO. Web a design ve spolupráci s Flamia Studio, SEO a email marketing dělám sám. Prodej v kamenné prodejně do sumy nezapočítávám.",
+            caption="První e-shop Mikramt.sk s API integrací na účetní systém Sunsoft Ecosun. Zákazník byl spokojený, proto teď děláme rework: více produktů, větší kategorizace a lepší SEO. Web a design ve spolupráci s Flamia Studio, SEO a e-mail marketing dělám sám. Prodej v kamenné prodejně do sumy nezapočítávám.",
             source="objednávky připsané do kanálů email a organický Google",
             partner="flamia", market="cz"),
         result_block(
@@ -844,7 +844,7 @@ def cz_vysledky() -> tuple[str, str]:
                   {"big": "44 838", "color": _RED, "label": "zobrazení / čelenky"},
                   {"big": "13", "color": _GREEN, "label": "citací v Google AI Mode"}],
             chart=c_speem,
-            caption="Kategorie e-shopu s desítkami tisíc zobrazení měsíčně. Google AI Mode cituje e-shop ve 13 odpovědích zákazníkům, z toho 8 krát stránku /overaly/. Konkurence tu ještě není.",
+            caption="Kategorie e-shopu s desítkami tisíc zobrazení měsíčně. Google AI Mode cituje e-shop ve 13 odpovědích zákazníkům, z toho 8krát stránku /overaly/. Konkurence tu ještě není.",
             source="Google Search Console + Google AI Mode",
             partner="own", market="cz"),
         result_block(
@@ -853,7 +853,7 @@ def cz_vysledky() -> tuple[str, str]:
                   {"big": "4 390", "color": _RED, "label": "zobrazení (+43 %)"},
                   {"big": "+142 %", "color": _GREEN, "label": "růst hlavní stránky"}],
             chart=c_itc,
-            caption="SEO od nuly: technické SEO a obsah v prvním měsíci spolupráce, Google začal přinášet zákazníky hned.",
+            caption="SEO od nuly: technické SEO a obsah v prvním měsíci spolupráce. Google začal přinášet zákazníky hned.",
             source="Google Search Console",
             partner="own", market="cz"),
         result_block(
@@ -867,7 +867,7 @@ def cz_vysledky() -> tuple[str, str]:
             title="Energymonitor.tech", period="rework v průběhu",
             nums=[],
             chart="",
-            caption="E-shop s produkty pro monitorování energie. Teď rework webu: nová struktura, produktová data, kategorizace a technika. Web ve spolupráci s Flamia Studio. Čísla doplním po nasazení, když budou reálně měřitelná.",
+            caption="E-shop s produkty pro monitorování energie. Teď rework webu: nová struktura, produktová data, kategorizace a technika. Web ve spolupráci s Flamia Studio. Čísla doplním po nasazení, až budou reálně měřitelná.",
             source="práce v průběhu, čísla po nasazení",
             partner="flamia", market="cz"),
     ])
@@ -902,7 +902,7 @@ def cz_vysledky() -> tuple[str, str]:
 CZ_FAQ_SECTIONS = [
     ("Všeobecné", [
         ("Co přesně Nokto Studio dělá?",
-         "SEO optimalizaci webu, lokální SEO a firemní profil Google, optimalizaci pro AI vyhledávače (ChatGPT, Gemini, AI Overviews), SEO pro e-shopy, SEO audity, linkbuilding, tvorbu webů a PPC reklamu Google Ads. K tomu email marketing pro e-shopy a firmy."),
+         "SEO optimalizaci webu, lokální SEO a firemní profil Google, optimalizaci pro AI vyhledávače (ChatGPT, Gemini, AI Overviews), SEO pro e-shopy, SEO audity, linkbuilding, tvorbu webů a PPC reklamu Google Ads. K tomu i e-mail marketing pro e-shopy a firmy."),
         ("Pro jaké firmy pracujete?",
          "Především pro menší a střední firmy: lokální služby (řemeslníci, zdravotnictví, právo, autoservis), e-shopy a firmy s odbornými službami. Působím na trzích Česka a Slovenska."),
     ]),
@@ -910,9 +910,9 @@ CZ_FAQ_SECTIONS = [
         ("Kolik stojí SEO?",
          "12 EUR za odpracovanou hodinu. Menší firemní web obvykle 10 hodin měsíčně (120 EUR), e-shop 20 až 40 hodin (240 až 480 EUR). Balíčky jsou doporučené rozsahy, ne povinné paušály."),
         ("Jsou smlouvy vážoucí?",
-         "Ne. Spolupráci můžete kdykoliv ukončit, bez sankcí. Fakturuji měsíčně za skutečně odpracované hodiny."),
+         "Ne. Spolupráci můžete kdykoli ukončit, bez sankcí. Fakturuji měsíčně za skutečně odpracované hodiny."),
         ("Jsou v ceně zahrnuty reklamní výdaje?",
-         "Ne. Reklamu (Google Ads) platíte přímo Googlu. Kampaně řídím za 12 EUR za hodinu. Náklady na odkazy a PR vykazuji ve skutečné ceně."),
+         "Ne. Reklamu (Google Ads) platíte přímo Googlu. Kampaně řídím za 12 EUR na hodinu. Náklady na odkazy a PR vykazuji ve skutečné ceně."),
     ]),
     ("Proces a výsledky", [
         ("Jak dlouho trvá, než SEO přinese výsledky?",
@@ -920,11 +920,11 @@ CZ_FAQ_SECTIONS = [
         ("Jak uvidím, že práce byla odvedena?",
          "Měsíční report: odpracované hodiny a jejich obsah, pozice, kliky ze Search Console, kontakty a objednávky z Analytics, viditelnost v mapě a zmínky v AI odpovědích."),
         ("Nabízíte záruky první pozice?",
-         "Ne. Nikdo reálně nemůže zaručit první místo v Google, kdo to slibuje, prodává fikci. Zaručuji proces, transparentnost a měřitelný postup, který k pozicím vede."),
+         "Ne. Nikdo reálně nemůže zaručit první místo v Googlu, kdo to slibuje, prodává fikci. Zaručuji proces, transparentnost a měřitelný postup, který k pozicím vede."),
     ]),
     ("AI a nové vyhledávání", [
         ("Nahradí ChatGPT Google?",
-         "Doplní ho, nezničí. Zákazníci dnes hledají obojí. Moje práce pokrývá obojí: klasické Google pozice i viditelnost v AI odpovědích."),
+         "Doplní ho, nezničí. Zákazníci dnes hledají obojí. Moje práce pokrývá obojí: klasické pozice v Google i viditelnost v AI odpovědích."),
         ("Jak zjistím, jestli mě AI doporučuje?",
          "Pravidelně testuji sady dotazů, které vaši zákazníci kladou, a zaznamenávám, zda se vaše jméno objevuje v odpovědích ChatGPT, Gemini a Google AI Overviews. Výsledek máte v reportu."),
     ]),
@@ -942,7 +942,7 @@ def cz_faq() -> tuple[str, str]:
         sections_html += f'<h2 style="margin-top:36px;">{sec_title}</h2>{qas_html}'
         all_qa += qas
     body = f"""
-{page_hero("FAQ", "Časté otázky", "Odpovědi na to, na co se mě klienti ptají nejvíc. Pokud chybí vaše otázka, ptejte se přímo.", [("Domů", "/cz/"), ("FAQ", None)])}
+{page_hero("FAQ", "Časté otázky", "Odpovědi na to, na co se mě klienti ptají nejvíc. Pokud vaše otázka chybí, ptejte se přímo.", [("Domů", "/cz/"), ("FAQ", None)])}
 <section class="section">
   <div class="container" style="max-width:800px;">
     {sections_html}
@@ -972,7 +972,7 @@ def cz_kontakt() -> tuple[str, str]:
       <div class="card" style="text-align:center;">
         <span class="section-label">Zavolejte přímo</span>
         <a href="tel:+421917316105" class="btn btn-primary btn-lg contact-phone-btn" style="width:100%; margin-top:14px; font-size:1.25rem;">+421 917 316 105</a>
-        <p style="margin:14px 0 6px; color:var(--text-muted);">Šimon Štermenský, SEO specialista. Většinou zvedám hned, jinak volám do pár hodin zpět.</p>
+        <p style="margin:14px 0 6px; color:var(--text-muted);">Šimon Štermenský, SEO specialista. Většinou zvedám hned, jinak volám zpět do pár hodin.</p>
         <ul class="deliv-list" style="text-align:left; margin-top:20px;">
           <li><span class="check">✓</span><span>30 minut bezplatné konzultace o vašem webu</span></li>
           <li><span class="check">✓</span><span>Bezplatný vstupní audit webu po hovoru</span></li>
@@ -990,7 +990,7 @@ def cz_kontakt() -> tuple[str, str]:
           <div class="form-grid">
             <div class="form-field"><label class="form-label" for="name">Jméno a firma *</label><input class="form-input" id="name" name="name" type="text" required></div>
             <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" required></div>
-            <div class="form-field full"><label class="form-label" for="url">Adresa webu (pokud máte)</label><input class="form-input" id="url" name="url" type="url" placeholder="https://"></div>
+            <div class="form-field full"><label class="form-label" for="url">Adresa webu (pokud ji máte)</label><input class="form-input" id="url" name="url" type="url" placeholder="https://"></div>
             <div class="form-field full"><label class="form-label" for="goal">Jaký je váš cíl? *</label>
               <select class="form-select" id="goal" name="goal" required>
                 <option value="">Vyberte...</option>
@@ -1007,7 +1007,7 @@ def cz_kontakt() -> tuple[str, str]:
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="_subject" value="Nový dotaz z webu noktostudio.com">
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslat zprávu</button>
-          <p class="form-note">Odesláním souhlasíte se zpracováním údajů za účelem odpovědi (viz <a href="/cz/privacy/">zásady ochrany osobních údajů</a>).</p>
+          <p class="form-note">Odesláním souhlasíte se zpracováním údajů za účelem odpovědi (viz). <a href="/cz/privacy/">zásady ochrany osobních údajů</a>).</p>
         </form>
         <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
           ✓ Děkujeme, zpráva odlétla na {EMAIL}. Ozveme se osobně do 24 hodin. Nebo volejte rovnou: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
@@ -1026,7 +1026,7 @@ def cz_kontakt() -> tuple[str, str]:
 def cz_blog() -> tuple[str, str]:
     topics = [
         ("SEO optimalizace: kompletní návod 2026",
-         "Krok za krokem od auditu po měření. Na dotaz „seo optimalizace návod“ hledá přes 1 200 lidí měsíčně.",
+         "Krok za krokem od auditu po měření. Dotaz „seo optimalizace návod“ hledá přes 1 200 lidí měsíčně.",
          "tag-blue", "1 200 hledání/měs"),
         ("Kolik stojí SEO v 2026?",
          "Reálné ceny na českém trhu a co za ně dostanete. Dotaz „cena seo“ má 780 hledání měsíčně.",
@@ -1035,13 +1035,13 @@ def cz_blog() -> tuple[str, str]:
          "Projděte si web sami za 30 minut. Cluster „seo optimalizace test“ má 720 hledání měsíčně.",
          "tag-green", "720 hledání/měs"),
         ("Linkbuilding: co to je, co stojí a jak se dělá bezpečně",
-         "Ceny odkazů (50 až 300 EUR), bezpečné metody a co Google sankcionuje. Cluster 750 hledání měsíčně.",
+         "Ceny odkazů (50 až 300 EUR), bezpečné metody a co Google sankcionuje. Cluster: 750 hledání měsíčně.",
          "tag-red", "750 hledání/měs"),
         ("Firemní profil Google: návod od založení po hodnocení",
          "Kompletní průvodce lokální viditelností. 110 hledání měsíčně, nejvíce v lednu a únoru.",
          "tag-blue", "110 hledání/měs"),
         ("SEO pro WordPress: 12 nastavení, která je třeba udělat",
-         "Rychlost, permalinky, schema a pluginy. 130 hledání měsíčně, růst +94 % meziročně.",
+         "Rychlost, permalinky, schéma a pluginy. 130 hledání měsíčně, růst +94 % meziročně.",
          "tag-yellow", "130 hledání/měs"),
     ]
     cards = "".join(f"""
@@ -1063,7 +1063,7 @@ def cz_blog() -> tuple[str, str]:
   </div>
 </section>
 """
-    html = base(market="cz", path="blog/", title="Blog o SEO, Google Mapách a AI vyhledávačích | Nokto Studio",
+    html = base(market="cz", path="blog/", title="Blog o SEO, Mapách Google a AI vyhledávačích | Nokto Studio",
                 desc="Praktické články: SEO návod krok za krokem, kolik stojí SEO v roce 2026, SEO test webu, linkbuilding, firemní profil Google a SEO pro WordPress.",
                 canonical=BASE + "/cz/blog/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/blog/index.html", html)
@@ -1077,23 +1077,23 @@ def cz_privacy() -> tuple[str, str]:
 <section class="section">
   <div class="container prose">
     <h2>Kdo zpracovává údaje</h2>
-    <p>Operátorem osobních údajů je Nokto Studio (Šimon Štermenský, provozovatel webových stránek noktostudio.com). Kontakt: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
-    <h2>Jaké údaje a proč</h2>
+    <p>Správcem osobních údajů je Nokto Studio (Šimon Štermenský, provozovatel webových stránek noktostudio.com). Kontakt: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
+    <h2>Jaké údaje a proč?</h2>
     <ul>
-      <li>Kontaktní formulář: jméno, email, adresa webu a zpráva. Účelem je odpovědět na váš dotaz. Formulář odesílá oznámení na náš email.</li>
+      <li>Kontaktní formulář: jméno, e-mail, adresa webu a zpráva. Účelem je odpovědět na váš dotaz. Formulář odesílá oznámení na náš e-mail.</li>
       <li>Telefonát: číslo, ze kterého voláte, pokud si ho zapisujeme pro zpětné doplnění informací. Účelem je uskutečnit hovor.</li>
       <li>Analytika: anonymizovaná data o návštěvnosti (Google Analytics 4, Microsoft Clarity) pro zlepšování webu.</li>
     </ul>
-    <h2>Jak dlouho údaje uchovávám</h2>
+    <h2>Jak dlouho uchovávám údaje?</h2>
     <p>Kontakty z formulářů a telefonátů uchovávám maximálně 24 měsíců od poslední komunikace, pokud nevznikne spolupráce.</p>
     <h2>Vaše práva</h2>
-    <p>Máte právo na přístup k údajům, jejich opravu, výmaz a přenos. Požadavek zašlete na <a href="mailto:{EMAIL}">{EMAIL}</a>. Máte také právo podat stížnost u Úřadu pro ochranu osobních údajů.</p>
+    <p>Máte právo na přístup k údajům, jejich opravu, výmaz a přenos. Požadavek zašlete na <a href="mailto:{EMAIL}">{EMAIL}</a>Máte také právo podat stížnost u Úřadu pro ochranu osobních údajů.</p>
     <h2>Cookies</h2>
-    <p>Web používá analytické cookies po vašem souhlasu (cookie banner). Technické cookies nezbytné pro provoz webu jsou povolené vždy.</p>
+    <p>Web používá analytické cookies po vašem souhlasu (cookie banner). Technické cookies nezbytné pro provoz webu jsou povoleny vždy.</p>
   </div>
 </section>
 """
-    html = base(market="cz", path="privacy/", title="Zásady ochrany osobních údajů | Nokto Studio",
+    html = base(market="cz", path="privacy/", title="Zásady ochrany osobních údajů | Nokto Studio.",
                 desc="Zásady ochrany osobních údajů webu noktostudio.com: jaké údaje zpracovávám, proč a jaká máte práva.",
                 canonical=BASE + "/cz/privacy/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/privacy/index.html", html)
@@ -1107,7 +1107,7 @@ def cz_terms() -> tuple[str, str]:
 <section class="section">
   <div class="container prose">
     <h2>1. Předmět</h2>
-    <p>Tyto podmínky upravují spolupráci mezi Nokto Studio (dále "poskytovatel") a klientem při poskytování marketingových služeb: SEO optimalizace, lokální SEO, AI viditelnost, SEO pro e-shopy, linkbuilding, email marketing a související poradenství.</p>
+    <p>Tyto podmínky upravují spolupráci mezi Nokto Studio (dále „poskytovatel“) a klientem při poskytování marketingových služeb: SEO optimalizace, lokální SEO, AI viditelnost, SEO pro e-shopy, linkbuilding, email marketing a související poradenství.</p>
     <h2>2. Cena a fakturace</h2>
     <p>Služby se účtují hodinovou sazbou 12 EUR za odpracovanou hodinu. Fakturace probíhá měsíčně zpětně na základě reportu odpracovaných hodin. Reklamní výdaje a náklady na odkazy či nástroje třetích stran se účtují ve skutečné ceně bez přirážky.</p>
     <h2>3. Doba spolupráce</h2>
@@ -1117,12 +1117,12 @@ def cz_terms() -> tuple[str, str]:
     <h2>5. Práva k obsahu</h2>
     <p>Obsah vytvořený pro klienta v rámci placené spolupráce přechází na klienta po zaplacení faktury. Poskytovatel může práci ukázat v portfoliu po dohodě s klientem.</p>
     <h2>6. Proti spamu a praxím</h2>
-    <p>Poskytovatel nepoužívá praktiky, které porušují pokyny vyhledávačů (nákup odkazů ze sítí automatizovaného spamu, skryté texty, duplicitní obsah). Porušení pokynů hrozí sankcí, proto se jim vyhýbáme zásadně.</p>
+    <p>Poskytovatel nepoužívá praktiky, které porušují pokyny vyhledávačů (nákup odkazů ze sítí automatizovaného spamu, skryté texty, duplicitní obsah). Porušení pokynů hrozí sankcí, proto se jim zásadně vyhýbáme.</p>
   </div>
 </section>
 """
     html = base(market="cz", path="terms/", title="Obchodní podmínky | Nokto Studio",
-                desc="Obchodní podmínky Nokto Studio: hodinová sazba 12 EUR, měsíční fakturace, bez vázanosti, transparentní vykazování.",
+                desc="Obchodní podmínky Nokto Studio: hodinová sazba 12 EUR, měsíční fakturace, bez závazků, transparentní vykazování.",
                 canonical=BASE + "/cz/terms/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/terms/index.html", html)
 

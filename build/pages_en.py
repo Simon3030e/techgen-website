@@ -9,11 +9,11 @@ EN_FAQ = [
     ("How much does SEO cost?",
      "You pay 12 EUR per hour of work. A small business website typically needs 10 hours per month (120 EUR), an e-shop 20 to 40 hours (240 to 480 EUR). The exact scope is confirmed in the plan after a free audit."),
     ("How long until SEO brings results?",
-     "First movements on less competitive keywords usually appear within 2 to 4 months. Main competitive queries take 6 to 12 months. Realistic timelines are shared in the audit."),
+     "Initial movements on less competitive keywords usually appear within 2 to 4 months. Main competitive queries take 6 to 12 months. Realistic timelines are shared in the audit."),
     ("Do you guarantee first positions in Google?",
      "No, and no serious agency can. We guarantee a transparent process, realistic timelines and measurable progress reported every month."),
     ("Can you get my business recommended by ChatGPT?",
-     "Yes, that is our specialty. We optimize your site so ChatGPT, Gemini and Google AI Overviews understand and cite it when customers ask for recommendations."),
+     "Yes, that is our specialty. We optimize your site so ChatGPT, Gemini, and Google AI Overviews understand and cite it when customers ask for recommendations."),
     ("Are the contracts binding for 12 months?",
      "No. Work runs month to month and you can stop any time. We invoice for actual hours worked."),
 ]
@@ -61,7 +61,7 @@ def en_home() -> tuple[str, str]:
       <div class="benefit-card card-hover reveal" data-delay="300">
         <span class="benefit-icon icon-yellow">{gicon("shop", "#FBBC04", 26)}</span>
         <h3>More e-shop sales</h3>
-        <p>Categories and products optimized for keywords that buy. Google Shopping and marketplaces tracked as part of the system.</p>
+        <p>Categories and products optimized for keywords that convert. Google Shopping and marketplaces tracked as part of the system.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="400">
         <span class="benefit-icon icon-blue">{gicon("grow", "#1A73E8", 26)}</span>
@@ -89,7 +89,7 @@ def en_home() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Pricing</span>
-      <h2>12 EUR per hour. You pay for work, not a retainer.</h2>
+      <h2>12 EUR per hour. You pay for work, not a retainer fee.</h2>
     </div>
     <div class="rate-band">
       <div>
@@ -134,9 +134,9 @@ def en_home() -> tuple[str, str]:
       </div>
       <div class="growth-card reveal" data-delay="400">
         <h3 style="color:#34A853;">13</h3>
-        <p>AI citations of a client website in Google AI Overviews after our content</p>
+        <p>AI citations of a client website in Google AI Overviews, after our content</p>
         <div class="growth-bar" style="background:#34A853; width:55%;"></div>
-        <p>most cited page 8 times per month</p>
+        <p>most cited page: 8 times per month</p>
       </div>
     </div>
   </div>
@@ -157,12 +157,12 @@ def en_home() -> tuple[str, str]:
 
 def en_services() -> tuple[str, str]:
     services = [
-        ("/en/services/#ai", "AI visibility", "ChatGPT, Gemini and AI Overviews recommending you as the first choice.", "ai", "#34A853"),
+        ("/en/services/#ai", "AI visibility", "ChatGPT, Gemini, and AI Overviews recommending you as the first choice.", "ai", "#34A853"),
         ("/en/services/#seo", "Google visibility", "Positions in Google that bring customers, not just traffic.", "search", "#1A73E8"),
-        ("/en/services/#local", "Google Maps visibility", "Business Profile, Maps and reviews. Nearby customers find you first.", "pin", "#EA4335"),
+        ("/en/services/#local", "Google Maps visibility", "Business Profile, Maps, and reviews. Nearby customers find you first.", "pin", "#EA4335"),
         ("/en/services/#eshop", "E-commerce SEO", "More sales from categories and products. Shoptet, marketplaces, Google Shopping.", "shop", "#FBBC04"),
         ("/en/services/#audit", "SEO audit and analysis", "A precise picture of what holds your site back, with a prioritized plan.", "audit", "#1A73E8"),
-        ("/en/services/#links", "Link building", "Backlinks and authority, without which the top is out of reach.", "link", "#EA4335"),
+        ("/en/services/#links", "Link building", "Backlinks and authority, without which reaching the top is out of reach.", "link", "#EA4335"),
     ]
     cards = "".join(f"""
 <div class="benefit-card card-hover reveal" data-delay="150">
@@ -172,7 +172,7 @@ def en_services() -> tuple[str, str]:
 </div>""" for href, title, text, icon, color in services)
     body = f"""
 {page_hero("Services", "Services that bring you customers",
-           "From technical SEO to AI visibility. Every service costs 12 EUR per hour, scope agreed in the plan.",
+           "From technical SEO to AI visibility. Every service costs 12 EUR per hour; scope is agreed upon in the plan.",
            [("Home", "/en/"), ("Services", None)])}
 <section class="section"><div class="container">{cards}</div>
   <div class="container" style="margin-top:34px;">
@@ -199,7 +199,7 @@ def en_services() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="services/", title="Services: SEO, Maps, AI visibility, e-shop SEO | Nokto Studio",
-                desc="AI visibility, Google visibility and Google Maps visibility, e-commerce SEO, audits, link building and email marketing. Web design and PPC with our partners. 12 EUR per hour.",
+                desc="AI visibility, Google visibility, Google Maps visibility, e-commerce SEO, audits, link building, and email marketing. Web design and PPC with our partners. 12 EUR per hour.",
                 canonical=BASE + "/en/services/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/services/index.html", html)
 
@@ -215,7 +215,7 @@ def en_about() -> tuple[str, str]:
       <div class="prose">
         <h2>Who stands behind Nokto</h2>
         <p>My name is Simon and Nokto Studio is my studio. Years of SEO and web work for Slovak and international clients: e-shops, local businesses, media and premium brands. I built automation systems that turn SEO work into exactly what a business needs: customers.</p>
-        <p>I am not a big agency and I do not pretend to be one. The advantage: the same person who designs your strategy does the work with you. No forwarding between departments, no lost context.</p>
+        <p>I am not a big agency, and I do not pretend to be one. The advantage: the same person who designs your strategy does the work with you. No forwarding between departments, no lost context.</p>
         <h2>How we work</h2>
         <p>We combine two worlds: expert SEO work (technical, content, authority, AI visibility) and automation that gets more out of the same effort. That is how we can work at 12 EUR per hour and still focus on results, not on padding hours.</p>
       </div>
@@ -231,7 +231,7 @@ def en_about() -> tuple[str, str]:
     <div class="section-head"><span class="section-label">Values</span><h2>Three rules that always apply</h2></div>
     <div class="grid-3">
       <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#1A73E8", 26)}</span><h3>No promises we cannot keep</h3><p>Nobody can guarantee the first position in Google. What we guarantee: a transparent process, realistic timelines and measurable progress.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Monthly report: a 30-minute call with me</h3><p>What we did, what it brought and what comes next. No forwarding, no account managers.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Monthly report: a 30-minute call with me</h3><p>What we did, what it brought, and what comes next. No forwarding, no account managers.</p></div>
       <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#34A853", 26)}</span><h3>Every hour reported</h3><p>You pay for work delivered. Every hour is in the report with its content and result.</p></div>
     </div>
   </div>
@@ -251,7 +251,7 @@ def en_about() -> tuple[str, str]:
 def en_contact() -> tuple[str, str]:
     body = f"""
 {page_hero("Contact", "Write to us. We reply within 12 hours.",
-           "The fastest path is the phone. Or send the form and you will get a reply with first steps within 12 hours.",
+           "The fastest way is by phone. Or submit the form, and you will get a reply with the first steps within 12 hours.",
            [("Home", "/en/"), ("Contact", None)])}
 <section class="section">
   <div class="container">
@@ -287,7 +287,7 @@ def en_contact() -> tuple[str, str]:
             <div class="form-field full"><label class="form-label" for="msg">Message</label><textarea class="form-textarea" id="msg" name="msg" placeholder="A few words about your business and what you want to achieve."></textarea></div>
           </div>
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Send message</button>
-          <p class="form-note">By sending you agree to the processing of your data for the purpose of a reply (see <a href="/en/privacy/">privacy</a>).</p>
+          <p class="form-note">By sending, you agree to the processing of your data for the purpose of a reply (see <a href="/en/privacy/">privacy</a>).</p>
         </form>
         <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
           ✓ Thank you. We will reply within 12 hours.
@@ -299,14 +299,14 @@ def en_contact() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="contact/", title="Contact: free call and free audit | Nokto Studio",
-                desc="Get in touch with Nokto Studio. Free 30-minute strategy call and a free initial website audit. Reply within 12 hours.",
+                desc="Get in touch with Nokto Studio. Free 30-minute strategy call and a free initial website audit. We reply within 12 hours.",
                 canonical=BASE + "/en/contact/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/contact/index.html", html)
 
 
 def en_faq() -> tuple[str, str]:
     body = f"""
-{page_hero("FAQ", "Frequently asked questions", "Answers to what clients ask most. If your question is missing, ask directly.", [("Home", "/en/"), ("FAQ", None)])}
+{page_hero("FAQ", "Frequently asked questions", "Answers to what clients ask most. If your question is missing, please ask directly.", [("Home", "/en/"), ("FAQ", None)])}
 <section class="section">
   <div class="container" style="max-width:800px;">
     {faq_block(EN_FAQ)}
@@ -350,7 +350,7 @@ def en_blog() -> tuple[str, str]:
   </div>
 </section>
 """
-    html = base(market="en", path="blog/", title="Blog on SEO, Google Maps and AI search | Nokto Studio",
+    html = base(market="en", path="blog/", title="Blog on SEO, Google Maps, and AI Search | Nokto Studio",
                 desc="Practical articles: how to choose an SEO agency, SEO pricing, getting recommended by ChatGPT, Google Business Profile.",
                 canonical=BASE + "/en/blog/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/blog/index.html", html)
@@ -388,7 +388,7 @@ def en_portfolio() -> tuple[str, str]:
                   {"big": "44 838", "color": _RED, "label": "impressions / headbands"},
                   {"big": "13", "color": _GREEN, "label": "citations in Google AI Mode"}],
             chart=c_speem,
-            caption="E-shop categories with tens of thousands of impressions per month. Google AI Mode cites the shop in 13 customer answers, 8 of them for the /overaly/ page. Competitors are not there yet.",
+            caption="E-shop categories with tens of thousands of impressions per month. Google AI Mode cites the shop in 13 customer answers, 8 of them for the /overaly/ page. Competitors aren't there yet.",
             source="Google Search Console + Google AI Mode",
             partner="own", market="en"),
         result_block(
@@ -397,7 +397,7 @@ def en_portfolio() -> tuple[str, str]:
                   {"big": "4 390", "color": _RED, "label": "impressions (+43%)"},
                   {"big": "+142 %", "color": _GREEN, "label": "top page growth"}],
             chart=c_itc,
-            caption="SEO from zero: technical SEO and content in the first month of work, Google started bringing customers right away.",
+            caption="SEO from scratch: technical SEO and content in the first month of work, and Google started bringing customers right away.",
             source="Google Search Console",
             partner="own", market="en"),
         result_block(
@@ -411,7 +411,7 @@ def en_portfolio() -> tuple[str, str]:
             title="Energymonitor.tech", period="rework in progress",
             nums=[],
             chart="",
-            caption="E-shop with energy monitoring products. Rework in progress: new site structure, product data, categorization and technical SEO. Website in cooperation with Flamia Studio. Numbers will be added after launch, once they are measurable.",
+            caption="E-shop with energy monitoring products. Rework in progress: new site structure, product data, categorization, and technical SEO. Website in cooperation with Flamia Studio. Numbers will be added after launch, once they are measurable.",
             source="work in progress, numbers after launch",
             partner="flamia", market="en"),
     ])
@@ -442,7 +442,7 @@ ALL = [en_home(), en_services(), en_about(), en_contact(), en_faq(), en_blog(), 
 
 def en_villa_paris() -> tuple[str, str]:
     body = f"""
-{page_hero("Case study · Branding &amp; Web", "Villa Paris: a brand and website built from zero",
+{page_hero("Case study · Branding &amp; Web", "Villa Paris: a brand and website built from scratch",
            "Premium accommodation in Piestany had a great product but no brand. We solved it with identity, website, hospitality copywriting and local SEO as one system.",
            [("Home", "/en/"), ("Portfolio", "/en/portfolio/"), ("Villa Paris", None)])}
 
@@ -457,22 +457,22 @@ def en_villa_paris() -> tuple[str, str]:
       <div class="prose">
         <span class="section-label">Problem</span>
         <h2 style="margin-top:8px;">Great location. Zero presentation.</h2>
-        <p>Villa Paris offers real value: a peaceful setting in Piestany, closeness to the spa center and ADELI Medical Center, comfortable rooms and a family atmosphere. But the visual identity and digital presence communicated none of it.</p>
-        <p>Visitors arrived on the website and could not quickly understand what makes the property worth a booking. The brand looked generic, the texts did not answer the questions people ask before reserving. Reservations were lost before a conversation even started.</p>
+        <p>Villa Paris offers real value: a peaceful setting in Piestany, proximity to the spa center and ADELI Medical Center, comfortable rooms, and a family atmosphere. But the visual identity and digital presence communicated none of it.</p>
+        <p>Visitors arrived on the website and could not quickly understand what made the property worth booking. The brand looked generic, and the copy did not answer the questions people ask before booking. Reservations were lost before a conversation even started.</p>
         <h2>Solution: one system, four areas</h2>
         <h3>Brand identity redesign</h3>
-        <p>A new visual system: logo, color palette, typography. Built to feel warm, premium and instantly recognizable.</p>
+        <p>A new visual system: logo, color palette, typography. Built to feel warm, premium, and instantly recognizable.</p>
         <h3>Website rebuild</h3>
-        <p>A reworked structure focused on clarity and booking conversion from the first scroll. Fast loading, a simple path to reservation, mobile experience as a priority.</p>
+        <p>A reworked structure focused on clarity and booking conversion from the first scroll. Fast loading, a simple path to reservation, with mobile experience as a priority.</p>
         <h3>Hospitality copywriting</h3>
-        <p>Guest-oriented texts that answer real pre-booking questions: location, comfort, what to expect on arrival.</p>
+        <p>Guest-oriented texts that answer real pre-booking questions: location, comfort, and what to expect on arrival.</p>
         <h3>Local SEO</h3>
         <p>Google Business Profile set up properly, local keywords for Piestany and spa stays, so guests searching for exactly this kind of accommodation find Villa Paris.</p>
       </div>
       <div class="card">
         <span class="section-label">Project scope</span>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span>Brand redesign: logo, colors, typography.</span></li>
+          <li><span class="check">✓</span><span>Brand redesign: logo, colors, and typography.</span></li>
           <li><span class="check">✓</span><span>New website: structure, design, speed.</span></li>
           <li><span class="check">✓</span><span>Guest-oriented hospitality copywriting.</span></li>
           <li><span class="check">✓</span><span>Local SEO: Google Business Profile, local queries.</span></li>
@@ -492,7 +492,7 @@ def en_villa_paris() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="villa-paris/", title="Villa Paris Piestany: rebrand, web and local SEO | Nokto Studio",
-                desc="Case study: how Nokto Studio built Villa Paris from the ground up. Brand identity, new website, hospitality copywriting and local SEO for premium accommodation in Piestany.",
+                desc="Case study: how Nokto Studio built Villa Paris from the ground up. Brand identity, new website, hospitality copywriting, and local SEO for premium accommodation in Piestany.",
                 canonical=BASE + "/en/villa-paris/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/villa-paris/index.html", html)
 
@@ -508,13 +508,13 @@ def en_privacy() -> tuple[str, str]:
     <p>The data controller is Nokto Studio (Šimon Štermenský, operator of noktostudio.com). Contact: <a href="mailto:{EMAIL}">{EMAIL}</a>.</p>
     <h2>What data and why</h2>
     <ul>
-      <li>Contact form: name, email, website address and message. Purpose: to answer your enquiry. The form sends a notification to our email.</li>
+      <li>Contact form: name, email, website address, and message. Purpose: to answer your inquiry. The form sends a notification to our email.</li>
       <li>Analytics: anonymized visitor data (Google Analytics 4, Microsoft Clarity) to improve the website.</li>
     </ul>
     <h2>How long we keep data</h2>
-    <p>Contacts from forms and phone calls are kept for up to 24 months from the last communication, unless a collaboration begins.</p>
+    <p>Contacts from forms and phone calls are kept for up to 24 months from the last communication, unless collaboration begins.</p>
     <h2>Your rights</h2>
-    <p>You have the right to access, correct, delete and transfer your data. Send requests to <a href="mailto:{EMAIL}">{EMAIL}</a>. You may also file a complaint with your national data protection authority.</p>
+    <p>You have the right to access, correct, delete, and transfer your data. Send requests to <a href="mailto:{EMAIL}">{EMAIL}</a>. You may also file a complaint with your national data protection authority.</p>
     <h2>Cookies</h2>
     <p>The site uses analytics cookies after your consent (cookie banner). Strictly necessary cookies are always on.</p>
   </div>
@@ -538,11 +538,11 @@ def en_terms() -> tuple[str, str]:
     <h2>2. Price and invoicing</h2>
     <p>Services are billed at an hourly rate of 12 EUR for hours worked. Invoicing runs monthly, in arrears, based on the hours report. Ad spend and link or third-party tool costs are passed through at the actual price, without markup.</p>
     <h2>3. Term</h2>
-    <p>Collaboration runs month to month. Either party can end it at the end of a calendar month, in writing, without penalties.</p>
+    <p>Collaboration runs month-to-month. Either party can end it at the end of a calendar month, in writing, without penalties.</p>
     <h2>4. Responsibility and results</h2>
     <p>The provider does not guarantee specific positions in search engines or specific traffic volumes. The provider guarantees delivered work, transparent reporting and execution according to the agreed plan. Guarantees of specific positions are not possible and are not offered.</p>
     <h2>5. Content rights</h2>
-    <p>Content created for the client within paid collaboration transfers to the client once the invoice is paid. The provider may show the work in its portfolio by agreement with the client.</p>
+    <p>Content created for the client within a paid collaboration transfers to the client once the invoice is paid. The provider may show the work in its portfolio by agreement with the client.</p>
     <h2>6. Spam and forbidden practices</h2>
     <p>The provider does not use practices that violate search engine guidelines (buying links from automated spam networks, hidden text, duplicate content). Guideline violations risk penalties, so we avoid them on principle.</p>
   </div>

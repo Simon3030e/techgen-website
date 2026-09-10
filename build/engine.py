@@ -396,7 +396,7 @@ def footer(market: str, prefix: str) -> str:
         foot_copy = "© 2026 Nokto Studio. SEO pro Česko i Slovensko."
         foot_tagline = "Dělám to sám, rychle, měřitelně a bez pevných smluv."
     else:
-        foot_intro = "SEO pre podnikateľov od Šimona Štermenského: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR / hodinu."
+        foot_intro = "SEO pre podnikateľov od Šimona Štermenského: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR/hodinu."
         foot_copy = "© 2026 Nokto Studio. SEO pre Slovensko a Česko."
         foot_tagline = "Robím to sám, rýchlo, merateľne a bez pevných zmlúv."
     foot_cols = ""
@@ -688,7 +688,7 @@ def results_slider(market: str) -> str:
         },
         "en": {
             "label": "Results", "head": "Real numbers, not stock images",
-            "sub": "Actual screenshots from Google Search Console and Google AI Mode of our project and clients.",
+            "sub": "Actual screenshots from Google Search Console and Google AI Mode of our projects and clients.",
             "chip1": "Content + tech", "chip2": "SEO from zero", "chip3": "AI visibility",
             "chip4": "Content on 6 pages", "chip5": "Local SEO",
             "prev": "Previous", "next": "Next", "all": "All results",
@@ -728,8 +728,8 @@ def results_slider(market: str) -> str:
     s3 = _slide("Speem.sk", t["chip3"],
                 {"sk": "Google AI Mode, 3 mesiace", "cz": "Google AI Mode, 3 měsíce", "en": "Google AI Mode, 3 months"}[market],
         [{"big": "13", "color": _GREEN, "label": {"sk": "AI citácií webu", "cz": "AI citací webu", "en": "AI citations"}[market]},
-         {"big": "8", "color": _BLUE, "label": {"sk": "citácií jednej stránky /overaly/", "cz": "citací jedné stránky /overaly/", "en": "citations of one page"}[market]},
-         {"big": "3", "color": _YELLOW, "label": {"sk": "citácií blogového článku", "cz": "citací blogového článku", "en": "blog article citations"}[market]}],
+         {"big": "8", "color": _BLUE, "label": {"sk": "citácie jednej stránky /overaly/", "cz": "citací jedné stránky /overaly/", "en": "citations of one page"}[market]},
+         {"big": "3", "color": _YELLOW, "label": {"sk": "citácie blogového článku", "cz": "citací blogového článku", "en": "blog article citations"}[market]}],
         chart3,
         {"sk": "Po nasadení nášho obsahu Google AI Mode cituje e-shop v odpovediach zákazníkom. Konkurencia tu ešte nie je.",
          "cz": "Po nasazení našeho obsahu Google AI Mode cituje e-shop v odpovědích zákazníkům. Konkurence tu ještě není.",
@@ -747,7 +747,7 @@ def results_slider(market: str) -> str:
         chart4,
         {"sk": "Pridané obsahové stránky na reálne dopyty zákazníkov. Len 6 stránok z celého webu posunulo celý web.",
          "cz": "Přidané obsahové stránky na reálné dotazy zákazníků. Jen 6 stránek z celého webu posunulo celý web.",
-         "en": "Added content pages on real customer queries. Just 6 pages moved the whole site."}[market],
+         "en": "Added content pages based on real customer queries. Just 6 pages moved the whole site."}[market],
         market)
 
     chart5 = _donut([(193, _BLUE, "Maps"), (166, _GREEN, "Search")])
