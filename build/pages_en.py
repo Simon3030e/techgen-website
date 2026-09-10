@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """Nokto Studio - EN core pages (secondary market; projects stay as legacy pages)."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
-                    steps_block, benefit_cards, ORG_SCHEMA, EMAIL, BASE, gicon,
-                    PHONE_TEL, PHONE_DISPLAY)
+                    steps_block, benefit_cards, results_slider, result_block,
+                    ORG_SCHEMA, EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY,
+                    _bars, _sparkline, _GREEN, _BLUE, _RED, _YELLOW)
 
 EN_FAQ = [
     ("How much does SEO cost?",
@@ -356,52 +357,82 @@ def en_blog() -> tuple[str, str]:
 
 
 def en_portfolio() -> tuple[str, str]:
+    """Results: real numbers from GSC exports, AI Mode and client reports."""
+    c_servisprofi = _bars([145, 115, 61, 42, 38], _GREEN,
+                          ["sockets", "electricity", "connection", "outlet", "air"])
+    c_speem = _bars([413, 412, 407, 407, 385], _BLUE,
+                    ["pyjamas", "bodies", "t-shirts", "pants", "headbands"])
+    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _BLUE)
+    blocks = "".join([
+        result_block(
+            title="ServisProfi.sk", period="March to September 2026",
+            nums=[{"big": "996", "color": _BLUE, "label": "clicks from Google (+8%)"},
+                  {"big": "73 000", "color": _RED, "label": "impressions (+5%)"},
+                  {"big": "96", "color": _GREEN, "label": "citations in AI answers"}],
+            chart=c_servisprofi,
+            caption="Two expert articles (EV home charging, surge protection) are cited by Google in AI answers, recommending ServisProfi.sk to customers. A 69-page website: 9,700 to 12,000 impressions per 28 days (+24%). Chart: growth of main pages in percent.",
+            source="Google Search Console, performance report Sep 9, 2026",
+            partner="", market="en"),
+        result_block(
+            title="Mikramt.sk, Martin (SK)", period="9 months of work",
+            nums=[{"big": "2,492.75 EUR", "color": _GREEN, "label": "revenue from the first e-shop"},
+                  {"big": "15", "color": _BLUE, "label": "online orders"},
+                  {"big": "722 EUR", "color": _YELLOW, "label": "largest single order"}],
+            chart="",
+            caption="The first Mikramt.sk e-shop with an API integration into the Sunsoft Ecosun accounting system. The customer was satisfied, so we are now doing a rework: more products, larger category structure and better SEO. Website and design in cooperation with Flamia Studio, SEO and email marketing are mine. In-store sales excluded.",
+            source="orders attributed to the email and organic Google channels",
+            partner="flamia", market="en"),
+        result_block(
+            title="Speem.sk", period="Search Console, 3 months",
+            nums=[{"big": "413", "color": _BLUE, "label": "clicks on the main category"},
+                  {"big": "44 838", "color": _RED, "label": "impressions / headbands"},
+                  {"big": "13", "color": _GREEN, "label": "citations in Google AI Mode"}],
+            chart=c_speem,
+            caption="E-shop categories with tens of thousands of impressions per month. Google AI Mode cites the shop in 13 customer answers, 8 of them for the /overaly/ page. Competitors are not there yet.",
+            source="Google Search Console + Google AI Mode",
+            partner="own", market="en"),
+        result_block(
+            title="InTheCity.app", period="last 28 days",
+            nums=[{"big": "121", "color": _BLUE, "label": "clicks from Google (+49%)"},
+                  {"big": "4 390", "color": _RED, "label": "impressions (+43%)"},
+                  {"big": "+142 %", "color": _GREEN, "label": "top page growth"}],
+            chart=c_itc,
+            caption="SEO from zero: technical SEO and content in the first month of work, Google started bringing customers right away.",
+            source="Google Search Console",
+            partner="own", market="en"),
+        result_block(
+            title="Villa Paris, Piestany (SK)", period="rebrand + web + local SEO",
+            nums=[],
+            chart="",
+            caption="Premium accommodation. Rebrand, new website, hospitality copywriting and local SEO in one system. Brand and website delivered in cooperation with Flamia Studio. Goal: more direct bookings without portal commissions.",
+            source="project story at /en/villa-paris/",
+            partner="flamia", market="en"),
+        result_block(
+            title="Energymonitor.tech", period="rework in progress",
+            nums=[],
+            chart="",
+            caption="E-shop with energy monitoring products. Rework in progress: new site structure, product data, categorization and technical SEO. Website in cooperation with Flamia Studio. Numbers will be added after launch, once they are measurable.",
+            source="work in progress, numbers after launch",
+            partner="flamia", market="en"),
+    ])
     body = f"""
-{page_hero("Portfolio", "Work examples, not just praise",
-           "Selected projects. Detailed case studies on request, respecting client confidentiality.",
+{page_hero("Portfolio", "Results in numbers, not just praise",
+           "Project results from Google Search Console, Google AI Mode and client reports. Detailed case studies on request, respecting client confidentiality.",
            [("Home", "/en/"), ("Portfolio", None)])}
 <section class="section">
   <div class="container">
-    <div class="grid-2">
-      <div class="project-card card-hover">
-        <div class="project-card-body">
-          <h3>Villa Paris, Piestany (SK)</h3>
-          <p>Premium accommodation. Rebrand, new website, hospitality copywriting and local SEO in one system. Goal: more direct bookings without portal commissions.</p>
-          <div class="project-tags">
-            <span class="project-tag tag-blue">Branding</span>
-            <span class="project-tag tag-green">Web</span>
-            <span class="project-tag tag-red">Local SEO</span>
-          </div>
-          <a href="/en/villa-paris/" class="btn btn-outline" style="margin-top:20px;">Read the story</a>
-        </div>
-      </div>
-      <div class="project-card card-hover">
-        <div class="project-card-body">
-          <h3>Mikramt.sk, Martin (SK)</h3>
-          <p>Custom e-shop with an API integration into the Sunsoft Ecosun accounting system for a regional supplier of joinery supplies. In 9 months: 2,492.75 EUR of online revenue from 15 orders (email + organic Google), largest single order 722 EUR. Email marketing, local SEO and GEO optimization so ChatGPT and Google AI Overviews recommend the brand. In-store sales excluded.</p>
-          <div class="case-result">
-            <div><strong>2,492.75 EUR</strong><span>revenue / 9 months</span></div>
-            <div><strong>15</strong><span>online orders</span></div>
-          </div>
-          <div class="project-tags">
-            <span class="project-tag tag-yellow">E-shop SEO</span>
-            <span class="project-tag tag-green">Email marketing</span>
-            <span class="project-tag tag-red">Local SEO + GEO</span>
-          </div>
-          <a href="/en/contact/" class="btn btn-outline" style="margin-top:20px;">Ask about it</a>
-        </div>
-      </div>
-    </div>
+    <div class="grid-2">{blocks}</div>
   </div>
 </section>
+{results_slider("en")}
 <section class="section" style="padding-top:0;">
   <div class="container">
     {cta_band("Your business could be the next story", "Start with a free audit. See what we would solve for you, before the first invoice.", "en")}
   </div>
 </section>
 """
-    html = base(market="en", path="portfolio/", title="Portfolio: SEO and web design projects | Nokto Studio",
-                desc="Selected Nokto Studio projects: Villa Paris Piestany (rebrand, web, local SEO), e-commerce SEO and more.",
+    html = base(market="en", path="portfolio/", title="Results: SEO, Maps and AI visibility numbers | Nokto Studio",
+                desc="Nokto Studio results: 996 clicks and 96 AI citations for ServisProfi.sk, 2,492.75 EUR revenue for Mikramt.sk, AI citations for Speem.sk. Numbers from Google Search Console.",
                 canonical=BASE + "/en/portfolio/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/portfolio/index.html", html)
 
@@ -414,6 +445,12 @@ def en_villa_paris() -> tuple[str, str]:
 {page_hero("Case study · Branding &amp; Web", "Villa Paris: a brand and website built from zero",
            "Premium accommodation in Piestany had a great product but no brand. We solved it with identity, website, hospitality copywriting and local SEO as one system.",
            [("Home", "/en/"), ("Portfolio", "/en/portfolio/"), ("Villa Paris", None)])}
+
+<div class="partner-band" style="justify-content:center; padding:0 20px;">
+  <span class="project-tag tag-blue"><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" style="color:inherit;">In cooperation with Flamia Studio</a></span>
+  <span class="project-tag tag-green">Web design and development: Flamia Studio</span>
+  <span class="project-tag tag-yellow">SEO, copywriting and local SEO: Nokto Studio</span>
+</div>
 <section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:start;">

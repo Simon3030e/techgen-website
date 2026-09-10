@@ -2,7 +2,9 @@
 """Nokto Studio - CZ page content (localized for Czech market, targeting CZ keywords)."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     steps_block, price_cards, benefit_cards, schema_service,
-                    results_slider, ORG_SCHEMA_CZ, EMAIL, BASE, gicon)
+                    results_slider, result_block, partner_logo_card,
+                    ORG_SCHEMA_CZ, EMAIL, BASE, gicon, _bars, _sparkline,
+                    _GREEN, _BLUE, _RED, _YELLOW)
 
 # ---------------------------------------------------------------- shared
 
@@ -87,12 +89,10 @@ CZ_SUPPORT = [
      "Zpětné odkazy a autorita, bez kterých se nahoru nedostanete.", "link", "#EA4335"),
 ]
 CZ_PARTNERS = [
-    ("https://flamia.studio", "Web dizajn: Flamia Studio",
-     "Web na míru, který se najde a prodává. Dizajn a vývoj řeší náš partner Flamia Studio.",
-     "web", "#1A73E8"),
-    ("https://peterkocur.sk", "PPC reklama: Peter Kocur",
-     "Google Ads pro výsledky hned, než SEO nabere tempo. Vede ho můj partner Petr Kocur.",
-     "target", "#EA4335"),
+    ("https://flamia.studio", "flamia.png", "Web dizajn: Flamia Studio",
+     "Web na míru, který se najde a prodává. Dizajn a vývoj řeší náš partner Flamia Studio."),
+    ("https://peterkocur.sk", "peterkocur.png", "PPC reklama: Peter Kocur",
+     "Google Ads pro výsledky hned, než SEO nabere tempo. Vede ho můj partner Petr Kocur."),
 ]
 
 
@@ -112,8 +112,8 @@ def cz_services_grid(cols: int = 3) -> str:
                       for i, s in enumerate(CZ_PILLARS))
     support = "".join(_cz_card(*s, ["tag-yellow", "tag-blue", "tag-red"][i], (i + 1) * 100)
                       for i, s in enumerate(CZ_SUPPORT))
-    partners = "".join(_cz_card(*s, "tag-blue" if "flamia" in s[0] else "tag-red", (i + 1) * 100, external=True)
-                       for i, s in enumerate(CZ_PARTNERS))
+    partners = "".join(partner_logo_card(href, logo, title, text, (i + 1) * 100)
+                       for i, (href, logo, title, text) in enumerate(CZ_PARTNERS))
     return (f'<div class="grid-3">{pillars}</div>'
             f'<h3 style="margin:42px 0 22px;">K tomu i podpůrné služby</h3>'
             f'<div class="grid-3">{support}</div>'
@@ -812,45 +812,75 @@ def cz_jak_pracujeme() -> tuple[str, str]:
     return ("cz/jak-pracujeme/index.html", html)
 
 
-def cz_pripady() -> tuple[str, str]:
+def cz_vysledky() -> tuple[str, str]:
+    """Výsledky: real numbers from GSC exports, AI Mode and client reports."""
+    c_servisprofi = _bars([145, 115, 61, 42, 38], _GREEN,
+                          ["vypínač", "ceny el.", "přípojka", "zásuvka", "vzduchem"])
+    c_speem = _bars([413, 412, 407, 407, 385], _BLUE,
+                    ["pyžamo", "body", "trička", "kalhoty", "čelenky"])
+    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _BLUE)
+    blocks = "".join([
+        result_block(
+            title="ServisProfi.sk", period="březen až září 2026",
+            nums=[{"big": "996", "color": _BLUE, "label": "kliků z Google (+8 %)"},
+                  {"big": "73 000", "color": _RED, "label": "zobrazení (+5 %)"},
+                  {"big": "96", "color": _GREEN, "label": "citací v AI odpovědích"}],
+            chart=c_servisprofi,
+            caption="Dva expertní články (nabíjení elektromobilu, přepěťová ochrana) Google cituje v AI odpovědích a doporučuje ServisProfi.sk zákazníkům. Web 69 stránek: 9 700 → 12 000 zobrazení za 28 dní (+24 %). Graf: růst hlavních stránek v procentech.",
+            source="Google Search Console, report výkonnosti 9. 9. 2026",
+            partner="", market="cz"),
+        result_block(
+            title="Mikramt.sk, Martin (SK)", period="9 měsíců spolupráce",
+            nums=[{"big": "2 492,75 EUR", "color": _GREEN, "label": "tržeb z prvního e-shopu"},
+                  {"big": "15", "color": _BLUE, "label": "objednávek online"},
+                  {"big": "722 EUR", "color": _YELLOW, "label": "největší objednávka"}],
+            chart="",
+            caption="První e-shop Mikramt.sk s API integrací na účetní systém Sunsoft Ecosun. Zákazník byl spokojený, proto teď děláme rework: více produktů, větší kategorizace a lepší SEO. Web a design ve spolupráci s Flamia Studio, SEO a email marketing dělám sám. Prodej v kamenné prodejně do sumy nezapočítávám.",
+            source="objednávky připsané do kanálů email a organický Google",
+            partner="flamia", market="cz"),
+        result_block(
+            title="Speem.sk", period="Search Console, 3 měsíce",
+            nums=[{"big": "413", "color": _BLUE, "label": "kliků na hlavní kategorii"},
+                  {"big": "44 838", "color": _RED, "label": "zobrazení / čelenky"},
+                  {"big": "13", "color": _GREEN, "label": "citací v Google AI Mode"}],
+            chart=c_speem,
+            caption="Kategorie e-shopu s desítkami tisíc zobrazení měsíčně. Google AI Mode cituje e-shop ve 13 odpovědích zákazníkům, z toho 8 krát stránku /overaly/. Konkurence tu ještě není.",
+            source="Google Search Console + Google AI Mode",
+            partner="own", market="cz"),
+        result_block(
+            title="InTheCity.app", period="posledních 28 dní",
+            nums=[{"big": "121", "color": _BLUE, "label": "kliků z Google (+49 %)"},
+                  {"big": "4 390", "color": _RED, "label": "zobrazení (+43 %)"},
+                  {"big": "+142 %", "color": _GREEN, "label": "růst hlavní stránky"}],
+            chart=c_itc,
+            caption="SEO od nuly: technické SEO a obsah v prvním měsíci spolupráce, Google začal přinášet zákazníky hned.",
+            source="Google Search Console",
+            partner="own", market="cz"),
+        result_block(
+            title="Villa Paris, Piešťany (SK)", period="rebrand + web + lokální SEO",
+            nums=[],
+            chart="",
+            caption="Premium ubytování. Rebrand, nový web, hotelový copywriting a lokální SEO v jednom systému. Značku a web děláme ve spolupráci s Flamia Studio. Cíl: více přímých rezervací bez provizí portálů.",
+            source="příběh projektu na /sk/villa-paris/ (SK)",
+            partner="flamia", market="cz"),
+        result_block(
+            title="Energymonitor.tech", period="rework v průběhu",
+            nums=[],
+            chart="",
+            caption="E-shop s produkty pro monitorování energie. Teď rework webu: nová struktura, produktová data, kategorizace a technika. Web ve spolupráci s Flamia Studio. Čísla doplním po nasazení, když budou reálně měřitelná.",
+            source="práce v průběhu, čísla po nasazení",
+            partner="flamia", market="cz"),
+    ])
     body = f"""
-{page_hero("Případové studie", "Příklady práce, ne samá chvála",
-           "Klienti, se kterými jsem pracoval, a to, co jsem pro ně stavěl. Čísla doplňuji podle dohody s klientem.",
-           [("Domů", "/cz/"), ("Případy", None)])}
+{page_hero("Výsledky", "Příklady práce, ne samá chvála",
+           "Výsledky projektů z Google Search Console, Google AI Mode a reportů klientů. Čísla doplňuji podle dohody s klientem.",
+           [("Domů", "/cz/"), ("Výsledky", None)])}
+
 <section class="section">
   <div class="container">
-    <div class="grid-2">
-      <div class="project-card card-hover">
-        <div class="project-card-body">
-          <h3>Villa Paris, Piešťany (SK)</h3>
-          <p>Premium ubytování. Rebrand, nový web, hotelový copywriting a lokální SEO v jednom systému. Cíl: více přímých rezervací bez provizí portálů.</p>
-          <div class="project-tags">
-            <span class="project-tag tag-blue">Branding</span>
-            <span class="project-tag tag-green">Web</span>
-            <span class="project-tag tag-red">Lokální SEO</span>
-          </div>
-          <a href="/sk/villa-paris/" class="btn btn-outline" style="margin-top:20px;">Číst příběh (SK)</a>
-        </div>
-      </div>
-      <div class="project-card card-hover">
-        <div class="project-card-body">
-          <h3>Mikramt.sk, Martin (SK)</h3>
-          <p>Vlastní e-shop s API integrací na účetní systém Sunsoft Ecosun pro regionálního dodavatele truhlářského zboží. Za 9 měsíců 2 492,75 EUR online tržeb z 15 objednávek (email + organický Google), největší objednávka 722 EUR. Email marketing, lokální SEO a GEO optimalizace. Prodej v kamenné prodejně do sumy nezapočítáváme.</p>
-          <div class="case-result">
-            <div><strong>2 492,75 EUR</strong><span>tržby / 9 měsíců</span></div>
-            <div><strong>15</strong><span>objednávek online</span></div>
-          </div>
-          <div class="project-tags">
-            <span class="project-tag tag-yellow">E-shop SEO</span>
-            <span class="project-tag tag-green">Email marketing</span>
-            <span class="project-tag tag-red">Lokální SEO + GEO</span>
-          </div>
-          <a href="/cz/kontakt/" class="btn btn-outline" style="margin-top:20px;">Zeptat se víc</a>
-        </div>
-      </div>
-    </div>
+    <div class="grid-2">{blocks}</div>
     <p style="text-align:center; margin-top:28px; color:var(--text-muted); font-size:0.9rem;">
-      Další případy a reference na žádost, včetně kontaktů na klienty. Klienty cituji jen s jejich souhlasem.
+      Další výsledky a reference na žádost, včetně kontaktů na klienty. Klienty cituji jen s jejich souhlasem.
     </p>
   </div>
 </section>
@@ -863,10 +893,10 @@ def cz_pripady() -> tuple[str, str]:
   </div>
 </section>
 """
-    html = base(market="cz", path="pripady/", title="Případové studie SEO a tvorby webů | Nokto Studio",
-                desc="Případové studie Nokto Studio: Villa Paris Piešťany (rebrand, web, lokální SEO), e-shop SEO a další projekty. Výsledky z Google Search Console a AI Mode.",
-                canonical=BASE + "/cz/pripady/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
-    return ("cz/pripady/index.html", html)
+    html = base(market="cz", path="vysledky/", title="Výsledky SEO: ServisProfi, Mikramt, Speem, InTheCity | Nokto Studio",
+                desc="Výsledky Nokto Studio: 996 kliků a 96 citací v AI odpovědích pro ServisProfi.sk, 2 492,75 EUR tržeb pro Mikramt.sk, AI citace pro Speem.sk. Výsledky z Google Search Console.",
+                canonical=BASE + "/cz/vysledky/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
+    return ("cz/vysledky/index.html", html)
 
 
 CZ_FAQ_SECTIONS = [
@@ -1095,3 +1125,23 @@ def cz_terms() -> tuple[str, str]:
                 desc="Obchodní podmínky Nokto Studio: hodinová sazba 12 EUR, měsíční fakturace, bez vázanosti, transparentní vykazování.",
                 canonical=BASE + "/cz/terms/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/terms/index.html", html)
+
+
+# ---------------------------------------------------------------- CZ /PRIPADY REDIRECT STUB
+
+def cz_vysledky_redirect() -> tuple[str, str]:
+    html = """<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nokto Studio | Výsledky</title>
+  <link rel="canonical" href="https://noktostudio.com/cz/vysledky/">
+  <meta http-equiv="refresh" content="0; url=/cz/vysledky/">
+</head>
+<body>
+<p>Pokračujte na <a href="/cz/vysledky/">výsledky</a>.</p>
+</body>
+</html>
+"""
+    return ("cz/pripady/index.html", html)

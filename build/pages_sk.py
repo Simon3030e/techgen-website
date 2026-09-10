@@ -5,7 +5,8 @@ Every function returns (rel_path, html) where rel_path is inside the repo.
 """
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     price_cards, steps_block, benefit_cards, schema_service,
-                    results_slider, ORG_SCHEMA, EMAIL, LOGO, BASE, gicon)
+                    results_slider, partner_logo_card, ORG_SCHEMA, EMAIL,
+                    LOGO, BASE, gicon)
 
 SK_ROOT = "/sk/"
 
@@ -74,12 +75,10 @@ SUPPORT_SERVICES = [
      "Spätné odkazy a autorita, bez ktorých sa hore nedostanete.", "link", "#EA4335"),
 ]
 PARTNERS = [
-    ("https://flamia.studio", "Web dizajn: Flamia Studio",
-     "Web na mieru, ktorý sa nájde a predáva. Dizajn a vývoj rieši náš partner Flamia Studio.",
-     "web", "#1A73E8"),
-    ("https://peterkocur.sk", "PPC reklama: Peter Kocur",
-     "Google Ads pre výsledky hneď, kým SEO naberá tempo. Vedie ho môj partner Peter Kocur.",
-     "target", "#EA4335"),
+    ("https://flamia.studio", "flamia.png", "Web dizajn: Flamia Studio",
+     "Web na mieru, ktorý sa nájde a predáva. Dizajn a vývoj rieši náš partner Flamia Studio."),
+    ("https://peterkocur.sk", "peterkocur.png", "PPC reklama: Peter Kocur",
+     "Google Ads pre výsledky hneď, kým SEO naberá tempo. Vedie ho môj partner Peter Kocur."),
 ]
 
 
@@ -100,8 +99,8 @@ def services_grid(cols: int = 3) -> str:
                       for i, s in enumerate(PILLARS))
     support = "".join(_svc_card(*s, ["tag-yellow", "tag-blue", "tag-red", "tag-green"][i], (i + 1) * 100)
                       for i, s in enumerate(SUPPORT_SERVICES))
-    partners = "".join(_svc_card(*s, "tag-blue" if "flamia" in s[0] else "tag-red", (i + 1) * 100, external=True)
-                       for i, s in enumerate(PARTNERS))
+    partners = "".join(partner_logo_card(href, logo, title, text, (i + 1) * 100)
+                       for i, (href, logo, title, text) in enumerate(PARTNERS))
     return (f'<div class="grid-3">{pillars}</div>'
             f'<h3 class="svc-subhead" style="margin:42px 0 22px;">K tomu aj podporné služby</h3>'
             f'<div class="grid-4">{support}</div>'
@@ -290,7 +289,7 @@ def home() -> tuple[str, str]:
       </div>
     </div>
     <div style="text-align:center; margin-top:32px;">
-      <a href="/sk/pripady/" class="btn btn-outline">Všetky prípadové štúdie</a>
+      <a href="/sk/vysledky/" class="btn btn-outline">Všetky výsledky</a>
     </div>
   </div>
 </section>

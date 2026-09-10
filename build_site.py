@@ -46,7 +46,8 @@ add(sk.audit_seo())
 add(sk.linkbuilding())
 add(sk.cennik())
 add(sk2.jak_pracujeme())
-add(sk2.pripady())
+add(sk2.vysledky())
+add(sk2.vysledky_redirect())
 add(sk2.villa_paris())
 add(sk2.faq())
 add(sk2.o_nas())
@@ -67,7 +68,8 @@ add(cz.cz_audit())
 add(cz.cz_linkbuilding())
 add(cz.cz_cenik())
 add(cz.cz_jak_pracujeme())
-add(cz.cz_pripady())
+add(cz.cz_vysledky())
+add(cz.cz_vysledky_redirect())
 add(cz.cz_faq())
 add(cz.cz_kontakt())
 add(cz.cz_blog())
@@ -111,7 +113,7 @@ SK_ENTRIES = [
     ("sluzby/seo-audit/",                 "0.8"),
     ("sluzby/linkbuilding/",              "0.7"),
     ("jak-pracujeme/",      "0.8"),
-    ("pripady/",            "0.7"),
+    ("vysledky/",           "0.7"),
     ("villa-paris/",        "0.6"),
     ("faq/",                "0.6"),
     ("o-nas/",              "0.6"),

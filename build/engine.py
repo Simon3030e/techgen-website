@@ -35,13 +35,13 @@ MARKET_HOME = {"sk": "/", "cz": "/cz/", "en": "/en/"}       # brand home
 SK_PATHS = {
     "", "sluzby/", "sluzby/seo-optimalizacia/", "sluzby/lodalne-seo/",
     "sluzby/seo-pre-ai-vyhladavace/", "sluzby/seo-pre-eshopy/", "sluzby/seo-audit/",
-    "sluzby/linkbuilding/", "cennik/", "jak-pracujeme/", "pripady/",
+    "sluzby/linkbuilding/", "cennik/", "jak-pracujeme/", "vysledky/",
     "villa-paris/", "faq/", "o-nas/", "kontakt/", "blog/", "privacy/", "terms/",
 }
 CZ_PATHS = {
     "", "sluzby/", "sluzby/seo-optimalizace/", "sluzby/lodalne-seo/",
     "sluzby/seo-pre-ai-vyhledavace/", "sluzby/seo-pre-eshopy/", "sluzby/seo-audit/",
-    "sluzby/linkbuilding/", "cenik/", "jak-pracujeme/", "pripady/", "faq/", "kontakt/", "blog/",
+    "sluzby/linkbuilding/", "cenik/", "jak-pracujeme/", "vysledky/", "faq/", "kontakt/", "blog/",
     "privacy/", "terms/",
 }
 EN_PATHS = {
@@ -66,7 +66,7 @@ HREFLANG_PAIR = {
     "sluzby/seo-audit/": "sluzby/seo-audit/",
     "sluzby/linkbuilding/": "sluzby/linkbuilding/",
     "jak-pracujeme/": "jak-pracujeme/",
-    "pripady/": "pripady/",
+    "vysledky/": "vysledky/",
     "faq/": "faq/",
     "o-nas/": None,
     "kontakt/": "kontakt/",
@@ -85,7 +85,7 @@ EN_PAIR = {
     "o-nas/": "about/",
     "faq/": "faq/",
     "blog/": "blog/",
-    "pripady/": "portfolio/",
+    "vysledky/": "portfolio/",
     "villa-paris/": "villa-paris/",
     "privacy/": "privacy/",
     "terms/": "terms/",
@@ -169,7 +169,7 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/sk/sluzby/linkbuilding/", "Linkbuilding"),
         ])
         rest = [("Cenník", "/sk/cennik/"), ("Ako pracujem", "/sk/jak-pracujeme/"),
-                ("Prípady", "/sk/pripady/"), ("Blog", "/sk/blog/")]
+                ("Výsledky", "/sk/vysledky/"), ("Blog", "/sk/blog/")]
     elif market == "cz":
         svc = ("Služby", "/cz/sluzby/", [
             ("/cz/sluzby/seo-pre-ai-vyhledavace/", "AI viditelnost"),
@@ -180,7 +180,7 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
         ])
         rest = [("Ceník", "/cz/cenik/"), ("Jak pracuji", "/cz/jak-pracujeme/"),
-                ("Případy", "/cz/pripady/"), ("Blog", "/cz/blog/")]
+                ("Výsledky", "/cz/vysledky/"), ("Blog", "/cz/blog/")]
     else:
         svc = ("Services", "/en/services/", [
             ("/en/services/#ai", "AI search visibility"),
@@ -340,7 +340,7 @@ def footer(market: str, prefix: str) -> str:
                           ("https://peterkocur.sk", "Peter Kocur: PPC reklama")]),
             ("Agentúra", [("/sk/jak-pracujeme/", "Ako pracujem"),
                           ("/sk/cennik/", "Cenník"),
-                          ("/sk/pripady/", "Prípadové štúdie"),
+                          ("/sk/vysledky/", "Výsledky"),
                           ("/sk/o-nas/", "O nás"),
                           ("/sk/blog/", "Blog"),
                           ("/sk/faq/", "FAQ")]),
@@ -362,7 +362,7 @@ def footer(market: str, prefix: str) -> str:
                           ("https://peterkocur.sk", "Peter Kocur: PPC reklama")]),
             ("Agentura", [("/cz/jak-pracujeme/", "Jak pracuji"),
                           ("/cz/cenik/", "Ceník"),
-                          ("/cz/pripady/", "Případové studie"),
+                          ("/cz/vysledky/", "Výsledky"),
                           ("/cz/blog/", "Blog"),
                           ("/cz/faq/", "FAQ")]),
             ("Kontakt", [(f"mailto:{EMAIL}", EMAIL),
@@ -613,6 +613,60 @@ def _slide(client: str, chip: str, period: str, nums: list[dict], chart: str,
 </div>"""
 
 
+def partner_logo_card(href: str, logo: str, title: str, text: str, delay: int = 100) -> str:
+    """Partner card with a real logo image instead of an icon."""
+    ext = ' target="_blank" rel="noopener noreferrer"'
+    return f"""
+<div class="benefit-card card-hover reveal" data-delay="{delay}">
+  <img src="/assets/img/logos/{logo}" alt="{title}" loading="lazy"
+       style="height:42px; width:auto; max-width:80%; object-fit:contain; margin-bottom:14px;">
+  <h3><a href="{href}"{ext} style="color:var(--text);">{title}</a></h3>
+  <p>{text}</p>
+  <div class="project-tags"><span class="project-tag tag-blue">Partner</span></div>
+</div>"""
+
+
+def result_block(*, title: str, period: str, nums: list[dict], chart: str,
+                 caption: str, source: str, partner: str = "", market: str = "sk") -> str:
+    """One results-page project card with a chart.
+
+    partner: '' (no chip), 'own' (own project chip) or 'flamia'
+    (cooperation chip linking to Flamia Studio)."""
+    chips = {
+        "own": {"sk": "Vlastný projekt", "cz": "Vlastní projekt", "en": "Own project"},
+        "flamia": {"sk": "s Flamia Studio", "cz": "s Flamia Studio", "en": "with Flamia Studio"},
+    }
+    tag_cls = {"own": "tag-green", "flamia": "tag-blue"}
+    if partner:
+        chip_txt = chips[partner][market]
+        if partner == "flamia":
+            chip_html = (f'<span class="project-tag {tag_cls[partner]}">'
+                         f'<a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" '
+                         f'style="color:inherit;">{chip_txt}</a></span>')
+        else:
+            chip_html = f'<span class="project-tag {tag_cls[partner]}">{chip_txt}</span>'
+    else:
+        chip_html = ""
+    num_html = "".join(
+        f'<div class="rs-num"><strong style="color:{n["color"]};">{n["big"]}</strong>'
+        f'<span>{n["label"]}</span></div>' for n in nums)
+    chart_html = f'<div class="rs-chart">{chart}</div>' if chart else ""
+    owner_html = chip_html + " " if chip_html else ""
+    return f"""
+<div class="project-card card-hover">
+  <div class="project-card-body">
+    <div class="rs-head">
+      <div><h3>{title}</h3><span class="rs-period">{period}</span></div>
+      {owner_html}
+    </div>
+    {chart_html}
+    <div class="rs-nums">{num_html}</div>
+    <p>{caption}</p>
+    <p class="rs-source">Zdroj: {source}</p>
+  </div>
+</div>"""
+
+
 def results_slider(market: str) -> str:
     """Slider of real client results (GSC + AI Mode screenshots, Sep 2026)."""
     t = {
@@ -621,23 +675,23 @@ def results_slider(market: str) -> str:
             "sub": "Skutočné ukážky z Google Search Console a Google AI Mode mojich projektov a klientov. Čísla vám pred spoluprácou ukážem naživo.",
             "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditeľnosť",
             "chip4": "Obsah na 6 stránkach", "chip5": "Lokálne SEO",
-            "prev": "Predchádzajúci", "next": "Nasledujúci", "all": "Všetky prípadové štúdie",
-            "case_url": "/sk/pripady/",
+            "prev": "Predchádzajúci", "next": "Nasledujúci", "all": "Všetky výsledky",
+            "case_url": "/sk/vysledky/",
         },
         "cz": {
             "label": "Moje výsledky", "head": "Čísla z praxe, ne obrázky ze šablony",
             "sub": "Skutečné ukázky z Google Search Console a Google AI Mode mých projektů a klientů. Čísla vám před spoluprací ukážu naživo.",
             "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditelnost",
             "chip4": "Obsah na 6 stránkách", "chip5": "Lokální SEO",
-            "prev": "Předchozí", "next": "Další", "all": "Všechny případové studie",
-            "case_url": "/cz/pripady/",
+            "prev": "Předchozí", "next": "Další", "all": "Všechny výsledky",
+            "case_url": "/cz/vysledky/",
         },
         "en": {
             "label": "Results", "head": "Real numbers, not stock images",
             "sub": "Actual screenshots from Google Search Console and Google AI Mode of our project and clients.",
             "chip1": "Content + tech", "chip2": "SEO from zero", "chip3": "AI visibility",
             "chip4": "Content on 6 pages", "chip5": "Local SEO",
-            "prev": "Previous", "next": "Next", "all": "All case studies",
+            "prev": "Previous", "next": "Next", "all": "All results",
             "case_url": "/en/portfolio/",
         },
     }[market]

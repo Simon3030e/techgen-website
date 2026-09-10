@@ -1,10 +1,12 @@
 /**
  * Nokto Studio - forms.js
- * Contact form validation and delivery to hello inbox via FormSubmit.
- * Endpoint target mailbox: simsitermi@gmail.com
+ * Contact form validation and delivery to the hello inbox via FormSubmit.
+ * Endpoint target mailbox: hello@noktostudio.com
+ * NOTE: first submission after changing the mailbox triggers a FormSubmit
+ * activation email to hello@noktostudio.com; click it once to start delivery.
  */
 (function () {
-  const ENDPOINT = 'https://formsubmit.co/ajax/simsitermi@gmail.com';
+  const ENDPOINT = 'https://formsubmit.co/ajax/hello@noktostudio.com';
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.contact-form-el').forEach(form => {
