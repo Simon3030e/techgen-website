@@ -3,7 +3,7 @@
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     steps_block, price_cards, benefit_cards, schema_service,
                     results_slider, result_block, partner_logo_card,
-                    ORG_SCHEMA_CZ, EMAIL, BASE, gicon, _bars, _sparkline,
+                    ORG_SCHEMA_CZ, EMAIL, BASE, PHONE_TEL, PHONE_DISPLAY, gicon, _bars, _sparkline,
                     _GREEN, _BLUE, _RED, _YELLOW)
 
 # ---------------------------------------------------------------- shared
@@ -272,7 +272,7 @@ def cz_home() -> tuple[str, str]:
 def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
                 intro: str, for_who: list[str], deliverables: list[str],
                 faq: list[tuple[str, str]], svc_name: str,
-                proof: dict | None = None) -> tuple[str, str]:
+                proof: dict | None = None, time_estimate: str = "8 až 20 hodin měsíčně") -> tuple[str, str]:
     url = BASE + f"/cz/sluzby/{slug}/"
     who = "".join(f"<li>{w}</li>" for w in for_who)
     deliv = "".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliverables)
@@ -317,10 +317,25 @@ def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
 
 <section class="section section-alt">
   <div class="container">
+    <div class="section-head">
+      <span class="section-label">Ve zkratce</span>
+      <h2>Klíčové věci, na které se ptáte</h2>
+    </div>
+    <div class="case-result proof-band">
+      <div><strong>Pro koho</strong><span>{' '.join(for_who[:1]).split('.')[0][:80] or 'firmy a e-shopy'}</span></div>
+      <div><strong>Časový odhad</strong><span>{time_estimate}</span></div>
+      <div><strong>Cena</strong><span>12 EUR za hodinu, vykazované v reportu</span></div>
+      <div><strong>Další krok</strong><span><a href="/cz/kontakt/" style="color:var(--g-blue-deep); font-weight:700;">Bezplatný vstupní audit</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>za hodinu · kdykoliv skončíte</small></div>
-        <p style="margin-top:8px; max-width:520px;">Tato služba obvykle potřebuje 8 až 20 hodin měsíčně, podle rozsahu webu a konkurence.</p>
+        <p style="margin-top:8px; max-width:520px;">Časový odhad této služby: {time_estimate}, podle rozsahu webu a konkurence.</p>
       </div>
       <div class="hero-ctas">
         <a href="/cz/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
@@ -378,6 +393,7 @@ def cz_seo_optimalizace() -> tuple[str, str]:
         title="SEO optimalizace webových stránek | Nokto Studio",
         desc="SEO optimalizace webu: technika, obsah, klíčová slova. Pozice v Google, které přivedou zákazníky. 12 EUR za hodinu, bezplatný SEO audit.",
         label="Služba · SEO optimalizace",
+        time_estimate="10 hodin měsíčně pro firemní web (120 EUR), e-shop 20 až 40 hodin",
         h1="SEO optimalizace, která přivede zákazníky",
         intro="Zákazník, který vás hledá v Googlu, je nejlevnější zákazník. Postavím web tak, aby mu Google rozuměl, zařadil ho nahoru a návštěvníci odcházeli s odpovědí, ne s otazníkem.",
         for_who=[
@@ -422,6 +438,7 @@ def cz_lodalne_seo() -> tuple[str, str]:
         title="Lokální SEO a firemní profil Google Mapy | Nokto Studio",
         desc="Lokální SEO: firemní profil Google, Google Mapy, hodnocení a lokální klíčová slova. Zákazníci z okolí vás najdou první. 12 EUR za hodinu.",
         label="Služba · Lokální SEO",
+        time_estimate="8 hodin na nastavení profilu, poté 4 hodiny měsíčně",
         h1="Lokální SEO: zákazníci z okolí vás najdou první",
         intro="Když si někdo vyhledá zubaře, autoservis, kuchyně nebo střechaře ve svém městě, rozhodnou tři věci: Google Mapy, hodnocení a web. Nastavím všechny tři a udržuji je v pořádku.",
         for_who=[
@@ -466,6 +483,7 @@ def cz_seo_ai() -> tuple[str, str]:
         title="SEO pro AI vyhledávače: ChatGPT a AI Overviews | Nokto Studio",
         desc="Optimalizace pro AI vyhledávače a AI Overviews. ChatGPT a Gemini vás doporučí zákazníkům. Jako první na českém trhu.",
         label="Služba · SEO pro AI",
+        time_estimate="6 až 12 hodin první měsíc, poté 4 až 8 hodin měsíčně",
         h1="Ať vás ChatGPT doporučuje zákazníkům",
         intro="Zákazník dnes neptá jen Google. Ptá ChatGPT: \u201eDoporuč mi dobrou ordinaci v Brně.\u201c AI nástroj odpoví dvěma až pěti jmény. Mým úkolem je, aby tam bylo vaše jméno.",
         for_who=[
@@ -510,6 +528,7 @@ def cz_eshop_seo() -> tuple[str, str]:
         title="SEO pro e-shopy: Shoptet a Google Shopping | Nokto Studio",
         desc="SEO optimalizace e-shopu: kategorie, produkty, Shoptet, Marketplace i Google Shopping. Více prodejů z organického vyhledávání. 12 EUR za hodinu.",
         label="Služba · SEO pro e-shopy",
+        time_estimate="20 až 40 hodin měsíčně (240 až 480 EUR)",
         h1="E-shop SEO: více objednávek z Google",
         intro="E-shop má jediné skutečné měřítko úspěchu: objednávky. Optimalizuji kategorie a produkty na dotazy, které kupují, aby vás Google i Marketplace našli bez placení za každý klik.",
         for_who=[
@@ -543,7 +562,7 @@ def cz_eshop_seo() -> tuple[str, str]:
                         ("15", "Objednávek z e-mailu a organiky.", "#34A853"),
                         ("722 EUR", "největší objednávka", "#F9AB00")],
             "caption": "Regionální dodavatel truhlářského zboží s e-shopem na vlastní platformě, API integrací na účetní systém a e-mail marketingem. Objednávky chodí z kanálů e-mail a organický Google. Součástí je i lokální SEO a optimalizace pro AI vyhledávače.",
-            "source": "Zdroj: objednávky připsané do kanálů e-mail a organický Google, 9 měsíců spolupráce.",
+            "source": "Zdroj: objednávky připsané do kanálů e-mail a organický Google, 9 měsíců.",
         },
     )
 
@@ -554,6 +573,7 @@ def cz_audit() -> tuple[str, str]:
         title="SEO audit webu a analýza klíčových slov | Nokto Studio",
         desc="SEO audit webu s akčním plánem: technika, obsah, klíčová slova, konkurence. Bezplatný vstupní audit, detailní od 12 EUR za hodinu.",
         label="Služba · SEO audit",
+        time_estimate="vstupní audit zdarma do 3 dní, detailní audit 20 až 40 hodin (240 až 480 EUR)",
         h1="SEO audit: přesný obraz toho, co váš web brzdí",
         intro="Audit není PDF do šuplíku. Je to seznam úloh s prioritami a odhadem hodin. Začíná bezplatným vstupním auditem, který máte do tří dnů.",
         for_who=[
@@ -598,6 +618,7 @@ def cz_linkbuilding() -> tuple[str, str]:
         title="Linkbuilding a zpětné odkazy | Nokto Studio",
         desc="Linkbuilding: zpětné odkazy a autorita webu. Bezpečné metody, reálné domény, transparentní vykazování. 12 EUR za hodinu.",
         label="Služba · Linkbuilding",
+        time_estimate="4 až 8 hodin měsíčně, cena odkazů vykazovaná zvlášť",
         h1="Linkbuilding: autorita, která drží pozice",
         intro="Technika a obsah vás dovedou do středu výsledků, autorita vás posune nahoru. Stavím odkazy, které Google akceptuje a zákazníci citují.",
         for_who=[
@@ -753,6 +774,28 @@ def cz_jak_pracujeme() -> tuple[str, str]:
 {page_hero("Proces", "Jak pracuji: plán, práce, měření",
            "Jasný proces bez černé skříňky. Vždy víte, co dělám, proč a co to přineslo.",
            [("Domů", "/cz/"), ("Jak pracuji", None)])}
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Dva pilíře</span>
+      <h2>Dva hlavní pilíře mé práce</h2>
+      <p class="section-subheading">Takto zákazníkům pomáhám růst v Google a AI vyhledávání. Jeden bez druhého nefunguje.</p>
+    </div>
+    <div class="grid-2">
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("search", "#1A73E8", 26)}</span>
+        <h3>Psaní obsahu</h3>
+        <p>Expertní články a texty stránek na dotazy, které zákazníci skutečně ptají. Obsah, který Google cituje i v AI odpovědích a doporučuje zákazníkům.</p>
+      </div>
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("audit", "#34A853", 26)}</span>
+        <h3>Opravy technických věcí na webu</h3>
+        <p>Technické SEO: rychlost, indexace, kanonizace, interní prolinkování a čistá struktura webu. Základ, na kterém obsah funguje.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section">
   <div class="container">
     <div class="section-head"><span class="section-label">Proces</span><h2>Od prvního hovoru po měsíční report</h2></div>
@@ -830,7 +873,7 @@ def cz_vysledky() -> tuple[str, str]:
             source="Google Search Console, report výkonnosti 9. 9. 2026",
             partner="", market="cz"),
         result_block(
-            title="Mikramt.sk, Martin (SK)", period="9 měsíců spolupráce",
+            title="Mikramt.sk, Martin (SK)", period="první e-shop, teď rework v průběhu",
             nums=[{"big": "2 492,75 EUR", "color": _GREEN, "label": "tržeb z prvního e-shopu"},
                   {"big": "15", "color": _BLUE, "label": "objednávek online"},
                   {"big": "722 EUR", "color": _YELLOW, "label": "největší objednávka"}],
@@ -839,13 +882,13 @@ def cz_vysledky() -> tuple[str, str]:
             source="objednávky připsané do kanálů email a organický Google",
             partner="flamia", market="cz"),
         result_block(
-            title="Speem.sk", period="Search Console, 3 měsíce",
-            nums=[{"big": "413", "color": _BLUE, "label": "kliků na hlavní kategorii"},
-                  {"big": "44 838", "color": _RED, "label": "zobrazení / čelenky"},
-                  {"big": "13", "color": _GREEN, "label": "citací v Google AI Mode"}],
-            chart=c_speem,
-            caption="Kategorie e-shopu s desítkami tisíc zobrazení měsíčně. Google AI Mode cituje e-shop ve 13 odpovědích zákazníkům, z toho 8krát stránku /overaly/. Konkurence tu ještě není.",
-            source="Google Search Console + Google AI Mode",
+            title="Speem.sk", period="Search Console + AI Mode, červen až září 2026",
+            nums=[{"big": "893", "color": _GREEN, "label": "zobrazení v Google AI Mode za 3 měsíce"},
+                  {"big": "+80 %", "color": _BLUE, "label": "srpen oproti červnu (182 → 329)"},
+                  {"big": "413", "color": _RED, "label": "kliků na hlavní kategorii"}],
+            chart=_bars([182, 293, 329, 89], _GREEN, ["červ", "čvc", "srp", "zář"]),
+            caption="Google AI Mode cituje e-shop denně po nasazení našeho obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (174, 167 a 119 citací). Kategorie mají desítky tisíc organických zobrazení měsíčně (čelenky 44 838). Konkurence v AI odpovědích ještě není.",
+            source="Google Search Console + Google AI Mode (report citací), červen až září 2026",
             partner="own", market="cz"),
         result_block(
             title="InTheCity.app", period="posledních 28 dní",
@@ -872,8 +915,8 @@ def cz_vysledky() -> tuple[str, str]:
             partner="flamia", market="cz"),
     ])
     body = f"""
-{page_hero("Výsledky", "Příklady práce, ne samá chvála",
-           "Výsledky projektů z Google Search Console, Google AI Mode a reportů klientů. Čísla doplňuji podle dohody s klientem.",
+{page_hero("Výsledky", "Ako jsem pomohl zákazníkům růst v Google a AI vyhledávání",
+           "Psaním obsahu a opravami technických věcí na webu. Výsledky z Google Search Console a Google AI Mode.",
            [("Domů", "/cz/"), ("Výsledky", None)])}
 
 <section class="section">
@@ -887,9 +930,73 @@ def cz_vysledky() -> tuple[str, str]:
 
 {results_slider("cz")}
 
-<section class="section" style="padding-top:0;">
+<section class="section">
   <div class="container">
-    {cta_band("Vaše firma může být další příběh", "Začněme bezplatným auditem. Uvidíte, co bychom u vás řešili, ještě před první fakturou.", "cz")}
+    <div class="section-head">
+      <span class="section-label">Zpětná vazba</span>
+      <h2>Co říká pokračování spoluprací</h2>
+      <p class="section-subheading">Nejlepší reference je fakt, že zákazníci zůstávají. Kontakty na klienty poskytnu na žádost, cituji je jen s jejich souhlasem.</p>
+    </div>
+    <div class="grid-3">
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("grow", "#34A853", 26)}</span>
+        <h3>Mikramt.sk: spolupráce pokračuje</h3>
+        <p>Zákazník byl spokojený s prvním e-shopem (2 492,75 EUR za 9 měsíců), proto teď děláme rework: více produktů a lepší SEO.</p>
+      </div>
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("ai", "#1A73E8", 26)}</span>
+        <h3>ServisProfi.sk: měsíční spolupráce běží</h3>
+        <p>996 kliků (+8 %) a 96 citací v AI odpovědích za 3 měsíce. Report vychází každý měsíc s čísly.</p>
+      </div>
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("pin", "#EA4335", 26)}</span>
+        <h3>Villa Paris: projekt běží s Flamia Studio</h3>
+        <p>Rebrand, web a lokální SEO v jednom systému. Značku a web děláme ve spolupráci s Flamia Studio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="prose">
+        <span class="section-label">Další krok</span>
+        <h2>Napište mi nebo volejte</h2>
+        <p>Do 24 hodin vám odpovím s prvními nápady pro váš web. Bezplatný vstupní audit: co brzdí vaše pozice, prodej a AI doporučení.</p>
+        <p style="margin-top:18px;"><a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Zavolejte {PHONE_DISPLAY}</a></p>
+        <p style="margin-top:12px;">Nebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
+      </div>
+      <div class="card contact-form-wrap">
+        <span class="section-label">Nebo formulář</span>
+        <form class="contact-form-el" style="margin-top:16px;">
+          <div class="form-grid">
+            <div class="form-field"><label class="form-label" for="name">Jméno a firma *</label><input class="form-input" id="name" name="name" type="text" required></div>
+            <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" required></div>
+            <div class="form-field full"><label class="form-label" for="url">Adresa webu (pokud máte)</label><input class="form-input" id="url" name="url" type="url" placeholder="https://"></div>
+            <div class="form-field full"><label class="form-label" for="goal">Jaký je váš cíl? *</label>
+              <select class="form-select" id="goal" name="goal" required>
+                <option value="">Vyberte...</option>
+                <option>Více zákazníků z Google</option>
+                <option>Lepší viditelnost na Google Mapách</option>
+                <option>Doporučení v ChatGPT / AI</option>
+                <option>Více prodejů na e-shopu</option>
+                <option>Nový web nebo redesign</option>
+                <option>Něco jiného</option>
+              </select>
+            </div>
+            <div class="form-field full"><label class="form-label" for="msg">Zpráva</label><textarea class="form-textarea" id="msg" name="msg" placeholder="Pár slov o vaší firmě a čeho chcete dosáhnout."></textarea></div>
+          </div>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Dotaz ze stránky Výsledky - noktostudio.com">
+          <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslat zprávu</button>
+          <p class="form-note">Odesláním souhlasíte se zpracováním údajů pro účel odpovědi (viz <a href="/cz/privacy/">zásady ochrany osobních údajů</a>).</p>
+        </form>
+        <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
+          ✓ Děkuji, zpráva odletěla na {EMAIL}. Ozvu se osobně do 24 hodin. Nebo volejte rovnou: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 """

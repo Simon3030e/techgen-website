@@ -47,6 +47,10 @@ LOGOS = """
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
             <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
@@ -142,9 +146,10 @@ def home() -> tuple[str, str]:
     h1 = ('Nech vás zákazníci nájdú v <span class="hl-blue">Google</span>, '
           'na <span class="hl-red">Google Mapách</span> aj v <span class="hl-green">ChatGPT</span>.')
     sub = ("Volám sa Šimon Štermenský a SEO robím pre podnikateľov bez platenej reklamy: "
-           "pracujem na obsahu webu, technickej stránke webu a profile na Google Mapách, "
-           "aby vás zákazníci našli, keď hľadajú vaše produkty a služby. Za transparentných "
-           "12 EUR za hodinu. Bez paušálov, bez pevných zmlúv, s reportom, ktorému rozumiete.")
+           "pomáham klientom rásť v Google a AI vyhľadávaní písaním obsahu a opravami "
+           "technických vecí na webe, tak aby vás zákazníci našli, keď hľadajú vaše "
+           "produkty a služby. Za transparentných 12 EUR za hodinu. Bez paušálov, "
+           "bez pevných zmlúv, s reportom, ktorému rozumiete.")
 
     body = f"""
 <!-- HERO -->
@@ -390,7 +395,7 @@ def sluzby() -> tuple[str, str]:
 def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
                   intro: str, for_who: list[str], deliverables: list[str],
                   faq: list[tuple[str, str]], slug: str, svc_name: str,
-                  proof: dict | None = None) -> tuple[str, str]:
+                  proof: dict | None = None, time_estimate: str = "8 až 20 hodín mesačne") -> tuple[str, str]:
     url = BASE + f"/sk/sluzby/{slug}/"
     who = "".join(f"<li>{w}</li>" for w in for_who)
     deliv = "".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliverables)
@@ -435,10 +440,25 @@ def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
 
 <section class="section section-alt">
   <div class="container">
+    <div class="section-head">
+      <span class="section-label">V skratke</span>
+      <h2>Kľúčové veci, na ktoré sa pýtate</h2>
+    </div>
+    <div class="case-result proof-band">
+      <div><strong>Pre koho</strong><span>{' '.join(for_who[:1]).split('.')[0][:80] or 'firmy a e-shopy'}</span></div>
+      <div><strong>Časový odhad</strong><span>{time_estimate}</span></div>
+      <div><strong>Cena</strong><span>12 EUR za hodinu, vykazované v reporte</span></div>
+      <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--g-blue-deep); font-weight:700;">Bezplatný vstupný audit</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>za hodinu · kedykoľvek skončíte</small></div>
-        <p style="margin-top:8px; max-width:520px;">Táto služba zvyčajne potrebuje 8 až 20 hodín mesačne, podľa rozsahu webu a konkurencie.</p>
+        <p style="margin-top:8px; max-width:520px;">Časový odhad tejto služby: {time_estimate}, podľa rozsahu webu a konkurencie.</p>
       </div>
       <div class="hero-ctas">
         <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
@@ -473,6 +493,7 @@ def seo_optimalizacia() -> tuple[str, str]:
         title="SEO optimalizácia webu a webstránok | Nokto Studio",
         desc="SEO optimalizácia webstránok: technika, obsah, kľúčové slová. Pozície v Google, ktoré privedú zákazníkov. 12 EUR za hodinu, bezplatný audit.",
         label="Služba · SEO optimalizácia",
+        time_estimate="10 hodín mesačne pre firemný web (120 EUR), e-shop 20 až 40 hodín",
         h1="SEO optimalizácia, ktorá privedie zákazníkov",
         intro="Zákazník, ktorý vás hľadá v Google, je najlacnejší zákazník. Web postavím tak, aby mu Google rozumel a zaradil ho vyššie a návštevníci odchádzali s odpoveďou, nie s otáznikom.",
         for_who=[
@@ -517,6 +538,7 @@ def lodalne_seo() -> tuple[str, str]:
         title="Lokálne SEO a firemný profil Google Mapy | Nokto Studio",
         desc="Lokálne SEO: Google firemný profil, Google Mapy, hodnotenia a lokálne kľúčové slová. Zákazníci z okolia vás nájdu prví. 12 EUR za hodinu.",
         label="Služba · Lokálne SEO",
+        time_estimate="8 hodín na nastavenie profilu, potom 4 hodiny mesačne",
         h1="Lokálne SEO: zákazníci z okolia vás nájdu prví",
         intro="Keď si niekto vyhľadá zubára, autoservis alebo kuchyne vo svojom meste, rozhodnú tri veci: Google Mapy, hodnotenia a web. Nastavím všetky tri a držím ich v poriadku.",
         for_who=[
@@ -561,6 +583,7 @@ def seo_ai() -> tuple[str, str]:
         title="SEO pre AI vyhľadávače: ChatGPT a AI Overviews | Nokto Studio",
         desc="Optimalizácia pre AI vyhľadávače a AI Overviews. ChatGPT a Gemini vás odporúčajú zákazníkom. Prvá agentúra na Slovensku s touto špecializáciou.",
         label="Služba · SEO pre AI",
+        time_estimate="6 až 12 hodín prvý mesiac, potom 4 až 8 hodín mesačne",
         h1="Aby vás ChatGPT odporúčal zákazníkom",
         intro="Zákazník dnes nepýta len Google. Pýta ChatGPT: \u201eOdporúč mi dobrého zubára v Nitre.\u201c AI nástroj odpovie dvomi až piatimi menami. Mojou úlohou je, aby vaše meno tam bolo.",
         for_who=[
@@ -605,6 +628,7 @@ def eshop_seo() -> tuple[str, str]:
         title="SEO pre e-shopy: Shoptet a Google Shopping | Nokto Studio",
         desc="SEO optimalizácia e-shopu: kategórie, produkty, Shoptet, Marketplace aj Google Shopping. Viac predaja z organického vyhľadávania. 12 EUR za hodinu.",
         label="Služba · SEO pre e-shopy",
+        time_estimate="20 až 40 hodín mesačne (240 až 480 EUR)",
         h1="E-shop SEO: viac objednávok z Google",
         intro="E-shop má jediné reálne meradlo úspechu: objednávky. Optimalizujem kategórie a produkty na dotazy, ktoré kupujú, aby vás Google aj Marketplace našli bez nutnosti platiť za každý klik.",
         for_who=[
@@ -638,7 +662,7 @@ def eshop_seo() -> tuple[str, str]:
                         ("15", "objednávok z e-mailu a organického vyhľadávania", "#34A853"),
                         ("722 EUR", "najväčšia objednávka", "#F9AB00")],
             "caption": "Regionálny dodávateľ stolárskych potrieb s e-shopom na vlastnej platforme, API integráciou na účtovný systém a e-mail marketingom. Objednávky chodia z kanálov e-mail a organický Google. Súčasťou je aj lokálne SEO a optimalizácia pre AI vyhľadávače.",
-            "source": "Zdroj: objednávky pripísané kanálom e-mail a organický Google, 9 mesiacov spolupráce",
+            "source": "Zdroj: objednávky pripísané kanálom e-mail a organický Google, 9 mesiacov",
         },
     )
 
@@ -649,6 +673,7 @@ def audit_seo() -> tuple[str, str]:
         title="SEO audit webu a analýza kľúčových slov | Nokto Studio",
         desc="SEO audit webu s akčným plánom: technika, obsah, kľúčové slová, konkurencia. Bezplatný vstupný audit, detailný od 12 EUR za hodinu.",
         label="Služba · SEO audit",
+        time_estimate="vstupný audit zdarma do 3 dní, detailný audit 20 až 40 hodín (240 až 480 EUR)",
         h1="SEO audit: presný obraz toho, čo váš web brzdí",
         intro="Audit nie je PDF na polici. Je to zoznam úloh s prioritami a odhadom hodín. Začína sa bezplatným vstupným auditom, ktorý máte do troch dní.",
         for_who=[
@@ -693,6 +718,7 @@ def linkbuilding() -> tuple[str, str]:
         title="Linkbuilding a spätné odkazy | Nokto Studio",
         desc="Linkbuilding: spätné odkazy a autorita webu. Bezpečné metódy, reálne domény, transparentné vykazovanie. 12 EUR za hodinu.",
         label="Služba · Linkbuilding",
+        time_estimate="4 až 8 hodín mesačne, cena odkazov vykazovaná zvlášť",
         h1="Linkbuilding: autorita, ktorá drží pozície",
         intro="Technika a obsah vás dovedú do stredu výsledkov, autorita vás posunie hore. Staviam odkazy, ktoré Google akceptuje a zákazníci aj citujú.",
         for_who=[

@@ -28,7 +28,7 @@ def en_home() -> tuple[str, str]:
     <div class="hero-content">
       <span class="hero-label">SEO agency for business owners · Europe</span>
       <h1>{h1}</h1>
-      <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We bring you customers from organic search, Google Maps and AI tools, and grow your e-shop sales. At a transparent 12 EUR per hour. No retainers you cannot see through, no lock-in contracts.</p>
+      <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. At a transparent 12 EUR per hour. No retainers you cannot see through, no lock-in contracts.</p>
       <div class="hero-ctas">
         <a href="{PHONE_TEL}" class="btn btn-primary btn-lg">Call {PHONE_DISPLAY}</a>
         <a href="/en/contact/?audit=1" class="btn btn-outline btn-lg">Get a free audit</a>
@@ -374,7 +374,7 @@ def en_portfolio() -> tuple[str, str]:
             source="Google Search Console, performance report Sep 9, 2026",
             partner="", market="en"),
         result_block(
-            title="Mikramt.sk, Martin (SK)", period="9 months of work",
+            title="Mikramt.sk, Martin (SK)", period="first e-shop, rework in progress",
             nums=[{"big": "2,492.75 EUR", "color": _GREEN, "label": "revenue from the first e-shop"},
                   {"big": "15", "color": _BLUE, "label": "online orders"},
                   {"big": "722 EUR", "color": _YELLOW, "label": "largest single order"}],
@@ -383,13 +383,13 @@ def en_portfolio() -> tuple[str, str]:
             source="orders attributed to the email and organic Google channels",
             partner="flamia", market="en"),
         result_block(
-            title="Speem.sk", period="Search Console, 3 months",
-            nums=[{"big": "413", "color": _BLUE, "label": "clicks on the main category"},
-                  {"big": "44 838", "color": _RED, "label": "impressions / headbands"},
-                  {"big": "13", "color": _GREEN, "label": "citations in Google AI Mode"}],
-            chart=c_speem,
-            caption="E-shop categories with tens of thousands of impressions per month. Google AI Mode cites the shop in 13 customer answers, 8 of them for the /overaly/ page. Competitors aren't there yet.",
-            source="Google Search Console + Google AI Mode",
+            title="Speem.sk", period="Search Console + AI Mode, June to September 2026",
+            nums=[{"big": "893", "color": _GREEN, "label": "impressions in Google AI Mode in 3 months"},
+                  {"big": "+80 %", "color": _BLUE, "label": "August vs June (182 → 329)"},
+                  {"big": "413", "color": _RED, "label": "clicks on the main category"}],
+            chart=_bars([182, 293, 329, 89], _GREEN, ["Jun", "Jul", "Aug", "Sep"]),
+            caption="Google AI Mode cites the shop daily after deploying our content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (174, 167 and 119 citations). Categories get tens of thousands of organic impressions per month (headbands 44,838). Competitors are not in AI answers yet.",
+            source="Google Search Console + Google AI Mode (citation report), June to September 2026",
             partner="own", market="en"),
         result_block(
             title="InTheCity.app", period="last 28 days",
@@ -416,8 +416,8 @@ def en_portfolio() -> tuple[str, str]:
             partner="flamia", market="en"),
     ])
     body = f"""
-{page_hero("Portfolio", "Results in numbers, not just praise",
-           "Project results from Google Search Console, Google AI Mode and client reports. Detailed case studies on request, respecting client confidentiality.",
+{page_hero("Portfolio", "How I helped clients grow in Google and AI search",
+           "By writing content and fixing technical issues on the website. Results from Google Search Console and Google AI Mode.",
            [("Home", "/en/"), ("Portfolio", None)])}
 <section class="section">
   <div class="container">

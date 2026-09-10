@@ -448,7 +448,7 @@ def page_hero(label: str, h1_html: str, sub: str, crumbs: list[tuple[str, str]] 
 
 
 def cta_band(title: str, text: str, market: str) -> str:
-    btn1 = {"sk": "Napíšte nám", "cz": "Napište nám", "en": "Get in touch"}[market]
+    btn1 = {"sk": "Napíšte mi", "cz": "Napište mi", "en": "Get in touch"}[market]
     btn2 = {"sk": "Chcem bezplatný audit", "cz": "Chci bezplatný audit", "en": "Get my free audit"}[market]
     call = {"sk": "Alebo zavolajte rovno:", "cz": "Nebo volejte rovnou:", "en": "Or call directly:"}[market]
     audit_href = {"sk": "/sk/kontakt/?audit=1", "cz": "/cz/kontakt/?audit=1", "en": "/en/contact/?audit=1"}[market]
@@ -591,19 +591,21 @@ def _donut(parts: list[tuple[int, str, str]], w: int = 160, h: int = 160) -> str
 
 
 def _slide(client: str, chip: str, period: str, nums: list[dict], chart: str,
-           caption: str, market: str) -> str:
+           caption: str, market: str, logo: str = "") -> str:
     """One slider slide. nums: [{big, color, label}]"""
     num_html = "".join(
         f'<div class="rs-num"><strong style="color:{n["color"]};">{n["big"]}</strong>'
         f'<span>{n["label"]}</span></div>' for n in nums)
     client_lbl = {"sk": client, "cz": client, "en": client}[market]
     source = {"sk": "Google Search Console", "cz": "Google Search Console", "en": "Google Search Console"}[market]
+    logo_html = (f'<img src="/assets/img/logos/{logo}" alt="{client_lbl}" loading="lazy" '
+                 f'style="height:34px; width:auto; object-fit:contain;">') if logo else         f'<span class="rs-chip">{chip}</span>'
     return f"""
 <div class="rs-slide">
   <div class="rs-card">
     <div class="rs-head">
       <div><h3>{client_lbl}</h3><span class="rs-period">{period}</span></div>
-      <span class="rs-chip">{chip}</span>
+      {logo_html}
     </div>
     <div class="rs-chart">{chart}</div>
     <div class="rs-nums">{num_html}</div>
@@ -708,7 +710,7 @@ def results_slider(market: str) -> str:
         {"sk": "Prvý mesiac spolupráce: technické SEO a obsah. Google začal prinášať zákazníkov hneď.",
          "cz": "První měsíc spolupráce: technické SEO a obsah. Google začal přinášet zákazníky hned.",
          "en": "First month of cooperation: technical SEO and content. Google started delivering customers immediately."}[market],
-        market)
+        logo="inthecity.png", market=market)
 
     chart2 = _bars([68, 92, 130, 171, 250], _RED, ["mesiac 1", "mesiac 2", "mesiac 3", "mesiac 4", "teraz"] if market != "en" else ["m1", "m2", "m3", "m4", "now"])
     s2 = _slide(
@@ -724,17 +726,17 @@ def results_slider(market: str) -> str:
          "en": "Clicks in 3 months since the start of cooperation. Growth every month, no one-off spike."}[market],
         market)
 
-    chart3 = _bars([8, 3, 1, 1], _GREEN, ["/overaly/", "blog", "materiály", "produkt"])
+    chart3 = _bars([182, 293, 329, 89], _GREEN, ["jún", "júl", "aug", "sep"])
     s3 = _slide("Speem.sk", t["chip3"],
-                {"sk": "Google AI Mode, 3 mesiace", "cz": "Google AI Mode, 3 měsíce", "en": "Google AI Mode, 3 months"}[market],
-        [{"big": "13", "color": _GREEN, "label": {"sk": "AI citácií webu", "cz": "AI citací webu", "en": "AI citations"}[market]},
-         {"big": "8", "color": _BLUE, "label": {"sk": "citácie jednej stránky /overaly/", "cz": "citací jedné stránky /overaly/", "en": "citations of one page"}[market]},
-         {"big": "3", "color": _YELLOW, "label": {"sk": "citácie blogového článku", "cz": "citací blogového článku", "en": "blog article citations"}[market]}],
+                {"sk": "Google AI Mode, jún až september 2026", "cz": "Google AI Mode, červen až září 2026", "en": "Google AI Mode, June to September 2026"}[market],
+        [{"big": "893", "color": _GREEN, "label": {"sk": "zobrazení v AI Mode za 3 mesiace", "cz": "zobrazení v AI Mode za 3 měsíce", "en": "AI Mode impressions in 3 months"}[market]},
+         {"big": "+80 %", "color": _BLUE, "label": {"sk": "august oproti júnu (182 → 329)", "cz": "srpen oproti červnu (182 → 329)", "en": "August vs June (182 → 329)"}[market]},
+         {"big": "174", "color": _YELLOW, "label": {"sk": "citácií homepage", "cz": "citací domovské stránky", "en": "homepage citations"}[market]}],
         chart3,
-        {"sk": "Po nasadení nášho obsahu Google AI Mode cituje e-shop v odpovediach zákazníkom. Konkurencia tu ešte nie je.",
-         "cz": "Po nasazení našeho obsahu Google AI Mode cituje e-shop v odpovědích zákazníkům. Konkurence tu ještě není.",
-         "en": "After deploying our content, Google AI Mode cites the shop in customer answers."}[market],
-        market)
+        {"sk": "Google AI Mode cituje e-shop denne po nasadení nášho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (167 a 119 citácií). Konkurencia v AI odpovediach ešte nie je.",
+         "cz": "Google AI Mode cituje e-shop denně po nasazení našeho obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (167 a 119 citací). Konkurence v AI odpovědích ještě není.",
+         "en": "Google AI Mode cites the shop daily after deploying our content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (167 and 119 citations)."}[market],
+        logo="speem.webp", market=market)
 
     chart4 = _sparkline([30, 38, 42, 50, 55, 50, 62, 66, 58, 70, 50, 66], _YELLOW)
     s4 = _slide(

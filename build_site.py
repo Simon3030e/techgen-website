@@ -53,6 +53,12 @@ add(sk2.faq())
 add(sk2.o_nas())
 add(sk2.kontakt())
 add(sk2.blog())
+add(sk2.blog_post_navod())
+add(sk2.blog_post_kolko_stoji())
+add(sk2.blog_post_seo_test())
+add(sk2.blog_post_linkbuilding())
+add(sk2.blog_post_gbp())
+add(sk2.blog_post_wordpress())
 add(sk2.sk_redirect())
 add(sk2.sk_privacy())
 add(sk2.sk_terms())
@@ -119,6 +125,12 @@ SK_ENTRIES = [
     ("o-nas/",              "0.6"),
     ("kontakt/",            "0.6"),
     ("blog/",               "0.5"),
+    ("blog/seo-optimalizacia-navod/",     "0.5"),
+    ("blog/kolko-stoji-seo/",             "0.5"),
+    ("blog/seo-test-15-bodov/",           "0.5"),
+    ("blog/linkbuilding-co-to-je/",       "0.5"),
+    ("blog/google-firmy-profil-navod/",   "0.5"),
+    ("blog/seo-wordpress/",               "0.5"),
     ("privacy/",            "0.2"),
     ("terms/",              "0.2"),
 ]
