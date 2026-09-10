@@ -3,9 +3,9 @@
 import re
 
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
-                    steps_block, results_slider, result_block, ORG_SCHEMA,
-                    EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY, _bars, _sparkline,
-                    _GREEN, _BLUE, _RED, _YELLOW, _donut)
+                    article_schema, steps_block, results_slider, result_block,
+                    ORG_SCHEMA, EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY,
+                    _bars, _sparkline, _GREEN, _BLUE, _RED, _YELLOW, _donut)
 
 # ---------------------------------------------------------------- JAK PRACUJEME
 
@@ -538,11 +538,12 @@ _BLOG_META = {
 
 
 def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
-              faq: list[tuple[str, str]], related: list[tuple[str, str]]) -> tuple[str, str]:
+              faq: list[tuple[str, str]], related: list[tuple[str, str]],
+              date_iso: str = "2026-09-10", date_display: str = "10. 9. 2026") -> tuple[str, str]:
     """Render one blog post page: direct answer first, sections, FAQ, CTA."""
-    related_html = (f'<div class="benefit-card card-hover related-card"><h3><a href="{u}" style="color:var(--text);">{n}</a></h3></div>'
-                    for u, n in related)
-    related_html = "".join(related_html)
+    related_html = "".join(
+        f'<div class="benefit-card card-hover related-card"><h3><a href="/sk/blog/{u}/" style="color:var(--text);">{n}</a></h3></div>'
+        for u, n in related)
     # answer goes to the takeaway box; drop the duplicated in-body section
     sections = re.sub(r"<h2>Stručná odpoveď</h2>\s*<p>.*?</p>", "", sections, count=1, flags=re.S)
     body = f"""
@@ -551,7 +552,7 @@ def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
     <a href="/sk/blog/" class="post-back">← Blog</a>
     <span class="section-label">{label}</span>
     <h1>{h1}</h1>
-    <p class="post-meta">10. 9. 2026 · Šimon Štermenský · Nokto Studio</p>
+    <p class="post-meta">{date_display} · Šimon Štermenský · Nokto Studio</p>
   </div>
 </section>
 
@@ -569,7 +570,7 @@ def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
     <div class="section-head"><span class="section-label">FAQ</span><h2>Časté otázky</h2></div>
     {faq_block(faq)}
   </div>
-</article>
+</section>
 
 <section class="section" style="padding-top:0;">
   <div class="container" style="max-width:820px;">
@@ -584,13 +585,13 @@ def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
   </div>
 </section>
 """
-    related_html = "".join(
-        f'<div class="benefit-card card-hover"><h3 style="margin-top:0;"><a href="{u}" style="color:var(--text);">{n}</a></h3></div>'
-        for u, n in related)
     meta = _BLOG_META[slug]
+    url = BASE + f"/sk/blog/{slug}/"
     html = base(market="sk", path=f"blog/{slug}/", title=meta["title"], desc=meta["desc"],
-                canonical=BASE + f"/sk/blog/{slug}/", body=body, prefix="../..",
-                extra_head=ORG_SCHEMA + faq_schema(faq, BASE + f"/sk/blog/{slug}/"))
+                canonical=url, body=body, prefix="../../../", og_type="article",
+                extra_head=ORG_SCHEMA + article_schema(url=url, title=meta["title"],
+                                                       desc=meta["desc"], date_iso=date_iso)
+                          + faq_schema(faq, url))
     return (f"sk/blog/{slug}/index.html", html)
 
 
@@ -919,39 +920,50 @@ def blog_post_wordpress() -> tuple[str, str]:
 
 # ---------------------------------------------------------------- BLOG LISTING
 
+# Blog card data. Excerpts are the direct answers of each article, read dates
+# match the launch date. No search-volume badges on the public page.
+_BLOG_CARDS = [
+    dict(slug="seo-optimalizacia-navod", cat="Návod", tag="tag-blue",
+         title="SEO optimalizácia: kompletný návod 2026",
+         excerpt="SEO optimalizácia krok za krokom: audit, plán s číslami, týždenná práca a mesačné meranie. Postup pre malé firmy, s reálnymi číslami z praxe."),
+    dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-yellow",
+         title="Koľko stojí SEO v roku 2026?",
+         excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, pri hodinovej spolupráci od 120 EUR mesačne. Prečo je cena 12 EUR za hodinu verejná a čo za ňu dostanete."),
+    dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-green",
+         title="SEO test: 15-bodový kontrolný zoznam pre váš web",
+         excerpt="Prejdite si web sami za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Za každým zlyhaným bodom je konkrétna oprava."),
+    dict(slug="linkbuilding-co-to-je", cat="Linkbuilding", tag="tag-red",
+         title="Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne",
+         excerpt="Čo sú spätné odkazy, reálna cena 50 až 300 EUR, bezpečné metódy a čo Google sankcionuje. Návod s príkladmi z praxe."),
+    dict(slug="google-firmy-profil-navod", cat="Lokálne SEO", tag="tag-blue",
+         title="Google firemný profil: návod od založenia po hodnotenia",
+         excerpt="Založenie, overenie, kategórie, fotky a hodnotenia cez SMS a QR kód. Profil nastavíte za 8 hodín, návod s prípadovou štúdiou."),
+    dict(slug="seo-wordpress", cat="WordPress", tag="tag-yellow",
+         title="SEO pre WordPress: 12 nastavení, ktoré treba spraviť",
+         excerpt="Permalinky, sitemap, rýchlosť, meta titulky a schéma. 12 konkrétnych nastavení, ktoré posunú pozície WordPress webu."),
+]
+
+
+def _blog_card(c: dict, featured: bool = False) -> str:
+    href = f"/sk/blog/{c['slug']}/"
+    return f"""
+<a href="{href}" class="blog-card{' blog-featured' if featured else ''}">
+  <div><span class="project-tag {c['tag']}">{c['cat']}</span></div>
+  <h3>{c['title']}</h3>
+  <p>{c['excerpt']}</p>
+  <div class="blog-card-foot"><span class="blog-date">10. 9. 2026</span><span class="blog-read">Čítať článok →</span></div>
+</a>"""
+
+
 def blog() -> tuple[str, str]:
-    topics = [
-        ("/sk/blog/seo-optimalizacia-navod/", "SEO optimalizácia: kompletný návod 2026",
-         "Krok za krokom od auditu po meranie. Dotaz „seo optimalizácia návod“ hľadá 1 200 ľudí mesačne.",
-         "tag-blue", "1 200 hľadaní/mes"),
-        ("/sk/blog/kolko-stoji-seo/", "Koľko stojí SEO v roku 2026?",
-         "Reálne ceny na slovenskom trhu a čo za ne dostanete. Dopyt „seo optimalizácia cena“ má 620 hľadaní mesačne.",
-         "tag-yellow", "620 hľadaní/mes"),
-        ("/sk/blog/seo-test-15-bodov/", "SEO test: 15-bodový kontrolný zoznam pre váš web",
-         "Prejdite si web sami za 30 minút. Cluster „seo optimalizácia test“ má 720 vyhľadávaní mesačne.",
-         "tag-green", "720 hľadaní/mes"),
-        ("/sk/blog/linkbuilding-co-to-je/", "Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne",
-         "Ceny odkazov (50 až 300 EUR), bezpečné metódy a čo Google sankcionuje. Cluster 750 hľadaní mesačne.",
-         "tag-red", "750 hľadaní/mes"),
-        ("/sk/blog/google-firmy-profil-navod/", "Google firemný profil: návod od založenia po hodnotenia",
-         "Kompletný sprievodca lokálnou viditeľnosťou. 110 hľadaní mesačne, najviac v januári a februári.",
-         "tag-blue", "110 hľadaní/mes"),
-        ("/sk/blog/seo-wordpress/", "SEO pre WordPress: 12 nastavení, ktoré treba spraviť",
-         "Rýchlosť, permalinky, schéma a pluginy. 130 hľadaní mesačne, rast +94 % medziročne.",
-         "tag-yellow", "130 hľadaní/mes"),
-    ]
-    cards = "".join(f"""
-<div class="benefit-card card-hover">
-  <span class="project-tag {tag}">Článok · {sv}</span>
-  <h3 style="margin-top:12px;"><a href="{href}" style="color:var(--text);">{t}</a></h3>
-  <p>{d}</p>
-</div>""" for href, t, d, tag, sv in topics)
+    featured = _BLOG_CARDS[0]
+    cards = "".join(_blog_card(c) for c in _BLOG_CARDS[1:])
     body = f"""
 {page_hero("Blog", "Praktické články o SEO a AI",
-           "Každý článok píšem na kľúčové slovo s overeným dopytom (Marketing Miner). Vychádzajú naživo, čítajte.", [("Domov", "/"), ("Blog", None)])}
+           "Návody, ceny a kontrolné zoznamy z praxe. Každý článok vychádza z dopytov, ktoré zákazníci reálne pýtajú.", [("Domov", "/"), ("Blog", None)])}
 <section class="section">
   <div class="container">
-    <div class="grid-2">{cards}</div>
+    <div class="blog-grid">{_blog_card(featured, featured=True)}{cards}</div>
   </div>
 </section>
 <section class="section" style="padding-top:0;">

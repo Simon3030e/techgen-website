@@ -327,23 +327,28 @@ def en_faq() -> tuple[str, str]:
 
 def en_blog() -> tuple[str, str]:
     topics = [
-        ("How to choose an SEO agency (and what to watch for)", "Pricing, guarantees, reports. 8 questions to ask before signing.", "tag-blue"),
-        ("How much does SEO optimization cost in 2026?", "A look at market prices and why you pay retainers for invisible work.", "tag-yellow"),
-        ("How to get recommended by ChatGPT", "A first guide for businesses: how AI tools decide who to recommend.", "tag-green"),
-        ("Google Business Profile: a complete guide", "From setup to reviews. What Google values and what it ignores.", "tag-red"),
+        ("Guide", "tag-blue", "How to choose an SEO agency (and what to watch for)",
+         "Pricing, guarantees, reports. 8 questions to ask before signing."),
+        ("Pricing", "tag-yellow", "How much does SEO optimization cost in 2026?",
+         "A look at market prices and why you pay retainers for invisible work."),
+        ("AI search", "tag-green", "How to get recommended by ChatGPT",
+         "A first guide for businesses: how AI tools decide who to recommend."),
+        ("Local SEO", "tag-blue", "Google Business Profile: a complete guide",
+         "From setup to reviews. What Google values and what it ignores."),
     ]
     cards = "".join(f"""
-<div class="benefit-card card-hover">
-  <span class="project-tag {tag}">Article in progress</span>
-  <h3 style="margin-top:12px;">{t}</h3>
+<div class="blog-card">
+  <div><span class="project-tag {tag}">{cat}</span></div>
+  <h3>{t}</h3>
   <p>{d}</p>
-</div>""" for t, d, tag in topics)
+  <div class="blog-card-foot"><span class="project-tag tag-muted">Coming soon</span><span class="blog-read" style="color:var(--text-muted);">Out soon</span></div>
+</div>""" for cat, tag, t, d in topics)
     body = f"""
 {page_hero("Blog", "Practical articles on SEO and AI",
-           "We write what we can verify in practice. First articles out this month.", [("Home", "/en/"), ("Blog", None)])}
+           "Guides, pricing and checklists from practice. Every article targets questions real customers ask.", [("Home", "/en/"), ("Blog", None)])}
 <section class="section">
   <div class="container">
-    <div class="grid-2">{cards}</div>
+    <div class="blog-grid">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
       <a href="{PHONE_TEL}" class="btn btn-primary">Free call</a>
     </div>

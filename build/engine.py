@@ -201,13 +201,19 @@ def cta_label(market: str) -> str:
 
 def lang_toggle(market: str, path: str) -> str:
     """EN | SK | CZ toggle. Path-aware: links to the equivalent page in the
-    target language when it exists, otherwise to that market's home."""
+    target language when it exists, otherwise to that market's blog listing
+    for blog posts and to that market's home otherwise. The active language
+    always keeps the reader on the current page."""
     if market == "en":
         sk_path = EN_PAIR_REV.get(path, "")
     elif market == "sk":
         sk_path = path
     else:
         sk_path = HREFLANG_PAIR.get(path) or ""
+    if sk_path and sk_path not in SK_PATHS:
+        # SK-only pages (blog posts): fall back to the blog listing instead
+        # of dumping the reader on a market home page.
+        sk_path = "blog/" if path.startswith("blog/") else ""
     if sk_path and sk_path not in SK_PATHS:
         sk_path = ""
     pairs = []
@@ -221,6 +227,9 @@ def lang_toggle(market: str, path: str) -> str:
         if sub not in LANG_PATHS[m]:
             sub = ""
         href = _market_url(m, sub)
+        if m == market:
+            # active language: the button stays on the page being rendered
+            href = _market_url(m, path)
         active = " active" if m == market else ""
         pairs.append(f'<a href="{href}" class="lang-btn{active}">{label}</a>')
     return '<div class="lang-toggle">' + ' <span>|</span> '.join(pairs) + "</div>"
@@ -229,7 +238,8 @@ def lang_toggle(market: str, path: str) -> str:
 # ---------------------------------------------------------------- base template
 
 def base(*, market: str, path: str, title: str, desc: str, canonical: str,
-         body: str, prefix: str, extra_head: str = "", h1: bool = True) -> str:
+         body: str, prefix: str, extra_head: str = "", h1: bool = True,
+         og_type: str = "website") -> str:
     """Render one full page.
 
     market   : sk | cz | en
@@ -266,7 +276,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
   <title>{_html.escape(title)}</title>
   <meta name="description" content="{_html.escape(desc)}">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{og_type}">
   <meta property="og:site_name" content="Nokto Studio">
   <meta property="og:locale" content="{OG_LOCALE[market]}">
   <meta property="og:title" content="{_html.escape(title)}">
@@ -481,6 +491,25 @@ def faq_schema(items: list[tuple[str, str]], page_url: str) -> str:
             q=_json_str(q), a=_json_str(a)) for q, a in items
     )
     return f'<script type="application/ld+json">\n{{"@context":"https://schema.org","@type":"FAQPage","@id":"{page_url}#faq","mainEntity":[{qas}]}}\n</script>'
+
+
+def article_schema(*, url: str, title: str, desc: str, date_iso: str,
+                   lang: str = "sk") -> str:
+    """BlogPosting JSON-LD for a blog post. References the Organization by @id,
+    so the publisher block is defined once in ORG_SCHEMA."""
+    lang_name = {"sk": "Šimon Štermenský", "cz": "Šimon Štermenský", "en": "Simon Stremensky"}[lang]
+    about_url = {"sk": "/sk/o-nas/", "cz": "/cz/", "en": "/en/about/"}[lang]
+    return (
+        '<script type="application/ld+json">\n'
+        f'{{"@context":"https://schema.org","@type":"BlogPosting","@id":"{url}#article",'
+        f'"mainEntityOfPage":{{"@type":"WebPage","@id":"{url}"}},'
+        f'"headline":{_json_str(title)},"description":{_json_str(desc)},'
+        f'"datePublished":"{date_iso}","dateModified":"{date_iso}",'
+        f'"author":{{"@type":"Person","name":{_json_str(lang_name)},"url":"{BASE}{about_url}"}},'
+        f'"publisher":{{"@id":"{BASE}/#organization"}},'
+        f'"url":"{url}","image":"{BASE}/assets/img/og-cover.png","inLanguage":"{_HFLANG_CODE[lang]}"}}\n'
+        "</script>"
+    )
 
 
 def _json_str(s: str) -> str:

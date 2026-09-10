@@ -1132,37 +1132,32 @@ def cz_kontakt() -> tuple[str, str]:
 
 def cz_blog() -> tuple[str, str]:
     topics = [
-        ("SEO optimalizace: kompletní návod 2026",
-         "Krok za krokem od auditu po měření. Dotaz „seo optimalizace návod“ hledá přes 1 200 lidí měsíčně.",
-         "tag-blue", "1 200 hledání/měs"),
-        ("Kolik stojí SEO v 2026?",
-         "Reálné ceny na českém trhu a co za ně dostanete. Dotaz „cena seo“ má 780 hledání měsíčně.",
-         "tag-yellow", "780 hledání/měs"),
-        ("SEO test: 15bodový kontrolní seznam pro váš web",
-         "Projděte si web sami za 30 minut. Cluster „seo optimalizace test“ má 720 hledání měsíčně.",
-         "tag-green", "720 hledání/měs"),
-        ("Linkbuilding: co to je, co stojí a jak se dělá bezpečně",
-         "Ceny odkazů (50 až 300 EUR), bezpečné metody a co Google sankcionuje. Cluster: 750 hledání měsíčně.",
-         "tag-red", "750 hledání/měs"),
-        ("Firemní profil Google: návod od založení po hodnocení",
-         "Kompletní průvodce lokální viditelností. 110 hledání měsíčně, nejvíce v lednu a únoru.",
-         "tag-blue", "110 hledání/měs"),
-        ("SEO pro WordPress: 12 nastavení, která je třeba udělat",
-         "Rychlost, permalinky, schéma a pluginy. 130 hledání měsíčně, růst +94 % meziročně.",
-         "tag-yellow", "130 hledání/měs"),
+        ("Návod", "tag-blue", "SEO optimalizace: kompletní návod 2026",
+         "Krok za krokem od auditu po měření. Postup pro malé firmy, s reálnými čísly z praxe."),
+        ("Ceník", "tag-yellow", "Kolik stojí SEO v 2026?",
+         "Ceny na českém trhu a co za ně dostanete. Proč je cena 12 EUR za hodinu veřejná."),
+        ("SEO test", "tag-green", "SEO test: 15bodový kontrolní seznam pro váš web",
+         "Projděte si web sami za 30 minut: technika, obsah, firemní profil Google a AI viditelnost."),
+        ("Linkbuilding", "tag-red", "Linkbuilding: co to je, co stojí a jak se dělá bezpečně",
+         "Co jsou zpětné odkazy, reálné ceny a bezpečné metody. Co Google sankcionuje."),
+        ("Lokální SEO", "tag-blue", "Firemní profil Google: návod od založení po hodnocení",
+         "Založení, ověření, kategorie, fotky a hodnocení. Návod s případovou studií."),
+        ("WordPress", "tag-yellow", "SEO pro WordPress: 12 nastavení, která je třeba udělat",
+         "Rychlost, permalinky, schéma a pluginy. 12 konkrétních nastavení."),
     ]
     cards = "".join(f"""
-<div class="benefit-card card-hover">
-  <span class="project-tag {tag}">Článek v přípravě · {sv}</span>
-  <h3 style="margin-top:12px;">{t}</h3>
+<div class="blog-card">
+  <div><span class="project-tag {tag}">{cat}</span></div>
+  <h3>{t}</h3>
   <p>{d}</p>
-</div>""" for t, d, tag, sv in topics)
+  <div class="blog-card-foot"><span class="project-tag tag-muted">Připravujeme</span><span class="blog-read" style="color:var(--text-muted);">Vychází brzy</span></div>
+</div>""" for cat, tag, t, d in topics)
     body = f"""
 {page_hero("Blog", "Praktické články o SEO a AI",
-           "Každý článek píšeme na klíčové slovo s ověřeným dotazem z Marketing Mineru. První články vycházejí tento měsíc.", [("Domů", "/cz/"), ("Blog", None)])}
+           "Návody, ceny a kontrolní seznamy z praxe. Každý článek vychází z dotazů, které zákazníci reálně hledají.", [("Domů", "/cz/"), ("Blog", None)])}
 <section class="section">
   <div class="container">
-    <div class="grid-2">{cards}</div>
+    <div class="blog-grid">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
       <p style="color:var(--text-muted);">Chcete se o něčem dozvědět víc už teď? Zavolejte <a href="tel:+421917316105" style="font-weight:700; color:var(--text);">+421 917 316 105</a> nebo napište.</p>
       <a href="/cz/kontakt/" class="btn btn-primary" style="margin-top:14px;">Kontakt</a>
