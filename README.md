@@ -83,3 +83,17 @@ HTML, so the live site has no Python dependency.
   Tématické, viažúce, rast hlavnej stránky; 2x strata bodky po mailto linke).
 - Rucne doplnene: najol -> nasiel, nanelo -> naslo, organika genitivy,
   medzifenekcia -> prirazka, staznost na Urad (akuzativ).
+
+## Blog wave 1 live (2026-09-10, session 7)
+- 6 blogov na /sk/blog/ z MM KW research: navod (1200/mes, diff 27), kolko-stoji
+  (620), seo-test-15-bodov (720), linkbuilding (750), google-firmy-profil (110),
+  seo-wordpress (130 +94 percent). Vsetky: direct answer v prvych 60 slovach,
+  SVG infografika (flow / price bars / donut), FAQPage schema, related posty,
+  outbound zdroje (Google Search Central, spam policies, WP docs, Yoast,
+  RankMath), interne linky na sluzby inline.
+- Blog listing linkuje na zive clanky, sitemap: 6 blog URL + lastmod 2026-09-10.
+- Sitemap v GSC: lastSubmitted + lastDownloaded 2026-09-10, not pending
+  (webmasters_simistermi token, sc-domain owner, readonly scope).
+- Indexing API (indexing_token.json): 403 ownership (ucet nie je ownerom
+  property); na sitemap submit/API write treba consent na plny webmasters
+  scope (consent URL vygenerovany, caka na Simonov klik).
