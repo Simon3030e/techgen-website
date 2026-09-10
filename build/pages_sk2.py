@@ -613,13 +613,13 @@ def blog_post_navod() -> tuple[str, str]:
 <p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne pýtajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov.</p>
 {_flow_chart()}
 <h2>Krok 1: Bezplatný audit a analýza</h2>
-<p>Začnite auditom webu a kľúčových slov. Zistite: či Google váš web správne indexuje, akou rýchlosťou sa načítava, na ktoré dopyty už vidíte (aj na pozícii 40), a čo pýtajú zákazníci. Bezplatný vstupný audit urobím za vás: dostanete 10 najväčších problémov a šancí webu na jednej strane do 3 dní.</p>
+<p>Začnite auditom webu a kľúčových slov. Zistite: či Google váš web správne indexuje, akou rýchlosťou sa načítava, na ktoré dopyty už vidíte (aj na pozícii 40), a čo pýtajú zákazníci. Nástroje sú zdarma: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> na rýchlosť a <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer">Google Search Console</a> na indexáciu a dopyty. Základný postup popisuje aj <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">príručka pre začiatočníkov od Google</a>. Bezplatný vstupný audit urobím za vás: 10 najväčších problémov a šancí webu na jednej strane do 3 dní, <a href="/sk/sluzby/seo-audit/">detailný SEO audit</a> má akčný plán s hodinami.</p>
 <h2>Krok 2: Plán s číslami</h2>
 <p>Z auditu spravíte plán: ktoré kľúčové slová prinášajú zákazníkov, čo opraviť ako prvé a koľko hodín mesačne to zaberie. Rozhodujúce je vybrať dopyty s nízkou konkurenciou: nový web nevyhrá národné pozície, ale lokálne a dlhé dopyty („cena nabíjania elektromobilu doma") áno.</p>
 <h2>Krok 3: Týždenná práca</h2>
-<p>Práca ide v dávkach: technika (rýchlosť, kanonizácie, interné prelinkovanie), obsahové stránky na reálne dopyty, Google firemný profil a AI viditeľnosť. Každý týždeň odrobený rozsah, každú zmenu viete dohľadať.</p>
+<p>Práca ide v dávkach: technika (rýchlosť, kanonizácie, interné prelinkovanie), <a href="/sk/sluzby/seo-optimalizacia/">obsahové stránky na reálne dopyty</a>, <a href="/sk/sluzby/lodalne-seo/">Google firemný profil</a> a <a href="/sk/sluzby/seo-pre-ai-vyhladavace/">AI viditeľnosť</a>. Každý týždeň odrobený rozsah, každú zmenu viete dohľadať.</p>
 <h2>Krok 4: Meranie</h2>
-<p>V Google Search Console sledujte pozície a kliky, v Analytics objednávky. Mesačný report: čo sa urobilo, čo to prinieslo a čo je ďalší krok. Príklad z praxe: web, ktorý som prevzal s minimálnou návštevnosťou, dosiahol 250 klikov za 3 mesiace (+355 %) po technickej oprave a 6 obsahových stránkach.</p>
+<p>V Google Search Console sledujte pozície a kliky, v Analytics objednávky. Mesačný report: čo sa urobilo, čo to prinieslo a čo je ďalší krok. Koľko to stojí rozoberá <a href="/sk/cennik/">cenník (12 EUR za hodinu)</a>. Príklad z praxe: web, ktorý som prevzal s minimálnou návštevnosťou, dosiahol 250 klikov za 3 mesiace (+355 %) po technickej oprave a 6 obsahových stránkach.</p>
 """
     faq = [
         ("Ako dlho trvá SEO optimalizácia?",
@@ -644,11 +644,11 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 <h2>Čo ovplyvňuje cenu SEO</h2>
 <p>Tri veci: rozsah webu (69 stránok e-shopu nie je 5 stránok firemného webu), konkurencia na vašich dopytoch a rozsah obsahu, ktorý treba napísať. Preto nefunguje univerzálna cena: precením počty hodín v pláne po audite.</p>
 <h2>Referenčné ceny na trhu (2026)</h2>
-<p>Menšie agentúry: 300 až 600 EUR mesačne. Stredné: 600 až 1 500 EUR. Veľké s paušálmi: 1 500 EUR a viac, často na 12-mesačné zmluvy. Pri paušáli sa často nevie, čo za peniaze dostanete. Preto fungujem na hodiny: každá hodina je vykazovaná v reporte s obsahom a výsledkom.</p>
+<p>Menšie agentúry: 300 až 600 EUR mesačne. Stredné: 600 až 1 500 EUR. Veľké s paušálmi: 1 500 EUR a viac, často na 12-mesačné zmluvy. Pri paušáli sa často nevie, čo za peniaze dostanete. Preto fungujem na hodiny: každá hodina je vykazovaná v reporte s obsahom a výsledkom. Balíčky a rozsahy nájdete v <a href="/sk/cennik/">cenníku</a>.</p>
 <h2>Čo dostanete za 120 EUR mesačne</h2>
 <p>Balíček Štart: audit webu a kľúčové slová, technická oprava webu, 2 obsahové stránky alebo prepisy, firemný Google profil v poriadku a mesačný report. Za 240 EUR (Rast) k tomu 4 až 6 obsahových stránok mesačne, optimalizácia pre AI vyhľadávače a linkbuilding (2 až 3 odkazy). Za 480 EUR plný e-shop predaj: texty kategórií, Merchant Center a report s tržbami z organiky.</p>
 <h2>Kedy SEO oplatí</h2>
-<p>Ak jeden zákazník má pre vás hodnotu 500 EUR, 120 EUR mesačne za web, ktorý ich privádza opakovane, sa vráti po jednom zákazníkovi. Prvý e-shop Mikramt.sk vygeneroval za 9 mesiacov 2 492,75 EUR online tržieb.</p>
+<p>Ak jeden zákazník má pre vás hodnotu 500 EUR, 120 EUR mesačne za web, ktorý ich privádza opakovane, sa vráti po jednom zákazníkovi. Prvý e-shop <a href="/sk/sluzby/seo-pre-eshopy/">Mikramt.sk</a> vygeneroval za 9 mesiacov 2 492,75 EUR online tržieb.</p>
 """
     faq = [
         ("Koľko stojí SEO na Slovensku?",
@@ -788,15 +788,15 @@ def blog_post_seo_test() -> tuple[str, str]:
 <p>Tento SEO test prejde váš web za 30 minút. 15 kontrolných bodov v štyroch oblastiach: technika (4), obsah (4), Google firemný profil (4) a AI viditeľnosť (3). Za každým zlyhaným bodom je konkrétna oprava. Ak zlyhá viac ako 5 bodov, web stráca zákazníkov každý deň.</p>
 {donut}
 <h2>Technika (4 body)</h2>
-<p>1. Načíta sa hlavná stránka do 3 sekúnd na mobile? Test: PageSpeed Insights. 2. Google indexuje všetky dôležité stránky? Test: zadajte site:vasadomena.sk v Googli. 3. Má každá stránka unikátny titulok s dopytom zákazníka? 4. Sú interné linky na obsahové stránky (minimálne 3 na kategóriu)?</p>
+<p>1. Načíta sa hlavná stránka do 3 sekúnd na mobile? Test: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> (zdarma). 2. Google indexuje všetky dôležité stránky? Test: zadajte site:vasadomena.sk do Google Vyhľadávania. 3. Má každá stránka unikátny titulok s dopytom zákazníka? 4. Sú interné linky na obsahové stránky (minimálne 3 na kategóriu)?</p>
 <h2>Obsah (4 body)</h2>
 <p>5. Každá kategória a služba má vlastný text aspoň na 3 odseky? 6. Texty odpovedajú na otázky, ktoré zákazníci pýtajú (cena, ako, porovnanie)? 7. Blog má články na reálne dopyty, nie firemné správy? 8. Hlavičky H1 až H3 nesú kľúčové slová, nie generické nadpisy?</p>
 <h2>Google firemný profil (4 body)</h2>
 <p>9. Profil má vyplnené kategórie, služby a otváracie časy? 10. Fotky sú mladšie ako 6 mesiacov? 11. Hodnotenia máte a odpovedáte na ne? 12. Q&A sekcia je zaplnená reálnymi otázkami?</p>
 <h2>AI viditeľnosť (3 body)</h2>
-<p>13. ChatGPT a AI Overviews vaše meno vedia, keď pýtajú odporúčanie? Testujte: „Odporúč mi [služba] v [mesto]". 14. Prvé 60 slov každej stránky odpovedá priamo na dopyt? 15. Web má štruktúrované dáta (schema.org), ktoré AI nástroje čítajú?</p>
+<p>13. ChatGPT a AI Overviews vaše meno vedia, keď pýtajú odporúčanie? Testujte: „Odporúč mi [služba] v [mesto]". 14. Prvé 60 slov každej stránky odpovedá priamo na dopyt? 15. Web má štruktúrované dáta? Overte ich <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer">Rich Results Testom od Google</a>.</p>
 <h2>Čo ďalej</h2>
-<p>Ak zlyhalo viac ako 5 bodov, objednajte si bezplatný vstupný audit: do 3 dní máte 10 najväčších problémov a šancí na jednej strane. Ak zlyhalo menej, zoznam priamo hovorí, čo doplniť.</p>
+<p>Ak zlyhalo viac ako 5 bodov, objednajte si <a href="/sk/sluzby/seo-audit/">SEO audit</a>: do 3 dní máte 10 najväčších problémov a šancí na jednej strane. Ak zlyhalo menej, zoznam priamo hovorí, čo doplniť.</p>
 """
     faq = [
         ("Ako dlho trvá SEO test?",
@@ -819,11 +819,11 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <p>Linkbuilding je získavanie spätných odkazov z iných webov. Google ich číta ako hlasovanie o vašej autorite. Realná cena odkazu na slovenskom trhu je 50 až 300 EUR, mediálne PR články stojí viac. Bezpečné metódy: obsah, ktorý odkazy nesie, partneri a branžové weby. Google sankcionuje siete automatického spamu.</p>
 {price_chart}
 <h2>Čo je to spätný odkaz a prečo má váhu</h2>
-<p>Spätný odkaz (backlink) je odkaz z cudzieho webu na váš. Google ho číta ako hlas: odkaz z reálnej, tematicky zodpovedajúcej domény prenáša autoritu. Odkaz z siete spamových domén vyvoláva opak: riziko sankcie.</p>
+<p>Spätný odkaz (backlink) je odkaz z cudzieho webu na váš. Google ho číta ako hlas: odkaz z reálnej, tematicky zodpovedajúcej domény prenáša autoritu. Odkaz z siete spamových domén vyvoláva opak: riziko sankcie. Čo presne Google zakazuje, popisujú <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">oficiálne spam pravidlá Google</a>.</p>
 <h2>Čo stojí odkaz v 2026</h2>
 <p>Adresáre a základné branže: 50 až 80 EUR. Odvetvové weby a regionálne média: 80 až 150 EUR. Silné mediálne PR články: 150 až 300 EUR a viac. Cena závisí od domény, temy a čitateľnosti. Každý odkaz vykazujem so skutočnou cenou od média, bez prirážky.</p>
 <h2>Bezpečný linkbuilding krok za krokom</h2>
-<p>1. Rozbor link profilu: čo vás brzdí a ktoré odkazy chýbajú. 2. Tématické a lokálne odkazy: adresáre, branže, média, partneri. 3. Obsah a PR články, ktoré odkazy nesú: obsah musí stáť za odkaz, nielen kotva. 4. Sledovanie nových a stratených odkazov.</p>
+<p>1. Rozbor link profilu: čo vás brzdí a ktoré odkazy chýbajú. 2. Tématické a lokálne odkazy: adresáre, branže, média, partneri. 3. Obsah a PR články, ktoré odkazy nesú: obsah musí stáť za odkaz, nielen kotva. 4. Sledovanie nových a stratených odkazov. Celý proces popisuje <a href="/sk/sluzby/linkbuilding/">linkbuilding služba</a>.</p>
 <h2>Čo nerobiť</h2>
 <p>Nákup zo sietí automatizovaného spamu, skryté texty a duplicitný obsah. Porušenie pravidiel hrozí sankciou, preto sa im vyhýbam zásadne. Odkazy bez obsahu a techniky nefungujú: len v kombinácii s obsahom prinášajú pozície.</p>
 <h2>Príklad z praxe</h2>
@@ -850,7 +850,7 @@ def blog_post_gbp() -> tuple[str, str]:
 <p>Google firemný profil (Business Profile) je kart vašej firmy v Google Mapách a Vyhľadávaní. Nastavíte ho za 8 hodín: založenie a overenie, kategórie a služby, fotky, Q&A a stratégiu hodnotení. Klienti, ktorí hľadajú lokálne služby, vás nájdu prví: 54 % zobrazení profilu prichádza cez Mapy, 46 % cez Vyhľadávanie.</p>
 <div class="rs-chart">{donut}</div>
 <h2>Krok 1: Založenie a overenie</h2>
-<p>Profil vytvoríte na google.com/business. Dôležité je presné meno (bez doplnených kľúčových slov, Google to zakazuje), adresa pôsobiska a kategória. Overenie bežne prebehne listom alebo telefónom.</p>
+<p>Profil vytvoríte na <a href="https://www.google.com/business/" target="_blank" rel="noopener noreferrer">google.com/business</a>. Dôležité je presné meno (bez doplnených kľúčových slov, Google to zakazuje), adresa pôsobiska a kategória. Overenie bežne prebehne listom alebo telefónom, <a href="https://support.google.com/business/answer/3038177" target="_blank" rel="noopener noreferrer">podrobnosti v pomoci Google</a>.</p>
 <h2>Krok 2: Kategórie a služby</h2>
 <p>Primárna kategória je najdôležitejší signál: rozhodne, na ktoré dopyty sa profil zobrazí. Doplní sekundárne kategórie, služby s cenami a popis, ktorý odpovedá na otázky zákazníkov.</p>
 <h2>Krok 3: Fotky a Q&A</h2>
@@ -858,7 +858,7 @@ def blog_post_gbp() -> tuple[str, str]:
 <h2>Krok 4: Hodnotenia cez SMS a QR kód</h2>
 <p>Postup cez SMS a QR kód vyzve zákazníka hneď po vykonanej službe. Miera recenzií rastie násobne, lebo zákazník má link v ruke v čase, keď je spokojný. Na hodnotenia odpovedám profesionálne a na mieste.</p>
 <h2>Krok 5: Týždenné vyhodnotenie</h2>
-<p>Prehľad: volania, žiadosti o trasu, zobrazenia v mape. Príklad z praxe: 359 ľudí videlo firemný profil klienta za jedno obdobie, 54 % cez Mapy a 46 % cez Vyhľadávanie.</p>
+<p>Prehľad: volania, žiadosti o trasu, zobrazenia v mape. Príklad z praxe: 359 ľudí videlo firemný profil klienta za jedno obdobie, 54 % cez Mapy a 46 % cez Vyhľadávanie. Nastavenie a vedenie profilu rieši <a href="/sk/sluzby/lodalne-seo/">lokálne SEO</a>.</p>
 """
     faq = [
         ("Koľko trvá, kým Google profil začne fungovať?",
@@ -883,7 +883,7 @@ def blog_post_wordpress() -> tuple[str, str]:
 <h2>Rýchlosť (4 body)</h2>
 <p>1. Cache plugin (WP Rocket alebo LiteSpeed Cache) zapnutý a nakonfigurovaný. 2. Obrázky vo WebP a lazy loading. 3. Fonty lokálne alebo preconnect na Google Fonts. 4. LCP prvok pod 2,5 s na mobile: PageSpeed Insights test.</p>
 <h2>Štruktúra (3 body)</h2>
-<p>5. Permalinky na „/%postname%/". 6. XML sitemap generovaná a odoslaná do Search Console. 7. Robots.txt, ktorý neblokuje indexáciu dôležitých stránok.</p>
+<p>5. <a href="https://wordpress.org/documentation/article/settings-permalinks-screen/" target="_blank" rel="noopener noreferrer">Permalinky</a> na „/%postname%/". 6. XML sitemap generovaná a odoslaná do Search Console. 7. Robots.txt, ktorý neblokuje indexáciu dôležitých stránok.</p>
 <h2>Meta a schéma (3 body)</h2>
 <p>8. Yoast alebo RankMath: unikátne titulky s dopytom zákazníka na každej stránke. 9. Meta popisky, ktoré čerpajú z reálnych dopytov. 10. Štruktúrované dáta: LocalBusiness, FAQPage, Service podľa typu stránky.</p>
 <h2>Obsah (2 body)</h2>
@@ -893,11 +893,11 @@ def blog_post_wordpress() -> tuple[str, str]:
 """
     faq = [
         ("Ktorý plugin na SEO v WordPress je najlepší?",
-         "Yoast aj RankMath sú v poriadku. Dôležitý nie je plugin, ale to, že ste nastavenia vyplnili: titulky, schéma, sitemap."),
+         "<a href=\"https://yoast.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Yoast</a> aj <a href=\"https://rankmath.com/\" target=\"_blank\" rel=\"noopener noreferrer\">RankMath</a> sú v poriadku. Dôležitý nie je plugin, ale to, že ste nastavenia vyplnili: titulky, schéma, sitemap."),
         ("Zaberie to viac ako 12 nastavení?",
          "Základ je 12 bodov. Na konkurenčných dopytoch k tomu prichádza obsah, interné prelinkovanie a AI viditeľnosť."),
         ("Pomôžete aj s implementáciou?",
-         "Áno, 12 bodov nastavím priamo v CMS alebo pripravím súbor pre vývojára."),
+         "Áno, 12 bodov nastavím priamo v CMS alebo pripravím súbor pre vývojára. Základ popisuje <a href=\"/sk/sluzby/seo-optimalizacia/\">SEO optimalizácia webu</a>."),
     ]
     return blog_post(slug="seo-wordpress", label="WordPress", h1="SEO pre WordPress: 12 nastavení, ktoré treba spraviť",
                      answer="SEO pre WordPress: 12 konkrétnych nastavení od permalinks po schému. Prejde sa za 30 minút, implementuje v 6 až 10 hodinách.",
