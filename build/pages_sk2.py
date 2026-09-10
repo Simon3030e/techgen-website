@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 """Nokto Studio - SK supporting pages."""
+import re
+
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     steps_block, results_slider, result_block, ORG_SCHEMA,
                     EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY, _bars, _sparkline,
@@ -538,15 +540,25 @@ _BLOG_META = {
 def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
               faq: list[tuple[str, str]], related: list[tuple[str, str]]) -> tuple[str, str]:
     """Render one blog post page: direct answer first, sections, FAQ, CTA."""
-    related_html = (f'<div class="benefit-card card-hover"><h3 style="margin-top:0;"><a href="{u}" style="color:var(--text);">{n}</a></h3></div>'
+    related_html = (f'<div class="benefit-card card-hover related-card"><h3><a href="{u}" style="color:var(--text);">{n}</a></h3></div>'
                     for u, n in related)
     related_html = "".join(related_html)
+    # answer goes to the takeaway box; drop the duplicated in-body section
+    sections = re.sub(r"<h2>Stručná odpoveď</h2>\s*<p>.*?</p>", "", sections, count=1, flags=re.S)
     body = f"""
-{page_hero("Blog", h1, answer, [("Domov", "/"), ("Blog", "/sk/blog/"), (label, None)])}
+<section class="post-hero">
+  <div class="container" style="max-width:820px;">
+    <a href="/sk/blog/" class="post-back">← Blog</a>
+    <span class="section-label">{label}</span>
+    <h1>{h1}</h1>
+    <p class="post-meta">10. 9. 2026 · Šimon Štermenský · Nokto Studio</p>
+  </div>
+</section>
 
-<article class="section">
+<article class="section" style="padding-top:16px;">
   <div class="container" style="max-width:820px;">
     <div class="prose">
+      <div class="post-answer"><p>{answer}</p></div>
 {sections}
     </div>
   </div>
@@ -611,7 +623,7 @@ def blog_post_navod() -> tuple[str, str]:
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne pýtajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov.</p>
-{_flow_chart()}
+<figure class="blog-chart">{_flow_chart()}</figure>
 <h2>Krok 1: Bezplatný audit a analýza</h2>
 <p>Začnite auditom webu a kľúčových slov. Zistite: či Google váš web správne indexuje, akou rýchlosťou sa načítava, na ktoré dopyty už vidíte (aj na pozícii 40), a čo pýtajú zákazníci. Nástroje sú zdarma: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> na rýchlosť a <a href="https://search.google.com/search-console" target="_blank" rel="noopener noreferrer">Google Search Console</a> na indexáciu a dopyty. Základný postup popisuje aj <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">príručka pre začiatočníkov od Google</a>. Bezplatný vstupný audit urobím za vás: 10 najväčších problémov a šancí webu na jednej strane do 3 dní, <a href="/sk/sluzby/seo-audit/">detailný SEO audit</a> má akčný plán s hodinami.</p>
 <h2>Krok 2: Plán s číslami</h2>
@@ -640,7 +652,7 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>SEO na slovenskom trhu stojí od 300 do 1 500 EUR mesačne pri agenciách s paušálmi, alebo od 60 EUR mesačne pri hodinovej spolupráci. Ja účtujem 12 EUR za odpracovanú hodinu: malý firemný web zvládnem v 10 hodinách mesačne (120 EUR), e-shop v 20 až 40 hodinách (240 až 480 EUR). Neplatíte paušál, platíte za odpracovanú prácu.</p>
-<div class="rs-chart">{price_chart}</div>
+<figure class="blog-chart">{price_chart}</figure>
 <h2>Čo ovplyvňuje cenu SEO</h2>
 <p>Tri veci: rozsah webu (69 stránok e-shopu nie je 5 stránok firemného webu), konkurencia na vašich dopytoch a rozsah obsahu, ktorý treba napísať. Preto nefunguje univerzálna cena: precením počty hodín v pláne po audite.</p>
 <h2>Referenčné ceny na trhu (2026)</h2>
@@ -786,7 +798,7 @@ def blog_post_seo_test() -> tuple[str, str]:
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>Tento SEO test prejde váš web za 30 minút. 15 kontrolných bodov v štyroch oblastiach: technika (4), obsah (4), Google firemný profil (4) a AI viditeľnosť (3). Za každým zlyhaným bodom je konkrétna oprava. Ak zlyhá viac ako 5 bodov, web stráca zákazníkov každý deň.</p>
-{donut}
+<figure class="blog-chart">{donut}</figure>
 <h2>Technika (4 body)</h2>
 <p>1. Načíta sa hlavná stránka do 3 sekúnd na mobile? Test: <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights</a> (zdarma). 2. Google indexuje všetky dôležité stránky? Test: zadajte site:vasadomena.sk do Google Vyhľadávania. 3. Má každá stránka unikátny titulok s dopytom zákazníka? 4. Sú interné linky na obsahové stránky (minimálne 3 na kategóriu)?</p>
 <h2>Obsah (4 body)</h2>
@@ -817,7 +829,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>Linkbuilding je získavanie spätných odkazov z iných webov. Google ich číta ako hlasovanie o vašej autorite. Realná cena odkazu na slovenskom trhu je 50 až 300 EUR, mediálne PR články stojí viac. Bezpečné metódy: obsah, ktorý odkazy nesie, partneri a branžové weby. Google sankcionuje siete automatického spamu.</p>
-{price_chart}
+<figure class="blog-chart">{price_chart}</figure>
 <h2>Čo je to spätný odkaz a prečo má váhu</h2>
 <p>Spätný odkaz (backlink) je odkaz z cudzieho webu na váš. Google ho číta ako hlas: odkaz z reálnej, tematicky zodpovedajúcej domény prenáša autoritu. Odkaz z siete spamových domén vyvoláva opak: riziko sankcie. Čo presne Google zakazuje, popisujú <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">oficiálne spam pravidlá Google</a>.</p>
 <h2>Čo stojí odkaz v 2026</h2>
@@ -848,7 +860,7 @@ def blog_post_gbp() -> tuple[str, str]:
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>Google firemný profil (Business Profile) je kart vašej firmy v Google Mapách a Vyhľadávaní. Nastavíte ho za 8 hodín: založenie a overenie, kategórie a služby, fotky, Q&A a stratégiu hodnotení. Klienti, ktorí hľadajú lokálne služby, vás nájdu prví: 54 % zobrazení profilu prichádza cez Mapy, 46 % cez Vyhľadávanie.</p>
-<div class="rs-chart">{donut}</div>
+<figure class="blog-chart">{donut}</figure>
 <h2>Krok 1: Založenie a overenie</h2>
 <p>Profil vytvoríte na <a href="https://www.google.com/business/" target="_blank" rel="noopener noreferrer">google.com/business</a>. Dôležité je presné meno (bez doplnených kľúčových slov, Google to zakazuje), adresa pôsobiska a kategória. Overenie bežne prebehne listom alebo telefónom, <a href="https://support.google.com/business/answer/3038177" target="_blank" rel="noopener noreferrer">podrobnosti v pomoci Google</a>.</p>
 <h2>Krok 2: Kategórie a služby</h2>
@@ -879,7 +891,7 @@ def blog_post_wordpress() -> tuple[str, str]:
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>SEO pre WordPress vyžaduje 12 konkrétnych nastavení: permalinky, sitemap, rýchlosť (cache + WebP), meta titulky a popisky, štruktúrované dáta, interné prelinkovanie, robots.txt, alt texty, mobilná verzia, kanonizácie, ďaľší plugin na SEO a meranie v Search Console. Zaberá to 6 až 10 hodín.</p>
-{wp_chart}
+<figure class="blog-chart">{wp_chart}</figure>
 <h2>Rýchlosť (4 body)</h2>
 <p>1. Cache plugin (WP Rocket alebo LiteSpeed Cache) zapnutý a nakonfigurovaný. 2. Obrázky vo WebP a lazy loading. 3. Fonty lokálne alebo preconnect na Google Fonts. 4. LCP prvok pod 2,5 s na mobile: PageSpeed Insights test.</p>
 <h2>Štruktúra (3 body)</h2>

@@ -340,3 +340,17 @@
   .rs-chart svg:not([width]) { max-height: 150px; }
   .rs-chart svg[width="200"] { width: 150px !important; height: 150px !important; }
 }
+
+/* blog post layout (2026-09) */
+.post-hero { padding: 44px 0 8px; }
+.post-back { display: inline-block; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; margin-bottom: 14px; }
+.post-back:hover { color: var(--g-blue-deep); }
+.post-meta { font-size: 0.85rem; color: var(--text-muted); margin: 12px 0 0; }
+.post-answer { background: var(--surface-tint); border-left: 4px solid var(--g-blue-deep); border-radius: 10px; padding: 18px 22px; margin: 0 0 26px; }
+.post-answer p { color: var(--text); font-weight: 600; font-size: 1.03rem; margin: 0; line-height: 1.62; }
+.blog-chart { background: var(--bg-2, #F8F9FA); border: 1px solid var(--border-light); border-radius: 12px; padding: 18px 14px 10px; margin: 22px 0; }
+.blog-chart svg { width: 100%; height: auto; display: block; }
+.blog-chart._donut svg { margin: 0 auto; }
+.related-card { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 24px; }
+.related-card h3 { margin: 0; font-size: 1.02rem; }
+.related-card::after { content: '\2192'; color: var(--g-blue-deep); font-weight: 800; font-size: 1.1rem; }
