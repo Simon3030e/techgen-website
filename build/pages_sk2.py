@@ -5,7 +5,7 @@ import re
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     article_schema, steps_block, results_slider, result_block,
                     ORG_SCHEMA, EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY,
-                    _bars, _sparkline, _GREEN, _BLUE, _RED, _YELLOW, _donut)
+                    _bars, _sparkline, _VIOLET_L, _VIOLET, _ORANGE, _CERULEAN, _donut)
 
 # ---------------------------------------------------------------- JAK PRACUJEME
 
@@ -24,12 +24,12 @@ def jak_pracujeme() -> tuple[str, str]:
     </div>
     <div class="grid-2">
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("search", "#1A73E8", 26)}</span>
+        <span class="benefit-icon">{gicon("search", "#6A3FC4", 26)}</span>
         <h3>Písanie obsahu</h3>
         <p>Expertné články a texty stránok na dopyty, ktoré zákazníci reálne pýtajú. Obsah, ktorý Google cituje aj v AI odpovediach a odporúča zákazníkom.</p>
       </div>
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("audit", "#34A853", 26)}</span>
+        <span class="benefit-icon">{gicon("audit", "#9B6FD9", 26)}</span>
         <h3>Opravy technických vecí na webe</h3>
         <p>Technické SEO: rýchlosť, indexácia, kanonizácie, interné prelinkovanie a čistá štruktúra webu. Základ, na ktorom obsah funguje.</p>
       </div>
@@ -118,44 +118,44 @@ def jak_pracujeme() -> tuple[str, str]:
 
 def vysledky() -> tuple[str, str]:
     """Results page: real numbers from GSC exports, AI Mode and client reports."""
-    c_servisprofi = _bars([145, 115, 61, 42, 38], _GREEN,
+    c_servisprofi = _bars([145, 115, 61, 42, 38], _VIOLET_L,
                           ["vypínač", "ceny el.", "prípojka", "zásuvka", "vzduchom"])
-    c_speem = _bars([413, 412, 407, 407, 385], _BLUE,
+    c_speem = _bars([413, 412, 407, 407, 385], _VIOLET,
                     ["pyžamo", "body", "tričká", "nohavice", "čelenky"])
-    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _BLUE)
+    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
             title="ServisProfi.sk", period="marec až september 2026",
-            nums=[{"big": "996", "color": _BLUE, "label": "klikov z Google (+8 %)"},
-                  {"big": "73 000", "color": _RED, "label": "zobrazení (+5 %)"},
-                  {"big": "96", "color": _GREEN, "label": "citácií v AI odpovediach"}],
+            nums=[{"big": "996", "color": _VIOLET, "label": "klikov z Google (+8 %)"},
+                  {"big": "73 000", "color": _ORANGE, "label": "zobrazení (+5 %)"},
+                  {"big": "96", "color": _VIOLET_L, "label": "citácií v AI odpovediach"}],
             chart=c_servisprofi,
             caption="Dva expertné články (nabíjanie elektromobilu, prepäťová ochrana) Google cituje v AI odpovediach a odporúča ServisProfi.sk zákazníkom. Web 69 stránok: 9 700 → 12 000 zobrazení za 28 dní (+24 %). Graf: rast hlavných stránok v percentách.",
             source="Google Search Console, report výkonnosti 9. 9. 2026",
             partner="", market="sk"),
         result_block(
             title="Mikramt.sk, Martin", period="prvý e-shop, teraz rework v priebehu",
-            nums=[{"big": "2 492,75 EUR", "color": _GREEN, "label": "tržieb z prvého e-shopu"},
-                  {"big": "15", "color": _BLUE, "label": "objednávok online"},
-                  {"big": "722 EUR", "color": _YELLOW, "label": "najväčšia objednávka"}],
+            nums=[{"big": "2 492,75 EUR", "color": _VIOLET_L, "label": "tržieb z prvého e-shopu"},
+                  {"big": "15", "color": _VIOLET, "label": "objednávok online"},
+                  {"big": "722 EUR", "color": _CERULEAN, "label": "najväčšia objednávka"}],
             chart="",
             caption="Prvý e-shop Mikramt.sk s API integráciou na účtovný systém Sunsoft Ecosun. Zákazník bol spokojný, takže teraz robíme rework: viac produktov, väčšia kategorizácia a lepšie SEO. Web a dizajn v spolupráci s Flamia Studio, SEO a e-mail marketing robím sám. Predaj v kamennej predajni do sumy nerátame.",
             source="objednávky pripísané do kanálov email a organický Google",
             partner="flamia", market="sk"),
         result_block(
             title="Speem.sk", period="Search Console + AI Mode, jún až september 2026",
-            nums=[{"big": "893", "color": _GREEN, "label": "zobrazení v Google AI Mode za 3 mesiace"},
-                  {"big": "+80 %", "color": _BLUE, "label": "august oproti júnu (182 → 329)"},
-                  {"big": "413", "color": _RED, "label": "klikov na hlavnú kategóriu"}],
-            chart=_bars([182, 293, 329, 89], _GREEN, ["jún", "júl", "aug", "sep"]),
+            nums=[{"big": "893", "color": _VIOLET_L, "label": "zobrazení v Google AI Mode za 3 mesiace"},
+                  {"big": "+80 %", "color": _VIOLET, "label": "august oproti júnu (182 → 329)"},
+                  {"big": "413", "color": _ORANGE, "label": "klikov na hlavnú kategóriu"}],
+            chart=_bars([182, 293, 329, 89], _VIOLET_L, ["jún", "júl", "aug", "sep"]),
             caption="Google AI Mode cituje e-shop denne po nasadení nášho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (174, 167 a 119 citácií). Kategórie majú desiatky tisíc organických zobrazení mesačne (čelenky 44 838). Konkurencia v AI odpovediach ešte nie je.",
             source="Google Search Console + Google AI Mode (report citácií), jún až september 2026",
             partner="own", market="sk"),
         result_block(
             title="InTheCity.app", period="posledných 28 dní",
-            nums=[{"big": "121", "color": _BLUE, "label": "klikov z Google (+49 %)"},
-                  {"big": "4 390", "color": _RED, "label": "zobrazení (+43 %)"},
-                  {"big": "+142 %", "color": _GREEN, "label": "rast hlavnej stránky"}],
+            nums=[{"big": "121", "color": _VIOLET, "label": "klikov z Google (+49 %)"},
+                  {"big": "4 390", "color": _ORANGE, "label": "zobrazení (+43 %)"},
+                  {"big": "+142 %", "color": _VIOLET_L, "label": "rast hlavnej stránky"}],
             chart=c_itc,
             caption="SEO od nuly: technické SEO a obsah v prvom mesiaci spolupráce, Google začal prinášať zákazníkov hneď.",
             source="Google Search Console",
@@ -200,17 +200,17 @@ def vysledky() -> tuple[str, str]:
     </div>
     <div class="grid-3">
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("grow", "#34A853", 26)}</span>
+        <span class="benefit-icon">{gicon("grow", "#9B6FD9", 26)}</span>
         <h3>Mikramt.sk: spolupráca pokračuje</h3>
         <p>Zákazník bol spokojný s prvým e-shopom (2 492,75 EUR za 9 mesiacov), takže teraz robíme rework: viac produktov a lepšie SEO.</p>
       </div>
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("ai", "#1A73E8", 26)}</span>
+        <span class="benefit-icon">{gicon("ai", "#6A3FC4", 26)}</span>
         <h3>ServisProfi.sk: mesačná spolupráca beží</h3>
         <p>996 klikov (+8 %) a 96 citácií v AI odpovediach za 3 mesiace. Report vychádza každý mesiac s číslami.</p>
       </div>
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("pin", "#EA4335", 26)}</span>
+        <span class="benefit-icon">{gicon("pin", "#F75940", 26)}</span>
         <h3>Villa Paris: projekt beží s Flamia Studio</h3>
         <p>Rebrand, web a lokálne SEO v jednom systéme. Značku a web robíme v spolupráci s Flamia Studio.</p>
       </div>
@@ -253,7 +253,7 @@ def vysledky() -> tuple[str, str]:
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslať správu</button>
           <p class="form-note">Odoslaním súhlasíte so spracovaním údajov na účel odpovede (pozrite <a href="/sk/privacy/">ochranu súkromia</a>).</p>
         </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
           ✓ Ďakujeme, správa odletela na {EMAIL}. Ozveme sa osobne do 24 hodín. Alebo zavolajte rovno: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
         </div>
       </div>
@@ -276,9 +276,9 @@ def villa_paris() -> tuple[str, str]:
            [("Domov", "/"), ("Výsledky", "/sk/vysledky/"), ("Villa Paris", None)])}
 
 <div class="partner-band" style="justify-content:center; padding:0 20px;">
-  <span class="project-tag tag-blue"><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" style="color:inherit;">V spolupráci s Flamia Studio</a></span>
-  <span class="project-tag tag-green">Web dizajn a vývoj: Flamia Studio</span>
-  <span class="project-tag tag-yellow">SEO, copywriting a lokálne SEO: Nokto Studio</span>
+  <span class="project-tag tag-violet"><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" style="color:inherit;">V spolupráci s Flamia Studio</a></span>
+  <span class="project-tag tag-violet-light">Web dizajn a vývoj: Flamia Studio</span>
+  <span class="project-tag tag-cerulean">SEO, copywriting a lokálne SEO: Nokto Studio</span>
 </div>
 
 <section class="section">
@@ -431,9 +431,9 @@ def o_nas() -> tuple[str, str]:
       <h2>Tri pravidlá, ktoré platia vždy</h2>
     </div>
     <div class="grid-3">
-      <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#1A73E8", 26)}</span><h3>Žiadne sľuby, ktoré sa nedodržia.</h3><p>Prvú pozíciu v Google nevie zaručiť nikto. Čo zaručíme: transparentný proces, reálne termíny a merateľný postup.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefonát: čo som spravil, čo to prinieslo a čo ide ďalej. Bez preposielania.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#34A853", 26)}</span><h3>Každá hodina vykazovaná</h3><p>Platíte za odvedenú prácu. Každá hodina je v reporte s jej obsahom a výsledkom.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#6A3FC4", 26)}</span><h3>Žiadne sľuby, ktoré sa nedodržia.</h3><p>Prvú pozíciu v Google nevie zaručiť nikto. Čo zaručíme: transparentný proces, reálne termíny a merateľný postup.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#F75940", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefonát: čo som spravil, čo to prinieslo a čo ide ďalej. Bez preposielania.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#9B6FD9", 26)}</span><h3>Každá hodina vykazovaná</h3><p>Platíte za odvedenú prácu. Každá hodina je v reporte s jej obsahom a výsledkom.</p></div>
     </div>
   </div>
 </section>
@@ -499,7 +499,7 @@ def kontakt() -> tuple[str, str]:
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslať správu</button>
           <p class="form-note">Odoslaním súhlasíte so spracovaním údajov na účel odpovede (pozrite <a href="/sk/privacy/">ochranu súkromia</a>).</p>
         </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
           ✓ Ďakujeme, správa odletela na {EMAIL}. Ozveme sa osobne do 24 hodín. Alebo zavolajte rovno: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
         </div>
       </div>
@@ -597,10 +597,10 @@ def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
 
 def _flow_chart() -> str:
     """Infographic: 4-step SEO process flow."""
-    steps = [("Hovor", "30 min + audit", "#1A73E8"),
-             ("Plán", "číslo a priority", "#34A853"),
-             ("Práca", "týždenné dávky", "#F9AB00"),
-             ("Meranie", "report mesačne", "#EA4335")]
+    steps = [("Hovor", "30 min + audit", "#6A3FC4"),
+             ("Plán", "číslo a priority", "#9B6FD9"),
+             ("Práca", "týždenné dávky", "#1DACD6"),
+             ("Meranie", "report mesačne", "#F75940")]
     boxes, arrows = "", ""
     x = 10
     for i, (t, s, c) in enumerate(steps):
@@ -649,7 +649,7 @@ def blog_post_navod() -> tuple[str, str]:
 
 
 def blog_post_kolko_stoji() -> tuple[str, str]:
-    price_chart = _bars([120, 240, 480], _BLUE, ["Štart 120 EUR", "Rast 240 EUR", "E-shop 480 EUR"])
+    price_chart = _bars([120, 240, 480], _VIOLET, ["Štart 120 EUR", "Rast 240 EUR", "E-shop 480 EUR"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>SEO na slovenskom trhu stojí od 300 do 1 500 EUR mesačne pri agenciách s paušálmi, alebo od 60 EUR mesačne pri hodinovej spolupráci. Ja účtujem 12 EUR za odpracovanú hodinu: malý firemný web zvládnem v 10 hodinách mesačne (120 EUR), e-shop v 20 až 40 hodinách (240 až 480 EUR). Neplatíte paušál, platíte za odpracovanú prácu.</p>
@@ -795,7 +795,7 @@ def vysledky_redirect() -> tuple[str, str]:
 
 
 def blog_post_seo_test() -> tuple[str, str]:
-    donut = _donut([(4, _BLUE, "Technika"), (4, _RED, "Obsah"), (4, _YELLOW, "Profil"), (3, _GREEN, "AI")])
+    donut = _donut([(4, _VIOLET, "Technika"), (4, _ORANGE, "Obsah"), (4, _CERULEAN, "Profil"), (3, _VIOLET_L, "AI")])
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>Tento SEO test prejde váš web za 30 minút. 15 kontrolných bodov v štyroch oblastiach: technika (4), obsah (4), Google firemný profil (4) a AI viditeľnosť (3). Za každým zlyhaným bodom je konkrétna oprava. Ak zlyhá viac ako 5 bodov, web stráca zákazníkov každý deň.</p>
@@ -826,7 +826,7 @@ def blog_post_seo_test() -> tuple[str, str]:
 
 
 def blog_post_linkbuilding() -> tuple[str, str]:
-    price_chart = _bars([50, 80, 150, 300], _RED, ["adresár", "branza", "mediálne PR", "silná doména"])
+    price_chart = _bars([50, 80, 150, 300], _ORANGE, ["adresár", "branza", "mediálne PR", "silná doména"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>Linkbuilding je získavanie spätných odkazov z iných webov. Google ich číta ako hlasovanie o vašej autorite. Realná cena odkazu na slovenskom trhu je 50 až 300 EUR, mediálne PR články stojí viac. Bezpečné metódy: obsah, ktorý odkazy nesie, partneri a branžové weby. Google sankcionuje siete automatického spamu.</p>
@@ -857,7 +857,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 
 
 def blog_post_gbp() -> tuple[str, str]:
-    donut = _donut([(193, _BLUE, "Maps"), (166, _GREEN, "Search")])
+    donut = _donut([(193, _VIOLET, "Maps"), (166, _VIOLET_L, "Search")])
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>Google firemný profil (Business Profile) je kart vašej firmy v Google Mapách a Vyhľadávaní. Nastavíte ho za 8 hodín: založenie a overenie, kategórie a služby, fotky, Q&A a stratégiu hodnotení. Klienti, ktorí hľadajú lokálne služby, vás nájdu prví: 54 % zobrazení profilu prichádza cez Mapy, 46 % cez Vyhľadávanie.</p>
@@ -888,7 +888,7 @@ def blog_post_gbp() -> tuple[str, str]:
 
 
 def blog_post_wordpress() -> tuple[str, str]:
-    wp_chart = _bars([4, 3, 3, 2], _YELLOW, ["rýchlosť", "štruktúra", "schéma", "obsah"])
+    wp_chart = _bars([4, 3, 3, 2], _CERULEAN, ["rýchlosť", "štruktúra", "schéma", "obsah"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>SEO pre WordPress vyžaduje 12 konkrétnych nastavení: permalinky, sitemap, rýchlosť (cache + WebP), meta titulky a popisky, štruktúrované dáta, interné prelinkovanie, robots.txt, alt texty, mobilná verzia, kanonizácie, ďaľší plugin na SEO a meranie v Search Console. Zaberá to 6 až 10 hodín.</p>
@@ -923,22 +923,22 @@ def blog_post_wordpress() -> tuple[str, str]:
 # Blog card data. Excerpts are the direct answers of each article, read dates
 # match the launch date. No search-volume badges on the public page.
 _BLOG_CARDS = [
-    dict(slug="seo-optimalizacia-navod", cat="Návod", tag="tag-blue",
+    dict(slug="seo-optimalizacia-navod", cat="Návod", tag="tag-violet",
          title="SEO optimalizácia: kompletný návod 2026",
          excerpt="SEO optimalizácia krok za krokom: audit, plán s číslami, týždenná práca a mesačné meranie. Postup pre malé firmy, s reálnymi číslami z praxe."),
-    dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-yellow",
+    dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-cerulean",
          title="Koľko stojí SEO v roku 2026?",
          excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, pri hodinovej spolupráci od 120 EUR mesačne. Prečo je cena 12 EUR za hodinu verejná a čo za ňu dostanete."),
-    dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-green",
+    dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-violet-light",
          title="SEO test: 15-bodový kontrolný zoznam pre váš web",
          excerpt="Prejdite si web sami za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Za každým zlyhaným bodom je konkrétna oprava."),
-    dict(slug="linkbuilding-co-to-je", cat="Linkbuilding", tag="tag-red",
+    dict(slug="linkbuilding-co-to-je", cat="Linkbuilding", tag="tag-orange",
          title="Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne",
          excerpt="Čo sú spätné odkazy, reálna cena 50 až 300 EUR, bezpečné metódy a čo Google sankcionuje. Návod s príkladmi z praxe."),
-    dict(slug="google-firmy-profil-navod", cat="Lokálne SEO", tag="tag-blue",
+    dict(slug="google-firmy-profil-navod", cat="Lokálne SEO", tag="tag-violet",
          title="Google firemný profil: návod od založenia po hodnotenia",
          excerpt="Založenie, overenie, kategórie, fotky a hodnotenia cez SMS a QR kód. Profil nastavíte za 8 hodín, návod s prípadovou štúdiou."),
-    dict(slug="seo-wordpress", cat="WordPress", tag="tag-yellow",
+    dict(slug="seo-wordpress", cat="WordPress", tag="tag-cerulean",
          title="SEO pre WordPress: 12 nastavení, ktoré treba spraviť",
          excerpt="Permalinky, sitemap, rýchlosť, meta titulky a schéma. 12 konkrétnych nastavení, ktoré posunú pozície WordPress webu."),
 ]

@@ -354,3 +354,28 @@
 .related-card { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 24px; }
 .related-card h3 { margin: 0; font-size: 1.02rem; }
 .related-card::after { content: '\2192'; color: var(--g-blue-deep); font-weight: 800; font-size: 1.1rem; }
+
+/* ===== BLOG CARDS (2026-09 redesign) ===== */
+.blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.blog-card {
+  background: #fff; border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg); padding: 26px 28px 22px;
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(60,64,67,.18);
+  border-color: var(--border);
+}
+.blog-card h3 { font-size: 1.16rem; line-height: 1.35; margin: 14px 0 0; color: var(--text); }
+.blog-card > p { color: var(--text-2); font-size: 0.95rem; line-height: 1.6; margin: 10px 0 0; }
+.blog-featured { grid-column: 1 / -1; padding: 34px 36px 26px; }
+.blog-featured h3 { font-size: 1.55rem; }
+.blog-card-foot { margin-top: auto; padding-top: 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.blog-date { font-size: 0.84rem; color: var(--text-muted); }
+.blog-read { font-size: 0.88rem; font-weight: 700; color: var(--g-blue-deep); white-space: nowrap; }
+.tag-muted { background: #F1F3F4; color: #5F6368; }
+@media (max-width: 720px) { .blog-grid { grid-template-columns: 1fr; } }

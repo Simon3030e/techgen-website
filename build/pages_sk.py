@@ -17,19 +17,19 @@ TRUST_STATS = """
   <div class="container">
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
-        <span class="trust-num tn-blue">12&nbsp;EUR</span>
+        <span class="trust-num tn-violet">12&nbsp;EUR</span>
         <span class="trust-label">transparentná hodinová<br>sadzba, bez paušálov</span>
       </div>
       <div class="trust-stat reveal" data-delay="200">
-        <span class="trust-num tn-red">0 EUR</span>
+        <span class="trust-num tn-orange">0 EUR</span>
         <span class="trust-label">prvý hovor a audit<br>webu sú bezplatné</span>
       </div>
       <div class="trust-stat reveal" data-delay="300">
-        <span class="trust-num tn-yellow">1. deň</span>
+        <span class="trust-num tn-cerulean">1. deň</span>
         <span class="trust-label">bezplatný audit<br>začne hneď po prvom hovore</span>
       </div>
       <div class="trust-stat reveal" data-delay="400">
-        <span class="trust-num tn-green">30 min</span>
+        <span class="trust-num tn-violet-light">30 min</span>
         <span class="trust-label">mesačný report<br>ako hovor so mnou</span>
       </div>
     </div>
@@ -64,19 +64,19 @@ LOGOS = """
 # Tri piliere viditeľnosti + podporné služby + partnerské doplnky.
 PILLARS = [
     ("/sk/sluzby/seo-pre-ai-vyhladavace/", "AI viditeľnosť",
-     "ChatGPT, Gemini a Google AI Overviews vás odporúčajú zákazníkom ako prvú voľbu.", "ai", "#34A853"),
+     "ChatGPT, Gemini a Google AI Overviews vás odporúčajú zákazníkom ako prvú voľbu.", "ai", "#9B6FD9"),
     ("/sk/sluzby/seo-optimalizacia/", "Google viditeľnosť",
-     "Pozície v Google, ktoré prinášajú zákazníkov, nielen návštevnosť.", "search", "#1A73E8"),
+     "Pozície v Google, ktoré prinášajú zákazníkov, nielen návštevnosť.", "search", "#6A3FC4"),
     ("/sk/sluzby/lodalne-seo/", "Google Mapy viditeľnosť",
-     "Firemný profil, Mapy a hodnotenia. Zákazníci z okolia vás nájdu ako prví.", "pin", "#EA4335"),
+     "Firemný profil, Mapy a hodnotenia. Zákazníci z okolia vás nájdu ako prví.", "pin", "#F75940"),
 ]
 SUPPORT_SERVICES = [
     ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy",
-     "Viac predaja z kategórií a produktov (Shoptet, Marketplace, Google Shopping).", "shop", "#FBBC04"),
+     "Viac predaja z kategórií a produktov (Shoptet, Marketplace, Google Shopping).", "shop", "#1DACD6"),
     ("/sk/sluzby/seo-audit/", "SEO audit a analýza",
-     "Presný obraz toho, čo váš web brzdí, s plánom podľa priorít.", "audit", "#1A73E8"),
+     "Presný obraz toho, čo váš web brzdí, s plánom podľa priorít.", "audit", "#6A3FC4"),
     ("/sk/sluzby/linkbuilding/", "Linkbuilding",
-     "Spätné odkazy a autorita, bez ktorých sa nedostanete hore.", "link", "#EA4335"),
+     "Spätné odkazy a autorita, bez ktorých sa nedostanete hore.", "link", "#F75940"),
 ]
 PARTNERS = [
     ("https://flamia.studio", "flamia.png", "Web dizajn: Flamia Studio",
@@ -99,9 +99,9 @@ def _svc_card(href, title, text, icon, color, tag, delay, external=False):
 
 def services_grid(cols: int = 3) -> str:
     """Piliere + podporné služby + partneri v jednej sekcii."""
-    pillars = "".join(_svc_card(*s, "tag-green" if s[3] == "ai" else "tag-blue" if s[3] == "search" else "tag-red", (i + 1) * 100)
+    pillars = "".join(_svc_card(*s, "tag-violet-light" if s[3] == "ai" else "tag-violet" if s[3] == "search" else "tag-orange", (i + 1) * 100)
                       for i, s in enumerate(PILLARS))
-    support = "".join(_svc_card(*s, ["tag-yellow", "tag-blue", "tag-red", "tag-green"][i], (i + 1) * 100)
+    support = "".join(_svc_card(*s, ["tag-cerulean", "tag-violet", "tag-orange", "tag-violet-light"][i], (i + 1) * 100)
                       for i, s in enumerate(SUPPORT_SERVICES))
     partners = "".join(partner_logo_card(href, logo, title, text, (i + 1) * 100)
                        for i, (href, logo, title, text) in enumerate(PARTNERS))
@@ -143,8 +143,8 @@ def process_section(label: str = "Ako pracujem") -> str:
 # ---------------------------------------------------------------- HOME
 
 def home() -> tuple[str, str]:
-    h1 = ('Nech vás zákazníci nájdú v <span class="hl-blue">Google</span>, '
-          'na <span class="hl-red">Google Mapách</span> aj v <span class="hl-green">ChatGPT</span>.')
+    h1 = ('Nech vás zákazníci nájdú v <span class="hl-violet">Google</span>, '
+          'na <span class="hl-orange">Google Mapách</span> aj v <span class="hl-cerulean-light">ChatGPT</span>.')
     sub = ("Volám sa Šimon Štermenský a SEO robím pre podnikateľov bez platenej reklamy: "
            "pomáham klientom rásť v Google a AI vyhľadávaní písaním obsahu a opravami "
            "technických vecí na webe, tak aby vás zákazníci našli, keď hľadajú vaše "
@@ -190,22 +190,22 @@ def home() -> tuple[str, str]:
     </div>
     <div class="grid-4">
       <div class="benefit-card card-hover reveal" data-delay="100">
-        <span class="benefit-icon icon-green">{gicon("ai", "#34A853", 26)}</span>
+        <span class="benefit-icon icon-violet-light">{gicon("ai", "#9B6FD9", 26)}</span>
         <h3>Nech ma AI odporúča</h3>
         <p>Keď zákazník pýta ChatGPT alebo Gemini odporúčanie, chcete byť v odpovedi. Nastavím web tak, aby mu AI nástroje rozumeli a citovali ho.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="200">
-        <span class="benefit-icon icon-red">{gicon("pin", "#EA4335", 26)}</span>
+        <span class="benefit-icon icon-orange">{gicon("pin", "#F75940", 26)}</span>
         <h3>Zákazníci z Google a Mápy</h3>
         <p>Lokálne hľadanie a Google firemný profil sú najrýchlejšia cesta k zákazníkom z okolia. Nastavím ich a vyhodnocujem každý týždeň.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="300">
-        <span class="benefit-icon icon-yellow">{gicon("shop", "#FBBC04", 26)}</span>
+        <span class="benefit-icon icon-cerulean">{gicon("shop", "#1DACD6", 26)}</span>
         <h3>Viac predaja na e-shope</h3>
         <p>Kategórie a produkty optimalizujem na kľúčové slová, ktoré kupujú. Google Shopping a Heureka sledujem ako súčasť systému.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="400">
-        <span class="benefit-icon icon-blue">{gicon("grow", "#1A73E8", 26)}</span>
+        <span class="benefit-icon icon-violet">{gicon("grow", "#6A3FC4", 26)}</span>
         <h3>Viac ponúk služieb</h3>
         <p>Služby predávam cez obsahové stránky, ktoré odpovedajú na otázky zákazníkov. Z väčšieho záujmu získate viac ponúk a zákaziek.</p>
       </div>
@@ -267,9 +267,9 @@ def home() -> tuple[str, str]:
             <div><strong>722 EUR</strong><span>najväčšia objednávka</span></div>
           </div>
           <div class="project-tags">
-            <span class="project-tag tag-yellow">E-shop SEO</span>
-            <span class="project-tag tag-green">Email marketing</span>
-            <span class="project-tag tag-red">Lokálne SEO + GEO</span>
+            <span class="project-tag tag-cerulean">E-shop SEO</span>
+            <span class="project-tag tag-violet-light">Email marketing</span>
+            <span class="project-tag tag-orange">Lokálne SEO + GEO</span>
           </div>
           <a href="/sk/kontakt/" class="btn btn-outline" style="margin-top:20px;">Povedať si viac</a>
         </div>
@@ -284,10 +284,10 @@ def home() -> tuple[str, str]:
             <div><strong>Lokálne SEO</strong><span>Google profil</span></div>
           </div>
           <div class="project-tags">
-            <span class="project-tag tag-blue">Branding</span>
-            <span class="project-tag tag-green">Web dizajn</span>
-            <span class="project-tag tag-yellow">Copywriting</span>
-            <span class="project-tag tag-red">Lokálne SEO</span>
+            <span class="project-tag tag-violet">Branding</span>
+            <span class="project-tag tag-violet-light">Web dizajn</span>
+            <span class="project-tag tag-cerulean">Copywriting</span>
+            <span class="project-tag tag-orange">Lokálne SEO</span>
           </div>
           <a href="/sk/villa-paris/" class="btn btn-outline" style="margin-top:20px;">Čítať celý príbeh</a>
         </div>
@@ -448,7 +448,7 @@ def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
       <div><strong>Pre koho</strong><span>{' '.join(for_who[:1]).split('.')[0][:80] or 'firmy a e-shopy'}</span></div>
       <div><strong>Časový odhad</strong><span>{time_estimate}</span></div>
       <div><strong>Cena</strong><span>12 EUR za hodinu, vykazované v reporte</span></div>
-      <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--g-blue-deep); font-weight:700;">Bezplatný vstupný audit</a></span></div>
+      <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupný audit</a></span></div>
     </div>
   </div>
 </section>
@@ -523,9 +523,9 @@ def seo_optimalizacia() -> tuple[str, str]:
         svc_name="SEO optimalizácia webu",
         proof={
             "title": "Kliky z Google: +355 % za 3 mesiace spolupráce",
-            "numbers": [("250", "klikov za 3 mesiace", "#1A73E8"),
-                        ("+355 %", "rast oproti predchádzajúcemu obdobiu", "#EA4335"),
-                        ("8 950", "zobrazení mesačne (+246 %)", "#F9AB00")],
+            "numbers": [("250", "klikov za 3 mesiace", "#6A3FC4"),
+                        ("+355 %", "rast oproti predchádzajúcemu obdobiu", "#F75940"),
+                        ("8 950", "zobrazení mesačne (+246 %)", "#1DACD6")],
             "caption": "Firemný web, ktorý som prevzal s minimálnou organickou návštevnosťou. Práca: technická oprava, obsahové stránky na reálne dopyty zákazníkov a mesačné vyhodnotenie. Rast prišiel každý mesiac, bez jednorazového skoku.",
             "source": "Zdroj: Google Search Console klienta, ukážka zo septembra 2026.",
         },
@@ -568,9 +568,9 @@ def lodalne_seo() -> tuple[str, str]:
         svc_name="Lokálne SEO a Google firemný profil",
         proof={
             "title": "359 ľudí videlo firemný profil klienta za jedno obdobie",
-            "numbers": [("359", "zobrazení firemného profilu", "#1A73E8"),
-                        ("54 %", "zobrazení cez Google Mapy", "#EA4335"),
-                        ("46 %", "Zobrazení cez Google Vyhľadávanie", "#34A853")],
+            "numbers": [("359", "zobrazení firemného profilu", "#6A3FC4"),
+                        ("54 %", "zobrazení cez Google Mapy", "#F75940"),
+                        ("46 %", "Zobrazení cez Google Vyhľadávanie", "#9B6FD9")],
             "caption": "Lokálny zákazník hľadá dvomi cestami: cez Mapy (54 % zobrazení) a cez bežné Google hľadanie (46 %). Preto drvíme obe: profil nastavený na doraz, hodnotenia prichádzajú pravidelne a web podporuje mapové pozície.",
             "source": "Zdroj: štatistiky Google firemného profilu klienta, ukážka zo septembra 2026",
         },
@@ -613,9 +613,9 @@ def seo_ai() -> tuple[str, str]:
         svc_name="Optimalizácia pre AI vyhľadávače",
         proof={
             "title": "13 AI citácií e-shopu v Google AI Mode za 3 mesiace",
-            "numbers": [("13", "AI citácií webu v Google AI Mode", "#34A853"),
-                        ("8", "citácie jednej stránky /overaly/", "#1A73E8"),
-                        ("3", "citácie blogového článku", "#F9AB00")],
+            "numbers": [("13", "AI citácií webu v Google AI Mode", "#9B6FD9"),
+                        ("8", "citácie jednej stránky /overaly/", "#6A3FC4"),
+                        ("3", "citácie blogového článku", "#1DACD6")],
             "caption": "Po nasadení nášho obsahu cituje Google AI Mode konkrétne stránky e-shopu priamo v odpovediach zákazníkom. Najviac citovaná stránka dosiahla 8 citácií, blogový článok 3. Konkurencia v AI odpovediach na tieto dotazy ešte nie je, takže prvé mená tam ostávajú.",
             "source": "Zdroj: Google AI Mode (report citácií), ukážka z augusta 2026",
         },
@@ -658,9 +658,9 @@ def eshop_seo() -> tuple[str, str]:
         svc_name="SEO pre e-shopy",
         proof={
             "title": "E-shop Mikramt.sk: 2 492,75 EUR tržieb za 9 mesiacov",
-            "numbers": [("2 492,75 EUR", "tržby za 9 mesiacov", "#1A73E8"),
-                        ("15", "objednávok z e-mailu a organického vyhľadávania", "#34A853"),
-                        ("722 EUR", "najväčšia objednávka", "#F9AB00")],
+            "numbers": [("2 492,75 EUR", "tržby za 9 mesiacov", "#6A3FC4"),
+                        ("15", "objednávok z e-mailu a organického vyhľadávania", "#9B6FD9"),
+                        ("722 EUR", "najväčšia objednávka", "#1DACD6")],
             "caption": "Regionálny dodávateľ stolárskych potrieb s e-shopom na vlastnej platforme, API integráciou na účtovný systém a e-mail marketingom. Objednávky chodia z kanálov e-mail a organický Google. Súčasťou je aj lokálne SEO a optimalizácia pre AI vyhľadávače.",
             "source": "Zdroj: objednávky pripísané kanálom e-mail a organický Google, 9 mesiacov",
         },
@@ -703,9 +703,9 @@ def audit_seo() -> tuple[str, str]:
         svc_name="SEO audit a analýza kľúčových slov",
         proof={
             "title": "Len 6 nových stránok zdvihlo celý web o 11 000 zobrazení",
-            "numbers": [("11 000", "zobrazení mesačne (+14 %)", "#F9AB00"),
-                        ("+43 %", "klikov posledný týždeň", "#1A73E8"),
-                        ("6", "stránok, ktoré to spravili", "#34A853")],
+            "numbers": [("11 000", "zobrazení mesačne (+14 %)", "#1DACD6"),
+                        ("+43 %", "klikov posledný týždeň", "#6A3FC4"),
+                        ("6", "stránok, ktoré to spravili", "#9B6FD9")],
             "caption": "Toto je sila správneho plánu: nezostávať pri 300 stránkach webu, ale pridať 6 presne zacielených obsahových stránok na dopyty, ktoré zákazníci reálne pýtajú. Presne takéto príležitosti audit hľadá ako prvé.",
             "source": "Zdroj: Google Search Console, ukážka zo septembra 2026.",
         },
@@ -748,9 +748,9 @@ def linkbuilding() -> tuple[str, str]:
         svc_name="Linkbuilding",
         proof={
             "title": "Rast každý mesiac: 250 klikov za 3 mesiace spolupráce",
-            "numbers": [("250", "klikov za 3 mesiace (+355 %)", "#1A73E8"),
-                        ("8 950", "zobrazení (+246 %)", "#EA4335"),
-                        ("5", "mesiacov meraného rastu", "#34A853")],
+            "numbers": [("250", "klikov za 3 mesiace (+355 %)", "#6A3FC4"),
+                        ("8 950", "zobrazení (+246 %)", "#F75940"),
+                        ("5", "mesiacov meraného rastu", "#9B6FD9")],
             "caption": "Odkazy fungujú len v kombinácii s obsahom a technikou. Toto je výsledok celého systému: obsahové stránky na reálne dopyty, interné prelinkovanie a odkazy z reálnych slovenských domén. Posun prichádzal každý mesiac.",
             "source": "Zdroj: Google Search Console klienta, ukážka zo septembra 2026.",
         },
@@ -828,9 +828,9 @@ def cennik() -> tuple[str, str]:
         </ul>
         <h2>Čo nie je v cene?</h2>
         <ul class="deliv-list">
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Reklamné výdavky (Google Ads, Meta Ads). Platíte priamo Googlu, nie mne.</span></li>
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Náklady na odkazy a PR články. Vykazujeme skutočnú cenu od médií.</span></li>
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Nájom platených nástrojov tretích strán, ak je potrebný (napr. platobná brána, hosting).</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Reklamné výdavky (Google Ads, Meta Ads). Platíte priamo Googlu, nie mne.</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Náklady na odkazy a PR články. Vykazujeme skutočnú cenu od médií.</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Nájom platených nástrojov tretích strán, ak je potrebný (napr. platobná brána, hosting).</span></li>
         </ul>
       </div>
       <div class="card">

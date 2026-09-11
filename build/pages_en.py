@@ -3,7 +3,7 @@
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     steps_block, benefit_cards, results_slider, result_block,
                     ORG_SCHEMA, EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY,
-                    _bars, _sparkline, _GREEN, _BLUE, _RED, _YELLOW)
+                    _bars, _sparkline, _VIOLET_L, _VIOLET, _ORANGE, _CERULEAN)
 
 EN_FAQ = [
     ("How much does SEO cost?",
@@ -20,8 +20,8 @@ EN_FAQ = [
 
 
 def en_home() -> tuple[str, str]:
-    h1 = ('Let customers find you in <span class="hl-blue">Google</span>, '
-          'on <span class="hl-red">Google Maps</span> and in <span class="hl-green">ChatGPT</span>.')
+    h1 = ('Let customers find you in <span class="hl-violet">Google</span>, '
+          'on <span class="hl-orange">Google Maps</span> and in <span class="hl-cerulean-light">ChatGPT</span>.')
     body = f"""
 <section class="hero">
   <div class="container">
@@ -49,22 +49,22 @@ def en_home() -> tuple[str, str]:
     </div>
     <div class="grid-4">
       <div class="benefit-card card-hover reveal" data-delay="100">
-        <span class="benefit-icon icon-green">{gicon("ai", "#34A853", 26)}</span>
+        <span class="benefit-icon icon-violet-light">{gicon("ai", "#9B6FD9", 26)}</span>
         <h3>Get recommended by AI</h3>
         <p>When a customer asks ChatGPT for a recommendation, you want to be in the answer. We build sites that AI tools understand and cite.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="200">
-        <span class="benefit-icon icon-red">{gicon("pin", "#EA4335", 26)}</span>
+        <span class="benefit-icon icon-orange">{gicon("pin", "#F75940", 26)}</span>
         <h3>Customers from Google and Maps</h3>
         <p>Local search and your Google Business Profile are the fastest path to nearby customers. We set them up and review them weekly.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="300">
-        <span class="benefit-icon icon-yellow">{gicon("shop", "#FBBC04", 26)}</span>
+        <span class="benefit-icon icon-cerulean">{gicon("shop", "#1DACD6", 26)}</span>
         <h3>More e-shop sales</h3>
         <p>Categories and products optimized for keywords that convert. Google Shopping and marketplaces tracked as part of the system.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="400">
-        <span class="benefit-icon icon-blue">{gicon("grow", "#1A73E8", 26)}</span>
+        <span class="benefit-icon icon-violet">{gicon("grow", "#6A3FC4", 26)}</span>
         <h3>More enquiries for services</h3>
         <p>Service pages that answer real customer questions turn interest into enquiries and bookings.</p>
       </div>
@@ -115,27 +115,27 @@ def en_home() -> tuple[str, str]:
     </div>
     <div class="grid-4">
       <div class="growth-card reveal" data-delay="100">
-        <h3 style="color:#1A73E8;">+355%</h3>
+        <h3 style="color:#6A3FC4;">+355%</h3>
         <p>clicks from Google in 3 months since the start of cooperation</p>
-        <div class="growth-bar" style="background:#1A73E8; width:100%;"></div>
+        <div class="growth-bar" style="background:#6A3FC4; width:100%;"></div>
         <p>250 clicks per month, steady growth</p>
       </div>
       <div class="growth-card reveal" data-delay="200">
-        <h3 style="color:#EA4335;">+246%</h3>
+        <h3 style="color:#F75940;">+246%</h3>
         <p>impressions in Google over the same period</p>
-        <div class="growth-bar" style="background:#EA4335; width:85%;"></div>
+        <div class="growth-bar" style="background:#F75940; width:85%;"></div>
         <p>8,950 impressions per month</p>
       </div>
       <div class="growth-card reveal" data-delay="300">
-        <h3 style="color:#F9AB00;">+49%</h3>
+        <h3 style="color:#1DACD6;">+49%</h3>
         <p>clicks in the last 28 days versus the previous period</p>
-        <div class="growth-bar" style="background:#FBBC04; width:70%;"></div>
+        <div class="growth-bar" style="background:#1DACD6; width:70%;"></div>
         <p>121 clicks in 28 days</p>
       </div>
       <div class="growth-card reveal" data-delay="400">
-        <h3 style="color:#34A853;">13</h3>
+        <h3 style="color:#9B6FD9;">13</h3>
         <p>AI citations of a client website in Google AI Overviews, after our content</p>
-        <div class="growth-bar" style="background:#34A853; width:55%;"></div>
+        <div class="growth-bar" style="background:#9B6FD9; width:55%;"></div>
         <p>most cited page: 8 times per month</p>
       </div>
     </div>
@@ -157,12 +157,12 @@ def en_home() -> tuple[str, str]:
 
 def en_services() -> tuple[str, str]:
     services = [
-        ("/en/services/#ai", "AI visibility", "ChatGPT, Gemini, and AI Overviews recommending you as the first choice.", "ai", "#34A853"),
-        ("/en/services/#seo", "Google visibility", "Positions in Google that bring customers, not just traffic.", "search", "#1A73E8"),
-        ("/en/services/#local", "Google Maps visibility", "Business Profile, Maps, and reviews. Nearby customers find you first.", "pin", "#EA4335"),
-        ("/en/services/#eshop", "E-commerce SEO", "More sales from categories and products. Shoptet, marketplaces, Google Shopping.", "shop", "#FBBC04"),
-        ("/en/services/#audit", "SEO audit and analysis", "A precise picture of what holds your site back, with a prioritized plan.", "audit", "#1A73E8"),
-        ("/en/services/#links", "Link building", "Backlinks and authority, without which reaching the top is out of reach.", "link", "#EA4335"),
+        ("/en/services/#ai", "AI visibility", "ChatGPT, Gemini, and AI Overviews recommending you as the first choice.", "ai", "#9B6FD9"),
+        ("/en/services/#seo", "Google visibility", "Positions in Google that bring customers, not just traffic.", "search", "#6A3FC4"),
+        ("/en/services/#local", "Google Maps visibility", "Business Profile, Maps, and reviews. Nearby customers find you first.", "pin", "#F75940"),
+        ("/en/services/#eshop", "E-commerce SEO", "More sales from categories and products. Shoptet, marketplaces, Google Shopping.", "shop", "#1DACD6"),
+        ("/en/services/#audit", "SEO audit and analysis", "A precise picture of what holds your site back, with a prioritized plan.", "audit", "#6A3FC4"),
+        ("/en/services/#links", "Link building", "Backlinks and authority, without which reaching the top is out of reach.", "link", "#F75940"),
     ]
     cards = "".join(f"""
 <div class="benefit-card card-hover reveal" data-delay="150">
@@ -230,9 +230,9 @@ def en_about() -> tuple[str, str]:
   <div class="container">
     <div class="section-head"><span class="section-label">Values</span><h2>Three rules that always apply</h2></div>
     <div class="grid-3">
-      <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#1A73E8", 26)}</span><h3>No promises we cannot keep</h3><p>Nobody can guarantee the first position in Google. What we guarantee: a transparent process, realistic timelines and measurable progress.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#EA4335", 26)}</span><h3>Monthly report: a 30-minute call with me</h3><p>What we did, what it brought, and what comes next. No forwarding, no account managers.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#34A853", 26)}</span><h3>Every hour reported</h3><p>You pay for work delivered. Every hour is in the report with its content and result.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#6A3FC4", 26)}</span><h3>No promises we cannot keep</h3><p>Nobody can guarantee the first position in Google. What we guarantee: a transparent process, realistic timelines and measurable progress.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#F75940", 26)}</span><h3>Monthly report: a 30-minute call with me</h3><p>What we did, what it brought, and what comes next. No forwarding, no account managers.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#9B6FD9", 26)}</span><h3>Every hour reported</h3><p>You pay for work delivered. Every hour is in the report with its content and result.</p></div>
     </div>
   </div>
 </section>
@@ -289,7 +289,7 @@ def en_contact() -> tuple[str, str]:
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Send message</button>
           <p class="form-note">By sending, you agree to the processing of your data for the purpose of a reply (see <a href="/en/privacy/">privacy</a>).</p>
         </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
           ✓ Thank you. We will reply within 12 hours.
         </div>
         <p style="margin-top:20px;">Or email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
@@ -327,13 +327,13 @@ def en_faq() -> tuple[str, str]:
 
 def en_blog() -> tuple[str, str]:
     topics = [
-        ("Guide", "tag-blue", "How to choose an SEO agency (and what to watch for)",
+        ("Guide", "tag-violet", "How to choose an SEO agency (and what to watch for)",
          "Pricing, guarantees, reports. 8 questions to ask before signing."),
-        ("Pricing", "tag-yellow", "How much does SEO optimization cost in 2026?",
+        ("Pricing", "tag-cerulean", "How much does SEO optimization cost in 2026?",
          "A look at market prices and why you pay retainers for invisible work."),
-        ("AI search", "tag-green", "How to get recommended by ChatGPT",
+        ("AI search", "tag-violet-light", "How to get recommended by ChatGPT",
          "A first guide for businesses: how AI tools decide who to recommend."),
-        ("Local SEO", "tag-blue", "Google Business Profile: a complete guide",
+        ("Local SEO", "tag-violet", "Google Business Profile: a complete guide",
          "From setup to reviews. What Google values and what it ignores."),
     ]
     cards = "".join(f"""
@@ -363,44 +363,44 @@ def en_blog() -> tuple[str, str]:
 
 def en_portfolio() -> tuple[str, str]:
     """Results: real numbers from GSC exports, AI Mode and client reports."""
-    c_servisprofi = _bars([145, 115, 61, 42, 38], _GREEN,
+    c_servisprofi = _bars([145, 115, 61, 42, 38], _VIOLET_L,
                           ["sockets", "electricity", "connection", "outlet", "air"])
-    c_speem = _bars([413, 412, 407, 407, 385], _BLUE,
+    c_speem = _bars([413, 412, 407, 407, 385], _VIOLET,
                     ["pyjamas", "bodies", "t-shirts", "pants", "headbands"])
-    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _BLUE)
+    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
             title="ServisProfi.sk", period="March to September 2026",
-            nums=[{"big": "996", "color": _BLUE, "label": "clicks from Google (+8%)"},
-                  {"big": "73 000", "color": _RED, "label": "impressions (+5%)"},
-                  {"big": "96", "color": _GREEN, "label": "citations in AI answers"}],
+            nums=[{"big": "996", "color": _VIOLET, "label": "clicks from Google (+8%)"},
+                  {"big": "73 000", "color": _ORANGE, "label": "impressions (+5%)"},
+                  {"big": "96", "color": _VIOLET_L, "label": "citations in AI answers"}],
             chart=c_servisprofi,
             caption="Two expert articles (EV home charging, surge protection) are cited by Google in AI answers, recommending ServisProfi.sk to customers. A 69-page website: 9,700 to 12,000 impressions per 28 days (+24%). Chart: growth of main pages in percent.",
             source="Google Search Console, performance report Sep 9, 2026",
             partner="", market="en"),
         result_block(
             title="Mikramt.sk, Martin (SK)", period="first e-shop, rework in progress",
-            nums=[{"big": "2,492.75 EUR", "color": _GREEN, "label": "revenue from the first e-shop"},
-                  {"big": "15", "color": _BLUE, "label": "online orders"},
-                  {"big": "722 EUR", "color": _YELLOW, "label": "largest single order"}],
+            nums=[{"big": "2,492.75 EUR", "color": _VIOLET_L, "label": "revenue from the first e-shop"},
+                  {"big": "15", "color": _VIOLET, "label": "online orders"},
+                  {"big": "722 EUR", "color": _CERULEAN, "label": "largest single order"}],
             chart="",
             caption="The first Mikramt.sk e-shop with an API integration into the Sunsoft Ecosun accounting system. The customer was satisfied, so we are now doing a rework: more products, larger category structure and better SEO. Website and design in cooperation with Flamia Studio, SEO and email marketing are mine. In-store sales excluded.",
             source="orders attributed to the email and organic Google channels",
             partner="flamia", market="en"),
         result_block(
             title="Speem.sk", period="Search Console + AI Mode, June to September 2026",
-            nums=[{"big": "893", "color": _GREEN, "label": "impressions in Google AI Mode in 3 months"},
-                  {"big": "+80 %", "color": _BLUE, "label": "August vs June (182 → 329)"},
-                  {"big": "413", "color": _RED, "label": "clicks on the main category"}],
-            chart=_bars([182, 293, 329, 89], _GREEN, ["Jun", "Jul", "Aug", "Sep"]),
+            nums=[{"big": "893", "color": _VIOLET_L, "label": "impressions in Google AI Mode in 3 months"},
+                  {"big": "+80 %", "color": _VIOLET, "label": "August vs June (182 → 329)"},
+                  {"big": "413", "color": _ORANGE, "label": "clicks on the main category"}],
+            chart=_bars([182, 293, 329, 89], _VIOLET_L, ["Jun", "Jul", "Aug", "Sep"]),
             caption="Google AI Mode cites the shop daily after deploying our content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (174, 167 and 119 citations). Categories get tens of thousands of organic impressions per month (headbands 44,838). Competitors are not in AI answers yet.",
             source="Google Search Console + Google AI Mode (citation report), June to September 2026",
             partner="own", market="en"),
         result_block(
             title="InTheCity.app", period="last 28 days",
-            nums=[{"big": "121", "color": _BLUE, "label": "clicks from Google (+49%)"},
-                  {"big": "4 390", "color": _RED, "label": "impressions (+43%)"},
-                  {"big": "+142 %", "color": _GREEN, "label": "top page growth"}],
+            nums=[{"big": "121", "color": _VIOLET, "label": "clicks from Google (+49%)"},
+                  {"big": "4 390", "color": _ORANGE, "label": "impressions (+43%)"},
+                  {"big": "+142 %", "color": _VIOLET_L, "label": "top page growth"}],
             chart=c_itc,
             caption="SEO from scratch: technical SEO and content in the first month of work, and Google started bringing customers right away.",
             source="Google Search Console",
@@ -452,9 +452,9 @@ def en_villa_paris() -> tuple[str, str]:
            [("Home", "/en/"), ("Portfolio", "/en/portfolio/"), ("Villa Paris", None)])}
 
 <div class="partner-band" style="justify-content:center; padding:0 20px;">
-  <span class="project-tag tag-blue"><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" style="color:inherit;">In cooperation with Flamia Studio</a></span>
-  <span class="project-tag tag-green">Web design and development: Flamia Studio</span>
-  <span class="project-tag tag-yellow">SEO, copywriting and local SEO: Nokto Studio</span>
+  <span class="project-tag tag-violet"><a href="https://flamia.studio" target="_blank" rel="noopener noreferrer" style="color:inherit;">In cooperation with Flamia Studio</a></span>
+  <span class="project-tag tag-violet-light">Web design and development: Flamia Studio</span>
+  <span class="project-tag tag-cerulean">SEO, copywriting and local SEO: Nokto Studio</span>
 </div>
 <section class="section">
   <div class="container">

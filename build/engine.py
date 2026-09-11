@@ -147,7 +147,7 @@ _GICON_PATHS = {
     "grow":   '<path d="M4 19 10 13l3.5 3.5L20 10"/><path d="M20 15v-5h-5"/>',
 }
 
-def gicon(kind: str, color: str = "#1A73E8", size: int = 24) -> str:
+def gicon(kind: str, color: str = "#6A3FC4", size: int = 24) -> str:
     """Material-style line icon, Google colors only, no emoji."""
     path = _GICON_PATHS[kind]
     return (f'<span class="gicon" style="color:{color};width:{size}px;height:{size}px;" aria-hidden="true">'
@@ -290,9 +290,6 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="{canonical}">
 {hreflang}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <meta name="msvalidate.01" content="3b43ea1af0ee49f082ab3c4e94ed5f4f">
     <link rel="icon" href="{asset}assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{asset}assets/css/main.css">
@@ -543,7 +540,7 @@ def price_cards(cards: list[dict], market: str) -> str:
 
 
 def steps_block(steps: list[dict]) -> str:
-    nums = ["num-blue", "num-red", "num-yellow", "num-green"]
+    nums = ["num-violet", "num-orange", "num-cerulean", "num-violet-light"]
     out = []
     for i, s in enumerate(steps):
         out.append(f"""
@@ -559,7 +556,7 @@ def steps_block(steps: list[dict]) -> str:
 # Real numbers taken from client Google Search Console / Google AI Mode
 # screenshots (Sep 2026). Charts are inline SVG, Google palette, no JS chart lib.
 
-_BLUE, _RED, _YELLOW, _GREEN = "#4285F4", "#EA4335", "#F9AB00", "#34A853"
+_VIOLET, _ORANGE, _CERULEAN, _VIOLET_L = "#7A50D6", "#F75940", "#1DACD6", "#9B6FD9"
 
 
 def _sparkline(points: list[int], color: str, w: int = 560, h: int = 120, pad: int = 10) -> str:
@@ -597,7 +594,7 @@ def _bars(values: list[int], color: str, labels: list[str] | None = None,
                      f'fill="{color}" opacity="{0.45 if i < n - 1 else 1.0}"/>')
         if labels:
             texts.append(f'<text x="{x + bw / 2:.1f}" y="{h - 4}" text-anchor="middle" '
-                         f'font-size="11" fill="#5F6368" font-family="Inter,sans-serif">{labels[i]}</text>')
+                         f'font-size="11" fill="#5F6368" font-family="Manrope,sans-serif">{labels[i]}</text>')
     return (f'<svg viewBox="0 0 {w} {h}" role="img" aria-hidden="true">'
             + "".join(rects) + "".join(texts) + "</svg>")
 
@@ -653,7 +650,7 @@ def partner_logo_card(href: str, logo: str, title: str, text: str, delay: int = 
        style="height:42px; width:auto; max-width:80%; object-fit:contain; margin-bottom:14px;">
   <h3><a href="{href}"{ext} style="color:var(--text);">{title}</a></h3>
   <p>{text}</p>
-  <div class="project-tags"><span class="project-tag tag-blue">Partner</span></div>
+  <div class="project-tags"><span class="project-tag tag-violet">Partner</span></div>
 </div>"""
 
 
@@ -667,7 +664,7 @@ def result_block(*, title: str, period: str, nums: list[dict], chart: str,
         "own": {"sk": "Vlastný projekt", "cz": "Vlastní projekt", "en": "Own project"},
         "flamia": {"sk": "s Flamia Studio", "cz": "s Flamia Studio", "en": "with Flamia Studio"},
     }
-    tag_cls = {"own": "tag-green", "flamia": "tag-blue"}
+    tag_cls = {"own": "tag-violet-light", "flamia": "tag-violet"}
     if partner:
         chip_txt = chips[partner][market]
         if partner == "flamia":
@@ -727,68 +724,68 @@ def results_slider(market: str) -> str:
         },
     }[market]
 
-    chart1 = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _BLUE)
+    chart1 = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     s1 = _slide(
         "InTheCity (aplikačný projekt)" if market != "en" else "InTheCity (app project)",
         t["chip1"],
         {"sk": "posledných 28 dní", "cz": "posledních 28 dní", "en": "last 28 days"}[market],
-        [{"big": "121", "color": _BLUE, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"[0:] if market == "en" else "clicks from Google (+49%)"}[market]},
-         {"big": "4 390", "color": _RED, "label": {"sk": "zobrazení v Google (+43 %)", "cz": "zobrazení v Google (+43 %)", "en": "impressions (+43%)"}[market]},
-         {"big": "+142 %", "color": _GREEN, "label": {"sk": "rast hlavnej stránky", "cz": "růst hlavní stránky", "en": "top page growth"}[market]}],
+        [{"big": "121", "color": _VIOLET, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"[0:] if market == "en" else "clicks from Google (+49%)"}[market]},
+         {"big": "4 390", "color": _ORANGE, "label": {"sk": "zobrazení v Google (+43 %)", "cz": "zobrazení v Google (+43 %)", "en": "impressions (+43%)"}[market]},
+         {"big": "+142 %", "color": _VIOLET_L, "label": {"sk": "rast hlavnej stránky", "cz": "růst hlavní stránky", "en": "top page growth"}[market]}],
         chart1,
         {"sk": "Prvý mesiac spolupráce: technické SEO a obsah. Google začal prinášať zákazníkov hneď.",
          "cz": "První měsíc spolupráce: technické SEO a obsah. Google začal přinášet zákazníky hned.",
          "en": "First month of cooperation: technical SEO and content. Google started delivering customers immediately."}[market],
         logo="inthecity.png", market=market)
 
-    chart2 = _bars([68, 92, 130, 171, 250], _RED, ["mesiac 1", "mesiac 2", "mesiac 3", "mesiac 4", "teraz"] if market != "en" else ["m1", "m2", "m3", "m4", "now"])
+    chart2 = _bars([68, 92, 130, 171, 250], _ORANGE, ["mesiac 1", "mesiac 2", "mesiac 3", "mesiac 4", "teraz"] if market != "en" else ["m1", "m2", "m3", "m4", "now"])
     s2 = _slide(
         {"sk": "Klient (firemný web)", "cz": "Klient (firemní web)", "en": "Client (company site)"}[market],
         t["chip2"],
         {"sk": "posledné 3 mesiace", "cz": "poslední 3 měsíce", "en": "last 3 months"}[market],
-        [{"big": "250", "color": _BLUE, "label": {"sk": "klikov za 3 mesiace (+355 %)", "cz": "kliků za 3 měsíce (+355 %)", "en": "clicks in 3 months (+355%)"}[market]},
-         {"big": "8 950", "color": _YELLOW, "label": {"sk": "zobrazení (+246 %)", "cz": "zobrazení (+246 %)", "en": "impressions (+246%)"}[market]},
-         {"big": "5", "color": _RED, "label": {"sk": "násobný rast klikov", "cz": "násobný rast kliků", "en": "x growth in clicks"}[market]}],
+        [{"big": "250", "color": _VIOLET, "label": {"sk": "klikov za 3 mesiace (+355 %)", "cz": "kliků za 3 měsíce (+355 %)", "en": "clicks in 3 months (+355%)"}[market]},
+         {"big": "8 950", "color": _CERULEAN, "label": {"sk": "zobrazení (+246 %)", "cz": "zobrazení (+246 %)", "en": "impressions (+246%)"}[market]},
+         {"big": "5", "color": _ORANGE, "label": {"sk": "násobný rast klikov", "cz": "násobný rast kliků", "en": "x growth in clicks"}[market]}],
         chart2,
         {"sk": "Kliky za 3 mesiace od začiatku spolupráce. Rast každý mesiac, žiadny skok, ktorý sa nedá opakovať.",
          "cz": "Kliky za 3 měsíce od začátku spolupráce. Růst každý měsíc, žádný skok, který se nedá opakovat.",
          "en": "Clicks in 3 months since the start of cooperation. Growth every month, no one-off spike."}[market],
         market)
 
-    chart3 = _bars([182, 293, 329, 89], _GREEN, ["jún", "júl", "aug", "sep"])
+    chart3 = _bars([182, 293, 329, 89], _VIOLET_L, ["jún", "júl", "aug", "sep"])
     s3 = _slide("Speem.sk", t["chip3"],
                 {"sk": "Google AI Mode, jún až september 2026", "cz": "Google AI Mode, červen až září 2026", "en": "Google AI Mode, June to September 2026"}[market],
-        [{"big": "893", "color": _GREEN, "label": {"sk": "zobrazení v AI Mode za 3 mesiace", "cz": "zobrazení v AI Mode za 3 měsíce", "en": "AI Mode impressions in 3 months"}[market]},
-         {"big": "+80 %", "color": _BLUE, "label": {"sk": "august oproti júnu (182 → 329)", "cz": "srpen oproti červnu (182 → 329)", "en": "August vs June (182 → 329)"}[market]},
-         {"big": "174", "color": _YELLOW, "label": {"sk": "citácií homepage", "cz": "citací domovské stránky", "en": "homepage citations"}[market]}],
+        [{"big": "893", "color": _VIOLET_L, "label": {"sk": "zobrazení v AI Mode za 3 mesiace", "cz": "zobrazení v AI Mode za 3 měsíce", "en": "AI Mode impressions in 3 months"}[market]},
+         {"big": "+80 %", "color": _VIOLET, "label": {"sk": "august oproti júnu (182 → 329)", "cz": "srpen oproti červnu (182 → 329)", "en": "August vs June (182 → 329)"}[market]},
+         {"big": "174", "color": _CERULEAN, "label": {"sk": "citácií homepage", "cz": "citací domovské stránky", "en": "homepage citations"}[market]}],
         chart3,
         {"sk": "Google AI Mode cituje e-shop denne po nasadení nášho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (167 a 119 citácií). Konkurencia v AI odpovediach ešte nie je.",
          "cz": "Google AI Mode cituje e-shop denně po nasazení našeho obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (167 a 119 citací). Konkurence v AI odpovědích ještě není.",
          "en": "Google AI Mode cites the shop daily after deploying our content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (167 and 119 citations)."}[market],
         logo="speem.webp", market=market)
 
-    chart4 = _sparkline([30, 38, 42, 50, 55, 50, 62, 66, 58, 70, 50, 66], _YELLOW)
+    chart4 = _sparkline([30, 38, 42, 50, 55, 50, 62, 66, 58, 70, 50, 66], _CERULEAN)
     s4 = _slide(
         {"sk": "Rast po pridaní nášho obsahu", "cz": "Růst po přidání našeho obsahu", "en": "Growth after our content"}[market],
         t["chip4"],
         {"sk": "28 dní + posledný týždeň", "cz": "28 dní + poslední týden", "en": "28 days + last week"}[market],
-        [{"big": "11 000", "color": _YELLOW, "label": {"sk": "zobrazení mesačne (+14 %)", "cz": "zobrazení měsíčně (+14 %)", "en": "monthly impressions (+14%)"}[market]},
-         {"big": "+43 %", "color": _BLUE, "label": {"sk": "klikov posledný týždeň", "cz": "kliků poslední týden", "en": "clicks last week"}[market]},
-         {"big": "6", "color": _RED, "label": {"sk": "stránok, na ktorých sa to stalo", "cz": "stránek, na kterých se to stalo", "en": "pages that did it"}[market]}],
+        [{"big": "11 000", "color": _CERULEAN, "label": {"sk": "zobrazení mesačne (+14 %)", "cz": "zobrazení měsíčně (+14 %)", "en": "monthly impressions (+14%)"}[market]},
+         {"big": "+43 %", "color": _VIOLET, "label": {"sk": "klikov posledný týždeň", "cz": "kliků poslední týden", "en": "clicks last week"}[market]},
+         {"big": "6", "color": _ORANGE, "label": {"sk": "stránok, na ktorých sa to stalo", "cz": "stránek, na kterých se to stalo", "en": "pages that did it"}[market]}],
         chart4,
         {"sk": "Pridané obsahové stránky na reálne dopyty zákazníkov. Len 6 stránok z celého webu posunulo celý web.",
          "cz": "Přidané obsahové stránky na reálné dotazy zákazníků. Jen 6 stránek z celého webu posunulo celý web.",
          "en": "Added content pages based on real customer queries. Just 6 pages moved the whole site."}[market],
         market)
 
-    chart5 = _donut([(193, _BLUE, "Maps"), (166, _GREEN, "Search")])
+    chart5 = _donut([(193, _VIOLET, "Maps"), (166, _VIOLET_L, "Search")])
     s5 = _slide(
         {"sk": "Klient: Google firemný profil", "cz": "Klient: Google firemní profil", "en": "Client: Google Business Profile"}[market],
         t["chip5"],
         {"sk": "zobrazenia profilu", "cz": "zobrazení profilu", "en": "profile views"}[market],
-        [{"big": "359", "color": _BLUE, "label": {"sk": "ľudí videlo profil", "cz": "lidí vidělo profil", "en": "people saw the profile"}[market]},
-         {"big": "54 %", "color": _RED, "label": {"sk": "cez Google Mapy", "cz": "přes Google Mapy", "en": "via Google Maps"}[market]},
-         {"big": "46 %", "color": _GREEN, "label": {"sk": "cez Google Search", "cz": "přes Google Search", "en": "via Google Search"}[market]}],
+        [{"big": "359", "color": _VIOLET, "label": {"sk": "ľudí videlo profil", "cz": "lidí vidělo profil", "en": "people saw the profile"}[market]},
+         {"big": "54 %", "color": _ORANGE, "label": {"sk": "cez Google Mapy", "cz": "přes Google Mapy", "en": "via Google Maps"}[market]},
+         {"big": "46 %", "color": _VIOLET_L, "label": {"sk": "cez Google Search", "cz": "přes Google Search", "en": "via Google Search"}[market]}],
         chart5,
         {"sk": "Zákazníci hľadajú lokálne služby na Mapách aj v Search. Profil musí fungovať na oboch miestach.",
          "cz": "Zákazníci hledají lokální služby na Mapách i v Search. Profil musí fungovat na obou místech.",
@@ -825,7 +822,7 @@ def results_slider(market: str) -> str:
 
 
 def benefit_cards(cards: list[dict]) -> str:
-    icons = ["icon-blue", "icon-red", "icon-yellow", "icon-green"]
+    icons = ["icon-violet", "icon-orange", "icon-cerulean", "icon-violet-light"]
     out = []
     for i, c in enumerate(cards):
         out.append(f"""

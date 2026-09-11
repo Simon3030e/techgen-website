@@ -4,7 +4,7 @@ from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     steps_block, price_cards, benefit_cards, schema_service,
                     results_slider, result_block, partner_logo_card,
                     ORG_SCHEMA_CZ, EMAIL, BASE, PHONE_TEL, PHONE_DISPLAY, gicon, _bars, _sparkline,
-                    _GREEN, _BLUE, _RED, _YELLOW)
+                    _VIOLET_L, _VIOLET, _ORANGE, _CERULEAN)
 
 # ---------------------------------------------------------------- shared
 
@@ -13,19 +13,19 @@ CZ_TRUST = """
   <div class="container">
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
-        <span class="trust-num tn-blue">12&nbsp;EUR</span>
+        <span class="trust-num tn-violet">12&nbsp;EUR</span>
         <span class="trust-label">transparentní hodinová<br>sazba, žádné paušály</span>
       </div>
       <div class="trust-stat reveal" data-delay="200">
-        <span class="trust-num tn-red">0 EUR</span>
+        <span class="trust-num tn-orange">0 EUR</span>
         <span class="trust-label">první hovor a audit<br>webu jsou bezplatné</span>
       </div>
       <div class="trust-stat reveal" data-delay="300">
-        <span class="trust-num tn-yellow">1. den</span>
+        <span class="trust-num tn-cerulean">1. den</span>
         <span class="trust-label">bezplatný audit<br>začíná hned po prvním hovoru</span>
       </div>
       <div class="trust-stat reveal" data-delay="400">
-        <span class="trust-num tn-green">30 min</span>
+        <span class="trust-num tn-violet-light">30 min</span>
         <span class="trust-label">měsíční report<br>jako hovor se mnou</span>
       </div>
     </div>
@@ -74,19 +74,19 @@ CZ_HOME_FAQ = [
 # Tri pilíře viditelnosti + podpůrné služby + partnerské doplňky.
 CZ_PILLARS = [
     ("/cz/sluzby/seo-pre-ai-vyhledavace/", "AI viditelnost",
-     "ChatGPT, Gemini a Google AI Overviews vás doporučí zákazníkům jako první volbu.", "ai", "#34A853"),
+     "ChatGPT, Gemini a Google AI Overviews vás doporučí zákazníkům jako první volbu.", "ai", "#9B6FD9"),
     ("/cz/sluzby/seo-optimalizace/", "Google viditelnost",
-     "Pozice v Google, které přinášejí zákazníky, nejen návštěvnost.", "search", "#1A73E8"),
+     "Pozice v Google, které přinášejí zákazníky, nejen návštěvnost.", "search", "#6A3FC4"),
     ("/cz/sluzby/lodalne-seo/", "Google Mapy viditelnost",
-     "Firemní profil, Mapy a hodnocení. Zákazníci z okolí vás najdou jako první.", "pin", "#EA4335"),
+     "Firemní profil, Mapy a hodnocení. Zákazníci z okolí vás najdou jako první.", "pin", "#F75940"),
 ]
 CZ_SUPPORT = [
     ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy",
-     "Více prodeje z kategorií a produktů. Shoptet, Marketplace, Google Shopping.", "shop", "#FBBC04"),
+     "Více prodeje z kategorií a produktů. Shoptet, Marketplace, Google Shopping.", "shop", "#1DACD6"),
     ("/cz/sluzby/seo-audit/", "SEO audit a analýza",
-     "Přesný obraz toho, co váš web brzdí, s akčním plánem podle priorit.", "audit", "#1A73E8"),
+     "Přesný obraz toho, co váš web brzdí, s akčním plánem podle priorit.", "audit", "#6A3FC4"),
     ("/cz/sluzby/linkbuilding/", "Linkbuilding",
-     "Zpětné odkazy a autorita, bez kterých se nahoru nedostanete.", "link", "#EA4335"),
+     "Zpětné odkazy a autorita, bez kterých se nahoru nedostanete.", "link", "#F75940"),
 ]
 CZ_PARTNERS = [
     ("https://flamia.studio", "flamia.png", "Web dizajn: Flamia Studio",
@@ -108,9 +108,9 @@ def _cz_card(href, title, text, icon, color, tag, delay, external=False):
 
 
 def cz_services_grid(cols: int = 3) -> str:
-    pillars = "".join(_cz_card(*s, ["tag-green", "tag-blue", "tag-red"][i], (i + 1) * 100)
+    pillars = "".join(_cz_card(*s, ["tag-violet-light", "tag-violet", "tag-orange"][i], (i + 1) * 100)
                       for i, s in enumerate(CZ_PILLARS))
-    support = "".join(_cz_card(*s, ["tag-yellow", "tag-blue", "tag-red"][i], (i + 1) * 100)
+    support = "".join(_cz_card(*s, ["tag-cerulean", "tag-violet", "tag-orange"][i], (i + 1) * 100)
                       for i, s in enumerate(CZ_SUPPORT))
     partners = "".join(partner_logo_card(href, logo, title, text, (i + 1) * 100)
                        for i, (href, logo, title, text) in enumerate(CZ_PARTNERS))
@@ -123,8 +123,8 @@ def cz_services_grid(cols: int = 3) -> str:
 
 
 def cz_home() -> tuple[str, str]:
-    h1 = ('Ať vás zákazníci najdou v <span class="hl-blue">Google</span>, '
-          'na <span class="hl-red">Google Mapách</span> i v <span class="hl-green">ChatGPT</span>.')
+    h1 = ('Ať vás zákazníci najdou v <span class="hl-violet">Google</span>, '
+          'na <span class="hl-orange">Google Mapách</span> i v <span class="hl-cerulean-light">ChatGPT</span>.')
     sub = ("Jmenuji se Šimon Štermenský a SEO dělám pro podnikatele bez placené reklamy: "
            "pracuji na obsahu webu, technické stránce webu a profilu na Google Mapách, "
            "aby vás zákazníci našli, když hledají vaše produkty a služby. Za transparentních "
@@ -166,22 +166,22 @@ def cz_home() -> tuple[str, str]:
     </div>
     <div class="grid-4">
       <div class="benefit-card card-hover reveal" data-delay="100">
-        <span class="benefit-icon icon-green">{gicon("ai", "#34A853", 26)}</span>
+        <span class="benefit-icon icon-violet-light">{gicon("ai", "#9B6FD9", 26)}</span>
         <h3>Ať vás AI doporučí</h3>
         <p>Když si zákazník u ChatGPT nebo Gemini vyžádá doporučení, chcete být v odpovědi. Stavím web tak, aby mu nástroje AI rozuměly a citovaly ho.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="200">
-        <span class="benefit-icon icon-red">{gicon("pin", "#EA4335", 26)}</span>
+        <span class="benefit-icon icon-orange">{gicon("pin", "#F75940", 26)}</span>
         <h3>Zákazníci z Google a Mapy</h3>
         <p>Lokální vyhledávání a firemní profil Google jsou nejrychlejší cesta k zákazníkům z okolí. Nastavím je a každý týden vyhodnocuji.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="300">
-        <span class="benefit-icon icon-yellow">{gicon("shop", "#FBBC04", 26)}</span>
+        <span class="benefit-icon icon-cerulean">{gicon("shop", "#1DACD6", 26)}</span>
         <h3>Více prodeje na e-shopu</h3>
         <p>Kategorie a produkty optimalizuji na klíčová slova, která kupují. Google Shopping a Heureku sleduji jako součást systému.</p>
       </div>
       <div class="benefit-card card-hover reveal" data-delay="400">
-        <span class="benefit-icon icon-blue">{gicon("grow", "#1A73E8", 26)}</span>
+        <span class="benefit-icon icon-violet">{gicon("grow", "#6A3FC4", 26)}</span>
         <h3>Více poptávek pro služby</h3>
         <p>Služby prodáváme přes obsahové stránky, které odpovídají na otázky zákazníků. Z většího zájmu získáte více poptávek a zakázek.</p>
       </div>
@@ -325,7 +325,7 @@ def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
       <div><strong>Pro koho</strong><span>{' '.join(for_who[:1]).split('.')[0][:80] or 'firmy a e-shopy'}</span></div>
       <div><strong>Časový odhad</strong><span>{time_estimate}</span></div>
       <div><strong>Cena</strong><span>12 EUR za hodinu, vykazované v reportu</span></div>
-      <div><strong>Další krok</strong><span><a href="/cz/kontakt/" style="color:var(--g-blue-deep); font-weight:700;">Bezplatný vstupní audit</a></span></div>
+      <div><strong>Další krok</strong><span><a href="/cz/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupní audit</a></span></div>
     </div>
   </div>
 </section>
@@ -423,9 +423,9 @@ def cz_seo_optimalizace() -> tuple[str, str]:
         svc_name="SEO optimalizace webu",
         proof={
             "title": "Kliky z Google: +355 % za 3 měsíce spolupráce",
-            "numbers": [("250", "kliků za 3 měsíce", "#1A73E8"),
-                        ("+355 %", "růst oproti předchozímu období", "#EA4335"),
-                        ("8 950", "zobrazení měsíčně (+246 %)", "#F9AB00")],
+            "numbers": [("250", "kliků za 3 měsíce", "#6A3FC4"),
+                        ("+355 %", "růst oproti předchozímu období", "#F75940"),
+                        ("8 950", "zobrazení měsíčně (+246 %)", "#1DACD6")],
             "caption": "Firemní web, který jsem převzal s minimální organickou návštěvností. Práce: technická oprava, obsahové stránky na reálné dotazy zákazníků a měsíční vyhodnocení. Růst přicházel každý měsíc, bez jednorázového skoku.",
             "source": "Zdroj: Google Search Console klienta, ukázka ze září 2026.",
         },
@@ -468,9 +468,9 @@ def cz_lodalne_seo() -> tuple[str, str]:
         svc_name="Lokální SEO a firemní profil Google",
         proof={
             "title": "359 lidí vidělo firemní profil klienta za jedno sledované období",
-            "numbers": [("359", "zobrazení firemního profilu", "#1A73E8"),
-                        ("54 %", "zobrazení přes Google Mapy", "#EA4335"),
-                        ("46 %", "zobrazení přes Google Search", "#34A853")],
+            "numbers": [("359", "zobrazení firemního profilu", "#6A3FC4"),
+                        ("54 %", "zobrazení přes Google Mapy", "#F75940"),
+                        ("46 %", "zobrazení přes Google Search", "#9B6FD9")],
             "caption": "Lokální zákazník hledá dvěma cestami: přes Mapy (54 % zobrazení) a přes běžné Google hledání (46 %). Proto řešíme obojí: profil nastavený na doraz, hodnocení přicházejí pravidelně a web podporuje mapové pozice.",
             "source": "Zdroj: statistiky firemního profilu Google klienta, ukázka ze září 2026.",
         },
@@ -513,9 +513,9 @@ def cz_seo_ai() -> tuple[str, str]:
         svc_name="Optimalizace pro AI vyhledávače",
         proof={
             "title": "13 AI citací e-shopu v Google AI režimu za 3 měsíce",
-            "numbers": [("13", "AI citací webu v Google AI režimu", "#34A853"),
-                        ("8", "citací jedné stránky /overaly/", "#1A73E8"),
-                        ("3", "citací blogového článku", "#F9AB00")],
+            "numbers": [("13", "AI citací webu v Google AI režimu", "#9B6FD9"),
+                        ("8", "citací jedné stránky /overaly/", "#6A3FC4"),
+                        ("3", "citací blogového článku", "#1DACD6")],
             "caption": "Po nasazení našeho obsahu cituje Google AI Mode konkrétní stránky e-shopu přímo v odpovědích zákazníkům. Nejvíce citovaná stránka má 8 citací, blogový článek 3. Konkurence v AI odpovědích na tyto dotazy ještě není, takže první jména tam zůstávají.",
             "source": "Zdroj: Google AI Mode (report citací), ukázka ze srpna 2026.",
         },
@@ -558,9 +558,9 @@ def cz_eshop_seo() -> tuple[str, str]:
         svc_name="SEO pro e-shopy",
         proof={
             "title": "E-shop Mikramt.sk: 2 492,75 EUR tržeb za 9 měsíců",
-            "numbers": [("2 492,75 EUR", "tržby za 9 měsíců", "#1A73E8"),
-                        ("15", "Objednávek z e-mailu a organiky.", "#34A853"),
-                        ("722 EUR", "největší objednávka", "#F9AB00")],
+            "numbers": [("2 492,75 EUR", "tržby za 9 měsíců", "#6A3FC4"),
+                        ("15", "Objednávek z e-mailu a organiky.", "#9B6FD9"),
+                        ("722 EUR", "největší objednávka", "#1DACD6")],
             "caption": "Regionální dodavatel truhlářského zboží s e-shopem na vlastní platformě, API integrací na účetní systém a e-mail marketingem. Objednávky chodí z kanálů e-mail a organický Google. Součástí je i lokální SEO a optimalizace pro AI vyhledávače.",
             "source": "Zdroj: objednávky připsané do kanálů e-mail a organický Google, 9 měsíců.",
         },
@@ -603,9 +603,9 @@ def cz_audit() -> tuple[str, str]:
         svc_name="SEO audit a analýza klíčových slov",
         proof={
             "title": "Jen 6 nových stránek zvedlo celý web o 11 000 zobrazení.",
-            "numbers": [("11 000", "zobrazení měsíčně (+14 %)", "#F9AB00"),
-                        ("+43 %", "kliků v posledním týdnu", "#1A73E8"),
-                        ("6", "stránek, které to udělaly", "#34A853")],
+            "numbers": [("11 000", "zobrazení měsíčně (+14 %)", "#1DACD6"),
+                        ("+43 %", "kliků v posledním týdnu", "#6A3FC4"),
+                        ("6", "stránek, které to udělaly", "#9B6FD9")],
             "caption": "Toto je síla správného plánu: nezůstávat u 300 stránek webu, ale přidat 6 přesně zacílených obsahových stránek na dotazy, na které se zákazníci reálně ptají. Přesně takové příležitosti audit hledá jako první.",
             "source": "Zdroj: Google Search Console, ukázka ze září 2026.",
         },
@@ -648,9 +648,9 @@ def cz_linkbuilding() -> tuple[str, str]:
         svc_name="Linkbuilding",
         proof={
             "title": "Růst každý měsíc: 250 kliků za 3 měsíce spolupráce",
-            "numbers": [("250", "kliků za 3 měsíce (+355 %)", "#1A73E8"),
-                        ("8 950", "zobrazení (+246 %)", "#EA4335"),
-                        ("5", "měsíců měřeného růstu", "#34A853")],
+            "numbers": [("250", "kliků za 3 měsíce (+355 %)", "#6A3FC4"),
+                        ("8 950", "zobrazení (+246 %)", "#F75940"),
+                        ("5", "měsíců měřeného růstu", "#9B6FD9")],
             "caption": "Odkazy fungují jen v kombinaci s obsahem a technikou. Toto je výsledek celého systému: obsahové stránky na reálné dotazy, interní prolinkování a odkazy z reálných českých a slovenských domén. Posun přicházel každý měsíc.",
             "source": "Zdroj: Google Search Console klienta, ukázka ze září 2026.",
         },
@@ -728,9 +728,9 @@ def cz_cenik() -> tuple[str, str]:
         </ul>
         <h2>Co není v ceně</h2>
         <ul class="deliv-list">
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Reklamní výdaje (Google Ads, Meta Ads). Platíte přímo Googlu, ne nám.</span></li>
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Náklady na odkazy a PR články. Vykazujeme skutečnou cenu média.</span></li>
-          <li><span class="check" style="background:#FCE8E6;color:var(--g-red-deep);">×</span><span>Pronájem placených nástrojů třetích stran, pokud je potřeba (např. platební brána, hosting).</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Reklamní výdaje (Google Ads, Meta Ads). Platíte přímo Googlu, ne nám.</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Náklady na odkazy a PR články. Vykazujeme skutečnou cenu média.</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Pronájem placených nástrojů třetích stran, pokud je potřeba (např. platební brána, hosting).</span></li>
         </ul>
       </div>
       <div class="card">
@@ -784,12 +784,12 @@ def cz_jak_pracujeme() -> tuple[str, str]:
     </div>
     <div class="grid-2">
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("search", "#1A73E8", 26)}</span>
+        <span class="benefit-icon">{gicon("search", "#6A3FC4", 26)}</span>
         <h3>Psaní obsahu</h3>
         <p>Expertní články a texty stránek na dotazy, které zákazníci skutečně ptají. Obsah, který Google cituje i v AI odpovědích a doporučuje zákazníkům.</p>
       </div>
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("audit", "#34A853", 26)}</span>
+        <span class="benefit-icon">{gicon("audit", "#9B6FD9", 26)}</span>
         <h3>Opravy technických věcí na webu</h3>
         <p>Technické SEO: rychlost, indexace, kanonizace, interní prolinkování a čistá struktura webu. Základ, na kterém obsah funguje.</p>
       </div>
@@ -857,44 +857,44 @@ def cz_jak_pracujeme() -> tuple[str, str]:
 
 def cz_vysledky() -> tuple[str, str]:
     """Výsledky: real numbers from GSC exports, AI Mode and client reports."""
-    c_servisprofi = _bars([145, 115, 61, 42, 38], _GREEN,
+    c_servisprofi = _bars([145, 115, 61, 42, 38], _VIOLET_L,
                           ["vypínač", "ceny el.", "přípojka", "zásuvka", "vzduchem"])
-    c_speem = _bars([413, 412, 407, 407, 385], _BLUE,
+    c_speem = _bars([413, 412, 407, 407, 385], _VIOLET,
                     ["pyžamo", "body", "trička", "kalhoty", "čelenky"])
-    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _BLUE)
+    c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
             title="ServisProfi.sk", period="březen až září 2026",
-            nums=[{"big": "996", "color": _BLUE, "label": "kliků z Google (+8 %)"},
-                  {"big": "73 000", "color": _RED, "label": "zobrazení (+5 %)"},
-                  {"big": "96", "color": _GREEN, "label": "citací v AI odpovědích"}],
+            nums=[{"big": "996", "color": _VIOLET, "label": "kliků z Google (+8 %)"},
+                  {"big": "73 000", "color": _ORANGE, "label": "zobrazení (+5 %)"},
+                  {"big": "96", "color": _VIOLET_L, "label": "citací v AI odpovědích"}],
             chart=c_servisprofi,
             caption="Dva expertní články (nabíjení elektromobilu, přepěťová ochrana) Google cituje v AI odpovědích a doporučuje ServisProfi.sk zákazníkům. Web (69 stránek): 9 700 → 12 000 zobrazení za 28 dní (+24 %). Graf: růst hlavních stránek v procentech.",
             source="Google Search Console, report výkonnosti 9. 9. 2026",
             partner="", market="cz"),
         result_block(
             title="Mikramt.sk, Martin (SK)", period="první e-shop, teď rework v průběhu",
-            nums=[{"big": "2 492,75 EUR", "color": _GREEN, "label": "tržeb z prvního e-shopu"},
-                  {"big": "15", "color": _BLUE, "label": "objednávek online"},
-                  {"big": "722 EUR", "color": _YELLOW, "label": "největší objednávka"}],
+            nums=[{"big": "2 492,75 EUR", "color": _VIOLET_L, "label": "tržeb z prvního e-shopu"},
+                  {"big": "15", "color": _VIOLET, "label": "objednávek online"},
+                  {"big": "722 EUR", "color": _CERULEAN, "label": "největší objednávka"}],
             chart="",
             caption="První e-shop Mikramt.sk s API integrací na účetní systém Sunsoft Ecosun. Zákazník byl spokojený, proto teď děláme rework: více produktů, větší kategorizace a lepší SEO. Web a design ve spolupráci s Flamia Studio, SEO a e-mail marketing dělám sám. Prodej v kamenné prodejně do sumy nezapočítávám.",
             source="objednávky připsané do kanálů email a organický Google",
             partner="flamia", market="cz"),
         result_block(
             title="Speem.sk", period="Search Console + AI Mode, červen až září 2026",
-            nums=[{"big": "893", "color": _GREEN, "label": "zobrazení v Google AI Mode za 3 měsíce"},
-                  {"big": "+80 %", "color": _BLUE, "label": "srpen oproti červnu (182 → 329)"},
-                  {"big": "413", "color": _RED, "label": "kliků na hlavní kategorii"}],
-            chart=_bars([182, 293, 329, 89], _GREEN, ["červ", "čvc", "srp", "zář"]),
+            nums=[{"big": "893", "color": _VIOLET_L, "label": "zobrazení v Google AI Mode za 3 měsíce"},
+                  {"big": "+80 %", "color": _VIOLET, "label": "srpen oproti červnu (182 → 329)"},
+                  {"big": "413", "color": _ORANGE, "label": "kliků na hlavní kategorii"}],
+            chart=_bars([182, 293, 329, 89], _VIOLET_L, ["červ", "čvc", "srp", "zář"]),
             caption="Google AI Mode cituje e-shop denně po nasazení našeho obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (174, 167 a 119 citací). Kategorie mají desítky tisíc organických zobrazení měsíčně (čelenky 44 838). Konkurence v AI odpovědích ještě není.",
             source="Google Search Console + Google AI Mode (report citací), červen až září 2026",
             partner="own", market="cz"),
         result_block(
             title="InTheCity.app", period="posledních 28 dní",
-            nums=[{"big": "121", "color": _BLUE, "label": "kliků z Google (+49 %)"},
-                  {"big": "4 390", "color": _RED, "label": "zobrazení (+43 %)"},
-                  {"big": "+142 %", "color": _GREEN, "label": "růst hlavní stránky"}],
+            nums=[{"big": "121", "color": _VIOLET, "label": "kliků z Google (+49 %)"},
+                  {"big": "4 390", "color": _ORANGE, "label": "zobrazení (+43 %)"},
+                  {"big": "+142 %", "color": _VIOLET_L, "label": "růst hlavní stránky"}],
             chart=c_itc,
             caption="SEO od nuly: technické SEO a obsah v prvním měsíci spolupráce. Google začal přinášet zákazníky hned.",
             source="Google Search Console",
@@ -939,17 +939,17 @@ def cz_vysledky() -> tuple[str, str]:
     </div>
     <div class="grid-3">
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("grow", "#34A853", 26)}</span>
+        <span class="benefit-icon">{gicon("grow", "#9B6FD9", 26)}</span>
         <h3>Mikramt.sk: spolupráce pokračuje</h3>
         <p>Zákazník byl spokojený s prvním e-shopem (2 492,75 EUR za 9 měsíců), proto teď děláme rework: více produktů a lepší SEO.</p>
       </div>
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("ai", "#1A73E8", 26)}</span>
+        <span class="benefit-icon">{gicon("ai", "#6A3FC4", 26)}</span>
         <h3>ServisProfi.sk: měsíční spolupráce běží</h3>
         <p>996 kliků (+8 %) a 96 citací v AI odpovědích za 3 měsíce. Report vychází každý měsíc s čísly.</p>
       </div>
       <div class="benefit-card card-hover">
-        <span class="benefit-icon">{gicon("pin", "#EA4335", 26)}</span>
+        <span class="benefit-icon">{gicon("pin", "#F75940", 26)}</span>
         <h3>Villa Paris: projekt běží s Flamia Studio</h3>
         <p>Rebrand, web a lokální SEO v jednom systému. Značku a web děláme ve spolupráci s Flamia Studio.</p>
       </div>
@@ -992,7 +992,7 @@ def cz_vysledky() -> tuple[str, str]:
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslat zprávu</button>
           <p class="form-note">Odesláním souhlasíte se zpracováním údajů pro účel odpovědi (viz <a href="/cz/privacy/">zásady ochrany osobních údajů</a>).</p>
         </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
           ✓ Děkuji, zpráva odletěla na {EMAIL}. Ozvu se osobně do 24 hodin. Nebo volejte rovnou: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
         </div>
       </div>
@@ -1116,7 +1116,7 @@ def cz_kontakt() -> tuple[str, str]:
           <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslat zprávu</button>
           <p class="form-note">Odesláním souhlasíte se zpracováním údajů za účelem odpovědi (viz). <a href="/cz/privacy/">zásady ochrany osobních údajů</a>).</p>
         </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#E6F4EA; color:var(--g-green-deep); padding:16px; border-radius:10px;">
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
           ✓ Děkujeme, zpráva odlétla na {EMAIL}. Ozveme se osobně do 24 hodin. Nebo volejte rovnou: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
         </div>
       </div>
@@ -1132,17 +1132,17 @@ def cz_kontakt() -> tuple[str, str]:
 
 def cz_blog() -> tuple[str, str]:
     topics = [
-        ("Návod", "tag-blue", "SEO optimalizace: kompletní návod 2026",
+        ("Návod", "tag-violet", "SEO optimalizace: kompletní návod 2026",
          "Krok za krokem od auditu po měření. Postup pro malé firmy, s reálnými čísly z praxe."),
-        ("Ceník", "tag-yellow", "Kolik stojí SEO v 2026?",
+        ("Ceník", "tag-cerulean", "Kolik stojí SEO v 2026?",
          "Ceny na českém trhu a co za ně dostanete. Proč je cena 12 EUR za hodinu veřejná."),
-        ("SEO test", "tag-green", "SEO test: 15bodový kontrolní seznam pro váš web",
+        ("SEO test", "tag-violet-light", "SEO test: 15bodový kontrolní seznam pro váš web",
          "Projděte si web sami za 30 minut: technika, obsah, firemní profil Google a AI viditelnost."),
-        ("Linkbuilding", "tag-red", "Linkbuilding: co to je, co stojí a jak se dělá bezpečně",
+        ("Linkbuilding", "tag-orange", "Linkbuilding: co to je, co stojí a jak se dělá bezpečně",
          "Co jsou zpětné odkazy, reálné ceny a bezpečné metody. Co Google sankcionuje."),
-        ("Lokální SEO", "tag-blue", "Firemní profil Google: návod od založení po hodnocení",
+        ("Lokální SEO", "tag-violet", "Firemní profil Google: návod od založení po hodnocení",
          "Založení, ověření, kategorie, fotky a hodnocení. Návod s případovou studií."),
-        ("WordPress", "tag-yellow", "SEO pro WordPress: 12 nastavení, která je třeba udělat",
+        ("WordPress", "tag-cerulean", "SEO pro WordPress: 12 nastavení, která je třeba udělat",
          "Rychlost, permalinky, schéma a pluginy. 12 konkrétních nastavení."),
     ]
     cards = "".join(f"""
