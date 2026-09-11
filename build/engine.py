@@ -726,10 +726,10 @@ def results_slider(market: str) -> str:
 
     chart1 = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     s1 = _slide(
-        "InTheCity (aplikačný projekt)" if market != "en" else "InTheCity (app project)",
+        {"sk": "Aplikácia (vlastný projekt)", "cz": "Aplikace (vlastní projekt)", "en": "App (own project)"}[market],
         t["chip1"],
         {"sk": "posledných 28 dní", "cz": "posledních 28 dní", "en": "last 28 days"}[market],
-        [{"big": "121", "color": _VIOLET, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"[0:] if market == "en" else "clicks from Google (+49%)"}[market]},
+        [{"big": "121", "color": _VIOLET, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"}[market]},
          {"big": "4 390", "color": _ORANGE, "label": {"sk": "zobrazení v Google (+43 %)", "cz": "zobrazení v Google (+43 %)", "en": "impressions (+43%)"}[market]},
          {"big": "+142 %", "color": _VIOLET_L, "label": {"sk": "rast hlavnej stránky", "cz": "růst hlavní stránky", "en": "top page growth"}[market]}],
         chart1,
@@ -753,15 +753,17 @@ def results_slider(market: str) -> str:
         market)
 
     chart3 = _bars([182, 293, 329, 89], _VIOLET_L, ["jún", "júl", "aug", "sep"])
-    s3 = _slide("Speem.sk", t["chip3"],
-                {"sk": "Google AI Mode, jún až september 2026", "cz": "Google AI Mode, červen až září 2026", "en": "Google AI Mode, June to September 2026"}[market],
+    s3 = _slide(
+        {"sk": "E-shop (vlastný projekt)", "cz": "E-shop (vlastní projekt)", "en": "E-shop (own project)"}[market],
+        t["chip3"],
+        {"sk": "Google AI Mode, jún až september 2026", "cz": "Google AI Mode, červen až září 2026", "en": "Google AI Mode, June to September 2026"}[market],
         [{"big": "893", "color": _VIOLET_L, "label": {"sk": "zobrazení v AI Mode za 3 mesiace", "cz": "zobrazení v AI Mode za 3 měsíce", "en": "AI Mode impressions in 3 months"}[market]},
          {"big": "+80 %", "color": _VIOLET, "label": {"sk": "august oproti júnu (182 → 329)", "cz": "srpen oproti červnu (182 → 329)", "en": "August vs June (182 → 329)"}[market]},
          {"big": "174", "color": _CERULEAN, "label": {"sk": "citácií homepage", "cz": "citací domovské stránky", "en": "homepage citations"}[market]}],
         chart3,
-        {"sk": "Google AI Mode cituje e-shop denne po nasadení nášho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (167 a 119 citácií). Konkurencia v AI odpovediach ešte nie je.",
-         "cz": "Google AI Mode cituje e-shop denně po nasazení našeho obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (167 a 119 citací). Konkurence v AI odpovědích ještě není.",
-         "en": "Google AI Mode cites the shop daily after deploying our content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (167 and 119 citations)."}[market],
+        {"sk": "Google AI Mode cituje e-shop denne po nasadení môjho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (167 a 119 citácií). Konkurencia v AI odpovediach ešte nie je.",
+         "cz": "Google AI Mode cituje e-shop denně po nasazení mého obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (167 a 119 citací). Konkurence v AI odpovědích ještě není.",
+         "en": "Google AI Mode cites the shop daily after deploying my content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (167 and 119 citations)."}[market],
         logo="speem.webp", market=market)
 
     chart4 = _sparkline([30, 38, 42, 50, 55, 50, 62, 66, 58, 70, 50, 66], _CERULEAN)

@@ -259,8 +259,8 @@ def home() -> tuple[str, str]:
     <div class="grid-2">
       <div class="project-card card-hover">
         <div class="project-card-body">
-          <h3>Mikramt.sk, Martin</h3>
-          <p>Vlastný e-shop s API integráciou na účtovný systém Sunsoft Ecosun pre regionálneho dodávateľa stolárskych potrieb. Za 9 mesiacov som vygeneroval online tržby pripísané kanálom e-mail a organické vyhľadávanie Google. Súčasťou je e-mail marketing, lokálne SEO a optimalizácia pre AI vyhľadávače, tak, aby značku odporúčali ChatGPT aj Google AI Overviews.</p>
+          <h3>E-shop so školskými pomôckami (klient)</h3>
+          <p>Vlastný e-shop s API integráciou na účtovný systém pre regionálneho dodávateľa. Za 9 mesiacov som vygeneroval online tržby pripísané kanálom e-mail a organické vyhľadávanie Google. Súčasťou je e-mail marketing, lokálne SEO a optimalizácia pre AI vyhľadávače, tak, aby značku odporúčali ChatGPT aj Google AI Overviews.</p>
           <div class="case-result">
             <div><strong>2 492,75 EUR</strong><span>tržby za 9 mesiacov</span></div>
             <div><strong>15</strong><span>objednávok z e-mailu a organického vyhľadávania</span></div>
@@ -657,11 +657,11 @@ def eshop_seo() -> tuple[str, str]:
         ],
         svc_name="SEO pre e-shopy",
         proof={
-            "title": "E-shop Mikramt.sk: 2 492,75 EUR tržieb za 9 mesiacov",
+            "title": "E-shop (klient): 2 492,75 EUR tržieb za 9 mesiacov",
             "numbers": [("2 492,75 EUR", "tržby za 9 mesiacov", "#6A3FC4"),
                         ("15", "objednávok z e-mailu a organického vyhľadávania", "#9B6FD9"),
                         ("722 EUR", "najväčšia objednávka", "#1DACD6")],
-            "caption": "Regionálny dodávateľ stolárskych potrieb s e-shopom na vlastnej platforme, API integráciou na účtovný systém a e-mail marketingom. Objednávky chodia z kanálov e-mail a organický Google. Súčasťou je aj lokálne SEO a optimalizácia pre AI vyhľadávače.",
+            "caption": "Regionálny dodávateľ s e-shopom na vlastnej platforme, API integráciou na účtovný systém a e-mail marketingom. Objednávky chodia z kanálov e-mail a organický Google. Súčasťou je aj lokálne SEO a optimalizácia pre AI vyhľadávače.",
             "source": "Zdroj: objednávky pripísané kanálom e-mail a organický Google, 9 mesiacov",
         },
     )

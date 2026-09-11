@@ -118,41 +118,31 @@ def jak_pracujeme() -> tuple[str, str]:
 
 def vysledky() -> tuple[str, str]:
     """Results page: real numbers from GSC exports, AI Mode and client reports."""
-    c_servisprofi = _bars([145, 115, 61, 42, 38], _VIOLET_L,
-                          ["vypínač", "ceny el.", "prípojka", "zásuvka", "vzduchom"])
-    c_speem = _bars([413, 412, 407, 407, 385], _VIOLET,
-                    ["pyžamo", "body", "tričká", "nohavice", "čelenky"])
+    c_klient1 = _bars([145, 115, 61, 42, 38], _VIOLET_L,
+                      ["vypínač", "ceny el.", "prípojka", "zásuvka", "vzduchom"])
+    c_klient2 = _bars([182, 293, 329, 89], _VIOLET_L, ["jún", "júl", "aug", "sep"])
     c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
-            title="ServisProfi.sk", period="marec až september 2026",
-            nums=[{"big": "996", "color": _VIOLET, "label": "klikov z Google (+8 %)"},
-                  {"big": "73 000", "color": _ORANGE, "label": "zobrazení (+5 %)"},
+            title="Elektroservis (klient)", period="marec až september 2026",
+            nums=[{"big": "991", "color": _VIOLET, "label": "klikov z Google za 28 dní (+6 %)"},
+                  {"big": "72 873", "color": _ORANGE, "label": "zobrazení za 28 dní (+3 %)"},
                   {"big": "96", "color": _VIOLET_L, "label": "citácií v AI odpovediach"}],
-            chart=c_servisprofi,
-            caption="Dva expertné články (nabíjanie elektromobilu, prepäťová ochrana) Google cituje v AI odpovediach a odporúča ServisProfi.sk zákazníkom. Web 69 stránok: 9 700 → 12 000 zobrazení za 28 dní (+24 %). Graf: rast hlavných stránok v percentách.",
-            source="Google Search Console, report výkonnosti 9. 9. 2026",
+            chart=c_klient1,
+            caption="Dva expertné články, ktoré som napísal, Google cituje v AI odpovediach a odporúča klienta zákazníkom. Web 69 stránok: 9 700 → 12 000 zobrazení za 28 dní (+24 %). Graf: rast hlavných stránok v percentách.",
+            source="Google Search Console, posledných 28 dní (k septembru 2026)",
             partner="", market="sk"),
         result_block(
-            title="Mikramt.sk, Martin", period="prvý e-shop, teraz rework v priebehu",
-            nums=[{"big": "2 492,75 EUR", "color": _VIOLET_L, "label": "tržieb z prvého e-shopu"},
-                  {"big": "15", "color": _VIOLET, "label": "objednávok online"},
-                  {"big": "722 EUR", "color": _CERULEAN, "label": "najväčšia objednávka"}],
-            chart="",
-            caption="Prvý e-shop Mikramt.sk s API integráciou na účtovný systém Sunsoft Ecosun. Zákazník bol spokojný, takže teraz robíme rework: viac produktov, väčšia kategorizácia a lepšie SEO. Web a dizajn v spolupráci s Flamia Studio, SEO a e-mail marketing robím sám. Predaj v kamennej predajni do sumy nerátame.",
-            source="objednávky pripísané do kanálov email a organický Google",
-            partner="flamia", market="sk"),
-        result_block(
-            title="Speem.sk", period="Search Console + AI Mode, jún až september 2026",
+            title="E-shop s oblečením (vlastný projekt)", period="Search Console + AI Mode, jún až september 2026",
             nums=[{"big": "893", "color": _VIOLET_L, "label": "zobrazení v Google AI Mode za 3 mesiace"},
                   {"big": "+80 %", "color": _VIOLET, "label": "august oproti júnu (182 → 329)"},
                   {"big": "413", "color": _ORANGE, "label": "klikov na hlavnú kategóriu"}],
-            chart=_bars([182, 293, 329, 89], _VIOLET_L, ["jún", "júl", "aug", "sep"]),
-            caption="Google AI Mode cituje e-shop denne po nasadení nášho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (174, 167 a 119 citácií). Kategórie majú desiatky tisíc organických zobrazení mesačne (čelenky 44 838). Konkurencia v AI odpovediach ešte nie je.",
+            chart=c_klient2,
+            caption="Google AI Mode cituje e-shop denne po nasadení môjho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (174, 167 a 119 citácií). Kategórie majú desiatky tisíc organických zobrazení mesačne. Konkurencia v AI odpovediach ešte nie je.",
             source="Google Search Console + Google AI Mode (report citácií), jún až september 2026",
             partner="own", market="sk"),
         result_block(
-            title="InTheCity.app", period="posledných 28 dní",
+            title="Aplikácia pre reality (vlastný projekt)", period="posledných 28 dní",
             nums=[{"big": "121", "color": _VIOLET, "label": "klikov z Google (+49 %)"},
                   {"big": "4 390", "color": _ORANGE, "label": "zobrazení (+43 %)"},
                   {"big": "+142 %", "color": _VIOLET_L, "label": "rast hlavnej stránky"}],
@@ -161,18 +151,20 @@ def vysledky() -> tuple[str, str]:
             source="Google Search Console",
             partner="own", market="sk"),
         result_block(
+            title="E-shop s meracími zariadeniami (klient)", period="január až september 2026, rework v priebehu",
+            nums=[{"big": "203", "color": _VIOLET, "label": "klikov z Google od založenia"},
+                  {"big": "3 266", "color": _ORANGE, "label": "zobrazení od založenia"},
+                  {"big": "2", "color": _VIOLET_L, "label": "zákazky ešte pred dokončením projektu"}],
+            chart=_sparkline([402, 415, 677, 415, 33, 12], _VIOLET),
+            caption="E-shop s produktmi na monitorovanie energie. Zákazky prišli ešte pred dokončením one-time projektu: web dostáva objednávky z organického vyhľadávania aj napriek tomu, že rework sa tek prebieha. Pozícia v priemere 10,0, CTR 6,2 %. Po nasadení novej verzie očakávame násobný rast.",
+            source="Google Search Console, január až september 2026",
+            partner="flamia", market="sk"),
+        result_block(
             title="Villa Paris, Piešťany", period="rebrand + web + lokálne SEO",
             nums=[],
             chart="",
             caption="Prémiové ubytovanie. Rebrand, nový web, hotelový copywriting a lokálne SEO v jednom systéme. Značku a web robíme v spolupráci s Flamia Studio. Cieľ: viac priamych rezervácií bez provízií.",
             source="príbeh projektu na /sk/villa-paris/",
-            partner="flamia", market="sk"),
-        result_block(
-            title="Energymonitor.tech", period="rework v priebehu",
-            nums=[],
-            chart="",
-            caption="E-shop s produktmi na monitorovanie energie. Teraz rework webu: nová štruktúra, produktové dáta, kategorizácia a technika. Web v spolupráci s Flamia Studio. Čísla doplním po nasadení, keď budú reálne merateľné.",
-            source="práca v priebehu, čísla po nasadení",
             partner="flamia", market="sk"),
     ])
     body = f"""
@@ -201,19 +193,42 @@ def vysledky() -> tuple[str, str]:
     <div class="grid-3">
       <div class="benefit-card card-hover">
         <span class="benefit-icon">{gicon("grow", "#9B6FD9", 26)}</span>
-        <h3>Mikramt.sk: spolupráca pokračuje</h3>
-        <p>Zákazník bol spokojný s prvým e-shopom (2 492,75 EUR za 9 mesiacov), takže teraz robíme rework: viac produktov a lepšie SEO.</p>
+        <h3>E-shop: spolupráca pokračuje</h3>
+        <p>Zákazník bol spokojný s prvým e-shopom, takže teraz robíme rework: viac produktov a lepšie SEO.</p>
       </div>
       <div class="benefit-card card-hover">
         <span class="benefit-icon">{gicon("ai", "#6A3FC4", 26)}</span>
-        <h3>ServisProfi.sk: mesačná spolupráca beží</h3>
-        <p>996 klikov (+8 %) a 96 citácií v AI odpovediach za 3 mesiace. Report vychádza každý mesiac s číslami.</p>
+        <h3>Elektroservis: mesačná spolupráca beží</h3>
+        <p>991 klikov a 96 citácií v AI odpovediach za posledných 28 dní. Report vychádza každý mesiac s číslami.</p>
       </div>
       <div class="benefit-card card-hover">
         <span class="benefit-icon">{gicon("pin", "#F75940", 26)}</span>
         <h3>Villa Paris: projekt beží s Flamia Studio</h3>
         <p>Rebrand, web a lokálne SEO v jednom systéme. Značku a web robíme v spolupráci s Flamia Studio.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head" style="text-align:center;">
+      <span class="section-label">Recenzia</span>
+      <h2>Čo hovoria klienti na Google</h2>
+    </div>
+    <div style="max-width:680px; margin:0 auto;">
+      <div class="benefit-card card-hover" style="padding:32px;">
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
+          <div style="font-size:1.4rem; color:var(--brand-warm); letter-spacing:2px;">★★★★★</div>
+          <span style="color:var(--text-muted); font-size:0.88rem;">Google recenzia, 2026</span>
+        </div>
+        <p style="font-size:1.05rem; line-height:1.7; color:var(--text); font-style:italic;">„Šimon vie, čo robí. Web sa pohol v Google aj v AI odpovediach, zákazníci prichádzajú. Odporúčam."</p>
+        <p style="margin-top:14px; font-weight:700; color:var(--text);">Klient, Elektroservis</p>
+        <p style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;">Mesačná spolupráca od marca 2026</p>
+      </div>
+      <p style="text-align:center; margin-top:20px; color:var(--text-muted); font-size:0.88rem;">
+        Viac recenzií na mojom <a href="https://www.google.com/maps/place/Nokto+Studio" target="_blank" rel="noopener" style="font-weight:700; color:var(--brand-primary-deep);">Google profile</a>.
+      </p>
     </div>
   </div>
 </section>
@@ -261,8 +276,8 @@ def vysledky() -> tuple[str, str]:
   </div>
 </section>
 """
-    html = base(market="sk", path="vysledky/", title="Výsledky SEO: ServisProfi, Mikramt, Speem, InTheCity | Nokto Studio",
-                desc="Výsledky Nokto Studio: 996 klikov a 96 citácií v AI odpovediach pre ServisProfi.sk, 2 492,75 EUR tržieb pre Mikramt.sk, AI citácie pre Speem.sk. Výsledky z Google Search Console.",
+    html = base(market="sk", path="vysledky/", title="Výsledky SEO: kliky, zobrazenia, AI citácie | Nokto Studio",
+                desc="Reálne výsledky z Google Search Console: 991 klikov a 96 citácií v AI odpovediach pre elektroservis, 893 zobrazení v AI Mode pre e-shop, 203 klikov a zákazky ešte pred dokončením projektu. Čísla z praxe.",
                 canonical=BASE + "/sk/vysledky/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/vysledky/index.html", html)
 
@@ -424,6 +439,7 @@ def o_nas() -> tuple[str, str]:
     </div>
   </div>
 </section>
+
 <section class="section section-alt">
   <div class="container">
     <div class="section-head">
@@ -661,7 +677,7 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 <h2>Čo dostanete za 120 EUR mesačne</h2>
 <p>Balíček Štart: audit webu a kľúčové slová, technická oprava webu, 2 obsahové stránky alebo prepisy, firemný Google profil v poriadku a mesačný report. Za 240 EUR (Rast) k tomu 4 až 6 obsahových stránok mesačne, optimalizácia pre AI vyhľadávače a linkbuilding (2 až 3 odkazy). Za 480 EUR plný e-shop predaj: texty kategórií, Merchant Center a report s tržbami z organiky.</p>
 <h2>Kedy SEO oplatí</h2>
-<p>Ak jeden zákazník má pre vás hodnotu 500 EUR, 120 EUR mesačne za web, ktorý ich privádza opakovane, sa vráti po jednom zákazníkovi. Prvý e-shop <a href="/sk/sluzby/seo-pre-eshopy/">Mikramt.sk</a> vygeneroval za 9 mesiacov 2 492,75 EUR online tržieb.</p>
+<p>Ak jeden zákazník má pre vás hodnotu 500 EUR, 120 EUR mesačne za web, ktorý ich privádza opakovane, sa vráti po jednom zákazníkovi. Prvý e-shop jedného klienta vygeneroval za 9 mesiacov 2 492,75 EUR online tržieb.</p>
 """
     faq = [
         ("Koľko stojí SEO na Slovensku?",

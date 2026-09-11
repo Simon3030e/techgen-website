@@ -363,41 +363,31 @@ def en_blog() -> tuple[str, str]:
 
 def en_portfolio() -> tuple[str, str]:
     """Results: real numbers from GSC exports, AI Mode and client reports."""
-    c_servisprofi = _bars([145, 115, 61, 42, 38], _VIOLET_L,
-                          ["sockets", "electricity", "connection", "outlet", "air"])
-    c_speem = _bars([413, 412, 407, 407, 385], _VIOLET,
-                    ["pyjamas", "bodies", "t-shirts", "pants", "headbands"])
+    c_klient1 = _bars([145, 115, 61, 42, 38], _VIOLET_L,
+                      ["switch", "el. prices", "connection", "socket", "air"])
+    c_klient2 = _bars([182, 293, 329, 89], _VIOLET_L, ["Jun", "Jul", "Aug", "Sep"])
     c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
-            title="ServisProfi.sk", period="March to September 2026",
-            nums=[{"big": "996", "color": _VIOLET, "label": "clicks from Google (+8%)"},
-                  {"big": "73 000", "color": _ORANGE, "label": "impressions (+5%)"},
+            title="Electrical service company (client)", period="March to September 2026",
+            nums=[{"big": "991", "color": _VIOLET, "label": "clicks from Google in 28 days (+6%)"},
+                  {"big": "72 873", "color": _ORANGE, "label": "impressions in 28 days (+3%)"},
                   {"big": "96", "color": _VIOLET_L, "label": "citations in AI answers"}],
-            chart=c_servisprofi,
-            caption="Two expert articles (EV home charging, surge protection) are cited by Google in AI answers, recommending ServisProfi.sk to customers. A 69-page website: 9,700 to 12,000 impressions per 28 days (+24%). Chart: growth of main pages in percent.",
-            source="Google Search Console, performance report Sep 9, 2026",
+            chart=c_klient1,
+            caption="Two expert articles I wrote are cited by Google in AI answers, recommending the client to customers. A 69-page website: 9,700 to 12,000 impressions per 28 days (+24%). Chart: growth of main pages in percent.",
+            source="Google Search Console, last 28 days (to September 2026)",
             partner="", market="en"),
         result_block(
-            title="Mikramt.sk, Martin (SK)", period="first e-shop, rework in progress",
-            nums=[{"big": "2,492.75 EUR", "color": _VIOLET_L, "label": "revenue from the first e-shop"},
-                  {"big": "15", "color": _VIOLET, "label": "online orders"},
-                  {"big": "722 EUR", "color": _CERULEAN, "label": "largest single order"}],
-            chart="",
-            caption="The first Mikramt.sk e-shop with an API integration into the Sunsoft Ecosun accounting system. The customer was satisfied, so we are now doing a rework: more products, larger category structure and better SEO. Website and design in cooperation with Flamia Studio, SEO and email marketing are mine. In-store sales excluded.",
-            source="orders attributed to the email and organic Google channels",
-            partner="flamia", market="en"),
-        result_block(
-            title="Speem.sk", period="Search Console + AI Mode, June to September 2026",
+            title="Clothing e-shop (own project)", period="Search Console + AI Mode, June to September 2026",
             nums=[{"big": "893", "color": _VIOLET_L, "label": "impressions in Google AI Mode in 3 months"},
                   {"big": "+80 %", "color": _VIOLET, "label": "August vs June (182 → 329)"},
                   {"big": "413", "color": _ORANGE, "label": "clicks on the main category"}],
-            chart=_bars([182, 293, 329, 89], _VIOLET_L, ["Jun", "Jul", "Aug", "Sep"]),
-            caption="Google AI Mode cites the shop daily after deploying our content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (174, 167 and 119 citations). Categories get tens of thousands of organic impressions per month (headbands 44,838). Competitors are not in AI answers yet.",
+            chart=c_klient2,
+            caption="Google AI Mode cites the shop daily after deploying my content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (174, 167 and 119 citations). Categories get tens of thousands of organic impressions per month. Competitors are not in AI answers yet.",
             source="Google Search Console + Google AI Mode (citation report), June to September 2026",
             partner="own", market="en"),
         result_block(
-            title="InTheCity.app", period="last 28 days",
+            title="Real estate app (own project)", period="last 28 days",
             nums=[{"big": "121", "color": _VIOLET, "label": "clicks from Google (+49%)"},
                   {"big": "4 390", "color": _ORANGE, "label": "impressions (+43%)"},
                   {"big": "+142 %", "color": _VIOLET_L, "label": "top page growth"}],
@@ -406,18 +396,20 @@ def en_portfolio() -> tuple[str, str]:
             source="Google Search Console",
             partner="own", market="en"),
         result_block(
+            title="Measurement devices e-shop (client)", period="January to September 2026, rework in progress",
+            nums=[{"big": "203", "color": _VIOLET, "label": "clicks from Google since launch"},
+                  {"big": "3 266", "color": _ORANGE, "label": "impressions since launch"},
+                  {"big": "2", "color": _VIOLET_L, "label": "orders even before project completion"}],
+            chart=_sparkline([402, 415, 677, 415, 33, 12], _VIOLET),
+            caption="E-shop with energy monitoring products. Orders came in even before the one-time project was finished: the site gets orders from organic search while the rework is still running. Average position 10.0, CTR 6.2 %. After the new version launches, we expect multiplied growth.",
+            source="Google Search Console, January to September 2026",
+            partner="flamia", market="en"),
+        result_block(
             title="Villa Paris, Piestany (SK)", period="rebrand + web + local SEO",
             nums=[],
             chart="",
             caption="Premium accommodation. Rebrand, new website, hospitality copywriting and local SEO in one system. Brand and website delivered in cooperation with Flamia Studio. Goal: more direct bookings without portal commissions.",
             source="project story at /en/villa-paris/",
-            partner="flamia", market="en"),
-        result_block(
-            title="Energymonitor.tech", period="rework in progress",
-            nums=[],
-            chart="",
-            caption="E-shop with energy monitoring products. Rework in progress: new site structure, product data, categorization, and technical SEO. Website in cooperation with Flamia Studio. Numbers will be added after launch, once they are measurable.",
-            source="work in progress, numbers after launch",
             partner="flamia", market="en"),
     ])
     body = f"""
@@ -437,7 +429,7 @@ def en_portfolio() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="portfolio/", title="Results: SEO, Maps and AI visibility numbers | Nokto Studio",
-                desc="Nokto Studio results: 996 clicks and 96 AI citations for ServisProfi.sk, 2,492.75 EUR revenue for Mikramt.sk, AI citations for Speem.sk. Numbers from Google Search Console.",
+                desc="Real results from Google Search Console: 991 clicks and 96 AI citations for an electrical service client, 893 AI Mode impressions for a clothing e-shop, 203 clicks and orders before project completion. Numbers from practice.",
                 canonical=BASE + "/en/portfolio/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/portfolio/index.html", html)
 
