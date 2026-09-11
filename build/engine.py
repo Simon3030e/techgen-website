@@ -778,7 +778,7 @@ def results_slider(market: str) -> str:
 
     chart1 = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     s1 = _slide(
-        {"sk": "Aplikácia (vlastný projekt)", "cz": "Aplikace (vlastní projekt)", "en": "App (own project)"}[market],
+        {"sk": "Aplikácia (klient)", "cz": "Aplikace (klient)", "en": "App (client)"}[market],
         t["chip1"],
         {"sk": "posledných 28 dní", "cz": "posledních 28 dní", "en": "last 28 days"}[market],
         [{"big": "121", "color": _VIOLET, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"}[market]},

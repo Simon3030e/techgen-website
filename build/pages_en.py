@@ -387,7 +387,7 @@ def en_portfolio() -> tuple[str, str]:
             source="Google Search Console + Google AI Mode (citation report), June to September 2026",
             partner="own", market="en"),
         result_block(
-            title="Real estate app (own project)", period="last 28 days",
+            title="Real estate app (client)", period="last 28 days",
             nums=[{"big": "121", "color": _VIOLET, "label": "clicks from Google (+49%)"},
                   {"big": "4 390", "color": _ORANGE, "label": "impressions (+43%)"},
                   {"big": "+142 %", "color": _VIOLET_L, "label": "top page growth"}],

@@ -142,7 +142,7 @@ def vysledky() -> tuple[str, str]:
             source="Google Search Console + Google AI Mode (report citácií), jún až september 2026",
             partner="own", market="sk"),
         result_block(
-            title="Aplikácia pre reality (vlastný projekt)", period="posledných 28 dní",
+            title="Aplikácia pre reality (klient)", period="posledných 28 dní",
             nums=[{"big": "121", "color": _VIOLET, "label": "klikov z Google (+49 %)"},
                   {"big": "4 390", "color": _ORANGE, "label": "zobrazení (+43 %)"},
                   {"big": "+142 %", "color": _VIOLET_L, "label": "rast hlavnej stránky"}],

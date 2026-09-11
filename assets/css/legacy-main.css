@@ -195,8 +195,12 @@ p  { color: var(--text-2); }
 }
 .nav-mobile {
   display: none; flex-direction: column; gap: 4px;
+  position: fixed; top: 60px; left: 0; right: 0;
+  max-height: calc(100vh - 60px); overflow-y: auto;
   background: #fff; border-bottom: 1px solid var(--border-light);
   padding: 12px 24px 20px;
+  z-index: 99;
+  box-shadow: 0 12px 24px rgba(60,64,67,.15);
 }
 .nav-mobile a { padding: 10px 4px; color: var(--text-2); font-weight: 500; border-bottom: 1px solid var(--border-light); }
 .nav-mobile.open { display: flex; }
@@ -204,6 +208,7 @@ p  { color: var(--text-2); }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .nav { height: 60px; }
+  .nav-mobile { top: 60px; }
 }
 
 /* ===== HERO ===== */
