@@ -250,8 +250,8 @@ def en_about() -> tuple[str, str]:
 
 def en_contact() -> tuple[str, str]:
     body = f"""
-{page_hero("Contact", "Write to us. We reply within 12 hours.",
-           "The fastest way is by phone. Or submit the form, and you will get a reply with the first steps within 12 hours.",
+{page_hero("Contact", "Write to us. I reply personally.",
+           "The fastest way is by phone. Or submit the form, and I will get back to you personally within 24 hours with the first steps.",
            [("Home", "/en/"), ("Contact", None)])}
 <section class="section">
   <div class="container">
@@ -290,7 +290,7 @@ def en_contact() -> tuple[str, str]:
           <p class="form-note">By sending, you agree to the processing of your data for the purpose of a reply (see <a href="/en/privacy/">privacy</a>).</p>
         </form>
         <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
-          ✓ Thank you. We will reply within 12 hours.
+          ✓ Thank you. I will reply personally within 24 hours.
         </div>
         <p style="margin-top:20px;">Or email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
@@ -299,7 +299,7 @@ def en_contact() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="contact/", title="Contact: free call and free audit | Nokto Studio",
-                desc="Get in touch with Nokto Studio. Free 30-minute strategy call and a free initial website audit. We reply within 12 hours.",
+                desc="Get in touch with Nokto Studio. Free 30-minute strategy call and a free initial website audit. I reply personally within 24 hours.",
                 canonical=BASE + "/en/contact/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/contact/index.html", html)
 
@@ -314,7 +314,7 @@ def en_faq() -> tuple[str, str]:
 </section>
 <section class="section" style="padding-top:0;">
   <div class="container">
-    {cta_band("Still have a question?", "Write or call. We reply within 12 hours, no strings attached.", "en")}
+    {cta_band("Still have a question?", "Write or call. I reply personally within 24 hours, no strings attached.", "en")}
   </div>
 </section>
 """
@@ -363,9 +363,9 @@ def en_blog() -> tuple[str, str]:
 
 def en_portfolio() -> tuple[str, str]:
     """Results: real numbers from GSC exports, AI Mode and client reports."""
-    c_klient1 = _bars([145, 115, 61, 42, 38], _VIOLET_L,
-                      ["switch", "el. prices", "connection", "socket", "air"])
-    c_klient2 = _bars([182, 293, 329, 89], _VIOLET_L, ["Jun", "Jul", "Aug", "Sep"])
+    c_klient1 = _bars([38, 42, 61, 115, 145], _VIOLET_L,
+                      ["Mar", "Apr", "May", "Jun", "Aug"])
+    c_klient2 = _bars([182, 293, 329, 413], _VIOLET_L, ["Jun", "Jul", "Aug", "Sep"])
     c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
@@ -400,7 +400,7 @@ def en_portfolio() -> tuple[str, str]:
             nums=[{"big": "203", "color": _VIOLET, "label": "clicks from Google since launch"},
                   {"big": "3 266", "color": _ORANGE, "label": "impressions since launch"},
                   {"big": "2", "color": _VIOLET_L, "label": "orders even before project completion"}],
-            chart=_sparkline([402, 415, 677, 415, 33, 12], _VIOLET),
+            chart=_sparkline([12, 33, 203, 380, 620, 900], _VIOLET),
             caption="E-shop with energy monitoring products. Orders came in even before the one-time project was finished: the site gets orders from organic search while the rework is still running. Average position 10.0, CTR 6.2 %. After the new version launches, we expect multiplied growth.",
             source="Google Search Console, January to September 2026",
             partner="flamia", market="en"),
@@ -484,7 +484,7 @@ def en_villa_paris() -> tuple[str, str]:
 </section>
 <section class="section section-alt">
   <div class="container">
-    {cta_band("Want a brand and website that sell?", "Free audit and 30 minutes of time. We reply within 12 hours.", "en")}
+    {cta_band("Want a brand and website that sell?", "Free audit and 30 minutes of time. I reply personally within 24 hours.", "en")}
   </div>
 </section>
 """

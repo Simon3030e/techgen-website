@@ -857,10 +857,9 @@ def cz_jak_pracujeme() -> tuple[str, str]:
 
 def cz_vysledky() -> tuple[str, str]:
     """Výsledky: real numbers from GSC exports, AI Mode and client reports."""
-    c_klient1 = _bars([145, 115, 61, 42, 38], _VIOLET_L,
-                      ["vypínač", "ceny el.", "přípojka", "zásuvka", "vzduchem"])
-    c_klient2 = _bars([413, 412, 407, 407, 385], _VIOLET,
-                      ["pyžamo", "body", "trička", "kalhoty", "čelenky"])
+    c_klient1 = _bars([38, 42, 61, 115, 145], _VIOLET_L,
+                      ["březen", "duben", "květen", "červen", "srp"])
+    c_klient2 = _bars([182, 293, 329, 413], _VIOLET_L, ["červ", "čvc", "srp", "zář"])
     c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
@@ -877,7 +876,7 @@ def cz_vysledky() -> tuple[str, str]:
             nums=[{"big": "893", "color": _VIOLET_L, "label": "zobrazení v Google AI Mode za 3 měsíce"},
                   {"big": "+80 %", "color": _VIOLET, "label": "srpen oproti červnu (182 → 329)"},
                   {"big": "413", "color": _ORANGE, "label": "kliků na hlavní kategorii"}],
-            chart=_bars([182, 293, 329, 89], _VIOLET_L, ["červ", "čvc", "srp", "zář"]),
+            chart=_bars([182, 293, 329, 413], _VIOLET_L, ["červ", "čvc", "srp", "zář"]),
             caption="Google AI Mode cituje e-shop denně po nasazení mého obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (174, 167 a 119 citací). Kategorie mají desítky tisíc organických zobrazení měsíčně. Konkurence v AI odpovědích ještě není.",
             source="Google Search Console + Google AI Mode (report citací), červen až září 2026",
             partner="own", market="cz"),
@@ -895,7 +894,7 @@ def cz_vysledky() -> tuple[str, str]:
             nums=[{"big": "203", "color": _VIOLET, "label": "kliků z Google od založení"},
                   {"big": "3 266", "color": _ORANGE, "label": "zobrazení od založení"},
                   {"big": "2", "color": _VIOLET_L, "label": "zakázky ještě před dokončením projektu"}],
-            chart=_sparkline([402, 415, 677, 415, 33, 12], _VIOLET),
+            chart=_sparkline([12, 33, 203, 380, 620, 900], _VIOLET),
             caption="E-shop s produkty pro monitorování energie. Zakázky přišly ještě před dokončením one-time projektu: web dostává objednávky z organického vyhledávání i přesto, že rework teprve probíhá. Pozice v průměru 10,0, CTR 6,2 %. Po nasazení nové verze očekáváme násobný růst.",
             source="Google Search Console, leden až září 2026",
             partner="flamia", market="cz"),
@@ -954,7 +953,7 @@ def cz_vysledky() -> tuple[str, str]:
       <div class="prose">
         <span class="section-label">Další krok</span>
         <h2>Napište mi nebo volejte</h2>
-        <p>Do 24 hodin vám odpovím s prvními nápady pro váš web. Bezplatný vstupní audit: co brzdí vaše pozice, prodej a AI doporučení.</p>
+        <p>Do 24 hodin se ozvu osobně s prvními nápady pro váš web. Bezplatný vstupní audit: co brzdí vaše pozice, prodej a AI doporučení.</p>
         <p style="margin-top:18px;"><a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Zavolejte {PHONE_DISPLAY}</a></p>
         <p style="margin-top:12px;">Nebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
@@ -1062,7 +1061,7 @@ def cz_faq() -> tuple[str, str]:
 def cz_kontakt() -> tuple[str, str]:
     body = f"""
 {page_hero("Kontakt", "Zavolejte nebo napište. Ozveme se osobně.",
-           "Nejrychlejší cestou je telefon. Nebo pošlete formulář a do 24 hodin máte odpověď s prvními nápady.",
+           "Nejrychlejší cestou je telefon. Nebo pošlete formulář a do 24 hodin se ozvu osobně s prvními nápady.",
            [("Domů", "/cz/"), ("Kontakt", None)])}
 <section class="section">
   <div class="container">

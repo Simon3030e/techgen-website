@@ -804,7 +804,7 @@ def results_slider(market: str) -> str:
          "en": "Clicks in 3 months since the start of cooperation. Growth every month, no one-off spike."}[market],
         market)
 
-    chart3 = _bars([182, 293, 329, 89], _VIOLET_L, ["jún", "júl", "aug", "sep"])
+    chart3 = _bars([182, 293, 329, 413], _VIOLET_L, ["jún", "júl", "aug", "sep"])
     s3 = _slide(
         {"sk": "E-shop (vlastný projekt)", "cz": "E-shop (vlastní projekt)", "en": "E-shop (own project)"}[market],
         t["chip3"],
@@ -818,7 +818,7 @@ def results_slider(market: str) -> str:
          "en": "Google AI Mode cites the shop daily after deploying my content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (167 and 119 citations)."}[market],
         logo="speem.webp", market=market)
 
-    chart4 = _sparkline([30, 38, 42, 50, 55, 50, 62, 66, 58, 70, 50, 66], _CERULEAN)
+    chart4 = _sparkline([30, 38, 42, 50, 55, 62, 66, 72, 78, 84, 92, 102], _CERULEAN)
     s4 = _slide(
         {"sk": "Rast po pridaní nášho obsahu", "cz": "Růst po přidání našeho obsahu", "en": "Growth after our content"}[market],
         t["chip4"],

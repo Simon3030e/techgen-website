@@ -118,9 +118,9 @@ def jak_pracujeme() -> tuple[str, str]:
 
 def vysledky() -> tuple[str, str]:
     """Results page: real numbers from GSC exports, AI Mode and client reports."""
-    c_klient1 = _bars([145, 115, 61, 42, 38], _VIOLET_L,
-                      ["vypínač", "ceny el.", "prípojka", "zásuvka", "vzduchom"])
-    c_klient2 = _bars([182, 293, 329, 89], _VIOLET_L, ["jún", "júl", "aug", "sep"])
+    c_klient1 = _bars([38, 42, 61, 115, 145], _VIOLET_L,
+                      ["marec", "apríl", "máj", "jún", "aug"])
+    c_klient2 = _bars([182, 293, 329, 413], _VIOLET_L, ["jún", "júl", "aug", "sep"])
     c_itc = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
     blocks = "".join([
         result_block(
@@ -155,7 +155,7 @@ def vysledky() -> tuple[str, str]:
             nums=[{"big": "203", "color": _VIOLET, "label": "klikov z Google od založenia"},
                   {"big": "3 266", "color": _ORANGE, "label": "zobrazení od založenia"},
                   {"big": "2", "color": _VIOLET_L, "label": "zákazky ešte pred dokončením projektu"}],
-            chart=_sparkline([402, 415, 677, 415, 33, 12], _VIOLET),
+            chart=_sparkline([12, 33, 203, 380, 620, 900], _VIOLET),
             caption="E-shop s produktmi na monitorovanie energie. Zákazky prišli ešte pred dokončením one-time projektu: web dostáva objednávky z organického vyhľadávania aj napriek tomu, že rework sa tek prebieha. Pozícia v priemere 10,0, CTR 6,2 %. Po nasadení novej verzie očakávame násobný rast.",
             source="Google Search Console, január až september 2026",
             partner="flamia", market="sk"),
@@ -214,7 +214,7 @@ def vysledky() -> tuple[str, str]:
       <div class="prose">
         <span class="section-label">Ďaľší krok</span>
         <h2>Napíšte mi alebo zavolajte</h2>
-        <p>Do 24 hodín vám odpoviem s prvými nápormi pre váš web. Bezplatný vstupný audit: čo brzdí vaše pozície, predaj a AI odporúčania.</p>
+        <p>Do 24 hodín sa ozvem osobne s prvými návrhmi pre váš web. Bezplatný vstupný audit: čo brzdí vaše pozície, predaj a AI odporúčania.</p>
         <p style="margin-top:18px;"><a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Zavolajte {PHONE_DISPLAY}</a></p>
         <p style="margin-top:12px;">Alebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
@@ -445,7 +445,7 @@ def o_nas() -> tuple[str, str]:
 def kontakt() -> tuple[str, str]:
     body = f"""
 {page_hero("Kontakt", "Zavolajte alebo napíšte. Ozveme sa osobne.",
-           "Najrýchlejšia cesta je telefón. Alebo pošlite formulár a do 24 hodín máte odpoveď s prvými návrhmi.",
+           "Najrýchlejšia cesta je telefón. Alebo pošlite formulár a do 24 hodín sa ozvem osobne s prvými návrhmi.",
            [("Domov", "/"), ("Kontakt", None)])}
 <section class="section">
   <div class="container">
