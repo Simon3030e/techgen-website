@@ -169,7 +169,8 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/sk/sluzby/linkbuilding/", "Linkbuilding"),
         ])
         rest = [("Cenník", "/sk/cennik/"), ("Ako pracujem", "/sk/jak-pracujeme/"),
-                ("Výsledky", "/sk/vysledky/"), ("Blog", "/sk/blog/")]
+                ("Výsledky", "/sk/vysledky/"), ("Blog", "/sk/blog/"),
+                ("Kontaktujte ma", "/sk/kontakt/")]
     elif market == "cz":
         svc = ("Služby", "/cz/sluzby/", [
             ("/cz/sluzby/seo-pre-ai-vyhledavace/", "AI viditelnost"),
@@ -180,7 +181,8 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
         ])
         rest = [("Ceník", "/cz/cenik/"), ("Jak pracuji", "/cz/jak-pracujeme/"),
-                ("Výsledky", "/cz/vysledky/"), ("Blog", "/cz/blog/")]
+                ("Výsledky", "/cz/vysledky/"), ("Blog", "/cz/blog/"),
+                ("Kontaktujte mě", "/cz/kontakt/")]
     else:
         svc = ("Services", "/en/services/", [
             ("/en/services/#ai", "AI search visibility"),
@@ -191,12 +193,49 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/en/services/#links", "Link building"),
         ])
         rest = [("Pricing", "/en/services/#pricing"), ("About", "/en/about/"),
-                ("Portfolio", "/en/portfolio/"), ("Blog", "/en/blog/")]
+                ("Portfolio", "/en/portfolio/"), ("Blog", "/en/blog/"),
+                ("Contact us", "/en/contact/")]
     return [svc] + rest
 
 
 def cta_label(market: str) -> str:
-    return {"sk": "Kontakt", "cz": "Kontakt", "en": "Contact"}[market]
+    return {"sk": "Kontaktuj ma", "cz": "Kontaktujte mě", "en": "Contact me"}[market]
+
+
+GOOGLE_REVIEW = ("Šimon mi robil obsah na webovú stránku, články, produktový feed na e-shop "
+                 "a SEO optimalizáciu. Oceňujem jeho proaktívny prístup, ochotu vysvetliť a "
+                 "edukovať staršieho človeka, ktorý nemá taký prehľad v technológiách, a "
+                 "výbornú spoluprácu, okamžité reakcie a férové ceny. Veľmi som spokojný "
+                 "s poskytnutými službami.")
+
+
+def google_review_band(market: str) -> str:
+    """Real 5-star Google review, shown sitewide above the footer."""
+    head = {"sk": "Čo hovoria klienti", "cz": "Co říkají klienti", "en": "What clients say"}[market]
+    label = {"sk": "Google recenzia", "cz": "Google recenze", "en": "Google review"}[market]
+    attr = {"sk": "Overená Google recenzia", "cz": "Ověřená Google recenze", "en": "Verified Google review"}[market]
+    link_lbl = {"sk": "Google profile", "cz": "Google profilu", "en": "Google profile"}[market]
+    more = {"sk": f"Viac recenzií na mojom <a href=\"https://www.google.com/maps/place/Nokto+Studio\" target=\"_blank\" rel=\"noopener\" style=\"font-weight:700; color:var(--brand-primary-deep);\">{link_lbl}</a>.",
+            "cz": f"Více recenzí na mém <a href=\"https://www.google.com/maps/place/Nokto+Studio\" target=\"_blank\" rel=\"noopener\" style=\"font-weight:700; color:var(--brand-primary-deep);\">{link_lbl}</a>.",
+            "en": f"More reviews on my <a href=\"https://www.google.com/maps/place/Nokto+Studio\" target=\"_blank\" rel=\"noopener\" style=\"font-weight:700; color:var(--brand-primary-deep);\">{link_lbl}</a>."}[market]
+    return f"""
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head" style="text-align:center;">
+      <span class="section-label">{label}</span>
+      <h2>{head}</h2>
+    </div>
+    <div style="max-width:720px; margin:0 auto;">
+      <div class="benefit-card card-hover" style="padding:32px;">
+        <div style="font-size:1.4rem; color:var(--brand-warm); letter-spacing:2px;">★★★★★</div>
+        <p style="font-size:1.05rem; line-height:1.75; margin-top:14px; color:var(--text);">„{GOOGLE_REVIEW}"</p>
+        <p style="margin-top:16px; font-weight:700; color:var(--text);">{attr}, 2026</p>
+      </div>
+      <p style="text-align:center; margin-top:20px; color:var(--text-muted); font-size:0.88rem;">{more}</p>
+    </div>
+  </div>
+</section>
+"""
 
 
 def lang_toggle(market: str, path: str) -> str:
@@ -248,16 +287,25 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
     prefix   : relative prefix for assets from this page, e.g. '../..' or ''
     """
     nav = ""
+    root = {"sk": "/sk/", "cz": "/cz/", "en": "/en/"}[market]
+    cur = (root + path).rstrip('/')
     for item in nav_items(market):
         lbl, href = item[0], item[1]
         if len(item) > 2:
+            is_active = bool(path) and (cur + '/').startswith(href.rstrip('/') + '/')
+            drop_cls = 'nav-drop-link active' if is_active else 'nav-drop-link'
             dd = "".join('<li><a href="%s">%s</a></li>' % (u, n) for u, n in item[2])
-            nav += ('<li class="nav-drop"><a href="%s" class="nav-drop-link">%s'
+            nav += ('<li class="nav-drop"><a href="%s" class="%s">%s'
                     '<svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">'
                     '<path d="M2 4l3 3 3-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>'
-                    '</svg></a><ul class="nav-dropdown">%s</ul></li>') % (href, lbl, dd)
+                    '</svg></a><ul class="nav-dropdown">%s</ul></li>') % (href, drop_cls, lbl, dd)
         else:
-            nav += '<li><a href="%s">%s</a></li>' % (href, lbl)
+            is_active = path and cur == href.rstrip('/')
+            if not is_active:
+                seg = href.rstrip('/').split('/')[-1]
+                is_active = bool(path) and path.rstrip('/').split('/')[0] == seg and seg not in ("", "en", "cz", "sk")
+            cls = ' class="active"' if is_active else ''
+            nav += '<li><a href="%s"%s>%s</a></li>' % (href, cls, lbl)
     mob_nav = ""
     for item in nav_items(market):
         lbl, href = item[0], item[1]
@@ -319,6 +367,10 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 </nav>
 
 {body}
+
+{results_slider(market)}
+
+{google_review_band(market)}
 
 {footer(market, prefix)}
 

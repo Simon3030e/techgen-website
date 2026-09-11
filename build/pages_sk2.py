@@ -181,8 +181,6 @@ def vysledky() -> tuple[str, str]:
   </div>
 </section>
 
-{results_slider("sk")}
-
 <section class="section">
   <div class="container">
     <div class="section-head">
@@ -206,29 +204,6 @@ def vysledky() -> tuple[str, str]:
         <h3>Villa Paris: projekt beží s Flamia Studio</h3>
         <p>Rebrand, web a lokálne SEO v jednom systéme. Značku a web robíme v spolupráci s Flamia Studio.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head" style="text-align:center;">
-      <span class="section-label">Recenzia</span>
-      <h2>Čo hovoria klienti na Google</h2>
-    </div>
-    <div style="max-width:680px; margin:0 auto;">
-      <div class="benefit-card card-hover" style="padding:32px;">
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
-          <div style="font-size:1.4rem; color:var(--brand-warm); letter-spacing:2px;">★★★★★</div>
-          <span style="color:var(--text-muted); font-size:0.88rem;">Google recenzia, 2026</span>
-        </div>
-        <p style="font-size:1.05rem; line-height:1.7; color:var(--text); font-style:italic;">„Šimon vie, čo robí. Web sa pohol v Google aj v AI odpovediach, zákazníci prichádzajú. Odporúčam."</p>
-        <p style="margin-top:14px; font-weight:700; color:var(--text);">Klient, Elektroservis</p>
-        <p style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;">Mesačná spolupráca od marca 2026</p>
-      </div>
-      <p style="text-align:center; margin-top:20px; color:var(--text-muted); font-size:0.88rem;">
-        Viac recenzií na mojom <a href="https://www.google.com/maps/place/Nokto+Studio" target="_blank" rel="noopener" style="font-weight:700; color:var(--brand-primary-deep);">Google profile</a>.
-      </p>
     </div>
   </div>
 </section>
@@ -699,7 +674,7 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
     <div class="grid-2">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
       <p style="color:var(--text-muted);">Chcete o niečom vedieť viac už teraz? Zavolajte <a href="tel:+421917316105" style="font-weight:700; color:var(--text);">+421 917 316 105</a> alebo napíšte.</p>
-      <a href="/sk/kontakt/" class="btn btn-primary" style="margin-top:14px;">Kontaktovať</a>
+      <a href="/sk/kontakt/" class="btn btn-primary" style="margin-top:14px;">Kontaktujte ma</a>
     </div>
   </div>
 </section>

@@ -921,8 +921,6 @@ def cz_vysledky() -> tuple[str, str]:
   </div>
 </section>
 
-{results_slider("cz")}
-
 <section class="section">
   <div class="container">
     <div class="section-head">
@@ -946,29 +944,6 @@ def cz_vysledky() -> tuple[str, str]:
         <h3>Villa Paris: projekt běží s Flamia Studio</h3>
         <p>Rebrand, web a lokální SEO v jednom systému. Značku a web děláme ve spolupráci s Flamia Studio.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head" style="text-align:center;">
-      <span class="section-label">Recenze</span>
-      <h2>Co říkají klienti na Google</h2>
-    </div>
-    <div style="max-width:680px; margin:0 auto;">
-      <div class="benefit-card card-hover" style="padding:32px;">
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom:18px;">
-          <div style="font-size:1.4rem; color:var(--brand-warm); letter-spacing:2px;">★★★★★</div>
-          <span style="color:var(--text-muted); font-size:0.88rem;">Google recenze, 2026</span>
-        </div>
-        <p style="font-size:1.05rem; line-height:1.7; color:var(--text); font-style:italic;">„Šimon umí, co dělá. Web se pohol v Google i v AI odpovědích, zákazníci přicházejí. Doporučuji."</p>
-        <p style="margin-top:14px; font-weight:700; color:var(--text);">Klient, Elektroservis</p>
-        <p style="font-size:0.84rem; color:var(--text-muted); margin-top:4px;">Měsíční spolupráce od března 2026</p>
-      </div>
-      <p style="text-align:center; margin-top:20px; color:var(--text-muted); font-size:0.88rem;">
-        Více recenzí na mém <a href="https://www.google.com/maps/place/Nokto+Studio" target="_blank" rel="noopener" style="font-weight:700; color:var(--brand-primary-deep);">Google profilu</a>.
-      </p>
     </div>
   </div>
 </section>
