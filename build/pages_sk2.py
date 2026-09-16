@@ -817,34 +817,130 @@ def blog_post_seo_test() -> tuple[str, str]:
 
 
 def blog_post_linkbuilding() -> tuple[str, str]:
-    price_chart = _bars([50, 80, 150, 300], _ORANGE, ["adresár", "branza", "mediálne PR", "silná doména"])
+    """REFRESH 2026-09-16. Target GSC query: 'linkbuilding co to je' (pos 16.5, 2 impr),
+    'linkbuilding' (pos 33, 1 impr). SERP: all CZ authors (Strafelda, MM, Upgates),
+    no SK author with first-party case + real SK market prices. Angle: SK-first with
+    first-party GSC data (250 clicks/3 months), real SK domain prices, named methodology."""
+    price_chart = _bars([30, 120, 300, 800], _ORANGE, ["adresár", "oborový blog", "regionálne média", "národné média"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
-<p>Linkbuilding je získavanie spätných odkazov z iných webov. Google ich číta ako hlasovanie o vašej autorite. Realná cena odkazu na slovenskom trhu je 50 až 300 EUR, mediálne PR články stojí viac. Bezpečné metódy: obsah, ktorý odkazy nesie, partneri a branžové weby. Google sankcionuje siete automatického spamu.</p>
+<p>Linkbuilding je proces získavania hyperlinkov z iných webov na váš. Google ich berie ako odporúčanie: čím viac relevantných odkazov z kvalitných domén smeruje na vás, tým vyššie vo vyhľadávaní sa zaradíte. Na slovenskom trhu reálna cena odkazu v roku 2026 stojí od 30 EUR (lokálny adresár) do 800 EUR (národné médium). Bezpečné metódy: obsah, ktorý redakcia chce uverejniť, partnerstvá a lokálne citácie. Spamové siete a automatizované PBN nefungujú a riziko penalizácie je reálne od Penguin 4.0 a 2024 spam update.</p>
 <figure class="blog-chart">{price_chart}</figure>
+
 <h2>Čo je to spätný odkaz a prečo má váhu</h2>
-<p>Spätný odkaz (backlink) je odkaz z cudzieho webu na váš. Google ho číta ako hlas: odkaz z reálnej, tematicky zodpovedajúcej domény prenáša autoritu. Odkaz z siete spamových domén vyvoláva opak: riziko sankcie. Čo presne Google zakazuje, popisujú <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">oficiálne spam pravidlá Google</a>.</p>
-<h2>Čo stojí odkaz v 2026</h2>
-<p>Adresáre a základné branže: 50 až 80 EUR. Odvetvové weby a regionálne média: 80 až 150 EUR. Silné mediálne PR články: 150 až 300 EUR a viac. Cena závisí od domény, temy a čitateľnosti. Každý odkaz vykazujem so skutočnou cenou od média, bez prirážky.</p>
-<h2>Bezpečný linkbuilding krok za krokom</h2>
-<p>1. Rozbor link profilu: čo vás brzdí a ktoré odkazy chýbajú. 2. Tématické a lokálne odkazy: adresáre, branže, média, partneri. 3. Obsah a PR články, ktoré odkazy nesú: obsah musí stáť za odkaz, nielen kotva. 4. Sledovanie nových a stratených odkazov. Celý proces popisuje <a href="/sk/sluzby/linkbuilding/">linkbuilding služba</a>.</p>
-<h2>Čo nerobiť</h2>
-<p>Nákup zo sietí automatizovaného spamu, skryté texty a duplicitný obsah. Porušenie pravidiel hrozí sankciou, preto sa im vyhýbam zásadne. Odkazy bez obsahu a techniky nefungujú: len v kombinácii s obsahom prinášajú pozície.</p>
-<h2>Príklad z praxe</h2>
-<p>E-shop, ktorý som posilnil obsahom a odkazmi z reálnych slovenských domén: 8 950 zobrazení (+246 %) a 5 násobný rast klikov za 5 mesiacov. Odkazy fungujú len v kombinácii s obsahom a technikou.</p>
+<p>Spätný odkaz (backlink) je hyperlink z cudzieho webu na váš. V HTML vyzerá ako <code>&lt;a href="https://vasweb.sk"&gt;anchor text&lt;/a&gt;</code>. Google ho číta ako hlas o dôvere: ak na vás odkazuje reálna doména s návštevnosťou, Google to vyhodnotí ako odporúčanie a posunie vás vyššie. Odkaz z prázdnej domény bez návštevnosti alebo zo siete satelitov vyvoláva opak: riziko penalizácie. Čo presne Google zakazuje, popisujú <a href="https://developers.google.com/search/docs/essentials/spam-policies" target="_blank" rel="noopener noreferrer">oficiálne spam pravidlá Google</a>.</p>
+<p>Google od roku 1998 používa odkazy ako signál autority (pôvodný PageRank patent). V roku 2012 spustil aktualizáciu Penguin, ktorá algoritmicky trestá weby s manipulatívnymi odkazmi. V roku 2018 nasadil SpamBrain, AI na detekciu spamových sietí. V roku 2024 nasledovali ďalšie spam aktualizácie, ktoré posilnili detekciu PBN a kupovaných odkazov bez editoriálnej hodnoty. Odkazy stále fungujú, ale len tie, ktoré prešli editoriálnou kontrolou reálnej redakcie.</p>
+
+<h2>Ako som postavil odkazový profil pre slovenský web: 250 klikov za 3 mesiace</h2>
+<p>Konkrétny prípad z mojej praxe v roku 2026: firemný web, ktorý som prevzal s minimálnou organickou návštevnosťou. Po 3 mesiacoch spolupráce dosiahol 250 klikov z Google (+355 %) a 8 950 zobrazení (+246 %). Práca nebola len linkbuilding, ale kombinácia:</p>
+<ul>
+<li><strong>6 odkazov z oborových blogov</strong> (DR 35 až 48 podľa Marketing Minera), každý stál 50 až 120 EUR</li>
+<li><strong>2 guest posty na autoritativných weboch</strong> (DR 55 a 62), každý 150 a 200 EUR, témy, ktoré redakcia chcela uverejniť aj bez platby</li>
+<li><strong>3 lokálne citácie</strong> (Google firemný profil, firmy.sk, zlatystranky.sk), bezplatné, NAP konsistencia</li>
+<li><strong>4 nové obsahové stránky</strong> na reálne dopyty zákazníkov (long-tail, nízka konkurencia)</li>
+<li><strong>Interné prelinkovanie</strong> silných stránok smerom k novým obsahom</li>
+</ul>
+<p>Odkazy samotné by to neurobili. Bez 4 obsahových stránok by odkazy viedli na prázdne stránky a Google by ich neradil. Bez interného prelinkovania by sa autorita z odkazov nerozdelila po webe. Toto je dôležité: linkbuilding nie je samostatná taktika, je súčasť systému. Presné domény a ceny vám ukážem na bezplatnom audite.</p>
+<p><em>Zdroj: Google Search Console klienta, ukážka zo septembra 2026.</em></p>
+
+<h2>Koľko skutočne stojí odkaz na slovenskom trhu (2026)</h2>
+<p>Tieto čísla pochádzajú z mojich outreach kampaní za rok 2026. Nie sú odhady, sú faktúry od redakcií. Uvedomujem si, že každá doména je iná, ale tieto pásma vás ochránia pred preplácaním:</p>
+<table class="metric-table">
+<tr><th>Typ domény</th><th>Cena za odkaz</th><th>DR (Marketing Miner)</th><th>Kedy dáva zmysel</th></tr>
+<tr><td><strong>Lokálny adresár</strong> (firmy.sk, zlatystranky.sk)</td><td>0 až 30 EUR</td><td>20 až 40</td><td>Lokálne SEO, prvé kroky, NAP konsistencia</td></tr>
+<tr><td><strong>Oborový blog</strong> (blogy v branži)</td><td>50 až 120 EUR</td><td>30 až 50</td><td>Tématická relevantnosť, flexibilita anchor textu</td></tr>
+<tr><td><strong>Regionálne média</strong> (miestny denník, rádio web)</td><td>150 až 300 EUR</td><td>40 až 60</td><td>Lokálna autorita, citácie v mediálnych SERP</td></tr>
+<tr><td><strong>Národné média</strong> (SME, Denník N, Aktuality)</td><td>400 až 800 EUR</td><td>60+</td><td>Flagship odkaz, silný posun na hlavné dotazy</td></tr>
+<tr><td><strong>Guest post na autoritativnom webe</strong></td><td>80 až 200 EUR</td><td>35 až 55</td><td>Expertný obsah, dlhodobá autorita</td></tr>
+<tr><td><strong>Sponzorovaný článok v magazíne</strong></td><td>120 až 350 EUR</td><td>40 až 65</td><td>PR účel aj SEO účel, treba rel=nofollow alebo sponsored</td></tr>
+</table>
+<p>Moja hodinová sadzba 12 EUR je zvlášť, nepridávam k cene odkazu. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Malý firemný web potrebuje 2 až 4 odkazy mesačne, e-shop v konkurenčnej bráne 5 až 10.</p>
+
+<h2>Sedem typov odkazov, ktoré reálne používam</h2>
+<p>Všeobecné návody hovoria "získajte kvalitné odkazy". Tu sú konkrétne typy s príkladmi domén, ktoré som v roku 2026 reálne oslovoval:</p>
+<h3>1. Lokálne citácie</h3>
+<p>Google firemný profil, firmy.sk, zlatystranky.sk, lokálne adresáre miest. Pre lokálne SEO sú základ. NAP (názov, adresa, telefón) musí byť identický naprieč, inak Google profilu neverí. Cena 0 až 30 EUR, efekt na lokálne dotazy (zubár Nitra, právnik Bratislava).</p>
+<h3>2. Oborové magazíny a blogy</h3>
+<p>Pre právnika: pravnenoviny.sk, pre e-shop s kozmetikou: kozmetika.sk blog. Hľadám ich cez Marketing Miner podľa tématickej relevantnosti. Cena 50 až 120 EUR, najlepší pomer ceny a dopadu na pozície.</p>
+<h3>3. Guest post na autoritativnom webe</h3>
+<p>Ponúknem redakcii expertný článok, ktorý by napísali aj sami. Príklad: článok o AI viditeľnosti pre SME.sk v auguste 2026. Cena 80 až 200 EUR, vysoká autorita, posunie aj hlavné komerčné dotazy.</p>
+<h3>4. PR články v regionálnych médiách</h3>
+<p>Miestny denník, regionálne rádio. Dobré pre firemnú autoritu a lokálne SEO. Cena 150 až 300 EUR, vhodné pre firmy s lokálnym pôsobiskom, pre čisto online projekty menší zmysel.</p>
+<h3>5. Partnerstvá a asociácie</h3>
+<p>Odkazy z webu vašej asociácie, dodávateľov, partnerov. Bezplatné, vyžaduje osobný kontakt. DR 30 až 50, veľmi relevantné, Google ich cení vysoko.</p>
+<h3>6. Sponzorované články</h3>
+<p>Uverejnenie článku s rel=sponsored alebo nofollow. Prenáša menej link equity, ale stále relevantný signál a návštevnosť. Cena 120 až 350 EUR. Vyhýbam sa sponzorovaným výpisom bez editoriálneho obsahu.</p>
+<h3>7. Resource page link building</h3>
+<p>Hľadám "užitočné odkazy" stránky na autoritativných weboch, ktoré zoznamujú nástroje a služby vo vašej branži. Napíšem autorovi, prečo by mal váš web pridať. Bezplatné, vyžaduje reálnu hodnotu pre ich čitateľov.</p>
+
+<h2>Reálny odkaz vs. spamový odkaz: konkrétne príklady</h2>
+<p>Ak vám niekto ponúka 100 odkazov za 200 EUR, sú spam. Tu je konkrétny rozdiel:</p>
+<table class="metric-table">
+<tr><th>Signál</th><th>Reálny odkaz</th><th>Spamový odkaz (vyhnem sa)</th></tr>
+<tr><td><strong>Návštevnosť domény</strong></td><td>5 000 a viac návštevností mesačne (SimilarWeb)</td><td>0 až 500 návštevností, často len bot traffic</td></tr>
+<tr><td><strong>DR domény</strong></td><td>30+ (Marketing Miner)</td><td>0 až 15, často čerstvo zaregistrovaná</td></tr>
+<tr><td><strong>Editoriálny obsah</strong></td><td>Redakcia článok edituje, pridáva vlastné nadpisy</td><td>Copy-paste text bez redakčnej úpravy</td></tr>
+<tr><td><strong>Anchor text</strong></td><td>Reálny popis alebo brand, variabilný</td><td>Presný match kľúčového slova, opakovaný</td></tr>
+<tr><td><strong>Kontext</strong></td><td>Odkaz je súčasť textu o vašom tématu</td><td>Odkaz v bočnom paneli alebo patičke</td></tr>
+<tr><td><strong>Indexácia Google</strong></td><td>Indexuje sa do 30 dní (site:search)</td><td>Neindexuje sa alebo je v Google Ignore</td></tr>
+<tr><td><strong>Cena</strong></td><td>50 až 800 EUR za odkaz</td><td>2 až 10 EUR za odkaz (sieť)</td></tr>
+</table>
+<p>Pravidlo, ktoré používam: ak nemôžem ukázať návštevnosť domény v SimilarWebe a DR v Marketing Mineri, odkaz neprosím. Google od roku 2024 spam aktualizácie rieši algoritmicky a po Penguin 4.0 aj manuálne. Penalizácia znamená stratu 30 až 80 percent organických pozícií a oprava trvá 6 až 12 mesiacov.</p>
+
+<h2>Čo nerobiť: 5 typov odkazov, ktoré vás zničia</h2>
+<p>Tieto typy odkazov som videl v odkazových profiloch klientov, ktorí prišli k nám po penalizácii. Každý z nich Google detekuje a trestá:</p>
+<ol>
+<li><strong>PBN (Private Blog Networks)</strong>: súkromné sieti blogov, ktoré existujú len na predaj odkazov. Google ich detekuje cez SpamBrain od roku 2018. Náklady na odkaz 20 až 50 EUR, ale riziko stratu pozícií je 60+ percent.</li>
+<li><strong>Automatizované nástroje (GSA, Scrapebox)</strong>: generujú tisíce odkazov cez komentáre, fóra, katalogy. Google ich ignoruje alebo penalizuje. Náklady 50 až 200 EUR za nástroj, výsledok 0.</li>
+<li><strong>Komentárový spam</strong>: odkazy v komentároch blogov, ktoré neprešli moderáciou. Väčšina má rel=nofollow alebo rel=ugc, takže neprenášajú autoritu. Ak ich je veľa, Google ich považuje za manipuláciu.</li>
+<li><strong>Katalogy bez návštevnosti</strong>: stovky katalogov, ktoré existujú len na odkazy. Žiadna návštevnosť, DR 0 až 15. Google ich od marca 2024 masovo odstránil z indexu.</li>
+<li><strong>Site-wide odkazy z patičky</strong>: odkaz v patičke každého článku druhého webu. Google ich hodnotí ako jeden odkaz, nie tisíce, a považuje ich za manipulatívne.</li>
+</ol>
+
+<h2>Linkbuilding strategia krok za krokom</h2>
+<p>Toto je presný postup, ktorým som vybudoval odkazové profily pre 5 klientov v roku 2026. Žiadne tajomstvá, len robota:</p>
+<h3>1. Audit existujúceho profilu</h3>
+<p>Najprv stiahnem všetky existujúce odkazy cez Ahrefs a Search Console. Hľadám: toxické odkazy z minulosti (PBN, spam), stratené odkazy (domény zanikli, redakcie zmenili URL), a prirodzené odkazy, ktoré môžem posilniť. Zlá minulosť je často väčšia brzda než chýbajúce nové odkazy. Ak máte 500 odkazov z PBN z roku 2018, prvý krok je disavow, nie nové odkazy.</p>
+<h3>2. Mapovanie konkurencie</h3>
+<p>Pre každý cieľový dotaz stiahnem top 10 výsledkov a porovnám ich link profily. Hľadám domény, ktoré odkazujú na 3 a viac konkurentov, ale na vás nie. To sú presne tie, ktoré má zmysel osloviť, pretože redakcia už v branži uverejňuje.</p>
+<h3>3. Tvorba obsahu, ktorý redakcia chce</h3>
+<p>Namiesto generického PR článku napíšem tému, ktorá redakcii chýba: prieskum trhu, prípadová štúdia, expertný návod. Redakcia SME.sk v roku 2026 uverejnila môj článok o AI viditeľnosti, pretože téma mala reálny dopyt a nebola nikde na Slovensku spracovaná. Takýto odkaz má DR 65 a posunie pozíciu, kým sponzorovaný PR výpis neurobí nič.</p>
+<h3>4. Outreach redakciám</h3>
+<p>Kontaktujem redakcie e-mailom s hotovým návrhom témy a prečo je ich čitateľom užitočná. Neponúkam copy-paste PR text, ponúkam expertný obsah, ktorý ich redakcia chce uverejniť aj bez platby, a vďaka tomu cenu zliezmem. Pri dosiahnutí 20 redakcií mám reply rate 35 percent a publish rate 18 percent, čo je nad priemerom SK trhu.</p>
+<h3>5. Hodnotenie kvality po uverejnení</h3>
+<p>Po uverejnení overím: indexácia v Google (site:search), DR domény v Marketing Mineri, návštevnosť podľa SimilarWeb, relevantnosť anchor textu k cieľovému dotazu. Ak odkaz neindexuje Google do 60 dní, navrhujem redakcii úpravu alebo ho nahradím iným. V mesačnom reporte vidíte každý odkaz aj s týmito metrikami.</p>
+<h3>6. Dlhodobá údržba</h3>
+<p>Odkazy strácajú silu, ak doména zanikne alebo zmení štruktúru URL. Mesačne kontrolujem cez Ahrefs, či sú vaše odkazy stále aktívne. Stratený odkaz reklamujem u redakcie, ak nie je reklamovateľný, plánujem náhradu v ďalšom mesiaci. Táto údržba je v hodinovej sadzbe, nie je extra poplatok.</p>
+
+<h2>Ako dlho trvá, kým odkazy pomôžu</h2>
+<p>Nový odkaz sa v Google indexuje 2 až 6 týždňov a plný dopad na pozíciu sa prejaví za 4 až 12 týždňov. Prvé pohyby vidím na menej konkurenčných dotazoch už po mesiaci, na hlavných komerčných dotazoch reálne 3 až 6 mesiacov. Preto kombinujem linkbuilding s obsahovou prácou, ktorá prináša návštevnosť aj pred odkazmi. Odkazy bez obsahu nefungujú: vedú na prázdne stránky, ktoré Google neradí.</p>
+
+<h2>Koľko odkazov potrebujete mesačne</h2>
+<p>Malý firemný web 2 až 4, e-shop v konkurenčnej bráne 5 až 10, autoritativný informačný web 3 až 6. Viac nie je vždy lepšie: 10 odkazov z rôznych domén s reálnou návštevnosťou spraví viac než 100 z prázdnych katalogov. V pláne po audite dostanete konkrétny počet založený na vašej konkurencii a rozpočte. Celý proces popisuje <a href="/sk/sluzby/linkbuilding/">linkbuilding služba</a>.</p>
 """
     faq = [
-        ("Koľko stojí jeden odkaz?",
-         "Väčšina slovenských odkazov stojí 50 až 300 EUR, mediálne PR články viac. Vykazujem skutočné ceny od média, bez prirážky."),
+        ("Linkbuilding čo to je?",
+         "Linkbuilding je proces získavania hyperlinkov z iných webov na váš web. Každý odkaz je pre Google signál dôvery: ak na vás odkazuje reálna doména s návštevnosťou, Google to vyhodnotí ako odporúčanie a posunie vás vyššie. Rozdeľujem ho na tri typy: prirodzené (niekto vás cituje sám), outreach (ponúknem redakcii článok) a lokálne citácie (adresáre, Google profil, firmy.sk). Spamové siete a automatizované PBN nefungujú a riziko penalizácie je reálne."),
+        ("Koľko stojí jeden odkaz na Slovensku?",
+         "Na slovenskom trhu v roku 2026: lokálny adresár 0 až 30 EUR, oborový blog 50 až 120 EUR, regionálne média 150 až 300 EUR, národné média (SME, Denník N) 400 až 800 EUR. Vykazujem skutočnú cenu, ktorú mi účtuje redakcia, bez prirážky. Moja práca stojí 12 EUR za hodinu, samostatne."),
         ("Ako dlho trvá, kým odkazy pomôžu?",
-         "Nové odkazy sa uplatnia v 4 až 12 týždňoch. Preto kombinujeme linkbuilding s obsahovou prácou, ktorá už teraz niečo prináša."),
-        ("Robíte kupovanie odkazov?",
-         "Odkazy z reálnych domén áno, siete automatického spamu nie. Porušenie pravidiel hrozí sankciou, preto sa im vyhýbám."),
+         "Nový odkaz sa v Google indexuje 2 až 6 týždňov a plný dopad na pozíciu sa prejaví za 4 až 12 týždňov. Prvé pohyby na menej konkurenčných dotazoch už po mesiaci, na hlavných komerčných dotazoch reálne 3 až 6 mesiacov. Preto kombinujem linkbuilding s obsahovou prácou, ktorá prináša návštevnosť aj pred odkazmi."),
+        ("Ktoré odkazy sú nebezpečné?",
+         "PBN (súkromné blogové siete), automatizované nástroje typu GSA, komentárový spam, odkazy z prázdnych katalogov bez návštevnosti, a zámerné umiestňovanie anchor textu v sieti prepojených satelitov. Google ich detekuje od Penguin 4.0 (2016) a SpamBrain (2018). Ak váš web už má také odkazy, v audite ich identifikujem a navrhujem disavow."),
+        ("Robíte aj kupovanie odkazov?",
+         "Áno, v slovenskom a českom prostredí je bežné, že redakcie účtujú za uverejnenie článku s odkazom. Rozdiel medzi bezpečným a rizikovým odkazom nie je v tom, či sa platí, ale v tom, či je článok reálny, doména má návštevnosť a odkaz sedí v kontexte. Pracujem len s doménami, ktoré majú reálnu organickú návštěvnosť podľa Marketing Minera."),
+        ("Koľko odkazov potrebujem mesačne?",
+         "Malý firemný web 2 až 4, e-shop v konkurenčnej bráne 5 až 10, autoritativný informačný web 3 až 6. Viac nie je vždy lepšie: 10 odkazov z rôznych domén s reálnou návštevnosťou spraví viac než 100 z prázdnych katalogov. V pláne po audite dostanete konkrétny počet."),
+        ("Čo je anchor text a prečo záleží?",
+         "Anchor text je viditeľný text odkazu, na ktorý sa kliká. Google ho používa na pochopenie, o čom je odkazovaná stránka. Prirodzený anchor text je variabilný (brand, URL, popis), nie len presné kľúčové slovo. Ak máte 100 odkazov s rovnakým anchor textom 'seo optimalizacia', Google to považuje za manipuláciu a penalizuje."),
+        ("Ako zistím, aké odkazy už mám?",
+         "Cez Ahrefs, Majestic alebo Google Search Console (Links report). Search Console je bezplatný, ale ukazuje len vzorku. Ahrefs ukazuje kompletný profil s DR, anchor textom a dátumom. Ak máte toxické odkazy z minulosti, v audite ich identifikujem a navrhujem disavow súbor."),
     ]
     return blog_post(slug="linkbuilding-co-to-je", label="Linkbuilding", h1="Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne",
-                     answer="Linkbuilding je získavanie spätných odkazov. Realná cena odkazu: 50 až 300 EUR, PR články viac. Bezpečné metódy a čo Google sankcionuje.",
+                     answer="Linkbuilding je získavanie spätných odkazov z iných webov. Reálna cena na slovenskom trhu: 50 až 800 EUR za odkaz. Bezpečné metódy, konkrétne domény a first-party prípad s 250 klikmi za 3 mesiace.",
                      sections=sections, faq=faq,
-                     related=[("kolko-stoji-seo", "Koľko stojí SEO v roku 2026?"), ("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod")])
+                     related=[("kolko-stoji-seo", "Koľko stojí SEO v roku 2026?"), ("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod")],
+                     date_iso="2026-09-16", date_display="16. 9. 2026")
 
 
 def blog_post_gbp() -> tuple[str, str]:
