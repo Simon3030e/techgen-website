@@ -351,7 +351,7 @@ def home() -> tuple[str, str]:
 
 HOME_FAQ = [
     ("Koľko stojí SEO optimalizácia webu?",
-     "Za prácu platíte 12 EUR za hodinu. Malý web zvládnem za 10 hodín mesačne (120 EUR), väčší e-shop za 40 hodín (480 EUR). Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
+     "Za prácu platíte 12 EUR za hodinu. Malý web zvládnem za 10 hodín mesačne (120 EUR), väčší e-shop za 40 hodín (180 EUR). Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
     ("Ako dlho trvá, kým SEO prinesie výsledky?",
      "Prvé pohyby vidíte na menej konkurenčných kľúčových slovách zvyčajne za 2 až 4 mesiace. Na hlavné dotazy v konkurenčných odvetviach trvá 6 až 12 mesiacov. Reálne termíny vám poviem už v audite."),
     ("Budem vidieť, za čo platím?",
@@ -493,7 +493,7 @@ def seo_optimalizacia() -> tuple[str, str]:
         title="SEO optimalizácia webu a webstránok | Nokto Studio",
         desc="SEO optimalizácia webstránok: technika, obsah, kľúčové slová. Pozície v Google, ktoré privedú zákazníkov. 12 EUR za hodinu, bezplatný audit.",
         label="Služba · SEO optimalizácia",
-        time_estimate="10 hodín mesačne pre firemný web (120 EUR), e-shop 20 až 40 hodín",
+        time_estimate="10 hodín mesačne pre firemný web (120 EUR), e-shop 10 až 15 hodín",
         h1="SEO optimalizácia, ktorá privedie zákazníkov",
         intro="Zákazník, ktorý vás hľadá v Google, je najlacnejší zákazník. Web postavím tak, aby mu Google rozumel a zaradil ho vyššie a návštevníci odchádzali s odpoveďou, nie s otáznikom.",
         for_who=[
@@ -512,7 +512,7 @@ def seo_optimalizacia() -> tuple[str, str]:
         ],
         faq=[
             ("Koľko hodín mesačne zaberie SEO optimalizácia?",
-             "Firemný web zvládnem v 10 hodinách mesačne (120 EUR), e-shop v 20 až 40 hodinách (240 až 480 EUR). Rozsah potvrdím v pláne po audite."),
+             "Firemný web zvládnem v 10 hodinách mesačne (120 EUR), e-shop v 10 až 15 hodinách (120 až 180 EUR). Rozsah potvrdím v pláne po audite."),
             ("Za aký čas sa objavia prvé výsledky?",
              "Prvé pohyby na menej konkurenčných dotazoch za 2 až 4 mesiace, na hlavné dotazy 6 až 12 mesiacov. Záleží na konkurencii a stave webu."),
             ("Robíte aj obsah? Nemám čas písať.",
@@ -825,7 +825,7 @@ def eshop_seo() -> tuple[str, str]:
     </div>
     <div class="case-result proof-band">
       <div><strong>Pre koho</strong><span>E-shopy na Shoptete, WooCommerci aj vlastnej platforme</span></div>
-      <div><strong>Časový odhad</strong><span>20 až 40 hodín mesačne (240 až 480 EUR), 6 mesiacov minimálne</span></div>
+      <div><strong>Časový odhad</strong><span>10 až 15 hodín mesačne (120 až 180 EUR), 6 mesiacov minimálne</span></div>
       <div><strong>Cena</strong><span>12 EUR za hodinu, linkbuilding a reklamné výdavky zvlášť</span></div>
       <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupný audit e-shopu</a></span></div>
     </div>
@@ -837,7 +837,7 @@ def eshop_seo() -> tuple[str, str]:
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>za hodinu · kedykoľvek skončíte</small></div>
-        <p style="margin-top:8px; max-width:520px;">Časový odhad tejto služby: 20 až 40 hodín mesačne (240 až 480 EUR), podľa rozsahu e-shopu a konkurencie. Náklady na odkazy vykazované zvlášť.</p>
+        <p style="margin-top:8px; max-width:520px;">Časový odhad tejto služby: 10 až 15 hodín mesačne (120 až 180 EUR), podľa rozsahu e-shopu a konkurencie. Náklady na odkazy vykazované zvlášť.</p>
       </div>
       <div class="hero-ctas">
         <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
@@ -880,7 +880,7 @@ def audit_seo() -> tuple[str, str]:
              "vám nedarí v Google, čo presne treba opraviť, a v akom poradí. Začínam bezplatným "
              "vstupným auditom, ktorý máte do troch dní: 10 najväčších problémov a šancí na jednej "
              "strane. Detailný audit je akčný plán s hodinami a prioritami, nie 60-stranové PDF. "
-             "Moja práca stojí 12 EUR za hodinu, detailný audit stojí 240 až 480 EUR podľa rozsahu.")
+             "Moja práca stojí 12 EUR za hodinu, detailný audit stojí 120 až 180 EUR podľa rozsahu.")
 
     who = [
         "Neviete, prečo váš web neprináša zákazníkov z Google, hoci naň pravidelne pridávate.",
@@ -907,9 +907,9 @@ def audit_seo() -> tuple[str, str]:
          "akom poradí to riešiť. Bez auditu strávite mesiace úsilím, ktoré možno smeruje zlým "
          "smerom. Audit vás ochráni pred zbytočnou investíciou a povie vám, čo skutočne funguje."),
         ("Koľko stojí SEO audit?",
-         "Vstupný audit je zdarma, máte ho do 3 pracovných dní. Detailný audit stojí 240 až 480 "
-         "EUR podľa rozsahu webu (20 až 40 hodín × 12 EUR). Pre malý firemný web s 20 stranami "
-         "stačí 240 EUR, pre e-shop s 500 produktmi 480 EUR. Presnú cenu potvrdím po prvej "
+         "Vstupný audit je zdarma, máte ho do 3 pracovných dní. Detailný audit stojí 120 až 180 "
+         "EUR podľa rozsahu webu (10 až 15 hodín × 12 EUR). Pre malý firemný web s 20 stranami "
+         "stačí 180 EUR, pre e-shop s 500 produktmi 180 EUR. Presnú cenu potvrdím po prvej "
          "pohľad na váš web."),
         ("Čo obsahuje detailný SEO audit?",
          "Technická časť: rýchlosť (Core Web Vitals), indexácia, sitemap, robots.txt, kanonizácia, "
@@ -934,7 +934,7 @@ def audit_seo() -> tuple[str, str]:
         ("Môžete urobiť audit aj webu, ktorý sa práve plánuje postaviť?",
          "Áno, audit pred vývojom je najlacnejší spôsob, ako predísť technickým dlhom. Nahliadnem "
          "do wireframov alebo prototypu a pripravím zoznam požiadaviek pre vývojára: URL "
-         "štruktúra, štruktúrované dáta, rýchlosť, hreflang, CMS nastavenia. Cena 240 až 360 EUR, "
+         "štruktúra, štruktúrované dáta, rýchlosť, hreflang, CMS nastavenia. Cena 120 až 180 EUR (v cene retainera), "
          "ušetrí vám desiatky tisíc eur na prerábaní webu po launchi."),
     ]
 
@@ -1024,7 +1024,7 @@ def audit_seo() -> tuple[str, str]:
       <p class="section-subheading">Vstupný audit vám povie, či má zmysel investovať do SEO. Detailný audit vám povie presne čo a ako robiť.</p>
     </div>
     <table class="metric-table">
-      <tr><th>Čo dostanete</th><th>Vstupný audit (zdarma)</th><th>Detailný audit (240 až 480 EUR)</th></tr>
+      <tr><th>Čo dostanete</th><th>Vstupný audit (zdarma)</th><th>Detailný audit (120 až 180 EUR)</th></tr>
       <tr><td><strong>Trvanie</strong></td><td>1 až 3 pracovné dni</td><td>7 až 14 pracovných dní</td></tr>
       <tr><td><strong>Rozsah</strong></td><td>10 najväčších problémov a šancí na 1 strane</td><td>40+ bodov, úlohy s hodinami a prioritami</td></tr>
       <tr><td><strong>Kľúčové slová</strong></td><td>5 hlavných, s objemom a intentom</td><td>30 až 100 kľúčových slov, SERP analýza, konkurencia</td></tr>
@@ -1085,7 +1085,7 @@ def audit_seo() -> tuple[str, str]:
     <div class="case-result proof-band">
       <div><strong>Pre koho</strong><span>Web, ktorý neprerazil v Google a neviete prečo</span></div>
       <div><strong>Časový odhad</strong><span>Vstupný audit do 3 dní, detailný 7 až 14 dní</span></div>
-      <div><strong>Cena</strong><span>Vstupný zdarma, detailný 240 až 480 EUR (20 až 40 hodín × 12 EUR)</span></div>
+      <div><strong>Cena</strong><span>Vstupný zdarma, detailný 120 až 180 EUR (10 až 15 hodín × 12 EUR)</span></div>
       <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Objednať bezplatný vstupný audit</a></span></div>
     </div>
   </div>
@@ -1096,7 +1096,7 @@ def audit_seo() -> tuple[str, str]:
     <div class="rate-band">
       <div>
         <div class="rate-big">Bezplatný vstupný audit <small>do 3 pracovných dní</small></div>
-        <p style="margin-top:8px; max-width:520px;">10 najväčších problémov a šancí vášho webu na jednej strane. Detailný audit od 240 EUR, ak sa rozhodnete pokračovať.</p>
+        <p style="margin-top:8px; max-width:520px;">10 najväčších problémov a šancí vášho webu na jednej strane. Detailný audit od 180 EUR, ak sa rozhodnete pokračovať.</p>
       </div>
       <div class="hero-ctas">
         <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Chcem audit</a>
@@ -1407,20 +1407,17 @@ def linkbuilding() -> tuple[str, str]:
 # ---------------------------------------------------------------- CENNIK (money page)
 
 CENNIK_PACKAGES = [
-    {"name": "Štart", "hours": 10, "price": 120,
+    {"name": "Malý web", "hours": 10, "price": 120,
      "items": ["Audit webu a kľúčové slová (opakovanie)", "Technická oprava webu", "2 obsahové stránky alebo prepisy", "Firemný Google profil v poriadku", "Mesačný report"],
      "cta": "/sk/kontakt/"},
-    {"name": "Rast", "hours": 20, "price": 240, "featured": True,
+    {"name": "Stredný web / e-shop", "hours": 15, "price": 180, "featured": True,
      "items": ["Všetko z balíčka Štart", "4 až 6 obsahových stránok mesačne", "Optimalizácia pre AI vyhľadávače", "Interné prelinkovanie a CRO tipy", "Linkbuilding (2 až 3 odkazy)", "Mesačný report a hovor 30 min"],
-     "cta": "/sk/kontakt/"},
-    {"name": "E-shop", "hours": 40, "price": 480,
-     "items": ["Všetko z balíčka Rast", "Texty kategórií a produktov", "Google Merchant Center a Shopping", "Poradenstvo Heureka / Marketplace", "Automatizácie email marketingu", "Report s tržbami z organiky"],
      "cta": "/sk/kontakt/"},
 ]
 
 CENNIK_FAQ = [
     ("Koľko stojí SEO optimalizácia webu?",
-     "Platíte 12 EUR za každú odpracovanú hodinu. Firemný web zvyčajne potrebuje 10 hodín mesačne (120 EUR), e-shop 20 až 40 hodín (240 až 480 EUR). Rozsah si nastavíte sami a môžete ho kedykoľvek meniť."),
+     "Retainer 120 až 180 EUR mesačne, podľa rozsahu webu a práce. Malý firemný web 120 EUR (10 hodín), stredný web alebo e-shop 180 EUR (15 hodín). Presný rozsah potvrdím v pláne po bezplatnom audite."),
     ("Prečo je to lacnejšie než konkurencia?",
      "Nemám kancelárie ani manažérske vrstvy. Veľkú časť práce vykonávajú automatizované nástroje, ktoré som si sám postavil, a odborný čas vkladám tam, kde sa počíta. Úspory prenášam na vás."),
     ("Čo je zahrnuté v cene?",
