@@ -170,6 +170,91 @@ def en_services() -> tuple[str, str]:
   <h3><a href="{href}" style="color:var(--text);">{title}</a></h3>
   <p>{text}</p>
 </div>""" for href, title, text, icon, color in services)
+
+    # Info-rich sections for each service. SK/CZ have dedicated pages; EN hub expands inline.
+    linkbuilding_section = """
+<section class="section section-alt" id="links">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Link building</span>
+      <h2>Link building: what it is, what it costs, how I do it safely</h2>
+    </div>
+    <p style="max-width:720px;">Link building is acquiring hyperlinks from other websites to yours. Google treats each link as a recommendation: the more relevant links from quality domains point to you, the higher you rank. I build links only from real Slovak and Czech domains with actual traffic, never from spam networks. You pay the real price the publication charges, with no markup. My work costs 12 EUR per hour.</p>
+    <table class="metric-table" style="margin-top:24px;">
+      <tr><th>Domain type</th><th>Price per link (EUR)</th><th>DR (Marketing Miner)</th><th>When it makes sense</th></tr>
+      <tr><td><strong>Local directory</strong> (firmy.sk, firmy.cz)</td><td>0 to 30</td><td>20 to 40</td><td>Local SEO, first steps, NAP consistency</td></tr>
+      <tr><td><strong>Industry blog</strong></td><td>50 to 120</td><td>30 to 50</td><td>Topical relevance, anchor flexibility</td></tr>
+      <tr><td><strong>Regional media</strong></td><td>150 to 300</td><td>40 to 60</td><td>Local authority, media SERP citations</td></tr>
+      <tr><td><strong>National media</strong> (SME, iDnes, Dennik N)</td><td>400 to 800</td><td>60+</td><td>Flagship link, strong push on main queries</td></tr>
+      <tr><td><strong>Guest post on authority site</strong></td><td>80 to 200</td><td>35 to 55</td><td>Expert content, long-term authority</td></tr>
+    </table>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Typical scope: 2 to 4 links per month for a small business site, 5 to 10 for an e-shop in a competitive niche. More is not always better: 10 links from real domains with traffic beat 100 from empty catalogs. I avoid PBNs, automated tools, comment spam, and links from directories with no traffic. Google has algorithmically detected these since 2012 (Penguin) and the 2024 spam updates reinforced it.</p>
+  </div>
+</section>"""
+
+    eshop_section = """
+<section class="section" id="eshop">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">E-commerce SEO</span>
+      <h2>SEO for e-shops: more orders from Google, not just traffic</h2>
+    </div>
+    <p style="max-width:720px;">E-commerce SEO is optimizing categories, products, and technical structure so the customer searching for a specific product finds you in Google, not your competitor. I measure orders and revenue from the organic channel, not traffic. For Shoptet, WooCommerce, and custom platforms. My work costs 12 EUR per hour, typically 20 to 40 hours per month for a small to mid-size e-shop.</p>
+    <table class="metric-table" style="margin-top:24px;">
+      <tr><th>Aspect</th><th>Shoptet</th><th>WooCommerce</th><th>Custom platform</th></tr>
+      <tr><td><strong>Duplicate filter URLs</strong></td><td>Common, needs canonical</td><td>Plugin-dependent, often missing</td><td>Implementation-dependent</td></tr>
+      <tr><td><strong>H1 on categories</strong></td><td>Template, via SEO module</td><td>Theme, can be overridden</td><td>Must code, often missing</td></tr>
+      <tr><td><strong>Core Web Vitals</strong></td><td>Medium, images slow LCP</td><td>Plugin-dependent, often slow</td><td>Developer-dependent</td></tr>
+      <tr><td><strong>Product schema JSON-LD</strong></td><td>Automatic, attributes missing</td><td>Via Yoast or RankMath</td><td>Must code JSON-LD</td></tr>
+      <tr><td><strong>Merchant Center feed</strong></td><td>Auto-feed via add-on</td><td>WC Product Feed plugin</td><td>Custom feed generator</td></tr>
+    </table>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Real result: Mikramt.sk, a small e-shop on a custom platform, after 9 months of SEO work: 15 orders from organic and email channels, 2492.75 EUR revenue, largest single order 722 EUR. Work included category texts (previously empty), structured data fixes, Google Merchant Center integration, and email sequences. Most e-shops need 6 to 18 months to see full organic potential, depending on competition and existing authority.</p>
+  </div>
+</section>"""
+
+    audit_section = """
+<section class="section section-alt" id="audit">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">SEO audit</span>
+      <h2>SEO audit: 40 specific points, not a PDF for the drawer</h2>
+    </div>
+    <p style="max-width:720px;">An SEO audit is a systematic evaluation that answers three questions: why you are not succeeding in Google, what exactly needs fixing, and in what order. I start with a free initial audit delivered within 3 business days: the 10 biggest problems and opportunities on one page. A detailed audit is an action plan with hours and priorities, not a 60-page PDF. My work costs 12 EUR per hour; a detailed audit costs 240 to 480 EUR depending on scope.</p>
+    <div class="grid-2" style="align-items:start; margin-top:24px;">
+      <div class="card">
+        <span class="section-label">Technical (15 points)</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Indexation: how many pages are in Google, how many are "Crawled, currently not indexed"</span></li>
+          <li><span class="check">✓</span><span>Sitemap.xml: complete, current, no errors</span></li>
+          <li><span class="check">✓</span><span>Robots.txt: blocks only what it should</span></li>
+          <li><span class="check">✓</span><span>Canonicalization: correct on every page, no duplicate URLs</span></li>
+          <li><span class="check">✓</span><span>Core Web Vitals: LCP under 2.5s, INP under 200ms, CLS under 0.1</span></li>
+          <li><span class="check">✓</span><span>HTTPS: valid cert, no mixed content</span></li>
+          <li><span class="check">✓</span><span>Structured data: Organization, WebSite, BreadcrumbList, Article/Product</span></li>
+          <li><span class="check">✓</span><span>Hreflang: correct pairs and x-default if multilingual</span></li>
+          <li><span class="check">✓</span><span>Internal linking: no orphan pages, strong pages pass equity</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Content and keywords (15 points)</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Title and meta description on every page, keyword and CTR-optimized</span></li>
+          <li><span class="check">✓</span><span>H1 unique on every page, with main keyword</span></li>
+          <li><span class="check">✓</span><span>Alt text on images, descriptive not stuffed</span></li>
+          <li><span class="check">✓</span><span>Thin content: pages under 300 words without real value</span></li>
+          <li><span class="check">✓</span><span>Duplications: same text on multiple URLs</span></li>
+          <li><span class="check">✓</span><span>Cannibalization: two pages competing for one keyword</span></li>
+          <li><span class="check">✓</span><span>E-E-A-T signals: author, date, sources, sameAs, experience</span></li>
+          <li><span class="check">✓</span><span>Keyword list with search volumes from Marketing Miner</span></li>
+          <li><span class="check">✓</span><span>SERP analysis: what Google actually shows for main queries</span></li>
+          <li><span class="check">✓</span><span>Competitor analysis: top 3, content gap, link gap</span></li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Real result: a 300-page website where adding just 6 targeted content pages on real customer queries lifted monthly impressions by 11 000 (+14 percent) and clicks by 43 percent in the last week. This is what a good audit finds first: not 50 things to do, but the 6 that actually move the needle.</p>
+  </div>
+</section>"""
+
     body = f"""
 {page_hero("Services", "Services that bring you customers",
            "From technical SEO to AI visibility. Every service costs 12 EUR per hour; scope is agreed upon in the plan.",
@@ -180,13 +265,16 @@ def en_services() -> tuple[str, str]:
     <p style="max-width:720px; color:var(--text-muted);">Web design and PPC advertising are delivered together with trusted partners, so the whole project stays in one pair of hands: <a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">Flamia Studio</a> (web design) and <a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">Peter Kocur</a> (PPC advertising).</p>
   </div>
 </section>
+{linkbuilding_section}
+{eshop_section}
+{audit_section}
 <section class="section section-alt" id="pricing">
   <div class="container">
     <div class="section-head"><span class="section-label">Pricing</span><h2>Simple, transparent pricing</h2></div>
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>per hour · stop any time</small></div>
-        <p style="margin-top:8px; max-width:520px;">Typical scopes: 10 hours/month for a small business site (120 EUR), 20 to 40 hours for an e-shop (240 to 480 EUR).</p>
+        <p style="margin-top:8px; max-width:520px;">Typical scopes: 10 hours/month for a small business site (120 EUR), 20 to 40 hours for an e-shop (240 to 480 EUR). Link costs and ad spend billed separately at cost.</p>
       </div>
       <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Get a quote</a>
     </div>

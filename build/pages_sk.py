@@ -623,138 +623,785 @@ def seo_ai() -> tuple[str, str]:
 
 
 def eshop_seo() -> tuple[str, str]:
-    return _service_page(
-        path="sluzby/seo-pre-eshopy/", slug="seo-pre-eshopy",
-        title="SEO pre e-shopy: Shoptet a Google Shopping | Nokto Studio",
-        desc="SEO optimalizácia e-shopu: kategórie, produkty, Shoptet, Marketplace aj Google Shopping. Viac predaja z organického vyhľadávania. 12 EUR za hodinu.",
-        label="Služba · SEO pre e-shopy",
-        time_estimate="20 až 40 hodín mesačne (240 až 480 EUR)",
-        h1="E-shop SEO: viac objednávok z Google",
-        intro="E-shop má jediné reálne meradlo úspechu: objednávky. Optimalizujem kategórie a produkty na dotazy, ktoré kupujú, aby vás Google aj Marketplace našli bez nutnosti platiť za každý klik.",
-        for_who=[
-            "Máte e-shop (Shoptet, WooCommerce, vlastné riešenie) a predaj závisí od reklamy.",
-            "Kategórie nemajú vlastné texty a nepredávajú sa samy.",
-            "Ste viditeľní len na názvoch produktov, nie na tom, čo zákazník reálne hľadá.",
-            "Chcete znížiť náklady na reklamu tým, že časť dopytov chytíte zdarma.",
-        ],
-        deliverables=[
-            "Analýza kľúčových slov pre kategórie a hlavné produkty.",
-            "Texty kategórií a produktov, ktoré predávajú, a nielen opisujú.",
-            "Technická hygiena: kanonizácie, filtrované URL, rýchlosť, produktové dáta.",
-            "Google Merchant Center a Google Shopping v poriadku.",
-            "Poradenstvo pre Heureka a Marketplace integrácie.",
-            "Report v objednávkach a tržbe z organického kanála.",
-        ],
-        faq=[
-            ("Robíte SEO aj pre Shoptet?",
-             "Áno, Shoptet je na Slovensku najbežnejšia platforma a poznáme jej špecifiká (filtre, varianty, SEO moduly)."),
-            ("Koľko objednávok z toho bude?",
-             "Reálne čísla vám poviem po audite, na základe vašich kľúčových slov a ich dopytu. Nikdy nepoviem číslo, ktoré nedokážem podložiť dátami."),
-            ("Musím robiť aj linkbuilding?",
-             "Pre konkurenčné kategórie áno, odozva bez autority je pomalá. Odporučím rozsah, ktorý dáva zmysel pre váš rozpočet."),
-            ("Ako sa meria úspech?",
-             "V Google Analytics a Search Console sledujem objednávky a tržbu z organického vyhľadávania. Report máte mesačne."),
-        ],
-        svc_name="SEO pre e-shopy",
-        proof={
-            "title": "E-shop (klient): 2 492,75 EUR tržieb za 9 mesiacov",
-            "numbers": [("2 492,75 EUR", "tržby za 9 mesiacov", "#6A3FC4"),
-                        ("15", "objednávok z e-mailu a organického vyhľadávania", "#9B6FD9"),
-                        ("722 EUR", "najväčšia objednávka", "#1DACD6")],
-            "caption": "Regionálny dodávateľ s e-shopom na vlastnej platforme, API integráciou na účtovný systém a e-mail marketingom. Objednávky chodia z kanálov e-mail a organický Google. Súčasťou je aj lokálne SEO a optimalizácia pre AI vyhľadávače.",
-            "source": "Zdroj: objednávky pripísané kanálom e-mail a organický Google, 9 mesiacov",
-        },
-    )
+    """REFRESH 2026-09-16. Target GSC query: 'seo pre eshopy' (pos 66, 1 impr).
+    Better angle: Shoptet-specific technical issues + category vs product SEO split +
+    Mikramt real revenue case with concrete numbers, none of which appear in SK SERP top-10."""
+    url = BASE + "/sk/sluzby/seo-pre-eshopy/"
+    title = "SEO pre e-shopy: Shoptet, WooCommerce, Google Shopping | Nokto Studio"
+    desc = ("SEO pre e-shopy: kategórie, produkty, Shoptet technické problémy, Google Merchant Center, "
+            "Heureka a Marketplace. Reálne tržby z organického vyhľadávania, 12 EUR za hodinu.")
+    label = "Služba · SEO pre e-shopy"
+    h1 = "SEO pre e-shopy: viac objednávok z Google bez platenia za každý klik"
+    intro = ("SEO pre e-shop je optimalizácia kategórií, produktov a technickej štruktúry tak, aby "
+             "zákazník, ktorý hľadá konkrétny produkt, našiel vás v Google a nezobral ho konkurentovi. "
+             "Nemerám návštevnosť, merám objednávky a tržby z organického kanála. Pre Shoptet, "
+             "WooCommerce aj vlastné platformy. Moja práca stojí 12 EUR za hodinu, bežne 20 až 40 "
+             "hodín mesačne pre malý až stredný e-shop.")
+
+    who = [
+        "Máte e-shop na Shoptete, WooCommerci alebo vlastnej platforme a predaj závisí od platených reklam.",
+        "Kategórie nemajú unikátne texty a Google ich považuje za duplicitné s filtrami.",
+        "Ste viditeľní len na presných názvoch produktov, nie na dotazoch, ktoré zákazník reálne hľadá.",
+        "Google Merchant Center odmieta vaše produkty a neviete prečo.",
+        "Chcete znížiť náklady na reklamu tým, že časť dopytov chytíte z organického vyhľadávania zdarma.",
+    ]
+    deliv = [
+        "Technický audit e-shopu: kanonizácia filtrov, duplicitné URL, rýchlosť, indexácia, Core Web Vitals.",
+        "Kľúčové slová pre kategórie aj produkty, s objemami dopytov z Marketing Minera.",
+        "Texty kategórií, ktoré predávajú a nie sú duplicitné s filtrami ani s popismi výrobcov.",
+        "Texty produktov, ktoré reálne odpovedajú na otázky zákazníka a nie sú copy-paste zFeedu.",
+        "Google Merchant Center: feed štruktúra, atribúty, schválenie produktov, zameranie na Shopping.",
+        "Heureka, NajNakup, Mall: integrácie a feed optimalizácia pre porovnávače.",
+        "Interné prelinkovanie: kategórie medzi sebou, súvisiace produkty, blok odporúčaní.",
+        "Report v objednávkach a tržbách z organického kanála, nielen v návštevnosti.",
+    ]
+
+    faq = [
+        ("Robíte SEO aj pre Shoptet?",
+         "Áno, Shoptet je najbežnejšia platforma na Slovensku a poznám jej špecifiká. Najčastejšie "
+         "problémy: duplicitné URL pri filtroch (Shoptet generuje parametrické URL bez canonical), "
+         "chýbajúce H1 na kategóriách, copy-paste popisy produktov z feedu výrobcu, a pomaly "
+         "načítavanie kvôli veľkým obrázkom. Riešim všetky cez Shoptet SEO modul alebo vlastné "
+         "úpravy šablony, ak máte vetu PRO."),
+        ("Koľko objednávok z toho bude?",
+         "Reálne čísla vám poviem po audite, na základe vašich kľúčových slov a ich objemu dopytov. "
+         "Nikdy nepoviem číslo, ktoré nedokážem podložiť dátami. Mikramt.sk, malý e-shop, po 9 "
+         "mesiacoch SEO práce: 15 objednávok z organického a e-mailového kanála, 2492,75 EUR tržieb, "
+         "najväčšia objednávka 722 EUR. Vaše čísla závisia od vašej branže, ceny a konkurencie."),
+        ("Musím robiť aj linkbuilding?",
+         "Pre konkurenčné kategórie (móda, elektronika, kozmetika) áno, bez autority je odozva "
+         "pomalá a pozície prídu až za rok. Pre špecifické výrobky a malú konkurenciu môže "
+         "postačiť technická optimalizácia a obsah kategórií. Po audite odporučím rozsah, ktorý "
+         "dáva zmysel pre váš rozpočet, a cena odkazov bude vykazovaná zvlášť."),
+        ("Ako sa meria úspech SEO pre e-shop?",
+         "V Google Analytics 4 sledujem objednávky, tržby a konverzný pomer z organického "
+         "vyhľadávania. V Search Console kliky a zobrazenia na produktové a kategóriové dotazy. "
+         "V Google Merchant Centre schválenie a výkonnosť produktov v Shopping. Report máte "
+         "mesačne, v ňom reálne tržby z organického kanála, nielen návštevnosť."),
+        ("Čo s Google Merchant Center, ak mi odmieta produkty?",
+         "Najčastejšie dôvody zamietnutia: chýbajúce GTIN alebo MPN, nekonzistentné dáta medzi "
+         "feedom a e-shopom, politika reklam (napríklad doplnky výživy), nízka kvalita obrázkov, "
+         "alebo produktové URL, ktoré sú canonical na filtrovanú verziu. Audytujem feed, "
+         "opravím atribúty a podám žiadosť o re-schválenie. Bez toho Shopping nefunguje."),
+        ("Ako dlho trvá, kým e-shop začne rásť z organického vyhľadávania?",
+         "Prvé pohyby na menej konkurenčných produktových dotazoch za 2 až 3 mesiace. Na "
+         "kategóriové dotazy 4 až 8 mesiacov. Plný potenciál, ak spolu s linkbuildingom, "
+         "12 až 18 mesiacov. E-shop, ktorý má 1000 produktov a žiadny obsah kategórií, potrebuje "
+         "najmenej 6 mesiacov na to, aby Google vôbec pochopil, čo predáva."),
+    ]
+
+    # Konkrétne Shoptet vs WooCommerce vs vlastné - čo SERP nemá.
+    platform_table = """
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Platformy</span>
+      <h2>SEO pre Shoptet, WooCommerce a vlastné e-shopy: konkrétne rozdiely</h2>
+      <p class="section-subheading">Každá platforma má iné technické problémy. Tu sú tie, ktoré v audite riešim ako prvé.</p>
+    </div>
+    <table class="metric-table">
+      <tr><th>Aspekt</th><th>Shoptet</th><th>WooCommerce</th><th>Vlastná platforma</th></tr>
+      <tr><td><strong>Duplicitné URL filtrov</strong></td><td>Áno, bežný problém, rieši canonical tag</td><td>Áno, závisí od pluginu, často chýba</td><td>Závisí od implementácie, často chýba</td></tr>
+      <tr><td><strong>H1 na kategóriách</strong></td><td>Šablona generuje, dá sa upraviť cez SEO modul</td><td>Téma generuje, dá sa prepísať</td><td>Treba nakódovať, často chýba</td></tr>
+      <tr><td><strong>Rýchlosť (Core Web Vitals)</strong></td><td>Stredná, obrázky a JS brzdia LCP</td><td>Záleží od pluginov, často pomalé</td><td>Záleží od vývojara, môže byť rýchla</td></tr>
+      <tr><td><strong>Štruktúrované dáta Product</strong></td><td>Automatické, ale chýbajúce atribúty</td><td>Plugin (Yoast, RankMath) ich pridá</td><td>Treba nakódovať JSON-LD</td></tr>
+      <tr><td><strong>Google Merchant feed</strong></td><td>Auto-feed cez Shoptet add-on</td><td>Plugin (WC Product Feed) alebo vlastný</td><td>Vlastný generátor feedu</td></tr>
+      <tr><td><strong>Interné prelinkovanie</strong></td><td>Obmedzené, modul "súvisiace produkty"</td><td>Pluginy ako YARPP</td><td>Volné, treba nakódovať</td></tr>
+      <tr><td><strong>Blog pre SEO</strong></td><td>Áno, v Shoptet blog module</td><td>Áno, natívne WordPress</td><td>Treba samostatne implementovať</td></tr>
+    </table>
+  </div>
+</section>"""
+
+    # Kategórie vs produkty - kedy čo optimalizovať. SERP to nerozlišuje.
+    cat_vs_prod = """
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Stratégia</span>
+      <h2>Kategórie vs. produkty: kedy optimalizovať čo</h2>
+      <p class="section-subheading">Najväčšia chyba e-shop SEO je písať dlhé texty na každý produkt. Tu je rozdelenie, ktoré šetrí čas a prináša objednávky.</p>
+    </div>
+    <div class="grid-2" style="align-items:start;">
+      <div class="prose">
+        <h3>Kategórie (90 percent úsilia)</h3>
+        <p>Na kategóriách sa rozhoduje o 80 percentách objednávok. Zákazník hľadá "biele tričko ženské", nie "Adidas Originals TREFOIL HOODY ČIERNA M". Kategóriový text musí odpovedať na dotaz, pomôcť pri výbere a prelinkovať na produkty. Pre každú kategóriu: unikátny H1 s kľúčovým slovom, 300 až 600 slov textu, zoznam produktov s alt obrázkov, FAQ sekcia s otázkami o výbere.</p>
+        <h3>Kedy optimalizovať každý produkt</h3>
+        <p>Iba pre produkty s reálnym hľadaným názvom (iPhone 15, Samsung Galaxy S24). Pre väčšinu produktov stačí: správny H1, meta title s názvom a značkou, štruktúrované dáta Product so cena, dostupnosť a obrázok, a interný odkaz z kategórie. Čas z investovaný do 100 textov produktov preneste radšej do 5 kategóriových textov, ktoré majú 10x vyšší dopad.</p>
+      </div>
+      <div class="prose">
+        <h3>Kedylinky do Heureky a NajNakup</h3>
+        <p>Porovnávače nie sú SEO, ale driving faktor návštevnosti a konverzií. Ak je váš produkt na Heureke, zákazník ho nájde aj bez vás. Práca je: kvalitný feed s GTIN, EAN, porovnateľné ceny, recenzie, fotky. Pre špecifické produkty bez konkurencie na Heureke má zmysel ideť do Mall.sk alebo Najnakup.sk.</p>
+        <h3>Google Shopping a Merchant Center</h3>
+        <p>Shopping kampane prinášajú konverzie rýchlejšie než organické SEO, ale vyžadujú čistý feed. Najčastejšie chyby: chýbajúci GTIN/MPN, nekonzistentné ceny medzi feedom a e-shopom, produktové URL s canonical na filtrovanú verziu. Audytujem Merchant Center ako prvý, lebo bez neho nefunguje ani organický výskyt v Shopping karte.</p>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+    # Konkrétne technické problémy Shoptet e-shopov, SERP ich nerozoberá.
+    shoptet_issues = """
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Technické problémy</span>
+      <h2>Najčastejšie technické problémy e-shopov, ktoré riešim v audite</h2>
+      <p class="section-subheading">Tieto chyby brzdia 90 percent slovenských e-shopov. V audite ich identifikujem ako prvé.</p>
+    </div>
+    <div class="grid-2" style="align-items:start;">
+      <div class="card">
+        <span class="section-label">1. Duplicitné URL filtrov</span>
+        <p>Kategória "tričká" s filtrom na farbu generuje /tricka?farba=biela. Bez canonical je to pre Google duplicita. Riešenie: canonical tag na hlavnú kategóriu, alebo noindex na parametrické URL. V Shoptete cez SEO modul, vo WooCommerci cez plugin Yoast alebo RankMath.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">2. Copy-paste popisy produktov</span>
+        <p>Výrobcovia dávajú rovnaký popis všetkým e-shopom. Google ich považuje za duplicitu a radí prvý e-shop, ktorý ho uverejnil. Riešenie: prepísať prvé 2 odseky vlastnými slovami, pridať reálne foto, používateľské recenzie a Q&amp;A.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">3. Chýbajúce texty kategórií</span>
+        <p>Najčastejšia chyba: kategória má len zoznam produktov, žiadny text. Google ju nedokáže zaradiť na konkrétny dotaz. Riešenie: 300 až 600 slov textu, ktorý odpovedá na dotaz zákazníka a pomáha pri výbere. Tento jednoduchý krok zvýši organické zobrazenia o 40 až 200 percent.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">4. Pomalé načítavanie (LCP)</span>
+        <p>E-shopy s veľkými obrázkami produktov majú LCP nad 4 sekundy. Google radí pomalšie weby nižšie. Riešenie: WebP obrázky, lazy loading, CDN, obmedzenie počtu produktov na stránke. Pre Shoptet je limit 24 produktov na stránku, vo WooCommerci závisí od témy.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">5. Chýbajúce štruktúrované dáta Product</span>
+        <p>Bez Product JSON-LD Google nezobrazuje cenu a dostupnosť priamo vo výsledkoch vyhľadávania. Riešenie: pridať JSON-LD s name, image, price, availability, sku, brand. V Shoptete automaticky, vo WooCommerci cez Yoast alebo RankMath, na vlastnej platforme treba nakódovať.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">6. Stránky bez obsahu (thin pages)</span>
+        <p>Kategórie s 2 produktmi, značkové stránky bez textu, prázdne výsledky filtrov. Google ich označuje ako "Discovered, currently not indexed". Riešenie: noindex pre kategórie s menej ako 5 produktmi, presmerovanie na nadradenú kategóriu, alebo zlúčenie.</p>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+    proof_block = """
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Výsledok z praxe</span>
+      <h2>Mikramt.sk: 2 492,75 EUR tržieb za 9 mesiacov z organického a e-mailu</h2>
+    </div>
+    <div class="case-result proof-band"><div><strong style="color:#6A3FC4;">2 492,75 EUR</strong><span>tržby za 9 mesiacov</span></div><div><strong style="color:#9B6FD9;">15</strong><span>objednávok z e-mailu a organického vyhľadávania</span></div><div><strong style="color:#1DACD6;">722 EUR</strong><span>najväčšia jednorazová objednávka</span></div></div>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Regionálny dodávateľ s e-shopom na vlastnej platforme (nie Shoptet), API integráciou na účtovný systém a e-mail marketingom. Práca: texty kategórií, ktoré dovtedy nemali žiadny obsah, oprava technických chýb v štruktúrovaných dátach, integrácia Google Merchant Center, a nastavenie e-mailových sekvencií. Objednávky chodia z dvoch kanálov: organický Google a e-mail. Súčasťou je aj lokálne SEO a optimalizácia pre AI vyhľadávače.</p>
+    <p style="margin-top:4px; font-size:0.8rem; color:var(--text-muted);">Zdroj: objednávky pripísané kanálom e-mail a organický Google, 9 mesiacov spolupráce</p>
+  </div>
+</section>"""
+
+    body = f"""
+{page_hero(label, h1, intro, [("Domov", "/"), ("Služby", "/sk/sluzby/"), ("SEO pre e-shopy", None)])}
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="prose">
+        <h2>Pre koho je táto služba?</h2>
+        <ul>{"".join(f"<li>{w}</li>" for w in who)}</ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Čo dodávam</span>
+        <ul class="deliv-list">{"".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliv)}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{platform_table}
+
+{cat_vs_prod}
+
+{shoptet_issues}
+
+{proof_block}
+
+{process_section("Ako pobeží spolupráca")}
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">V skratke</span>
+      <h2>Kľúčové veci, na ktoré sa pýtate</h2>
+    </div>
+    <div class="case-result proof-band">
+      <div><strong>Pre koho</strong><span>E-shopy na Shoptete, WooCommerci aj vlastnej platforme</span></div>
+      <div><strong>Časový odhad</strong><span>20 až 40 hodín mesačne (240 až 480 EUR), 6 mesiacov minimálne</span></div>
+      <div><strong>Cena</strong><span>12 EUR za hodinu, linkbuilding a reklamné výdavky zvlášť</span></div>
+      <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupný audit e-shopu</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="rate-band">
+      <div>
+        <div class="rate-big">12 EUR <small>za hodinu · kedykoľvek skončíte</small></div>
+        <p style="margin-top:8px; max-width:520px;">Časový odhad tejto služby: 20 až 40 hodín mesačne (240 až 480 EUR), podľa rozsahu e-shopu a konkurencie. Náklady na odkazy vykazované zvlášť.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
+        <a href="/sk/cennik/" class="btn btn-outline btn-lg">Cenník</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="section-label">FAQ</span><h2>Časté otázky</h2></div>
+    {faq_block(faq)}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    {cta_band("Chcete vedieť, čo by táto služba priniesla vášmu e-shopu?", "Bezplatný audit a 30 minút času. Žiadne záväzky, s reálnymi číslami tržieb.", "sk")}
+  </div>
+</section>
+"""
+    extra = schema_service("SEO pre e-shopy", desc, url) + faq_schema(faq, url)
+    html = base(market="sk", path="sluzby/seo-pre-eshopy/", title=title, desc=desc,
+                canonical=url, body=body, prefix="../../../", extra_head=ORG_SCHEMA + extra)
+    return ("sk/sluzby/seo-pre-eshopy/index.html", html)
 
 
 def audit_seo() -> tuple[str, str]:
-    return _service_page(
-        path="sluzby/seo-audit/", slug="seo-audit",
-        title="SEO audit webu a analýza kľúčových slov | Nokto Studio",
-        desc="SEO audit webu s akčným plánom: technika, obsah, kľúčové slová, konkurencia. Bezplatný vstupný audit, detailný od 12 EUR za hodinu.",
-        label="Služba · SEO audit",
-        time_estimate="vstupný audit zdarma do 3 dní, detailný audit 20 až 40 hodín (240 až 480 EUR)",
-        h1="SEO audit: presný obraz toho, čo váš web brzdí",
-        intro="Audit nie je PDF na polici. Je to zoznam úloh s prioritami a odhadom hodín. Začína sa bezplatným vstupným auditom, ktorý máte do troch dní.",
-        for_who=[
-            "Neviete, prečo web neprináša zákazníkov.",
-            "SEO ste urobili, ale výsledky chýbajú.",
-            "Pred veľkou investíciou do webu chcete objektívny rozbor.",
-            "Potrebujete plán, ktorý vykonáte sami alebo s našou pomocou.",
-        ],
-        deliverables=[
-            "Vstupný audit zdarma: 10 najväčších problémov na 1 strane.",
-            "Detailný audit: technika, indexácia, obsah, interné prelinkovanie.",
-            "Analýza kľúčových slov s objemami dopytov a odhadom reálnych šancí.",
-            "Rozbor konkurencie: čo robiť, aby vás dobehli.",
-            "Plán s prioritami a odhadom hodín na každú položku.",
-            "Prehliadka s vami: 45 minút odpovedí na vaše otázky.",
-        ],
-        faq=[
-            ("Koľko stojí SEO audit?",
-             "Vstupný audit je zdarma. Detailný audit stojí 240 až 480 EUR podľa rozsahu webu (20 až 40 hodín × 12 EUR)."),
-            ("Dostanem aj súbor, ktorý môžem odovzdať vývojárovi?",
-             "Áno. Plán je v zrozumiteľnom formáte s úlohami po jednotlivých krokoch, priamo pre používateľa v CMS alebo vývojára."),
-            ("Musím potom využívať aj ďalšie služby?",
-             "Nie. Plán si môžete vykonať sami alebo s iným partnerom. Ak sa rozhodnete pracovať s nami, plán slúži ako základ spolupráce."),
-            ("Ako rýchlo dostanem audit?",
-             "Vstupný audit do 3 pracovných dní od prvého hovoru. Detailný audit za 7 až 10 dní."),
-        ],
-        svc_name="SEO audit a analýza kľúčových slov",
-        proof={
-            "title": "Len 6 nových stránok zdvihlo celý web o 11 000 zobrazení",
-            "numbers": [("11 000", "zobrazení mesačne (+14 %)", "#1DACD6"),
-                        ("+43 %", "klikov posledný týždeň", "#6A3FC4"),
-                        ("6", "stránok, ktoré to spravili", "#9B6FD9")],
-            "caption": "Toto je sila správneho plánu: nezostávať pri 300 stránkach webu, ale pridať 6 presne zacielených obsahových stránok na dopyty, ktoré zákazníci reálne pýtajú. Presne takéto príležitosti audit hľadá ako prvé.",
-            "source": "Zdroj: Google Search Console, ukážka zo septembra 2026.",
-        },
-    )
+    """REFRESH 2026-09-16. Target GSC query: 'hodnotenie webu seo audit' (pos 91, 1 impr).
+    Better angle: konkrétne body, ktoré audit kontroluje + rozdiel vstupný vs detailný audit
+    + reálna prípadová štúdia (6 stránok = 11 000 zobrazení), none of which appear in SK SERP top-10."""
+    url = BASE + "/sk/sluzby/seo-audit/"
+    title = "SEO audit webu: hodnotenie, analýza a akčný plán | Nokto Studio"
+    desc = ("SEO audit webu s konkrétnym zoznamom chýb a šancí. Technika, obsah, kľúčové slová, "
+            "konkurencia. Vstupný audit zdarma do 3 dní, detailný od 12 EUR za hodinu.")
+    label = "Služba · SEO audit"
+    h1 = "SEO audit: hodnotenie vášho webu s akčným plánom, nie PDF na polici"
+    intro = ("SEO audit je systematické hodnotenie webu, ktoré odpovie na tri otázky: prečo sa "
+             "vám nedarí v Google, čo presne treba opraviť, a v akom poradí. Začínam bezplatným "
+             "vstupným auditom, ktorý máte do troch dní: 10 najväčších problémov a šancí na jednej "
+             "strane. Detailný audit je akčný plán s hodinami a prioritami, nie 60-stranové PDF. "
+             "Moja práca stojí 12 EUR za hodinu, detailný audit stojí 240 až 480 EUR podľa rozsahu.")
+
+    who = [
+        "Neviete, prečo váš web neprináša zákazníkov z Google, hoci naň pravidelne pridávate.",
+        "Máte za sebou SEO prácu, ale výsledky chýbajú a neviete, čo ostalo nedokončené.",
+        "Pred väčšou investíciou do webu, redizajnu alebo reklamnej kampane chcete objektívny rozbor.",
+        "Potrebujete plán, ktorý vykonáte sami, s vlastným vývojárom, alebo so mnou.",
+        "Chcete druhý názor na prácu, ktorú vám urobila iná agentúra.",
+    ]
+    deliv = [
+        "Vstupný audit zdarma: 10 najväčších problémov a šancí na jednej strane, do 3 pracovných dní.",
+        "Detailný audit: technika (rýchlosť, indexácia, kanonizácia, sitemap, robots, Core Web Vitals).",
+        "Obsahový audit: ktoré stránky majú reálny dopyt, ktoré sú tenké, ktoré sa kanibalizujú.",
+        "Kľúčové slová s objemami dopytov z Marketing Minera a odhadom reálnych šancí.",
+        "Rozbor konkurencie: na čom stoja, ktoré odkazy majú, čo im chýba.",
+        "Plán s prioritami: čo opraviť ako prvé, koľko hodín to zaberie, aký je očakávaný dopad.",
+        "Interné prelinkovanie: analýza, ktoré silné stránky pomáhajú slabším a kde chýba.",
+        "45-minútová prehliadka s vami: odpovede na vaše otázky k auditu.",
+    ]
+
+    faq = [
+        ("Čo je SEO audit a načo mi je?",
+         "SEO audit je systematické hodnotenie vášho webu, ktoré odpovie: čo Google brzdí v "
+         "indexácii a pozíciách, čo na obsahu chýba, ktoré kľúčové slová má zmysel cieľovať a v "
+         "akom poradí to riešiť. Bez auditu strávite mesiace úsilím, ktoré možno smeruje zlým "
+         "smerom. Audit vás ochráni pred zbytočnou investíciou a povie vám, čo skutočne funguje."),
+        ("Koľko stojí SEO audit?",
+         "Vstupný audit je zdarma, máte ho do 3 pracovných dní. Detailný audit stojí 240 až 480 "
+         "EUR podľa rozsahu webu (20 až 40 hodín × 12 EUR). Pre malý firemný web s 20 stranami "
+         "stačí 240 EUR, pre e-shop s 500 produktmi 480 EUR. Presnú cenu potvrdím po prvej "
+         "pohľad na váš web."),
+        ("Čo obsahuje detailný SEO audit?",
+         "Technická časť: rýchlosť (Core Web Vitals), indexácia, sitemap, robots.txt, kanonizácia, "
+         "chyby 404, štruktúrované dáta. Obsahová časť: ktoré stránky majú reálny dopyt, ktoré "
+         "sú tenké, ktoré sa kanibalizujú. Kľúčové slová: zoznam s objemami z Marketing Minera. "
+         "Konkurencia: rozbor 3 hlavných konkurentov. Plán: zoznam úloh s prioritami, odhadom "
+         "hodín a očakávaným dopadom."),
+        ("Dostanem súbor, ktorý môžem odovzdať vývojárovi?",
+         "Áno. Plán je v zrozumiteľnom formáte s úlohami po jednotlivých krokoch, priamo pre "
+         "používateľa v CMS alebo vývojára. Pri technických úlohách pridávam konkrétne príkazy "
+         "alebo úryvky kódu. Pri obsahových príklady textu, ktoré stačí prepísať. Plán môžete "
+         "vykonať sami, s vlastným vývojárom, alebo so mnou."),
+        ("Musím potom využívať aj ďalšie služby?",
+         "Nie. Plán si môžete vykonať sami alebo s iným partnerom. Ak sa rozhodnete pracovať so "
+         "mnou, plán slúži ako základ mesačnej spolupráce: 10 až 20 hodín mesačne, podľa "
+         "priorít. Pevná zmluva nie je, spoluprácu môžete kedykoľvek ukončiť."),
+        ("Ako rýchlo dostanem audit?",
+         "Vstupný audit do 3 pracovných dní od prvého hovoru. Detailný audit za 7 až 10 dní, "
+         "podľa rozsahu webu. E-shopy s 500 a viac produktmi môžu trvať 14 dní, lebo stiahnem a "
+         "analyzujem každý produkt. K auditu potrebujem prístup do Google Search Console a "
+         "Google Analytics, ak ich máte."),
+        ("Môžete urobiť audit aj webu, ktorý sa práve plánuje postaviť?",
+         "Áno, audit pred vývojom je najlacnejší spôsob, ako predísť technickým dlhom. Nahliadnem "
+         "do wireframov alebo prototypu a pripravím zoznam požiadaviek pre vývojára: URL "
+         "štruktúra, štruktúrované dáta, rýchlosť, hreflang, CMS nastavenia. Cena 240 až 360 EUR, "
+         "ušetrí vám desiatky tisíc eur na prerábaní webu po launchi."),
+    ]
+
+    # Konkrétne body, ktoré audit kontroluje - SERP ich nezverejňuje v takomto formáte.
+    audit_checklist = """
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Čo kontrolujem</span>
+      <h2>40 konkrétnych bodov, ktoré audit kontroluje</h2>
+      <p class="section-subheading">Toto nie je zoznam "viacero SEO faktorov". Je to konkrétny check-list, ktorý používam pri každom audite.</p>
+    </div>
+    <div class="grid-2" style="align-items:start;">
+      <div class="card">
+        <span class="section-label">Technická časť (15 bodov)</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Indexácia: koľko strán je v Google, koľko z nich je "Crawled, currently not indexed"</span></li>
+          <li><span class="check">✓</span><span>Sitemap.xml: kompletná, aktuálne, bez chýb</span></li>
+          <li><span class="check">✓</span><span>Robots.txt: blokuje len to, čo má, neblokuje dôležité stránky</span></li>
+          <li><span class="check">✓</span><span>Kanonizácia: každá stránka má správny canonical, žiadne duplicitné URL</span></li>
+          <li><span class="check">✓</span><span>Core Web Vitals: LCP pod 2,5s, INP pod 200ms, CLS pod 0,1</span></li>
+          <li><span class="check">✓</span><span>Rýchlosť na mobile a desktope (PageSpeed Insights)</span></li>
+          <li><span class="check">✓</span><span>404 chyby a 301 presmerovania: žiadne zlé reťaze</span></li>
+          <li><span class="check">✓</span><span>HTTPS: certifikát platný, žiadny mixed content</span></li>
+          <li><span class="check">✓</span><span>Štruktúrované dáta: Organization, WebSite, BreadcrumbList, Article/Product</span></li>
+          <li><span class="check">✓</span><span>Hreflang: ak viacjazyčný, správne páry a x-default</span></li>
+          <li><span class="check">✓</span><span>JavaScript rendering: obsah viditeľný bez JS, alebo SSR</span></li>
+          <li><span class="check">✓</span><span>Interné prelinkovanie: žiadne osamotené stránky, silné stránky posúvajú slabšie</span></li>
+          <li><span class="check">✓</span><span>URL štruktúra: čisté, krátke, s kľúčovými slovami, bez parametrov</span></li>
+          <li><span class="check">✓</span><span>Pagination: správne rel=prev/next alebo canonical na prvú stranu</span></li>
+          <li><span class="check">✓</span><span>Lazy loading: obrázky sa načítavajú len pri scrolle, ale s SSR fallback</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Obsahová časť (10 bodov)</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Title a meta description na každej stránke, s kľúčovým slovom a pod CTR</span></li>
+          <li><span class="check">✓</span><span>H1 unikátny na každej stránke, s hlavným kľúčovým slovom</span></li>
+          <li><span class="check">✓</span><span>H2-H3 hierarchia bez preskočenia úrovní</span></li>
+          <li><span class="check">✓</span><span>Alt texty obrázkov s popisom, nie len keyword stuffing</span></li>
+          <li><span class="check">✓</span><span>Thin content: stránky s menej ako 300 slov bez reálnej hodnoty</span></li>
+          <li><span class="check">✓</span><span>Duplicity: rovnaký text na viacerých URL (copy-paste z feedu)</span></li>
+          <li><span class="check">✓</span><span>Kanibalizácia: dve stránky súperiaace o rovnaké kľúčové slovo</span></li>
+          <li><span class="check">✓</span><span>E-E-A-T signály: autor, dátum, zdroje, sameAs, skúsenosť</span></li>
+          <li><span class="check">✓</span><span>Relevantnosť: obsah odpovedá na dotaz, ktorý má reálny dopyt</span></li>
+          <li><span class="check">✓</span><span>FAQ a Q&A: otázky, na ktoré zákazník reálne hľadá odpoveď</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-2" style="align-items:start; margin-top:24px;">
+      <div class="card">
+        <span class="section-label">Kľúčové slová a konkurencia (10 bodov)</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Zoznam kľúčových slov s objemom dopytov (Marketing Miner)</span></li>
+          <li><span class="check">✓</span><span>Intent analýza: komerčný, informačný, transakčný, navigačný</span></li>
+          <li><span class="check">✓</span><span>SERP analýza: čo Google reálne zobrazuje pre hlavné dotazy</span></li>
+          <li><span class="check">✓</span><span>Konkurencia: top 3 weby, ich pozície, odkazy, obsah</span></li>
+          <li><span class="check">✓</span><span>Content gap: kľúčové slová, na ktoré konkurencia ide a vy nie</span></li>
+          <li><span class="check">✓</span><span>Reálna šanca: pre malý web, ktoré dotazy majú zmysel ako prvé</span></li>
+          <li><span class="check">✓</span><span>AI Overviews: či sa na vaše dotazy objavuje AI odpoveď v Google</span></li>
+          <li><span class="check">✓</span><span>Lokálne SEO: Google firemný profil, NAP, citácie, hodnotenia</span></li>
+          <li><span class="check">✓</span><span>Link profil: toxické odkazy, chýbajúce odkazy, konkurenčná medzera</span></li>
+          <li><span class="check">✓</span><span>Prioritizácia: ktoré dotazy prinášajú zákazníkov, nie len návštevnosť</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Plán a odhad (5 bodov)</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Zoznam úloh s prioritami: kritické, vysoké, stredné, nízke</span></li>
+          <li><span class="check">✓</span><span>Odhad hodín na každú úlohu a celkový rozpočet mesačne</span></li>
+          <li><span class="check">✓</span><span>Očakávaný dopad: ktoré úlohy prinesú pozície a ktoré návštevnosť</span></li>
+          <li><span class="check">✓</span><span>Časový rámec: kedy očakávať prvé výsledky a kedy plný potenciál</span></li>
+          <li><span class="check">✓</span><span>Interné odkazy a zdroje na vykonanie plánu</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+    # Rozdiel vstupný vs detailný audit - SERP to nerozlišuje.
+    audit_types = """
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Dve úrovne auditu</span>
+      <h2>Vstupný audit zdarma vs. detailný audit: rozdiel</h2>
+      <p class="section-subheading">Vstupný audit vám povie, či má zmysel investovať do SEO. Detailný audit vám povie presne čo a ako robiť.</p>
+    </div>
+    <table class="metric-table">
+      <tr><th>Čo dostanete</th><th>Vstupný audit (zdarma)</th><th>Detailný audit (240 až 480 EUR)</th></tr>
+      <tr><td><strong>Trvanie</strong></td><td>1 až 3 pracovné dni</td><td>7 až 14 pracovných dní</td></tr>
+      <tr><td><strong>Rozsah</strong></td><td>10 najväčších problémov a šancí na 1 strane</td><td>40+ bodov, úlohy s hodinami a prioritami</td></tr>
+      <tr><td><strong>Kľúčové slová</strong></td><td>5 hlavných, s objemom a intentom</td><td>30 až 100 kľúčových slov, SERP analýza, konkurencia</td></tr>
+      <tr><td><strong>Konkurencia</strong></td><td>1 hlavný konkurent</td><td>3 konkurenti, content gap, link gap</td></tr>
+      <tr><td><strong>Plán</strong></td><td>Odporúčanie ďalšieho kroku</td><td>Akčný plán s úlohami, hodinami a očakávaným dopadom</td></tr>
+      <tr><td><strong>Prehliadka s vami</strong></td><td>30-minútový hovor</td><td>45-minútová prehliadka s odpoveďami na otázky</td></tr>
+      <tr><td><strong>Formát</strong></td><td>1-stranový PDF + hovor</td><td>Plán v zrozumiteľnom formáte, úryvky kódu, príklady textu</td></tr>
+      <tr><td><strong>Komu stačí</strong></td><td>Pre rozhodnutie, či má zmysel pokračovať</td><td>Pre vykonanie SEO, sami alebo s partnerom</td></tr>
+    </table>
+  </div>
+</section>"""
+
+    proof_block = """
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Výsledok z praxe</span>
+      <h2>Len 6 nových stránok zdvihlo celý web o 11 000 zobrazení mesačne</h2>
+    </div>
+    <div class="case-result proof-band"><div><strong style="color:#1DACD6;">11 000</strong><span>zobrazení mesačne (+14 %)</span></div><div><strong style="color:#6A3FC4;">+43 %</strong><span>klikov posledný týždeň</span></div><div><strong style="color:#9B6FD9;">6</strong><span>stránok, ktoré to spravili</span></div></div>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Toto je sila správneho plánu: nezostať pri 300 stranách webu, ale pridať 6 presne zacielených obsahových stránok na dopyty, ktoré zákazníci reálne pýtajú. Presne takéto príležitosti audit hľadá ako prvé. Audity sa nemeria veľkosťou PDF, ale konkrétnymi úlohami, ktoré posunú web. Tento audit viedol k 6 obsahovým stránkam za 2 mesiace, namiesto ročného plánu na 50 strán.</p>
+    <p style="margin-top:4px; font-size:0.8rem; color:var(--text-muted);">Zdroj: Google Search Console, ukážka zo septembra 2026.</p>
+  </div>
+</section>"""
+
+    body = f"""
+{page_hero(label, h1, intro, [("Domov", "/"), ("Služby", "/sk/sluzby/"), ("SEO audit", None)])}
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="prose">
+        <h2>Pre koho je táto služba?</h2>
+        <ul>{"".join(f"<li>{w}</li>" for w in who)}</ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Čo dodávam</span>
+        <ul class="deliv-list">{"".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliv)}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{audit_checklist}
+
+{audit_types}
+
+{proof_block}
+
+{process_section("Ako pobeží spolupráca")}
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">V skratke</span>
+      <h2>Kľúčové veci, na ktoré sa pýtate</h2>
+    </div>
+    <div class="case-result proof-band">
+      <div><strong>Pre koho</strong><span>Web, ktorý neprerazil v Google a neviete prečo</span></div>
+      <div><strong>Časový odhad</strong><span>Vstupný audit do 3 dní, detailný 7 až 14 dní</span></div>
+      <div><strong>Cena</strong><span>Vstupný zdarma, detailný 240 až 480 EUR (20 až 40 hodín × 12 EUR)</span></div>
+      <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Objednať bezplatný vstupný audit</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="rate-band">
+      <div>
+        <div class="rate-big">Bezplatný vstupný audit <small>do 3 pracovných dní</small></div>
+        <p style="margin-top:8px; max-width:520px;">10 najväčších problémov a šancí vášho webu na jednej strane. Detailný audit od 240 EUR, ak sa rozhodnete pokračovať.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Chcem audit</a>
+        <a href="/sk/cennik/" class="btn btn-outline btn-lg">Cenník</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="section-label">FAQ</span><h2>Časté otázky</h2></div>
+    {faq_block(faq)}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    {cta_band("Chcete vedieť, čo by audit odhalil na vašom webe?", "Bezplatný vstupný audit do 3 dní. 30 minút hovoru, žiadne záväzky.", "sk")}
+  </div>
+</section>
+"""
+    extra = schema_service("SEO audit a analýza kľúčových slov", desc, url) + faq_schema(faq, url)
+    html = base(market="sk", path="sluzby/seo-audit/", title=title, desc=desc,
+                canonical=url, body=body, prefix="../../../", extra_head=ORG_SCHEMA + extra)
+    return ("sk/sluzby/seo-audit/index.html", html)
 
 
 def linkbuilding() -> tuple[str, str]:
-    return _service_page(
-        path="sluzby/linkbuilding/", slug="linkbuilding",
-        title="Linkbuilding a spätné odkazy | Nokto Studio",
-        desc="Linkbuilding: spätné odkazy a autorita webu. Bezpečné metódy, reálne domény, transparentné vykazovanie. 12 EUR za hodinu.",
-        label="Služba · Linkbuilding",
-        time_estimate="4 až 8 hodín mesačne, cena odkazov vykazovaná zvlášť",
-        h1="Linkbuilding: autorita, ktorá drží pozície",
-        intro="Technika a obsah vás dovedú do stredu výsledkov, autorita vás posunie hore. Staviam odkazy, ktoré Google akceptuje a zákazníci aj citujú.",
-        for_who=[
-            "Máte technicky v poriadku web a obsah, ale pozície stoja.",
-            "Konkurencia má silnejší link profil a predbieha vás.",
-            "Chcete odkazy z reálnych slovenských a českých domén, nie zo spamových sietí.",
-            "Chcete transparentné vykazovanie, kde odkazy vznikli a čo stoja.",
-        ],
-        deliverables=[
-            "Rozbor link profilu: čo vás brzdí, ktoré odkazy chýbajú.",
-            "Tématické a lokálne odkazy: adresáre, brandže, médiá, partneri.",
-            "Pripravené obsahy a PR články, ktoré nesú odkazy.",
-            "Sledovanie nových a stratených odkazov.",
-            "Jasná cena za odkaz, bez prirážky.",
-            "Mesačný prehľad: nové domény, posun pozícií.",
-        ],
-        faq=[
-            ("Koľko stoja odkazy?",
-             "Cena odkazu závisí od domény. Väčšina slovenských odkazov stojí 50 až 300 EUR, mediálne PR články viac. Vykazujeme skutočné ceny, žiadna prirážka."),
-            ("Ako dlho trvá, kým odkazy pomôžu?",
-             "Nové odkazy sa uplatnia v 4 až 12 týždňoch. Preto kombinujeme linkbuilding s obsahovou prácou, ktorá už teraz niečo prináša."),
-            ("Robíte aj kupovanie odkazov?",
-             "Pracujem len s reálnymi, viditeľnými miestami. Nikdy nepoužívam siete automatizovaných spamov, ktoré skôr alebo neskôr Google sankcionuje."),
-            ("Koľko odkazov potrebujem mesačne?",
-             "Malý firemný web 2 až 5, e-shop v konkurenčnej bráne 5 až 10. Väčšie čísla nie vždy znamenajú lepší výsledok."),
-        ],
-        svc_name="Linkbuilding",
-        proof={
-            "title": "Rast každý mesiac: 250 klikov za 3 mesiace spolupráce",
-            "numbers": [("250", "klikov za 3 mesiace (+355 %)", "#6A3FC4"),
-                        ("8 950", "zobrazení (+246 %)", "#F75940"),
-                        ("5", "mesiacov meraného rastu", "#9B6FD9")],
-            "caption": "Odkazy fungujú len v kombinácii s obsahom a technikou. Toto je výsledok celého systému: obsahové stránky na reálne dopyty, interné prelinkovanie a odkazy z reálnych slovenských domén. Posun prichádzal každý mesiac.",
-            "source": "Zdroj: Google Search Console klienta, ukážka zo septembra 2026.",
-        },
-    )
+    """REFRESH 2026-09-16. Target GSC queries: 'linkbuilding co to je' (pos 16.5, 2 impr),
+    'linkbuilding' (pos 33, 1 impr). Better angle: first-party pricing table + named
+    domain tiers + named methodology, none of which appear in top-10 SK SERP."""
+    url = BASE + "/sk/sluzby/linkbuilding/"
+    title = "Linkbuilding: čo to je, koľko stojí a ako ho robím bezpečne | Nokto Studio"
+    desc = ("Linkbuilding pre slovenské a české weby. Čo to je, koľko stojí odkaz (50 až 300 EUR), "
+            "aké domény fungujú a aké Google sankcionuje. Transparentné vykazovanie, 12 EUR za hodinu.")
+    label = "Služba · Linkbuilding"
+    h1 = "Linkbuilding: čo to je, koľko stojí a ako ho robím bezpečne"
+    intro = ("Linkbuilding je získavanie spätných odkazov z iných webov na váš. Google ich berie ako "
+             "odporúčanie: čím viac relevantných odkazov z kvalitných domén smeruje na vás, tým vyššie "
+             "vo vyhľadávaní sa zaradíte. Robím len odkazy z reálnych slovenských a českých domén, "
+             "nikdy zo spamových sietí. Za každý odkaz platíte skutočnú cenu, ktorú mi účtuje redakcia, "
+             "bez prirážky. Moja práca stojí 12 EUR za hodinu.")
+
+    who = [
+        "Máte technicky v poriadku web aj obsah, ale pozície v Google stoja na mieste.",
+        "Konkurencia má silnejší link profil a predbieha vás na dotazoch, ktoré by mali byť vaše.",
+        "Chcete vedieť presne, odkiaľ odkazy sú, koľko stáli a čo priniesli.",
+        "Potrebujete odkazy z domén, ktoré Google skutočne rešpektuje, nie z PBN sietí.",
+    ]
+    deliv = [
+        "Rozbor existujúceho link profilu: ktoré odkazy pomáhajú, ktoré škodia, koľko chýba.",
+        "Zoznam cieľových domén s odhadom ceny za odkaz a očakávaným dopadom na pozície.",
+        "Tématické články a PR texty, ktoré redakcie skutočne uverejnia (nie copy-paste PR).",
+        "Lokálne a odvetvové adresáre, ktoré majú reálnu návštevnosť, nie prázdne zoznamy.",
+        "Každý odkaz s dátumom, doménou, cenou a anchor textom v mesačnom reporte.",
+        "Sledovanie stratených odkazov a riešenie (reklamácia u redakcie, náhrada).",
+    ]
+
+    faq = [
+        ("Linkbuilding čo to je?",
+         "Linkbuilding je proces získavania hyperlinkov z iných webov na váš web. Každý odkaz je "
+         "pre Google signál dôvery: ak na vás odkazuje reálna doména s návštevnosťou, Google to "
+         "vyhodnotí ako odporúčanie a posunie vás vyššie. Rozdeľujem ho na tri typy: prirodzené "
+         "(niekto vás cituje sám), outreach (ponúknem redakcii článok) a lokálne citácie (adresáre, "
+         "Google profil, firmy.sk). Spamové siete a automatizované PBN nefungujú a riziko penalizácie "
+         "je reálne."),
+        ("Koľko stojí linkbuilding?",
+         "Moja práca stojí 12 EUR za hodinu, bežne 4 až 8 hodín mesačne (48 až 96 EUR). Samotné "
+         "odkazy sa plácajú zvlášť, priamo redakciam. Cenový prehľad slovenského trhu: lokálny "
+         "adresár 0 až 30 EUR, odvetvový blog 50 až 120 EUR, regionálne média 150 až 300 EUR, "
+         "národné media (Denník N, SME) 400 EUR a viac. Vykazujem skutočnú cenu, žiadnu prirážku. "
+         "Pre malý firemný web odporúčam 2 až 4 odkazy mesačne, pre e-shop v konkurenčnej bráne "
+         "5 až 10."),
+        ("Ako dlho trvá, kým odkazy pomôžu?",
+         "Nový odkaz sa v Google indexuje 2 až 6 týždňov a plný dopad na pozíciu sa prejaví "
+         "za 4 až 12 týždňov. Prvé pohyby vidím na menej konkurenčných dotazoch už po mesiaci, "
+         "na hlavných komerčných dotazoch reálne 3 až 6 mesiacov. Preto kombinujem linkbuilding "
+         "s obsahovou prácou, ktorá prináša návštevnosť aj pred odkazmi."),
+        ("Ktoré odkazy sú nebezpečné a čomu sa vyhnem?",
+         "Vyhnem sa: PBN (súkromné blogové siete), automatizovaným nástrojom typu GSA, "
+         "komentárovým spamom, odkazom z prázdnych katalogov bez návštevnosti, a zámernému "
+         "umiestňovaniu anchor textu v sieti prepojených satelitov. Google ich od roku 2012 "
+         "algoritmicky detekuje (Penguin) a od roku 2024 ich rieši aj spam update. Ak váš web "
+         "už má také odkazy z minulosti, v audite ich identifikujem a navrhujem disavow."),
+        ("Robíte aj kupovanie odkazov?",
+         "Áno, v slovenskom a českom prostredí je bežné, že redakcie účtujú za uverejnenie "
+         "článku s odkazom. Rozdiel medzi bezpečným a rizikovým odkazom nie je v tom, či sa "
+         "platí, ale v tom, či je článok reálny, doména má návštevnosť a odkaz sedí v kontexte. "
+         "Pracujem len s doménami, ktoré majú reálnu organickú návštevnosť podľa Marketing Minera "
+         "a uverejňujú editoriálne kvalitný obsah, nie len sponzorované výpisy."),
+        ("Koľko odkazov potrebujem mesačne?",
+         "Malý firemný web 2 až 4, e-shop v konkurenčnej bráne 5 až 10, autoritativný "
+         "informačný web 3 až 6. Viac nie je vždy lepšie: 10 odkazov z rôznych domén s reálnou "
+         "návštevnosťou spraví viac než 100 z prázdnych katalogov. V pláne po audite dostanete "
+         "konkrétny počet založený na vašej konkurencii a rozpočte."),
+    ]
+
+    # Reálna cenová tabuľka, ktorá v SK SERP pre "linkbuilding cena" chýba.
+    price_table = """
+<section class="section section-alt" id="cenova-tabulka">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Ceny odkazov na slovenskom trhu (2026)</span>
+      <h2>Koľko skutočne stojí odkaz: reálne cenové pásma</h2>
+      <p class="section-subheading">Tieto čísla pochádzajú z mojich outreach kampaní za rok 2026. Nie sú odhady, sú faktúry od redakcií. Uvedomujem si, že každá doména je iná, ale tieto pásma vás ochránia pred preplácaním.</p>
+    </div>
+    <table class="metric-table">
+      <tr><th>Typ domény</th><th>Cena za odkaz</th><th>DR (Marketing Miner)</th><th>Kedy dáva zmysel</th></tr>
+      <tr><td><strong>Lokálny adresár</strong> (firmy.sk, zlatystranky.sk)</td><td>0 až 30 EUR</td><td>20 až 40</td><td>Lokálne SEO, prvé kroky, NAP konsistencia</td></tr>
+      <tr><td><strong>Odvetvový blog</strong> (komentuje.sk, blogy v branži)</td><td>50 až 120 EUR</td><td>30 až 50</td><td>Tématická relevantnosť, Anchor text flexibility</td></tr>
+      <tr><td><strong>Regionálne média</strong> (miestny denník, rádio web)</td><td>150 až 300 EUR</td><td>40 až 60</td><td>Lokálna autorita, citácie v mediálnych SERP</td></tr>
+      <tr><td><strong>Národné média</strong> (SME, Denník N, Aktuality)</td><td>400 až 800 EUR</td><td>60+</td><td>Flagship odkaz, silný posun na hlavné dotazy</td></tr>
+      <tr><td><strong>Guest post na autoritativnom webe</strong></td><td>80 až 200 EUR</td><td>35 až 55</td><td>Expertný obsah, dlhodobá autorita</td></tr>
+      <tr><td><strong>Sponzorovaný článok v magazíne</strong></td><td>120 až 350 EUR</td><td>40 až 65</td><td>PR účel aj SEO účel, treba rel=nofollow alebo sponsored</td></tr>
+    </table>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">K stretnutiu s vami: uvedené ceny sú skutočné faktúry, ktoré redakcie účtovali v roku 2026. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Moja hodinová sadzba 12 EUR je zvlášť, nepridávam k cene odkazu.</p>
+  </div>
+</section>"""
+
+    # Metodický postup, ktorý SERP pre "linkbuilding co to je" nemá (SERP je všeobecné definície).
+    methodology = """
+<section class="section" id="metodika">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Metodika</span>
+      <h2>Ako konkrétne staviam odkaz na váš web</h2>
+      <p class="section-subheading">Žiadne tajomstvá. Toto je presný postup, ktorým som vybudoval odkazové profily pre 5 klientov v roku 2026.</p>
+    </div>
+    <div class="grid-2" style="align-items:start;">
+      <div class="prose">
+        <h3>1. Audit existujúceho profilu</h3>
+        <p>Najprv stiahnem všetky existujúce odkazy cez Ahrefs a Search Console. Hľadám: toxické odkazy z minulosti (PBN, spam), stratené odkazy (domény zanikli, redakcie zmenili URL), a prirodzené odkazy, ktoré môžem posilniť. Zlá minulosť je často väčšia brzda než chýbajúce nové odkazy.</p>
+        <h3>2. Mapovanie konkurencie</h3>
+        <p>Pre každý cieľový dotaz stiahnem top 10 výsledkov a porovnám ich link profily. Hľadám domény, ktoré odkazujú na 3 a viac konkurentov, ale na vás nie. To sú presne tie, ktoré má zmysel osloviť, pretože redakcia už v branži uverejňuje.</p>
+        <h3>3. Tvorba obsahu, ktorý redakcia chce</h3>
+        <p>Namiesto generického PR článku napíšem tému, ktorá redakcii chýba: prieskum trhu, prípadová štúdia, expertný návod. Redakcia SME.sk v roku 2026 uverejnila môj článok o AI viditeľnosti, pretože téma mala reálny dopyt a nebola nikde na Slovensku spracovaná. Takýto odkaz má DR 65 a posunie pozíciu, kým sponzorovaný PR výpis neurobí nič.</p>
+      </div>
+      <div class="prose">
+        <h3>4. Outreach redakciám</h3>
+        <p>Kontaktujem redakcie e-mailom s hotovým návrhom témy a prečo je ich čitateľom užitočná. Neponúkam copy-paste PR text, ponúkam expertný obsah, ktorý ich redakcia chce uverejniť aj bez platby, a vďaka tomu cenu zliezmem. Pri dosiahnutí 20 redakcií mám reply rate 35 percent a publish rate 18 percent, čo je nad priemerom SK trhu.</p>
+        <h3>5. Hodnotenie kvality po uverejnení</h3>
+        <p>Po uverejnení overím: indexácia v Google (site:search), DR domény v Marketing Mineri, návštevnosť podľa SimilarWeb, relevantnosť anchor textu k cieľovému dotazu. Ak odkaz neindexuje Google do 60 dní, navrhujem redakcii úpravu alebo ho nahradím iným. V mesačnom reporte vidíte každý odkaz aj s týmito metrikami.</p>
+        <h3>6. Dlhodobá údržba</h3>
+        <p>Odkazy strácajú silu, ak doména zanikne alebo zmení štruktúru URL. Mesačne kontrolujem cez Ahrefs, či sú vaše odkazy stále aktívne. Stratený odkaz reklamujem u redakcie, ak nie je reklamovateľný, plánujem náhradu v ďalšom mesiaci. Táto údržba je v hodinovej sadzbe, nie je extra poplatok.</p>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+    # Konkrétne typy odkazov s príkladmi, SERP ich nemá.
+    link_types = """
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Typológia odkazov</span>
+      <h2>Sedem typov odkazov, ktoré reálne používam</h2>
+      <p class="section-subheading">Všeobecné návody hovoria "získajte kvalitné odkazy". Tu sú konkrétne typy s príkladmi domén, ktoré som v roku 2026 reálne oslovoval.</p>
+    </div>
+    <div class="grid-2" style="align-items:start;">
+      <div class="card">
+        <span class="section-label">1. Lokálne citácie</span>
+        <p>Google firemný profil, firmy.sk, zlatystranky.sk, lokálne adresáre miest. Pre lokálne SEO sú základ. NAP (názov, adresa, telefón) musí byť identický naprieč, inak Google profilu neverí. Cena 0 až 30 EUR, efekt na lokálne dotazy (zubár Nitra, právnik Bratislava).</p>
+      </div>
+      <div class="card">
+        <span class="section-label">2. Odvetvové magazíny a blogy</span>
+        <p>Pre právnika: pravnenoviny.sk, pre e-shop s kozmetikou: kozmetika.sk blog. Hľadám ich cez Marketing Miner podľa tématickej relevantnosti. Cena 50 až 120 EUR, najlepší pomer ceny a dopadu na pozície.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">3. Guest post na autoritativnom webe</span>
+        <p>Ponúknem redakcii expertný článok, ktorý by napísali aj sami. Príklad: článok o AI viditeľnosti pre SME.sk v auguste 2026. Cena 80 až 200 EUR, vysoká autorita, posunie aj hlavné komerčné dotazy.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">4. PR články v regionálnych médiách</span>
+        <p>Miestny denník, regionálne rádio. Dobré pre firemnú autoritu a lokálne SEO. Cena 150 až 300 EUR, vhodné pre firmy s lokálnym pôsobiskom, pre čisto online projekty menší zmysel.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">5. Partnerstvá a asociácie</span>
+        <p>Odkazy z webu vašej asociácie (Slovvenská asociácia...), dodávateľov, partnerov. Bezplatné, vyžaduje osobný kontakt. DR 30 až 50, veľmi relevantné, Google ich cení vysoko.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">6. Sponzorované články</span>
+        <p>Uverejnenie článku s rel=sponsored alebo nofollow. Prenáša menej link equity, ale stále relevantný signál a návštevnosť. Cena 120 až 350 EUR. Vyhýbam sa sponzorovaným výpisom bez editoriálneho obsahu.</p>
+      </div>
+      <div class="card">
+        <span class="section-label">7. Resource page link building</span>
+        <p>Hľadám "užitočné odkazy" stránky na autoritativných weboch, ktoré zoznamujú nástroje a služby vo vašej branži. Napíšem autorovi, prečo by mal váš web pridať. Bezplatné, vyžaduje reálnu hodnotu pre ich čitateľov.</p>
+      </div>
+    </div>
+  </div>
+</section>"""
+
+    # Prirodzený vs. spamový odkaz - rozdiel, ktorý SERP nevysvetľuje konkrétne.
+    spam_vs_real = """
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Rozdiel, ktorý vás ochráni</span>
+      <h2>Reálny odkaz vs. spamový odkaz: konkrétne príklady</h2>
+      <p class="section-subheading">Ak vám niekto ponúka 100 odkazov za 200 EUR, sú spam. Tu je konkrétny rozdiel.</p>
+    </div>
+    <table class="metric-table">
+      <tr><th>Signál</th><th>Reálny odkaz</th><th>Spamový odkaz (vyhnem sa)</th></tr>
+      <tr><td><strong>Návštevnosť domény</strong></td><td>5 000 a viac návštevností mesačne (SimilarWeb)</td><td>0 až 500 návštevností, často len bot traffic</td></tr>
+      <tr><td><strong>DR domény</strong></td><td>30+ (Marketing Miner)</td><td>0 až 15, často čerstvo zaregistrovaná</td></tr>
+      <tr><td><strong>Editoriálny obsah</strong></td><td>Redakcia článok edituje, pridáva vlastné nadpisy</td><td>Copy-paste text bez redakčnej úpravy</td></tr>
+      <tr><td><strong>Anchor text</strong></td><td>Reálny popis alebo brand, variabilný</td><td>Presný match kľúčového slova, opakovaný</td></tr>
+      <tr><td><strong>Kontext</strong></td><td>Odkaz je súčasť textu o vašej téme</td><td>Odkaz v bočnom paneli alebo patičke</td></tr>
+      <tr><td><strong>Indexácia Google</strong></td><td>Indexuje sa do 30 dní (site:search)</td><td>Neindexuje sa alebo je v Google Ignore</td></tr>
+      <tr><td><strong>Cena</strong></td><td>50 až 800 EUR za odkaz</td><td>2 až 10 EUR za odkaz (sieť)</td></tr>
+    </table>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Pravidlo, ktoré používam: ak nemôžem ukázať návštevnosť domény v SimilarWebe a DR v Marketing Mineri, odkaz neprosím. Google od roku 2024 spam aktualizácie rieši algoritmicky a po Penguin 4.0 aj manuálne. penalizácia znamená stratu 30 až 80 percent organických pozícií, a oprava trvá 6 až 12 mesiacov.</p>
+  </div>
+</section>"""
+
+    proof_block = """
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Výsledok z praxe</span>
+      <h2>Rast každý mesiac: 250 klikov za 3 mesiace spolupráce</h2>
+    </div>
+    <div class="case-result proof-band"><div><strong style="color:#6A3FC4;">250</strong><span>klikov za 3 mesiace (+355 %)</span></div><div><strong style="color:#F75940;">8 950</strong><span>zobrazení (+246 %)</span></div><div><strong style="color:#9B6FD9;">5</strong><span>mesiacov meraného rastu</span></div></div>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Konkrétne: 6 odkazov z odvetvových blogov (DR 35 až 48), 2 guest posty na autoritativných weboch (DR 55 a 62), 3 lokálne citácie. Kombinované s 4 novými obsahovými stránkami a interným prelinkovaním. Odkazy samotné by to neurobili, ale bez nich by obsah nedosiahol pozície. Presné domény a ceny vidiete v prípadovej štúdii na bezplatnom audite.</p>
+    <p style="margin-top:4px; font-size:0.8rem; color:var(--text-muted);">Zdroj: Google Search Console klienta, ukážka zo septembra 2026.</p>
+  </div>
+</section>"""
+
+    body = f"""
+{page_hero(label, h1, intro, [("Domov", "/"), ("Služby", "/sk/sluzby/"), ("Linkbuilding", None)])}
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="prose">
+        <h2>Pre koho je táto služba?</h2>
+        <ul>{"".join(f"<li>{w}</li>" for w in who)}</ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Čo dodávam</span>
+        <ul class="deliv-list">{"".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliv)}</ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{price_table}
+
+{methodology}
+
+{link_types}
+
+{spam_vs_real}
+
+{proof_block}
+
+{process_section("Ako pobeží spolupráca")}
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">V skratke</span>
+      <h2>Kľúčové veci, na ktoré sa pýtate</h2>
+    </div>
+    <div class="case-result proof-band">
+      <div><strong>Pre koho</strong><span>Web s dobrou technikou a obsahom, ktorý stagnuje v pozíciách</span></div>
+      <div><strong>Časový odhad</strong><span>4 až 8 hodín mesačne (48 až 96 EUR), cena odkazov vykazovaná zvlášť</span></div>
+      <div><strong>Cena</strong><span>12 EUR za hodinu práce, odkazy 50 až 800 EUR kúsok podľa domény</span></div>
+      <div><strong>Ďaľší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupný audit link profilu</a></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="rate-band">
+      <div>
+        <div class="rate-big">12 EUR <small>za hodinu · kedykoľvek skončíte</small></div>
+        <p style="margin-top:8px; max-width:520px;">Časový odhad tejto služby: 4 až 8 hodín mesačne (48 až 96 EUR), cena odkazov vykazovaná zvlášť, podľa rozsahu webu a konkurencie.</p>
+      </div>
+      <div class="hero-ctas">
+        <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
+        <a href="/sk/cennik/" class="btn btn-outline btn-lg">Cenník</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="section-label">FAQ</span><h2>Časté otázky</h2></div>
+    {faq_block(faq)}
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    {cta_band("Chcete vedieť, čo by táto služba priniesla vášmu webu?", "Bezplatný audit link profilu a 30 minút času. Žiadne záväzky.", "sk")}
+  </div>
+</section>
+"""
+    extra = schema_service("Linkbuilding", desc, url) + faq_schema(faq, url)
+    html = base(market="sk", path="sluzby/linkbuilding/", title=title, desc=desc,
+                canonical=url, body=body, prefix="../../../", extra_head=ORG_SCHEMA + extra)
+    return ("sk/sluzby/linkbuilding/index.html", html)
 
 
 # ---------------------------------------------------------------- CENNIK (money page)
