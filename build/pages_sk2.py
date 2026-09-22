@@ -213,9 +213,9 @@ def vysledky() -> tuple[str, str]:
     <div class="grid-2" style="align-items:start;">
       <div class="prose">
         <span class="section-label">Ďaľší krok</span>
-        <h2>Napíšte mi alebo zavolajte</h2>
-        <p>Do 24 hodín sa ozvem osobne s prvými návrhmi pre váš web. Bezplatný vstupný audit: čo brzdí vaše pozície, predaj a AI odporúčania.</p>
-        <p style="margin-top:18px;"><a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Zavolajte {PHONE_DISPLAY}</a></p>
+        <h2>Audit webu zdarma</h2>
+        <p>Do 1 až 2 pracovných dní vám pošlem bezplatný vstupný audit: čo brzdí vaše pozície, predaj a AI odporúčania. Stačí adresa webu a e-mail.</p>
+        <p style="margin-top:18px;"><a href="/sk/kontakt/?audit=1" class="btn btn-primary btn-lg" style="width:100%;">Audit webu zdarma</a></p>
         <p style="margin-top:12px;">Alebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
       <div class="card contact-form-wrap">
@@ -244,7 +244,7 @@ def vysledky() -> tuple[str, str]:
           <p class="form-note">Odoslaním súhlasíte so spracovaním údajov na účel odpovede (pozrite <a href="/sk/privacy/">ochranu súkromia</a>).</p>
         </form>
         <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
-          ✓ Ďakujeme, správa odletela na {EMAIL}. Ozveme sa osobne do 24 hodín. Alebo zavolajte rovno: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
+          ✓ Ďakujeme, správa odletela na {EMAIL}. Ozveme sa osobne do 24 hodín. 
         </div>
       </div>
     </div>
@@ -444,19 +444,40 @@ def o_nas() -> tuple[str, str]:
 
 def kontakt() -> tuple[str, str]:
     body = f"""
-{page_hero("Kontakt", "Zavolajte alebo napíšte. Ozveme sa osobne.",
-           "Najrýchlejšia cesta je telefón. Alebo pošlite formulár a do 24 hodín sa ozvem osobne s prvými návrhmi.",
+{page_hero("Kontakt", "Audit webu zdarma. Ozveme sa do 1 až 2 pracovných dní.",
+           "Napíšte adresu webu a e-mail. Pošleme vám bezplatný vstupný audit: čo brzdí váš web v Google a čo by SEO mohlo znamenať. Mobile friendly, bez záväzku.",
            [("Domov", "/"), ("Kontakt", None)])}
 <section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:start;">
+      <div class="card" style="text-align:center; border:2px solid var(--brand-primary);">
+        <span class="section-label">Audit webu zdarma</span>
+        <form class="contact-form-el" style="margin-top:16px;">
+          <div class="form-grid">
+            <div class="form-field full"><label class="form-label" for="url">Adresa vášho webu *</label><input class="form-input" id="url" name="url" type="url" placeholder="https://" required></div>
+            <div class="form-field full"><label class="form-label" for="email">Váš e-mail *</label><input class="form-input" id="email" name="email" type="email" required></div>
+          </div>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Žiadosť o bezplatný audit webu - noktostudio.com">
+          <button type="submit" class="btn btn-primary" style="margin-top:14px; width:100%;">Chcem audit webu zdarma</button>
+          <p class="form-note">Odoslaním súhlasíte so spracovaním e-mailu na účel zaslania auditu (pozrite <a href="/sk/privacy/">ochranu súkromia</a>). Žiadny spam.</p>
+        </form>
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
+          ✓ Ďakujeme! Audit vám pošleme do 1 až 2 pracovných dní na váš e-mail.
+        </div>
+        <ul class="deliv-list" style="text-align:left; margin-top:20px;">
+          <li><span class="check">✓</span><span>Len web a e-mail, nič viac nevyplňujete</span></li>
+          <li><span class="check">✓</span><span>Audit príde do 1 až 2 pracovných dní</span></li>
+          <li><span class="check">✓</span><span>Čitateľný aj na mobile</span></li>
+          <li><span class="check">✓</span><span>Zadarmo, bez záväzku</span></li>
+        </ul>
+      </div>
       <div class="card" style="text-align:center;">
-        <span class="section-label">Zavolajte priamo</span>
+        <span class="section-label">Alebo zavolajte priamo</span>
         <a href="tel:+421917316105" class="btn btn-primary btn-lg contact-phone-btn" style="width:100%; margin-top:14px; font-size:1.25rem;">+421 917 316 105</a>
         <p style="margin:14px 0 6px; color:var(--text-muted);">Šimon Štermenský, SEO špecialista. Väčšinou dvíham hneď, inak volám späť do pár hodín.</p>
         <ul class="deliv-list" style="text-align:left; margin-top:20px;">
           <li><span class="check">✓</span><span>30 minút bezplatnej konzultácie o vašom webe</span></li>
-          <li><span class="check">✓</span><span>Bezplatný vstupný audit webu po hovore</span></li>
           <li><span class="check">✓</span><span>Reálne čísla: čo by SEO mohlo u vás znamenať</span></li>
           <li><span class="check">✓</span><span>Nezáväzné. Rozhodnete sa, kedy a či.</span></li>
         </ul>
@@ -465,41 +486,12 @@ def kontakt() -> tuple[str, str]:
         </p>
         <a href="mailto:{EMAIL}" class="btn btn-outline" style="width:100%; margin-top:10px;">Napísať email</a>
       </div>
-      <div class="card contact-form-wrap">
-        <span class="section-label">Alebo formulár</span>
-        <form class="contact-form-el" style="margin-top:16px;">
-          <div class="form-grid">
-            <div class="form-field"><label class="form-label" for="name">Meno a firma *</label><input class="form-input" id="name" name="name" type="text" required></div>
-            <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" required></div>
-            <div class="form-field full"><label class="form-label" for="url">Adresa webu (ak máte)</label><input class="form-input" id="url" name="url" type="url" placeholder="https://"></div>
-            <div class="form-field full"><label class="form-label" for="goal">Čo je váš cieľ? *</label>
-              <select class="form-select" id="goal" name="goal" required>
-                <option value="">Vyberte...</option>
-                <option>Viac zákazníkov z Google</option>
-                <option>Lepšia viditeľnosť na Google Mapách</option>
-                <option>Odporúčania v ChatGPT / AI</option>
-                <option>Viac predaja na e-shope</option>
-                <option>Nový web alebo redesign</option>
-                <option>Niečo iné</option>
-              </select>
-            </div>
-            <div class="form-field full"><label class="form-label" for="msg">Správa</label><textarea class="form-textarea" id="msg" name="msg" placeholder="Pár slov o vašej firme a čo by ste chceli dosiahnuť."></textarea></div>
-          </div>
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="Nový dotaz z webu noktostudio.com">
-          <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslať správu</button>
-          <p class="form-note">Odoslaním súhlasíte so spracovaním údajov na účel odpovede (pozrite <a href="/sk/privacy/">ochranu súkromia</a>).</p>
-        </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
-          ✓ Ďakujeme, správa odletela na {EMAIL}. Ozveme sa osobne do 24 hodín. Alebo zavolajte rovno: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 """
-    html = base(market="sk", path="kontakt/", title="Kontakt: telefón +421 917 316 105, e-mail a formulár | Nokto Studio",
-                desc="Spojte sa s Nokto Studio. Zavolajte +421 917 316 105, napíšte e-mail alebo pošlite kontaktný formulár. Bezplatný vstupný audit webu.",
+    html = base(market="sk", path="kontakt/", title="Audit webu zdarma: pošlite web a e-mail | Nokto Studio",
+                desc="Bezplatný vstupný audit webu. Napíšte adresu webu a e-mail, audit vám pošleme do 1 až 2 pracovných dní. Alebo zavolajte +421 917 316 105.",
                 canonical=BASE + "/sk/kontakt/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/kontakt/index.html", html)
 
@@ -853,8 +845,8 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
   <div class="container">
     <div class="grid-2">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
-      <p style="color:var(--text-muted);">Chcete o niečom vedieť viac už teraz? Zavolajte <a href="tel:+421917316105" style="font-weight:700; color:var(--text);">+421 917 316 105</a> alebo napíšte.</p>
-      <a href="/sk/kontakt/" class="btn btn-primary" style="margin-top:14px;">Kontaktujte ma</a>
+      <p style="color:var(--text-muted);">Chcete vedieť, čo by SEO znamenalo pre váš web? Objednajte audit zdarma.</p>
+      <a href="/sk/kontakt/?audit=1" class="btn btn-primary" style="margin-top:14px;">Audit webu zdarma</a>
     </div>
   </div>
 </section>

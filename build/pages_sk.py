@@ -161,11 +161,10 @@ def home() -> tuple[str, str]:
         <h1>{h1}</h1>
         <p class="hero-sub">{sub}</p>
         <div class="hero-ctas">
-          <a href="tel:+421917316105" class="btn btn-primary btn-lg">Zavolajte +421 917 316 105</a>
-          <a href="/sk/kontakt/" class="btn btn-outline btn-lg">Chcem bezplatný audit webu</a>
+          <a href="/sk/kontakt/?audit=1" class="btn btn-primary btn-lg">Audit webu zdarma</a>
+          <a href="/sk/sluzby/" class="btn btn-outline btn-lg">Služby a ceny</a>
         </div>
-        <p class="hero-scarcity">Alebo napíšte: <a href="/sk/kontakt/" style="font-weight:700; color:var(--text); text-decoration:none;">kontaktný formulár</a> · <a href="mailto:hello@noktostudio.com" style="font-weight:700; color:var(--text); text-decoration:none;">hello@noktostudio.com</a></p>
-        <p class="hero-scarcity" style="margin-top:6px;">Kapacita na nové projekty: otvorené od októbra 2026.</p>
+        <p class="hero-scarcity">Audit pošlem do 1 až 2 pracovných dní na váš e-mail. Len potrebujem adresu vášho webu.</p>
       </div>
       <div class="hero-photo">
         <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO špecialista a majiteľ Nokto Studio" width="220" height="220" loading="eager">

@@ -199,7 +199,8 @@ def nav_items(market: str) -> list[tuple[str, str]]:
 
 
 def cta_label(market: str) -> str:
-    return {"sk": "Kontaktuj ma", "cz": "Kontaktujte mě", "en": "Contact me"}[market]
+    """Primary CTA label: the free audit offer, going to the contact form."""
+    return {"sk": "Audit webu zdarma", "cz": "Audit webu zdarma", "en": "Free website audit"}[market]
 
 
 GOOGLE_REVIEW = ("Šimon mi robil obsah na webovú stránku, články, produktový feed na e-shop "
@@ -354,7 +355,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
       <ul class="nav-links">{nav}</ul>
       <div class="nav-right">
         {lang_toggle(market, path)}
-        <a href="{PHONE_TEL}" class="btn btn-primary btn-sm nav-phone-btn">{PHONE_DISPLAY}</a>
+        <a href="{KONTAKT_LINK[market]}" class="btn btn-primary btn-sm nav-phone-btn">{cta_label(market)}</a>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -363,7 +364,6 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 <nav class="nav-mobile" id="nav-mobile">
   {mob_nav}
   <a href="{KONTAKT_LINK[market]}" class="btn btn-primary" style="margin-top:10px;">{cta_label(market)}</a>
-  <a href="{PHONE_TEL}" class="mob-phone">{PHONE_DISPLAY}</a>
 </nav>
 
 {body}
@@ -404,8 +404,7 @@ def footer(market: str, prefix: str) -> str:
                           ("/sk/blog/", "Blog"),
                           ("/sk/faq/", "FAQ")]),
             ("Kontakt", [(f"mailto:{EMAIL}", EMAIL),
-                         (PHONE_TEL, PHONE_DISPLAY),
-                         ("/sk/kontakt/", "Kontaktný formulár"),
+                         ("/sk/kontakt/", "Kontaktný formulár a telefón"),
                          ("/sk/privacy/", "Ochrana súkromia"),
                          ("/sk/terms/", "Obchodné podmienky")]),
         ]
@@ -425,8 +424,7 @@ def footer(market: str, prefix: str) -> str:
                           ("/cz/blog/", "Blog"),
                           ("/cz/faq/", "FAQ")]),
             ("Kontakt", [(f"mailto:{EMAIL}", EMAIL),
-                         (PHONE_TEL, PHONE_DISPLAY),
-                         ("/cz/kontakt/", "Kontaktní formulář"),
+                         ("/cz/kontakt/", "Kontaktní formulář a telefon"),
                          ("/cz/privacy/", "Zásady ochrany osobních údajů"),
                          ("/cz/terms/", "Obchodní podmínky")]),
         ]
@@ -442,7 +440,7 @@ def footer(market: str, prefix: str) -> str:
                         ("/en/blog/", "Blog"),
                         ("/en/faq/", "FAQ")]),
             ("Contact", [(f"mailto:{EMAIL}", EMAIL),
-                         ("/en/contact/", "Contact form"),
+                         ("/en/contact/", "Contact form and phone"),
                          ("/en/privacy/", "Privacy"),
                          ("/en/terms/", "Terms")]),
         ]
@@ -507,9 +505,7 @@ def page_hero(label: str, h1_html: str, sub: str, crumbs: list[tuple[str, str]] 
 
 
 def cta_band(title: str, text: str, market: str) -> str:
-    btn1 = {"sk": "Napíšte mi", "cz": "Napište mi", "en": "Get in touch"}[market]
-    btn2 = {"sk": "Chcem bezplatný audit", "cz": "Chci bezplatný audit", "en": "Get my free audit"}[market]
-    call = {"sk": "Alebo zavolajte rovno:", "cz": "Nebo volejte rovnou:", "en": "Or call directly:"}[market]
+    btn = cta_label(market)
     audit_href = {"sk": "/sk/kontakt/?audit=1", "cz": "/cz/kontakt/?audit=1", "en": "/en/contact/?audit=1"}[market]
     return f"""
 <div class="cta-band">
@@ -518,10 +514,8 @@ def cta_band(title: str, text: str, market: str) -> str:
     <p>{text}</p>
   </div>
   <div class="hero-ctas">
-    <a href="{KONTAKT_LINK[market]}" class="btn btn-white btn-lg">{btn1}</a>
-    <a href="{audit_href}" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.3);color:#fff;">{btn2}</a>
+    <a href="{audit_href}" class="btn btn-white btn-lg">{btn}</a>
   </div>
-  <p class="cta-phone-line">{call} <a href="{PHONE_TEL}">{PHONE_DISPLAY}</a></p>
 </div>
 """
 

@@ -139,11 +139,10 @@ def cz_home() -> tuple[str, str]:
         <h1>{h1}</h1>
         <p class="hero-sub">{sub}</p>
         <div class="hero-ctas">
-          <a href="tel:+421917316105" class="btn btn-primary btn-lg">Zavolejte +421 917 316 105</a>
-          <a href="/cz/kontakt/" class="btn btn-outline btn-lg">Chci bezplatný audit webu</a>
+          <a href="/cz/kontakt/?audit=1" class="btn btn-primary btn-lg">Audit webu zdarma</a>
+          <a href="/cz/sluzby/" class="btn btn-outline btn-lg">Služby a ceny</a>
         </div>
-        <p class="hero-scarcity">Nebo napište: <a href="/cz/kontakt/" style="font-weight:700; color:var(--text); text-decoration:none;">kontaktní formulář</a> · <a href="mailto:hello@noktostudio.com" style="font-weight:700; color:var(--text); text-decoration:none;">hello@noktostudio.com</a></p>
-        <p class="hero-scarcity" style="margin-top:6px;">Kapacita pro nové projekty: otevřeno od října 2026.</p>
+        <p class="hero-scarcity">Audit pošleme do 1 až 2 pracovních dní na váš e-mail. Stačí adresa vašeho webu.</p>
       </div>
       <div class="hero-photo">
         <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialista a majitel Nokto Studio" width="220" height="220" loading="eager">
@@ -1586,9 +1585,9 @@ def cz_vysledky() -> tuple[str, str]:
     <div class="grid-2" style="align-items:start;">
       <div class="prose">
         <span class="section-label">Další krok</span>
-        <h2>Napište mi nebo volejte</h2>
-        <p>Do 24 hodin se ozvu osobně s prvními nápady pro váš web. Bezplatný vstupní audit: co brzdí vaše pozice, prodej a AI doporučení.</p>
-        <p style="margin-top:18px;"><a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Zavolejte {PHONE_DISPLAY}</a></p>
+        <h2>Audit webu zdarma</h2>
+        <p>Do 1 až 2 pracovních dní vám pošleme bezplatný vstupní audit: co brzdí vaše pozice, prodej a AI doporučení. Stačí adresa webu a e-mail.</p>
+        <p style="margin-top:18px;"><a href="/cz/kontakt/?audit=1" class="btn btn-primary btn-lg" style="width:100%;">Audit webu zdarma</a></p>
         <p style="margin-top:12px;">Nebo email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
       <div class="card contact-form-wrap">
@@ -1617,7 +1616,7 @@ def cz_vysledky() -> tuple[str, str]:
           <p class="form-note">Odesláním souhlasíte se zpracováním údajů pro účel odpovědi (viz <a href="/cz/privacy/">zásady ochrany osobních údajů</a>).</p>
         </form>
         <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
-          ✓ Děkuji, zpráva odletěla na {EMAIL}. Ozvu se osobně do 24 hodin. Nebo volejte rovnou: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
+          ✓ Děkuji, zpráva odletěla na {EMAIL}. Ozvu se osobně do 24 hodin. 
         </div>
       </div>
     </div>
@@ -1694,19 +1693,40 @@ def cz_faq() -> tuple[str, str]:
 
 def cz_kontakt() -> tuple[str, str]:
     body = f"""
-{page_hero("Kontakt", "Zavolejte nebo napište. Ozveme se osobně.",
-           "Nejrychlejší cestou je telefon. Nebo pošlete formulář a do 24 hodin se ozvu osobně s prvními nápady.",
+{page_hero("Kontakt", "Audit webu zdarma. Ozveme se do 1 až 2 pracovních dní.",
+           "Napište adresu webu a e-mail. Pošleme vám bezplatný vstupní audit: co brzdí váš web v Google a co by SEO mohlo znamenat. Mobile friendly, bez závazku.",
            [("Domů", "/cz/"), ("Kontakt", None)])}
 <section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:start;">
+      <div class="card" style="text-align:center; border:2px solid var(--brand-primary);">
+        <span class="section-label">Audit webu zdarma</span>
+        <form class="contact-form-el" style="margin-top:16px;">
+          <div class="form-grid">
+            <div class="form-field full"><label class="form-label" for="url">Adresa vašeho webu *</label><input class="form-input" id="url" name="url" type="url" placeholder="https://" required></div>
+            <div class="form-field full"><label class="form-label" for="email">Váš e-mail *</label><input class="form-input" id="email" name="email" type="email" required></div>
+          </div>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Žádost o bezplatný audit webu - noktostudio.com">
+          <button type="submit" class="btn btn-primary" style="margin-top:14px; width:100%;">Chci audit webu zdarma</button>
+          <p class="form-note">Odesláním souhlasíte se zpracováním e-mailu za účelem zaslání auditu (viz <a href="/cz/privacy/">zásady ochrany osobních údajů</a>). Žádný spam.</p>
+        </form>
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
+          ✓ Děkujeme! Audit vám pošleme do 1 až 2 pracovních dní na váš e-mail.
+        </div>
+        <ul class="deliv-list" style="text-align:left; margin-top:20px;">
+          <li><span class="check">✓</span><span>Stačí web a e-mail, nic víc nevyplňujete</span></li>
+          <li><span class="check">✓</span><span>Audit přijde do 1 až 2 pracovních dní</span></li>
+          <li><span class="check">✓</span><span>Čitelný i na mobilu</span></li>
+          <li><span class="check">✓</span><span>Zdarma, bez závazku</span></li>
+        </ul>
+      </div>
       <div class="card" style="text-align:center;">
-        <span class="section-label">Zavolejte přímo</span>
+        <span class="section-label">Nebo zavolejte přímo</span>
         <a href="tel:+421917316105" class="btn btn-primary btn-lg contact-phone-btn" style="width:100%; margin-top:14px; font-size:1.25rem;">+421 917 316 105</a>
         <p style="margin:14px 0 6px; color:var(--text-muted);">Šimon Štermenský, SEO specialista. Většinou zvedám hned, jinak volám zpět do pár hodin.</p>
         <ul class="deliv-list" style="text-align:left; margin-top:20px;">
           <li><span class="check">✓</span><span>30 minut bezplatné konzultace o vašem webu</span></li>
-          <li><span class="check">✓</span><span>Bezplatný vstupní audit webu po hovoru</span></li>
           <li><span class="check">✓</span><span>Skutečná čísla: co by SEO u vás mohlo znamenat</span></li>
           <li><span class="check">✓</span><span>Nezávazné. Rozhodnete se, kdy a zda.</span></li>
         </ul>
@@ -1715,41 +1735,12 @@ def cz_kontakt() -> tuple[str, str]:
         </p>
         <a href="mailto:{EMAIL}" class="btn btn-outline" style="width:100%; margin-top:10px;">Napsat email</a>
       </div>
-      <div class="card contact-form-wrap">
-        <span class="section-label">Nebo formulář</span>
-        <form class="contact-form-el" style="margin-top:16px;">
-          <div class="form-grid">
-            <div class="form-field"><label class="form-label" for="name">Jméno a firma *</label><input class="form-input" id="name" name="name" type="text" required></div>
-            <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" required></div>
-            <div class="form-field full"><label class="form-label" for="url">Adresa webu (pokud ji máte)</label><input class="form-input" id="url" name="url" type="url" placeholder="https://"></div>
-            <div class="form-field full"><label class="form-label" for="goal">Jaký je váš cíl? *</label>
-              <select class="form-select" id="goal" name="goal" required>
-                <option value="">Vyberte...</option>
-                <option>Více zákazníků z Google</option>
-                <option>Lepší viditelnost na Google Mapách</option>
-                <option>Doporučení v ChatGPT / AI</option>
-                <option>Více prodeje na e-shopu</option>
-                <option>Nový web nebo redesign</option>
-                <option>Něco jiného</option>
-              </select>
-            </div>
-            <div class="form-field full"><label class="form-label" for="msg">Zpráva</label><textarea class="form-textarea" id="msg" name="msg" placeholder="Pár slov o vaší firmě a tom, čeho chcete dosáhnout."></textarea></div>
-          </div>
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="Nový dotaz z webu noktostudio.com">
-          <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Poslat zprávu</button>
-          <p class="form-note">Odesláním souhlasíte se zpracováním údajů za účelem odpovědi (viz). <a href="/cz/privacy/">zásady ochrany osobních údajů</a>).</p>
-        </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
-          ✓ Děkujeme, zpráva odlétla na {EMAIL}. Ozveme se osobně do 24 hodin. Nebo volejte rovnou: <a href="tel:+421917316105" style="font-weight:700;">+421 917 316 105</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 """
-    html = base(market="cz", path="kontakt/", title="Kontakt: telefon, email a formulář | Nokto Studio",
-                desc="Spojte se s Nokto Studio. Zavolejte +421 917 316 105, napište email nebo použijte kontaktní formulář. Bezplatný vstupní audit webu.",
+    html = base(market="cz", path="kontakt/", title="Audit webu zdarma: pošlete web a e-mail | Nokto Studio",
+                desc="Bezplatný vstupní audit webu. Napište adresu webu a e-mail, audit vám pošleme do 1 až 2 pracovních dní. Nebo zavolejte +421 917 316 105.",
                 canonical=BASE + "/cz/kontakt/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/kontakt/index.html", html)
 
@@ -1783,8 +1774,8 @@ def cz_blog() -> tuple[str, str]:
   <div class="container">
     <div class="blog-grid">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
-      <p style="color:var(--text-muted);">Chcete se o něčem dozvědět víc už teď? Zavolejte <a href="tel:+421917316105" style="font-weight:700; color:var(--text);">+421 917 316 105</a> nebo napište.</p>
-      <a href="/cz/kontakt/" class="btn btn-primary" style="margin-top:14px;">Kontakt</a>
+      <p style="color:var(--text-muted);">Chcete vědět, co by SEO znamenalo pro váš web? Objednejte audit zdarma.</p>
+      <a href="/cz/kontakt/?audit=1" class="btn btn-primary" style="margin-top:14px;">Audit webu zdarma</a>
     </div>
   </div>
 </section>

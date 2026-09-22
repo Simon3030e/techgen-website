@@ -30,10 +30,10 @@ def en_home() -> tuple[str, str]:
       <h1>{h1}</h1>
       <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. At a transparent 12 EUR per hour. No retainers you cannot see through, no lock-in contracts.</p>
       <div class="hero-ctas">
-        <a href="{PHONE_TEL}" class="btn btn-primary btn-lg">Call {PHONE_DISPLAY}</a>
-        <a href="/en/contact/?audit=1" class="btn btn-outline btn-lg">Get a free audit</a>
+        <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Free website audit</a>
+        <a href="/en/services/" class="btn btn-outline btn-lg">Services and pricing</a>
       </div>
-      <p class="hero-scarcity">Capacity for new projects: open from October 2026.</p>
+      <p class="hero-scarcity">I deliver the audit to your e-mail within 1 to 2 business days. All I need is your website address.</p>
     </div>
     <div class="hero-photo">
       <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialist and founder of Nokto Studio" width="220" height="220" loading="eager">
@@ -276,7 +276,7 @@ def en_services() -> tuple[str, str]:
         <div class="rate-big">12 EUR <small>per hour · stop any time</small></div>
         <p style="margin-top:8px; max-width:520px;">Typical scopes: 10 hours/month for a small business site (120 EUR), 15 hours for a mid-size site or e-shop (180 EUR). Link costs and ad spend billed separately at cost.</p>
       </div>
-      <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Get a quote</a>
+      <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Free website audit</a>
     </div>
   </div>
 </section>
@@ -338,56 +338,52 @@ def en_about() -> tuple[str, str]:
 
 def en_contact() -> tuple[str, str]:
     body = f"""
-{page_hero("Contact", "Write to us. I reply personally.",
-           "The fastest way is by phone. Or submit the form, and I will get back to you personally within 24 hours with the first steps.",
+{page_hero("Contact", "Free website audit. Delivered in 1 to 2 business days.",
+           "Send your website address and e-mail. I will send you a free initial audit: what holds your site back in Google and what SEO could mean. Mobile friendly, no commitment.",
            [("Home", "/en/"), ("Contact", None)])}
 <section class="section">
   <div class="container">
     <div class="grid-2" style="align-items:start;">
+      <div class="card" style="text-align:center; border:2px solid var(--brand-primary);">
+        <span class="section-label">Free website audit</span>
+        <form class="contact-form-el" style="margin-top:16px;">
+          <div class="form-grid">
+            <div class="form-field full"><label class="form-label" for="url">Your website address *</label><input class="form-input" id="url" name="url" type="url" placeholder="https://" required></div>
+            <div class="form-field full"><label class="form-label" for="email">Your e-mail *</label><input class="form-input" id="email" name="email" type="email" required></div>
+          </div>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Free website audit request - noktostudio.com">
+          <button type="submit" class="btn btn-primary" style="margin-top:14px; width:100%;">Get my free website audit</button>
+          <p class="form-note">By submitting you agree to receive the audit by e-mail (see <a href="/en/privacy/">privacy</a>). No spam.</p>
+        </form>
+        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
+          ✓ Thank you! Your audit will arrive within 1 to 2 business days.
+        </div>
+        <ul class="deliv-list" style="text-align:left; margin-top:20px;">
+          <li><span class="check">✓</span><span>Just your website and e-mail, nothing else</span></li>
+          <li><span class="check">✓</span><span>Audit arrives within 1 to 2 business days</span></li>
+          <li><span class="check">✓</span><span>Mobile friendly, easy to read</span></li>
+          <li><span class="check">✓</span><span>Free, no commitment</span></li>
+        </ul>
+      </div>
       <div class="card">
-        <span class="section-label">Free call, 30 minutes</span>
-        <p style="margin:14px 0 22px;">Call me directly. We talk about your goals and what we would do first. No pressure, no commitment.</p>
+        <span class="section-label">Or call me directly</span>
+        <p style="margin:14px 0 22px;">We talk about your goals and what we would do first. No pressure, no commitment.</p>
         <a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Call {PHONE_DISPLAY}</a>
         <ul class="deliv-list" style="margin-top:24px;">
-          <li><span class="check">✓</span><span>Free initial audit after the call</span></li>
+          <li><span class="check">✓</span><span>Free 30-minute consultation about your site</span></li>
           <li><span class="check">✓</span><span>Real numbers: what SEO could mean for you</span></li>
           <li><span class="check">✓</span><span>No commitment. You decide when, and whether.</span></li>
         </ul>
-      </div>
-      <div class="card contact-form-wrap">
-        <span class="section-label">Or the form</span>
-        <form class="contact-form-el" style="margin-top:16px;">
-          <div class="form-grid">
-            <div class="form-field"><label class="form-label" for="name">Name and company *</label><input class="form-input" id="name" name="name" type="text" required></div>
-            <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" required></div>
-            <div class="form-field full"><label class="form-label" for="url">Website address (if you have one)</label><input class="form-input" id="url" name="url" type="url" placeholder="https://"></div>
-            <div class="form-field full"><label class="form-label" for="goal">What is your goal? *</label>
-              <select class="form-select" id="goal" name="goal" required>
-                <option value="">Choose...</option>
-                <option>More customers from Google</option>
-                <option>Better visibility on Google Maps</option>
-                <option>ChatGPT / AI recommendations</option>
-                <option>More e-shop sales</option>
-                <option>New website or redesign</option>
-                <option>Something else</option>
-              </select>
-            </div>
-            <div class="form-field full"><label class="form-label" for="msg">Message</label><textarea class="form-textarea" id="msg" name="msg" placeholder="A few words about your business and what you want to achieve."></textarea></div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="margin-top:18px; width:100%;">Send message</button>
-          <p class="form-note">By sending, you agree to the processing of your data for the purpose of a reply (see <a href="/en/privacy/">privacy</a>).</p>
-        </form>
-        <div class="form-success" style="display:none; margin-top:16px; background:#F5F1FC; color:var(--brand-cool-deep); padding:16px; border-radius:10px;">
-          ✓ Thank you. I will reply personally within 24 hours.
-        </div>
-        <p style="margin-top:20px;">Or email: <a href="mailto:{EMAIL}">{EMAIL}</a></p>
+        <p style="margin-top:22px; border-top:1px solid var(--border-light); padding-top:18px;">Or email: <a href="mailto:{EMAIL}" style="font-weight:700; color:var(--text);">{EMAIL}</a></p>
+        <a href="mailto:{EMAIL}" class="btn btn-outline" style="width:100%; margin-top:10px;">Write an e-mail</a>
       </div>
     </div>
   </div>
 </section>
 """
-    html = base(market="en", path="contact/", title="Contact: free call and free audit | Nokto Studio",
-                desc="Get in touch with Nokto Studio. Free 30-minute strategy call and a free initial website audit. I reply personally within 24 hours.",
+    html = base(market="en", path="contact/", title="Free website audit: send your site and e-mail | Nokto Studio",
+                desc="Free initial website audit. Send your website address and e-mail, I deliver the audit within 1 to 2 business days. Or call +421 917 316 105.",
                 canonical=BASE + "/en/contact/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/contact/index.html", html)
 
@@ -438,7 +434,7 @@ def en_blog() -> tuple[str, str]:
   <div class="container">
     <div class="blog-grid">{cards}</div>
     <div style="text-align:center; margin-top:36px;">
-      <a href="{PHONE_TEL}" class="btn btn-primary">Free call</a>
+      <a href="/en/contact/?audit=1" class="btn btn-primary">Free website audit</a>
     </div>
   </div>
 </section>
@@ -564,7 +560,7 @@ def en_villa_paris() -> tuple[str, str]:
           <li><span class="check">✓</span><span>Measurement: bookings and their sources.</span></li>
         </ul>
         <div style="margin-top:22px;">
-          <a href="/en/contact/?audit=1" class="btn btn-primary">I want a project like this</a>
+          <a href="/en/contact/?audit=1" class="btn btn-primary">Free website audit</a>
         </div>
       </div>
     </div>
