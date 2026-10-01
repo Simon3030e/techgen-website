@@ -35,14 +35,18 @@ MARKET_HOME = {"sk": "/", "cz": "/cz/", "en": "/en/"}       # brand home
 SK_PATHS = {
     "", "sluzby/", "sluzby/seo-optimalizacia/", "sluzby/lodalne-seo/",
     "sluzby/seo-pre-ai-vyhladavace/", "sluzby/seo-pre-eshopy/", "sluzby/seo-audit/",
+    "sluzby/seo-pre-wordpress/",
     "sluzby/linkbuilding/", "cennik/", "jak-pracujeme/", "vysledky/",
     "villa-paris/", "faq/", "o-nas/", "kontakt/", "blog/", "privacy/", "terms/",
+    "blog/seo-pre-eshop/", "blog/seo-audit-co-to-je/",
 }
 CZ_PATHS = {
     "", "sluzby/", "sluzby/seo-optimalizace/", "sluzby/lodalne-seo/",
     "sluzby/seo-pre-ai-vyhledavace/", "sluzby/seo-pre-eshopy/", "sluzby/seo-audit/",
+    "sluzby/seo-pre-wordpress/",
     "sluzby/linkbuilding/", "cenik/", "jak-pracujeme/", "vysledky/", "faq/", "kontakt/", "blog/",
     "privacy/", "terms/",
+    "blog/seo-pro-eshop/", "blog/seo-audit-co-to-je/",
 }
 EN_PATHS = {
     "", "services/", "about/", "contact/", "faq/", "blog/", "portfolio/",
@@ -64,6 +68,7 @@ HREFLANG_PAIR = {
     "sluzby/seo-pre-ai-vyhledavace/": "sluzby/seo-pre-ai-vyhladavace/",
     "sluzby/seo-pre-eshopy/": "sluzby/seo-pre-eshopy/",
     "sluzby/seo-audit/": "sluzby/seo-audit/",
+    "sluzby/seo-pre-wordpress/": "sluzby/seo-pre-wordpress/",
     "sluzby/linkbuilding/": "sluzby/linkbuilding/",
     "jak-pracujeme/": "jak-pracujeme/",
     "vysledky/": "vysledky/",
@@ -73,6 +78,9 @@ HREFLANG_PAIR = {
     "blog/": "blog/",
     "privacy/": "privacy/",
     "terms/": "terms/",
+    "blog/seo-pre-eshop/": "blog/seo-pro-eshop/",
+    "blog/seo-pro-eshop/": "blog/seo-pre-eshop/",
+    "blog/seo-audit-co-to-je/": "blog/seo-audit-co-to-je/",
 }
 
 
@@ -89,6 +97,8 @@ EN_PAIR = {
     "villa-paris/": "villa-paris/",
     "privacy/": "privacy/",
     "terms/": "terms/",
+    "blog/seo-pre-eshop/": "blog/ecommerce-seo/",
+    "blog/seo-audit-co-to-je/": "blog/seo-audit-guide/",
 }
 EN_PAIR_REV = {v: k for k, v in EN_PAIR.items()}
 
@@ -145,6 +155,7 @@ _GICON_PATHS = {
     "bolt":   '<path d="M13 2 5 13h6l-1 9 8-11h-6l1-9Z"/>',
     "check":  '<path d="m4.5 12.5 5 5L19.5 7"/>',
     "grow":   '<path d="M4 19 10 13l3.5 3.5L20 10"/><path d="M20 15v-5h-5"/>',
+    "code":   '<path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13 6-2 12"/>',
 }
 
 def gicon(kind: str, color: str = "#6A3FC4", size: int = 24) -> str:
@@ -165,6 +176,7 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/sk/sluzby/seo-optimalizacia/", "Google viditeľnosť"),
             ("/sk/sluzby/lodalne-seo/", "Google Mapy viditeľnosť"),
             ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
+            ("/sk/sluzby/seo-pre-wordpress/", "SEO pre WordPress"),
             ("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
             ("/sk/sluzby/linkbuilding/", "Linkbuilding"),
         ])
@@ -177,6 +189,7 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/cz/sluzby/seo-optimalizace/", "Google viditelnost"),
             ("/cz/sluzby/lodalne-seo/", "Google Mapy viditelnost"),
             ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
+            ("/cz/sluzby/seo-pre-wordpress/", "SEO pro WordPress"),
             ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
             ("/cz/sluzby/linkbuilding/", "Linkbuilding"),
         ])
@@ -189,6 +202,7 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/en/services/#seo", "Google visibility"),
             ("/en/services/#local", "Google Maps visibility"),
             ("/en/services/#eshop", "E-commerce SEO"),
+            ("/en/services/#wordpress", "WordPress SEO"),
             ("/en/services/#audit", "SEO audit and analysis"),
             ("/en/services/#links", "Link building"),
         ])
@@ -393,6 +407,7 @@ def footer(market: str, prefix: str) -> str:
                         ("/sk/sluzby/lodalne-seo/", "Lokálne SEO a Google profil"),
                         ("/sk/sluzby/seo-pre-ai-vyhladavace/", "SEO pre AI vyhľadávače"),
                         ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
+                        ("/sk/sluzby/seo-pre-wordpress/", "SEO pre WordPress"),
                         ("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
                         ("/sk/sluzby/linkbuilding/", "Linkbuilding")]),
             ("Partneri", [("https://flamia.studio", "Flamia Studio: web dizajn"),
@@ -414,6 +429,7 @@ def footer(market: str, prefix: str) -> str:
                         ("/cz/sluzby/lodalne-seo/", "Lokální SEO a firemní profil"),
                         ("/cz/sluzby/seo-pre-ai-vyhledavace/", "SEO pro AI vyhledávače"),
                         ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
+                        ("/cz/sluzby/seo-pre-wordpress/", "SEO pro WordPress"),
                         ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
                         ("/cz/sluzby/linkbuilding/", "Linkbuilding")]),
             ("Partneři", [("https://flamia.studio", "Flamia Studio: web dizajn"),
@@ -433,7 +449,8 @@ def footer(market: str, prefix: str) -> str:
             ("Services", [("/en/services/", "All services"),
                           ("/en/services/#seo", "SEO & AI visibility"),
                           ("/en/services/#local", "Local SEO & Google Maps"),
-                          ("/en/services/#eshop", "E-commerce SEO")]),
+                          ("/en/services/#eshop", "E-commerce SEO"),
+                          ("/en/services/#wordpress", "WordPress SEO")]),
             ("Agency", [("/en/about/", "How we work"),
                         ("/en/services/#pricing", "Pricing"),
                         ("/en/portfolio/", "Portfolio"),
@@ -534,6 +551,39 @@ def faq_schema(items: list[tuple[str, str]], page_url: str) -> str:
             q=_json_str(q), a=_json_str(a)) for q, a in items
     )
     return f'<script type="application/ld+json">\n{{"@context":"https://schema.org","@type":"FAQPage","@id":"{page_url}#faq","mainEntity":[{qas}]}}\n</script>'
+
+
+def related_block(market: str, articles=None, services=None, heading: str | None = None) -> str:
+    """Internal linking block: related blog articles + related service pages.
+
+    articles / services: list of (href, label). Renders one grid of cards with
+    a tag per card type. Used on service pages and blog posts to spread link
+    equity between the money pages and the content cluster.
+    """
+    if not articles and not services:
+        return ""
+    L = {
+        "sk": dict(label="Súvisiace", head="Súvisiace články a služby", article="Článok", service="Služba"),
+        "cz": dict(label="Související", head="Související články a služby", article="Článek", service="Služba"),
+        "en": dict(label="Related", head="Related reading", article="Article", service="Service"),
+    }[market]
+    cards = ""
+    for u, t in (articles or []):
+        cards += (f'<div class="benefit-card card-hover related-card">'
+                  f'<span class="project-tags"><span class="project-tag tag-violet">{L["article"]}</span></span>'
+                  f'<h3><a href="{u}" style="color:var(--text);">{t}</a></h3></div>')
+    for u, t in (services or []):
+        cards += (f'<div class="benefit-card card-hover related-card">'
+                  f'<span class="project-tags"><span class="project-tag tag-cerulean">{L["service"]}</span></span>'
+                  f'<h3><a href="{u}" style="color:var(--text);">{t}</a></h3></div>')
+    return f"""
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head"><span class="section-label">{L["label"]}</span><h2>{heading or L["head"]}</h2></div>
+    <div class="grid-3">{cards}</div>
+  </div>
+</section>
+"""
 
 
 def article_schema(*, url: str, title: str, desc: str, date_iso: str,

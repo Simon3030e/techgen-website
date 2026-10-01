@@ -144,6 +144,20 @@ def en_home() -> tuple[str, str]:
 
 <section class="section">
   <div class="container">
+    <div class="section-head">
+      <span class="section-label">Blog</span>
+      <h2>Latest guides</h2>
+      <p class="section-subheading">Practical SEO guides for business owners, new every week.</p>
+    </div>
+    <div class="blog-grid">{en_home_blog_teaser()}</div>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="/en/blog/" class="btn btn-outline">All articles</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     {cta_band("Start with a free audit", "A 30-minute call and a free audit of your website. You learn what holds your site back, even if you decide not to work with us.", "en")}
   </div>
 </section>
@@ -155,12 +169,19 @@ def en_home() -> tuple[str, str]:
     return ("en/index.html", html)
 
 
+def en_home_blog_teaser() -> str:
+    """Latest EN blog cards, injected into the homepage (lazy import)."""
+    import pages_en2 as en2
+    return en2.latest_cards(2)
+
+
 def en_services() -> tuple[str, str]:
     services = [
         ("/en/services/#ai", "AI visibility", "ChatGPT, Gemini, and AI Overviews recommending you as the first choice.", "ai", "#9B6FD9"),
         ("/en/services/#seo", "Google visibility", "Positions in Google that bring customers, not just traffic.", "search", "#6A3FC4"),
         ("/en/services/#local", "Google Maps visibility", "Business Profile, Maps, and reviews. Nearby customers find you first.", "pin", "#F75940"),
         ("/en/services/#eshop", "E-commerce SEO", "More sales from categories and products. Shoptet, marketplaces, Google Shopping.", "shop", "#1DACD6"),
+        ("/en/services/#wordpress", "WordPress SEO", "Speed, plugins, schema and structure. A WordPress site Google ranks higher.", "code", "#6A3FC4"),
         ("/en/services/#audit", "SEO audit and analysis", "A precise picture of what holds your site back, with a prioritized plan.", "audit", "#6A3FC4"),
         ("/en/services/#links", "Link building", "Backlinks and authority, without which reaching the top is out of reach.", "link", "#F75940"),
     ]
@@ -209,6 +230,26 @@ def en_services() -> tuple[str, str]:
       <tr><td><strong>Merchant Center feed</strong></td><td>Auto-feed via add-on</td><td>WC Product Feed plugin</td><td>Custom feed generator</td></tr>
     </table>
     <p style="margin-top:16px; max-width:720px; color:var(--text-2);">Real result: Mikramt.sk, a small e-shop on a custom platform, after 9 months of SEO work: 15 orders from organic and email channels, 2492.75 EUR revenue, largest single order 722 EUR. Work included category texts (previously empty), structured data fixes, Google Merchant Center integration, and email sequences. Most e-shops need 6 to 18 months to see full organic potential, depending on competition and existing authority.</p>
+  </div>
+</section>"""
+
+    wordpress_section = """
+<section class="section section-alt" id="wordpress">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">WordPress SEO</span>
+      <h2>WordPress SEO: from a slow blog to a lead machine</h2>
+    </div>
+    <p style="max-width:720px;">WordPress is SEO-ready, but only when it is set up. I fix speed (LCP under 2.5s), configure one SEO plugin (Rank Math or Yoast, never both), fix the structure (permalinks, sitemap, canonicals), add schema (Organization, Article, Product for WooCommerce), and wire internal links so every page passes equity. Typical setup is 6 to 10 hours (72 to 120 EUR at 12 EUR per hour), then 2 to 4 hours per month for content and maintenance.</p>
+    <table class="metric-table" style="margin-top:24px;">
+      <tr><th>Area</th><th>Common WordPress problem</th><th>Fix</th></tr>
+      <tr><td><strong>Speed</strong></td><td>No cache, unoptimized images, slow LCP</td><td>Cache plugin, WebP, lazy loading</td></tr>
+      <tr><td><strong>SEO plugin</strong></td><td>Yoast and Rank Math installed together</td><td>Keep one, remove the other, set meta templates</td></tr>
+      <tr><td><strong>Structure</strong></td><td>/?p=123 URLs, missing sitemap, duplicates</td><td>Permalinks, sitemap, canonicals</td></tr>
+      <tr><td><strong>Schema</strong></td><td>No structured data at all</td><td>Organization, Article, Product, LocalBusiness</td></tr>
+      <tr><td><strong>Internal links</strong></td><td>Orphan posts, no links to services</td><td>At least 3 internal links per page</td></tr>
+    </table>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">For WooCommerce stores I treat the shop as an e-commerce project: product schema, category copy and a Google Merchant Center feed (see E-commerce SEO above).</p>
   </div>
 </section>"""
 
@@ -264,10 +305,11 @@ def en_services() -> tuple[str, str]:
     <h3 style="margin-bottom:14px;">Supplementary services from our partners</h3>
     <p style="max-width:720px; color:var(--text-muted);">Web design and PPC advertising are delivered together with trusted partners, so the whole project stays in one pair of hands: <a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">Flamia Studio</a> (web design) and <a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">Peter Kocur</a> (PPC advertising).</p>
   </div>
-</section>
-{linkbuilding_section}
-{eshop_section}
-{audit_section}
+    </section>
+    {linkbuilding_section}
+    {eshop_section}
+    {wordpress_section}
+    {audit_section}
 <section class="section section-alt" id="pricing">
   <div class="container">
     <div class="section-head"><span class="section-label">Pricing</span><h2>Simple, transparent pricing</h2></div>
@@ -409,42 +451,6 @@ def en_faq() -> tuple[str, str]:
     return ("en/faq/index.html", html)
 
 
-def en_blog() -> tuple[str, str]:
-    topics = [
-        ("Guide", "tag-violet", "How to choose an SEO agency (and what to watch for)",
-         "Pricing, guarantees, reports. 8 questions to ask before signing."),
-        ("Pricing", "tag-cerulean", "How much does SEO optimization cost in 2026?",
-         "A look at market prices and why you pay retainers for invisible work."),
-        ("AI search", "tag-violet-light", "How to get recommended by ChatGPT",
-         "A first guide for businesses: how AI tools decide who to recommend."),
-        ("Local SEO", "tag-violet", "Google Business Profile: a complete guide",
-         "From setup to reviews. What Google values and what it ignores."),
-    ]
-    cards = "".join(f"""
-<div class="blog-card">
-  <div><span class="project-tag {tag}">{cat}</span></div>
-  <h3>{t}</h3>
-  <p>{d}</p>
-  <div class="blog-card-foot"><span class="project-tag tag-muted">Coming soon</span><span class="blog-read" style="color:var(--text-muted);">Out soon</span></div>
-</div>""" for cat, tag, t, d in topics)
-    body = f"""
-{page_hero("Blog", "Practical articles on SEO and AI",
-           "Guides, pricing and checklists from practice. Every article targets questions real customers ask.", [("Home", "/en/"), ("Blog", None)])}
-<section class="section">
-  <div class="container">
-    <div class="blog-grid">{cards}</div>
-    <div style="text-align:center; margin-top:36px;">
-      <a href="/en/contact/?audit=1" class="btn btn-primary">Free website audit</a>
-    </div>
-  </div>
-</section>
-"""
-    html = base(market="en", path="blog/", title="Blog on SEO, Google Maps, and AI Search | Nokto Studio",
-                desc="Practical articles: how to choose an SEO agency, SEO pricing, getting recommended by ChatGPT, Google Business Profile.",
-                canonical=BASE + "/en/blog/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
-    return ("en/blog/index.html", html)
-
-
 def en_portfolio() -> tuple[str, str]:
     """Results: real numbers from GSC exports, AI Mode and client reports."""
     c_klient1 = _bars([38, 42, 61, 115, 145], _VIOLET_L,
@@ -518,7 +524,7 @@ def en_portfolio() -> tuple[str, str]:
     return ("en/portfolio/index.html", html)
 
 
-ALL = [en_home(), en_services(), en_about(), en_contact(), en_faq(), en_blog(), en_portfolio()]
+ALL = [en_home(), en_services(), en_about(), en_contact(), en_faq(), en_portfolio()]
 
 
 def en_villa_paris() -> tuple[str, str]:

@@ -5,7 +5,7 @@ Every function returns (rel_path, html) where rel_path is inside the repo.
 """
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     price_cards, steps_block, benefit_cards, schema_service,
-                    results_slider, partner_logo_card, ORG_SCHEMA, EMAIL,
+                    results_slider, partner_logo_card, related_block, ORG_SCHEMA, EMAIL,
                     LOGO, BASE, gicon)
 
 SK_ROOT = "/sk/"
@@ -73,6 +73,8 @@ PILLARS = [
 SUPPORT_SERVICES = [
     ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy",
      "Viac predaja z kategórií a produktov (Shoptet, Marketplace, Google Shopping).", "shop", "#1DACD6"),
+    ("/sk/sluzby/seo-pre-wordpress/", "SEO pre WordPress",
+     "Rýchlosť, pluginy, schéma a štruktúra. WordPress web, ktorý Google zaradí vyššie.", "code", "#6A3FC4"),
     ("/sk/sluzby/seo-audit/", "SEO audit a analýza",
      "Presný obraz toho, čo váš web brzdí, s plánom podľa priorít.", "audit", "#6A3FC4"),
     ("/sk/sluzby/linkbuilding/", "Linkbuilding",
@@ -141,6 +143,12 @@ def process_section(label: str = "Ako pracujem") -> str:
 
 
 # ---------------------------------------------------------------- HOME
+
+def _latest_cards(n: int = 3) -> str:
+    """Latest blog cards for the homepage teaser (lazy import avoids cycles)."""
+    import pages_sk2 as sk2
+    return sk2.latest_cards(n)
+
 
 def home() -> tuple[str, str]:
     h1 = ('Nech vás zákazníci nájdú v <span class="hl-violet">Google</span>, '
@@ -330,6 +338,21 @@ def home() -> tuple[str, str]:
   </div>
 </section>
 
+<!-- Z BLOGU -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Blog</span>
+      <h2>Praktické návody, ktoré práve vyšli</h2>
+      <p class="section-subheading">Nové články každý týždeň: SEO pre e-shopy, audity, WordPress a AI vyhľadávanie.</p>
+    </div>
+    <div class="blog-grid">{_latest_cards()}</div>
+    <div style="text-align:center; margin-top:28px;">
+      <a href="/sk/blog/" class="btn btn-outline">Všetky články</a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="section" style="padding-top:0;">
   <div class="container">
@@ -394,7 +417,9 @@ def sluzby() -> tuple[str, str]:
 def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
                   intro: str, for_who: list[str], deliverables: list[str],
                   faq: list[tuple[str, str]], slug: str, svc_name: str,
-                  proof: dict | None = None, time_estimate: str = "8 až 20 hodín mesačne") -> tuple[str, str]:
+                  proof: dict | None = None, time_estimate: str = "8 až 20 hodín mesačne",
+                  related_articles: list[tuple[str, str]] | None = None,
+                  related_services: list[tuple[str, str]] | None = None) -> tuple[str, str]:
     url = BASE + f"/sk/sluzby/{slug}/"
     who = "".join(f"<li>{w}</li>" for w in for_who)
     deliv = "".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliverables)
@@ -467,12 +492,14 @@ def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
   </div>
 </section>
 
-<section class="section">
+ <section class="section">
   <div class="container">
     <div class="section-head"><span class="section-label">FAQ</span><h2>Časté otázky</h2></div>
     {faq_block(faq)}
   </div>
 </section>
+
+{related_block("sk", related_articles, related_services)}
 
 <section class="section" style="padding-top:0;">
   <div class="container">
@@ -528,6 +555,16 @@ def seo_optimalizacia() -> tuple[str, str]:
             "caption": "Firemný web, ktorý som prevzal s minimálnou organickou návštevnosťou. Práca: technická oprava, obsahové stránky na reálne dopyty zákazníkov a mesačné vyhodnotenie. Rast prišiel každý mesiac, bez jednorazového skoku.",
             "source": "Zdroj: Google Search Console klienta, ukážka zo septembra 2026.",
         },
+        related_articles=[
+            ("/sk/blog/seo-optimalizacia-navod/", "SEO optimalizácia: kompletný návod 2026"),
+            ("/sk/blog/seo-test-15-bodov/", "SEO test: 15-bodový kontrolný zoznam"),
+            ("/sk/blog/kolko-stoji-seo/", "Koľko stojí SEO v roku 2026?"),
+        ],
+        related_services=[
+            ("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
+            ("/sk/sluzby/seo-pre-wordpress/", "SEO pre WordPress"),
+            ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
+        ],
     )
 
 
@@ -573,6 +610,14 @@ def lodalne_seo() -> tuple[str, str]:
             "caption": "Lokálny zákazník hľadá dvomi cestami: cez Mapy (54 % zobrazení) a cez bežné Google hľadanie (46 %). Preto drvíme obe: profil nastavený na doraz, hodnotenia prichádzajú pravidelne a web podporuje mapové pozície.",
             "source": "Zdroj: štatistiky Google firemného profilu klienta, ukážka zo septembra 2026",
         },
+        related_articles=[
+            ("/sk/blog/google-firmy-profil-navod/", "Google firemný profil: návod od založenia po hodnotenia"),
+            ("/sk/blog/seo-test-15-bodov/", "SEO test: 15-bodový kontrolný zoznam"),
+        ],
+        related_services=[
+            ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu"),
+            ("/sk/sluzby/seo-pre-ai-vyhladavace/", "SEO pre AI vyhľadávače"),
+        ],
     )
 
 
@@ -618,6 +663,69 @@ def seo_ai() -> tuple[str, str]:
             "caption": "Po nasadení nášho obsahu cituje Google AI Mode konkrétne stránky e-shopu priamo v odpovediach zákazníkom. Najviac citovaná stránka dosiahla 8 citácií, blogový článok 3. Konkurencia v AI odpovediach na tieto dotazy ešte nie je, takže prvé mená tam ostávajú.",
             "source": "Zdroj: Google AI Mode (report citácií), ukážka z augusta 2026",
         },
+        related_articles=[
+            ("/sk/blog/seo-optimalizacia-navod/", "SEO optimalizácia: kompletný návod 2026"),
+            ("/sk/blog/seo-wordpress/", "SEO pre WordPress: 12 nastavení"),
+        ],
+        related_services=[
+            ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu"),
+            ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
+        ],
+    )
+
+
+def seo_wordpress() -> tuple[str, str]:
+    """NEW 2026-10-01. Target: 'seo optimalizacia wordpress' (130 SV/mo, +82 % YoY),
+    'wordpress seo' (350 SV/mo), 'wordpress sprava webu' (100 SV/mo, +1132 %).
+    Money page for the WordPress cluster; the blog post /sk/blog/seo-wordpress/
+    covers the 12 settings, this page sells the service."""
+    return _service_page(
+        path="sluzby/seo-pre-wordpress/", slug="seo-pre-wordpress",
+        title="SEO pre WordPress: optimalizácia, ktorú Google ocení | Nokto Studio",
+        desc="SEO pre WordPress: rýchlosť, Rank Math alebo Yoast, štruktúra, schéma a interné prelinkovanie. 12 nastavení v 6 až 10 hodinách, 12 EUR za hodinu, bezplatný audit.",
+        label="Služba · SEO pre WordPress",
+        time_estimate="6 až 10 hodín vstupné nastavenie, potom 2 až 4 hodiny mesačne",
+        h1="SEO pre WordPress, z ktorého chodia dopyty",
+        intro="WordPress je na SEO pripravený, ale len keď je nastavený. Opravím rýchlosť, nastavím jeden SEO plugin, prelinkujem obsah a web začne zbierať dopyty, ktoré dnes zbiera konkurencia. WooCommerce riešim ako e-shop s produktovou schémou a feedom.",
+        for_who=[
+            "Máte WordPress web a z Google nechodia dopyty ani objednávky.",
+            "Web je pomalý, LCP je nad 2,5 sekundy alebo po aktualizácii niečo prestalo fungovať.",
+            "Neviete, či použiť Rank Math, alebo Yoast, prípadne máte nainštalované oba naraz.",
+            "Píšete blog, ale články majú nula návštev.",
+        ],
+        deliverables=[
+            "Rýchlosť: cache, WebP obrázky, lazy loading, jadro LCP pod 2,5 sekundy.",
+            "SEO plugin: jeden správny (Rank Math pre nové weby, Yoast pre existujúce) a meta šablóny.",
+            "Struktúra: permalinky, sitemap, robots.txt, kanonizácia, žiadne duplicity.",
+            "Schéma: Organization, WebSite, Article, pri WooCommerce aj Product a LocalBusiness.",
+            "Interné prelinkovanie: každá stránka má aspoň 3 odkazy na prioritné stránky.",
+            "Meranie: Search Console a GA4 nastavené tak, aby ste videli, čo každá zmena priniesla.",
+        ],
+        faq=[
+            ("Rank Math alebo Yoast? Ktorý plugin je lepší?",
+             "Rank Math pre nové weby: viac funkcií v bezplatnej verzii (komplexná schéma, AI assistant, rýchlejšia sitemap). Yoast pre existujúce weby: ak funguje, nemá zmysel migrovať. Nikdy nie oba naraz, konfliktujú a generujú duplicitné meta tagy."),
+            ("Koľko stojí SEO pre WordPress?",
+             "Vstupné nastavenie je 6 až 10 hodín (72 až 120 EUR), pravidelná práca 2 až 4 hodiny mesačne (24 až 48 EUR). Presný rozsah potvrdím po bezplatnom audite."),
+            ("Mám WooCommerce e-shop. Platí to aj pre mňa?",
+             "Áno. WooCommerce riešim ako e-shop: produktová schéma, kategórie, feed do Google Merchant Center a Heureka. Viac o tom na stránke <a href='/sk/sluzby/seo-pre-eshopy/'>SEO pre e-shopy</a>."),
+            ("Budete inštalovať pluginy do môjho webu?",
+             "Áno, s vaším schválením. Pred inštaláciou skontrolujem, čo je na webe, a po nasadení zmeriam rýchlosť. Zbytočné pluginy odstránim, každý plugin je riziko pre rýchlosť aj bezpečnosť."),
+            ("Prečo je WordPress web pomalý?",
+             "Najčastejšie: chýbajúca cache, neoptimalizované obrázky, Google Fonts z CDN, lacný hosting a množstvo pluginov. Každá z týchto vecí sa dá zmerať a opraviť, poradie určí audit."),
+            ("Viete spraviť aj technický audit WordPress webu?",
+             "Áno, je súčasťou <a href='/sk/sluzby/seo-audit/'>SEO auditu</a>. Uvidíte presne, čo brzdí pozície: indexácia, rýchlosť, duplicity, schéma a obsahové medzery."),
+        ],
+        svc_name="SEO pre WordPress",
+        related_articles=[
+            ("/sk/blog/seo-wordpress/", "SEO pre WordPress: 12 nastavení, ktoré treba spraviť"),
+            ("/sk/blog/seo-optimalizacia-navod/", "SEO optimalizácia: kompletný návod 2026"),
+            ("/sk/blog/seo-pre-eshop/", "SEO pre e-shop: 9 nastavení, ktoré prinášajú objednávky"),
+        ],
+        related_services=[
+            ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu"),
+            ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"),
+            ("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
+        ],
     )
 
 
@@ -852,6 +960,14 @@ def eshop_seo() -> tuple[str, str]:
     {faq_block(faq)}
   </div>
 </section>
+
+{related_block("sk",
+    articles=[("/sk/blog/seo-pre-eshop/", "SEO pre e-shop: 9 nastavení, ktoré prinášajú objednávky"),
+              ("/sk/blog/kolko-stoji-seo/", "Koľko stojí SEO v roku 2026?"),
+              ("/sk/blog/seo-wordpress/", "SEO pre WordPress: 12 nastavení")],
+    services=[("/sk/sluzby/seo-audit/", "SEO audit a analýza"),
+              ("/sk/sluzby/seo-pre-wordpress/", "SEO pre WordPress"),
+              ("/sk/sluzby/seo-pre-ai-vyhladavace/", "SEO pre AI vyhľadávače")])}
 
 <section class="section" style="padding-top:0;">
   <div class="container">
@@ -1111,6 +1227,13 @@ def audit_seo() -> tuple[str, str]:
     {faq_block(faq)}
   </div>
 </section>
+
+{related_block("sk",
+    articles=[("/sk/blog/seo-audit-co-to-je/", "SEO audit: čo to je, čo stojí a ako prebieha"),
+              ("/sk/blog/seo-test-15-bodov/", "SEO test: 15-bodový kontrolný zoznam"),
+              ("/sk/blog/seo-optimalizacia-navod/", "SEO optimalizácia: kompletný návod 2026")],
+    services=[("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu"),
+              ("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy")])}
 
 <section class="section" style="padding-top:0;">
   <div class="container">
@@ -1390,6 +1513,11 @@ def linkbuilding() -> tuple[str, str]:
     {faq_block(faq)}
   </div>
 </section>
+
+{related_block("sk",
+    articles=[("/sk/blog/linkbuilding-co-to-je/", "Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne")],
+    services=[("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu"),
+              ("/sk/sluzby/seo-audit/", "SEO audit a analýza")])}
 
 <section class="section" style="padding-top:0;">
   <div class="container">

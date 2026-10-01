@@ -26,7 +26,9 @@ sys.path.insert(0, str(REPO / "build"))
 import pages_sk as sk          # noqa: E402
 import pages_sk2 as sk2        # noqa: E402
 import pages_cz as cz          # noqa: E402
+import pages_cz2 as cz2        # noqa: E402
 import pages_en as en          # noqa: E402
+import pages_en2 as en2        # noqa: E402
 from engine import (BASE, HREFLANG_PAIR, EN_PAIR, EN_PAIR_REV, CZ_PATHS,  # noqa: E402
                     MARKET_HOME, MARKET_ROOTS)
 
@@ -42,6 +44,7 @@ add(sk.seo_optimalizacia())
 add(sk.lodalne_seo())
 add(sk.seo_ai())
 add(sk.eshop_seo())
+add(sk.seo_wordpress())
 add(sk.audit_seo())
 add(sk.linkbuilding())
 add(sk.cennik())
@@ -59,6 +62,8 @@ add(sk2.blog_post_seo_test())
 add(sk2.blog_post_linkbuilding())
 add(sk2.blog_post_gbp())
 add(sk2.blog_post_wordpress())
+add(sk2.blog_post_eshop())
+add(sk2.blog_post_audit())
 add(sk2.sk_redirect())
 add(sk2.sk_privacy())
 add(sk2.sk_terms())
@@ -70,6 +75,7 @@ add(cz.cz_seo_optimalizace())
 add(cz.cz_lodalne_seo())
 add(cz.cz_seo_ai())
 add(cz.cz_eshop_seo())
+add(cz.cz_seo_wordpress())
 add(cz.cz_audit())
 add(cz.cz_linkbuilding())
 add(cz.cz_cenik())
@@ -78,7 +84,9 @@ add(cz.cz_vysledky())
 add(cz.cz_vysledky_redirect())
 add(cz.cz_faq())
 add(cz.cz_kontakt())
-add(cz.cz_blog())
+add(cz2.cz_blog())
+add(cz2.blog_post_eshop())
+add(cz2.blog_post_audit())
 add(cz.cz_privacy())
 add(cz.cz_terms())
 
@@ -89,7 +97,9 @@ add(en.en_portfolio())
 add(en.en_about())
 add(en.en_contact())
 add(en.en_faq())
-add(en.en_blog())
+add(en2.en_blog())
+add(en2.blog_post_ecommerce())
+add(en2.blog_post_audit())
 add(en.en_villa_paris())
 add(en.en_privacy())
 add(en.en_terms())
@@ -116,6 +126,7 @@ SK_ENTRIES = [
     ("sluzby/lodalne-seo/",               "0.8"),
     ("sluzby/seo-pre-ai-vyhladavace/",    "0.8"),
     ("sluzby/seo-pre-eshopy/",            "0.8"),
+    ("sluzby/seo-pre-wordpress/",         "0.8"),
     ("sluzby/seo-audit/",                 "0.8"),
     ("sluzby/linkbuilding/",              "0.7"),
     ("jak-pracujeme/",      "0.8"),
@@ -131,6 +142,8 @@ SK_ENTRIES = [
     ("blog/linkbuilding-co-to-je/",       "0.5"),
     ("blog/google-firmy-profil-navod/",   "0.5"),
     ("blog/seo-wordpress/",               "0.5"),
+    ("blog/seo-pre-eshop/",               "0.5"),
+    ("blog/seo-audit-co-to-je/",          "0.5"),
     ("privacy/",            "0.2"),
     ("terms/",              "0.2"),
 ]
@@ -154,6 +167,8 @@ EN_ENTRIES = [
     ("contact/",     "0.6"),
     ("faq/",         "0.6"),
     ("blog/",        "0.5"),
+    ("blog/ecommerce-seo/", "0.5"),
+    ("blog/seo-audit-guide/", "0.5"),
     ("villa-paris/", "0.6"),
     ("privacy/",     "0.2"),
     ("terms/",       "0.2"),

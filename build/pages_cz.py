@@ -2,7 +2,7 @@
 """Nokto Studio - CZ page content (localized for Czech market, targeting CZ keywords)."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
                     steps_block, price_cards, benefit_cards, schema_service,
-                    results_slider, result_block, partner_logo_card,
+                    results_slider, result_block, partner_logo_card, related_block,
                     ORG_SCHEMA_CZ, EMAIL, BASE, PHONE_TEL, PHONE_DISPLAY, gicon, _bars, _sparkline,
                     _VIOLET_L, _VIOLET, _ORANGE, _CERULEAN)
 
@@ -83,6 +83,8 @@ CZ_PILLARS = [
 CZ_SUPPORT = [
     ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy",
      "Více prodeje z kategorií a produktů. Shoptet, Marketplace, Google Shopping.", "shop", "#1DACD6"),
+    ("/cz/sluzby/seo-pre-wordpress/", "SEO pro WordPress",
+     "Rychlost, pluginy, schéma a struktura. WordPress web, který Google zařadí výš.", "code", "#6A3FC4"),
     ("/cz/sluzby/seo-audit/", "SEO audit a analýza",
      "Přesný obraz toho, co váš web brzdí, s akčním plánem podle priorit.", "audit", "#6A3FC4"),
     ("/cz/sluzby/linkbuilding/", "Linkbuilding",
@@ -110,7 +112,7 @@ def _cz_card(href, title, text, icon, color, tag, delay, external=False):
 def cz_services_grid(cols: int = 3) -> str:
     pillars = "".join(_cz_card(*s, ["tag-violet-light", "tag-violet", "tag-orange"][i], (i + 1) * 100)
                       for i, s in enumerate(CZ_PILLARS))
-    support = "".join(_cz_card(*s, ["tag-cerulean", "tag-violet", "tag-orange"][i], (i + 1) * 100)
+    support = "".join(_cz_card(*s, ["tag-cerulean", "tag-violet", "tag-orange", "tag-violet-light"][i], (i + 1) * 100)
                       for i, s in enumerate(CZ_SUPPORT))
     partners = "".join(partner_logo_card(href, logo, title, text, (i + 1) * 100)
                        for i, (href, logo, title, text) in enumerate(CZ_PARTNERS))
@@ -271,7 +273,9 @@ def cz_home() -> tuple[str, str]:
 def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
                 intro: str, for_who: list[str], deliverables: list[str],
                 faq: list[tuple[str, str]], svc_name: str,
-                proof: dict | None = None, time_estimate: str = "8 až 20 hodin měsíčně") -> tuple[str, str]:
+                proof: dict | None = None, time_estimate: str = "8 až 20 hodin měsíčně",
+                related_articles: list[tuple[str, str]] | None = None,
+                related_services: list[tuple[str, str]] | None = None) -> tuple[str, str]:
     url = BASE + f"/cz/sluzby/{slug}/"
     who = "".join(f"<li>{w}</li>" for w in for_who)
     deliv = "".join(f'<li><span class="check">✓</span><span>{d}</span></li>' for d in deliverables)
@@ -344,12 +348,14 @@ def _cz_service(*, slug: str, title: str, desc: str, label: str, h1: str,
   </div>
 </section>
 
-<section class="section">
+ <section class="section">
   <div class="container">
     <div class="section-head"><span class="section-label">FAQ</span><h2>Časté otázky</h2></div>
     {faq_block(faq)}
   </div>
 </section>
+
+{related_block("cz", related_articles, related_services)}
 
 <section class="section" style="padding-top:0;">
   <div class="container">
@@ -428,6 +434,15 @@ def cz_seo_optimalizace() -> tuple[str, str]:
             "caption": "Firemní web, který jsem převzal s minimální organickou návštěvností. Práce: technická oprava, obsahové stránky na reálné dotazy zákazníků a měsíční vyhodnocení. Růst přicházel každý měsíc, bez jednorázového skoku.",
             "source": "Zdroj: Google Search Console klienta, ukázka ze září 2026.",
         },
+        related_articles=[
+            ("/cz/blog/seo-audit-co-to-je/", "SEO audit: co to je, kolik stojí a jak probíhá"),
+            ("/cz/blog/seo-pro-eshop/", "SEO pro e-shop: 9 nastavení, která přinášejí objednávky"),
+        ],
+        related_services=[
+            ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
+            ("/cz/sluzby/seo-pre-wordpress/", "SEO pro WordPress"),
+            ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
+        ],
     )
 
 
@@ -473,6 +488,10 @@ def cz_lodalne_seo() -> tuple[str, str]:
             "caption": "Lokální zákazník hledá dvěma cestami: přes Mapy (54 % zobrazení) a přes běžné Google hledání (46 %). Proto řešíme obojí: profil nastavený na doraz, hodnocení přicházejí pravidelně a web podporuje mapové pozice.",
             "source": "Zdroj: statistiky firemního profilu Google klienta, ukázka ze září 2026.",
         },
+        related_services=[
+            ("/cz/sluzby/seo-optimalizace/", "SEO optimalizace webu"),
+            ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
+        ],
     )
 
 
@@ -518,6 +537,62 @@ def cz_seo_ai() -> tuple[str, str]:
             "caption": "Po nasazení našeho obsahu cituje Google AI Mode konkrétní stránky e-shopu přímo v odpovědích zákazníkům. Nejvíce citovaná stránka má 8 citací, blogový článek 3. Konkurence v AI odpovědích na tyto dotazy ještě není, takže první jména tam zůstávají.",
             "source": "Zdroj: Google AI Mode (report citací), ukázka ze srpna 2026.",
         },
+        related_services=[
+            ("/cz/sluzby/seo-optimalizace/", "SEO optimalizace webu"),
+            ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
+        ],
+    )
+
+
+def cz_seo_wordpress() -> tuple[str, str]:
+    """NEW 2026-10-01. CZ mirror of /sk/sluzby/seo-pre-wordpress/.
+    Targets: 'wordpress seo plugin' (80 SV/mo), 'seo wordpress' (30, diff 38),
+    'seo optimalizace wordpress' (20). Money page for the WordPress cluster."""
+    return _cz_service(
+        slug="seo-pre-wordpress",
+        title="SEO pro WordPress: optimalizace, kterou Google ocení | Nokto Studio",
+        desc="SEO pro WordPress: rychlost, Rank Math nebo Yoast, struktura, schéma a interní prolinkování. 12 nastavení za 6 až 10 hodin, 12 EUR za hodinu, audit zdarma.",
+        label="Služba · SEO pro WordPress",
+        time_estimate="6 až 10 hodin vstupní nastavení, potom 2 až 4 hodiny měsíčně",
+        h1="SEO pro WordPress, ze kterého chodí poptávky",
+        intro="WordPress je na SEO připravený, ale jen když je nastavený. Opravím rychlost, nastavím jeden SEO plugin, prolinkuji obsah a web začne sbírat poptávky, které dnes sbírá konkurence. WooCommerce řeším jako e-shop s produktovým schématem a feedem.",
+        for_who=[
+            "Máte WordPress web a z Google nechodí poptávky ani objednávky.",
+            "Web je pomalý, LCP je nad 2,5 sekundy, nebo se po aktualizaci něco rozbilo.",
+            "Nevíte, jestli použít Rank Math, nebo Yoast, případně máte nainstalované oba.",
+            "Píšete blog, ale články mají nula návštěv.",
+        ],
+        deliverables=[
+            "Rychlost: cache, WebP obrázky, lazy loading, jádro LCP pod 2,5 sekundy.",
+            "SEO plugin: jeden správný (Rank Math pro nové weby, Yoast pro existující) a meta šablony.",
+            "Struktura: permalinky, sitemap, robots.txt, kanonizace, žádné duplicity.",
+            "Schéma: Organization, WebSite, Article, u WooCommerce i Product a LocalBusiness.",
+            "Interní prolinkování: každá stránka má alespoň 3 odkazy na prioritní stránky.",
+            "Měření: Search Console a GA4 nastavené tak, abyste viděli, co každá změna přinesla.",
+        ],
+        faq=[
+            ("Rank Math, nebo Yoast? Který plugin je lepší?",
+             "Rank Math pro nové weby: více funkcí v bezplatné verzi (komplexní schéma, AI asistent, rychlejší sitemap). Yoast pro existující weby: pokud funguje, nemá smysl migrovat. Nikdy ne oba naráz, konfliktují a generují duplicitní meta tagy."),
+            ("Kolik stojí SEO pro WordPress?",
+             "Vstupní nastavení je 6 až 10 hodin (72 až 120 EUR), pravidelná práce 2 až 4 hodiny měsíčně (24 až 48 EUR). Přesný rozsah potvrdím po bezplatném auditu."),
+            ("Mám WooCommerce e-shop. Platí to i pro mě?",
+             "Ano. WooCommerce řeším jako e-shop: produktové schéma, kategorie, feed do Google Merchant Center a Heureky. Více na stránce <a href='/cz/sluzby/seo-pre-eshopy/'>SEO pro e-shopy</a>."),
+            ("Budete instalovat pluginy do mého webu?",
+             "Ano, s vaším schválením. Před instalací zkontroluji, co na webu je, a po nasazení změřím rychlost. Zbytečné pluginy odstraním, každý plugin je riziko pro rychlost i bezpečnost."),
+            ("Proč je WordPress web pomalý?",
+             "Nejčastěji: chybějící cache, neoptimalizované obrázky, Google Fonts z CDN, levný hosting a množství pluginů. Každá z těchto věcí se dá změřit a opravit, pořadí určí audit."),
+            ("Umíte i technický audit WordPress webu?",
+             "Ano, je součástí <a href='/cz/sluzby/seo-audit/'>SEO auditu</a>. Uvidíte přesně, co brzdí pozice: indexace, rychlost, duplicity, schéma a obsahové mezery."),
+        ],
+        svc_name="SEO pro WordPress",
+        related_articles=[
+            ("/cz/blog/seo-pro-eshop/", "SEO pro e-shop: 9 nastavení, která přinášejí objednávky"),
+        ],
+        related_services=[
+            ("/cz/sluzby/seo-optimalizace/", "SEO optimalizace webu"),
+            ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy"),
+            ("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
+        ],
     )
 
 
@@ -752,6 +827,13 @@ def cz_eshop_seo() -> tuple[str, str]:
 
 <section class="section" style="padding-top:0;">
   <div class="container">
+{related_block("cz",
+    articles=[("/cz/blog/seo-pro-eshop/", "SEO pro e-shop: 9 nastavení, která přinášejí objednávky"),
+              ("/cz/blog/seo-audit-co-to-je/", "SEO audit: co to je, kolik stojí a jak probíhá")],
+    services=[("/cz/sluzby/seo-audit/", "SEO audit a analýza"),
+              ("/cz/sluzby/seo-pre-wordpress/", "SEO pro WordPress"),
+              ("/cz/sluzby/seo-pre-ai-vyhledavace/", "SEO pro AI vyhledávače")])}
+
     {cta_band("Chcete vědět, co by tato služba přinesla vašemu e-shopu?", "Bezplatný audit a 30 minut času. Žádné závazky, s reálnými čísly tržeb.", "cz")}
   </div>
 </section>
@@ -1009,6 +1091,12 @@ def cz_audit() -> tuple[str, str]:
 
 <section class="section" style="padding-top:0;">
   <div class="container">
+{related_block("cz",
+    articles=[("/cz/blog/seo-audit-co-to-je/", "SEO audit: co to je, kolik stojí a jak probíhá"),
+              ("/cz/blog/seo-pro-eshop/", "SEO pro e-shop: 9 nastavení, která přinášejí objednávky")],
+    services=[("/cz/sluzby/seo-optimalizace/", "SEO optimalizace webu"),
+              ("/cz/sluzby/seo-pre-eshopy/", "SEO pro e-shopy")])}
+
     {cta_band("Chcete vědět, co by audit odhalil na vašem webu?", "Bezplatný vstupní audit do 3 dnů. 30 minut hovoru, žádné závazky.", "cz")}
   </div>
 </section>
@@ -1283,6 +1371,10 @@ def cz_linkbuilding() -> tuple[str, str]:
 
 <section class="section" style="padding-top:0;">
   <div class="container">
+{related_block("cz",
+    services=[("/cz/sluzby/seo-optimalizace/", "SEO optimalizace webu"),
+              ("/cz/sluzby/seo-audit/", "SEO audit a analýza")])}
+
     {cta_band("Chcete vědět, co by tato služba přinesla vašemu webu?", "Bezplatný audit link profilu a 30 minut času. Žádné závazky.", "cz")}
   </div>
 </section>
@@ -1743,47 +1835,6 @@ def cz_kontakt() -> tuple[str, str]:
                 desc="Bezplatný vstupní audit webu. Napište adresu webu a e-mail, audit vám pošleme do 1 až 2 pracovních dní. Nebo zavolejte +421 917 316 105.",
                 canonical=BASE + "/cz/kontakt/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
     return ("cz/kontakt/index.html", html)
-
-
-def cz_blog() -> tuple[str, str]:
-    topics = [
-        ("Návod", "tag-violet", "SEO optimalizace: kompletní návod 2026",
-         "Krok za krokem od auditu po měření. Postup pro malé firmy, s reálnými čísly z praxe."),
-        ("Ceník", "tag-cerulean", "Kolik stojí SEO v 2026?",
-         "Ceny na českém trhu a co za ně dostanete. Proč je cena 12 EUR za hodinu veřejná."),
-        ("SEO test", "tag-violet-light", "SEO test: 15bodový kontrolní seznam pro váš web",
-         "Projděte si web sami za 30 minut: technika, obsah, firemní profil Google a AI viditelnost."),
-        ("Linkbuilding", "tag-orange", "Linkbuilding: co to je, co stojí a jak se dělá bezpečně",
-         "Co jsou zpětné odkazy, reálné ceny a bezpečné metody. Co Google sankcionuje."),
-        ("Lokální SEO", "tag-violet", "Firemní profil Google: návod od založení po hodnocení",
-         "Založení, ověření, kategorie, fotky a hodnocení. Návod s případovou studií."),
-        ("WordPress", "tag-cerulean", "SEO pro WordPress: 12 nastavení, která je třeba udělat",
-         "Rychlost, permalinky, schéma a pluginy. 12 konkrétních nastavení."),
-    ]
-    cards = "".join(f"""
-<div class="blog-card">
-  <div><span class="project-tag {tag}">{cat}</span></div>
-  <h3>{t}</h3>
-  <p>{d}</p>
-  <div class="blog-card-foot"><span class="project-tag tag-muted">Připravujeme</span><span class="blog-read" style="color:var(--text-muted);">Vychází brzy</span></div>
-</div>""" for cat, tag, t, d in topics)
-    body = f"""
-{page_hero("Blog", "Praktické články o SEO a AI",
-           "Návody, ceny a kontrolní seznamy z praxe. Každý článek vychází z dotazů, které zákazníci reálně hledají.", [("Domů", "/cz/"), ("Blog", None)])}
-<section class="section">
-  <div class="container">
-    <div class="blog-grid">{cards}</div>
-    <div style="text-align:center; margin-top:36px;">
-      <p style="color:var(--text-muted);">Chcete vědět, co by SEO znamenalo pro váš web? Objednejte audit zdarma.</p>
-      <a href="/cz/kontakt/?audit=1" class="btn btn-primary" style="margin-top:14px;">Audit webu zdarma</a>
-    </div>
-  </div>
-</section>
-"""
-    html = base(market="cz", path="blog/", title="Blog o SEO, Mapách Google a AI vyhledávačích | Nokto Studio",
-                desc="Praktické články: SEO návod krok za krokem, kolik stojí SEO v roce 2026, SEO test webu, linkbuilding, firemní profil Google a SEO pro WordPress.",
-                canonical=BASE + "/cz/blog/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ)
-    return ("cz/blog/index.html", html)
 
 
 def cz_privacy() -> tuple[str, str]:

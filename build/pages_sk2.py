@@ -517,16 +517,30 @@ _BLOG_META = {
     "seo-wordpress": dict(
         title="SEO pre WordPress: 12 nastavení, ktoré treba spraviť | Nokto Studio",
         desc="SEO pre WordPress: permalinky, rýchlosť, schéma, sitemap a pluginy. 12 konkrétnych nastavení, ktoré posunú vaše pozície."),
+    "seo-pre-eshop": dict(
+        title="SEO pre e-shop: 9 nastavení, ktoré prinášajú objednávky | Nokto Studio",
+        desc="SEO pre e-shop od kategórií po Merchant Center: 9 nastavení, ktoré prinášajú objednávky z Google. Reálne skúsenosti, ceny a časté chyby."),
+    "seo-audit-co-to-je": dict(
+        title="SEO audit: čo to je, čo stojí a ako prebieha | Nokto Studio",
+        desc="SEO audit jednoducho: čo obsahuje, koľko stojí (od 180 EUR, vstupný zdarma) a ako z auditu spraviť plán s prioritami. Príklad z praxe."),
 }
 
 
 def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
               faq: list[tuple[str, str]], related: list[tuple[str, str]],
+              services: list[tuple[str, str]] | None = None,
               date_iso: str = "2026-09-10", date_display: str = "10. 9. 2026") -> tuple[str, str]:
     """Render one blog post page: direct answer first, sections, FAQ, CTA."""
-    related_html = "".join(
-        f'<div class="benefit-card card-hover related-card"><h3><a href="/sk/blog/{u}/" style="color:var(--text);">{n}</a></h3></div>'
-        for u, n in related)
+    rel_cards = ""
+    for u, n in related:
+        rel_cards += (f'<div class="benefit-card card-hover related-card">'
+                      f'<span class="project-tags"><span class="project-tag tag-violet">Článok</span></span>'
+                      f'<h3><a href="/sk/blog/{u}/" style="color:var(--text);">{n}</a></h3></div>')
+    for u, n in (services or []):
+        rel_cards += (f'<div class="benefit-card card-hover related-card">'
+                      f'<span class="project-tags"><span class="project-tag tag-cerulean">Služba</span></span>'
+                      f'<h3><a href="{u}" style="color:var(--text);">{n}</a></h3></div>')
+    related_html = rel_cards
     # answer goes to the takeaway box; drop the duplicated in-body section
     sections = re.sub(r"<h2>Stručná odpoveď</h2>\s*<p>.*?</p>", "", sections, count=1, flags=re.S)
     body = f"""
@@ -557,7 +571,7 @@ def blog_post(*, slug: str, label: str, h1: str, answer: str, sections: str,
 
 <section class="section" style="padding-top:0;">
   <div class="container" style="max-width:820px;">
-    <div class="section-head"><span class="section-label">Prečítať aj</span><h2>Súvisiace články</h2></div>
+    <div class="section-head"><span class="section-label">Prečítať aj</span><h2>Súvisiace články a služby</h2></div>
     <div class="grid-2">{related_html}</div>
   </div>
 </section>
@@ -707,6 +721,7 @@ def blog_post_navod() -> tuple[str, str]:
                      answer="SEO optimalizácia krok za krokom: audit, plán s číslami, týždenná práca a mesačné meranie. Návod pre malé firmy s reálnymi číslami z praxe: 250 klikov za 3 mesiace.",
                      sections=sections, faq=faq,
                      related=[("kolko-stoji-seo", "Koľko stojí SEO v roku 2026?"), ("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam")],
+                     services=[("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu"), ("/sk/sluzby/seo-audit/", "SEO audit a analýza")],
                      date_iso="2026-09-16", date_display="16. 9. 2026")
 
 
@@ -837,6 +852,7 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
                      answer="SEO stojí 120 až 180 EUR mesačne pri hodinovej spolupráci (12 EUR/hod), 300 až 1 500 EUR pri agentúrach. Reálny ROI: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov.",
                      sections=sections, faq=faq,
                      related=[("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod"), ("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam")],
+                     services=[("/sk/cennik/", "Cenník: 12 EUR za hodinu"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
                      date_iso="2026-09-16", date_display="16. 9. 2026")
     body = f"""
 {page_hero("Blog", "Praktické články o SEO a AI",
@@ -1070,6 +1086,7 @@ def blog_post_seo_test() -> tuple[str, str]:
                      answer="SEO test za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Každý zlyhaný bod je konkrétna úspora zákazníkov. Bezplatne, bez nástrojov.",
                      sections=sections, faq=faq,
                      related=[("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod"), ("kolko-stoji-seo", "Koľko stojí SEO v roku 2026?")],
+                     services=[("/sk/sluzby/seo-audit/", "SEO audit a analýza"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
                      date_iso="2026-09-16", date_display="16. 9. 2026")
 
 
@@ -1197,6 +1214,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
                      answer="Linkbuilding je získavanie spätných odkazov z iných webov. Reálna cena na slovenskom trhu: 50 až 800 EUR za odkaz. Bezpečné metódy, konkrétne domény a first-party prípad s 250 klikmi za 3 mesiace.",
                      sections=sections, faq=faq,
                      related=[("kolko-stoji-seo", "Koľko stojí SEO v roku 2026?"), ("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod")],
+                     services=[("/sk/sluzby/linkbuilding/", "Linkbuilding"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
                      date_iso="2026-09-16", date_display="16. 9. 2026")
 
 
@@ -1325,6 +1343,7 @@ def blog_post_gbp() -> tuple[str, str]:
                      answer="Google firemný profil nastavíte za 8 hodín: založenie, kategórie, fotky, Q&A, hodnotenia cez SMS a QR kód. Návod s prípadovou štúdiou: 359 zobrazení profilu za mesiac.",
                      sections=sections, faq=faq,
                      related=[("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam"), ("seo-wordpress", "SEO pre WordPress: 12 nastavení")],
+                     services=[("/sk/sluzby/lodalne-seo/", "Lokálne SEO a Google firemný profil"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
                      date_iso="2026-09-16", date_display="16. 9. 2026")
 
 
@@ -1423,27 +1442,173 @@ def blog_post_wordpress() -> tuple[str, str]:
                      date_iso="2026-09-16", date_display="16. 9. 2026")
 
 
+def blog_post_eshop() -> tuple[str, str]:
+    """NEW 2026-10-01. Target: 'seo optimalizace eshopu' (CZ 460 SV/mo, diff 34),
+    'eshop seo' (SK 30, komerčný), GSC 'seo pre eshopy' (pos 65). Supports the
+    /sk/sluzby/seo-pre-eshopy/ money page. E-shop pillar for the content plan wave 1."""
+    sections = """
+<h2>Čo je SEO pre e-shop</h2>
+<p>SEO pre e-shop je práca na tom, aby zákazník, ktorý hľadá konkrétny produkt alebo kategóriu, skončil vo vašom obchode a objednal. Nie je to o návštevnosti, ale o objednávkach. Rozdiel oproti firemnému webu je v rozsahu: e-shop má tisíce URL (kategórie, produkty, filtre, značky) a každá z nich môže buď zarábať, alebo kanibalizovať inú. Preto e-shop SEO stojí na štruktúre, dátach a obsahu, nie na jednom triku.</p>
+
+<h2>9 nastavení, ktoré rozhodujú o objednávkach</h2>
+<h3>1. Kategórie: texty, ktoré zodpovedajú nákupný dopyt</h3>
+<p>Kategória je najsilnejšia stránka e-shopu: zbiera dopyt typu "kúpiť + produkt" a rozdeľuje autoritu produktom. Text kategórie píšte v rozsahu 250 až 400 slov: čo kategória obsahuje, ako vybrať, na čo si dať pozor. Prvých 60 slov musí byť priama odpoveď pre zákazníka aj pre AI vyhľadávače. Vyhnite sa frázam typu "sme najlepší", píšte parametre a rozhodovacie kritériá.</p>
+<h3>2. Produkty: titulky a parametre na reálne dopyty</h3>
+<p>Produktový titulok skladajte ako značka + model + parameter. Ľudia hľadajú "stolička 40 cm" alebo "stan pre 4 osoby", nie "stolička super ponuka". Parametre (rozmery, materiál, kompatibilita) dajte do tabuľky, Google z nich skladá long-tail zhody. A pozor na duplicitné popisy od dodávateľa: ak má rovnaký text desať ďalších e-shopov, Google nemá dôvod ukázať práve vás.</p>
+<h3>3. Filtre a parametre: canonical a indexácia</h3>
+<p>Filtrované URL (farba, veľkosť, značka) vytvárajú tisíce duplicít. Riešenie: canonical na základnú kategóriu, noindex na kombinácie bez dopytu a index len tam, kde existuje reálne hľadanie (napríklad "drevené stoličky"). Toto jedno nastavenie vie zachrániť crawl budget aj pozície.</p>
+<h3>4. Produktová schéma a rich results</h3>
+<p>Product schema (cena, dostupnosť, hodnotenia, doprava) posúva výsledok do rich results s cenou a hviezdičkami. Vyšší CTR pri rovnakom rozpočte. Schéma musí sedieť s obsahom stránky, inak hrozí manuálna penalizácia.</p>
+<h3>5. Google Merchant Center a Heureka</h3>
+<p>Feed do Google Merchant Center vás pustí do nákupných výsledkov a Performance Max, Heureka do porovnávačov. Feed a SEO sa dopĺňajú: opravený produktový titulok pomôže obom kanálom. Základ je čistý produktový feed: titulky, GTIN, ceny, dostupnosť, obrázky.</p>
+<h3>6. Interné prelinkovanie</h3>
+<p>Kategória odkazuje na podkategórie a top produkty, blog odkazuje na produkty v texte, "súvisiace produkty" dostanú druhú šancu. Pravidlo: každá dôležitá stránka má aspoň 3 interné odkazy z relevantného kontextu. Bez prelinkovania zostanú produkty na piatej strane, aj keď majú najlepšie titulky.</p>
+<h3>7. Rýchlosť a Core Web Vitals</h3>
+<p>E-shopy sú ťažké: veľa obrázkov, filtrov a skriptov. Cieľ: LCP pod 2,5 s (hero obrázok vo WebP, lazy loading), INP pod 200 ms (minimalizovať blokujúci JavaScript z filtrov), CLS pod 0,1 (fixné rozmery obrázkov). Rýchlosť priamo ovplyvňuje konverziu aj pozície.</p>
+<h3>8. Obsah podľa nákupnej fázy</h3>
+<p>Kategórie pokrývajú "kupujem", blog pokrýva "vyberám" a "porovnávam". Návody typu "ako si vybrať", porovnania a FAQ zachytávajú zákazníka pred rozhodnutím a privádzajú ho na produkt. Presne tento obsah vaša konkurencia často nemá a AI nástroje ho radi citujú.</p>
+<h3>9. Meranie objednávok z organického</h3>
+<p>Rozhoduje objednávka a tržba z organického vyhľadávania. GA4 s e-commerce eventmi, Search Console pre dopyty a pozície, e-shopový systém pre reálne objednávky. Ak sa čísla nedajú spárovať, SEO nemá dôkaz. Meriame objednávky, nie pocity.</p>
+
+<h2>Reálny výsledok z praxe</h2>
+<p>Na projekte Mikramt (menší e-shop na vlastnej platforme) priniesla deväťmesačná práca 15 objednávok a 2 492,75 EUR tržieb z organického a emailového kanála, s najväčšou objednávkou 722 EUR. Pracovali sme na kategóriách (predtým prázdne texty), štruktúrovaných dátach, Google Merchant Center a emailových sekvenciách. Číslo nie je obrovské, ale je reálne a merateľné, čo je pri SEO dôležitejšie ako sľuby.</p>
+
+<h2>Časté chyby, ktoré brzdia e-shopy</h2>
+<ul>
+<li>Duplicitné produktové popisy od dodávateľa bez vlastného textu.</li>
+<li>Prázdne kategórie bez textu, ktoré Google vyhodnotí ako tenký obsah.</li>
+<li>noindex omylom nasadený na kategórie, často po migrácii.</li>
+<li>Rozbitá indexácia filtrov: tisíce URL v indexe bez dopytu.</li>
+<li>Meranie len cez celkovú návštevnosť, bez objednávok z organického.</li>
+</ul>
+
+<h2>Za aký čas a čo to stojí</h2>
+<p>Long-tail produkty a menšie kategórie sa hýbu za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov, podľa konkurencie a stavu webu. Práca je 10 až 15 hodín mesačne, teda 120 až 180 EUR mesačne pri sadzbe 12 EUR za hodinu, plus náklady na odkazy a prípadný obsah. Presný rozsah vždy potvrdzuje bezplatný audit.</p>
+"""
+    faq = [
+        ("Koľko stojí SEO pre e-shop?",
+         "Práca je 10 až 15 hodín mesačne, teda 120 až 180 EUR pri sadzbe 12 EUR za hodinu. Vstupné nastavenie (technika, štruktúra, feed) je 6 až 10 hodín jednorazovo. Náklady na odkazy a obsah sa vykazujú zvlášť, bez prirážky."),
+        ("Ako dlho trvá, kým prídu prvé objednávky z organického?",
+         "Long-tail produkty a menšie kategórie za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov. Pri novom e-shope bez autority je prvý mesiac o technike a štruktúre, objednávky prichádzajú postupne s tým, ako Google stránky preindexuje."),
+        ("Stačí mi SEO modul v Shoptete?",
+         "SEO modul zvládne titulky, popisky a sitemap, to je dobrý základ. Nedorieši texty kategórií, produktové popisy, interné prelinkovanie, obsah podľa nákupnej fázy ani meranie objednávok z organického. Presne tieto veci rozhodujú o pozíciách v konkurencii."),
+        ("Mám duplicitné popisy od dodávateľa. Je to problém?",
+         "Áno. Ak má rovnaký popis desať e-shopov, Google nemá dôvod uprednostniť práve vás. Riešenie: vlastný úvodný odsek s parametrami a rozhodovacími kritériami pri každom dôležitom produkte, zvyšok môže zostať od dodávateľa."),
+        ("Je lepšie investovať do Google Shopping alebo do SEO?",
+         "Dopĺňajú sa. Shopping prináša objednávky hneď, ale platíte za každý klik. SEO rastie pomalšie, ale objednávka z organického je lacnejšia a ostáva vám. Zdravý e-shop má oba kanály a feed do Merchant Center je základ pre oba."),
+        ("Ako zmeriam objednávky z organického vyhľadávania?",
+         "GA4 s e-commerce eventmi (purchase), Search Console pre dopyty a pozície a e-shopový systém pre reálne objednávky. V reporte spájame tieto tri zdroje, aby ste videli, ktoré stránky a dopyty prinášajú tržby, nie len návštevnosť."),
+        ("Robíte aj WooCommerce e-shopy?",
+         "Áno. WooCommerce riešim cez <a href='/sk/sluzby/seo-pre-wordpress/'>SEO pre WordPress</a>: rýchlosť, produktová schéma, feed a štruktúra. Princípy sú rovnaké ako pri Shoptete, líši sa len technické prostredie."),
+        ("Pre koho má e-shop SEO najväčší zmysel?",
+         "Pre e-shopy, ktoré už predávajú a majú čo optimalizovať: existujúce kategórie, produkty a aspoň základné tržby. Pri úplne novom e-shope bez produktov a bez rozpočtu na obsah odporúčam najprv vyriešiť ponuku a potom SEO."),
+    ]
+    return blog_post(slug="seo-pre-eshop", label="E-shop", h1="SEO pre e-shop: 9 nastavení, ktoré prinášajú objednávky",
+                     answer="SEO pre e-shop stojí na 9 nastaveniach: texty kategórií, produktové titulky na reálne dopyty, filtrácia a canonical, produktová schéma, feed do Merchant Center, interné prelinkovanie, rýchlosť, obsah podľa nákupnej fázy a meranie objednávok. Rozhodujú objednávky, nie návštevnosť.",
+                     sections=sections, faq=faq,
+                     related=[("seo-wordpress", "SEO pre WordPress: 12 nastavení"), ("kolko-stoji-seo", "Koľko stojí SEO v roku 2026?")],
+                     services=[("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"), ("/sk/sluzby/seo-audit/", "SEO audit a analýza")],
+                     date_iso="2026-10-01", date_display="1. 10. 2026")
+
+
+def blog_post_audit() -> tuple[str, str]:
+    """NEW 2026-10-01. Target: 'audit seo' (SK 500 SV/mo), 'seo audit' (CZ 610 SV/mo),
+    GSC 'audit webu' (pos 74), 'hodnotenie webu seo audit' (pos 90). Supports the
+    /sk/sluzby/seo-audit/ money page. Audit pillar for the content plan wave 1."""
+    sections = """
+<h2>Čo je SEO audit</h2>
+<p>SEO audit je systematická kontrola webu, ktorá odpovedá na tri otázky: prečo web neuspeje v Google, čo presne opraviť a v akom poradí. Obsahuje technickú časť (indexácia, rýchlosť, duplicity, štruktúra), obsahovú (titulky, kľúčové slová, medzery voči konkurencii) a autoritu (spätné odkazy, signály E-E-A-T). Výstupom nie je PDF do šuflíka, ale plán s prioritami a odhadom hodín.</p>
+
+<h2>Vstupný, technický a komplexný audit: aký je rozdiel</h2>
+<table class="metric-table">
+<tr><th>Typ</th><th>Čo rieši</th><th>Cena</th><th>Kedy ho chcete</th></tr>
+<tr><td><strong>Vstupný audit</strong></td><td>10 najväčších problémov a šancí na jednej strane</td><td>zdarma</td><td>prvý kontakt, rýchla orientácia</td></tr>
+<tr><td><strong>Technický audit</strong></td><td>indexácia, rýchlosť, duplicity, štruktúra URL</td><td>od 180 EUR</td><td>pred migráciou alebo pri prepade</td></tr>
+<tr><td><strong>Komplexný SEO audit</strong></td><td>technika + obsah + kľúčové slová + konkurencia + plán</td><td>240 až 480 EUR</td><td>pred ročným plánom a rozpočtom</td></tr>
+</table>
+
+<h2>Ako prebieha: 5 krokov</h2>
+<ol>
+<li>Zber dát: Search Console, GA4, sitemap a prístupy.</li>
+<li>Crawl webu: indexácia, chyby, duplicity, rýchlosť (Screaming Frog a PageSpeed Insights).</li>
+<li>Analýza dopytu: na čo ľudia hľadajú, kde ste viditeľní a kde nie.</li>
+<li>Poradie priorít: dopad na objednávky a dopyty proti prácnosti.</li>
+<li>Plán: čo, kedy a za koľko hodín, s merateľnými cieľmi.</li>
+</ol>
+
+<h2>Čo audit obsahuje</h2>
+<h3>Technika (12 bodov)</h3>
+<p>Indexácia, sitemap, robots.txt, canonical, duplicity, rýchlosť (LCP, INP, CLS), HTTPS, štruktúrované dáta, hreflang, interné prelinkovanie, 404 a presmerovania, mobilná verzia.</p>
+<h3>Obsah a kľúčové slová (10 bodov)</h3>
+<p>Titulky a popisky, H1 a hierarchia, tenký obsah, kanibalizácia, kľúčové slová s objemami, SERP analýza, obsahové medzery voči konkurencii, alt texty, signály E-E-A-T, obsah pre AI odpovede.</p>
+<h3>Autorita (5 bodov)</h3>
+<p>Profil spätných odkazov, toxické odkazy, odkazový náskok konkurencie, citácie a zmienky, lokálne profily.</p>
+
+<h2>Ako čítať výsledok auditu</h2>
+<p>Dobrý audit má priority P1 (spravte hneď, najväčší dopad), P2 (do mesiaca) a P3 (priebežne). Pri každej položke je dopad a odhad práce. Ak dostanete 60 strán bez poradia, nedostali ste audit, ale zoznam želaní. Pýtajte sa na dve čísla: koľko hodín to zaberie a čo to prinesie.</p>
+
+<h2>Koľko stojí SEO audit na Slovensku</h2>
+<p>Vstupný audit je u nás zdarma a dostanete ho do 3 pracovných dní: 10 najväčších problémov a šancí na jednej strane. Detailný audit je od 180 EUR (technický) do 480 EUR (komplexný), počíta sa hodinovou sadzbou 12 EUR. Pri pokračujúcej spolupráci je detailný audit súčasťou prvého mesiaca, takže neplatíte dvakrát.</p>
+
+<h2>Príklad z praxe</h2>
+<p>Web s približne 300 stránkami: audit našiel 6 konkrétnych obsahových stránok, ktoré na webe chýbali. Po ich nasadení vzrástli zobrazenia o 11 000 mesačne (+14 %) a kliky o 43 % za týždeň. Audit nehľadal 50 vecí, našiel 6, ktoré pohnú celým webom. Takto má vyzerať výsledok auditu.</p>
+
+<h2>Kedy audit nepotrebujete</h2>
+<p>Ak máte úplne nový web s piatimi stránkami, audit je zbytočný, rovno nastavte základy: titulky, štruktúru, Search Console a Google profil. Ak je web zdravý a rastie, stačí štvrťročná kontrola. Audit má zmysel pri prepade, pred migráciou, pri stagnácii a pred veľkým rozpočtom.</p>
+"""
+    faq = [
+        ("Čo je SEO audit?",
+         "Systematická kontrola webu, ktorá odpovedá na tri otázky: prečo web neuspeje v Google, čo presne opraviť a v akom poradí. Zahŕňa techniku, obsah a autoritu, výstupom je plán s prioritami a odhadom hodín, nie PDF do šuflíka."),
+        ("Koľko stojí SEO audit?",
+         "Vstupný audit (10 najväčších problémov na jednej strane) je zdarma do 3 pracovných dní. Technický audit od 180 EUR, komplexný audit s obsahom a plánom 240 až 480 EUR. Pri pokračujúcej spolupráci je audit súčasťou prvého mesiaca."),
+        ("Ako dlho audit trvá?",
+         "Vstupný audit do 3 pracovných dní. Detailný audit 5 až 10 pracovných dní podľa rozsahu webu a dostupnosti prístupov. Pri veľkých e-shopoch s tisíckami URL aj dva týždne."),
+        ("Stačí mi online audit zdarma z internetu?",
+         "Automatické nástroje nájdu časť technických problémov: rýchlosť, meta tagy, chýbajúce alt texty. Nenájdu obsahové medzery, kanibalizáciu, priority ani kontext vášho trhu. Bezplatné nástroje sú dobrý štart, nie audit."),
+        ("Aký je rozdiel medzi SEO auditom a technickým auditom?",
+         "Technický audit rieši len strojovú časť: indexácia, rýchlosť, duplicity, štruktúra. Komplexný SEO audit k tomu pridáva obsah, kľúčové slová, konkurenciu a plán. Ak web neindexuje alebo sa prepadol, stačí vám technický. Ak stagnuje, potrebujete komplexný."),
+        ("Zaručí audit prvé pozície v Google?",
+         "Nie a nikto seriózny to nezaručí. Audit zaručí, že budete presne vedieť, čo brzdí váš web a čo opraviť ako prvé. To je najlepší základ pre výsledky, ale výsledky závisia aj od konkurencie a rozpočtu."),
+        ("Čo potrebujete odo mňa pre audit?",
+         "Prístup do Google Search Console (stačí prideliť oprávnenie), adresu webu a ak máte, prístup do GA4. Vstupný audit zvládnem aj bez prístupov, len z verejných dát a crawlu."),
+        ("Čo ak audit nájde veľa chýb?",
+         "To je normálne, každý web má desiatky menších chýb. Podstatné je poradie: 20 % opráv prináša 80 % výsledkov. Presne preto má audit priority P1 až P3 a pri každej položke dopad aj odhad hodín."),
+    ]
+    return blog_post(slug="seo-audit-co-to-je", label="SEO audit", h1="SEO audit: čo to je, čo stojí a ako prebieha",
+                     answer="SEO audit je systematická kontrola webu, ktorá odpovedá na tri otázky: prečo web neuspeje v Google, čo opraviť a v akom poradí. Vstupný audit je zdarma do 3 dní, technický od 180 EUR, komplexný 240 až 480 EUR.",
+                     sections=sections, faq=faq,
+                     related=[("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam"), ("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod")],
+                     services=[("/sk/sluzby/seo-audit/", "SEO audit a analýza"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
+                     date_iso="2026-10-01", date_display="1. 10. 2026")
+
+
 # ---------------------------------------------------------------- BLOG LISTING
 
 # Blog card data. Excerpts are the direct answers of each article, read dates
 # match the launch date. No search-volume badges on the public page.
 _BLOG_CARDS = [
-    dict(slug="seo-optimalizacia-navod", cat="Návod", tag="tag-violet",
+    dict(slug="seo-pre-eshop", cat="E-shop", tag="tag-cerulean", date="1. 10. 2026",
+         title="SEO pre e-shop: 9 nastavení, ktoré prinášajú objednávky",
+         excerpt="Kategórie, produkty, filtre, schéma, Merchant Center, prelinkovanie, rýchlosť a meranie objednávok. Čo naozaj rozhoduje o objednávkach z Google."),
+    dict(slug="seo-audit-co-to-je", cat="SEO audit", tag="tag-violet", date="1. 10. 2026",
+         title="SEO audit: čo to je, čo stojí a ako prebieha",
+         excerpt="Vstupný, technický a komplexný audit: rozdiely, ceny (od 180 EUR, vstupný zdarma), 5 krokov a ako čítať priority P1 až P3."),
+    dict(slug="seo-optimalizacia-navod", cat="Návod", tag="tag-violet", date="16. 9. 2026",
          title="SEO optimalizácia: kompletný návod 2026",
          excerpt="SEO optimalizácia krok za krokom: audit, plán s číslami, týždenná práca a mesačné meranie. Postup pre malé firmy, s reálnymi číslami z praxe."),
-    dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-cerulean",
+    dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-cerulean", date="16. 9. 2026",
          title="Koľko stojí SEO v roku 2026?",
          excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, pri hodinovej spolupráci od 120 EUR mesačne. Prečo je cena 12 EUR za hodinu verejná a čo za ňu dostanete."),
-    dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-violet-light",
+    dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-violet-light", date="16. 9. 2026",
          title="SEO test: 15-bodový kontrolný zoznam pre váš web",
          excerpt="Prejdite si web sami za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Za každým zlyhaným bodom je konkrétna oprava."),
-    dict(slug="linkbuilding-co-to-je", cat="Linkbuilding", tag="tag-orange",
+    dict(slug="linkbuilding-co-to-je", cat="Linkbuilding", tag="tag-orange", date="16. 9. 2026",
          title="Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne",
          excerpt="Čo sú spätné odkazy, reálna cena 50 až 300 EUR, bezpečné metódy a čo Google sankcionuje. Návod s príkladmi z praxe."),
-    dict(slug="google-firmy-profil-navod", cat="Lokálne SEO", tag="tag-violet",
+    dict(slug="google-firmy-profil-navod", cat="Lokálne SEO", tag="tag-violet", date="16. 9. 2026",
          title="Google firemný profil: návod od založenia po hodnotenia",
          excerpt="Založenie, overenie, kategórie, fotky a hodnotenia cez SMS a QR kód. Profil nastavíte za 8 hodín, návod s prípadovou štúdiou."),
-    dict(slug="seo-wordpress", cat="WordPress", tag="tag-cerulean",
+    dict(slug="seo-wordpress", cat="WordPress", tag="tag-cerulean", date="16. 9. 2026",
          title="SEO pre WordPress: 12 nastavení, ktoré treba spraviť",
          excerpt="Permalinky, sitemap, rýchlosť, meta titulky a schéma. 12 konkrétnych nastavení, ktoré posunú pozície WordPress webu."),
 ]
@@ -1456,8 +1621,13 @@ def _blog_card(c: dict, featured: bool = False) -> str:
   <div><span class="project-tag {c['tag']}">{c['cat']}</span></div>
   <h3>{c['title']}</h3>
   <p>{c['excerpt']}</p>
-  <div class="blog-card-foot"><span class="blog-date">10. 9. 2026</span><span class="blog-read">Čítať článok →</span></div>
+  <div class="blog-card-foot"><span class="blog-date">{c.get('date', '16. 9. 2026')}</span><span class="blog-read">Čítať článok →</span></div>
 </a>"""
+
+
+def latest_cards(n: int = 3) -> str:
+    """Latest blog cards, used by the homepage teaser."""
+    return "".join(_blog_card(c) for c in _BLOG_CARDS[:n])
 
 
 def blog() -> tuple[str, str]:
