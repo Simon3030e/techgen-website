@@ -354,6 +354,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
   <link rel="canonical" href="{canonical}">
 {hreflang}
   <meta name="msvalidate.01" content="3b43ea1af0ee49f082ab3c4e94ed5f4f">
+  <meta name="google-site-verification" content="np1uzdVrceOrWA4HhduUl6JaUupw1as8DDwqcVg3sHs">
     <link rel="icon" href="{asset}assets/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{asset}assets/css/main.css">
   <link rel="stylesheet" href="{asset}assets/css/components.css">
@@ -477,6 +478,23 @@ def footer(market: str, prefix: str) -> str:
     for title, links in cols:
         links_html = "".join(f'<a href="{h}">{t}</a>' for h, t in links)
         foot_cols += f'<div class="footer-col"><h4>{title}</h4>{links_html}</div>'
+    # Sesterské weby: the niche satellite sites (reciprocal link, they link back).
+    sisters_label, sisters = {
+        "sk": ("Špecializované weby", [
+            ("https://seopreeshopy.pro/", "SEO pre e-shopy"),
+            ("https://seoaudit.blog/", "SEO audity"),
+            ("https://seoprewordpress.info/", "SEO pre WordPress")]),
+        "cz": ("Specializované weby", [
+            ("https://seopreeshopy.pro/cz/", "SEO pro e-shopy"),
+            ("https://seoaudit.blog/cz/", "SEO audity"),
+            ("https://seoprewordpress.info/cz/", "SEO pro WordPress")]),
+        "en": ("Specialised sites", [
+            ("https://seopreeshopy.pro/", "SEO for e-shops"),
+            ("https://seoaudit.blog/", "SEO audits"),
+            ("https://seoprewordpress.info/", "SEO for WordPress")]),
+    }[market]
+    sisters_html = ' <span style="color:var(--text-muted);">·</span> '.join(
+        f'<a href="{u}">{t}</a>' for u, t in sisters)
     return f"""
 <footer class="site-footer">
   <div class="container">
@@ -487,6 +505,7 @@ def footer(market: str, prefix: str) -> str:
       </div>
       {foot_cols}
     </div>
+    <p class="footer-sisters" style="margin:18px 0 0; font-size:0.9rem; color:var(--text-muted);"><span style="font-weight:600;">{sisters_label}:</span> {sisters_html}</p>
     <div class="footer-bottom">
       <span>{foot_copy}</span>
       <span>{foot_tagline}</span>
