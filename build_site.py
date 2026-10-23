@@ -93,6 +93,7 @@ add(cz.cz_terms())
 # ---------------------------------------------------------------- EN pages
 add(en.en_home())
 add(en.en_services())
+add(en.en_pricing())
 add(en.en_portfolio())
 add(en.en_about())
 add(en.en_contact())
@@ -162,6 +163,7 @@ EN_ENTRIES = [
     # (path after /en/, priority)
     ("",             "1.0"),
     ("services/",    "0.9"),
+    ("pricing/",     "0.9"),
     ("portfolio/",   "0.7"),
     ("about/",       "0.6"),
     ("contact/",     "0.6"),

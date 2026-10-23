@@ -49,8 +49,9 @@ CZ_PATHS = {
     "blog/seo-pro-eshop/", "blog/seo-audit-co-to-je/",
 }
 EN_PATHS = {
-    "", "services/", "about/", "contact/", "faq/", "blog/", "portfolio/",
+    "", "services/", "pricing/", "about/", "contact/", "faq/", "blog/", "portfolio/",
     "villa-paris/", "privacy/", "terms/",
+    "blog/ecommerce-seo/", "blog/seo-audit-guide/",
 }
 LANG_PATHS = {"sk": SK_PATHS, "cz": CZ_PATHS, "en": EN_PATHS}
 
@@ -89,6 +90,7 @@ HREFLANG_PAIR = {
 EN_PAIR = {
     "": "",
     "sluzby/": "services/",
+    "cennik/": "pricing/",
     "kontakt/": "contact/",
     "o-nas/": "about/",
     "faq/": "faq/",
@@ -198,7 +200,7 @@ def nav_items(market: str) -> list[tuple[str, str]]:
                 ("Kontaktujte mě", "/cz/kontakt/")]
     else:
         svc = ("Services", "/en/services/", [
-            ("/en/services/#ai", "AI search visibility"),
+            ("/en/services/#ai", "AI visibility"),
             ("/en/services/#seo", "Google visibility"),
             ("/en/services/#local", "Google Maps visibility"),
             ("/en/services/#eshop", "E-commerce SEO"),
@@ -206,9 +208,9 @@ def nav_items(market: str) -> list[tuple[str, str]]:
             ("/en/services/#audit", "SEO audit and analysis"),
             ("/en/services/#links", "Link building"),
         ])
-        rest = [("Pricing", "/en/services/#pricing"), ("About", "/en/about/"),
-                ("Portfolio", "/en/portfolio/"), ("Blog", "/en/blog/"),
-                ("Contact us", "/en/contact/")]
+        rest = [("Pricing", "/en/pricing/"), ("How I work", "/en/about/"),
+                ("Results", "/en/portfolio/"), ("Blog", "/en/blog/"),
+                ("Contact me", "/en/contact/")]
     return [svc] + rest
 
 
@@ -447,14 +449,18 @@ def footer(market: str, prefix: str) -> str:
         ]
     else:
         cols = [
-            ("Services", [("/en/services/", "All services"),
-                          ("/en/services/#seo", "SEO & AI visibility"),
-                          ("/en/services/#local", "Local SEO & Google Maps"),
+            ("Services", [("/en/services/#seo", "SEO optimization"),
+                          ("/en/services/#local", "Local SEO and Business Profile"),
+                          ("/en/services/#ai", "SEO for AI search engines"),
                           ("/en/services/#eshop", "E-commerce SEO"),
-                          ("/en/services/#wordpress", "WordPress SEO")]),
-            ("Agency", [("/en/about/", "How we work"),
-                        ("/en/services/#pricing", "Pricing"),
-                        ("/en/portfolio/", "Portfolio"),
+                          ("/en/services/#wordpress", "WordPress SEO"),
+                          ("/en/services/#audit", "SEO audit and analysis"),
+                          ("/en/services/#links", "Link building")]),
+            ("Partners", [("https://flamia.studio", "Flamia Studio: web design"),
+                          ("https://peterkocur.sk", "Peter Kocur: PPC advertising")]),
+            ("Agency", [("/en/about/", "How I work"),
+                        ("/en/pricing/", "Pricing"),
+                        ("/en/portfolio/", "Results"),
                         ("/en/blog/", "Blog"),
                         ("/en/faq/", "FAQ")]),
             ("Contact", [(f"mailto:{EMAIL}", EMAIL),
@@ -630,24 +636,28 @@ def _json_str(s: str) -> str:
 
 
 def price_cards(cards: list[dict], market: str) -> str:
-    """cards: [{hours, price, monthly, featured, name, items[], cta}]  price shown = h*12 EUR"""
+    """cards: [{name, hours, price, featured, badge, items[], cta}]
+
+    The retainer price is shown as the headline number; the hours line stays
+    honest when a rounded price covers slightly more than whole hours.
+    """
+    default_badge = {"sk": "Najčastejšia voľba", "cz": "Nejčastější volba", "en": "Most popular"}[market]
+    btn_label = {"sk": "Nezáväznú ponuku", "cz": "Nezávaznou nabídku", "en": "Get a quote"}[market]
+    period = {"sk": "mesiac", "cz": "měsíc", "en": "month"}[market]
+    work = {"sk": "práce / mesiac", "cz": "práce / měsíc", "en": "hours of work / month"}[market]
     out = []
     for c in cards:
         feat = " featured" if c.get("featured") else ""
-        badge = '<span class="price-badge">Najčastejšia voľba</span>' if c.get("featured") else ""
-        if market == "cz":
-            badge = '<span class="price-badge">Nejčastější volba</span>' if c.get("featured") else ""
-        elif market == "en":
-            badge = '<span class="price-badge">Most popular</span>' if c.get("featured") else ""
+        badge = ""
+        if c.get("featured"):
+            badge = f'<span class="price-badge">{c.get("badge", default_badge)}</span>'
         lis = "".join(f"<li>{i}</li>" for i in c["items"])
-        btn_label = {"sk": "Nezáväznú ponuku", "cz": "Nezávaznou nabídku", "en": "Get a quote"}[market]
-        period = {"sk": "mesiac", "cz": "měsíc", "en": "month"}[market]
+        hours_label = f"cca {c['hours']} h" if c["price"] != c["hours"] * 12 else f"{c['hours']} h"
         out.append(f"""
 <div class="price-card{feat}">
-  {badge}
-  <span class="price-hours">{c['name']}</span>
+  {badge}<span class="price-hours">{c['name']}</span>
   <div class="price-amount">{c['price']}<small> EUR / {period}</small></div>
-  <div class="price-monthly"><strong>{c['hours']} {'hodín' if market == 'sk' else ('hodin' if market == 'cz' else 'hours')}</strong> × 12 EUR / {'h' if market == 'en' else 'hod.'}</div>
+  <div class="price-monthly"><strong>{hours_label}</strong> {work}</div>
   <ul>{lis}</ul>
   <a href="{KONTAKT_LINK[market]}" class="btn btn-primary">{btn_label}</a>
 </div>""")

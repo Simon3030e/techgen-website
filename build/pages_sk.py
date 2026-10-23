@@ -18,7 +18,7 @@ TRUST_STATS = """
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
         <span class="trust-num tn-violet">12&nbsp;EUR</span>
-        <span class="trust-label">transparentná hodinová<br>sadzba, bez paušálov</span>
+        <span class="trust-label">transparentná hodinová<br>sadzba, bez viazanosti</span>
       </div>
       <div class="trust-stat reveal" data-delay="200">
         <span class="trust-num tn-orange">0 EUR</span>
@@ -156,8 +156,8 @@ def home() -> tuple[str, str]:
     sub = ("Volám sa Šimon Štermenský a SEO robím pre podnikateľov bez platenej reklamy: "
            "pomáham klientom rásť v Google a AI vyhľadávaní písaním obsahu a opravami "
            "technických vecí na webe, tak aby vás zákazníci našli, keď hľadajú vaše "
-           "produkty a služby. Za transparentných 12 EUR za hodinu. Bez paušálov, "
-           "bez pevných zmlúv, s reportom, ktorému rozumiete.")
+           "produkty a služby. Za transparentných 12 EUR za hodinu. Retainery od 120 EUR, "
+           "bez viazanosti, s reportom, ktorému rozumiete.")
 
     body = f"""
 <!-- HERO -->
@@ -184,8 +184,6 @@ def home() -> tuple[str, str]:
 
 {TRUST_STATS}
 {LOGOS}
-
-{results_slider("sk")}
 
 <!-- PRE KOHO -->
 <section class="section">
@@ -243,12 +241,12 @@ def home() -> tuple[str, str]:
     <div class="section-head">
       <span class="section-label">Cenník</span>
       <h2>12 EUR za hodinu. Platíte len za prácu.</h2>
-      <p class="section-subheading">Žiadne mesačné paušály, pri ktorých neviete, čo obsahujú. Každá hodina je vykázaná v reporte.</p>
+      <p class="section-subheading">Retainery od 120 do 290 EUR podľa rozsahu. Každá hodina je vykázaná v reporte.</p>
     </div>
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>za hodinu práce</small></div>
-        <p style="margin-top:8px; max-width:520px;">Balíčky sú len odporúčané rozsahy. Kedykoľvek ich môžete meniť, bez sankcií.</p>
+        <p style="margin-top:8px; max-width:520px;">Balíčky sú odporúčané mesačné retainery. Kedykoľvek ich môžete meniť, bez sankcií.</p>
       </div>
       <a href="/sk/cennik/" class="btn btn-primary btn-lg">Pozrieť celý cenník</a>
     </div>
@@ -278,7 +276,7 @@ def home() -> tuple[str, str]:
             <span class="project-tag tag-violet-light">Email marketing</span>
             <span class="project-tag tag-orange">Lokálne SEO + GEO</span>
           </div>
-          <a href="/sk/kontakt/" class="btn btn-outline" style="margin-top:20px;">Povedať si viac</a>
+          <a href="/sk/kontakt/" class="btn btn-outline">Povedať si viac</a>
         </div>
       </div>
       <div class="project-card card-hover">
@@ -296,7 +294,7 @@ def home() -> tuple[str, str]:
             <span class="project-tag tag-cerulean">Copywriting</span>
             <span class="project-tag tag-orange">Lokálne SEO</span>
           </div>
-          <a href="/sk/villa-paris/" class="btn btn-outline" style="margin-top:20px;">Čítať celý príbeh</a>
+          <a href="/sk/villa-paris/" class="btn btn-outline">Čítať celý príbeh</a>
         </div>
       </div>
     </div>
@@ -373,7 +371,7 @@ def home() -> tuple[str, str]:
 
 HOME_FAQ = [
     ("Koľko stojí SEO optimalizácia webu?",
-     "Za prácu platíte 12 EUR za hodinu. Malý web zvládnem za 10 hodín mesačne (120 EUR), väčší e-shop za 40 hodín (180 EUR). Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
+     "Za prácu platíte 12 EUR za hodinu. Malý web zvládnem za 10 hodín mesačne (120 EUR), e-shop za 15 hodín (180 EUR), pri väčšom rozsahu 18 až 24 hodín (220 až 290 EUR). Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
     ("Ako dlho trvá, kým SEO prinesie výsledky?",
      "Prvé pohyby vidíte na menej konkurenčných kľúčových slovách zvyčajne za 2 až 4 mesiace. Na hlavné dotazy v konkurenčných odvetviach trvá 6 až 12 mesiacov. Reálne termíny vám poviem už v audite."),
     ("Budem vidieť, za čo platím?",
@@ -1537,20 +1535,27 @@ CENNIK_PACKAGES = [
     {"name": "Malý web", "hours": 10, "price": 120,
      "items": ["Audit webu a kľúčové slová (opakovanie)", "Technická oprava webu", "2 obsahové stránky alebo prepisy", "Firemný Google profil v poriadku", "Mesačný report"],
      "cta": "/sk/kontakt/"},
-    {"name": "Stredný web / e-shop", "hours": 15, "price": 180, "featured": True,
-     "items": ["Všetko z balíčka Štart", "4 až 6 obsahových stránok mesačne", "Optimalizácia pre AI vyhľadávače", "Interné prelinkovanie a CRO tipy", "Linkbuilding (2 až 3 odkazy)", "Mesačný report a hovor 30 min"],
+    {"name": "Stredný web / e-shop", "hours": 15, "price": 180,
+     "items": ["Všetko z balíčka Malý web", "4 až 6 obsahových stránok mesačne", "Optimalizácia pre AI vyhľadávače", "Interné prelinkovanie a CRO tipy", "Linkbuilding (2 až 3 odkazy)", "Mesačný report a hovor 30 min"],
+     "cta": "/sk/kontakt/"},
+    {"name": "Rast", "hours": 18, "price": 220, "featured": True,
+     "badge": "Odporúčaný retainer",
+     "items": ["Všetko z balíčka Stredný web", "6 až 8 obsahových stránok alebo blogov mesačne", "2 analýzy konkurencie mesačne", "AI viditeľnosť: monitoring ChatGPT, Gemini a AI Overviews", "Linkbuilding (4 odkazy)", "Mesačný report a hovor 30 min"],
+     "cta": "/sk/kontakt/"},
+    {"name": "Autorita", "hours": 24, "price": 290,
+     "items": ["Všetko z balíčka Rast", "8 až 12 obsahových stránok alebo blogov mesačne", "Hĺbková analýza a kvartálny plán", "AI viditeľnosť: tracking dotazov a odporúčaní", "Linkbuilding (6 odkazov)", "Prioritná komunikácia a hovor 60 min"],
      "cta": "/sk/kontakt/"},
 ]
 
 CENNIK_FAQ = [
     ("Koľko stojí SEO optimalizácia webu?",
-     "Retainer 120 až 180 EUR mesačne, podľa rozsahu webu a práce. Malý firemný web 120 EUR (10 hodín), stredný web alebo e-shop 180 EUR (15 hodín). Presný rozsah potvrdím v pláne po bezplatnom audite."),
+     "Retainer 120 až 290 EUR mesačne podľa rozsahu webu a práce. Malý firemný web 120 EUR (10 hodín), stredný web alebo e-shop 180 EUR (15 hodín), rastový retainer 220 EUR (cca 18 hodín) a autorita 290 EUR (cca 24 hodín). Presný rozsah potvrdím v pláne po bezplatnom audite."),
     ("Prečo je to lacnejšie než konkurencia?",
      "Nemám kancelárie ani manažérske vrstvy. Veľkú časť práce vykonávajú automatizované nástroje, ktoré som si sám postavil, a odborný čas vkladám tam, kde sa počíta. Úspory prenášam na vás."),
     ("Čo je zahrnuté v cene?",
      "Všetko okrem reklamných výdavkov a nákladov na odkazy či nástroje tretích strán. Tie vám vykazujem v skutočnej cene, bez prirážky."),
     ("Musím platiť mesačne vopred?",
-     "Fakturujem mesačne dozadu za skutočne odpracované hodiny, s faktúrou. Paušál nie je potrebný."),
+     "Fakturujem mesačne dozadu za skutočne odpracované hodiny, s faktúrou. Retainer je odporúčaný rozsah, nie záväzok."),
     ("Môžem spoluprácu kedykoľvek skončiť?",
      "Áno, mesačný cyklus môžete kedykoľvek ukončiť, bez sankcií a bez viazanosti. Dôveru si zaslúžime výsledkami."),
     ("Ako viem, že práca bola odvedená?",
@@ -1560,8 +1565,8 @@ CENNIK_FAQ = [
 
 def cennik() -> tuple[str, str]:
     body = f"""
-{page_hero("Cenník", "Cenník: 12 EUR za hodinu, bez paušálov",
-           "Platíte za odpracované hodiny. Každá hodina je vykazovaná v reporte. Spoluprácu môžete skončiť kedykoľvek.",
+{page_hero("Cenník", "Cenník: 12 EUR za hodinu, retainery od 120 EUR",
+           "Platíte za odpracované hodiny. Retainer je odporúčaný mesačný rozsah, ktorý môžete kedykoľvek zmeniť alebo skončiť.",
            [("Domov", "/"), ("Cenník", None)])}
 
 <section class="section">
@@ -1580,8 +1585,8 @@ def cennik() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Balíčky</span>
-      <h2>Odporúčané rozsahy, nie povinné paušály</h2>
-      <p class="section-subheading">Balíček je odporúčaný rozsah hodín na mesiac. Môžete ho kedykoľvek zmeniť, pozastaviť alebo skončiť.</p>
+      <h2>Odporúčané mesačné retainery</h2>
+      <p class="section-subheading">Retainer je odporúčaný rozsah hodín na mesiac. Môžete ho kedykoľvek zmeniť, pozastaviť alebo skončiť, bez sankcií.</p>
     </div>
     {price_cards(CENNIK_PACKAGES, "sk")}
   </div>
@@ -1632,7 +1637,7 @@ def cennik() -> tuple[str, str]:
 </section>
 """
     faq_html = faq_schema(CENNIK_FAQ, BASE + "/sk/cennik/")
-    html = base(market="sk", path="cennik/", title="Cenník SEO: 12 EUR za hodinu, bez paušálov | Nokto Studio",
-                desc="SEO cenník s transparentnou hodinovou sadzbou 12 EUR. Balíčky od 120 EUR mesačne, bez pevných zmlúv. bezplatný audit",
+    html = base(market="sk", path="cennik/", title="Cenník SEO: 12 EUR/hod a retainery od 120 EUR | Nokto Studio",
+                desc="SEO cenník s transparentnou hodinovou sadzbou 12 EUR. Retainery 120, 180, 220 a 290 EUR mesačne podľa rozsahu, bez viazanosti. Bezplatný audit.",
                 canonical=BASE + "/sk/cennik/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
     return ("sk/cennik/index.html", html)

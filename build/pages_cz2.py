@@ -126,11 +126,11 @@ def blog_post_eshop() -> tuple[str, str]:
 </ul>
 
 <h2>Za jak dlouho a co to stojí</h2>
-<p>Long-tail produkty a menší kategorie se hýbou za 2 až 4 měsíce, hlavní kategorie za 6 až 12 měsíců, podle konkurence a stavu webu. Práce je 10 až 15 hodin měsíčně, tedy 120 až 180 EUR měsíčně při sazbě 12 EUR za hodinu, plus náklady na odkazy a případný obsah. Přesný rozsah vždy potvrzuje bezplatný audit.</p>
+<p>Long-tail produkty a menší kategorie se hýbou za 2 až 4 měsíce, hlavní kategorie za 6 až 12 měsíců, podle konkurence a stavu webu. Práce je 10 až 15 hodin měsíčně, tedy 120 až 180 EUR měsíčně při sazbě 12 EUR za hodinu, u většího rozsahu 220 až 290 EUR. Náklady na odkazy a případný obsah se účtují zvlášť. Přesný rozsah vždy potvrzuje bezplatný audit.</p>
 """
     faq = [
         ("Kolik stojí SEO pro e-shop?",
-         "Práce je 10 až 15 hodin měsíčně, tedy 120 až 180 EUR při sazbě 12 EUR za hodinu. Vstupní nastavení (technika, struktura, feed) je 6 až 10 hodin jednorázově. Náklady na odkazy a obsah se vykazují zvlášť, bez přirážky."),
+         "Práce je 10 až 15 hodin měsíčně, tedy 120 až 180 EUR při sazbě 12 EUR za hodinu, u většího rozsahu 220 až 290 EUR. Vstupní nastavení (technika, struktura, feed) je 6 až 10 hodin jednorázově. Náklady na odkazy a obsah se vykazují zvlášť, bez přirážky."),
         ("Jak dlouho trvá, než přijdou první objednávky z organiky?",
          "Long-tail produkty a menší kategorie za 2 až 4 měsíce, hlavní kategorie za 6 až 12 měsíců. U nového e-shopu bez autority je první měsíc o technice a struktuře, objednávky přicházejí postupně s tím, jak Google stránky zaindexuje."),
         ("Stačí mi SEO modul ve Shoptetu?",
@@ -259,10 +259,11 @@ def cz_blog() -> tuple[str, str]:
 <section class="section">
   <div class="container">
     <div class="blog-grid">{_blog_card(featured, featured=True)}{cards}</div>
-    <p style="text-align:center; margin-top:32px; color:var(--text-muted);">Další články vycházejí každý týden: lokální SEO, firemní profil Google, AI vyhledávání, Shoptet a další.</p>
-    <div style="text-align:center; margin-top:18px;">
-      <a href="/cz/kontakt/?audit=1" class="btn btn-primary">Audit webu zdarma</a>
-    </div>
+  </div>
+</section>
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    {cta_band("Chcete článek jako první?", "Začněme bezplatným auditem, z něho vychází i obsahový plán.", "cz")}
   </div>
 </section>
 """

@@ -14,7 +14,7 @@ CZ_TRUST = """
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
         <span class="trust-num tn-violet">12&nbsp;EUR</span>
-        <span class="trust-label">transparentní hodinová<br>sazba, žádné paušály</span>
+        <span class="trust-label">transparentní hodinová<br>sazba, bez závazků</span>
       </div>
       <div class="trust-stat reveal" data-delay="200">
         <span class="trust-num tn-orange">0 EUR</span>
@@ -32,6 +32,36 @@ CZ_TRUST = """
   </div>
 </div>
 """
+
+CZ_LOGOS = """
+<section class="logo-strip-section">
+  <p class="logo-strip-heading">Značky, se kterými jsem pracoval</p>
+  <div class="marquee-viewport">
+    <div class="marquee-track">
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.cz"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.cz"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.cz"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.cz"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+    </div>
+  </div>
+</section>
+"""
+
+
+def _cz_latest_cards(n: int = 3) -> str:
+    """Latest CZ blog cards for the homepage teaser (lazy import avoids cycles)."""
+    import pages_cz2 as cz2
+    return cz2.latest_cards(n)
 
 CZ_PROCESS_STEPS = [
     {"title": "Bezplatný audit", "text": "Začínáme 30minutovým hovorem a bezplatným auditem webu. Uvidíte přesně, co brzdí pozice, prodej a doporučení v AI."},
@@ -60,7 +90,7 @@ def cz_process_section(label: str = "Jak pracuji") -> str:
 
 CZ_HOME_FAQ = [
     ("Kolik stojí SEO optimalizace webu?",
-     "Za práci platíte 12 EUR za hodinu. Menší web zvládnu za 10 hodin měsíčně (120 EUR), větší e-shop za 40 hodin (180 EUR). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
+     "Za práci platíte 12 EUR za hodinu. Menší web zvládnu za 10 hodin měsíčně (120 EUR), e-shop za 15 hodin (180 EUR), při větším rozsahu 18 až 24 hodin (220 až 290 EUR). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
     ("Jak dlouho trvá, než SEO přinese výsledky?",
      "První pohyby na méně konkurenčních klíčových slovech obvykle do 2 až 4 měsíců. Na hlavní dotazy v konkurenčních oborech 6 až 12 měsíců. Realistické termíny řeknu už v auditu."),
     ("Uvidím, za co platím?",
@@ -130,7 +160,7 @@ def cz_home() -> tuple[str, str]:
     sub = ("Jmenuji se Šimon Štermenský a SEO dělám pro podnikatele bez placené reklamy: "
            "pracuji na obsahu webu, technické stránce webu a profilu na Google Mapách, "
            "aby vás zákazníci našli, když hledají vaše produkty a služby. Za transparentních "
-           "12 EUR za hodinu. Bez paušálů, bez pevných smluv, s reportem, kterému rozumíte.")
+           "12 EUR za hodinu. Retainery od 120 EUR, bez závazků, s reportem, kterému rozumíte.")
 
     body = f"""
 <section class="hero">
@@ -155,8 +185,7 @@ def cz_home() -> tuple[str, str]:
 </section>
 
 {CZ_TRUST}
-
-{results_slider("cz")}
+{CZ_LOGOS}
 
 <!-- PRE KOHO -->
 <section class="section">
@@ -213,18 +242,80 @@ def cz_home() -> tuple[str, str]:
     <div class="section-head">
       <span class="section-label">Ceník</span>
       <h2>12 EUR za hodinu. Platíte jen za odvedenou práci.</h2>
-      <p class="section-subheading">Žádné měsíční paušály, u kterých nevíte, co obsahují. Každá hodina je vykazována v reportu.</p>
+      <p class="section-subheading">Retainery od 120 do 290 EUR podle rozsahu. Každá hodina je vykazována v reportu.</p>
     </div>
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>za hodinu práce</small></div>
-        <p style="margin-top:8px; max-width:520px;">Balíčky jsou jen doporučené rozsahy. Kdykoliv je můžete měnit, bez sankcí.</p>
+        <p style="margin-top:8px; max-width:520px;">Balíčky jsou doporučené měsíční retainery. Kdykoliv je můžete měnit, bez sankcí.</p>
       </div>
       <a href="/cz/cenik/" class="btn btn-primary btn-lg">Zobrazit celý ceník</a>
     </div>
   </div>
 </section>
 
+
+<!-- CASE STUDY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Případová studie</span>
+      <h2>Villa Paris: značka, web a lokální SEO od nuly</h2>
+      <p class="section-subheading">Prémiové ubytování v Piešťanech s jediným cílem: více přímých rezervací bez provizí portálů.</p>
+    </div>
+    <div class="grid-2">
+      <div class="project-card card-hover">
+        <div class="project-card-body">
+          <h3>E-shop se školními pomůckami (klient)</h3>
+          <p>Vlastní e-shop s API integrací na účetní systém pro regionálního dodavatele. Za 9 měsíců jsem vygeneroval online tržby připsané kanálům e-mail a organické vyhledávání Google. Součástí je e-mail marketing, lokální SEO a optimalizace pro AI vyhledávače, tak aby značku doporučovaly ChatGPT i Google AI Overviews.</p>
+          <div class="case-result">
+            <div><strong>2 492,75 EUR</strong><span>tržby za 9 měsíců</span></div>
+            <div><strong>15</strong><span>objednávek z e-mailu a organického vyhledávání</span></div>
+            <div><strong>722 EUR</strong><span>největší objednávka</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag tag-cerulean">E-shop SEO</span>
+            <span class="project-tag tag-violet-light">E-mail marketing</span>
+            <span class="project-tag tag-orange">Lokální SEO + GEO</span>
+          </div>
+          <a href="/cz/kontakt/" class="btn btn-outline">Chci vědět víc</a>
+        </div>
+      </div>
+      <div class="project-card card-hover">
+        <div class="project-card-body">
+          <h3>Villa Paris, Piešťany</h3>
+          <p>Rebrand, nový web, hotelový copywriting a lokální SEO v jednom systému. Cílem bylo, aby host pochopil hodnotu ubytování dřív, než porovná konkurenci, a rezervoval přímo.</p>
+          <div class="case-result">
+            <div><strong>Rebrand</strong><span>identita + logo</span></div>
+            <div><strong>Web</strong><span>nová struktura</span></div>
+            <div><strong>Lokální SEO</strong><span>firemní profil</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag tag-violet">Branding</span>
+            <span class="project-tag tag-violet-light">Web design</span>
+            <span class="project-tag tag-cerulean">Copywriting</span>
+            <span class="project-tag tag-orange">Lokální SEO</span>
+          </div>
+          <a href="/sk/villa-paris/" class="btn btn-outline">Číst celý příběh (SK)</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/cz/vysledky/" class="btn btn-outline">Všechny výsledky</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head"><span class="section-label">Časté otázky</span><h2>Nejdůležitější odpovědi</h2></div>
+    {faq_block(CZ_HOME_FAQ)}
+    <div style="text-align:center; margin-top:28px;">
+      <a href="/cz/faq/" class="btn btn-outline">Všechny časté otázky</a>
+    </div>
+  </div>
+</section>
 
 <!-- KDO ZA TYM STOJI -->
 <section class="section section-alt" id="o-mne">
@@ -244,18 +335,22 @@ def cz_home() -> tuple[str, str]:
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- Z BLOGU -->
 <section class="section section-alt">
   <div class="container">
-    <div class="section-head"><span class="section-label">Časté otázky</span><h2>Nejdůležitější odpovědi</h2></div>
-    {faq_block(CZ_HOME_FAQ)}
+    <div class="section-head">
+      <span class="section-label">Blog</span>
+      <h2>Praktické návody, které právě vyšly</h2>
+      <p class="section-subheading">Nové články každý týden: SEO pro e-shopy, audity, WordPress a AI vyhledávání.</p>
+    </div>
+    <div class="blog-grid">{_cz_latest_cards()}</div>
     <div style="text-align:center; margin-top:28px;">
-      <a href="/cz/faq/" class="btn btn-outline">Všechny časté otázky</a>
+      <a href="/cz/blog/" class="btn btn-outline">Všechny články</a>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding-top:0;">
   <div class="container">
     {cta_band("Začněte bezplatným auditem", "30 minut telefonátu a bezplatný audit vašeho webu. Dozvíte se, co brzdí vaše pozice a prodej, i když se nakonec rozhodnete pro jinou cestu.", "cz")}
   </div>
@@ -1389,22 +1484,29 @@ def cz_linkbuilding() -> tuple[str, str]:
 
 CZ_PACKAGES = [
     {"name": "Malý web", "hours": 10, "price": 120,
-     "items": ["Audit webu a analýza klíčových slov", "Technická oprava webu", "2 obsahové stránky nebo přepisy", "Firemní profil Google v pořádku", "Měsíční report: 30minutový hovor se mnou"],
+     "items": ["Audit webu a analýza klíčových slov", "Technická oprava webu", "2 obsahové stránky nebo přepisy", "Firemní profil Google v pořádku", "Měsíční report"],
      "cta": "/cz/kontakt/"},
-    {"name": "Střední web / e-shop", "hours": 15, "price": 180, "featured": True,
-     "items": ["Vše ze startu", "4 až 6 obsahových stránek měsíčně", "Optimalizace pro AI vyhledávače", "Interní prolinkování a CRO tipy", "Linkbuilding (2 až 3 odkazy)", "Měsíční report a hovor 30 min"],
+    {"name": "Střední web / e-shop", "hours": 15, "price": 180,
+     "items": ["Vše z balíčku Malý web", "4 až 6 obsahových stránek měsíčně", "Optimalizace pro AI vyhledávače", "Interní prolinkování a CRO tipy", "Linkbuilding (2 až 3 odkazy)", "Měsíční report a hovor 30 min"],
+     "cta": "/cz/kontakt/"},
+    {"name": "Růst", "hours": 18, "price": 220, "featured": True,
+     "badge": "Doporučený retainer",
+     "items": ["Vše z balíčku Střední web", "6 až 8 obsahových stránek nebo blogů měsíčně", "2 analýzy konkurence měsíčně", "AI viditelnost: monitoring ChatGPT, Gemini a AI Overviews", "Linkbuilding (4 odkazy)", "Měsíční report a hovor 30 min"],
+     "cta": "/cz/kontakt/"},
+    {"name": "Autorita", "hours": 24, "price": 290,
+     "items": ["Vše z balíčku Růst", "8 až 12 obsahových stránek nebo blogů měsíčně", "Hloubková analýza a kvartální plán", "AI viditelnost: tracking dotazů a doporučení", "Linkbuilding (6 odkazů)", "Prioritní komunikace a hovor 60 min"],
      "cta": "/cz/kontakt/"},
 ]
 
 CZ_CENIK_FAQ = [
     ("Kolik stojí SEO optimalizace webu?",
-     "Platíte 12 EUR za každou odpracovanou hodinu. Firemní web obvykle potřebuje 10 hodin měsíčně (120 EUR), e-shop 10 až 15 hodin (120 až 180 EUR). Rozsah si nastavíte sami a můžete ho kdykoliv měnit."),
+     "Retainer 120 až 290 EUR měsíčně podle rozsahu webu a práce. Malý firemní web 120 EUR (10 hodin), střední web nebo e-shop 180 EUR (15 hodin), růstový retainer 220 EUR (cca 18 hodin) a autorita 290 EUR (cca 24 hodin). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
     ("Proč je to levnější než konkurence?",
      "Nemáme kanceláře ani manažerské vrstvy. Práci automatizujeme tam, kde automatizace nic nezkazí, a odbornou energii dáváme tam, kde se počítá. Úspory přenášíme na vás."),
     ("Co je v ceně zahrnuto?",
      "Vše kromě reklamních výdajů a nákladů na odkazy či nástroje třetích stran. Ty vám vykazuji ve skutečné ceně, bez přirážky."),
     ("Musím platit měsíčně předem?",
-     "Fakturuji měsíčně zpětně za skutečně odpracované hodiny, s fakturou. Paušál není potřeba."),
+     "Fakturuji měsíčně zpětně za skutečně odpracované hodiny, s fakturou. Retainer je doporučený rozsah, ne závazek."),
     ("Můžu spolupráci kdykoliv ukončit?",
      "Ano, kdykoliv, bez sankcí a bez závazků. Důvěru si zasloužíme výsledky."),
     ("Jak vím, že práce byla odvedena?",
@@ -1414,8 +1516,8 @@ CZ_CENIK_FAQ = [
 
 def cz_cenik() -> tuple[str, str]:
     body = f"""
-{page_hero("Ceník", "Ceník: 12 EUR za hodinu, bez paušálů",
-           "Platíte za odpracované hodiny. Každá hodina je vykazována v reportu. Spolupráci můžete kdykoliv ukončit.",
+{page_hero("Ceník", "Ceník: 12 EUR za hodinu, retainery od 120 EUR",
+           "Platíte za odpracované hodiny. Retainer je doporučený měsíční rozsah, který můžete kdykoliv změnit nebo ukončit.",
            [("Domů", "/cz/"), ("Ceník", None)])}
 
 <section class="section">
@@ -1434,8 +1536,8 @@ def cz_cenik() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Balíčky</span>
-      <h2>Doporučené rozsahy, ne povinné paušály</h2>
-      <p class="section-subheading">Balíček je doporučený rozsah hodin na měsíc. Můžete ho kdykoliv změnit, pozastavit nebo ukončit.</p>
+      <h2>Doporučené měsíční retainery</h2>
+      <p class="section-subheading">Retainer je doporučený rozsah hodin na měsíc. Můžete ho kdykoliv změnit, pozastavit nebo ukončit, bez sankcí.</p>
     </div>
     {price_cards(CZ_PACKAGES, "cz")}
   </div>
@@ -1464,7 +1566,7 @@ def cz_cenik() -> tuple[str, str]:
         <ul class="deliv-list">
           <li><span class="check">✓</span><span><strong>Měsíc 1:</strong> audit + technická oprava + firemní profil (12 h = 144 EUR)</span></li>
           <li><span class="check">✓</span><span><strong>Měsíce 2 až 4:</strong> obsahové stránky na dotazy zákazníků (10 h = 120 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Měsíce 5+</strong>Údržba, linkbuilding, AI viditelnost (8 h = 96 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Měsíce 5+</strong>: údržba, linkbuilding, AI viditelnost (8 h = 96 EUR)</span></li>
         </ul>
         <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">Reálná čísla pro váš web potvrdím v bezplatném auditu.</p>
       </div>
@@ -1486,8 +1588,8 @@ def cz_cenik() -> tuple[str, str]:
 </section>
 """
     faq_html = faq_schema(CZ_CENIK_FAQ, BASE + "/cz/cenik/")
-    html = base(market="cz", path="cenik/", title="Ceník SEO: 12 EUR za hodinu, bez paušálů | Nokto Studio",
-                desc="SEO ceník s transparentní hodinovou sazbou 12 EUR. Balíčky od 120 EUR měsíčně, bez pevných smluv. Bezplatný SEO audit.",
+    html = base(market="cz", path="cenik/", title="Ceník SEO: 12 EUR/hod a retainery od 120 EUR | Nokto Studio",
+                desc="SEO ceník s transparentní hodinovou sazbou 12 EUR. Retainery 120, 180, 220 a 290 EUR měsíčně podle rozsahu, bez závazků. Bezplatný audit.",
                 canonical=BASE + "/cz/cenik/", body=body, prefix="../..", extra_head=ORG_SCHEMA_CZ + faq_html)
     return ("cz/cenik/index.html", html)
 
@@ -1730,7 +1832,7 @@ CZ_FAQ_SECTIONS = [
     ]),
     ("Cena a smlouvy", [
         ("Kolik stojí SEO?",
-         "12 EUR za odpracovanou hodinu. Menší firemní web obvykle 10 hodin měsíčně (120 EUR), e-shop 10 až 15 hodin (120 až 180 EUR). Balíčky jsou doporučené rozsahy, ne povinné paušály."),
+         "12 EUR za odpracovanou hodinu. Menší firemní web obvykle 10 hodin měsíčně (120 EUR), e-shop 10 až 15 hodin (120 až 180 EUR). Při větším rozsahu jsou retainery 220 EUR (cca 18 hodin) a 290 EUR (cca 24 hodin). Balíčky jsou doporučené rozsahy, ne povinné paušály."),
         ("Jsou smlouvy vážoucí?",
          "Ne. Spolupráci můžete kdykoli ukončit, bez sankcí. Fakturuji měsíčně za skutečně odpracované hodiny."),
         ("Jsou v ceně zahrnuty reklamní výdaje?",

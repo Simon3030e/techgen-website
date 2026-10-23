@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """Nokto Studio - EN core pages (secondary market; projects stay as legacy pages)."""
 from engine import (base, page_hero, cta_band, faq_block, faq_schema,
-                    steps_block, benefit_cards, results_slider, result_block,
-                    ORG_SCHEMA, EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY,
+                    steps_block, benefit_cards, price_cards, results_slider, result_block,
+                    partner_logo_card, ORG_SCHEMA, EMAIL, BASE, gicon, PHONE_TEL, PHONE_DISPLAY,
                     _bars, _sparkline, _VIOLET_L, _VIOLET, _ORANGE, _CERULEAN)
 
 EN_FAQ = [
     ("How much does SEO cost?",
-     "You pay 12 EUR per hour of work. A small business website typically needs 10 hours per month (120 EUR), an e-shop 15 hours (180 EUR). The exact scope is confirmed in the plan after a free audit."),
+     "You pay 12 EUR per hour of work. A small business website typically needs 10 hours per month (120 EUR), an e-shop 15 hours (180 EUR). Larger scopes use the 220 EUR growth retainer (about 18 hours) or the 290 EUR authority retainer (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
     ("How long until SEO brings results?",
      "Initial movements on less competitive keywords usually appear within 2 to 4 months. Main competitive queries take 6 to 12 months. Realistic timelines are shared in the audit."),
     ("Do you guarantee first positions in Google?",
@@ -18,6 +18,146 @@ EN_FAQ = [
      "No. Work runs month to month and you can stop any time. We invoice for actual hours worked."),
 ]
 
+EN_FAQ_SECTIONS = [
+    ("General", [
+        ("What exactly does Nokto Studio do?",
+         "Website SEO, local SEO and Google Business Profile, AI search optimization (ChatGPT, Gemini, AI Overviews), e-commerce SEO, SEO audits, link building, web development and Google Ads PPC. Plus e-mail marketing for e-shops and companies."),
+        ("Which companies do you work with?",
+         "Mostly small and mid-sized companies: local services (trades, healthcare, law, car service), e-shops and companies offering professional services. I work in the Slovak, Czech and wider European markets."),
+        ("Which platforms do you work with?",
+         "WordPress, Shoptet, WooCommerce and custom solutions. In SEO the tool is secondary, the strategy and its execution matter."),
+    ]),
+    ("Pricing and contracts", [
+        ("How much does SEO cost?",
+         "12 EUR per hour worked. A small company website usually takes 10 hours per month (120 EUR), an e-shop 10 to 15 hours (120 to 180 EUR). Larger scopes use the 220 EUR retainer (about 18 hours) or 290 EUR (about 24 hours). Packages are recommended scopes, not mandatory fees."),
+        ("Are the contracts binding?",
+         "No. You can stop the cooperation at any time, without penalties. I invoice monthly for hours actually worked."),
+        ("What if I need more hours in one month?",
+         "Nothing changes, we simply move to a higher number of hours. The scope is agreed in the plan and you can change it at any time."),
+        ("Is ad spend included in the price?",
+         "No. Ads (Google Ads) are paid directly to Google. I manage campaigns for 12 EUR per hour. Link and PR costs are billed at cost."),
+    ]),
+    ("Process and results", [
+        ("How long until SEO brings results?",
+         "First movements on less competitive queries appear in 2 to 4 months, main queries take 6 to 12 months. Local SEO and the Google profile often improve within 4 to 8 weeks. Exact timelines are in the audit."),
+        ("How will I see that the work was done?",
+         "A monthly report in person: a 30-minute call with me. Hours worked, positions, clicks from Search Console, orders from Analytics, Maps visibility and AI mentions."),
+        ("Do you offer guarantees of the first position?",
+         "No. Nobody can honestly guarantee the first position in Google. Anyone promising it is selling fiction. I guarantee the process, transparency and measurable progress that leads to positions."),
+        ("Can you help with a website migration?",
+         "Yes, a migration is one of the tasks where positions are easily lost. I know what to do to prevent that."),
+    ]),
+    ("AI and new search", [
+        ("Will ChatGPT replace Google?",
+         "It will complement it, not destroy it. Customers search in both today. My work covers both: classic Google positions and visibility in AI answers."),
+        ("How do I know whether AI recommends me?",
+         "I regularly test sets of queries your customers use and record whether your name appears in the answers of ChatGPT, Gemini and Google AI Overviews. It is part of the monthly report."),
+        ("Why is this specialization rare?",
+         "AI optimization is new expert work that requires a different content and data-structure method. Most agencies are not preparing for it yet, which is an advantage for clients who start first."),
+    ]),
+]
+
+
+EN_TRUST = """
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-stat reveal" data-delay="100">
+        <span class="trust-num tn-violet">12&nbsp;EUR</span>
+        <span class="trust-label">transparent hourly<br>rate, no hidden fees</span>
+      </div>
+      <div class="trust-stat reveal" data-delay="200">
+        <span class="trust-num tn-orange">0 EUR</span>
+        <span class="trust-label">first call and website<br>audit are free</span>
+      </div>
+      <div class="trust-stat reveal" data-delay="300">
+        <span class="trust-num tn-cerulean">1 day</span>
+        <span class="trust-label">free audit starts<br>right after the first call</span>
+      </div>
+      <div class="trust-stat reveal" data-delay="400">
+        <span class="trust-num tn-violet-light">30 min</span>
+        <span class="trust-label">monthly report<br>as a call with me</span>
+      </div>
+    </div>
+  </div>
+</div>
+"""
+
+EN_LOGOS = """
+<section class="logo-strip-section">
+  <p class="logo-strip-heading">Brands I have worked with</p>
+  <div class="marquee-viewport">
+    <div class="marquee-track">
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+    </div>
+  </div>
+</section>
+"""
+
+EN_PILLARS = [
+    ("/en/services/#ai", "AI visibility",
+     "ChatGPT, Gemini and Google AI Overviews recommend you to customers as the first choice.", "ai", "#9B6FD9"),
+    ("/en/services/#seo", "Google visibility",
+     "Positions in Google that bring customers, not just traffic.", "search", "#6A3FC4"),
+    ("/en/services/#local", "Google Maps visibility",
+     "Business Profile, Maps and reviews. Nearby customers find you first.", "pin", "#F75940"),
+]
+EN_SUPPORT = [
+    ("/en/services/#eshop", "E-commerce SEO",
+     "More sales from categories and products (Shoptet, marketplaces, Google Shopping).", "shop", "#1DACD6"),
+    ("/en/services/#wordpress", "WordPress SEO",
+     "Speed, plugins, schema and structure. A WordPress site Google ranks higher.", "code", "#6A3FC4"),
+    ("/en/services/#audit", "SEO audit and analysis",
+     "A precise picture of what holds your site back, with a prioritized plan.", "audit", "#6A3FC4"),
+    ("/en/services/#links", "Link building",
+     "Backlinks and authority, without which reaching the top is out of reach.", "link", "#F75940"),
+]
+EN_PARTNERS = [
+    ("https://flamia.studio", "flamia.png", "Web design: Flamia Studio",
+     "A custom website that gets found and sells. Design and development by our partner Flamia Studio."),
+    ("https://peterkocur.sk", "peterkocur.png", "PPC advertising: Peter Kocur",
+     "Google Ads for results now, while SEO gains momentum. Run by my partner Peter Kocur."),
+]
+
+
+def _en_card(href, title, text, icon, color, tag, delay, external=False):
+    ext = ' target="_blank" rel="noopener noreferrer"' if external else ""
+    return f"""
+<div class="benefit-card card-hover reveal" data-delay="{delay}">
+  <span class="benefit-icon">{gicon(icon, color, 26)}</span>
+  <h3><a href="{href}"{ext} style="color:var(--text);">{title}</a></h3>
+  <p>{text}</p>
+  <div class="project-tags"><span class="project-tag {tag}">{'Partner' if external else 'Service'}</span></div>
+</div>"""
+
+
+def en_services_grid(cols: int = 3) -> str:
+    pillars = "".join(_en_card(*s, ["tag-violet-light", "tag-violet", "tag-orange"][i], (i + 1) * 100)
+                      for i, s in enumerate(EN_PILLARS))
+    support = "".join(_en_card(*s, ["tag-cerulean", "tag-violet", "tag-orange", "tag-violet-light"][i], (i + 1) * 100)
+                      for i, s in enumerate(EN_SUPPORT))
+    partners = "".join(partner_logo_card(href, logo, title, text, (i + 1) * 100)
+                       for i, (href, logo, title, text) in enumerate(EN_PARTNERS))
+    return (f'<div class="grid-3">{pillars}</div>'
+            f'<h3 style="margin:42px 0 22px;">Plus supporting services</h3>'
+            f'<div class="grid-4">{support}</div>'
+            f'<h3 style="margin:42px 0 22px;">Add-on services from partners</h3>'
+            f'<p style="max-width:720px; margin:0 0 20px; color:var(--text-muted);">I do not build websites or run PPC myself. I offer them together with proven partners I work with on the same project.</p>'
+            f'<div class="partner-band">{partners}</div>')
+
 
 def en_home() -> tuple[str, str]:
     h1 = ('Let customers find you in <span class="hl-violet">Google</span>, '
@@ -25,27 +165,34 @@ def en_home() -> tuple[str, str]:
     body = f"""
 <section class="hero">
   <div class="container">
-    <div class="hero-content">
-      <span class="hero-label">SEO agency for business owners · Europe</span>
-      <h1>{h1}</h1>
-      <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. At a transparent 12 EUR per hour. No retainers you cannot see through, no lock-in contracts.</p>
-      <div class="hero-ctas">
-        <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Free website audit</a>
-        <a href="/en/services/" class="btn btn-outline btn-lg">Services and pricing</a>
+    <div class="hero-flex">
+      <div class="hero-content">
+        <span class="hero-label">SEO agency for business owners · Europe</span>
+        <h1>{h1}</h1>
+        <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. At a transparent 12 EUR per hour. Retainers from 120 EUR, no lock-in contracts.</p>
+        <div class="hero-ctas">
+          <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Free website audit</a>
+          <a href="/en/services/" class="btn btn-outline btn-lg">Services and pricing</a>
+        </div>
+        <p class="hero-scarcity">I deliver the audit to your e-mail within 1 to 2 business days. All I need is your website address.</p>
       </div>
-      <p class="hero-scarcity">I deliver the audit to your e-mail within 1 to 2 business days. All I need is your website address.</p>
-    </div>
-    <div class="hero-photo">
-      <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialist and founder of Nokto Studio" width="220" height="220" loading="eager">
-      <span class="hero-photo-cap">Šimon Štermenský<br>SEO specialist · Nokto Studio</span>
+      <div class="hero-photo">
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialist and founder of Nokto Studio" width="220" height="220" loading="eager">
+        <span class="hero-photo-cap">Šimon Štermenský<br>SEO specialist · Nokto Studio</span>
+      </div>
     </div>
   </div>
 </section>
+
+{EN_TRUST}
+{EN_LOGOS}
+
 <section class="section">
   <div class="container">
     <div class="section-head">
       <span class="section-label">What business owners ask us for</span>
       <h2>Four goals, one system</h2>
+      <p class="section-subheading">Every client picks one or more goals. I build a system that serves them together.</p>
     </div>
     <div class="grid-4">
       <div class="benefit-card card-hover reveal" data-delay="100">
@@ -71,11 +218,27 @@ def en_home() -> tuple[str, str]:
     </div>
   </div>
 </section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Services</span>
+      <h2>Three visibility pillars I am best at</h2>
+      <p class="section-subheading">AI visibility, Google visibility and Google Maps visibility. Plus supporting services and add-ons from proven partners.</p>
+    </div>
+    {en_services_grid(3)}
+    <div style="text-align:center; margin-top:36px;">
+      <a href="/en/services/" class="btn btn-outline">All services and hourly pricing</a>
+    </div>
+  </div>
+</section>
+
 <section class="section section-alt">
   <div class="container">
     <div class="section-head">
       <span class="section-label">How we work</span>
       <h2>Four steps. No lock-in contracts.</h2>
+      <p class="section-subheading">You always know what I am doing, why and what it brought. Every hour is reported.</p>
     </div>
     {steps_block([
         {"title": "Free audit", "text": "It starts with a 30-minute call and a free audit of your site. You see exactly what holds back your positions, sales and AI recommendations."},
@@ -85,69 +248,107 @@ def en_home() -> tuple[str, str]:
     ])}
   </div>
 </section>
+
 <section class="section">
   <div class="container">
     <div class="section-head">
       <span class="section-label">Pricing</span>
       <h2>12 EUR per hour. You pay for work, not a retainer fee.</h2>
+      <p class="section-subheading">Retainers from 120 to 290 EUR depending on the scope. Every hour is reported.</p>
     </div>
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>per hour of work</small></div>
-        <p style="margin-top:8px; max-width:520px;">Packages are recommended scopes, not mandatory retainers. Change them any time, no penalties.</p>
+        <p style="margin-top:8px; max-width:520px;">Packages are recommended monthly retainers, not mandatory fees. Change them any time, no penalties.</p>
       </div>
-      <a href="/en/services/" class="btn btn-primary btn-lg">See services and pricing</a>
+      <a href="/en/pricing/" class="btn btn-primary btn-lg">See the full pricing</a>
     </div>
   </div>
 </section>
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-head"><span class="section-label">FAQ</span><h2>Most asked questions</h2></div>
-    {faq_block(EN_FAQ)}
-  </div>
-</section>
+
 <section class="section section-alt">
   <div class="container">
     <div class="section-head">
-      <span class="section-label">Results in Google</span>
-      <h2>How client websites and AI citations grow</h2>
-      <p class="section-subheading">Samples from Google Search Console of our project and a client's from recent months. I always show you the numbers live before we start.</p>
+      <span class="section-label">Case study</span>
+      <h2>Villa Paris: brand, website and local SEO from scratch</h2>
+      <p class="section-subheading">Premium accommodation in Piestany with one goal: more direct bookings without portal commissions.</p>
     </div>
-    <div class="grid-4">
-      <div class="growth-card reveal" data-delay="100">
-        <h3 style="color:#6A3FC4;">+355%</h3>
-        <p>clicks from Google in 3 months since the start of cooperation</p>
-        <div class="growth-bar" style="background:#6A3FC4; width:100%;"></div>
-        <p>250 clicks per month, steady growth</p>
+    <div class="grid-2">
+      <div class="project-card card-hover">
+        <div class="project-card-body">
+          <h3>School supplies e-shop (client)</h3>
+          <p>A custom e-shop with an API integration to the accounting system for a regional supplier. Over 9 months I generated online revenue credited to the e-mail and organic Google channels. The scope includes e-mail marketing, local SEO and AI search optimization, so ChatGPT and Google AI Overviews recommend the brand.</p>
+          <div class="case-result">
+            <div><strong>2,492.75 EUR</strong><span>revenue over 9 months</span></div>
+            <div><strong>15</strong><span>orders from e-mail and organic search</span></div>
+            <div><strong>722 EUR</strong><span>largest order</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag tag-cerulean">E-commerce SEO</span>
+            <span class="project-tag tag-violet-light">E-mail marketing</span>
+            <span class="project-tag tag-orange">Local SEO + GEO</span>
+          </div>
+          <a href="/en/contact/" class="btn btn-outline">Ask me about it</a>
+        </div>
       </div>
-      <div class="growth-card reveal" data-delay="200">
-        <h3 style="color:#F75940;">+246%</h3>
-        <p>impressions in Google over the same period</p>
-        <div class="growth-bar" style="background:#F75940; width:85%;"></div>
-        <p>8,950 impressions per month</p>
+      <div class="project-card card-hover">
+        <div class="project-card-body">
+          <h3>Villa Paris, Piestany</h3>
+          <p>Rebrand, new website, hospitality copywriting and local SEO in one system. The goal: a guest understands the value of the stay before comparing competitors and books directly.</p>
+          <div class="case-result">
+            <div><strong>Rebrand</strong><span>identity + logo</span></div>
+            <div><strong>Website</strong><span>new structure</span></div>
+            <div><strong>Local SEO</strong><span>Google profile</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag tag-violet">Branding</span>
+            <span class="project-tag tag-violet-light">Web design</span>
+            <span class="project-tag tag-cerulean">Copywriting</span>
+            <span class="project-tag tag-orange">Local SEO</span>
+          </div>
+          <a href="/en/villa-paris/" class="btn btn-outline">Read the full story</a>
+        </div>
       </div>
-      <div class="growth-card reveal" data-delay="300">
-        <h3 style="color:#1DACD6;">+49%</h3>
-        <p>clicks in the last 28 days versus the previous period</p>
-        <div class="growth-bar" style="background:#1DACD6; width:70%;"></div>
-        <p>121 clicks in 28 days</p>
-      </div>
-      <div class="growth-card reveal" data-delay="400">
-        <h3 style="color:#9B6FD9;">13</h3>
-        <p>AI citations of a client website in Google AI Overviews, after our content</p>
-        <div class="growth-bar" style="background:#9B6FD9; width:55%;"></div>
-        <p>most cited page: 8 times per month</p>
-      </div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/en/portfolio/" class="btn btn-outline">All results</a>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
+    <div class="section-head"><span class="section-label">FAQ</span><h2>Most asked questions</h2></div>
+    {faq_block(EN_FAQ)}
+    <div style="text-align:center; margin-top:28px;">
+      <a href="/en/faq/" class="btn btn-outline">All frequently asked questions</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="about-simon">
+      <div class="about-simon-photo reveal">
+        <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialist and founder of Nokto Studio" width="300" height="300" loading="lazy">
+      </div>
+      <div class="reveal" data-delay="150">
+        <span class="section-label">Who stands behind Nokto</span>
+        <h2 style="margin:10px 0 14px;">You talk to me, not an account manager.</h2>
+        <p style="color:var(--text-muted);">I am Simon, an SEO specialist. Over years in online marketing I have grown most fond of SEO and visibility in Google and AI tools, because I see how it really changes the sales of small companies. I work with a small team and with partners on web design and PPC, so the person who does the work is the one who answers you.</p>
+        <p style="color:var(--text-muted);">Your first hour with me is a free call and website audit. If the numbers do not make sense to you, you pay nothing.</p>
+        <a href="/en/contact/" class="btn btn-primary" style="margin-top:18px;">Book a call with me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
     <div class="section-head">
       <span class="section-label">Blog</span>
-      <h2>Latest guides</h2>
-      <p class="section-subheading">Practical SEO guides for business owners, new every week.</p>
+      <h2>Latest practical guides</h2>
+      <p class="section-subheading">New guides every week: e-commerce SEO, audits, WordPress and AI search.</p>
     </div>
     <div class="blog-grid">{en_home_blog_teaser()}</div>
     <div style="text-align:center; margin-top:28px;">
@@ -156,7 +357,7 @@ def en_home() -> tuple[str, str]:
   </div>
 </section>
 
-<section class="section">
+<section class="section" style="padding-top:0;">
   <div class="container">
     {cta_band("Start with a free audit", "A 30-minute call and a free audit of your website. You learn what holds your site back, even if you decide not to work with us.", "en")}
   </div>
@@ -176,25 +377,9 @@ def en_home_blog_teaser() -> str:
 
 
 def en_services() -> tuple[str, str]:
-    services = [
-        ("/en/services/#ai", "AI visibility", "ChatGPT, Gemini, and AI Overviews recommending you as the first choice.", "ai", "#9B6FD9"),
-        ("/en/services/#seo", "Google visibility", "Positions in Google that bring customers, not just traffic.", "search", "#6A3FC4"),
-        ("/en/services/#local", "Google Maps visibility", "Business Profile, Maps, and reviews. Nearby customers find you first.", "pin", "#F75940"),
-        ("/en/services/#eshop", "E-commerce SEO", "More sales from categories and products. Shoptet, marketplaces, Google Shopping.", "shop", "#1DACD6"),
-        ("/en/services/#wordpress", "WordPress SEO", "Speed, plugins, schema and structure. A WordPress site Google ranks higher.", "code", "#6A3FC4"),
-        ("/en/services/#audit", "SEO audit and analysis", "A precise picture of what holds your site back, with a prioritized plan.", "audit", "#6A3FC4"),
-        ("/en/services/#links", "Link building", "Backlinks and authority, without which reaching the top is out of reach.", "link", "#F75940"),
-    ]
-    cards = "".join(f"""
-<div class="benefit-card card-hover reveal" data-delay="150">
-  <span class="benefit-icon">{gicon(icon, color, 26)}</span>
-  <h3><a href="{href}" style="color:var(--text);">{title}</a></h3>
-  <p>{text}</p>
-</div>""" for href, title, text, icon, color in services)
-
     # Info-rich sections for each service. SK/CZ have dedicated pages; EN hub expands inline.
     linkbuilding_section = """
-<section class="section section-alt" id="links">
+<section class="section" id="links">
   <div class="container">
     <div class="section-head">
       <span class="section-label">Link building</span>
@@ -214,7 +399,7 @@ def en_services() -> tuple[str, str]:
 </section>"""
 
     eshop_section = """
-<section class="section" id="eshop">
+<section class="section section-alt" id="eshop">
   <div class="container">
     <div class="section-head">
       <span class="section-label">E-commerce SEO</span>
@@ -234,7 +419,7 @@ def en_services() -> tuple[str, str]:
 </section>"""
 
     wordpress_section = """
-<section class="section section-alt" id="wordpress">
+<section class="section" id="wordpress">
   <div class="container">
     <div class="section-head">
       <span class="section-label">WordPress SEO</span>
@@ -300,25 +485,50 @@ def en_services() -> tuple[str, str]:
 {page_hero("Services", "Services that bring you customers",
            "From technical SEO to AI visibility. Every service costs 12 EUR per hour; scope is agreed upon in the plan.",
            [("Home", "/en/"), ("Services", None)])}
-<section class="section"><div class="container">{cards}</div>
-  <div class="container" style="margin-top:34px;">
-    <h3 style="margin-bottom:14px;">Supplementary services from our partners</h3>
-    <p style="max-width:720px; color:var(--text-muted);">Web design and PPC advertising are delivered together with trusted partners, so the whole project stays in one pair of hands: <a href="https://flamia.studio" target="_blank" rel="noopener noreferrer">Flamia Studio</a> (web design) and <a href="https://peterkocur.sk" target="_blank" rel="noopener noreferrer">Peter Kocur</a> (PPC advertising).</p>
-  </div>
+<section class="section"><div class="container">{en_services_grid(3)}</div></section>
+    <section class="section section-alt" id="ai">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">AI visibility</span>
+          <h2>AI visibility: get recommended by ChatGPT and Gemini</h2>
+        </div>
+        <p style="max-width:720px;">AI visibility means your company appears in answers from ChatGPT, Gemini, Perplexity and Google AI Overviews when a customer asks for a recommendation. I structure content so language models understand who you are, what you do and where you operate, and so they cite you. The work covers entity data, direct answers, structured data, consistent brand mentions and content that answers real buying questions. Typically 4 to 8 hours per month at 12 EUR per hour.</p>
+      </div>
     </section>
+
+    <section class="section" id="seo">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Google visibility</span>
+          <h2>Google visibility: customers, not vanity traffic</h2>
+        </div>
+        <p style="max-width:720px;">Google visibility means ranking for the queries your customers actually use. I start from Search Console and keyword research, fix technical blockers and write pages that answer the query better than the current top results. Typical scope is 10 to 15 hours per month depending on competition, at 12 EUR per hour. Every hour is reported with its result.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="local">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Google Maps visibility</span>
+          <h2>Google Maps visibility: the local pack</h2>
+        </div>
+        <p style="max-width:720px;">Google Maps visibility is the local pack: your Business Profile, categories, services, photos, reviews, NAP consistency and local pages. For local services this is often the fastest channel to new customers. Setup takes about 8 hours, then 4 hours per month at 12 EUR per hour.</p>
+      </div>
+    </section>
+
     {linkbuilding_section}
     {eshop_section}
     {wordpress_section}
     {audit_section}
-<section class="section section-alt" id="pricing">
+<section class="section" id="pricing">
   <div class="container">
     <div class="section-head"><span class="section-label">Pricing</span><h2>Simple, transparent pricing</h2></div>
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>per hour · stop any time</small></div>
-        <p style="margin-top:8px; max-width:520px;">Typical scopes: 10 hours/month for a small business site (120 EUR), 15 hours for a mid-size site or e-shop (180 EUR). Link costs and ad spend billed separately at cost.</p>
+        <p style="margin-top:8px; max-width:520px;">Retainers: 120 EUR for a small site (10 hours), 180 EUR for a mid-size site or e-shop (15 hours), 220 EUR growth (about 18 hours) and 290 EUR authority (about 24 hours). Link costs and ad spend billed separately at cost.</p>
       </div>
-      <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Free website audit</a>
+      <a href="/en/pricing/" class="btn btn-primary btn-lg">See the full pricing</a>
     </div>
   </div>
 </section>
@@ -332,6 +542,118 @@ def en_services() -> tuple[str, str]:
                 desc="AI visibility, Google visibility, Google Maps visibility, e-commerce SEO, audits, link building, and email marketing. Web design and PPC with our partners. 12 EUR per hour.",
                 canonical=BASE + "/en/services/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/services/index.html", html)
+
+
+EN_PACKAGES = [
+    {"name": "Small website", "hours": 10, "price": 120,
+     "items": ["Website audit and keyword review", "Technical fixes", "2 content pages or rewrites", "Google Business Profile in order", "Monthly report"],
+     "cta": "/en/contact/"},
+    {"name": "Mid-size site / e-shop", "hours": 15, "price": 180,
+     "items": ["Everything from Small website", "4 to 6 content pages per month", "AI search optimization", "Internal linking and CRO tips", "Link building (2 to 3 links)", "Monthly report and 30-minute call"],
+     "cta": "/en/contact/"},
+    {"name": "Growth", "hours": 18, "price": 220, "featured": True,
+     "badge": "Recommended retainer",
+     "items": ["Everything from Mid-size site", "6 to 8 content pages or blog posts per month", "2 competitor analyses per month", "AI visibility: ChatGPT, Gemini and AI Overviews monitoring", "Link building (4 links)", "Monthly report and 30-minute call"],
+     "cta": "/en/contact/"},
+    {"name": "Authority", "hours": 24, "price": 290,
+     "items": ["Everything from Growth", "8 to 12 content pages or blog posts per month", "In-depth analysis and quarterly content plan", "AI visibility: query tracking and recommendations", "Link building (6 links)", "Priority communication and 60-minute call"],
+     "cta": "/en/contact/"},
+]
+
+EN_PRICING_FAQ = [
+    ("How much does SEO cost?",
+     "Retainers from 120 to 290 EUR per month depending on the scope. A small business website is 120 EUR (10 hours), a mid-size site or e-shop 180 EUR (15 hours), the growth retainer 220 EUR (about 18 hours) and the authority retainer 290 EUR (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
+    ("Why is it cheaper than other agencies?",
+     "I have no offices or management layers. A large part of the work is done by automation I built myself, and expert time goes where it counts. The savings go to you."),
+    ("What is included in the price?",
+     "Everything except ad spend and the cost of links or third-party tools. Those are billed at cost, with no markup."),
+    ("Do I pay monthly in advance?",
+     "I invoice monthly in arrears for hours actually worked, with an invoice. A retainer is a recommended scope, not a commitment."),
+    ("Can I stop the cooperation at any time?",
+     "Yes, the monthly cycle can be ended at any time, without penalties or lock-in. Trust is earned through results."),
+    ("How do I know the work was done?",
+     "Every month you get a list of tasks with hours and their result. You are the one who checks."),
+]
+
+
+def en_pricing() -> tuple[str, str]:
+    body = f"""
+{page_hero("Pricing", "Pricing: 12 EUR per hour, retainers from 120 EUR",
+           "You pay for hours worked. A retainer is a recommended monthly scope you can change or stop at any time.",
+           [("Home", "/en/"), ("Pricing", None)])}
+
+<section class="section">
+  <div class="container">
+    <div class="rate-band">
+      <div>
+        <div class="rate-big">12 EUR <small>per hour of work</small></div>
+        <p style="margin-top:8px; max-width:560px;">SEO, local SEO, AI visibility, content, link building, websites and PPC. One rate, simple maths.</p>
+      </div>
+      <a href="/en/contact/" class="btn btn-primary btn-lg">Get a quote</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Packages</span>
+      <h2>Recommended monthly retainers</h2>
+      <p class="section-subheading">A retainer is a recommended monthly scope. You can change, pause or stop it at any time, without penalties.</p>
+    </div>
+    {price_cards(EN_PACKAGES, "en")}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="prose">
+        <h2>What is included</h2>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>All work: technical SEO, content, Google Business Profile, AI visibility, links, websites, PPC management.</span></li>
+          <li><span class="check">✓</span><span>Measurement and reporting: Search Console, Analytics, positions, conversions, AI mentions.</span></li>
+          <li><span class="check">✓</span><span>Communication: a monthly 30-minute call with me, unlimited questions in between.</span></li>
+        </ul>
+        <h2>What is not included</h2>
+        <ul class="deliv-list">
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Ad spend (Google Ads, Meta Ads). You pay Google directly, not me.</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Cost of links and PR articles. Billed at the real price of the publication.</span></li>
+          <li><span class="check" style="background:#FDEBE8;color:var(--brand-warm-deep);">×</span><span>Paid third-party tools, if needed (for example a payment gateway or hosting).</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Example from practice</span>
+        <p style="margin-bottom:14px;">A law firm website in a town of 50,000 people:</p>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span><strong>Month 1:</strong> audit + technical fixes + Google profile (12 h = 144 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Months 2 to 4:</strong> content pages for customer questions (10 h = 120 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Months 5+:</strong> maintenance, link building, AI visibility (8 h = 96 EUR)</span></li>
+        </ul>
+        <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">I confirm the real numbers for your website in the free audit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head"><span class="section-label">Pricing FAQ</span><h2>Frequently asked questions about pricing</h2></div>
+    {faq_block(EN_PRICING_FAQ)}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {cta_band("What would it cost for you?", "A free audit and an hour estimate for your specific website. No commitment, real numbers.", "en")}
+  </div>
+</section>
+"""
+    faq_html = faq_schema(EN_PRICING_FAQ, BASE + "/en/pricing/")
+    html = base(market="en", path="pricing/", title="Pricing: 12 EUR/hour and retainers from 120 EUR | Nokto Studio",
+                desc="Transparent SEO pricing at 12 EUR per hour. Retainers of 120, 180, 220 and 290 EUR per month depending on scope, no lock-in. Free audit.",
+                canonical=BASE + "/en/pricing/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
+    return ("en/pricing/index.html", html)
 
 
 def en_about() -> tuple[str, str]:
@@ -357,6 +679,71 @@ def en_about() -> tuple[str, str]:
   </div>
 </section>
 <section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Process</span>
+      <h2>From the first call to the monthly call with me</h2>
+    </div>
+    {steps_block([
+        {"title": "1. Free call and audit", "text": "A 30-minute call about your goals. Within 3 days you get a free initial audit: the 10 biggest problems and opportunities on one page."},
+        {"title": "2. A plan with numbers", "text": "The audit becomes a plan: which keywords bring customers, what to fix first, how many hours per month it takes and what results are realistic. No unrealistic promises."},
+        {"title": "3. Weekly work", "text": "Every week I deliver the agreed scope: technical work, content, Google profile, AI visibility, links. Every change is traceable."},
+        {"title": "4. Measurement and report", "text": "A monthly report in person as a 30-minute call: what was done, what it brought (positions, clicks, orders, AI mentions) and what comes next."},
+    ])}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Deliverables</span>
+      <h2>What exactly you get every month</h2>
+    </div>
+    <div class="grid-2" style="align-items:start;">
+      <div class="card">
+        <span class="section-label">Work</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Technical website maintenance: speed, indexing, bug fixes.</span></li>
+          <li><span class="check">✓</span><span>Content pages written for real customer queries.</span></li>
+          <li><span class="check">✓</span><span>Google Business Profile: data, photos, reviews, Q&amp;A.</span></li>
+          <li><span class="check">✓</span><span>Optimization for ChatGPT, Gemini and AI Overviews.</span></li>
+          <li><span class="check">✓</span><span>Link building as agreed (link costs billed separately).</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="section-label">Measurement</span>
+        <ul class="deliv-list">
+          <li><span class="check">✓</span><span>Positions on tracked keywords (trend, not just numbers).</span></li>
+          <li><span class="check">✓</span><span>Clicks and impressions from Google (Search Console).</span></li>
+          <li><span class="check">✓</span><span>Enquiries and orders (Google Analytics).</span></li>
+          <li><span class="check">✓</span><span>Google Maps visibility: calls, routes, reviews.</span></li>
+          <li><span class="check">✓</span><span>Mentions in AI answers (ChatGPT, Gemini, AI Overviews).</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Measurement</span>
+      <h2>How I measure results</h2>
+      <p class="section-subheading">Nothing changes by opinion. Every claim in the report has a number and a data source.</p>
+    </div>
+    <table class="metric-table">
+      <tr><th>What I track</th><th>Tool</th><th>What it tells us</th></tr>
+      <tr><td><strong>Positions</strong></td><td>Keyword tracking</td><td>Which queries grow and where the site is stuck.</td></tr>
+      <tr><td><strong>Clicks from Google</strong></td><td>Search Console</td><td>How many people see us and how many click.</td></tr>
+      <tr><td><strong>Enquiries and orders</strong></td><td>Google Analytics 4</td><td>How many visitors became customers.</td></tr>
+      <tr><td><strong>Maps visibility</strong></td><td>Google Business Profile</td><td>How many people saw the business, called or asked for directions.</td></tr>
+      <tr><td><strong>AI recommendations</strong></td><td>Regular AI tests</td><td>Whether ChatGPT, Gemini and AI Overviews cite you.</td></tr>
+      <tr><td><strong>Organic revenue</strong></td><td>Analytics + e-shop</td><td>For e-shops: the direct link between SEO effort and sales.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="section-head"><span class="section-label">Values</span><h2>Three rules that always apply</h2></div>
     <div class="grid-3">
@@ -408,11 +795,11 @@ def en_contact() -> tuple[str, str]:
           <li><span class="check">✓</span><span>Free, no commitment</span></li>
         </ul>
       </div>
-      <div class="card">
+      <div class="card" style="text-align:center;">
         <span class="section-label">Or call me directly</span>
-        <p style="margin:14px 0 22px;">We talk about your goals and what we would do first. No pressure, no commitment.</p>
-        <a href="{PHONE_TEL}" class="btn btn-primary btn-lg" style="width:100%;">Call {PHONE_DISPLAY}</a>
-        <ul class="deliv-list" style="margin-top:24px;">
+        <a href="{PHONE_TEL}" class="btn btn-primary btn-lg contact-phone-btn" style="width:100%; margin-top:14px; font-size:1.25rem;">{PHONE_DISPLAY}</a>
+        <p style="margin:14px 0 6px; color:var(--text-muted);">Šimon Štermenský, SEO specialist. I usually pick up right away, otherwise I call back within a few hours.</p>
+        <ul class="deliv-list" style="margin-top:20px; text-align:left;">
           <li><span class="check">✓</span><span>Free 30-minute consultation about your site</span></li>
           <li><span class="check">✓</span><span>Real numbers: what SEO could mean for you</span></li>
           <li><span class="check">✓</span><span>No commitment. You decide when, and whether.</span></li>
@@ -431,11 +818,20 @@ def en_contact() -> tuple[str, str]:
 
 
 def en_faq() -> tuple[str, str]:
+    sections_html = ""
+    all_qa = []
+    for sec_title, qas in EN_FAQ_SECTIONS:
+        qas_html = "".join(
+            f'<div class="faq-item"><button class="faq-question" type="button">{q}</button>'
+            f'<div class="faq-answer"><p>{a}</p></div></div>' for q, a in qas
+        )
+        sections_html += f'<h2 style="margin-top:36px;">{sec_title}</h2>{qas_html}'
+        all_qa += qas
     body = f"""
 {page_hero("FAQ", "Frequently asked questions", "Answers to what clients ask most. If your question is missing, please ask directly.", [("Home", "/en/"), ("FAQ", None)])}
 <section class="section">
   <div class="container" style="max-width:800px;">
-    {faq_block(EN_FAQ)}
+    {sections_html}
   </div>
 </section>
 <section class="section" style="padding-top:0;">
@@ -444,7 +840,7 @@ def en_faq() -> tuple[str, str]:
   </div>
 </section>
 """
-    faq_html = faq_schema(EN_FAQ, BASE + "/en/faq/")
+    faq_html = faq_schema(all_qa, BASE + "/en/faq/")
     html = base(market="en", path="faq/", title="FAQ: SEO pricing, process and AI visibility | Nokto Studio",
                 desc="FAQ: how much SEO costs, how long it takes, how we measure results, what SEO for AI search means. Nokto Studio.",
                 canonical=BASE + "/en/faq/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
@@ -511,7 +907,32 @@ def en_portfolio() -> tuple[str, str]:
     <div class="grid-2">{blocks}</div>
   </div>
 </section>
-{results_slider("en")}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Feedback</span>
+      <h2>What continuing cooperation says</h2>
+      <p class="section-subheading">The best testimonial is the fact that clients stay. I provide client contacts on request and quote them only with their consent.</p>
+    </div>
+    <div class="grid-3">
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("grow", "#9B6FD9", 26)}</span>
+        <h3>E-shop: cooperation continues</h3>
+        <p>The client was happy with the first e-shop, so we are now doing a rework: more products and better SEO.</p>
+      </div>
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("ai", "#6A3FC4", 26)}</span>
+        <h3>Electrical service: monthly cooperation runs</h3>
+        <p>991 clicks and 96 citations in AI answers in the last 28 days. The report comes out every month with numbers.</p>
+      </div>
+      <div class="benefit-card card-hover">
+        <span class="benefit-icon">{gicon("pin", "#F75940", 26)}</span>
+        <h3>Villa Paris: project runs with Flamia Studio</h3>
+        <p>Rebrand, website and local SEO in one system. We do the brand and website together with Flamia Studio.</p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section" style="padding-top:0;">
   <div class="container">
     {cta_band("Your business could be the next story", "Start with a free audit. See what we would solve for you, before the first invoice.", "en")}
@@ -524,7 +945,7 @@ def en_portfolio() -> tuple[str, str]:
     return ("en/portfolio/index.html", html)
 
 
-ALL = [en_home(), en_services(), en_about(), en_contact(), en_faq(), en_portfolio()]
+ALL = [en_home(), en_services(), en_pricing(), en_about(), en_contact(), en_faq(), en_portfolio()]
 
 
 def en_villa_paris() -> tuple[str, str]:

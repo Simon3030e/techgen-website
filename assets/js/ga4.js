@@ -2,8 +2,8 @@
  * Nokto Studio  - ga4.js
  * Google Analytics 4 (gtag.js) integration with regional compliance.
  *
- * SK pages (/sk/...): Loads ONLY after explicit cookie consent  - GDPR opt-in.
- * EN pages + root:    Loads immediately  - US / CCPA opt-out model.
+ * SK root, /sk/ and /cz/ pages: loads only after explicit consent (GDPR opt-in).
+ * EN pages: loads immediately under the US / CCPA opt-out model.
  *
  * Depends on cookie-banner.js being loaded first (sets window.cookieConsent).
  */
@@ -28,9 +28,10 @@
     window.gtag('config', MEASUREMENT_ID, { anonymize_ip: true });
   }
 
-  var isSk = /^\/(sk)(\/|$)/.test(window.location.pathname);
+  var needsConsent = window.location.pathname === '/' ||
+                     /^\/(sk|cz)(\/|$)/.test(window.location.pathname);
 
-  if (isSk) {
+  if (needsConsent) {
     function hookConsent() {
       if (window.cookieConsent) {
         window.cookieConsent.onAccept(loadGa4);

@@ -44,7 +44,7 @@
     },
   };
 
-  var t = isSk ? copy.sk : copy.en;
+  var t = isCz ? copy.cz : (isSk ? copy.sk : copy.en);
 
   /* ── Consent callbacks ── */
   var acceptCallbacks = [];
@@ -145,9 +145,9 @@
   var banner = document.createElement('div');
   banner.id = 'nk-cookie';
   banner.setAttribute('role', 'dialog');
-  banner.setAttribute('aria-label', isSk ? 'Súhlas s cookies' : 'Cookie consent');
+  banner.setAttribute('aria-label', isCz ? 'Souhlas s cookies' : (isSk ? 'Súhlas s cookies' : 'Cookie consent'));
 
-  var policyHref = isSk ? '/sk/privacy/' : '/en/privacy/';
+  var policyHref = isCz ? '/cz/privacy/' : (isSk ? '/sk/privacy/' : '/en/privacy/');
 
   banner.innerHTML =
     '<p>' + t.text + ' <a href="' + policyHref + '">' + t.policy + '</a></p>' +

@@ -3,8 +3,8 @@
  * Microsoft Clarity integration with regional compliance.
  *
  * SK pages (/sk/...): Loads ONLY after explicit cookie consent  - GDPR opt-in.
- * EN pages + root:    Loads immediately  - US / CCPA opt-out model (analytics
- *                     do not constitute "sale" of personal data under CCPA).
+ * EN pages: loads immediately under the US / CCPA opt-out model (analytics
+ *            do not constitute "sale" of personal data under CCPA).
  *
  * Depends on cookie-banner.js being loaded first (sets window.cookieConsent).
  */
@@ -21,10 +21,11 @@
     })(window, document, 'clarity', 'script', PROJECT_ID);
   }
 
-  var isSk = /^\/(sk)(\/|$)/.test(window.location.pathname);
+  var needsConsent = window.location.pathname === '/' ||
+                     /^\/(sk|cz)(\/|$)/.test(window.location.pathname);
 
-  if (isSk) {
-    /* ── GDPR (SK)  - consent required before loading ── */
+  if (needsConsent) {
+    /* ── GDPR (SK root, /sk/, /cz/)  - consent required before loading ── */
     function hookConsent() {
       if (window.cookieConsent) {
         window.cookieConsent.onAccept(loadClarity);
@@ -39,7 +40,7 @@
       document.addEventListener('DOMContentLoaded', hookConsent);
     }
   } else {
-    /* ── US / CCPA (EN + root)  - load immediately ── */
+    /* ── US / CCPA (EN)  - load immediately ── */
     loadClarity();
   }
 

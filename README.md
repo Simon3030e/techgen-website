@@ -14,8 +14,9 @@ Google-colored light theme. Brand palette:
 | Yellow | `#FBBC04` | logo letter k, accents |
 | Green | `#34A853` | logo letter t, success states |
 
-Pricing model everywhere on the site: 12 EUR per hour, transparent, no retainers,
-free call + free audit as the entry offer.
+Pricing model everywhere on the site: 12 EUR per hour, transparent, with four
+monthly retainers (120, 180, 220 and 290 EUR) and no lock-in. Free call + free
+audit as the entry offer.
 
 ## Structure
 
@@ -61,8 +62,8 @@ HTML, so the live site has no Python dependency.
   `~/Sync/projects/nokto/noktostudio/research/` (AKW workbook: akw_noktostudio.xlsx).
 
 ## EN version + technical SEO (2026-09-09, session 5)
-- EN live: 10 stranok /en/ (home, services, portfolio, about, contact, faq,
-  blog, villa-paris, privacy, terms). Calendly CTA v EN nahradene telefonom
+- EN live: 11 stranok /en/ (home, services, pricing, portfolio, about, contact,
+  faq, blog, villa-paris, privacy, terms). Calendly CTA v EN nahradene telefonom
   (dokoncenie Calendly removal), EN privacy uz Calendly nespomina.
 - hreflang 3-jazycny (SK/CS/EN, x-default=SK) v head aj v sitemap;
   jazykovy prepinac path-aware (o-nas -> /en/about/, pripady -> /en/portfolio/).
@@ -97,3 +98,16 @@ HTML, so the live site has no Python dependency.
 - Indexing API (indexing_token.json): 403 ownership (ucet nie je ownerom
   property); na sitemap submit/API write treba consent na plny webmasters
   scope (consent URL vygenerovany, caka na Simonov klik).
+
+## Pricing retainers + CZ/EN layout parity (2026-10-23)
+- Cennik/cenik/pricing now show four monthly retainers: 120 EUR (10 h),
+  180 EUR (15 h), 220 EUR (cca 18 h, recommended) and 290 EUR (cca 24 h).
+  All four are flexible monthly scopes, not lock-in contracts.
+- EN pricing page added at /en/pricing/ (nav, footer, FAQ, sitemap, hreflang).
+- CZ and EN homepages now follow the SK layout: hero with photo, trust strip,
+  brand logos, services grid, process, pricing teaser, case study, FAQ, about,
+  blog teaser, CTA. EN services hub has #ai, #seo and #local anchors.
+- EN FAQ page uses the same four categories as SK/CZ; EN about includes the
+  process, monthly deliverables and measurement table.
+- Fixed CZ cookie banner language and policy link; GA4 and Clarity now require
+  consent on the SK root and on /cz/ as well (GDPR opt-in).
