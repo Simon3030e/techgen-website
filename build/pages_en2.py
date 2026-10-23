@@ -125,11 +125,11 @@ def blog_post_ecommerce() -> tuple[str, str]:
 </ul>
 
 <h2>Timeline and cost</h2>
-<p>Long-tail products and smaller categories move in 2 to 4 months, main categories in 6 to 12 months, depending on competition and site health. The work is 10 to 15 hours per month, which is 120 to 180 EUR per month at 12 EUR per hour, and 220 to 290 EUR for a larger scope. Link and content costs are billed separately. A free audit always confirms the exact scope.</p>
+<p>Long-tail products and smaller categories move in 2 to 4 months, main categories in 6 to 12 months, depending on competition and site health. The work is 15 hours per month, which is 180 EUR per month at 12 EUR per hour, and 220 to 290 EUR for a larger scope. Link and content costs are billed separately. A free audit always confirms the exact scope.</p>
 """
     faq = [
         ("How much does e-commerce SEO cost?",
-         "The work is 10 to 15 hours per month, which is 120 to 180 EUR at 12 EUR per hour, and 220 to 290 EUR for a larger scope. The initial setup (technical, structure, feed) is 6 to 10 hours one-off. Link and content costs are billed separately at cost, with no markup."),
+         "The work is 15 hours per month, which is 180 EUR at 12 EUR per hour, and 220 to 290 EUR for a larger scope. The initial setup (technical, structure, feed) is 6 to 10 hours one-off. Link and content costs are billed separately at cost, with no markup."),
         ("How long until the first orders from organic?",
          "Long-tail products and smaller categories in 2 to 4 months, main categories in 6 to 12 months. For a new shop without authority, the first month is about technical work and structure; orders arrive as Google indexes the pages."),
         ("Is the built-in SEO module of my platform enough?",

@@ -14,8 +14,8 @@ Google-colored light theme. Brand palette:
 | Yellow | `#FBBC04` | logo letter k, accents |
 | Green | `#34A853` | logo letter t, success states |
 
-Pricing model everywhere on the site: 12 EUR per hour, transparent, with four
-monthly retainers (120, 180, 220 and 290 EUR) and no lock-in. Free call + free
+Pricing model everywhere on the site: 12 EUR per hour, transparent, with three
+monthly retainers (180, 220 and 290 EUR) and no lock-in. Free call + free
 audit as the entry offer.
 
 ## Structure
@@ -100,9 +100,9 @@ HTML, so the live site has no Python dependency.
   scope (consent URL vygenerovany, caka na Simonov klik).
 
 ## Pricing retainers + CZ/EN layout parity (2026-10-23)
-- Cennik/cenik/pricing now show four monthly retainers: 120 EUR (10 h),
-  180 EUR (15 h), 220 EUR (cca 18 h, recommended) and 290 EUR (cca 24 h).
-  All four are flexible monthly scopes, not lock-in contracts.
+- Cennik/cenik/pricing now show three monthly retainers: 180 EUR (15 h),
+  220 EUR (cca 18 h, recommended) and 290 EUR (cca 24 h).
+  All three are flexible monthly scopes, not lock-in contracts.
 - EN pricing page added at /en/pricing/ (nav, footer, FAQ, sitemap, hreflang).
 - CZ and EN homepages now follow the SK layout: hero with photo, trust strip,
   brand logos, services grid, process, pricing teaser, case study, FAQ, about,

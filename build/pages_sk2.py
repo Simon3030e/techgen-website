@@ -331,7 +331,7 @@ FAQ_SECTIONS = [
     ]),
     ("Cena a zmluvy", [
         ("Koľko stojí SEO?",
-         "12 EUR za odpracovanú hodinu. Malý firemný web zvyčajne 10 hodín mesačne (120 EUR), e-shop 10 až 15 hodín (120 až 180 EUR). Pri väčšom rozsahu sú retainery 220 EUR (cca 18 hodín) a 290 EUR (cca 24 hodín). Balíčky sú odporúčané rozsahy, nie povinné paušály."),
+         "12 EUR za odpracovanú hodinu. Menší firemný web zvyčajne 15 hodín mesačne (180 EUR). Pri väčšom rozsahu sú retainery 220 EUR (cca 18 hodín) a 290 EUR (cca 24 hodín). Balíčky sú odporúčané rozsahy, nie povinné paušály."),
         ("Sú zmluvy viažúce?",
          "Nie. Spoluprácu môžete skončiť kedykoľvek, bez sankcií. Fakturujem mesačne za skutočne odpracované hodiny."),
         ("Čo ak potrebujem viac hodín v jednom mesiaci?",
@@ -623,7 +623,7 @@ def blog_post_navod() -> tuple[str, str]:
     first-party GSC data. Angle: SK-first 4-step guide with real GSC screenshots + 2026 update."""
     sections = f"""
 <h2>Stručná odpoveď</h2>
-<p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne hľadajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov. Na slovenskom trhu stojí od 120 EUR mesačne pri hodinovej spolupráci (12 EUR/hod, 10 hodín pre malý web).</p>
+<p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne hľadajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov. Na slovenskom trhu stojí od 180 EUR mesačne pri hodinovej spolupráci (12 EUR/hod, 15 hodín pre menší web).</p>
 <figure class="blog-chart">{_flow_chart()}</figure>
 
 <h2>Čo je SEO optimalizácia a ako Google hodnotí web</h2>
@@ -705,7 +705,7 @@ def blog_post_navod() -> tuple[str, str]:
         ("Za aký čas uvidím výsledky?",
          "Prvé pohyby na menej konkurenčných dotazoch za 2-4 mesiace, na hlavné dotazy 6-12 mesiacov. Záleží na konkurencii, stave webu a veku domény. Nový web potrebuje dlhší čas než existujúci s autoritou."),
         ("Koľko hodín mesačne zaberie SEO?",
-         "Firemný web zvládnem v 10 hodinách mesačne (120 EUR), e-shop v 10 až 15 hodinách (120 až 180 EUR). Rozsah potvrdím v pláne po audite. Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
+         "Menší web zvládnem v 15 hodinách mesačne (180 EUR), e-shop podľa rozsahu 15 až 24 hodín (180 až 290 EUR). Rozsah potvrdím v pláne po audite. Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
         ("Môžem robiť SEO sám?",
          "Áno, nástroje sú bezplatné (Search Console, PageSpeed, Marketing Miner). Ale SEO zaberie 10-20 hodín mesačne: audit, obsah, technika, meranie. Ak máte čas, skúste <a href='/sk/blog/seo-test-15-bodov/'>15-bodový SEO test</a> ako prvý krok."),
         ("Robíte aj obsah?",
@@ -730,18 +730,18 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
     SERP: dejtonaweb, seolight, seoconsult, seoprakticky, mediaunit. All CZ, none with
     first-party ROI case. Angle: transparent 12 EUR/hod with real Mikramt ROI (1620 EUR
     input, 2492 EUR revenue in 9 months)."""
-    price_chart = _bars([120, 180, 220, 290], _VIOLET,
-                        ["Malý web 120 EUR", "Stredný 180 EUR", "Rast 220 EUR", "Autorita 290 EUR"])
+    price_chart = _bars([180, 220, 290], _VIOLET,
+                        ["Stredný 180 EUR", "Rast 220 EUR", "Autorita 290 EUR"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
-<p>SEO na slovenskom trhu stojí od 120 do 290 EUR mesačne pri hodinovej spolupráci, alebo 300 až 1 500 EUR mesačne pri agentúrach s paušálmi. Ja účtujem 12 EUR za odpracovanú hodinu: malý firemný web zvládnem v 10 hodinách mesačne (120 EUR), e-shop v 10 až 15 hodinách (120 až 180 EUR), rastový retainer je 220 EUR (cca 18 hodín) a autorita 290 EUR (cca 24 hodín). Retainer je odporúčaný rozsah, platíte za odpracovanú prácu. Detailný audit stojí 120 až 180 EUR jednorazovo, vstupný audit je bezplatný.</p>
+<p>SEO na slovenskom trhu stojí od 180 do 290 EUR mesačne pri hodinovej spolupráci, alebo 300 až 1 500 EUR mesačne pri agentúrach s paušálmi. Ja účtujem 12 EUR za odpracovanú hodinu: menší firemný web zvládnem v 15 hodinách mesačne (180 EUR), rastový retainer je 220 EUR (cca 18 hodín) a autorita 290 EUR (cca 24 hodín). Retainer je odporúčaný rozsah, platíte za odpracovanú prácu. Detailný audit stojí 120 až 180 EUR jednorazovo, vstupný audit je bezplatný.</p>
 <figure class="blog-chart">{price_chart}</figure>
 
 <h2>Cenové modely SEO na slovenskom trhu</h2>
 <p>Existujú tri cenové modely, každý má výhody a nevýhody:</p>
 <table class="metric-table">
 <tr><th>Model</th><th>Cena mesačne</th><th>Výhody</th><th>Nevýhody</th></tr>
-<tr><td><strong>Hodinový</strong> (ja)</td><td>120 až 290 EUR</td><td>Transparentnosť, platíte za prácu, nie za paušál</td><td>Menej predvídateľné náklady</td></tr>
+<tr><td><strong>Hodinový</strong> (ja)</td><td>180 až 290 EUR</td><td>Transparentnosť, platíte za prácu, nie za paušál</td><td>Menej predvídateľné náklady</td></tr>
 <tr><td><strong>Paušál agentúry</strong></td><td>300 až 1 500 EUR</td><td>Predvídateľnosť, fixný rozsah</td><td>Často neviditeľná práca, viazanosť 12 mesiacov</td></tr>
 <tr><td><strong>Projektový</strong> (jednorazový)</td><td>120 až 180 EUR</td><td>Jasný rozsah, jednorazová platba</td><td>Bez priebežnej údržby a obsahu</td></tr>
 </table>
@@ -752,31 +752,22 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 <ol>
 <li><strong>Rozsah webu</strong>: 5-stranový firemný web nie je 500-produktový e-shop. E-shop potrebuje texty kategórií, Merchant Center, feed optimalizáciu, viac času.</li>
 <li><strong>Konkurencia na vašich dopytoch</strong>: "zubár Nitra" má nízku konkurenciu (2-3 mesiace na pozíciu), "seo optimalizacia" má vysokú (12+ mesiacov, linkbuilding).</li>
-<li><strong>Rozsah obsahu</strong>: 2 obsahové stránky mesačne (Malý web, 120 EUR) nie sú 6 až 8 stránok (Rast, 220 EUR). Obsah je najviac času.</li>
+<li><strong>Rozsah obsahu</strong>: 4 až 6 obsahových stránok mesačne (Stredný web, 180 EUR) nie je 8 až 12 stránok (Autorita, 290 EUR). Obsah je najviac času.</li>
 </ol>
 <p>Preto nefunguje univerzálna cena. Precením počty hodín v pláne po audite, s reálnymi číslami pre váš konkrétny web.</p>
 
-<h2>Čo skutočne dostanete za 120 EUR mesačne (Malý web)</h2>
-<p>10 hodín práce mesačne, rozdelených na:</p>
+<h2>Čo skutočne dostanete za 180 EUR mesačne (Stredný web / e-shop)</h2>
+<p>15 hodín práce mesačne, rozdelených na:</p>
 <ul>
 <li>Audit webu a kľúčových slov (opakovanie, údržba)</li>
 <li>Technická oprava webu: rýchlosť, indexácia, canonical, 404</li>
-<li>2 obsahové stránky alebo prepisy existujúcich stránok</li>
-<li>Firemný Google profil v poriadku (dáta, fotky, Q&A)</li>
-<li>Mesačný report: 30-minútový hovor so mnou, pozície, kliky, objednávky</li>
-</ul>
-<p>Vhodné pre: malý firemný web (5-20 strán), lokálnu firmu s 1 pôsobiskom, začínajúci projekt.</p>
-
-<h2>Čo skutočne dostanete za 180 EUR mesačne (Stredný web / e-shop)</h2>
-<p>15 hodín práce mesačne, všetko z Malého webu plus:</p>
-<ul>
 <li>4 až 6 obsahových stránok mesačne na reálne dopyty zákazníkov</li>
 <li>Optimalizácia pre AI vyhľadávače (ChatGPT, Gemini, AI Overviews)</li>
 <li>Interné prelinkovanie a CRO tipy</li>
 <li>Linkbuilding (2 až 3 odkazy, cena odkazov vykazovaná zvlášť)</li>
 <li>Mesačný report a hovor 30 min</li>
 </ul>
-<p>Vhodné pre: stredný firemný web (20-50 strán), rastúci projekt, menší e-shop.</p>
+<p>Vhodné pre: menší a stredný firemný web (5-50 strán), lokálnu firmu, rastúci projekt, menší e-shop.</p>
 
 <h2>Čo skutočne dostanete za 220 EUR mesačne (Rast)</h2>
 <p>Cca 18 hodín práce mesačne, všetko zo Stredného webu plus:</p>
@@ -844,7 +835,7 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 """
     faq = [
         ("Koľko stojí SEO na Slovensku?",
-         "Hodinová spolupráca: 12 EUR za hodinu. Malý web 120 EUR mesačne (10 hodín), stredný web alebo e-shop 180 EUR (15 hodín), rastový retainer 220 EUR (cca 18 hodín), autorita 290 EUR (cca 24 hodín). Agentúry s paušálmi: 300 až 1 500 EUR mesačne, často s 12-mesačnou zmluvou. Detailný audit 120 až 180 EUR jednorazovo, vstupný audit bezplatne."),
+         "Hodinová spolupráca: 12 EUR za hodinu. Menší web alebo e-shop 180 EUR mesačne (15 hodín), rastový retainer 220 EUR (cca 18 hodín), autorita 290 EUR (cca 24 hodín). Agentúry s paušálmi: 300 až 1 500 EUR mesačne, často s 12-mesačnou zmluvou. Detailný audit 120 až 180 EUR jednorazovo, vstupný audit bezplatne."),
         ("Prečo máte cenu verejne?",
          "Lebo transparentnosť šetrí obe strany čas. Cena je 12 EUR za hodinu, rozsah potvrdím v pláne po bezplatnom audite. Žiadne skryté poplatky, žiadne prekvapenia."),
         ("Musím podpísať zmluvu na 12 mesiacov?",
@@ -854,14 +845,14 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
         ("Koľko stojí jeden odkaz?",
          "50 až 800 EUR na slovenskom trhu, podľa domény. Lokálny adresár 0-30 EUR, oborový blog 50-120, regionálne média 150-300, národné média 400-800. Detailnejšie v <a href='/sk/blog/linkbuilding-co-to-je/'>článku o linkbuildingu</a>."),
         ("Oplatí sa SEO pre malú firmu?",
-         "Áno, ak máte aspoň 1 zákazníka z Google mesačne. Pri hodnote zákazníka 500 EUR a cene 120 EUR mesačne sa ROI vráti po jednom zákazníkovi. Mikramt: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov."),
+         "Áno, ak máte aspoň 1 zákazníka z Google mesačne. Pri hodnote zákazníka 500 EUR a cene 180 EUR mesačne sa ROI vráti po jednom zákazníkovi. Mikramt: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov."),
         ("Môžem platiť len za výsledky?",
          "Nie. Google pozície nie sú garantovateľné, závisia od konkurencie a algoritmu. Ale môžete platiť za hodiny a skončiť kedykoľvek, ak výsledky neprídu. Pevná zmluva nie je."),
         ("Čo je zahrnuté v cene?",
          "Všetka SEO práca: technika, obsah, Google profil, AI viditeľnosť, linkbuilding (môj čas), weby, PPC. Náklady na odkazy a reklamné výdavky vykazované zvlášť, v skutočnej cene bez prirážky."),
     ]
     return blog_post(slug="kolko-stoji-seo", label="Cena", h1="Koľko stojí SEO v roku 2026? Reálne ceny na slovenskom trhu",
-                     answer="SEO stojí 120 až 290 EUR mesačne pri hodinovej spolupráci (12 EUR/hod), 300 až 1 500 EUR pri agentúrach. Reálny ROI: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov.",
+                     answer="SEO stojí 180 až 290 EUR mesačne pri hodinovej spolupráci (12 EUR/hod), 300 až 1 500 EUR pri agentúrach. Reálny ROI: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov.",
                      sections=sections, faq=faq,
                      related=[("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod"), ("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam")],
                      services=[("/sk/cennik/", "Cenník: 12 EUR za hodinu"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
@@ -1610,7 +1601,7 @@ _BLOG_CARDS = [
          excerpt="SEO optimalizácia krok za krokom: audit, plán s číslami, týždenná práca a mesačné meranie. Postup pre malé firmy, s reálnymi číslami z praxe."),
     dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-cerulean", date="16. 9. 2026",
          title="Koľko stojí SEO v roku 2026?",
-         excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, pri hodinovej spolupráci od 120 EUR mesačne. Prečo je cena 12 EUR za hodinu verejná a čo za ňu dostanete."),
+         excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, pri hodinovej spolupráci od 180 EUR mesačne. Prečo je cena 12 EUR za hodinu verejná a čo za ňu dostanete."),
     dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-violet-light", date="16. 9. 2026",
          title="SEO test: 15-bodový kontrolný zoznam pre váš web",
          excerpt="Prejdite si web sami za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Za každým zlyhaným bodom je konkrétna oprava."),

@@ -7,7 +7,7 @@ from engine import (base, page_hero, cta_band, faq_block, faq_schema,
 
 EN_FAQ = [
     ("How much does SEO cost?",
-     "You pay 12 EUR per hour of work. A small business website typically needs 10 hours per month (120 EUR), an e-shop 15 hours (180 EUR). Larger scopes use the 220 EUR growth retainer (about 18 hours) or the 290 EUR authority retainer (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
+     "You pay 12 EUR per hour of work. A small business website typically needs 15 hours per month (180 EUR). Larger scopes use the 220 EUR growth retainer (about 18 hours) or the 290 EUR authority retainer (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
     ("How long until SEO brings results?",
      "Initial movements on less competitive keywords usually appear within 2 to 4 months. Main competitive queries take 6 to 12 months. Realistic timelines are shared in the audit."),
     ("Do you guarantee first positions in Google?",
@@ -29,7 +29,7 @@ EN_FAQ_SECTIONS = [
     ]),
     ("Pricing and contracts", [
         ("How much does SEO cost?",
-         "12 EUR per hour worked. A small company website usually takes 10 hours per month (120 EUR), an e-shop 10 to 15 hours (120 to 180 EUR). Larger scopes use the 220 EUR retainer (about 18 hours) or 290 EUR (about 24 hours). Packages are recommended scopes, not mandatory fees."),
+         "12 EUR per hour worked. A small company website usually takes 15 hours per month (180 EUR). Larger scopes use the 220 EUR retainer (about 18 hours) or 290 EUR (about 24 hours). Packages are recommended scopes, not mandatory fees."),
         ("Are the contracts binding?",
          "No. You can stop the cooperation at any time, without penalties. I invoice monthly for hours actually worked."),
         ("What if I need more hours in one month?",
@@ -169,7 +169,7 @@ def en_home() -> tuple[str, str]:
       <div class="hero-content">
         <span class="hero-label">SEO agency for business owners · Europe</span>
         <h1>{h1}</h1>
-        <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. At a transparent 12 EUR per hour. Retainers from 120 EUR, no lock-in contracts.</p>
+        <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. At a transparent 12 EUR per hour. Retainers from 180 EUR, no lock-in contracts.</p>
         <div class="hero-ctas">
           <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Free website audit</a>
           <a href="/en/services/" class="btn btn-outline btn-lg">Services and pricing</a>
@@ -254,7 +254,7 @@ def en_home() -> tuple[str, str]:
     <div class="section-head">
       <span class="section-label">Pricing</span>
       <h2>12 EUR per hour. You pay for work, not a retainer fee.</h2>
-      <p class="section-subheading">Retainers from 120 to 290 EUR depending on the scope. Every hour is reported.</p>
+      <p class="section-subheading">Retainers from 180 to 290 EUR depending on the scope. Every hour is reported.</p>
     </div>
     <div class="rate-band">
       <div>
@@ -526,7 +526,7 @@ def en_services() -> tuple[str, str]:
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>per hour · stop any time</small></div>
-        <p style="margin-top:8px; max-width:520px;">Retainers: 120 EUR for a small site (10 hours), 180 EUR for a mid-size site or e-shop (15 hours), 220 EUR growth (about 18 hours) and 290 EUR authority (about 24 hours). Link costs and ad spend billed separately at cost.</p>
+        <p style="margin-top:8px; max-width:520px;">Retainers: 180 EUR for a smaller site or e-shop (15 hours), 220 EUR growth (about 18 hours) and 290 EUR authority (about 24 hours). Link costs and ad spend billed separately at cost.</p>
       </div>
       <a href="/en/pricing/" class="btn btn-primary btn-lg">See the full pricing</a>
     </div>
@@ -545,11 +545,8 @@ def en_services() -> tuple[str, str]:
 
 
 EN_PACKAGES = [
-    {"name": "Small website", "hours": 10, "price": 120,
-     "items": ["Website audit and keyword review", "Technical fixes", "2 content pages or rewrites", "Google Business Profile in order", "Monthly report"],
-     "cta": "/en/contact/"},
     {"name": "Mid-size site / e-shop", "hours": 15, "price": 180,
-     "items": ["Everything from Small website", "4 to 6 content pages per month", "AI search optimization", "Internal linking and CRO tips", "Link building (2 to 3 links)", "Monthly report and 30-minute call"],
+     "items": ["Website audit and keyword review", "Technical fixes", "4 to 6 content pages per month", "AI search optimization", "Internal linking and CRO tips", "Link building (2 to 3 links)", "Monthly report and 30-minute call"],
      "cta": "/en/contact/"},
     {"name": "Growth", "hours": 18, "price": 220, "featured": True,
      "badge": "Recommended retainer",
@@ -562,7 +559,7 @@ EN_PACKAGES = [
 
 EN_PRICING_FAQ = [
     ("How much does SEO cost?",
-     "Retainers from 120 to 290 EUR per month depending on the scope. A small business website is 120 EUR (10 hours), a mid-size site or e-shop 180 EUR (15 hours), the growth retainer 220 EUR (about 18 hours) and the authority retainer 290 EUR (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
+     "Retainers from 180 to 290 EUR per month depending on the scope. A small business website is 180 EUR (15 hours), the growth retainer 220 EUR (about 18 hours) and the authority retainer 290 EUR (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
     ("Why is it cheaper than other agencies?",
      "I have no offices or management layers. A large part of the work is done by automation I built myself, and expert time goes where it counts. The savings go to you."),
     ("What is included in the price?",
@@ -578,7 +575,7 @@ EN_PRICING_FAQ = [
 
 def en_pricing() -> tuple[str, str]:
     body = f"""
-{page_hero("Pricing", "Pricing: 12 EUR per hour, retainers from 120 EUR",
+{page_hero("Pricing", "Pricing: 12 EUR per hour, retainers from 180 EUR",
            "You pay for hours worked. A retainer is a recommended monthly scope you can change or stop at any time.",
            [("Home", "/en/"), ("Pricing", None)])}
 
@@ -627,7 +624,7 @@ def en_pricing() -> tuple[str, str]:
         <p style="margin-bottom:14px;">A law firm website in a town of 50,000 people:</p>
         <ul class="deliv-list">
           <li><span class="check">✓</span><span><strong>Month 1:</strong> audit + technical fixes + Google profile (12 h = 144 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Months 2 to 4:</strong> content pages for customer questions (10 h = 120 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Months 2 to 4:</strong> content pages for customer questions (15 h = 180 EUR)</span></li>
           <li><span class="check">✓</span><span><strong>Months 5+:</strong> maintenance, link building, AI visibility (8 h = 96 EUR)</span></li>
         </ul>
         <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">I confirm the real numbers for your website in the free audit.</p>
@@ -650,8 +647,8 @@ def en_pricing() -> tuple[str, str]:
 </section>
 """
     faq_html = faq_schema(EN_PRICING_FAQ, BASE + "/en/pricing/")
-    html = base(market="en", path="pricing/", title="Pricing: 12 EUR/hour and retainers from 120 EUR | Nokto Studio",
-                desc="Transparent SEO pricing at 12 EUR per hour. Retainers of 120, 180, 220 and 290 EUR per month depending on scope, no lock-in. Free audit.",
+    html = base(market="en", path="pricing/", title="Pricing: 12 EUR/hour and retainers from 180 EUR | Nokto Studio",
+                desc="Transparent SEO pricing at 12 EUR per hour. Retainers of 180, 220 and 290 EUR per month depending on scope, no lock-in. Free audit.",
                 canonical=BASE + "/en/pricing/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
     return ("en/pricing/index.html", html)
 
