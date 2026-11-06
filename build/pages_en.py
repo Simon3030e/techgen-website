@@ -7,7 +7,7 @@ from engine import (base, page_hero, cta_band, faq_block, faq_schema,
 
 EN_FAQ = [
     ("How much does SEO cost?",
-     "You pay 12 EUR per hour of work. A small business website typically needs 15 hours per month (180 EUR). Larger scopes use the 220 EUR growth retainer (about 18 hours) or the 290 EUR authority retainer (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
+     "Monthly retainers are 180 EUR (5 hours of work), 220 EUR (10 hours of work), and 290 EUR (15 hours of work). Specialist labor is 12 EUR per hour, while the rest covers premium SEO tool licenses, AI models, automated crawlers, and monthly reporting. I confirm the recommended scope in the plan after the free audit."),
     ("How long until SEO brings results?",
      "Initial movements on less competitive keywords usually appear within 2 to 4 months. Main competitive queries take 6 to 12 months. Realistic timelines are shared in the audit."),
     ("Do you guarantee first positions in Google?",
@@ -29,7 +29,7 @@ EN_FAQ_SECTIONS = [
     ]),
     ("Pricing and contracts", [
         ("How much does SEO cost?",
-         "12 EUR per hour worked. A small company website usually takes 15 hours per month (180 EUR). Larger scopes use the 220 EUR retainer (about 18 hours) or 290 EUR (about 24 hours). Packages are recommended scopes, not mandatory fees."),
+         "Monthly retainers are 180 EUR (5 hours of work), 220 EUR (10 hours of work), and 290 EUR (15 hours of work). The specialist labor rate is 12 EUR per hour; the remainder covers premium SEO tool suites, AI models, server monitoring, and monthly reporting. Packages are recommended monthly scopes, without any lock-in."),
         ("Are the contracts binding?",
          "No. You can stop the cooperation at any time, without penalties. I invoice monthly for hours actually worked."),
         ("What if I need more hours in one month?",
@@ -91,17 +91,33 @@ EN_LOGOS = """
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/kinetra.png" alt="Kinetra"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/audiq.png" alt="AUDIQ"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/nfsvision.png" alt="NFS Vision"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/kinetra.png" alt="Kinetra"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/audiq.png" alt="AUDIQ"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/nfsvision.png" alt="NFS Vision"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/kinetra.png" alt="Kinetra"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/audiq.png" alt="AUDIQ"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/nfsvision.png" alt="NFS Vision"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.sk"></span>
     </div>
   </div>
 </section>
@@ -445,7 +461,7 @@ def en_services() -> tuple[str, str]:
       <span class="section-label">SEO audit</span>
       <h2>SEO audit: 40 specific points, not a PDF for the drawer</h2>
     </div>
-    <p style="max-width:720px;">An SEO audit is a systematic evaluation that answers three questions: why you are not succeeding in Google, what exactly needs fixing, and in what order. I start with a free initial audit delivered within 3 business days: the 10 biggest problems and opportunities on one page. A detailed audit is an action plan with hours and priorities, not a 60-page PDF. My work costs 12 EUR per hour; a detailed audit is included in the first month retainer (120 to 180 EUR).</p>
+    <p style="max-width:720px;">An SEO audit is a systematic evaluation that answers three questions: why you are not succeeding in Google, what exactly needs fixing, and in what order. I start with a free initial audit delivered within 3 business days: the 10 biggest problems and opportunities on one page. A detailed audit is an action plan with hours and priorities, not a 60-page PDF. My work costs 12 EUR per hour; a detailed audit is included in the first month retainer (from 180 EUR).</p>
     <div class="grid-2" style="align-items:start; margin-top:24px;">
       <div class="card">
         <span class="section-label">Technical (15 points)</span>
@@ -526,7 +542,7 @@ def en_services() -> tuple[str, str]:
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>per hour · stop any time</small></div>
-        <p style="margin-top:8px; max-width:520px;">Retainers: 180 EUR for a smaller site or e-shop (15 hours), 220 EUR growth (about 18 hours) and 290 EUR authority (about 24 hours). Link costs and ad spend billed separately at cost.</p>
+        <p style="margin-top:8px; max-width:520px;">Retainers: 180 EUR for a smaller site or e-shop (5 hours), 220 EUR growth (10 hours) and 290 EUR authority (15 hours). Specialist work at 12 EUR/h, tools and AI included in packages.</p>
       </div>
       <a href="/en/pricing/" class="btn btn-primary btn-lg">See the full pricing</a>
     </div>
@@ -545,31 +561,34 @@ def en_services() -> tuple[str, str]:
 
 
 EN_PACKAGES = [
-    {"name": "Mid-size site / e-shop", "hours": 15, "price": 180,
-     "items": ["Website audit and keyword review", "Technical fixes", "4 to 6 content pages per month", "AI search optimization", "Internal linking and CRO tips", "Link building (2 to 3 links)", "Monthly report and 30-minute call"],
+    {"name": "Smaller site / e-shop", "hours": 5, "price": 180,
+     "breakdown": "5 h labor (60 EUR) + tools & AI (120 EUR)",
+     "items": ["Website audit and keyword review", "Technical website repairs", "5 hours of specialist labor per month (12 EUR / hour)", "Premium SEO tools, AI models and reporting", "Basic internal linking and on-page SEO", "Monthly report and 30-minute call"],
      "cta": "/en/contact/"},
-    {"name": "Growth", "hours": 18, "price": 220, "featured": True,
-     "badge": "Recommended retainer",
-     "items": ["Everything from Mid-size site", "6 to 8 content pages or blog posts per month", "2 competitor analyses per month", "AI visibility: ChatGPT, Gemini and AI Overviews monitoring", "Link building (4 links)", "Monthly report and 30-minute call"],
+    {"name": "Growth", "hours": 10, "price": 220, "featured": True,
+     "badge": "Most popular",
+     "breakdown": "10 h labor (120 EUR) + tools & AI (100 EUR)",
+     "items": ["Everything in Smaller site", "10 hours of specialist labor per month (12 EUR / hour)", "AI visibility: monitoring ChatGPT, Gemini and AI Overviews", "Content creation and page optimization", "Link building and competitor analysis", "Monthly report and 30-minute call"],
      "cta": "/en/contact/"},
-    {"name": "Authority", "hours": 24, "price": 290,
-     "items": ["Everything from Growth", "8 to 12 content pages or blog posts per month", "In-depth analysis and quarterly content plan", "AI visibility: query tracking and recommendations", "Link building (6 links)", "Priority communication and 60-minute call"],
+    {"name": "Authority", "hours": 15, "price": 290,
+     "breakdown": "15 h labor (180 EUR) + tools & AI (110 EUR)",
+     "items": ["Everything in Growth", "15 hours of specialist labor per month (12 EUR / hour)", "Full-scale custom SEO and content expansion", "AI visibility: query tracking and recommendations", "Link building strategy and outreach", "Priority communication and 60-minute call"],
      "cta": "/en/contact/"},
 ]
 
 EN_PRICING_FAQ = [
     ("How much does SEO cost?",
-     "Retainers from 180 to 290 EUR per month depending on the scope. A small business website is 180 EUR (15 hours), the growth retainer 220 EUR (about 18 hours) and the authority retainer 290 EUR (about 24 hours). The exact scope is confirmed in the plan after a free audit."),
-    ("Why is it cheaper than other agencies?",
-     "I have no offices or management layers. A large part of the work is done by automation I built myself, and expert time goes where it counts. The savings go to you."),
+     "Monthly retainers are 180 EUR (5 hours of work), 220 EUR (10 hours of work), and 290 EUR (15 hours of work). Specialist labor is 12 EUR per hour, while the rest covers premium SEO tool suites, AI models, server crawlers, and reporting. Packages are recommended monthly scopes, without lock-in."),
+    ("Why is it more cost-effective than large agencies?",
+     "No bloated offices or account manager overhead. Heavy data workflows are automated, allowing dedicated specialist time to focus strictly on results. Tool licenses and AI queries are already included in the retainer."),
     ("What is included in the price?",
-     "Everything except ad spend and the cost of links or third-party tools. Those are billed at cost, with no markup."),
+     "All technical SEO, content optimization, Google Maps/GBP profile, AI search tracking, plus analytical tools and AI models. External media/PR placement costs are passed through directly at cost with zero markup."),
     ("Do I pay monthly in advance?",
-     "I invoice monthly in arrears for hours actually worked, with an invoice. A retainer is a recommended scope, not a commitment."),
+     "I invoice monthly in arrears for completed work, backed by a transparent report. Retainers are recommended scopes, not rigid lock-in contracts."),
     ("Can I stop the cooperation at any time?",
-     "Yes, the monthly cycle can be ended at any time, without penalties or lock-in. Trust is earned through results."),
+     "Yes, the monthly cycle can be cancelled anytime without penalties. Trust is built through verified results."),
     ("How do I know the work was done?",
-     "Every month you get a list of tasks with hours and their result. You are the one who checks."),
+     "Every month you receive an itemized report of completed work, hours, and measured metrics (positions, GSC clicks, conversions, AI mentions), followed by an alignment call."),
 ]
 
 
@@ -623,9 +642,9 @@ def en_pricing() -> tuple[str, str]:
         <span class="section-label">Example from practice</span>
         <p style="margin-bottom:14px;">A law firm website in a town of 50,000 people:</p>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span><strong>Month 1:</strong> audit + technical fixes + Google profile (12 h = 144 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Months 2 to 4:</strong> content pages for customer questions (15 h = 180 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Months 5+:</strong> maintenance, link building, AI visibility (8 h = 96 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Month 1:</strong> audit + technical fixes + Google profile (Starter package, 180 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Months 2 to 4:</strong> content pages for customer questions (Growth package, 220 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Months 5+:</strong> maintenance, link building, AI visibility (180 to 290 EUR)</span></li>
         </ul>
         <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">I confirm the real numbers for your website in the free audit.</p>
       </div>

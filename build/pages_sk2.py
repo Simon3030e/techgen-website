@@ -212,7 +212,7 @@ def vysledky() -> tuple[str, str]:
   <div class="container">
     <div class="grid-2" style="align-items:start;">
       <div class="prose">
-        <span class="section-label">Ďaľší krok</span>
+        <span class="section-label">Ďalší krok</span>
         <h2>Audit webu zdarma</h2>
         <p>Do 1 až 2 pracovných dní vám pošlem bezplatný vstupný audit: čo brzdí vaše pozície, predaj a AI odporúčania. Stačí adresa webu a e-mail.</p>
         <p style="margin-top:18px;"><a href="/sk/kontakt/?audit=1" class="btn btn-primary btn-lg" style="width:100%;">Audit webu zdarma</a></p>
@@ -331,13 +331,13 @@ FAQ_SECTIONS = [
     ]),
     ("Cena a zmluvy", [
         ("Koľko stojí SEO?",
-         "12 EUR za odpracovanú hodinu. Menší firemný web zvyčajne 15 hodín mesačne (180 EUR). Pri väčšom rozsahu sú retainery 220 EUR (cca 18 hodín) a 290 EUR (cca 24 hodín). Balíčky sú odporúčané rozsahy, nie povinné paušály."),
-        ("Sú zmluvy viažúce?",
-         "Nie. Spoluprácu môžete skončiť kedykoľvek, bez sankcií. Fakturujem mesačne za skutočne odpracované hodiny."),
+         "Mesačné retainery sú 180 EUR (5 hodín práce), 220 EUR (10 hodín práce) a 290 EUR (15 hodín práce). Sadzba za prácu špecialistu je 12 EUR za hodinu, pričom zvyšok ceny retainera pokrýva licencie prémiových SEO nástrojov, AI modely a monitoring, serverové procesy a mesačný reporting. Balíčky sú odporúčané rozsahy, nie povinné viazanosti."),
+        ("Sú zmluvy viazané?",
+         "Nie. Spoluprácu môžete skončiť kedykoľvek, bez sankcií a bez viazanosti. Fakturujem mesačne spätne na základe transparentného reportu."),
         ("Čo ak potrebujem viac hodín v jednom mesiaci?",
-         "Nič sa nemení, ide sa len do väčšieho počtu hodín. Rozsah sa dohodne v pláne a môžete ho kedykoľvek zmeniť."),
+         "Nič sa nemení, dohodneme si väčší rozsah hodín. Rozsah sa dohodne v pláne a môžete ho kedykoľvek zmeniť."),
         ("Sú v cene zahrnuté reklamné výdavky?",
-         "Nie. Reklamu (Google Ads) platíte priamo Google. Riadim kampane za 12 EUR za hodinu. Náklady na odkazy a PR vykazujem v skutočnej cene."),
+         "Nie. Reklamu (Google Ads) platíte priamo Google. Riadim kampane v rámci dohodnutého rozsahu. Náklady na odkazy a PR články vykazujem v skutočnej nákupnej cene bez prirážky."),
     ]),
     ("Proces a výsledky", [
         ("Ako dlho trvá, kým SEO prinesie výsledky?",
@@ -623,7 +623,7 @@ def blog_post_navod() -> tuple[str, str]:
     first-party GSC data. Angle: SK-first 4-step guide with real GSC screenshots + 2026 update."""
     sections = f"""
 <h2>Stručná odpoveď</h2>
-<p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne hľadajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov. Na slovenskom trhu stojí od 180 EUR mesačne pri hodinovej spolupráci (12 EUR/hod, 15 hodín pre menší web).</p>
+<p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne hľadajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov. Na slovenskom trhu stojí od 180 EUR mesačne (5 h práce po 12 EUR/hod + profesionálne SEO nástroje a AI modely pre menší web).</p>
 <figure class="blog-chart">{_flow_chart()}</figure>
 
 <h2>Čo je SEO optimalizácia a ako Google hodnotí web</h2>
@@ -705,7 +705,7 @@ def blog_post_navod() -> tuple[str, str]:
         ("Za aký čas uvidím výsledky?",
          "Prvé pohyby na menej konkurenčných dotazoch za 2-4 mesiace, na hlavné dotazy 6-12 mesiacov. Záleží na konkurencii, stave webu a veku domény. Nový web potrebuje dlhší čas než existujúci s autoritou."),
         ("Koľko hodín mesačne zaberie SEO?",
-         "Menší web zvládnem v 15 hodinách mesačne (180 EUR), e-shop podľa rozsahu 15 až 24 hodín (180 až 290 EUR). Rozsah potvrdím v pláne po audite. Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
+         "Menší web zvládnem v základnom balíku za 180 EUR mesačne (5 h práce po 12 EUR/hod + nástroje a AI), rastúci web v balíku za 220 EUR (10 h práce + nástroje a AI) a e-shop za 290 EUR mesačne (15 h práce + nástroje a AI). Sadzba za moju prácu je 12 EUR/hod. Rozsah potvrdím v pláne po audite. Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
         ("Môžem robiť SEO sám?",
          "Áno, nástroje sú bezplatné (Search Console, PageSpeed, Marketing Miner). Ale SEO zaberie 10-20 hodín mesačne: audit, obsah, technika, meranie. Ak máte čas, skúste <a href='/sk/blog/seo-test-15-bodov/'>15-bodový SEO test</a> ako prvý krok."),
         ("Robíte aj obsah?",
@@ -731,75 +731,75 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
     first-party ROI case. Angle: transparent 12 EUR/hod with real Mikramt ROI (1620 EUR
     input, 2492 EUR revenue in 9 months)."""
     price_chart = _bars([180, 220, 290], _VIOLET,
-                        ["Stredný 180 EUR", "Rast 220 EUR", "Autorita 290 EUR"])
+                        ["Základ 180 EUR", "Rast 220 EUR", "Autorita 290 EUR"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
-<p>SEO na slovenskom trhu stojí od 180 do 290 EUR mesačne pri hodinovej spolupráci, alebo 300 až 1 500 EUR mesačne pri agentúrach s paušálmi. Ja účtujem 12 EUR za odpracovanú hodinu: menší firemný web zvládnem v 15 hodinách mesačne (180 EUR), rastový retainer je 220 EUR (cca 18 hodín) a autorita 290 EUR (cca 24 hodín). Retainer je odporúčaný rozsah, platíte za odpracovanú prácu. Detailný audit stojí 120 až 180 EUR jednorazovo, vstupný audit je bezplatný.</p>
+<p>SEO na slovenskom trhu stojí od 180 do 290 EUR mesačne pri transparentnom modeli, alebo 300 až 1 500 EUR mesačne pri agentúrach s paušálmi. Sadzba za moju špecializovanú prácu je 12 EUR za hodinu: základný balík je 180 EUR mesačne (5 h práce + nástroje a AI), rastový 220 EUR mesačne (10 h práce + nástroje a AI) a autorita 290 EUR mesačne (15 h práce + nástroje a AI). Zvyšok retainera pokrýva platené SEO nástroje, AI modely, crawling a reporting, takže neplatíte žiadne ďalšie skryté softvérové licencie. Vstupný audit je bezplatný, detailný akčný audit stojí od 180 EUR jednorazovo.</p>
 <figure class="blog-chart">{price_chart}</figure>
 
 <h2>Cenové modely SEO na slovenskom trhu</h2>
 <p>Existujú tri cenové modely, každý má výhody a nevýhody:</p>
 <table class="metric-table">
 <tr><th>Model</th><th>Cena mesačne</th><th>Výhody</th><th>Nevýhody</th></tr>
-<tr><td><strong>Hodinový</strong> (ja)</td><td>180 až 290 EUR</td><td>Transparentnosť, platíte za prácu, nie za paušál</td><td>Menej predvídateľné náklady</td></tr>
+<tr><td><strong>Transparentný retainer</strong> (ja)</td><td>180 až 290 EUR</td><td>12 EUR/hod za prácu, nástroje a AI v cene, bez viazanosti</td><td>Obmedzená kapacita</td></tr>
 <tr><td><strong>Paušál agentúry</strong></td><td>300 až 1 500 EUR</td><td>Predvídateľnosť, fixný rozsah</td><td>Často neviditeľná práca, viazanosť 12 mesiacov</td></tr>
-<tr><td><strong>Projektový</strong> (jednorazový)</td><td>120 až 180 EUR</td><td>Jasný rozsah, jednorazová platba</td><td>Bez priebežnej údržby a obsahu</td></tr>
+<tr><td><strong>Projektový audit</strong> (jednorazový)</td><td>od 180 EUR</td><td>Jasný rozsah, jednorazová platba a akčný plán</td><td>Bez priebežnej údržby a obsahu</td></tr>
 </table>
-<p>Väčšina slovenských agentúr účtuje paušál 300 až 1 500 EUR mesačne, často s 12-mesačnou zmluvou. Pri paušáli sa často nevie, čo za peniaze dostanete: koľko hodín reálne odpracujú, koľko obsahu napíšu, koľko odkazov kúpia. Preto fungujem na hodiny: každá hodina je vykazovaná v reporte s obsahom a výsledkom.</p>
+<p>Väčšina slovenských agentúr účtuje paušál 300 až 1 500 EUR mesačne, často s 12-mesačnou zmluvou. Pri paušáli sa často nevie, čo za peniaze dostanete: koľko hodín reálne odpracujú, koľko obsahu napíšu, koľko odkazov kúpia. Preto fungujem transparentne: každá hodina špecializovanej práce je vykazovaná v reporte s obsahom a výsledkom, pričom analytické nástroje a AI sú už v cene.</p>
 
 <h2>Čo ovplyvňuje cenu SEO</h2>
 <p>Tri veci rozhodujú o cene:</p>
 <ol>
 <li><strong>Rozsah webu</strong>: 5-stranový firemný web nie je 500-produktový e-shop. E-shop potrebuje texty kategórií, Merchant Center, feed optimalizáciu, viac času.</li>
 <li><strong>Konkurencia na vašich dopytoch</strong>: "zubár Nitra" má nízku konkurenciu (2-3 mesiace na pozíciu), "seo optimalizacia" má vysokú (12+ mesiacov, linkbuilding).</li>
-<li><strong>Rozsah obsahu</strong>: 4 až 6 obsahových stránok mesačne (Stredný web, 180 EUR) nie je 8 až 12 stránok (Autorita, 290 EUR). Obsah je najviac času.</li>
+<li><strong>Rozsah obsahu</strong>: 2 až 4 obsahové stránky mesačne (Základný balík, 180 EUR) nie je 6 až 8 stránok (Autorita, 290 EUR). Obsah je najviac času.</li>
 </ol>
 <p>Preto nefunguje univerzálna cena. Precením počty hodín v pláne po audite, s reálnymi číslami pre váš konkrétny web.</p>
 
-<h2>Čo skutočne dostanete za 180 EUR mesačne (Stredný web / e-shop)</h2>
-<p>15 hodín práce mesačne, rozdelených na:</p>
+<h2>Čo skutočne dostanete za 180 EUR mesačne (Základný balík)</h2>
+<p>5 hodín práce mesačne po 12 EUR/hod (60 EUR) + nástroje, crawling a AI (120 EUR):</p>
 <ul>
 <li>Audit webu a kľúčových slov (opakovanie, údržba)</li>
 <li>Technická oprava webu: rýchlosť, indexácia, canonical, 404</li>
-<li>4 až 6 obsahových stránok mesačne na reálne dopyty zákazníkov</li>
+<li>2 až 4 obsahové stránky alebo optimalizácia podstránok mesačne</li>
 <li>Optimalizácia pre AI vyhľadávače (ChatGPT, Gemini, AI Overviews)</li>
 <li>Interné prelinkovanie a CRO tipy</li>
-<li>Linkbuilding (2 až 3 odkazy, cena odkazov vykazovaná zvlášť)</li>
-<li>Mesačný report a hovor 30 min</li>
+<li>Linkbuilding (2 až 3 odkazy, externá cena odkazov vykazovaná zvlášť)</li>
+<li>Mesačný report a odporúčania ďalších krokov</li>
 </ul>
-<p>Vhodné pre: menší a stredný firemný web (5-50 strán), lokálnu firmu, rastúci projekt, menší e-shop.</p>
+<p>Vhodné pre: menší a stredný firemný web (5-50 strán), lokálnu firmu alebo živnostníka.</p>
 
 <h2>Čo skutočne dostanete za 220 EUR mesačne (Rast)</h2>
-<p>Cca 18 hodín práce mesačne, všetko zo Stredného webu plus:</p>
+<p>10 hodín práce mesačne po 12 EUR/hod (120 EUR) + nástroje, crawling a AI (100 EUR), všetko zo Základného balíka plus:</p>
 <ul>
-<li>6 až 8 obsahových stránok alebo blogov mesačne</li>
-<li>2 analýzy konkurencie mesačne (obsah, kľúčové slová, SERP)</li>
-<li>AI viditeľnosť: monitoring ChatGPT, Gemini a AI Overviews</li>
-<li>Linkbuilding (4 odkazy, cena odkazov vykazovaná zvlášť)</li>
-<li>Mesačný report a hovor 30 min</li>
+<li>4 až 6 obsahových stránok alebo blogov mesačne na overené dopyty</li>
+<li>Analýza konkurencie mesačne (obsah, kľúčové slová, SERP)</li>
+<li>AI viditeľnosť: monitoring značky v ChatGPT, Gemini a AI Overviews</li>
+<li>Linkbuilding (4 odkazy, externá cena odkazov vykazovaná zvlášť)</li>
+<li>Mesačný report a konzultačný hovor 30 min</li>
 </ul>
 <p>Vhodné pre: web, ktorý chce rásť na viacerých témach naraz, e-shop so širším katalógom, firmu s obsahovým plánom.</p>
 
 <h2>Čo skutočne dostanete za 290 EUR mesačne (Autorita)</h2>
-<p>Cca 24 hodín práce mesačne, všetko z Rastu plus:</p>
+<p>15 hodín práce mesačne po 12 EUR/hod (180 EUR) + nástroje, crawling a AI (110 EUR), všetko z Rastu plus:</p>
 <ul>
-<li>8 až 12 obsahových stránok alebo blogov mesačne</li>
+<li>6 až 8 obsahových stránok alebo blogov mesačne</li>
 <li>Hĺbková analýza a kvartálny plán obsahu</li>
 <li>AI viditeľnosť: tracking dotazov a odporúčaní v AI odpovediach</li>
-<li>Linkbuilding (6 odkazov, cena odkazov vykazovaná zvlášť)</li>
+<li>Linkbuilding (6 odkazov, externá cena odkazov vykazovaná zvlášť)</li>
 <li>Prioritná komunikácia a mesačný hovor 60 min</li>
 </ul>
-<p>Vhodné pre: e-shop (50+ produktov), konkurenčnú bránu (móda, elektronika, kozmetika), firmu, ktorá chce byť v AI odpovediach prvá.</p>
+<p>Vhodné pre: e-shop (50+ produktov), konkurenčnú branžu (móda, elektronika, stavebníctvo), firmu, ktorá chce byť v AI odpovediach prvá.</p>
 
 <h2>Skryté náklady, ktoré konkurencia nezmieňuje</h2>
 <p>Pri porovnávaní cien si všimnite, čo nie je v cene:</p>
 <ul>
-<li><strong>Odkazy</strong>: 50 až 800 EUR za odkaz, vykazované zvlášť. Pri 3 odkazoch mesačne ďalších 150 až 600 EUR.</li>
-<li><strong>Reklamné výdavky</strong>: Google Ads, Meta Ads. Platíte priamo Googlu, nie mne.</li>
-<li><strong>Nástroje</strong>: Ak treba platené nástroje (Ahrefs, Semrush), ich nájom je zvlášť.</li>
+<li><strong>Odkazy a PR články</strong>: 50 až 800 EUR za uverejnenie v redakcii, vykazované priamo bez prirážky.</li>
+<li><strong>Reklamné výdavky</strong>: Google Ads, Meta Ads. Platíte priamo platformám, nie mne.</li>
+<li><strong>Špecifické externé licencie</strong>: Bežné nástroje (Marketing Miner, crawlery, AI modely) sú už zahrnuté v cene balíka. Ak projekt vyžaduje špeciálny externý softvér, rieši sa dohodou.</li>
 <li><strong>Fotky a grafika</strong>: ak potrebujete profesionálne fotky pre obsah, grafik je zvlášť.</li>
 </ul>
-<p>Tieto náklady sa nepočítajú do mojej hodinovej sadzby. V mesačnom reporte vidíte každú položku, ktorá sa platí zvlášť.</p>
+<p>Tieto náklady sa nepočítajú do mojej práce. V mesačnom reporte vidíte každú položku, ktorá sa platí priamo externým dodávateľom.</p>
 
 <h2>Reálny ROI: koľko SEO vrátilo klientovi</h2>
 <p>Konkrétny prípad z mojej praxe: Mikramt.sk, malý e-shop na vlastnej platforme. Po 9 mesiacoch SEO práce:</p>
@@ -819,43 +819,43 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 <ul>
 <li><strong>Máte 2-produktový e-shop bez konkurencie</strong>: ak predávate jeden špecifický produkt a nik iný ho nepredáva, stačí základná optimalizácia, nie mesačná spolupráca.</li>
 <li><strong>Plánujete rebrand za 3 mesiace</strong>: ak meníte doménu, SEO práce na starej doméne sa stratia. Urobte SEO až po migrácii.</li>
-<li><strong>Máte rozpočet pod 100 EUR mesačne</strong>: s 100 EUR mesačne (8 hodín) sa urobí len audit a 1 obsahová stránka. Príliš pomaly na reálny rast.</li>
+<li><strong>Máte rozpočet pod 180 EUR mesačne</strong>: pri menšom rozpočte sa nedá zabezpečiť dostatok hodín ani pokrytie profesionálnych SEO nástrojov a AI modelov. Vtedy odporúčam začať jednorazovým auditom.</li>
 <li><strong>Nemáte produkt, ktorý ľudia hľadajú</strong>: ak váš produkt nikto nevyhľadáva v Google, SEO vám neprinesie návštevnosť. Najprv overte dopyt cez Marketing Miner.</li>
 </ul>
 
-<h2>Je lacné SEO za 50 EUR mesačne scam?</h2>
-<p>Áno. Žiadny kvalitný SEO špecialista nepracuje za 50 EUR mesačne (4 hodiny pri 12 EUR/hod). Čo dostanete za 50 EUR:</p>
+<h2>Je lacné SEO za 50 EUR mesačne podvod?</h2>
+<p>Áno. Žiadny kvalitný SEO špecialista nedokáže pracovať za 50 EUR mesačne a ešte platiť analytické nástroje. Čo reálne dostanete za 50 EUR:</p>
 <ul>
 <li>Automatizovaný audit vygenerovaný nástrojom (žiadna expertíza)</li>
-<li>Copy-paste report z volne dostupných nástrojov</li>
+<li>Copy-paste report z voľne dostupných nástrojov</li>
 <li>Žiadnu technickú opravu, žiadny obsah, žiadne odkazy</li>
-<li>Často len monthly "správu" bez reálnej práce</li>
+<li>Často len mesačnú "správu" bez reálnej práce</li>
 </ul>
 <p>Ak vám niekto ponúka SEO za 50 EUR mesačne, pýtajte sa: koľko hodín mesačne odpracuje, koľko obsahových stránok napíše, koľko odkazov kúpi. Odpoveď bude neurčitá, pretože reálna práca za 50 EUR neexistuje.</p>
 """
     faq = [
         ("Koľko stojí SEO na Slovensku?",
-         "Hodinová spolupráca: 12 EUR za hodinu. Menší web alebo e-shop 180 EUR mesačne (15 hodín), rastový retainer 220 EUR (cca 18 hodín), autorita 290 EUR (cca 24 hodín). Agentúry s paušálmi: 300 až 1 500 EUR mesačne, často s 12-mesačnou zmluvou. Detailný audit 120 až 180 EUR jednorazovo, vstupný audit bezplatne."),
+         "Základný retainer: 180 EUR mesačne (5 h práce + nástroje a AI). Rastový retainer: 220 EUR mesačne (10 h práce + nástroje a AI). Balík Autorita: 290 EUR mesačne (15 h práce + nástroje a AI). Sadzba za prácu je 12 EUR/hod, zvyšok pokrýva analytické nástroje, AI modely, serverové procesy a reporting. Agentúry s paušálmi: 300 až 1 500 EUR mesačne, často s ročnou viazanosťou. Detailný audit od 180 EUR jednorazovo, vstupný audit bezplatne."),
         ("Prečo máte cenu verejne?",
-         "Lebo transparentnosť šetrí obe strany čas. Cena je 12 EUR za hodinu, rozsah potvrdím v pláne po bezplatnom audite. Žiadne skryté poplatky, žiadne prekvapenia."),
+         "Lebo transparentnosť šetrí obom stranám čas. Sadzba za prácu je 12 EUR za hodinu, nástroje a AI sú v cene balíka, a rozsah potvrdím v pláne po bezplatnom audite. Žiadne skryté poplatky, žiadne nepríjemné prekvapenia."),
         ("Musím podpísať zmluvu na 12 mesiacov?",
-         "Nie. Pracujem mesačne, spoluprácu môžete skončiť kedykoľvek. Dôveru stavím na výsledkoch, nie na viazanosti. Žiadne sankcie za ukončenie."),
+         "Nie. Pracujem mesačne, spoluprácu môžete skončiť kedykoľvek. Dôveru staviam na výsledkoch, nie na viazanosti. Žiadne sankcie za ukončenie."),
         ("Čo ak SEO neprinesie výsledky?",
-         "Po 3 mesiacoch by ste vidieť prvé pohyby na long-tail dopytoch. Ak nie, audit by mal povedať prečo (konkurencia, stave webu, technické blokády). Ak neurobí, prestante. Pri hodinovom modeli nestratíte nič."),
+         "Po 2 až 4 mesiacoch by ste mali vidieť prvé pohyby na menej konkurenčných dopytoch. Ak nie, audit jasne povie prečo (silná konkurencia, stav webu, technické blokády). Ak by spolupráca neprinášala hodnotu, môžete ju kedykoľvek ukončiť. Vďaka transparentnému vykazovaniu presne vidíte, čo bolo spravené."),
         ("Koľko stojí jeden odkaz?",
-         "50 až 800 EUR na slovenskom trhu, podľa domény. Lokálny adresár 0-30 EUR, oborový blog 50-120, regionálne média 150-300, národné média 400-800. Detailnejšie v <a href='/sk/blog/linkbuilding-co-to-je/'>článku o linkbuildingu</a>."),
+         "50 až 800 EUR na slovenskom trhu, podľa domény. Lokálny adresár 0 až 30 EUR, odvetvový blog 50 až 120 EUR, regionálne médiá 150 až 300 EUR, národné médiá 400 až 800 EUR. Detailnejšie v <a href='/sk/blog/linkbuilding-co-to-je/'>článku o linkbuildingu</a>."),
         ("Oplatí sa SEO pre malú firmu?",
          "Áno, ak máte aspoň 1 zákazníka z Google mesačne. Pri hodnote zákazníka 500 EUR a cene 180 EUR mesačne sa ROI vráti po jednom zákazníkovi. Mikramt: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov."),
         ("Môžem platiť len za výsledky?",
-         "Nie. Google pozície nie sú garantovateľné, závisia od konkurencie a algoritmu. Ale môžete platiť za hodiny a skončiť kedykoľvek, ak výsledky neprídu. Pevná zmluva nie je."),
+         "Nie. Google pozície nie sú garantovateľné, závisia od konkurencie a algoritmu. Môžete však začať základným balíkom a spoluprácu kedykoľvek ukončiť, ak výsledky neprídu. Žiadna dlhodobá viazanosť."),
         ("Čo je zahrnuté v cene?",
-         "Všetka SEO práca: technika, obsah, Google profil, AI viditeľnosť, linkbuilding (môj čas), weby, PPC. Náklady na odkazy a reklamné výdavky vykazované zvlášť, v skutočnej cene bez prirážky."),
+         "Všetka SEO práca: technika, obsah, Google profil, AI viditeľnosť, linkbuildingový čas, analytické nástroje a AI modely. Externé náklady na PR články a reklamné výdavky sa vykazujú zvlášť, v skutočnej cene bez prirážky."),
     ]
     return blog_post(slug="kolko-stoji-seo", label="Cena", h1="Koľko stojí SEO v roku 2026? Reálne ceny na slovenskom trhu",
-                     answer="SEO stojí 180 až 290 EUR mesačne pri hodinovej spolupráci (12 EUR/hod), 300 až 1 500 EUR pri agentúrach. Reálny ROI: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov.",
+                     answer="SEO stojí 180 až 290 EUR mesačne (5 až 15 hodín práce po 12 EUR/hod + profesionálne SEO nástroje a AI), kým v agentúrach 300 až 1 500 EUR. Reálny ROI: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov.",
                      sections=sections, faq=faq,
                      related=[("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod"), ("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam")],
-                     services=[("/sk/cennik/", "Cenník: 12 EUR za hodinu"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
+                     services=[("/sk/cennik/", "Cenník: od 180 EUR mesačne"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
                      date_iso="2026-09-16", date_display="16. 9. 2026")
     body = f"""
 {page_hero("Blog", "Praktické články o SEO a AI",
@@ -1052,7 +1052,7 @@ def blog_post_seo_test() -> tuple[str, str]:
 <h3>13. ChatGPT a AI Overviews vaše meno vedia, keď pýtajú odporúčanie?</h3>
 <p><strong>Test:</strong> Otvorte ChatGPT a zadajte "Odporúč mi [vaša služba] v [vaše mesto]". Je vaše meno v odpovedi?</p>
 <p><strong>Čo znamená zlá hodnota:</strong> ChatGPT vás neodporúča, odporúča konkurenciu.</p>
-<p><strong>Ako opraviť:</strong> Pridajte priame odpovede na otázky na stránkach (prvých 60 slov). Štruktúrované dáta (Person, Organization, sameAs). Umiestnite sa na autoritativných weboch (odkazy, citácie).</p>
+<p><strong>Ako opraviť:</strong> Pridajte priame odpovede na otázky na stránkach (prvých 60 slov). Štruktúrované dáta (Person, Organization, sameAs). Umiestnite sa na autoritatívnych weboch (odkazy, citácie).</p>
 <h3>14. Prvé 60 slov každej stránky odpovedá priamo na dopyt?</h3>
 <p><strong>Test:</strong> Otvorte každú dôležitú stránku a prečítajte prvých 60 slov. Odpovedajú na otázku zákazníka?</p>
 <p><strong>Čo znamená zlá hodnota:</strong> "Vitajte na webe našej firmy, ktorá už 15 rokov..." (o vás, nie o zákazníkovi).</p>
@@ -1083,7 +1083,7 @@ def blog_post_seo_test() -> tuple[str, str]:
         ("Prečo môj web neindexuje Google?",
          "5 najčastejších dôvodov: (1) noindex tag v hlavičke, (2) robots.txt blokuje crawling, (3) thin content (menej ako 300 slov), (4) nový web (Google ho ešte nenašiel), (5) canonical chyba (odkazuje na inú URL). Overte v Search Console > Pages > Indexing."),
         ("Koľko stojí oprava zlyhaných bodov?",
-         "Pri hodinovej sadzbe 12 EUR: 3-5 zlyhaných bodov = 4-8 hodín (48-96 EUR), 6+ zlyhaných = 10-20 hodín (120-180 EUR). Najdrahšia je zvyčajne rýchlosť (LCP) a obsah (písanie textov). Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
+         "Pri hodinovej sadzbe 12 EUR: 3-5 zlyhaných bodov = 4-8 hodín (48-96 EUR), 6+ zlyhaných = 10-20 hodín (120-240 EUR). Najdrahšia je zvyčajne rýchlosť (LCP) a obsah (písanie textov). Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
     ]
     return blog_post(slug="seo-test-15-bodov", label="SEO test", h1="SEO test: 15-bodový kontrolný zoznam pre váš web",
                      answer="SEO test za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Každý zlyhaný bod je konkrétna úspora zákazníkov. Bezplatne, bez nástrojov.",
@@ -1098,7 +1098,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
     'linkbuilding' (pos 33, 1 impr). SERP: all CZ authors (Strafelda, MM, Upgates),
     no SK author with first-party case + real SK market prices. Angle: SK-first with
     first-party GSC data (250 clicks/3 months), real SK domain prices, named methodology."""
-    price_chart = _bars([30, 120, 300, 800], _ORANGE, ["adresár", "oborový blog", "regionálne média", "národné média"])
+    price_chart = _bars([30, 120, 300, 800], _ORANGE, ["adresár", "odvetvový blog", "regionálne médiá", "národné médiá"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
 <p>Linkbuilding je proces získavania hyperlinkov z iných webov na váš. Google ich berie ako odporúčanie: čím viac relevantných odkazov z kvalitných domén smeruje na vás, tým vyššie vo vyhľadávaní sa zaradíte. Na slovenskom trhu reálna cena odkazu v roku 2026 stojí od 30 EUR (lokálny adresár) do 800 EUR (národné médium). Bezpečné metódy: obsah, ktorý redakcia chce uverejniť, partnerstvá a lokálne citácie. Spamové siete a automatizované PBN nefungujú a riziko penalizácie je reálne od Penguin 4.0 a 2024 spam update.</p>
@@ -1111,9 +1111,9 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <h2>Ako som postavil odkazový profil pre slovenský web: 250 klikov za 3 mesiace</h2>
 <p>Konkrétny prípad z mojej praxe v roku 2026: firemný web, ktorý som prevzal s minimálnou organickou návštevnosťou. Po 3 mesiacoch spolupráce dosiahol 250 klikov z Google (+355 %) a 8 950 zobrazení (+246 %). Práca nebola len linkbuilding, ale kombinácia:</p>
 <ul>
-<li><strong>6 odkazov z oborových blogov</strong> (DR 35 až 48 podľa Marketing Minera), každý stál 50 až 120 EUR</li>
-<li><strong>2 guest posty na autoritativných weboch</strong> (DR 55 a 62), každý 150 a 200 EUR, témy, ktoré redakcia chcela uverejniť aj bez platby</li>
-<li><strong>3 lokálne citácie</strong> (Google firemný profil, firmy.sk, zlatystranky.sk), bezplatné, NAP konsistencia</li>
+<li><strong>6 odkazov z odvetvových blogov</strong> (DR 35 až 48 podľa Marketing Minera), každý stál 50 až 120 EUR</li>
+<li><strong>2 guest posty na autoritatívnych weboch</strong> (DR 55 a 62), každý 150 a 200 EUR, témy, ktoré redakcia chcela uverejniť aj bez platby</li>
+<li><strong>3 lokálne citácie</strong> (Google firemný profil, firmy.sk, zlatystranky.sk), bezplatné, NAP konzistencia</li>
 <li><strong>4 nové obsahové stránky</strong> na reálne dopyty zákazníkov (long-tail, nízka konkurencia)</li>
 <li><strong>Interné prelinkovanie</strong> silných stránok smerom k novým obsahom</li>
 </ul>
@@ -1124,22 +1124,22 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <p>Tieto čísla pochádzajú z mojich outreach kampaní za rok 2026. Nie sú odhady, sú faktúry od redakcií. Uvedomujem si, že každá doména je iná, ale tieto pásma vás ochránia pred preplácaním:</p>
 <table class="metric-table">
 <tr><th>Typ domény</th><th>Cena za odkaz</th><th>DR (Marketing Miner)</th><th>Kedy dáva zmysel</th></tr>
-<tr><td><strong>Lokálny adresár</strong> (firmy.sk, zlatystranky.sk)</td><td>0 až 30 EUR</td><td>20 až 40</td><td>Lokálne SEO, prvé kroky, NAP konsistencia</td></tr>
-<tr><td><strong>Oborový blog</strong> (blogy v branži)</td><td>50 až 120 EUR</td><td>30 až 50</td><td>Tématická relevantnosť, flexibilita anchor textu</td></tr>
-<tr><td><strong>Regionálne média</strong> (miestny denník, rádio web)</td><td>150 až 300 EUR</td><td>40 až 60</td><td>Lokálna autorita, citácie v mediálnych SERP</td></tr>
-<tr><td><strong>Národné média</strong> (SME, Denník N, Aktuality)</td><td>400 až 800 EUR</td><td>60+</td><td>Flagship odkaz, silný posun na hlavné dotazy</td></tr>
-<tr><td><strong>Guest post na autoritativnom webe</strong></td><td>80 až 200 EUR</td><td>35 až 55</td><td>Expertný obsah, dlhodobá autorita</td></tr>
+<tr><td><strong>Lokálny adresár</strong> (firmy.sk, zlatystranky.sk)</td><td>0 až 30 EUR</td><td>20 až 40</td><td>Lokálne SEO, prvé kroky, NAP konzistencia</td></tr>
+<tr><td><strong>Odvetvový blog</strong> (blogy v branži)</td><td>50 až 120 EUR</td><td>30 až 50</td><td>Tematická relevantnosť, flexibilita anchor textu</td></tr>
+<tr><td><strong>Regionálne médiá</strong> (miestny denník, rádio web)</td><td>150 až 300 EUR</td><td>40 až 60</td><td>Lokálna autorita, citácie v mediálnych SERP</td></tr>
+<tr><td><strong>Národné médiá</strong> (SME, Denník N, Aktuality)</td><td>400 až 800 EUR</td><td>60+</td><td>Flagship odkaz, silný posun na hlavné dotazy</td></tr>
+<tr><td><strong>Guest post na autoritatívnom webe</strong></td><td>80 až 200 EUR</td><td>35 až 55</td><td>Expertný obsah, dlhodobá autorita</td></tr>
 <tr><td><strong>Sponzorovaný článok v magazíne</strong></td><td>120 až 350 EUR</td><td>40 až 65</td><td>PR účel aj SEO účel, treba rel=nofollow alebo sponsored</td></tr>
 </table>
-<p>Moja hodinová sadzba 12 EUR je zvlášť, nepridávam k cene odkazu. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Malý firemný web potrebuje 2 až 4 odkazy mesačne, e-shop v konkurenčnej bráne 5 až 10.</p>
+<p>Moja hodinová sadzba 12 EUR je zvlášť, nepridávam k cene odkazu. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Malý firemný web potrebuje 2 až 4 odkazy mesačne, e-shop v konkurenčnej branži 5 až 10.</p>
 
 <h2>Sedem typov odkazov, ktoré reálne používam</h2>
 <p>Všeobecné návody hovoria "získajte kvalitné odkazy". Tu sú konkrétne typy s príkladmi domén, ktoré som v roku 2026 reálne oslovoval:</p>
 <h3>1. Lokálne citácie</h3>
 <p>Google firemný profil, firmy.sk, zlatystranky.sk, lokálne adresáre miest. Pre lokálne SEO sú základ. NAP (názov, adresa, telefón) musí byť identický naprieč, inak Google profilu neverí. Cena 0 až 30 EUR, efekt na lokálne dotazy (zubár Nitra, právnik Bratislava).</p>
-<h3>2. Oborové magazíny a blogy</h3>
-<p>Pre právnika: pravnenoviny.sk, pre e-shop s kozmetikou: kozmetika.sk blog. Hľadám ich cez Marketing Miner podľa tématickej relevantnosti. Cena 50 až 120 EUR, najlepší pomer ceny a dopadu na pozície.</p>
-<h3>3. Guest post na autoritativnom webe</h3>
+<h3>2. Odvetvové magazíny a blogy</h3>
+<p>Pre právnika: pravnenoviny.sk, pre e-shop s kozmetikou: kozmetika.sk blog. Hľadám ich cez Marketing Miner podľa tematickej relevantnosti. Cena 50 až 120 EUR, najlepší pomer ceny a dopadu na pozície.</p>
+<h3>3. Guest post na autoritatívnom webe</h3>
 <p>Ponúknem redakcii expertný článok, ktorý by napísali aj sami. Príklad: článok o AI viditeľnosti pre SME.sk v auguste 2026. Cena 80 až 200 EUR, vysoká autorita, posunie aj hlavné komerčné dotazy.</p>
 <h3>4. PR články v regionálnych médiách</h3>
 <p>Miestny denník, regionálne rádio. Dobré pre firemnú autoritu a lokálne SEO. Cena 150 až 300 EUR, vhodné pre firmy s lokálnym pôsobiskom, pre čisto online projekty menší zmysel.</p>
@@ -1148,7 +1148,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <h3>6. Sponzorované články</h3>
 <p>Uverejnenie článku s rel=sponsored alebo nofollow. Prenáša menej link equity, ale stále relevantný signál a návštevnosť. Cena 120 až 350 EUR. Vyhýbam sa sponzorovaným výpisom bez editoriálneho obsahu.</p>
 <h3>7. Resource page link building</h3>
-<p>Hľadám "užitočné odkazy" stránky na autoritativných weboch, ktoré zoznamujú nástroje a služby vo vašej branži. Napíšem autorovi, prečo by mal váš web pridať. Bezplatné, vyžaduje reálnu hodnotu pre ich čitateľov.</p>
+<p>Hľadám "užitočné odkazy" stránky na autoritatívnych weboch, ktoré zoznamujú nástroje a služby vo vašej branži. Napíšem autorovi, prečo by mal váš web pridať. Bezplatné, vyžaduje reálnu hodnotu pre ich čitateľov.</p>
 
 <h2>Reálny odkaz vs. spamový odkaz: konkrétne príklady</h2>
 <p>Ak vám niekto ponúka 100 odkazov za 200 EUR, sú spam. Tu je konkrétny rozdiel:</p>
@@ -1158,7 +1158,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <tr><td><strong>DR domény</strong></td><td>30+ (Marketing Miner)</td><td>0 až 15, často čerstvo zaregistrovaná</td></tr>
 <tr><td><strong>Editoriálny obsah</strong></td><td>Redakcia článok edituje, pridáva vlastné nadpisy</td><td>Copy-paste text bez redakčnej úpravy</td></tr>
 <tr><td><strong>Anchor text</strong></td><td>Reálny popis alebo brand, variabilný</td><td>Presný match kľúčového slova, opakovaný</td></tr>
-<tr><td><strong>Kontext</strong></td><td>Odkaz je súčasť textu o vašom tématu</td><td>Odkaz v bočnom paneli alebo patičke</td></tr>
+<tr><td><strong>Kontext</strong></td><td>Odkaz je súčasť textu o vašej téme</td><td>Odkaz v bočnom paneli alebo patičke</td></tr>
 <tr><td><strong>Indexácia Google</strong></td><td>Indexuje sa do 30 dní (site:search)</td><td>Neindexuje sa alebo je v Google Ignore</td></tr>
 <tr><td><strong>Cena</strong></td><td>50 až 800 EUR za odkaz</td><td>2 až 10 EUR za odkaz (sieť)</td></tr>
 </table>
@@ -1167,14 +1167,14 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <h2>Čo nerobiť: 5 typov odkazov, ktoré vás zničia</h2>
 <p>Tieto typy odkazov som videl v odkazových profiloch klientov, ktorí prišli k nám po penalizácii. Každý z nich Google detekuje a trestá:</p>
 <ol>
-<li><strong>PBN (Private Blog Networks)</strong>: súkromné sieti blogov, ktoré existujú len na predaj odkazov. Google ich detekuje cez SpamBrain od roku 2018. Náklady na odkaz 20 až 50 EUR, ale riziko stratu pozícií je 60+ percent.</li>
-<li><strong>Automatizované nástroje (GSA, Scrapebox)</strong>: generujú tisíce odkazov cez komentáre, fóra, katalogy. Google ich ignoruje alebo penalizuje. Náklady 50 až 200 EUR za nástroj, výsledok 0.</li>
+<li><strong>PBN (Private Blog Networks)</strong>: súkromné siete blogov, ktoré existujú len na predaj odkazov. Google ich detekuje cez SpamBrain od roku 2018. Náklady na odkaz 20 až 50 EUR, ale riziko straty pozícií je 60+ percent.</li>
+<li><strong>Automatizované nástroje (GSA, Scrapebox)</strong>: generujú tisíce odkazov cez komentáre, fóra, katalógy. Google ich ignoruje alebo penalizuje. Náklady 50 až 200 EUR za nástroj, výsledok 0.</li>
 <li><strong>Komentárový spam</strong>: odkazy v komentároch blogov, ktoré neprešli moderáciou. Väčšina má rel=nofollow alebo rel=ugc, takže neprenášajú autoritu. Ak ich je veľa, Google ich považuje za manipuláciu.</li>
-<li><strong>Katalogy bez návštevnosti</strong>: stovky katalogov, ktoré existujú len na odkazy. Žiadna návštevnosť, DR 0 až 15. Google ich od marca 2024 masovo odstránil z indexu.</li>
+<li><strong>Katalógy bez návštevnosti</strong>: stovky katalógov, ktoré existujú len na odkazy. Žiadna návštevnosť, DR 0 až 15. Google ich od marca 2024 masovo odstránil z indexu.</li>
 <li><strong>Site-wide odkazy z patičky</strong>: odkaz v patičke každého článku druhého webu. Google ich hodnotí ako jeden odkaz, nie tisíce, a považuje ich za manipulatívne.</li>
 </ol>
 
-<h2>Linkbuilding strategia krok za krokom</h2>
+<h2>Linkbuilding stratégia krok za krokom</h2>
 <p>Toto je presný postup, ktorým som vybudoval odkazové profily pre 5 klientov v roku 2026. Žiadne tajomstvá, len robota:</p>
 <h3>1. Audit existujúceho profilu</h3>
 <p>Najprv stiahnem všetky existujúce odkazy cez Ahrefs a Search Console. Hľadám: toxické odkazy z minulosti (PBN, spam), stratené odkazy (domény zanikli, redakcie zmenili URL), a prirodzené odkazy, ktoré môžem posilniť. Zlá minulosť je často väčšia brzda než chýbajúce nové odkazy. Ak máte 500 odkazov z PBN z roku 2018, prvý krok je disavow, nie nové odkazy.</p>
@@ -1183,7 +1183,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <h3>3. Tvorba obsahu, ktorý redakcia chce</h3>
 <p>Namiesto generického PR článku napíšem tému, ktorá redakcii chýba: prieskum trhu, prípadová štúdia, expertný návod. Redakcia SME.sk v roku 2026 uverejnila môj článok o AI viditeľnosti, pretože téma mala reálny dopyt a nebola nikde na Slovensku spracovaná. Takýto odkaz má DR 65 a posunie pozíciu, kým sponzorovaný PR výpis neurobí nič.</p>
 <h3>4. Outreach redakciám</h3>
-<p>Kontaktujem redakcie e-mailom s hotovým návrhom témy a prečo je ich čitateľom užitočná. Neponúkam copy-paste PR text, ponúkam expertný obsah, ktorý ich redakcia chce uverejniť aj bez platby, a vďaka tomu cenu zliezmem. Pri dosiahnutí 20 redakcií mám reply rate 35 percent a publish rate 18 percent, čo je nad priemerom SK trhu.</p>
+<p>Kontaktujem redakcie e-mailom s hotovým návrhom témy a prečo je ich čitateľom užitočná. Neponúkam copy-paste PR text, ponúkam expertný obsah, ktorý ich redakcia chce uverejniť aj bez platby, a vďaka tomu cenu znížim. Pri dosiahnutí 20 redakcií mám reply rate 35 percent a publish rate 18 percent, čo je nad priemerom SK trhu.</p>
 <h3>5. Hodnotenie kvality po uverejnení</h3>
 <p>Po uverejnení overím: indexácia v Google (site:search), DR domény v Marketing Mineri, návštevnosť podľa SimilarWeb, relevantnosť anchor textu k cieľovému dotazu. Ak odkaz neindexuje Google do 60 dní, navrhujem redakcii úpravu alebo ho nahradím iným. V mesačnom reporte vidíte každý odkaz aj s týmito metrikami.</p>
 <h3>6. Dlhodobá údržba</h3>
@@ -1193,21 +1193,21 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <p>Nový odkaz sa v Google indexuje 2 až 6 týždňov a plný dopad na pozíciu sa prejaví za 4 až 12 týždňov. Prvé pohyby vidím na menej konkurenčných dotazoch už po mesiaci, na hlavných komerčných dotazoch reálne 3 až 6 mesiacov. Preto kombinujem linkbuilding s obsahovou prácou, ktorá prináša návštevnosť aj pred odkazmi. Odkazy bez obsahu nefungujú: vedú na prázdne stránky, ktoré Google neradí.</p>
 
 <h2>Koľko odkazov potrebujete mesačne</h2>
-<p>Malý firemný web 2 až 4, e-shop v konkurenčnej bráne 5 až 10, autoritativný informačný web 3 až 6. Viac nie je vždy lepšie: 10 odkazov z rôznych domén s reálnou návštevnosťou spraví viac než 100 z prázdnych katalogov. V pláne po audite dostanete konkrétny počet založený na vašej konkurencii a rozpočte. Celý proces popisuje <a href="/sk/sluzby/linkbuilding/">linkbuilding služba</a>.</p>
+<p>Malý firemný web 2 až 4, e-shop v konkurenčnej branži 5 až 10, autoritatívny informačný web 3 až 6. Viac nie je vždy lepšie: 10 odkazov z rôznych domén s reálnou návštevnosťou spraví viac než 100 z prázdnych katalógov. V pláne po audite dostanete konkrétny počet založený na vašej konkurencii a rozpočte. Celý proces popisuje <a href="/sk/sluzby/linkbuilding/">linkbuilding služba</a>.</p>
 """
     faq = [
         ("Linkbuilding čo to je?",
          "Linkbuilding je proces získavania hyperlinkov z iných webov na váš web. Každý odkaz je pre Google signál dôvery: ak na vás odkazuje reálna doména s návštevnosťou, Google to vyhodnotí ako odporúčanie a posunie vás vyššie. Rozdeľujem ho na tri typy: prirodzené (niekto vás cituje sám), outreach (ponúknem redakcii článok) a lokálne citácie (adresáre, Google profil, firmy.sk). Spamové siete a automatizované PBN nefungujú a riziko penalizácie je reálne."),
         ("Koľko stojí jeden odkaz na Slovensku?",
-         "Na slovenskom trhu v roku 2026: lokálny adresár 0 až 30 EUR, oborový blog 50 až 120 EUR, regionálne média 150 až 300 EUR, národné média (SME, Denník N) 400 až 800 EUR. Vykazujem skutočnú cenu, ktorú mi účtuje redakcia, bez prirážky. Moja práca stojí 12 EUR za hodinu, samostatne."),
+         "Na slovenskom trhu v roku 2026: lokálny adresár 0 až 30 EUR, odvetvový blog 50 až 120 EUR, regionálne médiá 150 až 300 EUR, národné médiá (SME, Denník N) 400 až 800 EUR. Vykazujem skutočnú cenu, ktorú mi účtuje redakcia, bez prirážky. Moja práca stojí 12 EUR za hodinu, samostatne."),
         ("Ako dlho trvá, kým odkazy pomôžu?",
          "Nový odkaz sa v Google indexuje 2 až 6 týždňov a plný dopad na pozíciu sa prejaví za 4 až 12 týždňov. Prvé pohyby na menej konkurenčných dotazoch už po mesiaci, na hlavných komerčných dotazoch reálne 3 až 6 mesiacov. Preto kombinujem linkbuilding s obsahovou prácou, ktorá prináša návštevnosť aj pred odkazmi."),
         ("Ktoré odkazy sú nebezpečné?",
-         "PBN (súkromné blogové siete), automatizované nástroje typu GSA, komentárový spam, odkazy z prázdnych katalogov bez návštevnosti, a zámerné umiestňovanie anchor textu v sieti prepojených satelitov. Google ich detekuje od Penguin 4.0 (2016) a SpamBrain (2018). Ak váš web už má také odkazy, v audite ich identifikujem a navrhujem disavow."),
+         "PBN (súkromné blogové siete), automatizované nástroje typu GSA, komentárový spam, odkazy z prázdnych katalógov bez návštevnosti, a zámerné umiestňovanie anchor textu v sieti prepojených satelitov. Google ich detekuje od Penguin 4.0 (2016) a SpamBrain (2018). Ak váš web už má také odkazy, v audite ich identifikujem a navrhujem disavow."),
         ("Robíte aj kupovanie odkazov?",
-         "Áno, v slovenskom a českom prostredí je bežné, že redakcie účtujú za uverejnenie článku s odkazom. Rozdiel medzi bezpečným a rizikovým odkazom nie je v tom, či sa platí, ale v tom, či je článok reálny, doména má návštevnosť a odkaz sedí v kontexte. Pracujem len s doménami, ktoré majú reálnu organickú návštěvnosť podľa Marketing Minera."),
+         "Áno, v slovenskom a českom prostredí je bežné, že redakcie účtujú za uverejnenie článku s odkazom. Rozdiel medzi bezpečným a rizikovým odkazom nie je v tom, či sa platí, ale v tom, či je článok reálny, doména má návštevnosť a odkaz sedí v kontexte. Pracujem len s doménami, ktoré majú reálnu organickú návštevnosť podľa Marketing Minera."),
         ("Koľko odkazov potrebujem mesačne?",
-         "Malý firemný web 2 až 4, e-shop v konkurenčnej bráne 5 až 10, autoritativný informačný web 3 až 6. Viac nie je vždy lepšie: 10 odkazov z rôznych domén s reálnou návštevnosťou spraví viac než 100 z prázdnych katalogov. V pláne po audite dostanete konkrétny počet."),
+         "Malý firemný web 2 až 4, e-shop v konkurenčnej branži 5 až 10, autoritatívny informačný web 3 až 6. Viac nie je vždy lepšie: 10 odkazov z rôznych domén s reálnou návštevnosťou spraví viac než 100 z prázdnych katalógov. V pláne po audite dostanete konkrétny počet."),
         ("Čo je anchor text a prečo záleží?",
          "Anchor text je viditeľný text odkazu, na ktorý sa kliká. Google ho používa na pochopenie, o čom je odkazovaná stránka. Prirodzený anchor text je variabilný (brand, URL, popis), nie len presné kľúčové slovo. Ak máte 100 odkazov s rovnakým anchor textom 'seo optimalizacia', Google to považuje za manipuláciu a penalizuje."),
         ("Ako zistím, aké odkazy už mám?",
@@ -1371,7 +1371,7 @@ def blog_post_wordpress() -> tuple[str, str]:
 <tr><td><strong>AI assistant</strong></td><td>Áno (Premium)</td><td>Áno (v bezplatnej)</td></tr>
 <tr><td><strong>Pre koho</strong></td><td>Začiatočníci, jednoduchosť</td><td>Pokročilí, viac funkcií zdarma</td></tr>
 </table>
-<p><strong>Nikdy nenainštalujte obe.</strong> Dva SEO pluginy konfliktujú, generujú duplicitné meta tagy a schema. Vyberte jeden. Pre nové weby odporúčam Rank Math (viac funkcií v bezplatnej verzii), pre existujúce weby s Yoast nemá zmysel migrovať, ak Yoast funguje.</p>
+<p><strong>Nikdy neinštalujte oba naraz.</strong> Dva SEO pluginy sú v konflikte, generujú duplicitné meta tagy a schémy. Vyberte jeden. Pre nové weby odporúčam Rank Math (viac funkcií v bezplatnej verzii), pre existujúce weby s Yoast nemá zmysel migrovať, ak Yoast funguje.</p>
 
 <h2>Nastavenie 1-4: Rýchlosť (Core Web Vitals)</h2>
 <h3>1. Cache plugin</h3>
@@ -1415,14 +1415,14 @@ def blog_post_wordpress() -> tuple[str, str]:
 <tr><td><strong>SEO plugin</strong></td><td>Yoast/RankMath, komplexné</td><td>SEO modul, obmedzený</td><td>Treba nakódovať</td></tr>
 <tr><td><strong>Rýchlosť</strong></td><td>Závisí od pluginov, často pomalý</td><td>Stredná, optimalizovaná</td><td>Záleží od vývojára</td></tr>
 <tr><td><strong>Schéma</strong></td><td>Automatická cez plugin</td><td>Automatická, ale obmedzená</td><td>Treba nakódovať JSON-LD</td></tr>
-<tr><td><strong>Hreflang</strong></td><td>WPML/Polylang</td><td>Vestavnený</td><td>Treba nakódovať</td></tr>
+<tr><td><strong>Hreflang</strong></td><td>WPML/Polylang</td><td>Vstavaný</td><td>Treba nakódovať</td></tr>
 <tr><td><strong>Interné prelinkovanie</strong></td><td>YARPP, manuálne</td><td>Modul "súvisiace produkty"</td><td>Treba nakódovať</td></tr>
 </table>
 <p>Pri SEO má nástroj druhoradú úlohu: dôležitá je stratégia a jej vykonávanie. WordPress, Shoptet, WooCommerce aj vlastné riešenia sa optimalizujú rovnakými princípmi: technika, obsah, autorita.</p>
 """
     faq = [
         ("Ktorý plugin na SEO v WordPress je najlepší?",
-         "Rank Math pre nové weby (viac funkcií v bezplatnej verzii: komplexná schema, AI assistant, rýchlejšia sitemap). Yoast pre existujúce weby (ak funguje, nemá zmysel migrovať). Nikdy nenainštalujte obe, konfliktujú a generujú duplicitné meta tagy."),
+         "Rank Math pre nové weby (viac funkcií v bezplatnej verzii: komplexná schema, AI assistant, rýchlejšia sitemap). Yoast pre existujúce weby (ak funguje, nemá zmysel migrovať). Nikdy neinštalujte oba naraz, sú v konflikte a generujú duplicitné meta tagy."),
         ("Zaberie to viac ako 12 nastavení?",
          "Základ je 12 bodov, 6-10 hodín. Na konkurenčné dopyty k tomu prichádza obsah (písanie textov), interné prelinkovanie, linkbuilding a AI viditeľnosť. Detailnejšie v <a href='/sk/blog/seo-optimalizacia-navod/'>kompletnom SEO návode</a>."),
         ("Ako zlepším rýchlosť WordPress webu?",
@@ -1486,11 +1486,11 @@ def blog_post_eshop() -> tuple[str, str]:
 </ul>
 
 <h2>Za aký čas a čo to stojí</h2>
-<p>Long-tail produkty a menšie kategórie sa hýbu za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov, podľa konkurencie a stavu webu. Práca je 10 až 15 hodín mesačne, teda 120 až 180 EUR mesačne pri sadzbe 12 EUR za hodinu, pri väčšom rozsahu 220 až 290 EUR. Náklady na odkazy a prípadný obsah sa účtujú zvlášť. Presný rozsah vždy potvrdzuje bezplatný audit.</p>
+<p>Long-tail produkty a menšie kategórie sa hýbu za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov, podľa konkurencie a stavu webu. Mesačná spolupráca začína od 180 EUR mesačne (5 h práce + nástroje a AI), rastový balík je 220 EUR (10 h práce + nástroje a AI) a pre väčší e-shop 290 EUR mesačne (15 h práce + nástroje a AI). Sadzba za moju špecializovanú prácu je 12 EUR za hodinu, nástroje a modely sú v cene. Náklady na externé PR odkazy a redakcie sa účtujú zvlášť. Presný rozsah vždy potvrdzuje bezplatný audit.</p>
 """
     faq = [
         ("Koľko stojí SEO pre e-shop?",
-         "Práca je 10 až 15 hodín mesačne, teda 120 až 180 EUR pri sadzbe 12 EUR za hodinu, pri väčšom rozsahu 220 až 290 EUR. Vstupné nastavenie (technika, štruktúra, feed) je 6 až 10 hodín jednorazovo. Náklady na odkazy a obsah sa vykazujú zvlášť, bez prirážky."),
+         "Mesačné balíky pre e-shopy sú 180 EUR (5 h práce + nástroje a AI), 220 EUR (10 h práce + nástroje a AI) alebo 290 EUR mesačne (15 h práce + nástroje a AI) pri sadzbe za špecializovanú prácu 12 EUR za hodinu. Vstupné nastavenie (technika, štruktúra, feed) je súčasťou prvého mesiaca. Náklady na externé PR odkazy a redakcie sa vykazujú zvlášť, bez prirážky."),
         ("Ako dlho trvá, kým prídu prvé objednávky z organického?",
          "Long-tail produkty a menšie kategórie za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov. Pri novom e-shope bez autority je prvý mesiac o technike a štruktúre, objednávky prichádzajú postupne s tým, ako Google stránky preindexuje."),
         ("Stačí mi SEO modul v Shoptete?",
@@ -1601,7 +1601,7 @@ _BLOG_CARDS = [
          excerpt="SEO optimalizácia krok za krokom: audit, plán s číslami, týždenná práca a mesačné meranie. Postup pre malé firmy, s reálnymi číslami z praxe."),
     dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-cerulean", date="16. 9. 2026",
          title="Koľko stojí SEO v roku 2026?",
-         excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, pri hodinovej spolupráci od 180 EUR mesačne. Prečo je cena 12 EUR za hodinu verejná a čo za ňu dostanete."),
+         excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, transparentné balíky od 180 EUR mesačne. Prečo je sadzba 12 EUR za hodinu verejná a čo za ňu dostanete."),
     dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-violet-light", date="16. 9. 2026",
          title="SEO test: 15-bodový kontrolný zoznam pre váš web",
          excerpt="Prejdite si web sami za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Za každým zlyhaným bodom je konkrétna oprava."),

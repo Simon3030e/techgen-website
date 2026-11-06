@@ -125,11 +125,11 @@ def blog_post_ecommerce() -> tuple[str, str]:
 </ul>
 
 <h2>Timeline and cost</h2>
-<p>Long-tail products and smaller categories move in 2 to 4 months, main categories in 6 to 12 months, depending on competition and site health. The work is 15 hours per month, which is 180 EUR per month at 12 EUR per hour, and 220 to 290 EUR for a larger scope. Link and content costs are billed separately. A free audit always confirms the exact scope.</p>
+<p>Long-tail products and smaller categories move in 2 to 4 months, main categories in 6 to 12 months, depending on competition and site health. Monthly retainers start at 180 EUR (5 h labor + tools & AI), the growth package is 220 EUR (10 h labor + tools & AI), and larger e-commerce stores are 290 EUR per month (15 h labor + tools & AI). Specialist labor is 12 EUR per hour, tools and AI models are included. External PR media placements are billed separately. A free entry audit always confirms the recommended scope.</p>
 """
     faq = [
         ("How much does e-commerce SEO cost?",
-         "The work is 15 hours per month, which is 180 EUR at 12 EUR per hour, and 220 to 290 EUR for a larger scope. The initial setup (technical, structure, feed) is 6 to 10 hours one-off. Link and content costs are billed separately at cost, with no markup."),
+         "E-commerce retainers are 180 EUR (5 h labor + tools & AI), 220 EUR (10 h labor + tools & AI), or 290 EUR per month (15 h labor + tools & AI) at a 12 EUR per hour specialist labor rate. Initial setup (technical, structure, feed) is part of month 1. External link and PR costs are billed separately at cost, with no markup."),
         ("How long until the first orders from organic?",
          "Long-tail products and smaller categories in 2 to 4 months, main categories in 6 to 12 months. For a new shop without authority, the first month is about technical work and structure; orders arrive as Google indexes the pages."),
         ("Is the built-in SEO module of my platform enough?",

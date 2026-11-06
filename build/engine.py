@@ -652,13 +652,14 @@ def price_cards(cards: list[dict], market: str) -> str:
         if c.get("featured"):
             badge = f'<span class="price-badge">{c.get("badge", default_badge)}</span>'
         lis = "".join(f"<li>{i}</li>" for i in c["items"])
-        hours_label = f"cca {c['hours']} h" if c["price"] != c["hours"] * 12 else f"{c['hours']} h"
+        hours_label = f"{c['hours']} h"
+        breakdown_html = f'<div style="font-size:0.8rem; color:var(--text-muted); margin-top:-14px; margin-bottom:16px;">{c["breakdown"]}</div>' if c.get("breakdown") else ''
         out.append(f"""
 <div class="price-card{feat}">
   {badge}<span class="price-hours">{c['name']}</span>
   <div class="price-amount">{c['price']}<small> EUR / {period}</small></div>
   <div class="price-monthly"><strong>{hours_label}</strong> {work}</div>
-  <ul>{lis}</ul>
+  {breakdown_html}<ul>{lis}</ul>
   <a href="{KONTAKT_LINK[market]}" class="btn btn-primary">{btn_label}</a>
 </div>""")
     return f'<div class="pricing-grid">{"".join(out)}</div>'

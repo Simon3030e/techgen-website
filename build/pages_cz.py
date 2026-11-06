@@ -41,17 +41,33 @@ CZ_LOGOS = """
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/kinetra.png" alt="Kinetra"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/audiq.png" alt="AUDIQ"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/nfsvision.png" alt="NFS Vision"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.cz"></span>
-      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.cz"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.cz"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.cz"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
       <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/kinetra.png" alt="Kinetra"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/audiq.png" alt="AUDIQ"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/nfsvision.png" alt="NFS Vision"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
       <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.cz"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.cz"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/mikramt.png" alt="Mikramt.sk"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/inthecity.png" alt="InTheCity"></span>
+      <span class="logo-badge"><img loading="lazy" class="logo-inv" src="/assets/img/logos/speem.webp" alt="Speem"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/kinetra.png" alt="Kinetra"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/audiq.png" alt="AUDIQ"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/nfsvision.png" alt="NFS Vision"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/studioapp.png" alt="StudioApp"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/energymonitor.png" alt="EnergyMonitor.tech"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/servisprofi.png" alt="ServisProfi.cz"></span>
+      <span class="logo-badge"><img loading="lazy" src="/assets/img/logos/solarprofi.png" alt="SolarProfi.cz"></span>
     </div>
   </div>
 </section>
@@ -90,14 +106,14 @@ def cz_process_section(label: str = "Jak pracuji") -> str:
 
 CZ_HOME_FAQ = [
     ("Kolik stojí SEO optimalizace webu?",
-     "Za práci platíte 12 EUR za hodinu. Menší web zvládnu za 15 hodin měsíčně (180 EUR), při větším rozsahu 18 až 24 hodin (220 až 290 EUR). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
+     "Základní měsíční retainer je 180 EUR (5 h práce + nástroje a AI), růstový 220 EUR (10 h práce + nástroje a AI) a autorita 290 EUR (15 h práce + nástroje a AI). Sazba za odbornou práci je 12 EUR za hodinu, zbytek pokrývá licence SEO nástrojů, AI modely, crawling a reporting. Přesný rozsah potvrdím v plánu po bezplatném auditu."),
     ("Jak dlouho trvá, než SEO přinese výsledky?",
      "První pohyby na méně konkurenčních klíčových slovech obvykle do 2 až 4 měsíců. Na hlavní dotazy v konkurenčních oborech 6 až 12 měsíců. Realistické termíny řeknu už v auditu."),
     ("Uvidím, za co platím?",
      "Ano. Každý měsíc dostanete report s odpracovanými hodinami, jejich obsahem a výsledky: pozice, kliky z Google, kontakty a objednávky, zmínky v AI."),
     ("Pomůžete mi, aby mě doporučoval ChatGPT?",
      "Ano, to je moje specializace. Optimalizuji web pro AI nástroje (ChatGPT, Gemini, AI Overviews) tak, aby vás doporučovaly při dotazech vašich zákazníků."),
-    ("Jsou smlouvy vážoucí na 12 měsíců?",
+    ("Jsou smlouvy vázané na 12 měsíců?",
      "Ne. Pracuji měsíčně, spolupráci můžete kdykoli ukončit. Důvěru stavím na výsledcích, ne na vázanosti."),
 ]
 
@@ -493,7 +509,7 @@ def cz_seo_optimalizace() -> tuple[str, str]:
         title="SEO optimalizace webových stránek | Nokto Studio",
         desc="SEO optimalizace webu: technika, obsah, klíčová slova. Pozice v Google, které přivedou zákazníky. 12 EUR za hodinu, bezplatný SEO audit.",
         label="Služba · SEO optimalizace",
-        time_estimate="15 hodin měsíčně pro menší web (180 EUR), e-shop 15 až 24 hodin",
+        time_estimate="Základní balíček 180 EUR (5 h práce + nástroje a AI), růstový 220 EUR (10 h práce), e-shop 290 EUR (15 h práce)",
         h1="SEO optimalizace, která přivede zákazníky",
         intro="Zákazník, který vás hledá v Googlu, je nejlevnější zákazník. Postavím web tak, aby mu Google rozuměl, zařadil ho nahoru a návštěvníci odcházeli s odpovědí, ne s otazníkem.",
         for_who=[
@@ -512,7 +528,7 @@ def cz_seo_optimalizace() -> tuple[str, str]:
         ],
         faq=[
             ("Kolik hodin měsíčně zabere SEO optimalizace?",
-             "Menší web zvládnu za 15 hodin měsíčně (180 EUR), e-shop podle rozsahu 15 až 24 hodin (180 až 290 EUR). Rozsah potvrdím v plánu po auditu."),
+             "Menší web zvládnu v základním balíčku za 180 EUR měsíčně (5 h práce + nástroje a AI), růstový balíček je 220 EUR (10 h práce + nástroje a AI) a pro větší e-shopy 290 EUR měsíčně (15 h práce + nástroje a AI). Sazba za odbornou práci je 12 EUR za hodinu. Rozsah potvrdím v plánu po bezplatném auditu."),
             ("Za jak dlouho se projeví výsledky?",
              "První pohyby na méně konkurenčních dotazech za 2 až 4 měsíce, na hlavní dotazy 6 až 12 měsíců. Záleží na konkurenci a stavu webu."),
             ("Děláte i obsah? Nemám čas psát.",
@@ -770,12 +786,12 @@ def cz_eshop_seo() -> tuple[str, str]:
     <table class="metric-table">
       <tr><th>Aspekt</th><th>Shoptet</th><th>WooCommerce</th><th>Vlastní platforma</th></tr>
       <tr><td><strong>Duplicitní URL filtrů</strong></td><td>Ano, běžný problém, řeší canonical tag</td><td>Ano, závisí na pluginu, často chybí</td><td>Závisí na implementaci, často chybí</td></tr>
-      <tr><td><strong>H1 na kategoriích</strong></td><td>Šablona generuje, dá se upravit přes SEO modul</td><td>Téma generuje, dá se přepsat</td><td>Treba nakódovat, často chybí</td></tr>
+      <tr><td><strong>H1 na kategoriích</strong></td><td>Šablona generuje, dá se upravit přes SEO modul</td><td>Téma generuje, dá se přepsat</td><td>Je potřeba nakódovat, často chybí</td></tr>
       <tr><td><strong>Rychlost (Core Web Vitals)</strong></td><td>Střední, obrázky a JS brzdí LCP</td><td>Záleží na pluginech, často pomalé</td><td>Záleží na vývojáři, může být rychlá</td></tr>
-      <tr><td><strong>Strukturovaná data Product</strong></td><td>Automatické, ale chybějící atributy</td><td>Plugin (Yoast, RankMath) je přidá</td><td>Treba nakódovat JSON-LD</td></tr>
+      <tr><td><strong>Strukturovaná data Product</strong></td><td>Automatické, ale chybějící atributy</td><td>Plugin (Yoast, RankMath) je přidá</td><td>Je potřeba nakódovat JSON-LD</td></tr>
       <tr><td><strong>Google Merchant feed</strong></td><td>Auto-feed přes Shoptet add-on</td><td>Plugin (WC Product Feed) nebo vlastní</td><td>Vlastní generátor feedu</td></tr>
-      <tr><td><strong>Interní prolinkování</strong></td><td>Omezené, modul "související produkty"</td><td>Pluginy jako YARPP</td><td>Volné, treba nakódovat</td></tr>
-      <tr><td><strong>Blog pro SEO</strong></td><td>Ano, v Shoptet blog modulu</td><td>Ano, nativně WordPress</td><td>Treba samostatně implementovat</td></tr>
+      <tr><td><strong>Interní prolinkování</strong></td><td>Omezené, modul "související produkty"</td><td>Pluginy jako YARPP</td><td>Volné, je potřeba nakódovat</td></tr>
+      <tr><td><strong>Blog pro SEO</strong></td><td>Ano, v Shoptet blog modulu</td><td>Ano, nativně WordPress</td><td>Je potřeba samostatně implementovat</td></tr>
     </table>
   </div>
 </section>"""
@@ -784,7 +800,7 @@ def cz_eshop_seo() -> tuple[str, str]:
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <span class="section-label">Stratégie</span>
+      <span class="section-label">Strategie</span>
       <h2>Kategorie vs. produkty: kdy optimalizovat co</h2>
       <p class="section-subheading">Největší chyba e-shop SEO je psát dlouhé texty na každý produkt. Tady je rozdělení, které šetří čas a přináší objednávky.</p>
     </div>
@@ -891,8 +907,8 @@ def cz_eshop_seo() -> tuple[str, str]:
     </div>
     <div class="case-result proof-band">
       <div><strong>Pro koho</strong><span>E-shopy na Shoptetu, WooCommerci i vlastní platformě</span></div>
-      <div><strong>Časový odhad</strong><span>10 až 15 hodin měsíčně (120 až 180 EUR), 6 měsíců minimálně</span></div>
-      <div><strong>Cena</strong><span>12 EUR za hodinu, linkbuilding a reklamní výdaje zvlášť</span></div>
+      <div><strong>Časový odhad</strong><span>Retainery 180 EUR (5 h), 220 EUR (10 h) nebo 290 EUR (15 h) měsíčně</span></div>
+      <div><strong>Cena</strong><span>12 EUR za hodinu práce + nástroje a AI v balíčku</span></div>
       <div><strong>Další krok</strong><span><a href="/cz/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupní audit e-shopu</a></span></div>
     </div>
   </div>
@@ -903,7 +919,7 @@ def cz_eshop_seo() -> tuple[str, str]:
     <div class="rate-band">
       <div>
         <div class="rate-big">12 EUR <small>za hodinu · kdykoliv skončíte</small></div>
-        <p style="margin-top:8px; max-width:520px;">Časový odhad této služby: 10 až 15 hodin měsíčně (120 až 180 EUR), podle rozsahu e-shopu a konkurence. Náklady na odkazy vykazované zvlášť.</p>
+        <p style="margin-top:8px; max-width:520px;">Časový odhad této služby: retainery od 180 EUR (5 h), 220 EUR (10 h) až 290 EUR (15 h) měsíčně, podle rozsahu e-shopu a konkurence. Nástroje a AI jsou v ceně balíčku.</p>
       </div>
       <div class="hero-ctas">
         <a href="/cz/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
@@ -950,10 +966,10 @@ def cz_audit() -> tuple[str, str]:
     label = "Služba · SEO audit"
     h1 = "SEO audit: hodnocení vašeho webu s akčním plánem, ne PDF do šuplíku"
     intro = ("SEO audit je systematické hodnocení webu, které odpoví na tři otázky: proč se "
-             "vám nedaří v Googlu, co přesně treba opravit a v jakém pořadí. Začínám bezplatným "
+             "vám nedaří v Googlu, co přesně je potřeba opravit a v jakém pořadí. Začínám bezplatným "
              "vstupním auditem, který máte do tří dnů: 10 největších problémů a šancí na jedné "
-             "straně. Detailní audit je akční plán s hodinami a prioritami, ne 60stránkové PDF. "
-             "Moje práce stojí 12 EUR za hodinu, detailní audit stojí 120 až 180 EUR podle rozsahu.")
+             "stránce. Detailní audit je akční plán s hodinami a prioritami, ne 60stránkové PDF. "
+             "Moje práce stojí 12 EUR za hodinu, detailní audit stojí od 180 EUR podle rozsahu.")
 
     who = [
         "Nevíte, proč váš web nepřináší zákazníky z Googlu, ačkoliv na něj pravidelně přidáváte.",
@@ -980,10 +996,9 @@ def cz_audit() -> tuple[str, str]:
          "jakém pořadí to řešit. Bez auditu strávíte měsíce úsilím, které možná směřuje špatným "
          "směrem. Audit vás ochrání před zbytečnou investicí a řekne vám, co skutečně funguje."),
         ("Kolik stojí SEO audit?",
-         "Vstupní audit je zdarma, máte ho do 3 pracovních dnů. Detailní audit stojí 120 až 180 "
-         "EUR podle rozsahu webu (10 až 15 hodin × 12 EUR). Pro menší firemní web s 20 stranami "
-         "stačí 180 EUR, pro e-shop s 500 produkty 180 EUR. Přesnou cenu potvrdím po prvním "
-         "pohledu na váš web."),
+         "Vstupní audit je zdarma, máte ho do 3 pracovních dnů. Detailní audit stojí od 180 "
+         "EUR podle rozsahu webu. Pro menší firemní web stačí 180 EUR, pro větší e-shop podle "
+         "rozsahu podstránek a produktů. Přesnou cenu potvrdím po prvním pohledu na váš web."),
         ("Co obsahuje detailní SEO audit?",
          "Technická část: rychlost (Core Web Vitals), indexace, sitemap, robots.txt, kanonizace, "
          "chyby 404, strukturovaná data. Obsahová část: které stránky mají reálnou poptávku, které "
@@ -1007,8 +1022,8 @@ def cz_audit() -> tuple[str, str]:
         ("Můžete udělat audit i webu, který se právě plánuje postavit?",
          "Ano, audit před vývojem je nejlevnější způsob, jak předejít technickému dluhu. "
          "Nahlédnu do wireframů nebo prototypu a připravím seznam požadavků pro vývojáře: URL "
-         "struktura, strukturovaná data, rychlost, hreflang, CMS nastavení. Cena 120 až 180 EUR (v cene retainera), "
-         "ušetří vám desítky tisíc korun na přerábění webu po launchi."),
+         "struktura, strukturovaná data, rychlost, hreflang, CMS nastavení. Cena od 180 EUR (v ceně retaineru), "
+         "ušetří vám desítky tisíc korun na předělávání webu po spuštění."),
     ]
 
     audit_checklist = """
@@ -1095,7 +1110,7 @@ def cz_audit() -> tuple[str, str]:
       <p class="section-subheading">Vstupní audit vám řekne, zda má smysl investovat do SEO. Detailní audit vám řekne přesně co a jak dělat.</p>
     </div>
     <table class="metric-table">
-      <tr><th>Co dostanete</th><th>Vstupní audit (zdarma)</th><th>Detailní audit (120 až 180 EUR)</th></tr>
+      <tr><th>Co dostanete</th><th>Vstupní audit (zdarma)</th><th>Detailní audit (od 180 EUR)</th></tr>
       <tr><td><strong>Trvání</strong></td><td>1 až 3 pracovní dny</td><td>7 až 14 pracovních dnů</td></tr>
       <tr><td><strong>Rozsah</strong></td><td>10 největších problémů a šancí na 1 stranu</td><td>40+ bodů, úlohy s hodinami a prioritami</td></tr>
       <tr><td><strong>Klíčová slova</strong></td><td>5 hlavních, s objemem a intentem</td><td>30 až 100 klíčových slov, SERP analýza, konkurence</td></tr>
@@ -1156,7 +1171,7 @@ def cz_audit() -> tuple[str, str]:
     <div class="case-result proof-band">
       <div><strong>Pro koho</strong><span>Web, který neprorazil v Googlu a nevíte proč</span></div>
       <div><strong>Časový odhad</strong><span>Vstupní audit do 3 dnů, detailní 7 až 14 dnů</span></div>
-      <div><strong>Cena</strong><span>Vstupní zdarma, detailní 120 až 180 EUR (10 až 15 hodin × 12 EUR)</span></div>
+      <div><strong>Cena</strong><span>Vstupní zdarma, detailní od 180 EUR (akční plán s prioritami)</span></div>
       <div><strong>Další krok</strong><span><a href="/cz/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Objednat bezplatný vstupní audit</a></span></div>
     </div>
   </div>
@@ -1483,31 +1498,34 @@ def cz_linkbuilding() -> tuple[str, str]:
 # ---------------------------------------------------------------- CENIK
 
 CZ_PACKAGES = [
-    {"name": "Střední web / e-shop", "hours": 15, "price": 180,
-     "items": ["Audit webu a analýza klíčových slov", "Technická oprava webu", "4 až 6 obsahových stránek měsíčně", "Optimalizace pro AI vyhledávače", "Interní prolinkování a CRO tipy", "Linkbuilding (2 až 3 odkazy)", "Měsíční report a hovor 30 min"],
+    {"name": "Menší web / e-shop", "hours": 5, "price": 180,
+     "breakdown": "5 h práce (60 EUR) + nástroje a AI (120 EUR)",
+     "items": ["Audit webu a analýza klíčových slov", "Technická oprava webu", "5 hodin práce specialisty měsíčně (12 EUR / hod.)", "Prémiové SEO nástroje, AI modely a reporting", "Základní interní prolinkování a on-page SEO", "Měsíční report a hovor 30 min"],
      "cta": "/cz/kontakt/"},
-    {"name": "Růst", "hours": 18, "price": 220, "featured": True,
-     "badge": "Doporučený retainer",
-     "items": ["Vše z balíčku Střední web", "6 až 8 obsahových stránek nebo blogů měsíčně", "2 analýzy konkurence měsíčně", "AI viditelnost: monitoring ChatGPT, Gemini a AI Overviews", "Linkbuilding (4 odkazy)", "Měsíční report a hovor 30 min"],
+    {"name": "Růst", "hours": 10, "price": 220, "featured": True,
+     "badge": "Nejčastější volba",
+     "breakdown": "10 h práce (120 EUR) + nástroje a AI (100 EUR)",
+     "items": ["Vše z balíčku Menší web", "10 hodin práce specialisty měsíčně (12 EUR / hod.)", "AI viditelnost: monitoring ChatGPT, Gemini a AI Overviews", "Tvorba a optimalizace obsahových stránek", "Linkbuilding a analýza konkurence", "Měsíční report a hovor 30 min"],
      "cta": "/cz/kontakt/"},
-    {"name": "Autorita", "hours": 24, "price": 290,
-     "items": ["Vše z balíčku Růst", "8 až 12 obsahových stránek nebo blogů měsíčně", "Hloubková analýza a kvartální plán", "AI viditelnost: tracking dotazů a doporučení", "Linkbuilding (6 odkazů)", "Prioritní komunikace a hovor 60 min"],
+    {"name": "Autorita", "hours": 15, "price": 290,
+     "breakdown": "15 h práce (180 EUR) + nástroje a AI (110 EUR)",
+     "items": ["Vše z balíčku Růst", "15 hodin práce specialisty měsíčně (12 EUR / hod.)", "Komplexní SEO a expanze obsahu na míru", "AI viditelnost: tracking dotazů a doporučení", "Linkbuildingová strategie a outreach", "Prioritní komunikace a hovor 60 min"],
      "cta": "/cz/kontakt/"},
 ]
 
 CZ_CENIK_FAQ = [
     ("Kolik stojí SEO optimalizace webu?",
-     "Retainer 180 až 290 EUR měsíčně podle rozsahu webu a práce. Menší web 180 EUR (15 hodin), růstový retainer 220 EUR (cca 18 hodin) a autorita 290 EUR (cca 24 hodin). Přesný rozsah potvrdím v plánu po bezplatném auditu."),
-    ("Proč je to levnější než konkurence?",
-     "Nemáme kanceláře ani manažerské vrstvy. Práci automatizujeme tam, kde automatizace nic nezkazí, a odbornou energii dáváme tam, kde se počítá. Úspory přenášíme na vás."),
+     "Měsíční retainery jsou 180 EUR (5 hodin práce), 220 EUR (10 hodin práce) a 290 EUR (15 hodin práce). Sazba za práci specialisty je 12 EUR za hodinu, přičemž zbytek ceny retaineru pokrývá licence prémiových SEO nástrojů, AI modely a monitoring, serverové procesy a měsíční reporting. Balíčky jsou doporučené rozsahy, bez vázanosti."),
+    ("Proč je to levnější než u velkých agentur?",
+     "Nemáme předražené kanceláře ani zbytečný management. Práci automatizujeme tam, kde automatizace neubírá na kvalitě, a odbornou energii soustředíme na reálné výsledky. Licence nástrojů a AI jsou přímo v ceně balíčku."),
     ("Co je v ceně zahrnuto?",
-     "Vše kromě reklamních výdajů a nákladů na odkazy či nástroje třetích stran. Ty vám vykazuji ve skutečné ceně, bez přirážky."),
-    ("Musím platit měsíčně předem?",
-     "Fakturuji měsíčně zpětně za skutečně odpracované hodiny, s fakturou. Retainer je doporučený rozsah, ne závazek."),
-    ("Můžu spolupráci kdykoliv ukončit?",
-     "Ano, kdykoliv, bez sankcí a bez závazků. Důvěru si zasloužíme výsledky."),
+     "Veškerá odborná SEO práce, technika, obsah, profil v Google Mapách, monitoring v AI vyhledávačích i analytické nástroje a AI modely. Náklady na externí PR články v médiích vykazuji ve skutečné ceně bez jakékoliv přirážky."),
+    ("Musím podepisovat smlouvu na 12 měsíců?",
+     "Ne. Spolupráci můžete kdykoliv ukončit, bez sankcí a bez vázanosti. Fakturuji měsíčně zpětně na základě transparentního reportu odvedené práce."),
+    ("Můžu rozsah v průběhu spolupráce změnit?",
+     "Ano, balíček i rozsah prací můžeme kdykoliv upravit podle aktuálních potřeb webu a sezóny."),
     ("Jak vím, že práce byla odvedena?",
-     "Každý měsíc dostanete seznam úloh s hodinami a jejich výsledkem. Vy jste ten, kdo kontroluje."),
+     "Každý měsíc dostanete detailní report odpracovaných hodin, jejich obsahu a naměřených výsledků (pozice, kliky z Google Search Console, konverze, AI citace). Součástí je osobní konzultační hovor."),
 ]
 
 
@@ -1561,9 +1579,9 @@ def cz_cenik() -> tuple[str, str]:
         <span class="section-label">Příklad z praxe</span>
         <p style="margin-bottom:14px;">Firemní web advokátní kanceláře ve městě s 50 000 obyvateli.</p>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span><strong>Měsíc 1:</strong> audit + technická oprava + firemní profil (12 h = 144 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Měsíce 2 až 4:</strong> obsahové stránky na dotazy zákazníků (15 h = 180 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Měsíce 5+</strong>: údržba, linkbuilding, AI viditelnost (8 h = 96 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Měsíc 1:</strong> audit + technická oprava + nastavení profilu (Základní balíček, 180 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Měsíce 2 až 4:</strong> obsahové stránky na dotazy zákazníků (Růstový balíček, 220 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Měsíce 5+:</strong> údržba, linkbuilding, AI viditelnost a expanze (180 až 290 EUR)</span></li>
         </ul>
         <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">Reálná čísla pro váš web potvrdím v bezplatném auditu.</p>
       </div>
@@ -1829,9 +1847,9 @@ CZ_FAQ_SECTIONS = [
     ]),
     ("Cena a smlouvy", [
         ("Kolik stojí SEO?",
-         "12 EUR za odpracovanou hodinu. Menší firemní web obvykle 15 hodin měsíčně (180 EUR). Při větším rozsahu jsou retainery 220 EUR (cca 18 hodin) a 290 EUR (cca 24 hodin). Balíčky jsou doporučené rozsahy, ne povinné paušály."),
-        ("Jsou smlouvy vážoucí?",
-         "Ne. Spolupráci můžete kdykoli ukončit, bez sankcí. Fakturuji měsíčně za skutečně odpracované hodiny."),
+         "Měsíční retainery jsou 180 EUR (5 hodin práce), 220 EUR (10 hodin práce) a 290 EUR (15 hodin práce). Sazba za práci specialisty je 12 EUR za hodinu, přičemž zbytek ceny retaineru pokrývá licence prémiových SEO nástrojů, AI modely a monitoring, serverové procesy a měsíční reporting. Balíčky jsou doporučené rozsahy, bez vázanosti."),
+        ("Jsou smlouvy vázané?",
+         "Ne. Spolupráci můžete kdykoli ukončit, bez sankcí. Fakturuji měsíčně zpětně na základě transparentního reportu."),
         ("Jsou v ceně zahrnuty reklamní výdaje?",
          "Ne. Reklamu (Google Ads) platíte přímo Googlu. Kampaně řídím za 12 EUR na hodinu. Náklady na odkazy a PR vykazuji ve skutečné ceně."),
     ]),

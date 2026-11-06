@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="240" height="70">
+  <g transform="translate(5, 7) scale(0.45)">
+    <path fill="#FF5100" fill-rule="evenodd" d="M 43,1 L 88,1 L 131,122 L 93,122 L 85,106 L 47,106 L 39,122 L 1,122 Z M 66,41 L 76,72 L 56,72 Z"/>
+  </g>
+  <text x="75" y="46" font-family="system-ui, -apple-system, BlinkMacSystemFont, '''Segoe UI''', Roboto, sans-serif" font-size="36" font-weight="800" letter-spacing="1.5" fill="#18181B">AUDIQ</text>
+</svg>
