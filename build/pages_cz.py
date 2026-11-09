@@ -203,6 +203,8 @@ def cz_home() -> tuple[str, str]:
 {CZ_TRUST}
 {CZ_LOGOS}
 
+{results_slider("cz")}
+
 <!-- PRE KOHO -->
 <section class="section">
   <div class="container">

@@ -203,6 +203,8 @@ def en_home() -> tuple[str, str]:
 {EN_TRUST}
 {EN_LOGOS}
 
+{results_slider("en")}
+
 <section class="section">
   <div class="container">
     <div class="section-head">

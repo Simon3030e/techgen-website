@@ -332,6 +332,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 
     asset = (prefix.rstrip("/") + "/") if prefix else ""
     hreflang = hreflang_links(market, path)
+    results_html = "" if ('id="vysledky"' in body or 'class="results-slider"' in body) else f"\n{results_slider(market)}\n"
 
     return f"""<!DOCTYPE html>
 <html lang="{ {'sk':'sk','cz':'cs','en':'en'}[market] }">
@@ -384,9 +385,7 @@ def base(*, market: str, path: str, title: str, desc: str, canonical: str,
 </nav>
 
 {body}
-
-{results_slider(market)}
-
+{results_html}
 {google_review_band(market)}
 
 {footer(market, prefix)}
@@ -821,103 +820,151 @@ def result_block(*, title: str, period: str, nums: list[dict], chart: str,
 </div>"""
 
 
+def _screenshot_chart(gsc_img: str, ai_img: str, client_lbl: str, market: str) -> str:
+    """Two-column screenshot comparison: Google Search Console + AI Visibility."""
+    lbl_gsc = {"sk": "Google Vyhľadávanie (Search Console)",
+               "cz": "Google Vyhledávání (Search Console)",
+               "en": "Google Search (Search Console)"}[market]
+    lbl_ai = {"sk": "AI Viditeľnosť (Google AI funkcie)",
+              "cz": "AI Viditelnost (Google AI funkce)",
+              "en": "AI Visibility (Google AI features)"}[market]
+    return f"""
+<div class="rs-shot-grid">
+  <div class="rs-shot-box">
+    <div class="rs-shot-label"><span class="dot dot-blue"></span> {lbl_gsc}</div>
+    <img src="/assets/img/results/{gsc_img}" alt="{lbl_gsc}: {client_lbl}" loading="lazy" class="rs-shot-img">
+  </div>
+  <div class="rs-shot-box">
+    <div class="rs-shot-label"><span class="dot dot-violet"></span> {lbl_ai}</div>
+    <img src="/assets/img/results/{ai_img}" alt="{lbl_ai}: {client_lbl}" loading="lazy" class="rs-shot-img">
+  </div>
+</div>"""
+
+
 def results_slider(market: str) -> str:
-    """Slider of real client results (GSC + AI Mode screenshots, Sep 2026)."""
+    """Slider of real client results (GSC + AI Mode screenshots, Nov 2026)."""
     t = {
         "sk": {
-            "label": "Moje výsledky", "head": "Čísla z praxe, nie obrázky zo šablóny",
-            "sub": "Skutočné ukážky z Google Search Console a Google AI Mode mojich projektov a klientov. Čísla vám pred spoluprácou ukážem naživo.",
-            "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditeľnosť",
-            "chip4": "Obsah na 6 stránkach", "chip5": "Lokálne SEO",
+            "label": "Overené výsledky klientov",
+            "head": "Google Vyhľadávanie aj AI viditeľnosť v praxi",
+            "sub": "Skutočné screenshoty z Google Search Console a AI prehľadov našich klientov. Overené čísla z praxe, žiadne vymyslené makety.",
+            "chip1": "Obsah + AI viditeľnosť",
+            "chip2": "Rast za 2 mesiace",
+            "chip3": "Nový web od nuly",
+            "chip4": "Veľký objem + AI líder",
+            "chip5": "Týždenný rast",
             "prev": "Predchádzajúci", "next": "Nasledujúci", "all": "Všetky výsledky",
             "case_url": "/sk/vysledky/",
         },
         "cz": {
-            "label": "Moje výsledky", "head": "Čísla z praxe, ne obrázky ze šablony",
-            "sub": "Skutečné ukázky z Google Search Console a Google AI Mode mých projektů a klientů. Čísla vám před spoluprací ukážu naživo.",
-            "chip1": "Obsah + technika", "chip2": "SEO od nuly", "chip3": "AI viditelnost",
-            "chip4": "Obsah na 6 stránkách", "chip5": "Lokální SEO",
+            "label": "Ověřená data klientů",
+            "head": "Google Vyhledávání i AI viditelnost v praxi",
+            "sub": "Skutečné screenshoty z Google Search Console a AI přehledů našich klientů. Ověřená čísla z praxe, žádné vymyšlené makety.",
+            "chip1": "Obsah + AI viditelnost",
+            "chip2": "Růst za 2 měsíce",
+            "chip3": "Nový web od nuly",
+            "chip4": "Velký objem + AI lídr",
+            "chip5": "Týdenní růst",
             "prev": "Předchozí", "next": "Další", "all": "Všechny výsledky",
             "case_url": "/cz/vysledky/",
         },
         "en": {
-            "label": "Results", "head": "Real numbers, not stock images",
-            "sub": "Actual screenshots from Google Search Console and Google AI Mode of our projects and clients.",
-            "chip1": "Content + tech", "chip2": "SEO from zero", "chip3": "AI visibility",
-            "chip4": "Content on 6 pages", "chip5": "Local SEO",
+            "label": "Verified Client Results",
+            "head": "Google Search and AI Visibility in Practice",
+            "sub": "Actual screenshots from Google Search Console and AI Overview reports of our clients. Real data, zero stock mockups.",
+            "chip1": "Content + AI visibility",
+            "chip2": "2-month growth",
+            "chip3": "New site from zero",
+            "chip4": "High volume + AI leader",
+            "chip5": "Weekly growth",
             "prev": "Previous", "next": "Next", "all": "All results",
             "case_url": "/en/portfolio/",
         },
     }[market]
 
-    chart1 = _sparkline([40, 55, 48, 62, 58, 75, 70, 88, 95, 92, 110, 121], _VIOLET)
+    # Slide 1: 174k impressions / 2.01k clicks / 2.4k AI
+    c1_title = {"sk": "E-shop a obsahový portál", "cz": "E-shop a obsahový portál", "en": "E-commerce and content portal"}[market]
+    c1_period = {"sk": "12 mesiacov v Google Vyhľadávaní · 6 mesiacov v AI", "cz": "12 měsíců v Google Vyhledávání · 6 měsíců v AI", "en": "12 months in Google Search · 6 months in AI"}[market]
+    chart1 = _screenshot_chart("client1-gsc-search.png", "client1-ai-overview.png", c1_title, market)
     s1 = _slide(
-        {"sk": "Aplikácia (klient)", "cz": "Aplikace (klient)", "en": "App (client)"}[market],
+        c1_title,
         t["chip1"],
-        {"sk": "posledných 28 dní", "cz": "posledních 28 dní", "en": "last 28 days"}[market],
-        [{"big": "121", "color": _VIOLET, "label": {"sk": "klikov z Google (+49 %)", "cz": "kliků z Google (+49 %)", "en": "clicks (+49%)"}[market]},
-         {"big": "4 390", "color": _ORANGE, "label": {"sk": "zobrazení v Google (+43 %)", "cz": "zobrazení v Google (+43 %)", "en": "impressions (+43%)"}[market]},
-         {"big": "+142 %", "color": _VIOLET_L, "label": {"sk": "rast hlavnej stránky", "cz": "růst hlavní stránky", "en": "top page growth"}[market]}],
+        c1_period,
+        [{"big": "174 tis.", "color": _VIOLET, "label": {"sk": "zobrazení v Google za 12 mesiacov", "cz": "zobrazení v Google za 12 měsíců", "en": "impressions in Google (12 mo)"}[market]},
+         {"big": "2 010", "color": _CERULEAN, "label": {"sk": "klikov z organického Google", "cz": "kliků z organického Google", "en": "clicks from organic Google"}[market]},
+         {"big": "2 400", "color": _ORANGE, "label": {"sk": "zobrazení v generatívnej AI", "cz": "zobrazení v generativní AI", "en": "generative AI impressions"}[market]}],
         chart1,
-        {"sk": "Prvý mesiac spolupráce: technické SEO a obsah. Google začal prinášať zákazníkov hneď.",
-         "cz": "První měsíc spolupráce: technické SEO a obsah. Google začal přinášet zákazníky hned.",
-         "en": "First month of cooperation: technical SEO and content. Google started delivering customers immediately."}[market],
-        logo="inthecity.png", market=market)
+        {"sk": "Dlhodobý rast organického vyhľadávania po nasadení nového obsahu a technickej štruktúry. Google prináša stabilné tisíce klikov a generatívna AI začala web masívne citovať s nárastom na 2 400 zobrazení.",
+         "cz": "Dlouhodobý růst organického vyhledávání po nasazení nového obsahu a technické struktury. Google přináší stabilní tisíce kliků a generativní AI začala web masivně citovat s nárůstem na 2 400 zobrazení.",
+         "en": "Long-term organic growth driven by fresh content and clean architecture. Google delivers thousands of search clicks while AI answer engines cite the site with 2.4K impressions."}[market],
+        market)
 
-    chart2 = _bars([68, 92, 130, 171, 250], _ORANGE, ["mesiac 1", "mesiac 2", "mesiac 3", "mesiac 4", "teraz"] if market != "en" else ["m1", "m2", "m3", "m4", "now"])
+    # Slide 2: 8.75k impressions / 339 clicks / 528 AI
+    c2_title = {"sk": "B2B klient a špecializované služby", "cz": "B2B klient a specializované služby", "en": "B2B client and specialized services"}[market]
+    c2_period = {"sk": "September až november 2026", "cz": "Září až listopad 2026", "en": "September to November 2026"}[market]
+    chart2 = _screenshot_chart("client2-gsc-search.png", "client2-ai-overview.png", c2_title, market)
     s2 = _slide(
-        {"sk": "Klient (firemný web)", "cz": "Klient (firemní web)", "en": "Client (company site)"}[market],
+        c2_title,
         t["chip2"],
-        {"sk": "posledné 3 mesiace", "cz": "poslední 3 měsíce", "en": "last 3 months"}[market],
-        [{"big": "250", "color": _VIOLET, "label": {"sk": "klikov za 3 mesiace (+355 %)", "cz": "kliků za 3 měsíce (+355 %)", "en": "clicks in 3 months (+355%)"}[market]},
-         {"big": "8 950", "color": _CERULEAN, "label": {"sk": "zobrazení (+246 %)", "cz": "zobrazení (+246 %)", "en": "impressions (+246%)"}[market]},
-         {"big": "5", "color": _ORANGE, "label": {"sk": "násobný rast klikov", "cz": "násobný rast kliků", "en": "x growth in clicks"}[market]}],
+        c2_period,
+        [{"big": "8 750", "color": _VIOLET, "label": {"sk": "zobrazení za 2 mesiace", "cz": "zobrazení za 2 měsíce", "en": "impressions in 2 months"}[market]},
+         {"big": "339", "color": _CERULEAN, "label": {"sk": "klikov z Google (CTR 3,9 %)", "cz": "kliků z Google (CTR 3,9 %)", "en": "clicks from Google (CTR 3.9%)"}[market]},
+         {"big": "528", "color": _ORANGE, "label": {"sk": "zobrazení v AI po zlomovom bode", "cz": "zobrazení v AI po zlomovém bodě", "en": "AI impressions after inflection point"}[market]}],
         chart2,
-        {"sk": "Kliky za 3 mesiace od začiatku spolupráce. Rast každý mesiac, žiadny skok, ktorý sa nedá opakovať.",
-         "cz": "Kliky za 3 měsíce od začátku spolupráce. Růst každý měsíc, žádný skok, který se nedá opakovat.",
-         "en": "Clicks in 3 months since the start of cooperation. Growth every month, no one-off spike."}[market],
+        {"sk": "Nábeh po nasadení optimalizácie kategórií a služieb. Zlom prišiel koncom októbra, kde sa prejavili indexované dopyty a web začal prudko nabiehať aj v AI prehľadoch (takmer 40 zobrazení denne).",
+         "cz": "Náběh po nasazení optimalizace kategorií a služeb. Zlom přišel koncem října, kdy se projevily indexované dotazy a web začal prudce nabíhat i v AI přehledech (téměř 40 zobrazení denně).",
+         "en": "Rapid acceleration after category and service optimization. Late October marked the turning point as indexed queries spiked in both Google Search and AI Overviews."}[market],
         market)
 
-    chart3 = _bars([182, 293, 329, 413], _VIOLET_L, ["jún", "júl", "aug", "sep"])
+    # Slide 3: 718 impressions / 9 clicks / 306 AI
+    c3_title = {"sk": "Nový klientsky projekt (štart od nuly)", "cz": "Nový klientský projekt (start od nuly)", "en": "New client project (launch from zero)"}[market]
+    c3_period = {"sk": "Posledné 3 mesiace (od augusta 2026)", "cz": "Poslední 3 měsíce (od srpna 2026)", "en": "Last 3 months (since August 2026)"}[market]
+    chart3 = _screenshot_chart("client3-gsc-search.png", "client3-ai-overview.png", c3_title, market)
     s3 = _slide(
-        {"sk": "E-shop (vlastný projekt)", "cz": "E-shop (vlastní projekt)", "en": "E-shop (own project)"}[market],
+        c3_title,
         t["chip3"],
-        {"sk": "Google AI Mode, jún až september 2026", "cz": "Google AI Mode, červen až září 2026", "en": "Google AI Mode, June to September 2026"}[market],
-        [{"big": "893", "color": _VIOLET_L, "label": {"sk": "zobrazení v AI Mode za 3 mesiace", "cz": "zobrazení v AI Mode za 3 měsíce", "en": "AI Mode impressions in 3 months"}[market]},
-         {"big": "+80 %", "color": _VIOLET, "label": {"sk": "august oproti júnu (182 → 329)", "cz": "srpen oproti červnu (182 → 329)", "en": "August vs June (182 → 329)"}[market]},
-         {"big": "174", "color": _CERULEAN, "label": {"sk": "citácií homepage", "cz": "citací domovské stránky", "en": "homepage citations"}[market]}],
+        c3_period,
+        [{"big": "718", "color": _VIOLET, "label": {"sk": "zobrazení v Google od spustenia", "cz": "zobrazení v Google od spuštění", "en": "impressions since launch"}[market]},
+         {"big": "8,2", "color": _CERULEAN, "label": {"sk": "priemerná pozícia v Google", "cz": "průměrná pozice v Google", "en": "average position in Google"}[market]},
+         {"big": "306", "color": _ORANGE, "label": {"sk": "zobrazení v AI za 1 mesiac", "cz": "zobrazení v AI za 1 měsíc", "en": "AI impressions in 1 month"}[market]}],
         chart3,
-        {"sk": "Google AI Mode cituje e-shop denne po nasadení môjho obsahu. Rast mesačne: jún 182, júl 293, august 329. Najviac citované: homepage a blogové články (167 a 119 citácií). Konkurencia v AI odpovediach ešte nie je.",
-         "cz": "Google AI Mode cituje e-shop denně po nasazení mého obsahu. Růst měsíčně: červen 182, červenec 293, srpen 329. Nejvíc citované: domovská stránka a blogové články (167 a 119 citací). Konkurence v AI odpovědích ještě není.",
-         "en": "Google AI Mode cites the shop daily after deploying my content. Monthly growth: June 182, July 293, August 329. Most cited: homepage and blog articles (167 and 119 citations)."}[market],
-        logo="speem.webp", market=market)
-
-    chart4 = _sparkline([30, 38, 42, 50, 55, 62, 66, 72, 78, 84, 92, 102], _CERULEAN)
-    s4 = _slide(
-        {"sk": "Rast po pridaní nášho obsahu", "cz": "Růst po přidání našeho obsahu", "en": "Growth after our content"}[market],
-        t["chip4"],
-        {"sk": "28 dní + posledný týždeň", "cz": "28 dní + poslední týden", "en": "28 days + last week"}[market],
-        [{"big": "11 000", "color": _CERULEAN, "label": {"sk": "zobrazení mesačne (+14 %)", "cz": "zobrazení měsíčně (+14 %)", "en": "monthly impressions (+14%)"}[market]},
-         {"big": "+43 %", "color": _VIOLET, "label": {"sk": "klikov posledný týždeň", "cz": "kliků poslední týden", "en": "clicks last week"}[market]},
-         {"big": "6", "color": _ORANGE, "label": {"sk": "stránok, na ktorých sa to stalo", "cz": "stránek, na kterých se to stalo", "en": "pages that did it"}[market]}],
-        chart4,
-        {"sk": "Pridané obsahové stránky na reálne dopyty zákazníkov. Len 6 stránok z celého webu posunulo celý web.",
-         "cz": "Přidané obsahové stránky na reálné dotazy zákazníků. Jen 6 stránek z celého webu posunulo celý web.",
-         "en": "Added content pages based on real customer queries. Just 6 pages moved the whole site."}[market],
+        {"sk": "Nový web s nulovou históriou. V auguste a septembri nulová viditeľnosť, začiatkom októbra po publikovaní prvých optimalizovaných článkov prišiel okamžitý nástup do Google a vrchol 28 zobrazení denne v AI.",
+         "cz": "Nový web s nulovou historií. V srpnu a září nulová viditelnost, začátkem října po publikování prvních optimalizovaných článků přišel okamžitý nástup do Google a vrchol 28 zobrazení denně v AI.",
+         "en": "Brand new site with zero history. After deploying foundation content, visibility jumped in October, climbing to an average position of 8.2 and up to 28 AI citations per day."}[market],
         market)
 
-    chart5 = _donut([(193, _VIOLET, "Maps"), (166, _VIOLET_L, "Search")])
+    # Slide 4: 246k impressions / 3.22k clicks / 50k AI
+    c4_title = {"sk": "Líder segmentu (veľký e-shop)", "cz": "Lídr segmentu (velký e-shop)", "en": "Category leader (large e-commerce)"}[market]
+    c4_period = {"sk": "Týždenné sledovanie výkonnosti", "cz": "Týdenní sledování výkonnosti", "en": "Weekly performance tracking"}[market]
+    chart4 = _screenshot_chart("client4-gsc-search.png", "client4-ai-overview.png", c4_title, market)
+    s4 = _slide(
+        c4_title,
+        t["chip4"],
+        c4_period,
+        [{"big": "246 tis.", "color": _VIOLET, "label": {"sk": "týždenných zobrazení v Google", "cz": "týdenních zobrazení v Google", "en": "weekly impressions in Google"}[market]},
+         {"big": "3 220", "color": _CERULEAN, "label": {"sk": "klikov týždenne z vyhľadávania", "cz": "kliků týdně z vyhledávání", "en": "weekly search clicks"}[market]},
+         {"big": "50 tis.", "color": _ORANGE, "label": {"sk": "zobrazení v generatívnej AI", "cz": "zobrazení v generativní AI", "en": "generative AI impressions"}[market]}],
+        chart4,
+        {"sk": "Masívny organický zásah v konkurenčnom odvetví s priemernou pozíciou 6,6. Google Search Console hlási vyše 50 000 zobrazení vo funkciách generatívnej umelej inteligencie s dennými špičkami cez 1 000 zobrazení.",
+         "cz": "Masivní organický zásah v konkurenčním odvětví s průměrnou pozicí 6,6. Google Search Console hlásí přes 50 000 zobrazení ve funkcích generativní umělé inteligence s denními špičkami přes 1 000 zobrazení.",
+         "en": "Dominant organic footprint with average position 6.6. Google Search Console records over 50,000 impressions in generative AI features with peak days above 1,000 impressions."}[market],
+        market)
+
+    # Slide 5: 6.19k impressions / 155 clicks / 409 AI
+    c5_title = {"sk": "Rastúci e-shop (týždenný posun)", "cz": "Rostoucí e-shop (týdenní posun)", "en": "Growing e-commerce (weekly progress)"}[market]
+    c5_period = {"sk": "August až november 2026 (Weekly)", "cz": "Srpen až listopad 2026 (Weekly)", "en": "August to November 2026 (Weekly)"}[market]
+    chart5 = _screenshot_chart("client5-gsc-search.png", "client5-ai-overview.png", c5_title, market)
     s5 = _slide(
-        {"sk": "Klient: Google firemný profil", "cz": "Klient: Google firemní profil", "en": "Client: Google Business Profile"}[market],
+        c5_title,
         t["chip5"],
-        {"sk": "zobrazenia profilu", "cz": "zobrazení profilu", "en": "profile views"}[market],
-        [{"big": "359", "color": _VIOLET, "label": {"sk": "ľudí videlo profil", "cz": "lidí vidělo profil", "en": "people saw the profile"}[market]},
-         {"big": "54 %", "color": _ORANGE, "label": {"sk": "cez Google Mapy", "cz": "přes Google Mapy", "en": "via Google Maps"}[market]},
-         {"big": "46 %", "color": _VIOLET_L, "label": {"sk": "cez Google Search", "cz": "přes Google Search", "en": "via Google Search"}[market]}],
+        c5_period,
+        [{"big": "6 190", "color": _VIOLET, "label": {"sk": "zobrazení za týždeň", "cz": "zobrazení za týden", "en": "weekly impressions"}[market]},
+         {"big": "155", "color": _CERULEAN, "label": {"sk": "klikov za týždeň (CTR 2,5 %)", "cz": "kliků za týden (CTR 2,5 %)", "en": "weekly clicks (CTR 2.5%)"}[market]},
+         {"big": "409", "color": _ORANGE, "label": {"sk": "týždenných zobrazení v AI", "cz": "týdenních zobrazení v AI", "en": "weekly AI impressions"}[market]}],
         chart5,
-        {"sk": "Zákazníci hľadajú lokálne služby na Mapách aj v Search. Profil musí fungovať na oboch miestach.",
-         "cz": "Zákazníci hledají lokální služby na Mapách i v Search. Profil musí fungovat na obou místech.",
-         "en": "Customers look for local services on Maps and Search. The profile must work in both."}[market],
+        {"sk": "Týždenný prehľad stabilného rastu. Krivka kliknutí narástla z počiatočných 6 na viac než 20 za týždeň, zatiaľ čo fialová linka AI viditeľnosti stúpa z 20 na 60 zobrazení za týždeň.",
+         "cz": "Týdenní přehled stabilního růstu. Křivka kliknutí narostla z počátečních 6 na více než 20 za týden, zatímco fialová linka AI viditelnosti stoupá z 20 na 60 zobrazení za týden.",
+         "en": "Consistent weekly compounding. Weekly clicks quadrupled while AI Overview citations grew steadily from 20 to 60 weekly impressions."}[market],
         market)
 
     slides = "".join([s1, s2, s3, s4, s5])

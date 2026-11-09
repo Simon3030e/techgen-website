@@ -201,6 +201,8 @@ def home() -> tuple[str, str]:
 {TRUST_STATS}
 {LOGOS}
 
+{results_slider("sk")}
+
 <!-- PRE KOHO -->
 <section class="section">
   <div class="container">
