@@ -523,6 +523,18 @@ _BLOG_META = {
     "seo-audit-co-to-je": dict(
         title="SEO audit: čo to je, čo stojí a ako prebieha | Nokto Studio",
         desc="SEO audit jednoducho: čo obsahuje, koľko stojí (od 180 EUR, vstupný zdarma) a ako z auditu spraviť plán s prioritami. Príklad z praxe."),
+    "ai-vyhladavanie-overviews": dict(
+        title="AI vyhľadávanie a Google AI Overviews: Sprievodca GEO 2026 | Nokto Studio",
+        desc="Ako sa dostať do odpovedí ChatGPT, Perplexity a Google AI Overviews: pravidlo 40 až 60 slov, entitné SEO, JSON-LD schéma, robots.txt a llms.txt."),
+    "shoptet-seo-navod": dict(
+        title="Shoptet SEO: 11 nastavení pre rast tržieb z Google | Nokto Studio",
+        desc="Kompletný sprievodca SEO pre Shoptet: architektúra kategórií, parametrické filtre, unikátne popisy, meta tagy, interné odkazy a Google Merchant feed."),
+    "lokalne-seo-sprievodca": dict(
+        title="Lokálne SEO pre firmy: Získajte zákazníkov z Google Máp | Nokto Studio",
+        desc="Lokálne SEO krok za krokom: Google Business Profile, Local 3-Pack, recenzie cez SMS, konzistentnosť NAP a schéma LocalBusiness pre malé firmy."),
+    "spatne-odkazy-zadarmo": dict(
+        title="Spätné odkazy zadarmo: 8 metód bezpečného linkbuildingu | Nokto Studio",
+        desc="Ako získať kvalitné spätné odkazy bez rozpočtu: odkazy od dodávateľov, testimonial linkbuilding, unlinked brand mentions a linkable assets."),
 }
 
 
@@ -1585,11 +1597,225 @@ def blog_post_audit() -> tuple[str, str]:
                      date_iso="2026-10-01", date_display="1. 10. 2026")
 
 
+def blog_post_ai_vyhladavanie() -> tuple[str, str]:
+    """NEW 2026-11-11. Target: 'ai vyhladavanie' (110 SV/mo), 'seo pre chatgpt' (90 SV/mo),
+    'ai overviews' (140 SV/mo), 'geo optimalizacia' (70 SV/mo). Supports the
+    /sk/sluzby/seo-pre-ai-vyhladavace/ money page. GEO & AI citability pillar."""
+    sections = """
+<h2>Prečo klasické SEO v roku 2026 nestačí a čo je GEO</h2>
+<p>Klasické SEO sa zameriava na získanie modrého prekliku v zozname výsledkov vyhľadávania. GEO (Generative Engine Optimization) optimalizuje obsah pre umelú inteligenciu, ktorá odpoveď syntetizuje priamo na obrazovke bez nutnosti návštevy webu. Kým SEO rieši kľúčové slová a spätné odkazy, GEO vyžaduje vysokú informačnú hustotu, overiteľné fakty a strojovú citovateľnosť.</p>
+<table class="metric-table">
+<tr><th>Parameter</th><th>Tradičné SEO</th><th>Generatívne GEO (2026)</th></tr>
+<tr><td><strong>Cieľ</strong></td><td>Preklik z organického zoznamu (SERP)</td><td>Priama citácia v syntetizovanej odpovedi AI</td></tr>
+<tr><td><strong>Formát obsahu</strong></td><td>Dlhé články s kľúčovými slovami</td><td>Stručné odseky (40 až 60 slov) a priame fakty</td></tr>
+<tr><td><strong>Meranie úspechu</strong></td><td>Pozície 1 až 10 a miera CTR</td><td>Počet zobrazení a citácií v AI Overviews</td></tr>
+<tr><td><strong>Rozhodujúci faktor</strong></td><td>Spätné odkazy a autorita domény</td><td>Informačná hustota, JSON-LD a entitné prepojenie</td></tr>
+</table>
+
+<h2>Ako Google AI Overviews a Perplexity vyberajú zdroje</h2>
+<p>AI vyhľadávače fungujú na architektúre RAG (Retrieval-Augmented Generation). Model najprv vyhľadá relevantné pasáže v indexe, vyhodnotí sémantickú blízkosť k otázke a vyberie 2 až 4 najkonkrétnejšie formulácie. Všeobecné marketingové texty bez čísel a postupov algoritmus okamžite vyradí v prospech faktických zdrojov.</p>
+<ul>
+<li><strong>Pasážové indexovanie:</strong> AI nehodnotí celú stránku, ale samostatné bloky textu s rozsahom 250 až 500 znakov.</li>
+<li><strong>Konsenzus entít:</strong> Model overuje, či sa vaše tvrdenia zhodujú s dátami v Knowledge Graph a odborných zdrojoch.</li>
+<li><strong>Rýchla extrakcia:</strong> Prednosť majú tabuľky, číslované zoznamy a definície začínajúce priamou odpoveďou.</li>
+</ul>
+
+<h2>Pravidlo 40 až 60 slov: Direct Answer bloky pre LLM</h2>
+<p>Zlatým štandardom citovateľnosti v AI je odsek v rozsahu 40 až 60 slov umiestnený bezprostredne pod každým medzititulkom H2. Tento blok musí obsahovať priamu odpoveď na otázku v nadpise, kľúčovú metriku alebo definíciu. Až pod ním nasleduje hlbší rozbor, tabuľky a vysvetlenie detailov.</p>
+
+<h2>Entitné SEO a štruktúrované dáta: Prečo sú JSON-LD schémy kľúčové</h2>
+<p>Umelá inteligencia nerozmýšľa v kľúčových slovách, ale v entitách a vzťahoch medzi nimi. Nasadenie schémy JSON-LD (Organization, ProfessionalService, FAQPage, Article) prepája váš web s oficiálnymi registrami. Model tak presne vie, kto je autorom, aké má skúsenosti a na aké služby sa špecializuje.</p>
+
+<h2>Kontrola robots.txt a povolenie AI crawlerov</h2>
+<p>Mnoho webov omylom blokuje AI botov vo svojom súbore robots.txt. Skontrolujte, či boti GPTBot (OpenAI), ClaudeBot (Anthropic), PerplexityBot a Google-Extended majú povolený prístup k vašim článkom a službám. Ak prístup zakážete, AI model vaše dáta nedokáže prečítať ani overiť v reálnom čase.</p>
+
+<h2>Súbor llms.txt a formátovanie pre jednoduchú extrakciu</h2>
+<p>Súbor llms.txt v koreňovom adresári webu (napr. noktostudio.com/llms.txt) predstavuje špeciálnu mapu pre AI asistentov. Obsahuje čisté textové zhrnutie vašich služieb, cien, skúseností a kľúčových URL v štandardizovanom Markdown formáte, ktorý modely spracujú za milisekundy.</p>
+
+<h2>Kontrolný zoznam: Ako auditovať viditeľnosť webu v AI</h2>
+<ol>
+<li>Otestujte kľúčové komerčné otázky vo vašom odvetví priamo v Perplexity a ChatGPT Search.</li>
+<li>Zistite, či sa vaša doména zobrazuje v prehľadoch Google Search Console vo funkcii Zobrazení vo funkciách generatívnej AI.</li>
+<li>Skontrolujte, či máte pod každým H2 nadpisom faktický blok s priamou odpoveďou bez marketingovej vaty.</li>
+<li>Overte validitu JSON-LD štruktúrovaných dát cez Google Rich Results Test.</li>
+<li>Zabezpečte správnu konfiguráciu súboru robots.txt pre moderných AI crawlerov.</li>
+</ol>
+"""
+    faq = [
+        ("Čo je GEO (Generative Engine Optimization)?",
+         "Optimalizácia webu pre vyhľadávacie systémy poháňané umelou inteligenciou (ChatGPT Search, Perplexity, Google AI Overviews). Cieľom nie je len pozícia v zozname odkazov, ale priame citovanie a odporúčanie značky v syntetizovanej odpovedi."),
+        ("Ako zistím, či ma AI modely odporúčajú?",
+         "Pravidelným testovaním komerčných dotazov v Perplexity a ChatGPT, ako aj sledovaním novej záložky vo funkciách generatívnej umelej inteligencie v Google Search Console. V našich auditoch meriame skóre citovateľnosti od 0 do 100."),
+        ("Koľko stojí príprava webu na AI vyhľadávanie?",
+         "Základná optimalizácia pasáží a nasadenie JSON-LD schém je súčasťou našich mesačných balíkov od 180 EUR mesačne. Vstupný audit viditeľnosti v AI pripravíme zdarma."),
+        ("Nahradí AI vyhľadávanie klasický Google?",
+         "Nenahradí ho úplne, ale zmení správanie používateľov. Pri informačných a porovnávacích dopytoch používatelia čoraz častejšie volia odpoveď AI namiesto preklikávania viacerých webov. Pripravené weby z tohto trendu profitujú."),
+    ]
+    return blog_post(slug="ai-vyhladavanie-overviews", label="AI & GEO",
+                     h1="Ako sa dostať do odpovedí ChatGPT, Perplexity a Google AI Overviews: Sprievodca GEO pre rok 2026",
+                     answer="Dostať sa do odpovedí ChatGPT, Perplexity a Google AI Overviews vyžaduje prechod od klasického cielenia kľúčových slov k entitnému GEO (Generative Engine Optimization). AI modely necitujú celé weby, ale špecifické pasáže s vysokou informačnou hustotou (40 až 60 slov), ktoré obsahujú jasnú faktickú odpoveď, štruktúrované dáta JSON-LD, čistý súbor llms.txt a neblokované AI crawlery.",
+                     sections=sections, faq=faq,
+                     related=[("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod 2026"), ("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam")],
+                     services=[("/sk/sluzby/seo-pre-ai-vyhladavace/", "SEO pre AI vyhľadávače"), ("/sk/sluzby/seo-audit/", "SEO audit a analýza")],
+                     date_iso="2026-11-11", date_display="11. 11. 2026")
+
+
+def blog_post_shoptet_seo() -> tuple[str, str]:
+    """NEW 2026-11-11. Target: 'shoptet seo' (210 SV/mo), 'seo optimalizacia shoptet' (90 SV/mo),
+    'ako nastavit seo na shoptete' (60 SV/mo). Supports /sk/sluzby/seo-pre-eshopy/."""
+    sections = """
+<h2>Prečo má Shoptet skvelý základ, no v predvolenom stave nestačí</h2>
+<p>Shoptet patrí k najlepším e-shopovým platformám v strednej Európe vďaka rýchlemu kódu, SSL zabezpečeniu a automatickým XML feedom. Predvolená inštalácia však obsahuje vážne nedostatky: generovanie stoviek duplicitných URL adries cez filtre, prázdne texty kategórií a automatické titulky, ktoré nereflektujú skutočný objem vyhľadávania. Bez zásahu špecialistu prichádza e-shop o 60 až 80 % potenciálneho organického obratu.</p>
+
+<h2>Architektúra kategórií: Ako správne štruktúrovať vstupné stránky</h2>
+<p>Kategórie prinášajú v e-shopoch najväčší objem tržieb, pretože pokrývajú dopyty zákazníkov vo fáze zvažovania a nákupu. Štruktúra kategórií musí vychádzať z hĺbkovej analýzy kľúčových slov, nie z interného členenia skladu. Každá kategória musí mať samostatnú URL, optimalizovaný H1 nadpis a aspoň 150 až 250 slov unikátneho nákupného textu, ktorý radí s výberom.</p>
+<table class="metric-table">
+<tr><th>Prvok kategórie</th><th>Nesprávne nastavenie v Shoptete</th><th>Správne SEO nastavenie</th></tr>
+<tr><td><strong>H1 nadpis</strong></td><td>Pánska obuv (príliš všeobecné)</td><td>Pánska turistická a outdoorová obuv</td></tr>
+<tr><td><strong>Popis kategórie</strong></td><td>Prázdny alebo skopírovaný od výrobcu</td><td>200 slov o výbere membrány, veľkosti a terénu</td></tr>
+<tr><td><strong>Drobčeková navigácia</strong></td><td>Domov > Obuv</td><td>Domov > Pánska obuv > Turistická obuv</td></tr>
+<tr><td><strong>URL slug</strong></td><td>domena.sk/kategoria-12345/</td><td>domena.sk/panska-turisticka-obuv/</td></tr>
+</table>
+
+<h2>Parametrické kategórie a filtrácia: Zabráňte duplicitám</h2>
+<p>Najčastejšou technickou chybou v Shoptete je nekontrolované indexovanie parametrov (farba, veľkosť, materiál, výrobca). Ak má kategória 5 filtrov, systém dokáže vygenerovať tisíce prázdnych URL kombinácií, ktoré vyčerpajú crawl budget robota Google. V sekcii Administrácia nastavte kanonický tag (canonical) smerujúci na hlavnú kategóriu a do indexu púšťajte iba tie parametrické stránky, ktoré majú reálnu hľadanosť v Marketing Mineri.</p>
+
+<h2>Optimalizácia produktových kariet: Unikátne popisy namiesto feedov</h2>
+<p>Ak do Shoptetu nahráte produkty z veľkoobchodného XML feedu, váš e-shop má identický text ako desiatky konkurentov. Google takéto stránky považuje za duplicitné a nezobrazí ich v popredí. Pre 20 % najpredávanejších produktov (bestsellerov) napíšte originálne popisy so zameraním na úžitok pre zákazníka, technické špecifikácie v prehľadnej tabuľke a odpovede na časté otázky.</p>
+
+<h2>Nastavenie meta tagov a automatických pravidiel</h2>
+<p>V administrácii Shoptetu prejdite do Marketing > Základné SEO. Nastavte si dynamické šablóny pre titulky a popisy produktov pomocou premenných: [Názov produktu] skladom | [Názov e-shopu]. V titulku kategórií vždy uveďte primárne kľúčové slovo a benefit (napr. expedícia do 24 hodín). Dĺžku titulku držte medzi 50 až 60 znakmi, aby sa v Google nezosekával.</p>
+
+<h2>Interné prelinkovanie a blog na Shoptete</h2>
+<p>Využite silu interných odkazov na distribúciu autority naprieč e-shopom. Shoptet umožňuje jednoducho pridať súvisiace kategórie do spodnej časti stránky a odporúčané produkty priamo do blogových článkov. Každý vzdelávací článok na blogu musí odkazovať na príslušnú nákupnú kategóriu s presným kotvovým textom.</p>
+
+<h2>XML feedy pre Google Merchant Center a Heureku</h2>
+<p>Shoptet disponuje kvalitným generátorom XML feedov pre Google Nákupy a cenové porovnávače. Uistite sa, že všetky produkty majú vyplnený unikátny kód EAN/GTIN, značku výrobcu a zaradenie do oficiálnej kategórie Google. Tým zabezpečíte bezplatné zobrazenie produktov na karte Nákupy v Google Vyhľadávaní.</p>
+"""
+    faq = [
+        ("Je Shoptet vhodný na SEO?",
+         "Áno, patrí medzi najlepšie krabicové riešenia na slovenskom a českom trhu. Má rýchly kód a dobrú technickú štruktúru, no vyžaduje manuálne nastavenie kategórií, kanonických tagov a unikátny obsah."),
+        ("Prečo sa moje produkty na Shoptete nezobrazujú v Google?",
+         "Najčastejším dôvodom je duplicitný popis z XML feedu dodávateľa, chýbajúce indexovanie v Google Search Console alebo zablokovanie kategórie v súbore robots.txt. Tieto chyby odhalí náš bezplatný vstupný audit."),
+        ("Musím na Shoptete dokupovať drahé SEO doplnky?",
+         "Základné SEO zvládnete priamo v administrácii bez platených doplnkov. Doplnky odporúčame až pri pokročilej automatizácii presmerovaní alebo špecifickom prelinkovaní."),
+        ("Koľko stojí profesionálna optimalizácia Shoptet e-shopu?",
+         "Naše mesačné balíky začínajú na 180 EUR mesačne (5 hodín práce špecialistu + SEO nástroje a AI). Presný rozsah prác potvrdí audit podľa veľkosti vášho katalógu."),
+    ]
+    return blog_post(slug="shoptet-seo-navod", label="E-shop SEO",
+                     h1="Shoptet SEO: 11 technických a obsahových nastavení pre rast tržieb z Google",
+                     answer="SEO na Shoptete stojí na troch základoch: čistej architektúre kategórií cielenej na hľadané frázy, správnej konfigurácii parametrického filtrovania bez vzniku duplicitných adries a unikátnych obsahových popisoch. Shoptet má skvelý technický základ, no v predvolenom stave bez úpravy automatických titulkov, URL a kanonických tagov generuje stovky zbytočných adries, ktoré brzdia indexáciu.",
+                     sections=sections, faq=faq,
+                     related=[("seo-pre-eshop", "SEO pre e-shop: 9 nastavení, ktoré prinášajú objednávky"), ("kolko-stoji-seo", "Koľko stojí SEO v roku 2026?")],
+                     services=[("/sk/sluzby/seo-pre-eshopy/", "SEO pre e-shopy"), ("/sk/sluzby/seo-audit/", "SEO audit a analýza")],
+                     date_iso="2026-11-11", date_display="11. 11. 2026")
+
+
+def blog_post_lokalne_seo() -> tuple[str, str]:
+    """NEW 2026-11-11. Target: 'lokalne seo' (170 SV/mo), 'google mapy pre firmy' (120 SV/mo).
+    Supports /sk/sluzby/lodalne-seo/."""
+    sections = """
+<h2>Prečo lokálne vyhľadávanie prináša najvyššiu mieru konverzie</h2>
+<p>Lokálne SEO umožňuje lokálnym firmám osloviť zákazníkov v momente, keď aktívne hľadajú službu vo svojom bezprostrednom okolí. Podľa štatistík Google končí viac ako 76 % lokálnych vyhľadávaní na mobilných zariadeniach návštevou predajne alebo telefonickým hovorom do 24 hodín. Umiestnenie v mapovom balíku Local 3-Pack prináša stabilný prúd zákazníkov bez nutnosti platiť za každý klik v reklame.</p>
+
+<h2>Základný pilier: Dokonalé vyplnenie profilu Google Business Profile</h2>
+<p>Váš firemný profil na Google je virtuálnou výkladnou skriňou. Najdôležitejším rozhodnutím je voľba primárnej kategórie (napr. Autoservis, Stomatologická klinika, Inštalatér), ktorá určuje až 60 % relevancie pre zobrazenie v mapách. Doplňte presné otváracie hodiny vrátane štátnych sviatkov, podrobný zoznam služieb a pravidelne nahrávajte reálne fotografie z prevádzky.</p>
+
+<h2>Lokálne landing pages: Cielenie na mestá bez duplicitného obsahu</h2>
+<p>Ak pôsobíte vo viacerých okresoch či mestách, vybudujte pre každú lokalitu samostatnú vstupnú stránku (napr. domena.sk/sluzby/bratislava/ a domena.sk/sluzby/trnava/). Pozor na zásadnú chybu: nevytvárajte identické texty, v ktorých iba vymeníte názov mesta. Každá stránka musí obsahovať reálne referencie z danej lokality, fotografie zrealizovaných projektov a kontaktné údaje zodpovedného technika.</p>
+
+<h2>Konzistentnosť údajov NAP naprieč slovenskými registrami</h2>
+<p>Skratka NAP označuje tri kľúčové identifikačné znaky: Meno firmy (Name), Adresu (Address) a Telefónne číslo (Phone). Tieto údaje musia byť uvedené v stopercentne zhodnom tvare na vašom webe, v Google profile, na Azet.sk, Zoznam.sk, ZlatéStránky.sk a v obchodnom registri. Akékoľvek nezrovnalosti v adrese vyvolávajú u vyhľadávacieho algoritmu neistotu a znižujú pozíciu v mapách.</p>
+
+<h2>Zber a manažment Google recenzií: Stratégia SMS správ</h2>
+<p>Počet a priemerné hodnotenie recenzií priamo ovplyvňuje algoritmus lokálneho radenia aj dôveru nových zákazníkov. Zaveďte systematický proces zberu hodnotení: bezprostredne po úspešnom dokončení zákazky pošlite klientovi personalizovanú SMS s priamym odkazom na udelenie recenzie. Na každú recenziu do 24 hodín slušne odpovedzte, a to aj v prípade konštruktívnej kritiky.</p>
+
+<h2>Lokálna schéma LocalBusiness a geo-súradnice v kóde</h2>
+<p>Vložte do kódu webu štruktúrované dáta typu LocalBusiness vo formáte JSON-LD. Uveďte v nich presné GPS geo-súradnice (latitude a longitude), oficiálne IČO, DIČ, otváracie hodiny a odkaz na sociálne siete. Roboti vyhľadávača tak okamžite a bez pochybností priradia váš web k fyzickej adrese.</p>
+
+<h2>Najčastejšie chyby, kvôli ktorým Google pozastaví profil</h2>
+<p>Google prísne chráni integritu svojich máp. Vyhnite sa umelému vkladaniu kľúčových slov do názvu firmy (tzv. keyword stuffing), registrácii virtuálnych sídiel bez reálneho personálu a hromadnému vytváraniu duplicitných profilov. Takéto praktiky vedú k okamžitému pozastaveniu profilu a strate všetkých nazbieraných recenzií.</p>
+"""
+    faq = [
+        ("Čo je Local 3-Pack?",
+         "Výber troch najrelevantnejších lokálnych firiem zobrazených priamo na mape na vrchole výsledkov Google. Získanie pozície v tejto trojici prináša najvyšší podiel telefonátov a návštev."),
+        ("Ako dlho trvá posun v Google Mapách?",
+         "Základné optimalizácie profilu prinesú výsledky za 2 až 4 týždne. Plná autorita a stabilné prvé priečky vyžadujú priebežný zber recenzií a konzistentné NAP citácie počas 3 až 6 mesiacov."),
+        ("Čo robiť, ak dostanem nespravodlivú negatívnu recenziu?",
+         "Nikdy nereagujte agresívne. Odpovedzte vecne, profesionálne a navrhnite riešenie situácie cez telefón alebo email. Budúci zákazníci hodnotia najmä vašu reakciu a ochotu riešiť problém."),
+        ("Môžem robiť lokálne SEO, ak nemám kamennú predajňu?",
+         "Áno, v profile Google Business Profile nastavíte obsluhovanú oblasť (Service Area Business) a svoju domácu adresu skryjete pred verejnosťou. Zobrazovať sa budete zákazníkom v okruhu, v ktorom poskytujete služby."),
+    ]
+    return blog_post(slug="lokalne-seo-sprievodca", label="Lokálne SEO",
+                     h1="Lokálne SEO pre firmy: Ako získať zákazníkov z Google Máp a lokálneho vyhľadávania",
+                     answer="Lokálne SEO umožňuje malým a stredným firmám obsadiť prvé tri miesta na mape Google (Local 3-Pack) pri dopytoch s lokálnym zámerom (mesto, okres alebo v mojom okolí). O umiestnení rozhodujú tri faktory: relevancia profilu Google Business Profile, vzdialenosť prevádzky od vyhľadávajúceho a autorita budovaná cez konzistentné recenzie a lokálne citácie.",
+                     sections=sections, faq=faq,
+                     related=[("google-firmy-profil-navod", "Google firemný profil: návod od založenia po hodnotenia"), ("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod 2026")],
+                     services=[("/sk/sluzby/lodalne-seo/", "Lokálne SEO a Google Mapy"), ("/sk/sluzby/seo-audit/", "SEO audit a analýza")],
+                     date_iso="2026-11-11", date_display="11. 11. 2026")
+
+
+def blog_post_spatne_odkazy() -> tuple[str, str]:
+    """NEW 2026-11-11. Target: 'spatne odkazy zadarmo' (90 SV/mo), 'bezplatny linkbuilding' (50 SV/mo).
+    Supports /sk/sluzby/linkbuilding/."""
+    sections = """
+<h2>Čo robí spätný odkaz skutočne hodnotným</h2>
+<p>V modernom linkbuildingu nerozhoduje počet odkazov, ale ich tematická relevancia a autorita zdroja. Jeden odkaz z reálne navštevovaného oborového webu má pre Google stonásobne vyššiu hodnotu než desiatky odkazov z anonymných PR webov a katalógov. Google hodnotí kontext článku, v ktorom sa odkaz nachádza, prirodzenosť kotvového textu a to, či cez odkaz prichádzajú skutoční čitatelia.</p>
+
+<h2>Metóda 1: Odkazy od obchodných partnerov a dodávateľov</h2>
+<p>Najrýchlejšia a najbezpečnejšia cesta k autoritatívnym odkazom vedie cez vašich existujúcich obchodných partnerov. Väčšina výrobcov, distribútorov a veľkoobchodov prevádzkuje na svojom webe sekciu Kde kúpiť alebo Naši partneri. Požiadajte ich o doplnenie vášho loga s odkazom na vašu doménu. Pre dodávateľa je to prirodzená podpora predaja a vy získate odkaz s vysokou dôverou.</p>
+
+<h2>Metóda 2: Zákaznícke prípadové štúdie a referencie pre softvér</h2>
+<p>Používate vo svojej firme účtovný softvér, CMS platformu, skladový systém alebo nástroj na e-mail marketing? Napíšte ich marketingovému tímu podrobné hodnotenie (testimonial) s konkrétnymi číslami o tom, ako vám softvér pomohol zefektívniť procesy. Technologické spoločnosti veľmi rady publikujú úspechy zákazníkov na svojich vysoko hodnotených stránkach s dofollow odkazom na váš web.</p>
+
+<h2>Metóda 3: Premena neodkazovaných zmienok (Unlinked Brand Mentions)</h2>
+<p>O vašej firme, produktoch alebo realizáciách už v minulosti písali regionálne noviny, blogy či partnerské weby, no zabudli vložiť klikateľný odkaz. Pomocou vyhľadávacích operátorov v Google (napr. \"Názov Vašej Značky\" -site:vasadomena.sk) nájdite tieto zmienky. Napíšte autorovi priateľský email, poďakujte za zmienku a navrhnite doplnenie odkazu pre pohodlie čitateľov.</p>
+
+<h2>Metóda 4: Lokálne komunitné a sponzorské partnerstvá</h2>
+<p>Podpora lokálneho športového tímu, dobročinnej akcie, školskej súťaže alebo mestskej konferencie predstavuje výbornú príležitosť na získanie odkazu. Organizátori bežne zverejňujú zoznamy podporovateľov s logom a odkazom. Odkazy z webov obcí (.sk), škôl a neziskových organizácií vysielajú vyhľadávaču silné signály lokálnej autority a dôveryhodnosti.</p>
+
+<h2>Metóda 5: Tvorba informačného aktíva (Linkable Asset)</h2>
+<p>Linkable asset je obsah, na ktorý iné weby odkazujú úplne prirodzene a bez vyzvania. Ide o praktické interaktívne kalkulačky (napr. kalkulačka návratnosti investície), šablóny v Google Sheets na stiahnutie zadarmo alebo unikátny prieskum cien vo vašom odvetví. Odborné médiá a diskusné portály tieto zdroje radi citujú ako primárny zdroj faktov.</p>
+
+<h2>Čomu sa v linkbuildingu vyhnúť: Varovné signály a riziká</h2>
+<p>Nikdy nenakupujte balíky stoviek odkazov na fórach, vyhnite sa automatickým zápisom do stoviek bezcenných katalógov a nepoužívajte softvér na spamovanie komentárov na cudzích blogoch. Algoritmus Google SpamBrain dokáže takéto manipulácie spoľahlivo identifikovať, odkazový profil znehodnotiť a váš web odsunúť na neviditeľné pozície.</p>
+"""
+    faq = [
+        ("Koľko spätných odkazov potrebuje nový web?",
+         "Dôležitejšia než kvantita je kvalita. Na štart v menej konkurenčných odvetviach často stačí 5 až 10 silných odkazov od partnerov, dodávateľov a z overených lokálnych registrov, ktoré vytvoria základ dôveryhodnosti."),
+        ("Aký je rozdiel medzi dofollow a nofollow odkazom?",
+         "Dofollow odkaz priamo prenáša hodnotu PageRanku a pomáha zlepšovať pozície. Nofollow odkaz hodnotu formálne neprenáša, no Google ho berie ako signál prirodzenosti a privádza na web reálnych návštevníkov. Zdravý profil obsahuje oba typy."),
+        ("Je nákup odkazov v PR článkoch bezpečný?",
+         "Nákup odkazov je bezpečný len vtedy, ak ide o kvalitné tematické články na autoritatívnych weboch, ktoré čítajú skutoční ľudia. Vyhnite sa masovým PR webom vytvoreným iba na predaj odkazov."),
+        ("Ako pomáha Nokto Studio s linkbuildingom?",
+         "Realizujeme bezpečný a strategický outreach: hľadáme nezodpovedané zmienky, pripravujeme odborné podklady pre médiá a prepájame weby s dodávateľskou sieťou. Všetky kroky sú plne transparentné v týždenných výkazoch."),
+    ]
+    return blog_post(slug="spatne-odkazy-zadarmo", label="Linkbuilding",
+                     h1="Spätné odkazy zadarmo: 8 overených metód bezpečného linkbuildingu bez rozpočtu",
+                     answer="Kvalitný spätný odkaz nemusíte draho kupovať. Bezplatný linkbuilding stojí na využití existujúcich obchodných vzťahov: prepojenie s dodávateľmi a partnermi, poskytnutie prípadových štúdií pre používaný softvér, premena neodkazovaných zmienok značky na klikateľné linky a tvorba užitočných nástrojov (kalkulačky, šablóny, prieskumy), na ktoré iné weby odkazujú prirodzene.",
+                     sections=sections, faq=faq,
+                     related=[("linkbuilding-co-to-je", "Linkbuilding: čo to je, čo stojí a ako sa robí bezpečne"), ("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod 2026")],
+                     services=[("/sk/sluzby/linkbuilding/", "Linkbuilding a autorita"), ("/sk/sluzby/seo-audit/", "SEO audit a analýza")],
+                     date_iso="2026-11-11", date_display="11. 11. 2026")
+
+
 # ---------------------------------------------------------------- BLOG LISTING
 
 # Blog card data. Excerpts are the direct answers of each article, read dates
 # match the launch date. No search-volume badges on the public page.
 _BLOG_CARDS = [
+    dict(slug="ai-vyhladavanie-overviews", cat="GEO & AI", tag="tag-orange", date="15. 10. 2026",
+         title="AI vyhľadávanie a Google AI Overviews: kompletný návod 2026",
+         excerpt="Ako funguje AI vyhľadávanie, prečo klasické SEO nestačí a ako dostať značku do odpovedí ChatGPT, Perplexity a Google AI Overviews. 5 technických krokov a citovateľnosť."),
+    dict(slug="shoptet-seo-navod", cat="E-shop", tag="tag-cerulean", date="15. 10. 2026",
+         title="Shoptet SEO návod: 10 krokov k vyšším tržbám z Google",
+         excerpt="Konkrétny sprievodca optimalizáciou Shoptet e-shopu: parametrické kategórie, produktové popisy, indexácia variantov, interné prelinkovanie a rýchlosť šablóny."),
+    dict(slug="lokalne-seo-sprievodca", cat="Lokálne SEO", tag="tag-violet", date="15. 10. 2026",
+         title="Lokálne SEO: ako sa dostať na 1. miesto na Google Mapách",
+         excerpt="Kompletný sprievodca lokálnym SEO pre služby a kamenné prevádzky: Google Business Profile, lokálne kľúčové slová, recenzie, NAP konzistencia a lokálny linkbuilding."),
+    dict(slug="spatne-odkazy-zadarmo", cat="Linkbuilding", tag="tag-violet-light", date="15. 10. 2026",
+         title="Spätné odkazy zadarmo: 15 overených spôsobov pre rok 2026",
+         excerpt="Ako získať kvalitné spätné odkazy zadarmo bez rizika Google penalizácie. Overené metódy: unlinked brand mentions, PR databázy, partneri, expertné citácie a podcasty."),
     dict(slug="seo-pre-eshop", cat="E-shop", tag="tag-cerulean", date="1. 10. 2026",
          title="SEO pre e-shop: 9 nastavení, ktoré prinášajú objednávky",
          excerpt="Kategórie, produkty, filtre, schéma, Merchant Center, prelinkovanie, rýchlosť a meranie objednávok. Čo naozaj rozhoduje o objednávkach z Google."),

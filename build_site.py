@@ -64,6 +64,10 @@ add(sk2.blog_post_gbp())
 add(sk2.blog_post_wordpress())
 add(sk2.blog_post_eshop())
 add(sk2.blog_post_audit())
+add(sk2.blog_post_ai_vyhladavanie())
+add(sk2.blog_post_shoptet_seo())
+add(sk2.blog_post_lokalne_seo())
+add(sk2.blog_post_spatne_odkazy())
 add(sk2.sk_redirect())
 add(sk2.sk_privacy())
 add(sk2.sk_terms())
@@ -145,6 +149,10 @@ SK_ENTRIES = [
     ("blog/seo-wordpress/",               "0.5"),
     ("blog/seo-pre-eshop/",               "0.5"),
     ("blog/seo-audit-co-to-je/",          "0.5"),
+    ("blog/ai-vyhladavanie-overviews/",   "0.6"),
+    ("blog/shoptet-seo-navod/",           "0.6"),
+    ("blog/lokalne-seo-sprievodca/",      "0.6"),
+    ("blog/spatne-odkazy-zadarmo/",       "0.6"),
     ("privacy/",            "0.2"),
     ("terms/",              "0.2"),
 ]
