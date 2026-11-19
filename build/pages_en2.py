@@ -17,7 +17,7 @@ _BLOG_META = {
         desc="E-commerce SEO from categories to Merchant Center: 9 settings that bring orders from Google. Real experience, costs, and the mistakes that hold shops back."),
     "seo-audit-guide": dict(
         title="SEO audit: what it is, what it costs and how it works | Nokto Studio",
-        desc="SEO audit explained: what it covers, what it costs (from 180 EUR, entry audit free), and how to turn it into a prioritized plan. A real example."),
+        desc="SEO audit explained: what it covers, what it costs (from 220 EUR, entry audit free), and how to turn it into a prioritized plan. A real example."),
 }
 
 
@@ -125,11 +125,11 @@ def blog_post_ecommerce() -> tuple[str, str]:
 </ul>
 
 <h2>Timeline and cost</h2>
-<p>Long-tail products and smaller categories move in 2 to 4 months, main categories in 6 to 12 months, depending on competition and site health. Monthly retainers start at 180 EUR (5 h labor + tools & AI), the growth package is 220 EUR (10 h labor + tools & AI), and larger e-commerce stores are 290 EUR per month (15 h labor + tools & AI). Specialist labor is 12 EUR per hour, tools and AI models are included. External PR media placements are billed separately. A free entry audit always confirms the recommended scope.</p>
+<p>Long-tail products and smaller categories move in 2 to 4 months, main categories in 6 to 12 months, depending on competition and site health. Monthly retainers start at 220 EUR (Starter package), the growth package is 290 EUR, and larger e-commerce stores or authority projects are 350 EUR per month. All packages include SEO visibility, GEO visibility in ChatGPT, citation and click tracking in Google AI, tools, and AI models. External PR media placements are billed separately. A free entry audit always confirms the recommended scope.</p>
 """
     faq = [
         ("How much does e-commerce SEO cost?",
-         "E-commerce retainers are 180 EUR (5 h labor + tools & AI), 220 EUR (10 h labor + tools & AI), or 290 EUR per month (15 h labor + tools & AI) at a 12 EUR per hour specialist labor rate. Initial setup (technical, structure, feed) is part of month 1. External link and PR costs are billed separately at cost, with no markup."),
+         "E-commerce retainers are 220 EUR, 290 EUR, or 350 EUR per month depending on scope. Each package includes SEO visibility, GEO visibility in ChatGPT, and tracking citations and clicks in Google AI and ChatGPT. Initial setup (technical, structure, feed) is part of month 1. External link and PR costs are billed separately at cost, with no markup."),
         ("How long until the first orders from organic?",
          "Long-tail products and smaller categories in 2 to 4 months, main categories in 6 to 12 months. For a new shop without authority, the first month is about technical work and structure; orders arrive as Google indexes the pages."),
         ("Is the built-in SEO module of my platform enough?",
@@ -154,14 +154,14 @@ def blog_post_audit() -> tuple[str, str]:
     """EN pair of /sk/blog/seo-audit-co-to-je/ and /cz/blog/seo-audit-co-to-je/."""
     sections = """
 <h2>What an SEO audit is</h2>
-<p>An SEO audit is a systematic review of a website that answers three questions: why the site is not winning in Google, what exactly to fix, and in what order. It covers technical aspects (indexing, speed, duplicates, structure), content (titles, keywords, gaps against competitors) and authority (backlinks, E-E-A-T signals). The output is not a PDF for a drawer, it is a prioritized plan with hour estimates.</p>
+<p>An SEO audit is a systematic review of a website that answers three questions: why the site is not winning in Google, what exactly to fix, and in what order. It covers technical aspects (indexing, speed, duplicates, structure), content (titles, keywords, gaps against competitors) and authority (backlinks, E-E-A-T signals). The output is not a PDF for a drawer, it is a prioritized action plan with clear deliverables.</p>
 
 <h2>Entry, technical and complex audit: the difference</h2>
 <table class="metric-table">
 <tr><th>Type</th><th>What it covers</th><th>Price</th><th>When you want it</th></tr>
 <tr><td><strong>Entry audit</strong></td><td>10 biggest problems and opportunities on one page</td><td>free</td><td>first contact, quick orientation</td></tr>
-<tr><td><strong>Technical audit</strong></td><td>indexing, speed, duplicates, URL structure</td><td>from 180 EUR</td><td>before a migration or during a drop</td></tr>
-<tr><td><strong>Complex SEO audit</strong></td><td>technical + content + keywords + competitors + plan</td><td>240 to 480 EUR</td><td>before an annual plan and budget</td></tr>
+<tr><td><strong>Technical audit</strong></td><td>indexing, speed, duplicates, URL structure</td><td>from 220 EUR</td><td>before a migration or during a drop</td></tr>
+<tr><td><strong>Complex SEO audit</strong></td><td>technical + content + keywords + competitors + plan</td><td>290 to 480 EUR</td><td>before an annual plan and budget</td></tr>
 </table>
 
 <h2>How it runs: 5 steps</h2>
@@ -170,7 +170,7 @@ def blog_post_audit() -> tuple[str, str]:
 <li>Site crawl: indexing, errors, duplicates, speed (Screaming Frog and PageSpeed Insights).</li>
 <li>Demand analysis: what people search, where you are visible and where you are not.</li>
 <li>Priorities: impact on orders and enquiries versus effort.</li>
-<li>Plan: what, when and for how many hours, with measurable goals.</li>
+<li>Plan: what, when and expected impact, with measurable goals.</li>
 </ol>
 
 <h2>What the audit covers</h2>
@@ -182,10 +182,10 @@ def blog_post_audit() -> tuple[str, str]:
 <p>Backlink profile, toxic links, competitor link gap, citations and mentions, local profiles.</p>
 
 <h2>How to read the results</h2>
-<p>A good audit has priorities: P1 (do now, biggest impact), P2 (within a month) and P3 (ongoing). Every item shows impact and an hour estimate. If you receive 60 pages without an order, you did not get an audit, you got a wish list. Ask for two numbers: how many hours it takes and what it will bring.</p>
+<p>A good audit has priorities: P1 (do now, biggest impact), P2 (within a month) and P3 (ongoing). Every item shows impact and an hour estimate. If you receive 60 pages without an order, you did not get an audit, you got a wish list. Ask for two things: what the specific steps are and what impact they will bring.</p>
 
 <h2>What an SEO audit costs</h2>
-<p>The entry audit is free and arrives within 3 working days: the 10 biggest problems and opportunities on one page. A detailed audit is 180 EUR (technical) up to 480 EUR (complex), billed at 12 EUR per hour. With ongoing cooperation, the detailed audit is part of the first month, so you do not pay twice.</p>
+<p>The entry audit is free and arrives within 3 working days: the 10 biggest problems and opportunities on one page. A detailed audit is from 220 EUR (technical) up to 480 EUR (complex). With ongoing cooperation, the detailed audit is part of the first month, so you do not pay twice.</p>
 
 <h2>A real example</h2>
 <p>A website with about 300 pages: the audit found 6 specific content pages that were missing. After publishing them, impressions grew by 11,000 per month (+14 percent) and clicks by 43 percent within a week. The audit did not hunt for 50 things, it found 6 that move the whole site. That is what an audit result should look like.</p>
@@ -195,9 +195,9 @@ def blog_post_audit() -> tuple[str, str]:
 """
     faq = [
         ("What is an SEO audit?",
-         "A systematic review that answers three questions: why the site is not winning in Google, what exactly to fix, and in what order. It covers technical, content and authority aspects, and the output is a prioritized plan with hour estimates, not a PDF for a drawer."),
+         "A systematic review that answers three questions: why the site is not winning in Google, what exactly to fix, and in what order. It covers technical, content and authority aspects, and the output is a prioritized plan with clear deliverables, not a PDF for a drawer."),
         ("How much does an SEO audit cost?",
-         "The entry audit (10 biggest problems on one page) is free within 3 working days. A technical audit starts at 180 EUR, a complex audit with content and a plan is 240 to 480 EUR. With ongoing cooperation, the audit is part of the first month."),
+         "The entry audit (10 biggest problems on one page) is free within 3 working days. A technical audit starts at 220 EUR, a complex audit with content and a plan is 290 to 480 EUR. With ongoing cooperation, the audit is part of the first month."),
         ("How long does an audit take?",
          "The entry audit within 3 working days. A detailed audit takes 5 to 10 working days depending on site size and available access. Large e-shops with thousands of URLs can take two weeks."),
         ("Is a free online audit tool enough?",
@@ -210,7 +210,7 @@ def blog_post_audit() -> tuple[str, str]:
          "Access to Google Search Console (granting permission is enough), your website address, and GA4 access if you have it. The entry audit works even without access, from public data and a crawl."),
     ]
     return blog_post(slug="seo-audit-guide", label="SEO audit", h1="SEO audit: what it is, what it costs and how it works",
-                     answer="An SEO audit is a systematic review that answers three questions: why your site is not winning in Google, what exactly to fix, and in what order. Entry audit free within 3 days, technical from 180 EUR, complex 240 to 480 EUR.",
+                     answer="An SEO audit is a systematic review that answers three questions: why your site is not winning in Google, what exactly to fix, and in what order. Entry audit free within 3 days, technical from 220 EUR, complex 290 to 480 EUR.",
                      sections=sections, faq=faq,
                      related=[("ecommerce-seo", "E-commerce SEO: 9 settings that turn Google into orders")],
                      services=[("/en/services/#audit", "SEO audit and analysis"), ("/en/services/#seo", "Google visibility")])
@@ -224,7 +224,7 @@ _BLOG_CARDS = [
          excerpt="Categories, products, filters, schema, Merchant Center, internal links, speed and order measurement. What actually decides orders from Google."),
     dict(slug="seo-audit-guide", cat="SEO audit", tag="tag-violet", date="1 October 2026",
          title="SEO audit: what it is, what it costs and how it works",
-         excerpt="Entry, technical and complex audits: differences, prices (from 180 EUR, entry free), 5 steps, and how to read the P1 to P3 priorities."),
+         excerpt="Entry, technical and complex audits: differences, prices (from 220 EUR, entry free), 5 steps, and how to read the P1 to P3 priorities."),
 ]
 
 

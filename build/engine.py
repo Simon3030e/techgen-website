@@ -468,15 +468,15 @@ def footer(market: str, prefix: str) -> str:
                          ("/en/terms/", "Terms")]),
         ]
     if market == "en":
-        foot_intro = "SEO for business owners by Šimon Štermenský: website content, technical SEO and your Google Business Profile. Measurable results at a transparent 12 EUR / hour."
+        foot_intro = "SEO for business owners by Šimon Štermenský: website content, technical SEO and your Google Business Profile. Measurable results from 220 EUR / month."
         foot_copy = "© 2026 Nokto Studio. SEO in English for European businesses."
         foot_tagline = "I do it myself: fast, measurable, without lock-in contracts."
     elif market == "cz":
-        foot_intro = "SEO pro podnikatele od Šimona Štermenského: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky za transparentních 12 EUR / hodinu."
+        foot_intro = "SEO pro podnikatele od Šimona Štermenského: obsah webu, technika webu a firemní profil Google. Měřitelné výsledky od 220 EUR měsíčně."
         foot_copy = "© 2026 Nokto Studio. SEO pro Česko i Slovensko."
         foot_tagline = "Dělám to sám, rychle, měřitelně a bez pevných smluv."
     else:
-        foot_intro = "SEO pre podnikateľov od Šimona Štermenského: obsah webu, technika webu a Google firemný profil. Merateľné výsledky za transparentných 12 EUR/hodinu."
+        foot_intro = "SEO pre podnikateľov od Šimona Štermenského: obsah webu, technika webu a Google firemný profil. Merateľné výsledky od 220 EUR mesačne."
         foot_copy = "© 2026 Nokto Studio. SEO pre Slovensko a Česko."
         foot_tagline = "Robím to sám, rýchlo, merateľne a bez pevných zmlúv."
     foot_cols = ""
@@ -651,13 +651,19 @@ def price_cards(cards: list[dict], market: str) -> str:
         if c.get("featured"):
             badge = f'<span class="price-badge">{c.get("badge", default_badge)}</span>'
         lis = "".join(f"<li>{i}</li>" for i in c["items"])
-        hours_label = f"{c['hours']} h"
+        if c.get("hours"):
+            sub_line = f'<strong>{c["hours"]} h</strong> {work}'
+        elif c.get("subtitle"):
+            sub_line = f'<strong>{c["subtitle"]}</strong>'
+        else:
+            default_sub = {"sk": "mesačný retainer, bez viazanosti", "cz": "měsíční retainer, bez závazků", "en": "monthly retainer, no lock-in"}[market]
+            sub_line = f'<strong>{default_sub}</strong>'
         breakdown_html = f'<div style="font-size:0.8rem; color:var(--text-muted); margin-top:-14px; margin-bottom:16px;">{c["breakdown"]}</div>' if c.get("breakdown") else ''
         out.append(f"""
 <div class="price-card{feat}">
   {badge}<span class="price-hours">{c['name']}</span>
   <div class="price-amount">{c['price']}<small> EUR / {period}</small></div>
-  <div class="price-monthly"><strong>{hours_label}</strong> {work}</div>
+  <div class="price-monthly">{sub_line}</div>
   {breakdown_html}<ul>{lis}</ul>
   <a href="{KONTAKT_LINK[market]}" class="btn btn-primary">{btn_label}</a>
 </div>""")
@@ -884,13 +890,13 @@ def results_slider(market: str) -> str:
 
     # Slide 1: 174k impressions / 2.01k clicks / 2.4k AI
     c1_title = {"sk": "E-shop a obsahový portál", "cz": "E-shop a obsahový portál", "en": "E-commerce and content portal"}[market]
-    c1_period = {"sk": "12 mesiacov v Google Vyhľadávaní · 6 mesiacov v AI", "cz": "12 měsíců v Google Vyhledávání · 6 měsíců v AI", "en": "12 months in Google Search · 6 months in AI"}[market]
+    c1_period = {"sk": "1 rok v Google Vyhľadávaní · 6 mesiacov v AI", "cz": "1 rok v Google Vyhledávání · 6 měsíců v AI", "en": "1 year in Google Search · 6 months in AI"}[market]
     chart1 = _screenshot_chart("client1-gsc-search.png", "client1-ai-overview.png", c1_title, market)
     s1 = _slide(
         c1_title,
         t["chip1"],
         c1_period,
-        [{"big": "174 tis.", "color": _VIOLET, "label": {"sk": "zobrazení v Google za 12 mesiacov", "cz": "zobrazení v Google za 12 měsíců", "en": "impressions in Google (12 mo)"}[market]},
+        [{"big": "174 tis.", "color": _VIOLET, "label": {"sk": "zobrazení v Google za 1 rok", "cz": "zobrazení v Google za 1 rok", "en": "impressions in Google (1 year)"}[market]},
          {"big": "2 010", "color": _CERULEAN, "label": {"sk": "klikov z organického Google", "cz": "kliků z organického Google", "en": "clicks from organic Google"}[market]},
          {"big": "2 400", "color": _ORANGE, "label": {"sk": "zobrazení v generatívnej AI", "cz": "zobrazení v generativní AI", "en": "generative AI impressions"}[market]}],
         chart1,
@@ -1010,7 +1016,7 @@ def benefit_cards(cards: list[dict]) -> str:
 
 
 def schema_service(name: str, desc: str, url: str, offers_hours: int = 10) -> str:
-    """Service schema with a simple hourly-rate offer."""
+    """Service schema with a monthly retainer offer."""
     return f"""<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -1023,9 +1029,9 @@ def schema_service(name: str, desc: str, url: str, offers_hours: int = 10) -> st
   "url": "{url}",
   "offers": {{
     "@type": "Offer",
-    "price": "12",
+    "price": "220",
     "priceCurrency": "EUR",
-    "unitText": "hour",
+    "unitText": "month",
     "url": "{url}"
   }}
 }}
@@ -1040,7 +1046,7 @@ ORG_SCHEMA = f"""<script type="application/ld+json">
   "name": "Nokto Studio",
   "url": "{BASE}/",
   "logo": "{BASE}/assets/img/favicon.svg",
-  "description": "SEO agentúra pre podnikateľov. AI viditeľnosť, Google viditeľnosť a viditeľnosť v Google Mapách. SEO pre e-shopy, audity a linkbuilding. Hodinová cena 12 EUR.",
+  "description": "SEO agentúra pre podnikateľov. AI viditeľnosť, Google viditeľnosť a viditeľnosť v Google Mapách. SEO pre e-shopy, audity a linkbuilding. Mesačné retainery od 220 EUR.",
   "email": "{EMAIL}",
   "areaServed": [{{"@type":"Country","name":"Slovakia"}},{{"@type":"Country","name":"Czech Republic"}}],
   "knowsLanguage": ["sk", "cs", "en"]
@@ -1067,7 +1073,7 @@ ORG_SCHEMA_CZ = f"""<script type="application/ld+json">
   "name": "Nokto Studio",
   "url": "{BASE}/",
   "logo": "{BASE}/assets/img/favicon.svg",
-  "description": "SEO agentura pro podnikatele. AI viditelnost, Google viditelnost a viditelnost v Google Mapách. SEO pro e-shopy, audity a linkbuilding. Hodinová cena 12 EUR.",
+  "description": "SEO agentura pro podnikatele. AI viditelnost, Google viditelnost a viditelnost v Google Mapách. SEO pro e-shopy, audity a linkbuilding. Měsíční retainery od 220 EUR.",
   "email": "{EMAIL}",
   "areaServed": [{{"@type":"Country","name":"Slovakia"}},{{"@type":"Country","name":"Czech Republic"}}],
   "knowsLanguage": ["sk", "cs", "en"]

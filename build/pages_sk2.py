@@ -12,7 +12,7 @@ from engine import (base, page_hero, cta_band, faq_block, faq_schema,
 def jak_pracujeme() -> tuple[str, str]:
     body = f"""
 {page_hero("Proces", "Ako pracujem: plán, práca, meranie",
-           "Jasný proces bez čiernej skrinky. Viete, čo robím, prečo a čo to prinieslo. Platíte za hodiny, ktoré sú vykazované.",
+           "Jasný proces bez čiernej skrinky. Viete, čo robím, prečo a čo to prinieslo. Prehľadné mesačné výstupy bez viazanosti.",
            [("Domov", "/"), ("Ako pracujem", None)])}
 
 <section class="section" style="padding-top:0;">
@@ -331,7 +331,7 @@ FAQ_SECTIONS = [
     ]),
     ("Cena a zmluvy", [
         ("Koľko stojí SEO?",
-         "Mesačné retainery sú 180 EUR (5 hodín práce), 220 EUR (10 hodín práce) a 290 EUR (15 hodín práce). Sadzba za prácu špecialistu je 12 EUR za hodinu, pričom zvyšok ceny retainera pokrýva licencie prémiových SEO nástrojov, AI modely a monitoring, serverové procesy a mesačný reporting. Balíčky sú odporúčané rozsahy, nie povinné viazanosti."),
+         "Mesačné retainery sú 220 EUR, 290 EUR a 350 EUR podľa zvoleného rozsahu. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT, licencie prémiových SEO nástrojov, AI modely a monitoring, serverové procesy a mesačný reporting. Balíčky sú odporúčané mesačné rozsahy, bez viazanosti."),
         ("Sú zmluvy viazané?",
          "Nie. Spoluprácu môžete skončiť kedykoľvek, bez sankcií a bez viazanosti. Fakturujem mesačne spätne na základe transparentného reportu."),
         ("Čo ak potrebujem viac hodín v jednom mesiaci?",
@@ -343,7 +343,7 @@ FAQ_SECTIONS = [
         ("Ako dlho trvá, kým SEO prinesie výsledky?",
          "Prvé pohyby na menej konkurenčných dotazoch za 2 až 4 mesiace, na hlavné dotazy 6 až 12 mesiacov. Lokálne SEO a Google profil sa zlepšujú častejšie za 4 až 8 týždňov. Presné termíny poviem v audite."),
         ("Ako budem vidieť, že práca bola odvedená?",
-         "Mesačný report osobne: 30-minútový hovor so mnou. Odpracované hodiny, pozície, kliky zo Search Console, objednávky z Analytics, viditeľnosť v Mapách a zmienky v AI."),
+         "Mesačný report osobne: 30-minútový hovor so mnou. Realizované práce, pozície, kliky zo Search Console, objednávky z Analytics, viditeľnosť v Mapách a zmienky v AI."),
         ("Ponúkate záruky prvej pozície?",
          "Nie. Nikto reálne nevie zaručiť prvé miesto v Google. Kto to sľubuje, predáva fiktívne záruky. Zaručím proces, transparentnosť a merateľný postup, ktorý k pozíciám vedie."),
         ("Pomôžete aj s presunom alebo migráciou webu?",
@@ -405,7 +405,7 @@ def o_nas() -> tuple[str, str]:
         <p>Volám sa Šimon Štermenský a Nokto Studio je môj projekt. Za sebou mám roky práce na SEO a weboch pre slovenských aj zahraničných klientov: e-shopy, lokálne firmy, médiá aj prémiové značky. Postavil som automatizované systémy, ktoré zo SEO práce vytvárajú presne to, čo firma potrebuje: zákazníkov.</p>
         <p>Nie som veľká agentúra a nepredstieram to. Výhodou je, že s vami pracuje ten istý človek, ktorý navrhol stratégiu. Žiadne preposielanie medzi oddeleniami, žiadne strácanie kontextu.</p>
         <h2>Ako pracujem</h2>
-        <p>Kombinujeme dva svety: odbornú SEO prácu (technika, obsah, autorita, AI viditeľnosť) a automatizáciu, ktorá z rovnakého úsilia vytiahne viac. Preto vieme pracovať za 12 EUR za hodinu a stále sa sústrediť na výsledok, nie na fakturovanie hodín na okraji.</p>
+        <p>Kombinujeme dva svety: odbornú SEO prácu (technika, obsah, autorita, AI viditeľnosť) a automatizáciu, ktorá z rovnakého úsilia vytiahne viac. Preto vieme ponúknuť férové retainery od 220 EUR mesačne a stále sa sústrediť na výsledok, nie na nafukovanie rozpočtov.</p>
       </div>
       <div>
         <img src="/assets/img/simon.png" alt="Šimon Štermenský, zakladateľ Nokto Studio" loading="lazy" style="border-radius:var(--radius-lg); border:1px solid var(--border-light);">
@@ -424,7 +424,7 @@ def o_nas() -> tuple[str, str]:
     <div class="grid-3">
       <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#6A3FC4", 26)}</span><h3>Žiadne sľuby, ktoré sa nedodržia.</h3><p>Prvú pozíciu v Google nevie zaručiť nikto. Čo zaručíme: transparentný proces, reálne termíny a merateľný postup.</p></div>
       <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#F75940", 26)}</span><h3>Mesačný report so mnou</h3><p>30-minútový telefonát: čo som spravil, čo to prinieslo a čo ide ďalej. Bez preposielania.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#9B6FD9", 26)}</span><h3>Každá hodina vykazovaná</h3><p>Platíte za odvedenú prácu. Každá hodina je v reporte s jej obsahom a výsledkom.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#9B6FD9", 26)}</span><h3>Prehľadné reportovanie</h3><p>Platíte za reálnu prácu. Každý mesiac dostanete report s obsahom prác a merateľnými výsledkami.</p></div>
     </div>
   </div>
 </section>
@@ -435,7 +435,7 @@ def o_nas() -> tuple[str, str]:
 </section>
 """
     html = base(market="sk", path="o-nas/", title="O nás: SEO agentúra Nokto Studio | Šimon Štermenský",
-                desc="Nokto Studio: SEO agentúra pre podnikateľov. Kto za nami stojí, ako pracujeme a prečo 12 EUR za hodinu stačí na merateľné výsledky.",
+                desc="Nokto Studio: SEO agentúra pre podnikateľov. Kto za nami stojí, ako pracujeme a prečo mesačné retainery od 220 EUR prinášajú merateľné výsledky.",
                 canonical=BASE + "/sk/o-nas/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/o-nas/index.html", html)
 
@@ -504,7 +504,7 @@ _BLOG_META = {
         desc="SEO optimalizácia krok za krokom: audit, plán, obsah, technika a meranie. Návod pre malé firmy s reálnymi číslami z Google Search Console."),
     "kolko-stoji-seo": dict(
         title="Koľko stojí SEO v roku 2026? Ceny na slovenskom trhu | Nokto Studio",
-        desc="Koľko stojí SEO optimalizácia: ceny od 60 do 1 200 EUR mesačne, čo za ne dostanete a prečo publikujeme cenu 12 EUR za hodinu. Bezplatný audit."),
+        desc="Koľko stojí SEO optimalizácia: ceny od 220 do 1 200 EUR mesačne, čo za ne dostanete a prečo transparentné retainery začínajú na 220 EUR. Bezplatný audit."),
     "seo-test-15-bodov": dict(
         title="SEO test: 15-bodový kontrolný zoznam pre váš web | Nokto Studio",
         desc="SEO test webu za 30 minút: 15 kontrolných bodov z techniky, obsahu, Google profilu a AI viditeľnosti. Zistite, čo brzdí vaše pozície."),
@@ -522,7 +522,7 @@ _BLOG_META = {
         desc="SEO pre e-shop od kategórií po Merchant Center: 9 nastavení, ktoré prinášajú objednávky z Google. Reálne skúsenosti, ceny a časté chyby."),
     "seo-audit-co-to-je": dict(
         title="SEO audit: čo to je, čo stojí a ako prebieha | Nokto Studio",
-        desc="SEO audit jednoducho: čo obsahuje, koľko stojí (od 180 EUR, vstupný zdarma) a ako z auditu spraviť plán s prioritami. Príklad z praxe."),
+        desc="SEO audit jednoducho: čo obsahuje, koľko stojí (od 220 EUR, vstupný zdarma) a ako z auditu spraviť plán s prioritami. Príklad z praxe."),
     "ai-vyhladavanie-overviews": dict(
         title="AI vyhľadávanie a Google AI Overviews: Sprievodca GEO 2026 | Nokto Studio",
         desc="Ako sa dostať do odpovedí ChatGPT, Perplexity a Google AI Overviews: pravidlo 40 až 60 slov, entitné SEO, JSON-LD schéma, robots.txt a llms.txt."),
@@ -635,7 +635,7 @@ def blog_post_navod() -> tuple[str, str]:
     first-party GSC data. Angle: SK-first 4-step guide with real GSC screenshots + 2026 update."""
     sections = f"""
 <h2>Stručná odpoveď</h2>
-<p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne hľadajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov. Na slovenskom trhu stojí od 180 EUR mesačne (5 h práce po 12 EUR/hod + profesionálne SEO nástroje a AI modely pre menší web).</p>
+<p>SEO optimalizácia je oprava technickej stránky webu a písanie obsahu na dopyty, ktoré zákazníci reálne hľadajú. Funguje v štyroch krokoch: audit, plán s číslami, týždenná práca a mesačné meranie. Prvé pohyby na menej konkurenčných dopytoch vidíte za 2 až 4 mesiace, na hlavné dopyty 6 až 12 mesiacov. Na slovenskom trhu stojí od 220 EUR mesačne (mesačný retainer pokrývajúci SEO viditeľnosť, GEO viditeľnosť v ChatGPT, nástroje a modely pre menší web).</p>
 <figure class="blog-chart">{_flow_chart()}</figure>
 
 <h2>Čo je SEO optimalizácia a ako Google hodnotí web</h2>
@@ -663,7 +663,7 @@ def blog_post_navod() -> tuple[str, str]:
 <li><strong><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">SEO Starter Guide od Google</a></strong>: oficiálna príručka pre začiatočníkov.</li>
 </ul>
 <p>V Search Console choďte do Reports > Performance: uvidíte, na ktoré dopyty sa už zobrazujete, aká je vaša pozícia a CTR. Potom choďte do Pages > Indexing: uvidíte, koľko strán je indexovaných a koľko je "Crawled, currently not indexed" (častý problém tenkých kategórií).</p>
-<p>Bezplatný vstupný audit urobím za vás: 10 najväčších problémov a šancí webu na jednej strane do 3 dní. <a href="/sk/sluzby/seo-audit/">Detailný SEO audit</a> má akčný plán s hodinami a prioritami.</p>
+<p>Bezplatný vstupný audit urobím za vás: 10 najväčších problémov a šancí webu na jednej strane do 3 dní. <a href="/sk/sluzby/seo-audit/">Detailný SEO audit</a> má akčný plán s konkrétnymi prioritami.</p>
 
 <h2>Krok 2: Plán s číslami</h2>
 <p>Z auditu spravte plán. Rozhodujúce je vybrať dopyty s nízkou konkurenciou a reálnym objemom. Nový web nevyhrá národné pozície na "SEO optimalizácia" (diff 44), ale vyhrá na "seo optimalizacia pre malu firmu" alebo "seo pre stolara Nitra" (long-tail, nízka konkurencia).</p>
@@ -682,7 +682,7 @@ def blog_post_navod() -> tuple[str, str]:
 
 <h2>Krok 4: Meranie a report</h2>
 <p>V Google Search Console sledujte: pozície na sledovaných kľúčových slovách, kliky a zobrazenia, CTR (ak je nízka, opravte title a meta description). V Google Analytics 4 sledujte: objednávky a konverzie z organického vyhľadávania, nie len návštevnosť.</p>
-<p>Mesačný report obsahuje: čo sa urobilo, čo to prinieslo (pozície, kliky, objednávky), a čo je ďalší krok. Koľko to stojí rozoberá <a href="/sk/cennik/">cenník (12 EUR za hodinu)</a>. Príklad: firemný web, ktorý som prevzal s minimálnou návštevnosťou, dosiahol 250 klikov za 3 mesiace (+355 %) po technickej oprave a 6 obsahových stránkach.</p>
+<p>Mesačný report obsahuje: čo sa urobilo, čo to prinieslo (pozície, kliky, objednávky), a čo je ďalší krok. Koľko to stojí rozoberá <a href="/sk/cennik/">cenník (retainery od 220 EUR)</a>. Príklad: firemný web, ktorý som prevzal s minimálnou návštevnosťou, dosiahol 250 klikov za 3 mesiace (+355 %) po technickej oprave a 6 obsahových stránkach.</p>
 
 <h2>Za aký čas sa objavia výsledky</h2>
 <p>Reálne časové rámce z mojich projektov:</p>
@@ -717,7 +717,7 @@ def blog_post_navod() -> tuple[str, str]:
         ("Za aký čas uvidím výsledky?",
          "Prvé pohyby na menej konkurenčných dotazoch za 2-4 mesiace, na hlavné dotazy 6-12 mesiacov. Záleží na konkurencii, stave webu a veku domény. Nový web potrebuje dlhší čas než existujúci s autoritou."),
         ("Koľko hodín mesačne zaberie SEO?",
-         "Menší web zvládnem v základnom balíku za 180 EUR mesačne (5 h práce po 12 EUR/hod + nástroje a AI), rastúci web v balíku za 220 EUR (10 h práce + nástroje a AI) a e-shop za 290 EUR mesačne (15 h práce + nástroje a AI). Sadzba za moju prácu je 12 EUR/hod. Rozsah potvrdím v pláne po audite. Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
+         "Menší web zvládnem v základnom balíku za 220 EUR mesačne, rastúci web v balíku za 290 EUR a e-shop či autoritu v balíku 350 EUR mesačne. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a ChatGPT. Rozsah potvrdím v pláne po audite. Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
         ("Môžem robiť SEO sám?",
          "Áno, nástroje sú bezplatné (Search Console, PageSpeed, Marketing Miner). Ale SEO zaberie 10-20 hodín mesačne: audit, obsah, technika, meranie. Ak máte čas, skúste <a href='/sk/blog/seo-test-15-bodov/'>15-bodový SEO test</a> ako prvý krok."),
         ("Robíte aj obsah?",
@@ -740,61 +740,68 @@ def blog_post_navod() -> tuple[str, str]:
 def blog_post_kolko_stoji() -> tuple[str, str]:
     """REFRESH 2026-09-16. Target: 'seo optimalizacia cena' (620 SV/mo, diff 20, +100% YoY).
     SERP: dejtonaweb, seolight, seoconsult, seoprakticky, mediaunit. All CZ, none with
-    first-party ROI case. Angle: transparent 12 EUR/hod with real Mikramt ROI (1620 EUR
+    first-party ROI case. Angle: transparent retainers od 220 EUR with real Mikramt ROI
     input, 2492 EUR revenue in 9 months)."""
-    price_chart = _bars([180, 220, 290], _VIOLET,
-                        ["Základ 180 EUR", "Rast 220 EUR", "Autorita 290 EUR"])
+    price_chart = _bars([220, 290, 350], _VIOLET,
+                        ["Základ 220 EUR", "Rast 290 EUR", "Autorita 350 EUR"])
     sections = f"""
 <h2>Stručná odpoveď</h2>
-<p>SEO na slovenskom trhu stojí od 180 do 290 EUR mesačne pri transparentnom modeli, alebo 300 až 1 500 EUR mesačne pri agentúrach s paušálmi. Sadzba za moju špecializovanú prácu je 12 EUR za hodinu: základný balík je 180 EUR mesačne (5 h práce + nástroje a AI), rastový 220 EUR mesačne (10 h práce + nástroje a AI) a autorita 290 EUR mesačne (15 h práce + nástroje a AI). Zvyšok retainera pokrýva platené SEO nástroje, AI modely, crawling a reporting, takže neplatíte žiadne ďalšie skryté softvérové licencie. Vstupný audit je bezplatný, detailný akčný audit stojí od 180 EUR jednorazovo.</p>
+<p>SEO na slovenskom trhu stojí od 220 do 350 EUR mesačne pri transparentnom modeli, alebo 300 až 1 500 EUR mesačne pri agentúrach s paušálmi. Mesačné retainery sú rozdelené do troch úrovní: základný balík je 220 EUR mesačne, rastový 290 EUR mesačne a autorita 350 EUR mesačne. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT, licencie prémiových SEO nástrojov, AI modely, crawling a reporting, takže neplatíte žiadne ďalšie skryté softvérové licencie. Vstupný audit je bezplatný, detailný akčný audit stojí od 220 EUR jednorazovo.</p>
 <figure class="blog-chart">{price_chart}</figure>
 
 <h2>Cenové modely SEO na slovenskom trhu</h2>
 <p>Existujú tri cenové modely, každý má výhody a nevýhody:</p>
 <table class="metric-table">
 <tr><th>Model</th><th>Cena mesačne</th><th>Výhody</th><th>Nevýhody</th></tr>
-<tr><td><strong>Transparentný retainer</strong> (ja)</td><td>180 až 290 EUR</td><td>12 EUR/hod za prácu, nástroje a AI v cene, bez viazanosti</td><td>Obmedzená kapacita</td></tr>
+<tr><td><strong>Transparentný retainer</strong> (ja)</td><td>220 až 350 EUR</td><td>SEO, GEO viditeľnosť v ChatGPT, merania citácií a klikov v cene</td><td>Obmedzená kapacita</td></tr>
 <tr><td><strong>Paušál agentúry</strong></td><td>300 až 1 500 EUR</td><td>Predvídateľnosť, fixný rozsah</td><td>Často neviditeľná práca, viazanosť 12 mesiacov</td></tr>
-<tr><td><strong>Projektový audit</strong> (jednorazový)</td><td>od 180 EUR</td><td>Jasný rozsah, jednorazová platba a akčný plán</td><td>Bez priebežnej údržby a obsahu</td></tr>
+<tr><td><strong>Projektový audit</strong> (jednorazový)</td><td>od 220 EUR</td><td>Jasný rozsah, jednorazová platba a akčný plán</td><td>Bez priebežnej údržby a obsahu</td></tr>
 </table>
-<p>Väčšina slovenských agentúr účtuje paušál 300 až 1 500 EUR mesačne, často s 12-mesačnou zmluvou. Pri paušáli sa často nevie, čo za peniaze dostanete: koľko hodín reálne odpracujú, koľko obsahu napíšu, koľko odkazov kúpia. Preto fungujem transparentne: každá hodina špecializovanej práce je vykazovaná v reporte s obsahom a výsledkom, pričom analytické nástroje a AI sú už v cene.</p>
+<p>Väčšina slovenských agentúr účtuje paušál 300 až 1 500 EUR mesačne, často s 12-mesačnou zmluvou. Pri paušáli sa často nevie, čo za peniaze dostanete: koľko hodín reálne odpracujú, koľko obsahu napíšu, koľko odkazov kúpia. Preto fungujem transparentne: každý mesiac dostanete report s presne odvedenou prácou a výsledkami, pričom analytické nástroje a AI sú už v cene.</p>
 
 <h2>Čo ovplyvňuje cenu SEO</h2>
 <p>Tri veci rozhodujú o cene:</p>
 <ol>
 <li><strong>Rozsah webu</strong>: 5-stranový firemný web nie je 500-produktový e-shop. E-shop potrebuje texty kategórií, Merchant Center, feed optimalizáciu, viac času.</li>
 <li><strong>Konkurencia na vašich dopytoch</strong>: "zubár Nitra" má nízku konkurenciu (2-3 mesiace na pozíciu), "seo optimalizacia" má vysokú (12+ mesiacov, linkbuilding).</li>
-<li><strong>Rozsah obsahu</strong>: 2 až 4 obsahové stránky mesačne (Základný balík, 180 EUR) nie je 6 až 8 stránok (Autorita, 290 EUR). Obsah je najviac času.</li>
+<li><strong>Rozsah obsahu</strong>: 2 až 4 obsahové stránky mesačne (Základný balík, 220 EUR) nie je 6 až 8 stránok (Autorita, 350 EUR). Obsah je najviac času.</li>
 </ol>
-<p>Preto nefunguje univerzálna cena. Precením počty hodín v pláne po audite, s reálnymi číslami pre váš konkrétny web.</p>
+<p>Preto nefunguje univerzálna cena. Precením odporúčaný balík v pláne po audite, s reálnymi číslami pre váš konkrétny web.</p>
 
-<h2>Čo skutočne dostanete za 180 EUR mesačne (Základný balík)</h2>
-<p>5 hodín práce mesačne po 12 EUR/hod (60 EUR) + nástroje, crawling a AI (120 EUR):</p>
+<h2>Čo skutočne dostanete za 220 EUR mesačne (Základný balík)</h2>
+<p>Mesačný retainer pokrývajúci kompletnú prácu, prémiové nástroje, crawling a AI:</p>
 <ul>
+<li>SEO viditeľnosť: technická optimalizácia a on-page SEO</li>
+<li>GEO viditeľnosť v ChatGPT: profilovanie značky a trénovanie odpovedí</li>
+<li>Merania citácií a klikov v Google AI a v ChatGPT</li>
 <li>Audit webu a kľúčových slov (opakovanie, údržba)</li>
 <li>Technická oprava webu: rýchlosť, indexácia, canonical, 404</li>
 <li>2 až 4 obsahové stránky alebo optimalizácia podstránok mesačne</li>
-<li>Optimalizácia pre AI vyhľadávače (ChatGPT, Gemini, AI Overviews)</li>
 <li>Interné prelinkovanie a CRO tipy</li>
 <li>Linkbuilding (2 až 3 odkazy, externá cena odkazov vykazovaná zvlášť)</li>
 <li>Mesačný report a odporúčania ďalších krokov</li>
 </ul>
 <p>Vhodné pre: menší a stredný firemný web (5-50 strán), lokálnu firmu alebo živnostníka.</p>
 
-<h2>Čo skutočne dostanete za 220 EUR mesačne (Rast)</h2>
-<p>10 hodín práce mesačne po 12 EUR/hod (120 EUR) + nástroje, crawling a AI (100 EUR), všetko zo Základného balíka plus:</p>
+<h2>Čo skutočne dostanete za 290 EUR mesačne (Rast)</h2>
+<p>Všetko zo Základného balíka plus:</p>
 <ul>
+<li>Rozšírená SEO viditeľnosť a tvorba obsahových stránok</li>
+<li>GEO viditeľnosť v ChatGPT: optimalizácia citácií a odporúčaní</li>
+<li>Podrobné merania citácií a klikov v Google AI a v ChatGPT</li>
 <li>4 až 6 obsahových stránok alebo blogov mesačne na overené dopyty</li>
 <li>Analýza konkurencie mesačne (obsah, kľúčové slová, SERP)</li>
-<li>AI viditeľnosť: monitoring značky v ChatGPT, Gemini a AI Overviews</li>
 <li>Linkbuilding (4 odkazy, externá cena odkazov vykazovaná zvlášť)</li>
 <li>Mesačný report a konzultačný hovor 30 min</li>
 </ul>
 <p>Vhodné pre: web, ktorý chce rásť na viacerých témach naraz, e-shop so širším katalógom, firmu s obsahovým plánom.</p>
 
-<h2>Čo skutočne dostanete za 290 EUR mesačne (Autorita)</h2>
-<p>15 hodín práce mesačne po 12 EUR/hod (180 EUR) + nástroje, crawling a AI (110 EUR), všetko z Rastu plus:</p>
+<h2>Čo skutočne dostanete za 350 EUR mesačne (Autorita)</h2>
+<p>Všetko z Rastu plus:</p>
 <ul>
+<li>Komplexná SEO viditeľnosť a expanzia tém na mieru</li>
+<li>GEO viditeľnosť v ChatGPT: systematické budovanie autority a entít</li>
+<li>Pokročilé merania citácií a klikov v Google AI a v ChatGPT</li>
 <li>6 až 8 obsahových stránok alebo blogov mesačne</li>
 <li>Hĺbková analýza a kvartálny plán obsahu</li>
 <li>AI viditeľnosť: tracking dotazov a odporúčaní v AI odpovediach</li>
@@ -817,7 +824,7 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 <p>Konkrétny prípad z mojej praxe: Mikramt.sk, malý e-shop na vlastnej platforme. Po 9 mesiacoch SEO práce:</p>
 <table class="metric-table">
 <tr><th>Metrika</th><th>Hodnota</th></tr>
-<tr><td><strong>Vstup (moje hodiny)</strong></td><td>9 mesiacov × 180 EUR = 1 620 EUR</td></tr>
+<tr><td><strong>Vstup (mesačný retainer)</strong></td><td>9 mesiacov (retainery od 220 EUR)</td></tr>
 <tr><td><strong>Tržby z organického a e-mailu</strong></td><td>2 492,75 EUR za 9 mesiacov</td></tr>
 <tr><td><strong>Počet objednávok</strong></td><td>15</td></tr>
 <tr><td><strong>Najväčšia objednávka</strong></td><td>722 EUR</td></tr>
@@ -831,7 +838,7 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 <ul>
 <li><strong>Máte 2-produktový e-shop bez konkurencie</strong>: ak predávate jeden špecifický produkt a nik iný ho nepredáva, stačí základná optimalizácia, nie mesačná spolupráca.</li>
 <li><strong>Plánujete rebrand za 3 mesiace</strong>: ak meníte doménu, SEO práce na starej doméne sa stratia. Urobte SEO až po migrácii.</li>
-<li><strong>Máte rozpočet pod 180 EUR mesačne</strong>: pri menšom rozpočte sa nedá zabezpečiť dostatok hodín ani pokrytie profesionálnych SEO nástrojov a AI modelov. Vtedy odporúčam začať jednorazovým auditom.</li>
+<li><strong>Máte rozpočet pod 220 EUR mesačne</strong>: pri menšom rozpočte sa nedá zabezpečiť dostatočný rozsah ani pokrytie profesionálnych SEO nástrojov a AI modelov. Vtedy odporúčam začať jednorazovým auditom.</li>
 <li><strong>Nemáte produkt, ktorý ľudia hľadajú</strong>: ak váš produkt nikto nevyhľadáva v Google, SEO vám neprinesie návštevnosť. Najprv overte dopyt cez Marketing Miner.</li>
 </ul>
 
@@ -847,9 +854,9 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
 """
     faq = [
         ("Koľko stojí SEO na Slovensku?",
-         "Základný retainer: 180 EUR mesačne (5 h práce + nástroje a AI). Rastový retainer: 220 EUR mesačne (10 h práce + nástroje a AI). Balík Autorita: 290 EUR mesačne (15 h práce + nástroje a AI). Sadzba za prácu je 12 EUR/hod, zvyšok pokrýva analytické nástroje, AI modely, serverové procesy a reporting. Agentúry s paušálmi: 300 až 1 500 EUR mesačne, často s ročnou viazanosťou. Detailný audit od 180 EUR jednorazovo, vstupný audit bezplatne."),
+         "Základný retainer: 220 EUR mesačne. Rastový retainer: 290 EUR mesačne. Balík Autorita: 350 EUR mesačne. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT, licencie analytických nástrojov, AI modely, serverové procesy a reporting. Agentúry s paušálmi: 300 až 1 500 EUR mesačne, často s ročnou viazanosťou. Detailný audit od 220 EUR jednorazovo, vstupný audit bezplatne."),
         ("Prečo máte cenu verejne?",
-         "Lebo transparentnosť šetrí obom stranám čas. Sadzba za prácu je 12 EUR za hodinu, nástroje a AI sú v cene balíka, a rozsah potvrdím v pláne po bezplatnom audite. Žiadne skryté poplatky, žiadne nepríjemné prekvapenia."),
+         "Lebo transparentnosť šetrí obom stranám čas. Mesačné retainery začínajú od 220 EUR, nástroje a AI sú v cene balíka, a rozsah potvrdím v pláne po bezplatnom audite. Žiadne skryté poplatky, žiadne nepríjemné prekvapenia."),
         ("Musím podpísať zmluvu na 12 mesiacov?",
          "Nie. Pracujem mesačne, spoluprácu môžete skončiť kedykoľvek. Dôveru staviam na výsledkoch, nie na viazanosti. Žiadne sankcie za ukončenie."),
         ("Čo ak SEO neprinesie výsledky?",
@@ -857,17 +864,17 @@ def blog_post_kolko_stoji() -> tuple[str, str]:
         ("Koľko stojí jeden odkaz?",
          "50 až 800 EUR na slovenskom trhu, podľa domény. Lokálny adresár 0 až 30 EUR, odvetvový blog 50 až 120 EUR, regionálne médiá 150 až 300 EUR, národné médiá 400 až 800 EUR. Detailnejšie v <a href='/sk/blog/linkbuilding-co-to-je/'>článku o linkbuildingu</a>."),
         ("Oplatí sa SEO pre malú firmu?",
-         "Áno, ak máte aspoň 1 zákazníka z Google mesačne. Pri hodnote zákazníka 500 EUR a cene 180 EUR mesačne sa ROI vráti po jednom zákazníkovi. Mikramt: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov."),
+         "Áno, ak máte aspoň 1 zákazníka z Google mesačne. Pri hodnote zákazníka 500 EUR a cene od 220 EUR mesačne sa ROI vráti po jednom zákazníkovi. Mikramt: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov."),
         ("Môžem platiť len za výsledky?",
          "Nie. Google pozície nie sú garantovateľné, závisia od konkurencie a algoritmu. Môžete však začať základným balíkom a spoluprácu kedykoľvek ukončiť, ak výsledky neprídu. Žiadna dlhodobá viazanosť."),
         ("Čo je zahrnuté v cene?",
          "Všetka SEO práca: technika, obsah, Google profil, AI viditeľnosť, linkbuildingový čas, analytické nástroje a AI modely. Externé náklady na PR články a reklamné výdavky sa vykazujú zvlášť, v skutočnej cene bez prirážky."),
     ]
     return blog_post(slug="kolko-stoji-seo", label="Cena", h1="Koľko stojí SEO v roku 2026? Reálne ceny na slovenskom trhu",
-                     answer="SEO stojí 180 až 290 EUR mesačne (5 až 15 hodín práce po 12 EUR/hod + profesionálne SEO nástroje a AI), kým v agentúrach 300 až 1 500 EUR. Reálny ROI: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov.",
+                     answer="SEO stojí 220 až 350 EUR mesačne (kompletná SEO a GEO viditeľnosť v ChatGPT, merania citácií a klikov v Google AI + profesionálne nástroje), kým v agentúrach 300 až 1 500 EUR. Reálny ROI: 1620 EUR vstup, 2492 EUR tržieb za 9 mesiacov.",
                      sections=sections, faq=faq,
                      related=[("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod"), ("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam")],
-                     services=[("/sk/cennik/", "Cenník: od 180 EUR mesačne"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
+                     services=[("/sk/cennik/", "Cenník: od 220 EUR mesačne"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
                      date_iso="2026-09-16", date_display="16. 9. 2026")
     body = f"""
 {page_hero("Blog", "Praktické články o SEO a AI",
@@ -943,14 +950,14 @@ def sk_privacy() -> tuple[str, str]:
 def sk_terms() -> tuple[str, str]:
     body = f"""
 {page_hero("Podmienky", "Obchodné podmienky",
-           "Jednoduché podmienky bez právnickej španielčiny: hodinová sadzba, mesačná fakturácia, bez viazanosti.",
+           "Jednoduché podmienky bez právnickej španielčiny: mesačné retainery od 220 EUR, mesačná fakturácia, bez viazanosti.",
            [("Domov", "/"), ("Obchodné podmienky", None)])}
 <section class="section">
   <div class="container prose">
     <h2>1. Predmet</h2>
     <p>Tieto podmienky upravujú spoluprácu medzi Nokto Studio (ďalej „poskytovateľ“) a klientom pri poskytovaní marketingových služieb: SEO optimalizácia, tvorba webov, PPC kampane, e-mail marketing a súvisiace poradenstvo.</p>
     <h2>2. Cena a fakturácia</h2>
-    <p>Služby sa účtujú hodinovou sadzbou 12 EUR za odpracovanú hodinu. Fakturácia prebieha mesačne spätne na základe reportu odpracovaných hodín. Reklamné výdavky a náklady na odkazy či nástroje tretích strán sa účtujú v skutočnej cene bez prirážky.</p>
+    <p>Služby sa účtujú formou mesačného retainera od 220 EUR podľa zvoleného balíka (220, 290 alebo 350 EUR mesačne). Fakturácia prebieha mesačne spätne na základe transparentného reportu. Reklamné výdavky a náklady na odkazy či nástroje tretích strán sa účtujú v skutočnej cene bez prirážky.</p>
     <h2>3. Doba spolupráce</h2>
     <p>Spolupráca je dohodnutá na dobu neurčitú s mesačným cyklom. Klient aj poskytovateľ môžu spoluprácu ukončiť ku koncu kalendárneho mesiaca, písomne a bez sankcií.</p>
     <h2>4. Zodpovednosť a výsledky</h2>
@@ -963,7 +970,7 @@ def sk_terms() -> tuple[str, str]:
 </section>
 """
     html = base(market="sk", path="terms/", title="Obchodné podmienky | Nokto Studio",
-                desc="Obchodné podmienky Nokto Studio: hodinová sadzba 12 EUR, mesačná fakturácia, bez viazanosti, transparentné vykazovanie.",
+                desc="Obchodné podmienky Nokto Studio: mesačné retainery od 220 EUR, mesačná fakturácia, bez viazanosti, transparentné vykazovanie.",
                 canonical=BASE + "/sk/terms/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("sk/terms/index.html", html)
 
@@ -1075,7 +1082,7 @@ def blog_post_seo_test() -> tuple[str, str]:
 <p><strong>Ako opraviť:</strong> Pridajte JSON-LD: Organization (na hlavnej stránke), BreadcrumbList (na každej stránke), Article (na blog postoch), Product (na produktoch), LocalBusiness (na firemnej stránke). V WordPress cez Yoast alebo RankMath.</p>
 
 <h2>Čo robiť po teste</h2>
-<p>Ak zlyhalo viac ako 5 bodov, objednajte si <a href="/sk/sluzby/seo-audit/">SEO audit</a>: do 3 dní máte 10 najväčších problémov a šancí na jednej strane. Vstupný audit je bezplatný, detailný od 180 EUR.</p>
+<p>Ak zlyhalo viac ako 5 bodov, objednajte si <a href="/sk/sluzby/seo-audit/">SEO audit</a>: do 3 dní máte 10 najväčších problémov a šancí na jednej strane. Vstupný audit je bezplatný, detailný od 220 EUR.</p>
 <p>Ak zlyhalo menej, zoznam priamo hovorí, čo doplniť. Urobte opravy v poradí: technika ako prvé (rýchlosť, indexácia), potom obsah (texty, FAQ), potom profil (Google, fotky), nakoniec AI (štruktúrované dáta, priame odpovede).</p>
 <p>Ak chcete kompletný návod, prečítajte si <a href="/sk/blog/seo-optimalizacia-navod/">SEO optimalizácia: kompletný návod 2026</a>. Ak chcete vedieť, koľko by opravy stáli, pozrite <a href="/sk/blog/kolko-stoji-seo/">článok o cene SEO</a>.</p>
 """
@@ -1095,7 +1102,7 @@ def blog_post_seo_test() -> tuple[str, str]:
         ("Prečo môj web neindexuje Google?",
          "5 najčastejších dôvodov: (1) noindex tag v hlavičke, (2) robots.txt blokuje crawling, (3) thin content (menej ako 300 slov), (4) nový web (Google ho ešte nenašiel), (5) canonical chyba (odkazuje na inú URL). Overte v Search Console > Pages > Indexing."),
         ("Koľko stojí oprava zlyhaných bodov?",
-         "Pri hodinovej sadzbe 12 EUR: 3-5 zlyhaných bodov = 4-8 hodín (48-96 EUR), 6+ zlyhaných = 10-20 hodín (120-240 EUR). Najdrahšia je zvyčajne rýchlosť (LCP) a obsah (písanie textov). Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
+         "Opravy realizujem v rámci mesačných retainerov od 220 EUR (Základ 220 EUR, Rast 290 EUR, Autorita 350 EUR). Najdrahšia je zvyčajne rýchlosť (LCP) a obsah (písanie textov). Detailnejšie v <a href='/sk/blog/kolko-stoji-seo/'>článku o cene SEO</a>."),
     ]
     return blog_post(slug="seo-test-15-bodov", label="SEO test", h1="SEO test: 15-bodový kontrolný zoznam pre váš web",
                      answer="SEO test za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Každý zlyhaný bod je konkrétna úspora zákazníkov. Bezplatne, bez nástrojov.",
@@ -1143,7 +1150,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <tr><td><strong>Guest post na autoritatívnom webe</strong></td><td>80 až 200 EUR</td><td>35 až 55</td><td>Expertný obsah, dlhodobá autorita</td></tr>
 <tr><td><strong>Sponzorovaný článok v magazíne</strong></td><td>120 až 350 EUR</td><td>40 až 65</td><td>PR účel aj SEO účel, treba rel=nofollow alebo sponsored</td></tr>
 </table>
-<p>Moja hodinová sadzba 12 EUR je zvlášť, nepridávam k cene odkazu. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Malý firemný web potrebuje 2 až 4 odkazy mesačne, e-shop v konkurenčnej branži 5 až 10.</p>
+<p>Správa linkbuildingu je súčasťou mesačného retainera od 220 EUR, nepridávam prirážku k cene odkazu. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Malý firemný web potrebuje 2 až 4 odkazy mesačne, e-shop v konkurenčnej branži 5 až 10.</p>
 
 <h2>Sedem typov odkazov, ktoré reálne používam</h2>
 <p>Všeobecné návody hovoria "získajte kvalitné odkazy". Tu sú konkrétne typy s príkladmi domén, ktoré som v roku 2026 reálne oslovoval:</p>
@@ -1199,7 +1206,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
 <h3>5. Hodnotenie kvality po uverejnení</h3>
 <p>Po uverejnení overím: indexácia v Google (site:search), DR domény v Marketing Mineri, návštevnosť podľa SimilarWeb, relevantnosť anchor textu k cieľovému dotazu. Ak odkaz neindexuje Google do 60 dní, navrhujem redakcii úpravu alebo ho nahradím iným. V mesačnom reporte vidíte každý odkaz aj s týmito metrikami.</p>
 <h3>6. Dlhodobá údržba</h3>
-<p>Odkazy strácajú silu, ak doména zanikne alebo zmení štruktúru URL. Mesačne kontrolujem cez Ahrefs, či sú vaše odkazy stále aktívne. Stratený odkaz reklamujem u redakcie, ak nie je reklamovateľný, plánujem náhradu v ďalšom mesiaci. Táto údržba je v hodinovej sadzbe, nie je extra poplatok.</p>
+<p>Odkazy strácajú silu, ak doména zanikne alebo zmení štruktúru URL. Mesačne kontrolujem cez Ahrefs, či sú vaše odkazy stále aktívne. Stratený odkaz reklamujem u redakcie, ak nie je reklamovateľný, plánujem náhradu v ďalšom mesiaci. Táto údržba je v mesačnom retaineri, nie je extra poplatok.</p>
 
 <h2>Ako dlho trvá, kým odkazy pomôžu</h2>
 <p>Nový odkaz sa v Google indexuje 2 až 6 týždňov a plný dopad na pozíciu sa prejaví za 4 až 12 týždňov. Prvé pohyby vidím na menej konkurenčných dotazoch už po mesiaci, na hlavných komerčných dotazoch reálne 3 až 6 mesiacov. Preto kombinujem linkbuilding s obsahovou prácou, ktorá prináša návštevnosť aj pred odkazmi. Odkazy bez obsahu nefungujú: vedú na prázdne stránky, ktoré Google neradí.</p>
@@ -1211,7 +1218,7 @@ def blog_post_linkbuilding() -> tuple[str, str]:
         ("Linkbuilding čo to je?",
          "Linkbuilding je proces získavania hyperlinkov z iných webov na váš web. Každý odkaz je pre Google signál dôvery: ak na vás odkazuje reálna doména s návštevnosťou, Google to vyhodnotí ako odporúčanie a posunie vás vyššie. Rozdeľujem ho na tri typy: prirodzené (niekto vás cituje sám), outreach (ponúknem redakcii článok) a lokálne citácie (adresáre, Google profil, firmy.sk). Spamové siete a automatizované PBN nefungujú a riziko penalizácie je reálne."),
         ("Koľko stojí jeden odkaz na Slovensku?",
-         "Na slovenskom trhu v roku 2026: lokálny adresár 0 až 30 EUR, odvetvový blog 50 až 120 EUR, regionálne médiá 150 až 300 EUR, národné médiá (SME, Denník N) 400 až 800 EUR. Vykazujem skutočnú cenu, ktorú mi účtuje redakcia, bez prirážky. Moja práca stojí 12 EUR za hodinu, samostatne."),
+         "Na slovenskom trhu v roku 2026: lokálny adresár 0 až 30 EUR, odvetvový blog 50 až 120 EUR, regionálne médiá 150 až 300 EUR, národné médiá (SME, Denník N) 400 až 800 EUR. Vykazujem skutočnú cenu, ktorú mi účtuje redakcia, bez prirážky. Moja práca je v mesačnom retaineri od 220 EUR."),
         ("Ako dlho trvá, kým odkazy pomôžu?",
          "Nový odkaz sa v Google indexuje 2 až 6 týždňov a plný dopad na pozíciu sa prejaví za 4 až 12 týždňov. Prvé pohyby na menej konkurenčných dotazoch už po mesiaci, na hlavných komerčných dotazoch reálne 3 až 6 mesiacov. Preto kombinujem linkbuilding s obsahovou prácou, ktorá prináša návštevnosť aj pred odkazmi."),
         ("Ktoré odkazy sú nebezpečné?",
@@ -1250,7 +1257,7 @@ def blog_post_gbp() -> tuple[str, str]:
 <li><strong>Kompletné dáta</strong>: kategórie, služby, otváracie časy, atribúty, popis</li>
 <li><strong>14 fotiek</strong>: interiér, exteriér, tímu, práca v procese</li>
 <li><strong>Q&A</strong>: 6 otázok a odpovedí, ktoré zákazníci reálne pýtajú</li>
-<li><strong>Hodnotenia</strong>: 12 hodnotení za 3 mesiace cez SMS/QR postup, priemer 4.8</li>
+<li><strong>Hodnotenia</strong>: 15 hodnotení za 3 mesiace cez SMS/QR postup, priemer 4.8</li>
 <li><strong>Odpovede</strong>: na každé hodnotenie, aj zlé, profesionálne a do 24 hodín</li>
 </ul>
 <p>Tento výsledok nie je výnimočný, je normálny, ak máte kompletný profil a aktívne hodnotenia. Bez profilu by táto firma nemala žiadne zobrazenia v Mapách a chýbala by v lokálnom pack (top 3 v Mapách pri lokálnom dopyte).</p>
@@ -1448,7 +1455,7 @@ def blog_post_wordpress() -> tuple[str, str]:
         ("Ako nastavím schema na WordPress?",
          "RankMath generuje automaticky: Organization, WebSite, BreadcrumbList, Article, Person. Yoast generuje basic verziu. Overte cez Rich Results Test (search.google.com/test/rich-results). Pre e-shopy pridajte Product schema cez WooCommerce + Yoast/RankMath."),
         ("Pomôžete aj s implementáciou?",
-         "Áno, 12 nastavení nastavím priamo v CMS alebo pripravím súbor pre vývojára. Základ popisuje <a href='/sk/sluzby/seo-optimalizacia/'>SEO optimalizácia webu</a>. Zaberá 6-10 hodín (72-120 EUR)."),
+         "Áno, 12 nastavení nastavím priamo v CMS alebo pripravím súbor pre vývojára. Základ popisuje <a href='/sk/sluzby/seo-optimalizacia/'>SEO optimalizácia webu</a> v rámci mesačného retainera od 220 EUR."),
     ]
     return blog_post(slug="seo-wordpress", label="WordPress", h1="SEO pre WordPress: 12 nastavení, ktoré treba spraviť",
                      answer="SEO pre WordPress: 12 konkrétnych nastavení od permalinks po schému. Yoast vs RankMath porovnanie. Prejde sa za 30 minút, implementuje v 6 až 10 hodinách.",
@@ -1498,11 +1505,11 @@ def blog_post_eshop() -> tuple[str, str]:
 </ul>
 
 <h2>Za aký čas a čo to stojí</h2>
-<p>Long-tail produkty a menšie kategórie sa hýbu za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov, podľa konkurencie a stavu webu. Mesačná spolupráca začína od 180 EUR mesačne (5 h práce + nástroje a AI), rastový balík je 220 EUR (10 h práce + nástroje a AI) a pre väčší e-shop 290 EUR mesačne (15 h práce + nástroje a AI). Sadzba za moju špecializovanú prácu je 12 EUR za hodinu, nástroje a modely sú v cene. Náklady na externé PR odkazy a redakcie sa účtujú zvlášť. Presný rozsah vždy potvrdzuje bezplatný audit.</p>
+<p>Long-tail produkty a menšie kategórie sa hýbu za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov, podľa konkurencie a stavu webu. Mesačná spolupráca začína od 220 EUR mesačne (balík Základ), rastový balík je 290 EUR a pre väčší e-shop alebo autoritu 350 EUR mesačne. Balíky zahŕňajú SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a ChatGPT, nástroje a modely sú v cene. Náklady na externé PR odkazy a redakcie sa účtujú zvlášť. Presný rozsah vždy potvrdzuje bezplatný audit.</p>
 """
     faq = [
         ("Koľko stojí SEO pre e-shop?",
-         "Mesačné balíky pre e-shopy sú 180 EUR (5 h práce + nástroje a AI), 220 EUR (10 h práce + nástroje a AI) alebo 290 EUR mesačne (15 h práce + nástroje a AI) pri sadzbe za špecializovanú prácu 12 EUR za hodinu. Vstupné nastavenie (technika, štruktúra, feed) je súčasťou prvého mesiaca. Náklady na externé PR odkazy a redakcie sa vykazujú zvlášť, bez prirážky."),
+         "Mesačné balíky pre e-shopy sú 220 EUR, 290 EUR alebo 350 EUR mesačne podľa zvoleného rozsahu. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT. Vstupné nastavenie (technika, štruktúra, feed) je súčasťou prvého mesiaca. Náklady na externé PR odkazy a redakcie sa vykazujú zvlášť, bez prirážky."),
         ("Ako dlho trvá, kým prídu prvé objednávky z organického?",
          "Long-tail produkty a menšie kategórie za 2 až 4 mesiace, hlavné kategórie za 6 až 12 mesiacov. Pri novom e-shope bez autority je prvý mesiac o technike a štruktúre, objednávky prichádzajú postupne s tým, ako Google stránky preindexuje."),
         ("Stačí mi SEO modul v Shoptete?",
@@ -1538,8 +1545,8 @@ def blog_post_audit() -> tuple[str, str]:
 <table class="metric-table">
 <tr><th>Typ</th><th>Čo rieši</th><th>Cena</th><th>Kedy ho chcete</th></tr>
 <tr><td><strong>Vstupný audit</strong></td><td>10 najväčších problémov a šancí na jednej strane</td><td>zdarma</td><td>prvý kontakt, rýchla orientácia</td></tr>
-<tr><td><strong>Technický audit</strong></td><td>indexácia, rýchlosť, duplicity, štruktúra URL</td><td>od 180 EUR</td><td>pred migráciou alebo pri prepade</td></tr>
-<tr><td><strong>Komplexný SEO audit</strong></td><td>technika + obsah + kľúčové slová + konkurencia + plán</td><td>240 až 480 EUR</td><td>pred ročným plánom a rozpočtom</td></tr>
+<tr><td><strong>Technický audit</strong></td><td>indexácia, rýchlosť, duplicity, štruktúra URL</td><td>od 220 EUR</td><td>pred migráciou alebo pri prepade</td></tr>
+<tr><td><strong>Komplexný SEO audit</strong></td><td>technika + obsah + kľúčové slová + konkurencia + plán</td><td>290 až 480 EUR</td><td>pred ročným plánom a rozpočtom</td></tr>
 </table>
 
 <h2>Ako prebieha: 5 krokov</h2>
@@ -1563,7 +1570,7 @@ def blog_post_audit() -> tuple[str, str]:
 <p>Dobrý audit má priority P1 (spravte hneď, najväčší dopad), P2 (do mesiaca) a P3 (priebežne). Pri každej položke je dopad a odhad práce. Ak dostanete 60 strán bez poradia, nedostali ste audit, ale zoznam želaní. Pýtajte sa na dve čísla: koľko hodín to zaberie a čo to prinesie.</p>
 
 <h2>Koľko stojí SEO audit na Slovensku</h2>
-<p>Vstupný audit je u nás zdarma a dostanete ho do 3 pracovných dní: 10 najväčších problémov a šancí na jednej strane. Detailný audit je od 180 EUR (technický) do 480 EUR (komplexný), počíta sa hodinovou sadzbou 12 EUR. Pri pokračujúcej spolupráci je detailný audit súčasťou prvého mesiaca, takže neplatíte dvakrát.</p>
+<p>Vstupný audit je u nás zdarma a dostanete ho do 3 pracovných dní: 10 najväčších problémov a šancí na jednej strane. Detailný audit je od 220 EUR (technický) do 480 EUR (komplexný). Pri pokračujúcej spolupráci je detailný audit súčasťou prvého mesiaca, takže neplatíte dvakrát.</p>
 
 <h2>Príklad z praxe</h2>
 <p>Web s približne 300 stránkami: audit našiel 6 konkrétnych obsahových stránok, ktoré na webe chýbali. Po ich nasadení vzrástli zobrazenia o 11 000 mesačne (+14 %) a kliky o 43 % za týždeň. Audit nehľadal 50 vecí, našiel 6, ktoré pohnú celým webom. Takto má vyzerať výsledok auditu.</p>
@@ -1575,7 +1582,7 @@ def blog_post_audit() -> tuple[str, str]:
         ("Čo je SEO audit?",
          "Systematická kontrola webu, ktorá odpovedá na tri otázky: prečo web neuspeje v Google, čo presne opraviť a v akom poradí. Zahŕňa techniku, obsah a autoritu, výstupom je plán s prioritami a odhadom hodín, nie PDF do šuflíka."),
         ("Koľko stojí SEO audit?",
-         "Vstupný audit (10 najväčších problémov na jednej strane) je zdarma do 3 pracovných dní. Technický audit od 180 EUR, komplexný audit s obsahom a plánom 240 až 480 EUR. Pri pokračujúcej spolupráci je audit súčasťou prvého mesiaca."),
+         "Vstupný audit (10 najväčších problémov na jednej strane) je zdarma do 3 pracovných dní. Technický audit od 220 EUR, komplexný audit s obsahom a plánom 290 až 480 EUR. Pri pokračujúcej spolupráci je audit súčasťou prvého mesiaca."),
         ("Ako dlho audit trvá?",
          "Vstupný audit do 3 pracovných dní. Detailný audit 5 až 10 pracovných dní podľa rozsahu webu a dostupnosti prístupov. Pri veľkých e-shopoch s tisíckami URL aj dva týždne."),
         ("Stačí mi online audit zdarma z internetu?",
@@ -1590,7 +1597,7 @@ def blog_post_audit() -> tuple[str, str]:
          "To je normálne, každý web má desiatky menších chýb. Podstatné je poradie: 20 % opráv prináša 80 % výsledkov. Presne preto má audit priority P1 až P3 a pri každej položke dopad aj odhad hodín."),
     ]
     return blog_post(slug="seo-audit-co-to-je", label="SEO audit", h1="SEO audit: čo to je, čo stojí a ako prebieha",
-                     answer="SEO audit je systematická kontrola webu, ktorá odpovedá na tri otázky: prečo web neuspeje v Google, čo opraviť a v akom poradí. Vstupný audit je zdarma do 3 dní, technický od 180 EUR, komplexný 240 až 480 EUR.",
+                     answer="SEO audit je systematická kontrola webu, ktorá odpovedá na tri otázky: prečo web neuspeje v Google, čo opraviť a v akom poradí. Vstupný audit je zdarma do 3 dní, technický od 220 EUR, komplexný 290 až 480 EUR.",
                      sections=sections, faq=faq,
                      related=[("seo-test-15-bodov", "SEO test: 15-bodový kontrolný zoznam"), ("seo-optimalizacia-navod", "SEO optimalizácia: kompletný návod")],
                      services=[("/sk/sluzby/seo-audit/", "SEO audit a analýza"), ("/sk/sluzby/seo-optimalizacia/", "SEO optimalizácia webu")],
@@ -1647,7 +1654,7 @@ def blog_post_ai_vyhladavanie() -> tuple[str, str]:
         ("Ako zistím, či ma AI modely odporúčajú?",
          "Pravidelným testovaním komerčných dotazov v Perplexity a ChatGPT, ako aj sledovaním novej záložky vo funkciách generatívnej umelej inteligencie v Google Search Console. V našich auditoch meriame skóre citovateľnosti od 0 do 100."),
         ("Koľko stojí príprava webu na AI vyhľadávanie?",
-         "Základná optimalizácia pasáží a nasadenie JSON-LD schém je súčasťou našich mesačných balíkov od 180 EUR mesačne. Vstupný audit viditeľnosti v AI pripravíme zdarma."),
+         "Základná optimalizácia pasáží a nasadenie JSON-LD schém je súčasťou našich mesačných balíkov od 220 EUR mesačne. Vstupný audit viditeľnosti v AI pripravíme zdarma."),
         ("Nahradí AI vyhľadávanie klasický Google?",
          "Nenahradí ho úplne, ale zmení správanie používateľov. Pri informačných a porovnávacích dopytoch používatelia čoraz častejšie volia odpoveď AI namiesto preklikávania viacerých webov. Pripravené weby z tohto trendu profitujú."),
     ]
@@ -1700,7 +1707,7 @@ def blog_post_shoptet_seo() -> tuple[str, str]:
         ("Musím na Shoptete dokupovať drahé SEO doplnky?",
          "Základné SEO zvládnete priamo v administrácii bez platených doplnkov. Doplnky odporúčame až pri pokročilej automatizácii presmerovaní alebo špecifickom prelinkovaní."),
         ("Koľko stojí profesionálna optimalizácia Shoptet e-shopu?",
-         "Naše mesačné balíky začínajú na 180 EUR mesačne (5 hodín práce špecialistu + SEO nástroje a AI). Presný rozsah prác potvrdí audit podľa veľkosti vášho katalógu."),
+         "Naše mesačné balíky začínajú na 220 EUR mesačne. SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov sú v cene. Presný rozsah prác potvrdí audit podľa veľkosti vášho katalógu."),
     ]
     return blog_post(slug="shoptet-seo-navod", label="E-shop SEO",
                      h1="Shoptet SEO: 11 technických a obsahových nastavení pre rast tržieb z Google",
@@ -1821,13 +1828,13 @@ _BLOG_CARDS = [
          excerpt="Kategórie, produkty, filtre, schéma, Merchant Center, prelinkovanie, rýchlosť a meranie objednávok. Čo naozaj rozhoduje o objednávkach z Google."),
     dict(slug="seo-audit-co-to-je", cat="SEO audit", tag="tag-violet", date="1. 10. 2026",
          title="SEO audit: čo to je, čo stojí a ako prebieha",
-         excerpt="Vstupný, technický a komplexný audit: rozdiely, ceny (od 180 EUR, vstupný zdarma), 5 krokov a ako čítať priority P1 až P3."),
+         excerpt="Vstupný, technický a komplexný audit: rozdiely, ceny (od 220 EUR, vstupný zdarma), 5 krokov a ako čítať priority P1 až P3."),
     dict(slug="seo-optimalizacia-navod", cat="Návod", tag="tag-violet", date="16. 9. 2026",
          title="SEO optimalizácia: kompletný návod 2026",
          excerpt="SEO optimalizácia krok za krokom: audit, plán s číslami, týždenná práca a mesačné meranie. Postup pre malé firmy, s reálnymi číslami z praxe."),
     dict(slug="kolko-stoji-seo", cat="Cenník", tag="tag-cerulean", date="16. 9. 2026",
          title="Koľko stojí SEO v roku 2026?",
-         excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, transparentné balíky od 180 EUR mesačne. Prečo je sadzba 12 EUR za hodinu verejná a čo za ňu dostanete."),
+         excerpt="Ceny od 300 do 1 500 EUR mesačne pri paušáloch, transparentné balíky od 220 EUR mesačne. SEO viditeľnosť, GEO v ChatGPT a merania citácií a klikov v cene."),
     dict(slug="seo-test-15-bodov", cat="SEO test", tag="tag-violet-light", date="16. 9. 2026",
          title="SEO test: 15-bodový kontrolný zoznam pre váš web",
          excerpt="Prejdite si web sami za 30 minút: 15 bodov v technike, obsahu, Google firemnom profile a AI viditeľnosti. Za každým zlyhaným bodom je konkrétna oprava."),

@@ -272,7 +272,8 @@ def write_legacy_css():
             capture_output=True, text=True, cwd=REPO,
         )
         if src.returncode == 0 and src.stdout.strip():
-            dst.write_text(src.stdout, encoding="utf-8")
+            clean_css = src.stdout.replace("(12 EUR/h strip)", "").replace("12 EUR/h", "").replace("12 EUR", "")
+            dst.write_text(clean_css, encoding="utf-8")
             print(f"  wrote legacy-{name} for EN project demos")
 
 

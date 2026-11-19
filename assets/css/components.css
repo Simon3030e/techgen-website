@@ -97,7 +97,7 @@
 }
 .price-card .btn { width: 100%; }
 
-/* ===== RATE BAND (12 EUR/h strip) ===== */
+/* ===== RATE BAND (retainer strip) ===== */
 .rate-band {
   background: linear-gradient(90deg, #F0EAFB 0%, #E2F4FA 50%, #F5F1FC 100%);
   border: 1px solid var(--border-light);

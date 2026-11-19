@@ -17,8 +17,8 @@ TRUST_STATS = """
   <div class="container">
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
-        <span class="trust-num tn-violet">12&nbsp;EUR</span>
-        <span class="trust-label">transparentná hodinová<br>sadzba, bez viazanosti</span>
+        <span class="trust-num tn-violet">220&nbsp;EUR</span>
+        <span class="trust-label">mesačne na web,<br>bez viazanosti</span>
       </div>
       <div class="trust-stat reveal" data-delay="200">
         <span class="trust-num tn-orange">0 EUR</span>
@@ -137,9 +137,9 @@ def svc_page_faq(common_qa: list[tuple[str, str]]) -> list[tuple[str, str]]:
 
 PROCESS_STEPS = [
     {"title": "Bezplatný audit", "text": "Začneme 30-minútovým hovorom a bezplatným auditom vášho webu. Uvidíte presne, čo brzdí pozície, predaj a AI odporúčania."},
-    {"title": "Plán podľa priorít", "text": "Z auditu spravím jasný plán: čo opraviť ako prvé, ktoré kľúčové slová prinášajú zákazníkov a koľko hodín mesačne to zaberie."},
+    {"title": "Plán podľa priorít", "text": "Z auditu spravím jasný plán: čo opraviť ako prvé, ktoré kľúčové slová prinášajú zákazníkov a aký rozsah mesačne to vyžaduje."},
     {"title": "Práca v týždenných dávkach", "text": "Robím: technika, obsah, Google profil, AI viditeľnosť, odkazy. Vždy viete, čo sa stalo v predchádzajúcom týždni."},
-    {"title": "Meranie a report", "text": "Mesačný report vám dám osobne: 30-minútový telefonát so mnou. Pozície, kliky z Google, objednávky, zmienky v AI. Platíte len za odpracované hodiny."},
+    {"title": "Meranie a report", "text": "Mesačný report vám dám osobne: 30-minútový telefonát so mnou. Pozície, kliky z Google, objednávky, zmienky v AI. Jasný mesačný retainer bez viazanosti."},
 ]
 
 
@@ -150,7 +150,7 @@ def process_section(label: str = "Ako pracujem") -> str:
     <div class="section-head">
       <span class="section-label">{label}</span>
       <h2>Štyri kroky. Žiadne pevné zmluvy.</h2>
-      <p class="section-subheading">Viete vždy, čo robím, prečo a čo to prinieslo. Každá hodina je vykazovaná.</p>
+      <p class="section-subheading">Viete vždy, čo robím, prečo a čo to prinieslo. Jasné výstupy a merateľné výsledky každý mesiac.</p>
     </div>
     {steps_block(PROCESS_STEPS)}
   </div>
@@ -172,8 +172,8 @@ def home() -> tuple[str, str]:
     sub = ("Volám sa Šimon Štermenský a SEO robím pre podnikateľov bez platenej reklamy: "
            "pomáham klientom rásť v Google a AI vyhľadávaní písaním obsahu a opravami "
            "technických vecí na webe, tak aby vás zákazníci našli, keď hľadajú vaše "
-           "produkty a služby. Za transparentných 12 EUR za hodinu práce. Retainery 180 EUR (5 h), "
-           "220 EUR (10 h) a 290 EUR (15 h) mesačne, bez viazanosti, s reportom, ktorému rozumiete.")
+           "produkty a služby. Mesačná suma na web od 220 EUR mesačne, "
+           "bez viazanosti, s reportom, ktorému rozumiete.")
 
     body = f"""
 <!-- HERO -->
@@ -246,7 +246,7 @@ def home() -> tuple[str, str]:
     </div>
     {services_grid(3)}
     <div style="text-align:center; margin-top:36px;">
-      <a href="/sk/sluzby/" class="btn btn-outline">Všetky služby a ceny za hodinu</a>
+      <a href="/sk/sluzby/" class="btn btn-outline">Všetky služby a ceny</a>
     </div>
   </div>
 </section>
@@ -258,13 +258,13 @@ def home() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Cenník</span>
-      <h2>12 EUR za hodinu práce. Retainery od 180 EUR.</h2>
-      <p class="section-subheading">Retainery 180 EUR (5 h), 220 EUR (10 h) a 290 EUR (15 h) mesačne. Hodinovka 12 EUR za prácu, zvyšok pokrýva SEO nástroje, AI a reporting.</p>
+      <h2>Mesačné retainery od 220 EUR. Platíte len za výsledky.</h2>
+      <p class="section-subheading">Retainery 220 EUR, 290 EUR a 350 EUR mesačne. SEO viditeľnosť, GEO v ChatGPT a merania citácií a klikov v Google AI a ChatGPT.</p>
     </div>
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>za hodinu práce</small></div>
-        <p style="margin-top:8px; max-width:520px;">Retainery 180 EUR (5 h), 220 EUR (10 h) a 290 EUR (15 h). Zvyšok ceny pokrýva prémiové nástroje, AI modely a reporting.</p>
+        <div class="rate-big">od 220 EUR <small>mesačne na web</small></div>
+        <p style="margin-top:8px; max-width:520px;">Retainery 220 EUR, 290 EUR a 350 EUR. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT.</p>
       </div>
       <a href="/sk/cennik/" class="btn btn-primary btn-lg">Pozrieť celý cenník</a>
     </div>
@@ -347,7 +347,7 @@ def home() -> tuple[str, str]:
         <span class="section-label">Kto za Nokto stojí</span>
         <h2 style="margin:10px 0 14px;">S vami komunikujem ja, nie account manažér.</h2>
         <p style="color:var(--text-muted);">Som Šimon, SEO špecialista. Rokmi praxe v online marketingu som si najviac obľúbil SEO a viditeľnosť v Google aj AI nástrojoch, lebo vidím, ako reálne mení predaj malých firiem. Pracujem s malým tímom a s partnermi na web dizajne a PPC reklame, takže vám vždy odpovie ten, kto prácu robí.</p>
-        <p style="color:var(--text-muted);">Prvá hodina s vami je bezplatný hovor a audit. Ak vám čísla nebudú dávať zmysel, nič neplatíte.</p>
+        <p style="color:var(--text-muted);">Úvodná konzultácia s vami je bezplatný hovor a audit. Ak vám čísla nebudú dávať zmysel, nič neplatíte.</p>
         <a href="/sk/kontakt/" class="btn btn-primary" style="margin-top:18px;">Dohodnúť si hovor so mnou</a>
       </div>
     </div>
@@ -380,7 +380,7 @@ def home() -> tuple[str, str]:
     faq_schema_html = faq_schema(HOME_FAQ, BASE + "/")
     html = base(
         market="sk", path="", title="Nokto Studio | SEO agentúra pre podnikateľov: Google aj ChatGPT",
-        desc="SEO agentúra pre podnikateľov. Zákazníci z Google a Google Máp, odporúčania v ChatGPT a AI nástrojoch, viac predaja na e-shope. 12 EUR za hodinu práce, bezplatný audit.",
+        desc="SEO agentúra pre podnikateľov. Zákazníci z Google a Google Máp, odporúčania v ChatGPT a AI nástrojoch, viac predaja na e-shope. Retainery od 220 EUR mesačne, bezplatný audit.",
         canonical=BASE + "/", body=body, prefix="",
         extra_head=ORG_SCHEMA + faq_schema_html,
     )
@@ -389,11 +389,11 @@ def home() -> tuple[str, str]:
 
 HOME_FAQ = [
     ("Koľko stojí SEO optimalizácia webu?",
-     "Hodinová sadzba za prácu je 12 EUR. Mesačné retainery sú 180 EUR (5 hodín práce), 220 EUR (10 hodín práce) a 290 EUR (15 hodín práce). Zvyšok ceny balíka pokrýva prémiové SEO nástroje, AI modely a monitoring, serverové procesy a mesačný reporting. Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
+     "Mesačné retainery sú 220 EUR, 290 EUR a 350 EUR podľa zvoleného rozsahu. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT, prémiové nástroje a reporting. Presný rozsah vám potvrdím v pláne po bezplatnom audite."),
     ("Ako dlho trvá, kým SEO prinesie výsledky?",
      "Prvé pohyby vidíte na menej konkurenčných kľúčových slovách zvyčajne za 2 až 4 mesiace. Na hlavné dotazy v konkurenčných odvetviach trvá 6 až 12 mesiacov. Reálne termíny vám poviem už v audite."),
     ("Budem vidieť, za čo platím?",
-     "Áno. Mesačný report vám dám osobne: 30-minútový hovor, v ktorom prejdeme odpracované hodiny a ich výsledky: pozície, kliky z Google, objednávky a zmienky v AI. Bez reportovania sa nepohne žiadna práca."),
+     "Áno. Mesačný report vám dám osobne: 30-minútový hovor, v ktorom prejdeme realizované práce a ich výsledky: pozície, kliky z Google, objednávky a zmienky v AI. Bez reportovania sa nepohne žiadna práca."),
     ("Pomôžete mi, aby ma ChatGPT odporúčal?",
      "Áno, to je moja špecializácia. Optimalizujem web pre AI nástroje (ChatGPT, Gemini, AI Overviews) tak, aby vás odporúčali pri dotazoch vašich zákazníkov."),
     ("Je spolupráca viazaná na 12 mesiacov?",
@@ -406,7 +406,7 @@ HOME_FAQ = [
 def sluzby() -> tuple[str, str]:
     body = f"""
 {page_hero("Služby", "Služby, ktoré vám privedú zákazníkov",
-           "Od technického SEO po AI viditeľnosť. Každá služba stojí 12 EUR za hodinu, rozsah dohodnete v pláne.",
+           "Od technického SEO po AI viditeľnosť. Každá služba je súčasťou mesačného retainera od 220 EUR, rozsah dohodnete v pláne.",
            [("Domov", "/"), ("Služby", None)])}
 <section class="section">
   <div class="container">
@@ -422,7 +422,7 @@ def sluzby() -> tuple[str, str]:
 """
     html = base(
         market="sk", path="sluzby/", title="Služby: SEO, Mapy, AI viditeľnosť, e-shopy | Nokto Studio",
-        desc="SEO optimalizácia webu, lokálne SEO a Google firemný profil, SEO pre AI vyhľadávače, e-shop SEO, audit, linkbuilding a e-mail marketing. 12 EUR za hodinu.",
+        desc="SEO optimalizácia webu, lokálne SEO a Google firemný profil, SEO pre AI vyhľadávače, e-shop SEO, audit, linkbuilding a e-mail marketing. Retainery od 220 EUR mesačne.",
         canonical=BASE + "/sk/sluzby/", body=body, prefix="../..", extra_head=ORG_SCHEMA,
     )
     return ("sk/sluzby/index.html", html)
@@ -487,7 +487,7 @@ def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
     <div class="case-result proof-band">
       <div><strong>Pre koho</strong><span>{' '.join(for_who[:1]).split('.')[0][:80] or 'firmy a e-shopy'}</span></div>
       <div><strong>Časový odhad</strong><span>{time_estimate}</span></div>
-      <div><strong>Cena</strong><span>12 EUR za hodinu práce, vykazované v reporte</span></div>
+      <div><strong>Cena</strong><span>Mesačné retainery od 220 EUR, vykazované v reporte</span></div>
       <div><strong>Ďalší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupný audit</a></span></div>
     </div>
   </div>
@@ -497,7 +497,7 @@ def _service_page(*, path: str, title: str, desc: str, label: str, h1: str,
   <div class="container">
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>za hodinu · kedykoľvek skončíte</small></div>
+        <div class="rate-big">od 220 EUR <small>mesačne na web · kedykoľvek skončíte</small></div>
         <p style="margin-top:8px; max-width:520px;">Časový odhad tejto služby: {time_estimate}, podľa rozsahu webu a konkurencie.</p>
       </div>
       <div class="hero-ctas">
@@ -533,9 +533,9 @@ def seo_optimalizacia() -> tuple[str, str]:
     return _service_page(
         path="sluzby/seo-optimalizacia/", slug="seo-optimalizacia",
         title="SEO optimalizácia webu a webstránok | Nokto Studio",
-        desc="SEO optimalizácia webstránok: technika, obsah, kľúčové slová. Pozície v Google, ktoré privedú zákazníkov. 12 EUR za hodinu, bezplatný audit.",
+        desc="SEO optimalizácia webstránok: technika, obsah, kľúčové slová. Pozície v Google, ktoré privedú zákazníkov. Retainery od 220 EUR mesačne, bezplatný audit.",
         label="Služba · SEO optimalizácia",
-        time_estimate="5 hodín mesačne pre menší web (180 EUR), 10 hodín pre rastový web (220 EUR), e-shop 15 hodín (290 EUR)",
+        time_estimate="Základný balík 220 EUR, rastový web 290 EUR, e-shop alebo autorita 350 EUR mesačne",
         h1="SEO optimalizácia, ktorá privedie zákazníkov",
         intro="Zákazník, ktorý vás hľadá v Google, je najlacnejší zákazník. Web postavím tak, aby mu Google rozumel a zaradil ho vyššie a návštevníci odchádzali s odpoveďou, nie s otáznikom.",
         for_who=[
@@ -553,12 +553,12 @@ def seo_optimalizacia() -> tuple[str, str]:
             "Mesačný report: 30-minútový hovor so mnou, pozície, kliky zo Search Console, objednávky.",
         ],
         faq=[
-            ("Koľko hodín mesačne zaberie SEO optimalizácia?",
-             "Menší web zvládnem v 5 hodinách mesačne (retainer 180 EUR), rastový web v 10 hodinách (220 EUR) a e-shop v 15 hodinách (290 EUR). Sadzba za prácu špecialistu je 12 EUR/hod., zvyšok pokrýva SEO nástroje, AI a reporting. Presný rozsah potvrdím v pláne po audite."),
+            ("Aký rozsah mesačne vyžaduje SEO optimalizácia?",
+             "Menší web zvládnem v základnom balíku (retainer 220 EUR), rastový web v balíku Rast (290 EUR) a e-shop či autoritu v balíku 350 EUR. Balíky pokrývajú SEO viditeľnosť, GEO viditeľnosť v ChatGPT, merania citácií a klikov v Google AI a ChatGPT, nástroje a reporting. Presný rozsah potvrdím v pláne po audite."),
             ("Za aký čas sa objavia prvé výsledky?",
              "Prvé pohyby na menej konkurenčných dotazoch za 2 až 4 mesiace, na hlavné dotazy 6 až 12 mesiacov. Záleží na konkurencii a stave webu."),
             ("Robíte aj obsah? Nemám čas písať.",
-             "Áno, písanie obsahu je súčasťou hodín. Sám navrhnem štruktúru, napíšem texty a pred publikovaním ich schválite."),
+             "Áno, tvorba a rozširovanie obsahu je priamou súčasťou zvoleného retainera. Sám navrhnem štruktúru, napíšem texty a pred publikovaním ich schválite."),
             ("Čo ak som už SEO robil a nič to neprinieslo?",
              "Bezplatný audit presne povie, čo predchádzajúca práca nechala nedokončené. Často chýbajú dva či tri kroky, nie celé SEO."),
         ],
@@ -588,9 +588,9 @@ def lodalne_seo() -> tuple[str, str]:
     return _service_page(
         path="sluzby/lodalne-seo/", slug="lodalne-seo",
         title="Lokálne SEO a firemný profil Google Mapy | Nokto Studio",
-        desc="Lokálne SEO: Google firemný profil, Google Mapy, hodnotenia a lokálne kľúčové slová. Zákazníci z okolia vás nájdu prví. 12 EUR za hodinu.",
+        desc="Lokálne SEO: Google firemný profil, Google Mapy, hodnotenia a lokálne kľúčové slová. Zákazníci z okolia vás nájdu prví. Retainery od 220 EUR.",
         label="Služba · Lokálne SEO",
-        time_estimate="8 hodín na nastavenie profilu, potom 4 hodiny mesačne",
+        time_estimate="Kompletné nastavenie profilu a následná mesačná správa",
         h1="Lokálne SEO: zákazníci z okolia vás nájdu prví",
         intro="Keď si niekto vyhľadá zubára, autoservis alebo kuchyne vo svojom meste, rozhodnú tri veci: Google Mapy, hodnotenia a web. Nastavím všetky tri a držím ich v poriadku.",
         for_who=[
@@ -643,7 +643,7 @@ def seo_ai() -> tuple[str, str]:
         title="SEO pre AI vyhľadávače: ChatGPT a AI Overviews | Nokto Studio",
         desc="Optimalizácia pre AI vyhľadávače a AI Overviews. ChatGPT a Gemini vás odporúčajú zákazníkom. Prvá agentúra na Slovensku s touto špecializáciou.",
         label="Služba · SEO pre AI",
-        time_estimate="6 až 12 hodín prvý mesiac, potom 4 až 8 hodín mesačne",
+        time_estimate="Prvý mesiac nastavenie a audit, potom kontinuálna mesačná optimalizácia",
         h1="Aby vás ChatGPT odporúčal zákazníkom",
         intro="Zákazník dnes nepýta len Google. Pýta ChatGPT: \u201eOdporúč mi dobrého zubára v Nitre.\u201c AI nástroj odpovie dvomi až piatimi menami. Mojou úlohou je, aby vaše meno tam bolo.",
         for_who=[
@@ -698,9 +698,9 @@ def seo_wordpress() -> tuple[str, str]:
     return _service_page(
         path="sluzby/seo-pre-wordpress/", slug="seo-pre-wordpress",
         title="SEO pre WordPress: optimalizácia, ktorú Google ocení | Nokto Studio",
-        desc="SEO pre WordPress: rýchlosť, Rank Math alebo Yoast, štruktúra, schéma a interné prelinkovanie. 12 nastavení v 6 až 10 hodinách, 12 EUR za hodinu, bezplatný audit.",
+        desc="SEO pre WordPress: rýchlosť, Rank Math alebo Yoast, štruktúra, schéma a interné prelinkovanie. Retainery od 220 EUR mesačne, bezplatný audit.",
         label="Služba · SEO pre WordPress",
-        time_estimate="6 až 10 hodín vstupné nastavenie, potom 2 až 4 hodiny mesačne",
+        time_estimate="Vstupné technické nastavenie a audit, potom mesačná optimalizácia",
         h1="SEO pre WordPress, z ktorého chodia dopyty",
         intro="WordPress je na SEO pripravený, ale len keď je nastavený. Opravím rýchlosť, nastavím jeden SEO plugin, prelinkujem obsah a web začne zbierať dopyty, ktoré dnes zbiera konkurencia. WooCommerce riešim ako e-shop s produktovou schémou a feedom.",
         for_who=[
@@ -721,7 +721,7 @@ def seo_wordpress() -> tuple[str, str]:
             ("Rank Math alebo Yoast? Ktorý plugin je lepší?",
              "Rank Math pre nové weby: viac funkcií v bezplatnej verzii (komplexná schéma, AI assistant, rýchlejšia sitemap). Yoast pre existujúce weby: ak funguje, nemá zmysel migrovať. Nikdy nie oba naraz, sú v konflikte a generujú duplicitné meta tagy."),
             ("Koľko stojí SEO pre WordPress?",
-             "Vstupné nastavenie je 6 až 10 hodín (72 až 120 EUR), pravidelná práca 2 až 4 hodiny mesačne (24 až 48 EUR). Presný rozsah potvrdím po bezplatnom audite."),
+             "Práce realizujeme v rámci mesačných retainerov od 220 EUR mesačne. Presný odporúčaný balíček potvrdím po bezplatnom vstupnom audite."),
             ("Mám WooCommerce e-shop. Platí to aj pre mňa?",
              "Áno. WooCommerce riešim ako e-shop: produktová schéma, kategórie, feed do Google Merchant Center a Heureka. Viac o tom na stránke <a href='/sk/sluzby/seo-pre-eshopy/'>SEO pre e-shopy</a>."),
             ("Budete inštalovať pluginy do môjho webu?",
@@ -752,15 +752,15 @@ def eshop_seo() -> tuple[str, str]:
     url = BASE + "/sk/sluzby/seo-pre-eshopy/"
     title = "SEO pre e-shopy: Shoptet, WooCommerce, Google Shopping | Nokto Studio"
     desc = ("SEO pre e-shopy: kategórie, produkty, Shoptet technické problémy, Google Merchant Center, "
-            "Heureka a Marketplace. Reálne tržby z organického vyhľadávania, 12 EUR za hodinu.")
+            "Heureka a Marketplace. Reálne tržby z organického vyhľadávania, retainery od 220 EUR mesačne.")
     label = "Služba · SEO pre e-shopy"
     h1 = "SEO pre e-shopy: viac objednávok z Google bez platenia za každý klik"
     intro = ("SEO pre e-shop je optimalizácia kategórií, produktov a technickej štruktúry tak, aby "
              "zákazník, ktorý hľadá konkrétny produkt, našiel vás v Google a nezobral ho konkurentovi. "
              "Nemerám návštevnosť, merám objednávky a tržby z organického kanála. Pre Shoptet, "
-             "WooCommerce aj vlastné platformy. Moja práca stojí 12 EUR za hodinu práce (retainery 180, 220 "
-             "a 290 EUR mesačne pokrývajú 5, 10 alebo 15 hodín práce plus nástroje a AI), bežne 10 až 15 "
-             "hodín mesačne pre malý až stredný e-shop.")
+             "WooCommerce aj vlastné platformy. Mesačné retainery 220 EUR, 290 EUR a 350 EUR mesačne "
+             "pokrývajú SEO viditeľnosť, GEO viditeľnosť v ChatGPT, merania citácií a klikov, nástroje a AI modely, "
+             "podľa veľkosti katalógu a konkurencie.")
 
     who = [
         "Máte e-shop na Shoptete, WooCommerci alebo vlastnej platforme a predaj závisí od platených reklám.",
@@ -949,8 +949,8 @@ def eshop_seo() -> tuple[str, str]:
     </div>
     <div class="case-result proof-band">
       <div><strong>Pre koho</strong><span>E-shopy na Shoptete, WooCommerci aj vlastnej platforme</span></div>
-      <div><strong>Časový odhad</strong><span>5 až 15 hodín mesačne (retainery 180, 220 a 290 EUR), 6 mesiacov minimálne</span></div>
-      <div><strong>Cena</strong><span>12 EUR za hodinu práce, linkbuilding a reklamné výdavky zvlášť</span></div>
+      <div><strong>Časový odhad</strong><span>Retainery 220, 290 a 350 EUR mesačne, 6 mesiacov minimálne</span></div>
+      <div><strong>Cena</strong><span>Retainery od 220 EUR mesačne, linkbuilding a reklamné výdavky zvlášť</span></div>
       <div><strong>Ďalší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupný audit e-shopu</a></span></div>
     </div>
   </div>
@@ -960,8 +960,8 @@ def eshop_seo() -> tuple[str, str]:
   <div class="container">
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>za hodinu práce · kedykoľvek skončíte</small></div>
-        <p style="margin-top:8px; max-width:520px;">Časový odhad tejto služby: 5 až 15 hodín mesačne (retainery 180 EUR za 5 h, 220 EUR za 10 h, 290 EUR za 15 h), podľa rozsahu e-shopu a konkurencie. Náklady na odkazy vykazované zvlášť.</p>
+        <div class="rate-big">od 220 EUR <small>mesačne na web · kedykoľvek skončíte</small></div>
+        <p style="margin-top:8px; max-width:520px;">Mesačné retainery 220 EUR, 290 EUR a 350 EUR podľa rozsahu e-shopu a konkurencie. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT.</p>
       </div>
       <div class="hero-ctas">
         <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
@@ -1005,14 +1005,14 @@ def audit_seo() -> tuple[str, str]:
     url = BASE + "/sk/sluzby/seo-audit/"
     title = "SEO audit webu: hodnotenie, analýza a akčný plán | Nokto Studio"
     desc = ("SEO audit webu s konkrétnym zoznamom chýb a šancí. Technika, obsah, kľúčové slová, "
-            "konkurencia. Vstupný audit zdarma do 3 dní, detailný od 12 EUR za hodinu.")
+            "konkurencia. Vstupný audit zdarma do 3 dní, detailný od 220 EUR.")
     label = "Služba · SEO audit"
     h1 = "SEO audit: hodnotenie vášho webu s akčným plánom, nie PDF na polici"
     intro = ("SEO audit je systematické hodnotenie webu, ktoré odpovie na tri otázky: prečo sa "
              "vám nedarí v Google, čo presne treba opraviť, a v akom poradí. Začínam bezplatným "
              "vstupným auditom, ktorý máte do troch dní: 10 najväčších problémov a šancí na jednej "
              "strane. Detailný audit je akčný plán s hodinami a prioritami, nie 60-stranové PDF. "
-             "Moja práca stojí 12 EUR za hodinu, detailný audit stojí od 180 EUR podľa rozsahu.")
+             "Detailný audit stojí od 220 EUR podľa rozsahu, alebo je súčasťou prvého mesiaca spolupráce.")
 
     who = [
         "Neviete, prečo váš web neprináša zákazníkov z Google, hoci naň pravidelne pridávate.",
@@ -1039,9 +1039,9 @@ def audit_seo() -> tuple[str, str]:
          "akom poradí to riešiť. Bez auditu strávite mesiace úsilím, ktoré možno smeruje zlým "
          "smerom. Audit vás ochráni pred zbytočnou investíciou a povie vám, čo skutočne funguje."),
         ("Koľko stojí SEO audit?",
-         "Vstupný audit je zdarma, máte ho do 3 pracovných dní. Detailný audit stojí od 180 EUR "
-         "podľa rozsahu webu. Pre menší web s 20 stranami od 180 EUR, pre e-shop s 500 produktmi "
-         "podľa dohody. Presnú cenu potvrdím po prvom pohľade na váš web."),
+         "Vstupný audit je zdarma, máte ho do 3 pracovných dní. Detailný audit stojí od 220 EUR "
+         "podľa rozsahu webu. Pre menší web s 20 stranami od 220 EUR, pre e-shop s 500 produktmi "
+         "od 290 EUR. Pri pokračujúcej spolupráci je audit súčasťou prvého mesiaca."),
         ("Čo obsahuje detailný SEO audit?",
          "Technická časť: rýchlosť (Core Web Vitals), indexácia, sitemap, robots.txt, kanonizácia, "
          "chyby 404, štruktúrované dáta. Obsahová časť: ktoré stránky majú reálny dopyt, ktoré "
@@ -1065,7 +1065,7 @@ def audit_seo() -> tuple[str, str]:
         ("Môžete urobiť audit aj webu, ktorý sa práve plánuje postaviť?",
          "Áno, audit pred vývojom je najlacnejší spôsob, ako predísť technickým dlhom. Nahliadnem "
          "do wireframov alebo prototypu a pripravím zoznam požiadaviek pre vývojára: URL "
-         "štruktúra, štruktúrované dáta, rýchlosť, hreflang, CMS nastavenia. Cena od 180 EUR (v cene retainera), "
+         "štruktúra, štruktúrované dáta, rýchlosť, hreflang, CMS nastavenia. Cena od 220 EUR (v cene retainera), "
          "ušetrí vám desiatky tisíc eur na prerábaní webu po launchi."),
     ]
 
@@ -1155,7 +1155,7 @@ def audit_seo() -> tuple[str, str]:
       <p class="section-subheading">Vstupný audit vám povie, či má zmysel investovať do SEO. Detailný audit vám povie presne čo a ako robiť.</p>
     </div>
     <table class="metric-table">
-      <tr><th>Čo dostanete</th><th>Vstupný audit (zdarma)</th><th>Detailný audit (od 180 EUR)</th></tr>
+      <tr><th>Čo dostanete</th><th>Vstupný audit (zdarma)</th><th>Detailný audit (od 220 EUR)</th></tr>
       <tr><td><strong>Trvanie</strong></td><td>1 až 3 pracovné dni</td><td>7 až 14 pracovných dní</td></tr>
       <tr><td><strong>Rozsah</strong></td><td>10 najväčších problémov a šancí na 1 strane</td><td>40+ bodov, úlohy s hodinami a prioritami</td></tr>
       <tr><td><strong>Kľúčové slová</strong></td><td>5 hlavných, s objemom a intentom</td><td>30 až 100 kľúčových slov, SERP analýza, konkurencia</td></tr>
@@ -1216,7 +1216,7 @@ def audit_seo() -> tuple[str, str]:
     <div class="case-result proof-band">
       <div><strong>Pre koho</strong><span>Web, ktorý neprerazil v Google a neviete prečo</span></div>
       <div><strong>Časový odhad</strong><span>Vstupný audit do 3 dní, detailný 7 až 14 dní</span></div>
-      <div><strong>Cena</strong><span>Vstupný zdarma, detailný od 180 EUR</span></div>
+      <div><strong>Cena</strong><span>Vstupný zdarma, detailný od 220 EUR</span></div>
       <div><strong>Ďalší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Objednať bezplatný vstupný audit</a></span></div>
     </div>
   </div>
@@ -1227,7 +1227,7 @@ def audit_seo() -> tuple[str, str]:
     <div class="rate-band">
       <div>
         <div class="rate-big">Bezplatný vstupný audit <small>do 3 pracovných dní</small></div>
-        <p style="margin-top:8px; max-width:520px;">10 najväčších problémov a šancí vášho webu na jednej strane. Detailný audit od 180 EUR, ak sa rozhodnete pokračovať.</p>
+        <p style="margin-top:8px; max-width:520px;">10 najväčších problémov a šancí vášho webu na jednej strane. Detailný audit od 220 EUR, ak sa rozhodnete pokračovať.</p>
       </div>
       <div class="hero-ctas">
         <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Chcem audit</a>
@@ -1270,14 +1270,14 @@ def linkbuilding() -> tuple[str, str]:
     url = BASE + "/sk/sluzby/linkbuilding/"
     title = "Linkbuilding: čo to je, koľko stojí a ako ho robím bezpečne | Nokto Studio"
     desc = ("Linkbuilding pre slovenské a české weby. Čo to je, koľko stojí odkaz (50 až 300 EUR), "
-            "aké domény fungujú a aké Google sankcionuje. Transparentné vykazovanie, 12 EUR za hodinu.")
+            "aké domény fungujú a aké Google sankcionuje. Retainery od 220 EUR mesačne, transparentné vykazovanie.")
     label = "Služba · Linkbuilding"
     h1 = "Linkbuilding: čo to je, koľko stojí a ako ho robím bezpečne"
     intro = ("Linkbuilding je získavanie spätných odkazov z iných webov na váš. Google ich berie ako "
              "odporúčanie: čím viac relevantných odkazov z kvalitných domén smeruje na vás, tým vyššie "
              "vo vyhľadávaní sa zaradíte. Robím len odkazy z reálnych slovenských a českých domén, "
              "nikdy zo spamových sietí. Za každý odkaz platíte skutočnú cenu, ktorú mi účtuje redakcia, "
-             "bez prirážky. Moja práca stojí 12 EUR za hodinu.")
+             "bez prirážky. Linkbuilding realizujem v rámci mesačných retainerov od 220 EUR.")
 
     who = [
         "Máte technicky v poriadku web aj obsah, ale pozície v Google stoja na mieste.",
@@ -1303,7 +1303,7 @@ def linkbuilding() -> tuple[str, str]:
          "Google profil, firmy.sk). Spamové siete a automatizované PBN nefungujú a riziko penalizácie "
          "je reálne."),
         ("Koľko stojí linkbuilding?",
-         "Moja práca stojí 12 EUR za hodinu práce (v rámci zvoleného mesačného retainera). Samotné "
+         "Moja práca je súčasťou zvoleného mesačného retainera (220, 290 alebo 350 EUR). Samotné "
          "odkazy sa platia zvlášť, priamo redakciám. Cenový prehľad slovenského trhu: lokálny "
          "adresár 0 až 30 EUR, odvetvový blog 50 až 120 EUR, regionálne médiá 150 až 300 EUR, "
          "národné médiá (Denník N, SME) 400 EUR a viac. Vykazujem skutočnú cenu, žiadnu prirážku. "
@@ -1351,7 +1351,7 @@ def linkbuilding() -> tuple[str, str]:
       <tr><td><strong>Guest post na autoritatívnom webe</strong></td><td>80 až 200 EUR</td><td>35 až 55</td><td>Expertný obsah, dlhodobá autorita</td></tr>
       <tr><td><strong>Sponzorovaný článok v magazíne</strong></td><td>120 až 350 EUR</td><td>40 až 65</td><td>PR účel aj SEO účel, treba rel=nofollow alebo sponsored</td></tr>
     </table>
-    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">K stretnutiu s vami: uvedené ceny sú skutočné faktúry, ktoré redakcie účtovali v roku 2026. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Moja hodinová sadzba 12 EUR za prácu je v retaineri, nepridávam prirážku k cene odkazu.</p>
+    <p style="margin-top:16px; max-width:720px; color:var(--text-2);">K stretnutiu s vami: uvedené ceny sú skutočné faktúry, ktoré redakcie účtovali v roku 2026. V mesačnom reporte vidíte presne tú sumu, ktorú redakcii zaplatila vaša firma. Moja práca je v mesačnom retaineri, nepridávam prirážku k cene odkazu.</p>
   </div>
 </section>"""
 
@@ -1379,7 +1379,7 @@ def linkbuilding() -> tuple[str, str]:
         <h3>5. Hodnotenie kvality po uverejnení</h3>
         <p>Po uverejnení overím: indexácia v Google (site:search), DR domény v Marketing Mineri, návštevnosť podľa SimilarWeb, relevantnosť anchor textu k cieľovému dotazu. Ak odkaz neindexuje Google do 60 dní, navrhujem redakcii úpravu alebo ho nahradím iným. V mesačnom reporte vidíte každý odkaz aj s týmito metrikami.</p>
         <h3>6. Dlhodobá údržba</h3>
-        <p>Odkazy strácajú silu, ak doména zanikne alebo zmení štruktúru URL. Mesačne kontrolujem cez Ahrefs, či sú vaše odkazy stále aktívne. Stratený odkaz reklamujem u redakcie, ak nie je reklamovateľný, plánujem náhradu v ďalšom mesiaci. Táto údržba je v hodinovej sadzbe, nie je extra poplatok.</p>
+        <p>Odkazy strácajú silu, ak doména zanikne alebo zmení štruktúru URL. Mesačne kontrolujem cez Ahrefs, či sú vaše odkazy stále aktívne. Stratený odkaz reklamujem u redakcie, ak nie je reklamovateľný, plánujem náhradu v ďalšom mesiaci. Táto údržba je v mesačnom retaineri, nie je extra poplatok.</p>
       </div>
     </div>
   </div>
@@ -1501,8 +1501,8 @@ def linkbuilding() -> tuple[str, str]:
     </div>
     <div class="case-result proof-band">
       <div><strong>Pre koho</strong><span>Web s dobrou technikou a obsahom, ktorý stagnuje v pozíciách</span></div>
-      <div><strong>Časový odhad</strong><span>Súčasť mesačného retainera (180, 220 alebo 290 EUR), cena odkazov zvlášť</span></div>
-      <div><strong>Cena</strong><span>12 EUR za hodinu práce, odkazy 50 až 800 EUR podľa domény</span></div>
+      <div><strong>Časový odhad</strong><span>Súčasť mesačného retainera (220, 290 alebo 350 EUR), cena odkazov zvlášť</span></div>
+      <div><strong>Cena</strong><span>Retainery od 220 EUR mesačne, odkazy 50 až 800 EUR podľa domény</span></div>
       <div><strong>Ďalší krok</strong><span><a href="/sk/kontakt/" style="color:var(--brand-primary-deep); font-weight:700;">Bezplatný vstupný audit link profilu</a></span></div>
     </div>
   </div>
@@ -1512,8 +1512,8 @@ def linkbuilding() -> tuple[str, str]:
   <div class="container">
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>za hodinu práce · kedykoľvek skončíte</small></div>
-        <p style="margin-top:8px; max-width:520px;">Linkbuilding realizujem v rámci mesačných retainerov 180 EUR (5 h), 220 EUR (10 h) a 290 EUR (15 h). Ceny odkazov od redakcií vykazované zvlášť bez prirážky.</p>
+        <div class="rate-big">od 220 EUR <small>mesačne na web · kedykoľvek skončíte</small></div>
+        <p style="margin-top:8px; max-width:520px;">Linkbuilding realizujem v rámci mesačných retainerov 220 EUR, 290 EUR a 350 EUR mesačne. Ceny odkazov od redakcií vykazované zvlášť bez prirážky.</p>
       </div>
       <div class="hero-ctas">
         <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Bezplatný hovor</a>
@@ -1550,49 +1550,61 @@ def linkbuilding() -> tuple[str, str]:
 # ---------------------------------------------------------------- CENNIK (money page)
 
 CENNIK_PACKAGES = [
-    {"name": "Menší web / e-shop", "hours": 5, "price": 180,
-     "breakdown": "5 h práce (60 EUR) + nástroje a AI (120 EUR)",
-     "items": ["Audit webu a kľúčové slová", "Technická oprava webu", "5 hodín práce špecialistu mesačne (12 EUR / hod.)", "Prémiové SEO nástroje, AI modely a reporting", "Základné interné prelinkovanie a on-page SEO", "Mesačný report a hovor 30 min"],
+    {"name": "Základ (Menší web / e-shop)", "price": 220,
+     "items": ["SEO viditeľnosť: technická optimalizácia a on-page SEO",
+               "GEO viditeľnosť v ChatGPT: profilovanie značky a trénovanie odpovedí",
+               "Merania citácií a klikov v Google AI a v ChatGPT",
+               "Audit webu, kľúčové slová a prioritné opravy",
+               "Prémiové SEO nástroje, AI modely a reporting",
+               "Mesačný report a hovor 30 min"],
      "cta": "/sk/kontakt/"},
-    {"name": "Rast", "hours": 10, "price": 220, "featured": True,
+    {"name": "Rast", "price": 290, "featured": True,
      "badge": "Najčastejšia voľba",
-     "breakdown": "10 h práce (120 EUR) + nástroje a AI (100 EUR)",
-     "items": ["Všetko z balíčka Menší web", "10 hodín práce špecialistu mesačne (12 EUR / hod.)", "AI viditeľnosť: monitoring ChatGPT, Gemini a AI Overviews", "Tvorba a optimalizácia obsahových stránok", "Linkbuilding a analýza konkurencie", "Mesačný report a hovor 30 min"],
+     "items": ["Všetko z balíčka Základ",
+               "Rozšírená SEO viditeľnosť a tvorba obsahových stránok",
+               "GEO viditeľnosť v ChatGPT: optimalizácia citácií a odporúčaní",
+               "Podrobné merania citácií a klikov v Google AI a v ChatGPT",
+               "Linkbuilding, interné prelinkovanie a analýza konkurencie",
+               "Mesačný report a hovor 30 min"],
      "cta": "/sk/kontakt/"},
-    {"name": "Autorita", "hours": 15, "price": 290,
-     "breakdown": "15 h práce (180 EUR) + nástroje a AI (110 EUR)",
-     "items": ["Všetko z balíčka Rast", "15 hodín práce špecialistu mesačne (12 EUR / hod.)", "Komplexné SEO a expanzia obsahu na mieru", "AI viditeľnosť: tracking dotazov a odporúčaní", "Aktívny linkbuilding z overených médií", "Prioritná komunikácia a hovor 60 min"],
+    {"name": "Autorita", "price": 350,
+     "items": ["Všetko z balíčka Rast",
+               "Komplexná SEO viditeľnosť a expanzia tém na mieru",
+               "GEO viditeľnosť v ChatGPT: systematické budovanie autority a entít",
+               "Pokročilé merania citácií a klikov v Google AI a v ChatGPT",
+               "Aktívny linkbuilding z overených médií a PR stratégia",
+               "Prioritná komunikácia a hovor 60 min"],
      "cta": "/sk/kontakt/"},
 ]
 
 CENNIK_FAQ = [
     ("Koľko stojí SEO optimalizácia webu?",
-     "Mesačné retainery sú 180 EUR (5 hodín práce), 220 EUR (10 hodín práce) a 290 EUR (15 hodín práce). Sadzba za prácu špecialistu je 12 EUR za hodinu, pričom zvyšok ceny retainera pokrýva licencie prémiových SEO nástrojov, AI modely a monitoring, serverové procesy a mesačný reporting. Presný rozsah potvrdím v pláne po bezplatnom audite."),
+     "Mesačné retainery sú 220 EUR, 290 EUR a 350 EUR podľa zvoleného rozsahu. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT, licencie prémiových SEO nástrojov, AI modely a monitoring, serverové procesy a mesačný reporting. Presný rozsah potvrdím v pláne po bezplatnom audite."),
     ("Prečo je to lacnejšie než konkurencia?",
      "Nemám kancelárie ani manažérske vrstvy. Veľkú časť práce vykonávajú automatizované nástroje, ktoré som si sám postavil, a odborný čas vkladám tam, kde sa počíta. Úspory prenášam na vás."),
     ("Čo je zahrnuté v cene?",
-     "V cene je zahrnutá odborná práca (sadzba 12 EUR / hod.), profesionálne nástroje (Marketing Miner, Ahrefs dáta, crawlery), AI monitoring a reporting. Zvlášť sa platia len priame reklamné výdavky (Google Ads) a nákup odkazov či PR článkov priamo od redakcií, ktoré vykazujem v skutočnej cene bez prirážky."),
+     "V cene je zahrnutá kompletná SEO optimalizácia, GEO viditeľnosť v ChatGPT, sledovanie citácií a klikov v Google AI a ChatGPT, profesionálne nástroje (Marketing Miner, Ahrefs dáta, crawlery), AI monitoring a reporting. Zvlášť sa platia len priame reklamné výdavky (Google Ads) a nákup odkazov či PR článkov priamo od redakcií, ktoré vykazujem v skutočnej cene bez prirážky."),
     ("Musím platiť mesačne vopred?",
-     "Fakturujem mesačne dozadu za skutočne odpracované hodiny a dohodnutý retainer, s prehľadným reportom."),
+     "Fakturujem mesačne za dohodnutý retainer, bez viazanosti, s prehľadným reportom."),
     ("Môžem spoluprácu kedykoľvek skončiť?",
      "Áno, mesačný cyklus môžete kedykoľvek ukončiť, bez sankcií a bez viazanosti. Dôveru si zaslúžime výsledkami."),
     ("Ako viem, že práca bola odvedená?",
-     "Každý mesiac dostanete zoznam úloh s hodinami a ich výsledkom. Vy ste ten, kto kontroluje."),
+     "Každý mesiac dostanete podrobný prehľad realizovaných úloh a ich výsledkov. Vy ste ten, kto kontroluje."),
 ]
 
 
 def cennik() -> tuple[str, str]:
     body = f"""
-{page_hero("Cenník", "Cenník: 12 EUR za hodinu práce, retainery od 180 EUR",
-           "Platíte za odpracované hodiny špecialistu. Retainer je odporúčaný mesačný rozsah, ktorý môžete kedykoľvek zmeniť alebo skončiť.",
+{page_hero("Cenník", "Cenník: mesačné retainery od 220 EUR",
+           "Transparentné mesačné retainery bez viazanosti, ktoré môžete kedykoľvek flexibilne zmeniť alebo ukončiť.",
            [("Domov", "/"), ("Cenník", None)])}
 
 <section class="section">
   <div class="container">
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>za hodinu práce</small></div>
-        <p style="margin-top:8px; max-width:560px;">Mesačné retainery 180 EUR (5 h), 220 EUR (10 h) a 290 EUR (15 h). Transparentná sadzba 12 EUR/hod. za prácu, zvyšok pokrýva prémiové SEO nástroje, AI modely a reporting.</p>
+        <div class="rate-big">od 220 EUR <small>mesačne na web</small></div>
+        <p style="margin-top:8px; max-width:560px;">Mesačné retainery 220 EUR, 290 EUR a 350 EUR. Každý balík zahŕňa SEO viditeľnosť, GEO viditeľnosť v ChatGPT a merania citácií a klikov v Google AI a v ChatGPT.</p>
       </div>
       <a href="/sk/kontakt/" class="btn btn-primary btn-lg">Nezáväzná ponuka</a>
     </div>
@@ -1616,7 +1628,7 @@ def cennik() -> tuple[str, str]:
       <div class="prose">
         <h2>Čo je v cene</h2>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span>Všetka práca špecialistu: technika, obsah, Google profil, AI viditeľnosť, odkazy, reporting (sadzba 12 EUR / hod.).</span></li>
+          <li><span class="check">✓</span><span>Kompletná práca špecialistu: technika, obsah, Google profil, SEO a GEO viditeľnosť v ChatGPT, citácie v Google AI, odkazy, reporting.</span></li>
           <li><span class="check">✓</span><span>Prémiové nástroje: Marketing Miner, Ahrefs dáta, crawlery, serverové procesy a sledovanie AI odpovedí.</span></li>
           <li><span class="check">✓</span><span>Meranie a reporting: Search Console, Analytics, pozície, konverzie, zmienky v AI nástrojoch.</span></li>
           <li><span class="check">✓</span><span>Komunikácia: mesačný 30-minútový hovor so mnou, neobmedzené otázky medzitým.</span></li>
@@ -1632,9 +1644,9 @@ def cennik() -> tuple[str, str]:
         <span class="section-label">Príklad z praxe</span>
         <p style="margin-bottom:14px;">Firemný web právnej kancelárie v meste s 50 000 obyvateľov:</p>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span><strong>Mesiac 1:</strong> vstupný audit + technická oprava + firemný profil (retainer 180 EUR / 5 h práce + nástroje)</span></li>
-          <li><span class="check">✓</span><span><strong>Mesiace 2 až 4:</strong> obsahové stránky na dotazy zákazníkov (retainer 220 EUR / 10 h práce + nástroje)</span></li>
-          <li><span class="check">✓</span><span><strong>Mesiace 5+</strong>: udržiavanie, autorita, linkbuilding, AI viditeľnosť (retainer 290 EUR / 15 h práce + nástroje)</span></li>
+          <li><span class="check">✓</span><span><strong>Mesiac 1:</strong> vstupný audit + technická oprava + firemný profil (retainer Základ 220 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Mesiace 2 až 4:</strong> obsahové stránky na dotazy zákazníkov (retainer Rast 290 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Mesiace 5+</strong>: udržiavanie, autorita, linkbuilding, komplexná AI viditeľnosť (retainer Autorita 350 EUR)</span></li>
         </ul>
         <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">Reálne čísla pre váš web potvrdím v bezplatnom audite.</p>
       </div>
@@ -1656,7 +1668,7 @@ def cennik() -> tuple[str, str]:
 </section>
 """
     faq_html = faq_schema(CENNIK_FAQ, BASE + "/sk/cennik/")
-    html = base(market="sk", path="cennik/", title="Cenník SEO: 12 EUR/hod a retainery od 180 EUR | Nokto Studio",
-                desc="SEO cenník s transparentnou hodinovou sadzbou 12 EUR za prácu. Retainery 180 EUR (5 h), 220 EUR (10 h) a 290 EUR (15 h) mesačne, bez viazanosti. Bezplatný audit.",
+    html = base(market="sk", path="cennik/", title="Cenník SEO: retainery od 220 EUR mesačne | Nokto Studio",
+                desc="SEO cenník s mesačnými retainermi 220 EUR, 290 EUR a 350 EUR bez viazanosti. SEO viditeľnosť, GEO v ChatGPT a merania citácií a klikov v Google AI a ChatGPT.",
                 canonical=BASE + "/sk/cennik/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
     return ("sk/cennik/index.html", html)

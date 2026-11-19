@@ -17,7 +17,7 @@ _BLOG_META = {
         desc="SEO pro e-shop od kategorií po Merchant Center: 9 nastavení, která přinášejí objednávky z Google. Reálné zkušenosti, ceny a časté chyby."),
     "seo-audit-co-to-je": dict(
         title="SEO audit: co to je, kolik stojí a jak probíhá | Nokto Studio",
-        desc="SEO audit jednoduše: co obsahuje, kolik stojí (od 180 EUR, vstupní zdarma) a jak z auditu udělat plán s prioritami. Příklad z praxe."),
+        desc="SEO audit jednoduše: co obsahuje, kolik stojí (od 220 EUR, vstupní zdarma) a jak z auditu udělat plán s prioritami. Příklad z praxe."),
 }
 
 
@@ -126,11 +126,11 @@ def blog_post_eshop() -> tuple[str, str]:
 </ul>
 
 <h2>Za jak dlouho a co to stojí</h2>
-<p>Long-tail produkty a menší kategorie se hýbou za 2 až 4 měsíce, hlavní kategorie za 6 až 12 měsíců, podle konkurence a stavu webu. Měsíční spolupráce začíná od 180 EUR měsíčně (5 h práce + nástroje a AI), růstový balíček je 220 EUR (10 h práce + nástroje a AI) a pro větší e-shop 290 EUR měsíčně (15 h práce + nástroje a AI). Sazba za moji práci je 12 EUR za hodinu, nástroje a AI jsou v ceně. Náklady na externí PR články a odkazy se účtují zvlášť. Přesný rozsah vždy potvrzuje bezplatný audit.</p>
+<p>Long-tail produkty a menší kategorie se hýbou za 2 až 4 měsíce, hlavní kategorie za 6 až 12 měsíců, podle konkurence a stavu webu. Měsíční spolupráce začíná od 220 EUR měsíčně (balíček Základ), růstový balíček je 290 EUR a pro větší e-shop nebo autoritu 350 EUR měsíčně. Balíčky zahrnují SEO viditelnost, GEO viditelnost v ChatGPT a měření citací a prokliků v Google AI a ChatGPT, nástroje a AI jsou v ceně. Náklady na externí PR články a odkazy se účtují zvlášť. Přesný rozsah vždy potvrzuje bezplatný audit.</p>
 """
     faq = [
         ("Kolik stojí SEO pro e-shop?",
-         "Měsíční balíčky pro e-shopy jsou 180 EUR (5 h práce + nástroje a AI), 220 EUR (10 h práce + nástroje a AI) nebo 290 EUR měsíčně (15 h práce + nástroje a AI) při sazbě za odbornou práci 12 EUR za hodinu. Vstupní nastavení (technika, struktura, feed) je součástí prvního měsíce. Náklady na externí PR odkazy se vykazují zvlášť, bez přirážky."),
+         "Měsíční balíčky pro e-shopy jsou 220 EUR, 290 EUR nebo 350 EUR měsíčně podle zvoleného rozsahu. Každý balíček zahrnuje SEO viditelnost, GEO viditelnost v ChatGPT a měření citací a prokliků v Google AI a v ChatGPT. Vstupní nastavení (technika, struktura, feed) je součástí prvního měsíce. Náklady na externí PR odkazy se vykazují zvlášť, bez přirážky."),
         ("Jak dlouho trvá, než přijdou první objednávky z organiky?",
          "Long-tail produkty a menší kategorie za 2 až 4 měsíce, hlavní kategorie za 6 až 12 měsíců. U nového e-shopu bez autority je první měsíc o technice a struktuře, objednávky přicházejí postupně s tím, jak Google stránky zaindexuje."),
         ("Stačí mi SEO modul ve Shoptetu?",
@@ -164,8 +164,8 @@ def blog_post_audit() -> tuple[str, str]:
 <table class="metric-table">
 <tr><th>Typ</th><th>Co řeší</th><th>Cena</th><th>Kdy ho chcete</th></tr>
 <tr><td><strong>Vstupní audit</strong></td><td>10 největších problémů a šancí na jedné stránce</td><td>zdarma</td><td>první kontakt, rychlá orientace</td></tr>
-<tr><td><strong>Technický audit</strong></td><td>indexace, rychlost, duplicity, struktura URL</td><td>od 180 EUR</td><td>před migrací nebo při propadu</td></tr>
-<tr><td><strong>Komplexní SEO audit</strong></td><td>technika + obsah + klíčová slova + konkurence + plán</td><td>240 až 480 EUR</td><td>před ročním plánem a rozpočtem</td></tr>
+<tr><td><strong>Technický audit</strong></td><td>indexace, rychlost, duplicity, struktura URL</td><td>od 220 EUR</td><td>před migrací nebo při propadu</td></tr>
+<tr><td><strong>Komplexní SEO audit</strong></td><td>technika + obsah + klíčová slova + konkurence + plán</td><td>290 až 480 EUR</td><td>před ročním plánem a rozpočtem</td></tr>
 </table>
 
 <h2>Jak probíhá: 5 kroků</h2>
@@ -174,7 +174,7 @@ def blog_post_audit() -> tuple[str, str]:
 <li>Crawl webu: indexace, chyby, duplicity, rychlost (Screaming Frog a PageSpeed Insights).</li>
 <li>Analýza poptávky: na co lidé hledají, kde jste viditelní a kde ne.</li>
 <li>Pořadí priorit: dopad na objednávky a poptávky proti pracnosti.</li>
-<li>Plán: co, kdy a za kolik hodin, s měřitelnými cíli.</li>
+<li>Plán: co, kdy a s jakým očekávaným dopadem, s měřitelnými cíli.</li>
 </ol>
 
 <h2>Co audit obsahuje</h2>
@@ -186,10 +186,10 @@ def blog_post_audit() -> tuple[str, str]:
 <p>Profil zpětných odkazů, toxické odkazy, odkazový náskok konkurence, citace a zmínky, lokální profily.</p>
 
 <h2>Jak číst výsledek auditu</h2>
-<p>Dobrý audit má priority P1 (udělejte hned, největší dopad), P2 (do měsíce) a P3 (průběžně). U každé položky je dopad a odhad práce. Pokud dostanete 60 stránek bez pořadí, nedostali jste audit, ale seznam přání. Ptejte se na dvě čísla: kolik hodin to zabere a co to přinese.</p>
+<p>Dobrý audit má priority P1 (udělejte hned, největší dopad), P2 (do měsíce) a P3 (průběžně). U každé položky je dopad a odhad práce. Pokud dostanete 60 stránek bez pořadí, nedostali jste audit, ale seznam přání. Ptejte se na dvě věci: jaké jsou konkrétní kroky a jaký přinesou dopad.</p>
 
 <h2>Kolik stojí SEO audit v Česku</h2>
-<p>Vstupní audit je u nás zdarma a dostanete ho do 3 pracovních dnů: 10 největších problémů a šancí na jedné stránce. Detailní audit je od 180 EUR (technický) do 480 EUR (komplexní), počítá se hodinovou sazbou 12 EUR. Při pokračující spolupráci je detailní audit součástí prvního měsíce, takže neplatíte dvakrát.</p>
+<p>Vstupní audit je u nás zdarma a dostanete ho do 3 pracovních dnů: 10 největších problémů a šancí na jedné stránce. Detailní audit je od 220 EUR (technický) do 480 EUR (komplexní). Při pokračující spolupráci je detailní audit součástí prvního měsíce, takže neplatíte dvakrát.</p>
 
 <h2>Příklad z praxe</h2>
 <p>Web s přibližně 300 stránkami: audit našel 6 konkrétních obsahových stránek, které na webu chyběly. Po jejich nasazení vzrostly zobrazení o 11 000 měsíčně (+14 %) a kliky o 43 % za týden. Audit nehledal 50 věcí, našel 6, které pohnou celým webem. Tak má vypadat výsledek auditu.</p>
@@ -199,9 +199,9 @@ def blog_post_audit() -> tuple[str, str]:
 """
     faq = [
         ("Co je SEO audit?",
-         "Systematická kontrola webu, která odpovídá na tři otázky: proč web neuspěje v Google, co přesně opravit a v jakém pořadí. Zahrnuje techniku, obsah a autoritu, výstupem je plán s prioritami a odhadem hodin, ne PDF do šuplíku."),
+         "Systematická kontrola webu, která odpovídá na tři otázky: proč web neuspěje v Google, co přesně opravit a v jakém pořadí. Zahrnuje techniku, obsah a autoritu, výstupem je plán s prioritami a jasným postupem, ne PDF do šuplíku."),
         ("Kolik stojí SEO audit?",
-         "Vstupní audit (10 největších problémů na jedné stránce) je zdarma do 3 pracovních dnů. Technický audit od 180 EUR, komplexní audit s obsahem a plánem 240 až 480 EUR. Při pokračující spolupráci je audit součástí prvního měsíce."),
+         "Vstupní audit (10 největších problémů na jedné stránce) je zdarma do 3 pracovních dnů. Technický audit od 220 EUR, komplexní audit s obsahem a plánem 290 až 480 EUR. Při pokračující spolupráci je audit součástí prvního měsíce."),
         ("Jak dlouho audit trvá?",
          "Vstupní audit do 3 pracovních dnů. Detailní audit 5 až 10 pracovních dnů podle rozsahu webu a dostupnosti přístupů. U velkých e-shopů s tisíci URL i dva týdny."),
         ("Stačí mi online audit zdarma z internetu?",
@@ -213,10 +213,10 @@ def blog_post_audit() -> tuple[str, str]:
         ("Co potřebujete ode mě pro audit?",
          "Přístup do Google Search Console (stačí přidělit oprávnění), adresu webu a pokud máte, přístup do GA4. Vstupní audit zvládnu i bez přístupů, jen z veřejných dat a crawlu."),
         ("Co když audit najde hodně chyb?",
-         "To je normální, každý web má desítky menších chyb. Podstatné je pořadí: 20 % oprav přináší 80 % výsledků. Přesně proto má audit priority P1 až P3 a u každé položky dopad i odhad hodin."),
+         "To je normální, každý web má desítky menších chyb. Podstatné je pořadí: 20 % oprav přináší 80 % výsledků. Přesně proto má audit priority P1 až P3 a u každé položky očekávaný dopad a řešení."),
     ]
     return blog_post(slug="seo-audit-co-to-je", label="SEO audit", h1="SEO audit: co to je, kolik stojí a jak probíhá",
-                     answer="SEO audit je systematická kontrola webu, která odpovídá na tři otázky: proč web neuspěje v Google, co opravit a v jakém pořadí. Vstupní audit je zdarma do 3 dnů, technický od 180 EUR, komplexní 240 až 480 EUR.",
+                     answer="SEO audit je systematická kontrola webu, která odpovídá na tři otázky: proč web neuspěje v Google, co opravit a v jakém pořadí. Vstupní audit je zdarma do 3 dnů, technický od 220 EUR, komplexní 290 až 480 EUR.",
                      sections=sections, faq=faq,
                      related=[("seo-pro-eshop", "SEO pro e-shop: 9 nastavení, která přinášejí objednávky")],
                      services=[("/cz/sluzby/seo-audit/", "SEO audit a analýza"), ("/cz/sluzby/seo-optimalizace/", "SEO optimalizace webu")])
@@ -230,7 +230,7 @@ _BLOG_CARDS = [
          excerpt="Kategorie, produkty, filtry, schéma, Merchant Center, prolinkování, rychlost a měření objednávek. Co skutečně rozhoduje o objednávkách z Google."),
     dict(slug="seo-audit-co-to-je", cat="SEO audit", tag="tag-violet", date="1. 10. 2026",
          title="SEO audit: co to je, kolik stojí a jak probíhá",
-         excerpt="Vstupní, technický a komplexní audit: rozdíly, ceny (od 180 EUR, vstupní zdarma), 5 kroků a jak číst priority P1 až P3."),
+         excerpt="Vstupný, technický a komplexní audit: rozdíly, ceny (od 220 EUR, vstupní zdarma), 5 kroků a jak číst priority P1 až P3."),
 ]
 
 

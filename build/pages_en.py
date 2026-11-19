@@ -7,7 +7,7 @@ from engine import (base, page_hero, cta_band, faq_block, faq_schema,
 
 EN_FAQ = [
     ("How much does SEO cost?",
-     "Monthly retainers are 180 EUR (5 hours of work), 220 EUR (10 hours of work), and 290 EUR (15 hours of work). Specialist labor is 12 EUR per hour, while the rest covers premium SEO tool licenses, AI models, automated crawlers, and monthly reporting. I confirm the recommended scope in the plan after the free audit."),
+     "Monthly retainers are 220 EUR, 290 EUR, and 350 EUR depending on scope. Each package includes SEO visibility, GEO visibility in ChatGPT, and tracking citations and clicks in Google AI and ChatGPT, premium tools and reporting. Recommended monthly scopes without lock-in."),
     ("How long until SEO brings results?",
      "Initial movements on less competitive keywords usually appear within 2 to 4 months. Main competitive queries take 6 to 12 months. Realistic timelines are shared in the audit."),
     ("Do you guarantee first positions in Google?",
@@ -15,7 +15,7 @@ EN_FAQ = [
     ("Can you get my business recommended by ChatGPT?",
      "Yes, that is our specialty. We optimize your site so ChatGPT, Gemini, and Google AI Overviews understand and cite it when customers ask for recommendations."),
     ("Are the contracts binding for 12 months?",
-     "No. Work runs month to month and you can stop any time. We invoice for actual hours worked."),
+     "No. Work runs month to month and you can stop any time. Transparent monthly retainers with no lock-in."),
 ]
 
 EN_FAQ_SECTIONS = [
@@ -29,13 +29,13 @@ EN_FAQ_SECTIONS = [
     ]),
     ("Pricing and contracts", [
         ("How much does SEO cost?",
-         "Monthly retainers are 180 EUR (5 hours of work), 220 EUR (10 hours of work), and 290 EUR (15 hours of work). The specialist labor rate is 12 EUR per hour; the remainder covers premium SEO tool suites, AI models, server monitoring, and monthly reporting. Packages are recommended monthly scopes, without any lock-in."),
+         "Monthly retainers are 220 EUR, 290 EUR, and 350 EUR depending on scope. Each package includes SEO visibility, GEO visibility in ChatGPT, and tracking citations and clicks in Google AI and ChatGPT, premium tools and reporting. Recommended monthly scopes without lock-in."),
         ("Are the contracts binding?",
-         "No. You can stop the cooperation at any time, without penalties. I invoice monthly for hours actually worked."),
-        ("What if I need more hours in one month?",
-         "Nothing changes, we simply move to a higher number of hours. The scope is agreed in the plan and you can change it at any time."),
+         "No. You can stop the cooperation at any time, without penalties. Transparent monthly retainers with no lock-in contracts."),
+        ("Can I adjust the monthly scope?",
+         "Yes, you can upgrade, downgrade, or pause the retainer at any time according to your business needs."),
         ("Is ad spend included in the price?",
-         "No. Ads (Google Ads) are paid directly to Google. I manage campaigns for 12 EUR per hour. Link and PR costs are billed at cost."),
+         "No. Ads (Google Ads) are paid directly to Google. Campaign management is part of retainers from 220 EUR. Link and PR costs are billed at cost."),
     ]),
     ("Process and results", [
         ("How long until SEO brings results?",
@@ -63,8 +63,8 @@ EN_TRUST = """
   <div class="container">
     <div class="trust-grid">
       <div class="trust-stat reveal" data-delay="100">
-        <span class="trust-num tn-violet">12&nbsp;EUR</span>
-        <span class="trust-label">transparent hourly<br>rate, no hidden fees</span>
+        <span class="trust-num tn-violet">220&nbsp;EUR</span>
+        <span class="trust-label">monthly per website,<br>no lock-in</span>
       </div>
       <div class="trust-stat reveal" data-delay="200">
         <span class="trust-num tn-orange">0 EUR</span>
@@ -185,7 +185,7 @@ def en_home() -> tuple[str, str]:
       <div class="hero-content">
         <span class="hero-label">SEO agency for business owners · Europe</span>
         <h1>{h1}</h1>
-        <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. At a transparent 12 EUR per hour. Retainers from 180 EUR, no lock-in contracts.</p>
+        <p class="hero-sub">Nokto Studio is an SEO agency for business owners. We help clients grow in Google and AI search by writing content and fixing technical issues on the website, so customers find you when they search for your products and services. Monthly retainers from 220 EUR per website, no lock-in contracts.</p>
         <div class="hero-ctas">
           <a href="/en/contact/?audit=1" class="btn btn-primary btn-lg">Free website audit</a>
           <a href="/en/services/" class="btn btn-outline btn-lg">Services and pricing</a>
@@ -246,7 +246,7 @@ def en_home() -> tuple[str, str]:
     </div>
     {en_services_grid(3)}
     <div style="text-align:center; margin-top:36px;">
-      <a href="/en/services/" class="btn btn-outline">All services and hourly pricing</a>
+      <a href="/en/services/" class="btn btn-outline">All services and pricing</a>
     </div>
   </div>
 </section>
@@ -256,13 +256,13 @@ def en_home() -> tuple[str, str]:
     <div class="section-head">
       <span class="section-label">How we work</span>
       <h2>Four steps. No lock-in contracts.</h2>
-      <p class="section-subheading">You always know what I am doing, why and what it brought. Every hour is reported.</p>
+      <p class="section-subheading">You always know what I am doing, why and what it brought. Transparent monthly reporting and measurable results.</p>
     </div>
     {steps_block([
         {"title": "Free audit", "text": "It starts with a 30-minute call and a free audit of your site. You see exactly what holds back your positions, sales and AI recommendations."},
-        {"title": "A plan with numbers", "text": "The audit becomes a plan: which keywords bring customers, what to fix first, how many hours per month it takes, and what results are realistic."},
+        {"title": "A plan with numbers", "text": "The audit becomes a plan: which keywords bring customers, what to fix first, the required retainer scope, and what results are realistic."},
         {"title": "Weekly work", "text": "We do the work: technical fixes, content, Google profile, AI visibility, links. You always know what happened last week."},
-        {"title": "Measure and report", "text": "Your monthly report is personal: a 30-minute call with me. Positions, clicks, orders and AI mentions. You pay only for hours worked."},
+        {"title": "Measure and report", "text": "Your monthly report is personal: a 30-minute call with me. Positions, clicks, orders and AI mentions. Clear retainers with no lock-in."},
     ])}
   </div>
 </section>
@@ -271,13 +271,13 @@ def en_home() -> tuple[str, str]:
   <div class="container">
     <div class="section-head">
       <span class="section-label">Pricing</span>
-      <h2>12 EUR per hour. You pay for work, not a retainer fee.</h2>
-      <p class="section-subheading">Retainers from 180 to 290 EUR depending on the scope. Every hour is reported.</p>
+      <h2>Monthly retainers from 220 EUR. You pay for results.</h2>
+      <p class="section-subheading">Retainers of 220, 290 and 350 EUR per month. SEO visibility, GEO in ChatGPT, and citation and click tracking in Google AI and ChatGPT.</p>
     </div>
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>per hour of work</small></div>
-        <p style="margin-top:8px; max-width:520px;">Packages are recommended monthly retainers, not mandatory fees. Change them any time, no penalties.</p>
+        <div class="rate-big">from 220 EUR <small>per month</small></div>
+        <p style="margin-top:8px; max-width:520px;">Monthly retainers of 220 EUR, 290 EUR, and 350 EUR. Each package includes SEO visibility, GEO visibility in ChatGPT, and tracking citations and clicks in Google AI and ChatGPT.</p>
       </div>
       <a href="/en/pricing/" class="btn btn-primary btn-lg">See the full pricing</a>
     </div>
@@ -354,7 +354,7 @@ def en_home() -> tuple[str, str]:
         <span class="section-label">Who stands behind Nokto</span>
         <h2 style="margin:10px 0 14px;">You talk to me, not an account manager.</h2>
         <p style="color:var(--text-muted);">I am Simon, an SEO specialist. Over years in online marketing I have grown most fond of SEO and visibility in Google and AI tools, because I see how it really changes the sales of small companies. I work with a small team and with partners on web design and PPC, so the person who does the work is the one who answers you.</p>
-        <p style="color:var(--text-muted);">Your first hour with me is a free call and website audit. If the numbers do not make sense to you, you pay nothing.</p>
+        <p style="color:var(--text-muted);">Your initial consultation is a free call and website audit. If the numbers do not make sense to you, you pay nothing.</p>
         <a href="/en/contact/" class="btn btn-primary" style="margin-top:18px;">Book a call with me</a>
       </div>
     </div>
@@ -382,7 +382,7 @@ def en_home() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="", title="Nokto Studio | SEO agency: Google, Maps and ChatGPT visibility",
-                desc="SEO agency for business owners. Customers from Google and Google Maps, recommendations in ChatGPT and AI tools, more e-shop sales. 12 EUR per hour, free audit.",
+                desc="SEO agency for business owners. Customers from Google and Google Maps, recommendations in ChatGPT and AI tools, more e-shop sales. Retainers from 220 EUR per month, free audit.",
                 canonical=BASE + "/en/", body=body, prefix="..",
                 extra_head=ORG_SCHEMA + faq_schema(EN_FAQ, BASE + "/en/"))
     return ("en/index.html", html)
@@ -403,7 +403,7 @@ def en_services() -> tuple[str, str]:
       <span class="section-label">Link building</span>
       <h2>Link building: what it is, what it costs, how I do it safely</h2>
     </div>
-    <p style="max-width:720px;">Link building is acquiring hyperlinks from other websites to yours. Google treats each link as a recommendation: the more relevant links from quality domains point to you, the higher you rank. I build links only from real Slovak and Czech domains with actual traffic, never from spam networks. You pay the real price the publication charges, with no markup. My work costs 12 EUR per hour.</p>
+    <p style="max-width:720px;">Link building is acquiring hyperlinks from other websites to yours. Google treats each link as a recommendation: the more relevant links from quality domains point to you, the higher you rank. I build links only from real Slovak and Czech domains with actual traffic, never from spam networks. You pay the real price the publication charges, with no markup. My work is part of monthly retainers from 220 EUR.</p>
     <table class="metric-table" style="margin-top:24px;">
       <tr><th>Domain type</th><th>Price per link (EUR)</th><th>DR (Marketing Miner)</th><th>When it makes sense</th></tr>
       <tr><td><strong>Local directory</strong> (firmy.sk, firmy.cz)</td><td>0 to 30</td><td>20 to 40</td><td>Local SEO, first steps, NAP consistency</td></tr>
@@ -423,7 +423,7 @@ def en_services() -> tuple[str, str]:
       <span class="section-label">E-commerce SEO</span>
       <h2>SEO for e-shops: more orders from Google, not just traffic</h2>
     </div>
-    <p style="max-width:720px;">E-commerce SEO is optimizing categories, products, and technical structure so the customer searching for a specific product finds you in Google, not your competitor. I measure orders and revenue from the organic channel, not traffic. For Shoptet, WooCommerce, and custom platforms. My work costs 12 EUR per hour, typically 10 to 15 hours per month for a small to mid-size e-shop.</p>
+    <p style="max-width:720px;">E-commerce SEO is optimizing categories, products, and technical structure so the customer searching for a specific product finds you in Google, not your competitor. I measure orders and revenue from the organic channel, not traffic. For Shoptet, WooCommerce, and custom platforms. Monthly retainers are 220 EUR, 290 EUR, and 350 EUR covering comprehensive SEO, GEO visibility in ChatGPT, citation and click tracking, and reporting.</p>
     <table class="metric-table" style="margin-top:24px;">
       <tr><th>Aspect</th><th>Shoptet</th><th>WooCommerce</th><th>Custom platform</th></tr>
       <tr><td><strong>Duplicate filter URLs</strong></td><td>Common, needs canonical</td><td>Plugin-dependent, often missing</td><td>Implementation-dependent</td></tr>
@@ -443,7 +443,7 @@ def en_services() -> tuple[str, str]:
       <span class="section-label">WordPress SEO</span>
       <h2>WordPress SEO: from a slow blog to a lead machine</h2>
     </div>
-    <p style="max-width:720px;">WordPress is SEO-ready, but only when it is set up. I fix speed (LCP under 2.5s), configure one SEO plugin (Rank Math or Yoast, never both), fix the structure (permalinks, sitemap, canonicals), add schema (Organization, Article, Product for WooCommerce), and wire internal links so every page passes equity. Typical setup is 6 to 10 hours (72 to 120 EUR at 12 EUR per hour), then 2 to 4 hours per month for content and maintenance.</p>
+    <p style="max-width:720px;">WordPress is SEO-ready, but only when it is set up. I fix speed (LCP under 2.5s), configure one SEO plugin (Rank Math or Yoast, never both), fix the structure (permalinks, sitemap, canonicals), add schema (Organization, Article, Product for WooCommerce), and wire internal links so every page passes equity. Initial optimization and maintenance are part of monthly retainers from 220 EUR.</p>
     <table class="metric-table" style="margin-top:24px;">
       <tr><th>Area</th><th>Common WordPress problem</th><th>Fix</th></tr>
       <tr><td><strong>Speed</strong></td><td>No cache, unoptimized images, slow LCP</td><td>Cache plugin, WebP, lazy loading</td></tr>
@@ -463,7 +463,7 @@ def en_services() -> tuple[str, str]:
       <span class="section-label">SEO audit</span>
       <h2>SEO audit: 40 specific points, not a PDF for the drawer</h2>
     </div>
-    <p style="max-width:720px;">An SEO audit is a systematic evaluation that answers three questions: why you are not succeeding in Google, what exactly needs fixing, and in what order. I start with a free initial audit delivered within 3 business days: the 10 biggest problems and opportunities on one page. A detailed audit is an action plan with hours and priorities, not a 60-page PDF. My work costs 12 EUR per hour; a detailed audit is included in the first month retainer (from 180 EUR).</p>
+    <p style="max-width:720px;">An SEO audit is a systematic evaluation that answers three questions: why you are not succeeding in Google, what exactly needs fixing, and in what order. I start with a free initial audit delivered within 3 business days: the 10 biggest problems and opportunities on one page. A detailed audit is an action plan with hours and priorities, not a 60-page PDF. A detailed audit is included in the first month retainer (from 220 EUR).</p>
     <div class="grid-2" style="align-items:start; margin-top:24px;">
       <div class="card">
         <span class="section-label">Technical (15 points)</span>
@@ -501,7 +501,7 @@ def en_services() -> tuple[str, str]:
 
     body = f"""
 {page_hero("Services", "Services that bring you customers",
-           "From technical SEO to AI visibility. Every service costs 12 EUR per hour; scope is agreed upon in the plan.",
+           "From technical SEO to AI visibility. Every service is part of a monthly retainer from 220 EUR; scope is agreed upon in the plan.",
            [("Home", "/en/"), ("Services", None)])}
 <section class="section"><div class="container">{en_services_grid(3)}</div></section>
     <section class="section section-alt" id="ai">
@@ -510,7 +510,7 @@ def en_services() -> tuple[str, str]:
           <span class="section-label">AI visibility</span>
           <h2>AI visibility: get recommended by ChatGPT and Gemini</h2>
         </div>
-        <p style="max-width:720px;">AI visibility means your company appears in answers from ChatGPT, Gemini, Perplexity and Google AI Overviews when a customer asks for a recommendation. I structure content so language models understand who you are, what you do and where you operate, and so they cite you. The work covers entity data, direct answers, structured data, consistent brand mentions and content that answers real buying questions. Typically 4 to 8 hours per month at 12 EUR per hour.</p>
+        <p style="max-width:720px;">AI visibility means your company appears in answers from ChatGPT, Gemini, Perplexity and Google AI Overviews when a customer asks for a recommendation. I structure content so language models understand who you are, what you do and where you operate, and so they cite you. The work covers entity data, direct answers, structured data, consistent brand mentions and content that answers real buying questions. Part of monthly retainers from 220 EUR.</p>
       </div>
     </section>
 
@@ -520,7 +520,7 @@ def en_services() -> tuple[str, str]:
           <span class="section-label">Google visibility</span>
           <h2>Google visibility: customers, not vanity traffic</h2>
         </div>
-        <p style="max-width:720px;">Google visibility means ranking for the queries your customers actually use. I start from Search Console and keyword research, fix technical blockers and write pages that answer the query better than the current top results. Typical scope is 10 to 15 hours per month depending on competition, at 12 EUR per hour. Every hour is reported with its result.</p>
+        <p style="max-width:720px;">Google visibility means ranking for the queries your customers actually use. I start from Search Console and keyword research, fix technical blockers and write pages that answer the query better than the current top results. Part of monthly retainers from 220 EUR, with progress and results reported monthly.</p>
       </div>
     </section>
 
@@ -530,7 +530,7 @@ def en_services() -> tuple[str, str]:
           <span class="section-label">Google Maps visibility</span>
           <h2>Google Maps visibility: the local pack</h2>
         </div>
-        <p style="max-width:720px;">Google Maps visibility is the local pack: your Business Profile, categories, services, photos, reviews, NAP consistency and local pages. For local services this is often the fastest channel to new customers. Setup takes about 8 hours, then 4 hours per month at 12 EUR per hour.</p>
+        <p style="max-width:720px;">Google Maps visibility is the local pack: your Business Profile, categories, services, photos, reviews, NAP consistency and local pages. For local services this is often the fastest channel to new customers. Setup and ongoing maintenance are included in monthly retainers from 220 EUR.</p>
       </div>
     </section>
 
@@ -543,8 +543,8 @@ def en_services() -> tuple[str, str]:
     <div class="section-head"><span class="section-label">Pricing</span><h2>Simple, transparent pricing</h2></div>
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>per hour · stop any time</small></div>
-        <p style="margin-top:8px; max-width:520px;">Retainers: 180 EUR for a smaller site or e-shop (5 hours), 220 EUR growth (10 hours) and 290 EUR authority (15 hours). Specialist work at 12 EUR/h, tools and AI included in packages.</p>
+        <div class="rate-big">from 220 EUR <small>per month · stop any time</small></div>
+        <p style="margin-top:8px; max-width:520px;">Retainers: 220 EUR Starter, 290 EUR Growth, and 350 EUR Authority. SEO visibility, GEO in ChatGPT, citation and click tracking, premium tools, and AI models included.</p>
       </div>
       <a href="/en/pricing/" class="btn btn-primary btn-lg">See the full pricing</a>
     </div>
@@ -557,30 +557,42 @@ def en_services() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="services/", title="Services: SEO, Maps, AI visibility, e-shop SEO | Nokto Studio",
-                desc="AI visibility, Google visibility, Google Maps visibility, e-commerce SEO, audits, link building, and email marketing. Web design and PPC with our partners. 12 EUR per hour.",
+                desc="AI visibility, Google visibility, Google Maps visibility, e-commerce SEO, audits, link building, and email marketing. Web design and PPC with our partners. Retainers from 220 EUR per month.",
                 canonical=BASE + "/en/services/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/services/index.html", html)
 
 
 EN_PACKAGES = [
-    {"name": "Smaller site / e-shop", "hours": 5, "price": 180,
-     "breakdown": "5 h labor (60 EUR) + tools & AI (120 EUR)",
-     "items": ["Website audit and keyword review", "Technical website repairs", "5 hours of specialist labor per month (12 EUR / hour)", "Premium SEO tools, AI models and reporting", "Basic internal linking and on-page SEO", "Monthly report and 30-minute call"],
+    {"name": "Starter (Smaller site / e-shop)", "price": 220,
+     "items": ["SEO visibility: technical optimization and on-page SEO",
+               "GEO visibility in ChatGPT: brand profiling and recommendations",
+               "Tracking citations and clicks in Google AI and ChatGPT",
+               "Website audit, keyword review and priority fixes",
+               "Premium SEO tools, AI models and reporting",
+               "Monthly report and 30-minute call"],
      "cta": "/en/contact/"},
-    {"name": "Growth", "hours": 10, "price": 220, "featured": True,
+    {"name": "Growth", "price": 290, "featured": True,
      "badge": "Most popular",
-     "breakdown": "10 h labor (120 EUR) + tools & AI (100 EUR)",
-     "items": ["Everything in Smaller site", "10 hours of specialist labor per month (12 EUR / hour)", "AI visibility: monitoring ChatGPT, Gemini and AI Overviews", "Content creation and page optimization", "Link building and competitor analysis", "Monthly report and 30-minute call"],
+     "items": ["Everything in Starter",
+               "Expanded SEO visibility and content creation",
+               "GEO visibility in ChatGPT: citation and brand recommendation optimization",
+               "Detailed tracking of citations and clicks in Google AI and ChatGPT",
+               "Link building, internal linking and competitor analysis",
+               "Monthly report and 30-minute call"],
      "cta": "/en/contact/"},
-    {"name": "Authority", "hours": 15, "price": 290,
-     "breakdown": "15 h labor (180 EUR) + tools & AI (110 EUR)",
-     "items": ["Everything in Growth", "15 hours of specialist labor per month (12 EUR / hour)", "Full-scale custom SEO and content expansion", "AI visibility: query tracking and recommendations", "Link building strategy and outreach", "Priority communication and 60-minute call"],
+    {"name": "Authority", "price": 350,
+     "items": ["Everything in Growth",
+               "Full-scale custom SEO visibility and content expansion",
+               "GEO visibility in ChatGPT: systematic authority and entity building",
+               "Advanced tracking of citations and clicks in Google AI and ChatGPT",
+               "Active link building from verified media and PR outreach",
+               "Priority communication and 60-minute call"],
      "cta": "/en/contact/"},
 ]
 
 EN_PRICING_FAQ = [
     ("How much does SEO cost?",
-     "Monthly retainers are 180 EUR (5 hours of work), 220 EUR (10 hours of work), and 290 EUR (15 hours of work). Specialist labor is 12 EUR per hour, while the rest covers premium SEO tool suites, AI models, server crawlers, and reporting. Packages are recommended monthly scopes, without lock-in."),
+     "Monthly retainers are 220 EUR, 290 EUR, and 350 EUR depending on scope. Each package includes SEO visibility, GEO visibility in ChatGPT, and tracking citations and clicks in Google AI and ChatGPT, premium tools and reporting. Recommended monthly scopes without lock-in."),
     ("Why is it more cost-effective than large agencies?",
      "No bloated offices or account manager overhead. Heavy data workflows are automated, allowing dedicated specialist time to focus strictly on results. Tool licenses and AI queries are already included in the retainer."),
     ("What is included in the price?",
@@ -590,22 +602,22 @@ EN_PRICING_FAQ = [
     ("Can I stop the cooperation at any time?",
      "Yes, the monthly cycle can be cancelled anytime without penalties. Trust is built through verified results."),
     ("How do I know the work was done?",
-     "Every month you receive an itemized report of completed work, hours, and measured metrics (positions, GSC clicks, conversions, AI mentions), followed by an alignment call."),
+     "Every month you receive an itemized report of completed deliverables and measured metrics (positions, GSC clicks, conversions, AI mentions), followed by an alignment call."),
 ]
 
 
 def en_pricing() -> tuple[str, str]:
     body = f"""
-{page_hero("Pricing", "Pricing: 12 EUR per hour, retainers from 180 EUR",
-           "You pay for hours worked. A retainer is a recommended monthly scope you can change or stop at any time.",
+{page_hero("Pricing", "Pricing: monthly retainers from 220 EUR",
+           "Transparent monthly retainers with no lock-in contracts that you can change or stop at any time.",
            [("Home", "/en/"), ("Pricing", None)])}
 
 <section class="section">
   <div class="container">
     <div class="rate-band">
       <div>
-        <div class="rate-big">12 EUR <small>per hour of work</small></div>
-        <p style="margin-top:8px; max-width:560px;">SEO, local SEO, AI visibility, content, link building, websites and PPC. One rate, simple maths.</p>
+        <div class="rate-big">from 220 EUR <small>per month</small></div>
+        <p style="margin-top:8px; max-width:560px;">Monthly retainers of 220 EUR, 290 EUR, and 350 EUR. Each package includes SEO visibility, GEO visibility in ChatGPT, and tracking citations and clicks in Google AI and ChatGPT.</p>
       </div>
       <a href="/en/contact/" class="btn btn-primary btn-lg">Get a quote</a>
     </div>
@@ -644,9 +656,9 @@ def en_pricing() -> tuple[str, str]:
         <span class="section-label">Example from practice</span>
         <p style="margin-bottom:14px;">A law firm website in a town of 50,000 people:</p>
         <ul class="deliv-list">
-          <li><span class="check">✓</span><span><strong>Month 1:</strong> audit + technical fixes + Google profile (Starter package, 180 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Month 1:</strong> audit + technical fixes + Google profile (Starter package, 220 EUR)</span></li>
           <li><span class="check">✓</span><span><strong>Months 2 to 4:</strong> content pages for customer questions (Growth package, 220 EUR)</span></li>
-          <li><span class="check">✓</span><span><strong>Months 5+:</strong> maintenance, link building, AI visibility (180 to 290 EUR)</span></li>
+          <li><span class="check">✓</span><span><strong>Months 5+:</strong> maintenance, link building, comprehensive AI visibility (Authority package, 350 EUR)</span></li>
         </ul>
         <p style="margin-top:14px; font-size:0.9rem; color:var(--text-muted);">I confirm the real numbers for your website in the free audit.</p>
       </div>
@@ -668,8 +680,8 @@ def en_pricing() -> tuple[str, str]:
 </section>
 """
     faq_html = faq_schema(EN_PRICING_FAQ, BASE + "/en/pricing/")
-    html = base(market="en", path="pricing/", title="Pricing: 12 EUR/hour and retainers from 180 EUR | Nokto Studio",
-                desc="Transparent SEO pricing at 12 EUR per hour. Retainers of 180, 220 and 290 EUR per month depending on scope, no lock-in. Free audit.",
+    html = base(market="en", path="pricing/", title="Pricing: monthly retainers from 220 EUR | Nokto Studio",
+                desc="SEO pricing with transparent monthly retainers of 220, 290 and 350 EUR. SEO visibility, GEO in ChatGPT and tracking citations and clicks in Google AI. Free audit.",
                 canonical=BASE + "/en/pricing/", body=body, prefix="../..", extra_head=ORG_SCHEMA + faq_html)
     return ("en/pricing/index.html", html)
 
@@ -687,7 +699,7 @@ def en_about() -> tuple[str, str]:
         <p>My name is Simon and Nokto Studio is my studio. Years of SEO and web work for Slovak and international clients: e-shops, local businesses, media and premium brands. I built automation systems that turn SEO work into exactly what a business needs: customers.</p>
         <p>I am not a big agency, and I do not pretend to be one. The advantage: the same person who designs your strategy does the work with you. No forwarding between departments, no lost context.</p>
         <h2>How we work</h2>
-        <p>We combine two worlds: expert SEO work (technical, content, authority, AI visibility) and automation that gets more out of the same effort. That is how we can work at 12 EUR per hour and still focus on results, not on padding hours.</p>
+        <p>We combine two worlds: expert SEO work (technical, content, authority, AI visibility) and automation that gets more out of the same effort. That is how we can offer transparent retainers from 220 EUR per month and still focus on results, not on padding hours.</p>
       </div>
       <div>
         <img src="/assets/img/simon.png" alt="Šimon Štermenský, SEO specialist and founder of Nokto Studio" width="300" height="300" loading="lazy" style="border-radius:var(--radius-lg); border:1px solid var(--border-light);">
@@ -704,7 +716,7 @@ def en_about() -> tuple[str, str]:
     </div>
     {steps_block([
         {"title": "1. Free call and audit", "text": "A 30-minute call about your goals. Within 3 days you get a free initial audit: the 10 biggest problems and opportunities on one page."},
-        {"title": "2. A plan with numbers", "text": "The audit becomes a plan: which keywords bring customers, what to fix first, how many hours per month it takes and what results are realistic. No unrealistic promises."},
+        {"title": "2. A plan with numbers", "text": "The audit becomes a plan: which keywords bring customers, what to fix first, the required retainer scope, and what results are realistic. No unrealistic promises."},
         {"title": "3. Weekly work", "text": "Every week I deliver the agreed scope: technical work, content, Google profile, AI visibility, links. Every change is traceable."},
         {"title": "4. Measurement and report", "text": "A monthly report in person as a 30-minute call: what was done, what it brought (positions, clicks, orders, AI mentions) and what comes next."},
     ])}
@@ -767,7 +779,7 @@ def en_about() -> tuple[str, str]:
     <div class="grid-3">
       <div class="benefit-card"><span class="benefit-icon">{gicon("shield", "#6A3FC4", 26)}</span><h3>No promises we cannot keep</h3><p>Nobody can guarantee the first position in Google. What we guarantee: a transparent process, realistic timelines and measurable progress.</p></div>
       <div class="benefit-card"><span class="benefit-icon">{gicon("chart", "#F75940", 26)}</span><h3>Monthly report: a 30-minute call with me</h3><p>What we did, what it brought, and what comes next. No forwarding, no account managers.</p></div>
-      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#9B6FD9", 26)}</span><h3>Every hour reported</h3><p>You pay for work delivered. Every hour is in the report with its content and result.</p></div>
+      <div class="benefit-card"><span class="benefit-icon">{gicon("check", "#9B6FD9", 26)}</span><h3>Transparent Reporting</h3><p>You pay for deliverables and results. Every month comes with an itemized report and measurable metrics.</p></div>
     </div>
   </div>
 </section>
@@ -778,7 +790,7 @@ def en_about() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="about/", title="About: SEO agency Nokto Studio | Simon",
-                desc="Nokto Studio: SEO agency for business owners. Who stands behind it, how we work, and why 12 EUR per hour is enough for measurable results.",
+                desc="Nokto Studio: SEO agency for business owners. Who stands behind it, how we work, and why retainers from 220 EUR per month deliver measurable results.",
                 canonical=BASE + "/en/about/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/about/index.html", html)
 
@@ -1055,14 +1067,14 @@ def en_privacy() -> tuple[str, str]:
 def en_terms() -> tuple[str, str]:
     body = f"""
 {page_hero("Terms", "Terms of service",
-           "Simple terms without legal gymnastics: an hourly rate, monthly invoicing, no lock-in.",
+           "Simple terms without legal gymnastics: monthly retainers from 220 EUR, monthly invoicing, no lock-in.",
            [("Home", "/en/"), ("Terms", None)])}
 <section class="section">
   <div class="container prose">
     <h2>1. Scope</h2>
     <p>These terms govern the collaboration between Nokto Studio ("the provider") and the client for marketing services: SEO optimization, local SEO, AI visibility, link building, email marketing and related consulting. Web design and PPC are delivered with our partners.</p>
     <h2>2. Price and invoicing</h2>
-    <p>Services are billed at an hourly rate of 12 EUR for hours worked. Invoicing runs monthly, in arrears, based on the hours report. Ad spend and link or third-party tool costs are passed through at the actual price, without markup.</p>
+    <p>Services are billed as monthly retainers from 220 EUR based on the agreed package (220, 290 or 350 EUR per month). Invoicing runs monthly, in arrears, based on the transparent report. Ad spend and link or third-party tool costs are passed through at the actual price, without markup.</p>
     <h2>3. Term</h2>
     <p>Collaboration runs month-to-month. Either party can end it at the end of a calendar month, in writing, without penalties.</p>
     <h2>4. Responsibility and results</h2>
@@ -1075,7 +1087,7 @@ def en_terms() -> tuple[str, str]:
 </section>
 """
     html = base(market="en", path="terms/", title="Terms of service | Nokto Studio",
-                desc="Terms of service of Nokto Studio: 12 EUR hourly rate, monthly invoicing, no lock-in, transparent reporting.",
+                desc="Terms of service of Nokto Studio: retainers from 220 EUR, monthly invoicing, no lock-in, transparent reporting.",
                 canonical=BASE + "/en/terms/", body=body, prefix="../..", extra_head=ORG_SCHEMA)
     return ("en/terms/index.html", html)
 
